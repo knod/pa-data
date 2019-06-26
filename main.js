@@ -80,14 +80,25 @@ let byDocket = async (docketNum) => {
   );
   page.click("#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchCommandControl")
 
+  let noneFound = false;
+  page.waitForSelector(
+    "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchResultsGridControl_noResultsPanel",
+  ).then(function () {
+    console.log("NO RECORDS FOUND");
+    noneFound = true;
+    return endSearch(browser, null);
+  });
+
   await page
     .waitForSelector(
       "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchResultsGridControl_resultsPanel",
       {timeout: 10000}
     )
     .catch(function(err){
-      browser.close();
-      return null;
+      if (!noneFound) {
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~');
+        return endSearch(browser, null);
+      }
     });
 
   const docketPDFData = await page.evaluate(
@@ -107,9 +118,19 @@ let byDocket = async (docketNum) => {
   downloadPDF(docketPDFData[2], 'summary-' + docketPDFData[0] + '.pdf');
 
   // await page.screenshot({path: 'docket.png'});
+  if (!noneFound) {
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~');
+    return endSearch(browser, docketPDFData);
+  }
+};
 
+
+let endSearch = function(browser, data, message) {
+  if (message) {
+    console.log(message)
+  }
   browser.close();
-  return docketPDFData;
+  return data;
 };
 
 
@@ -127,6 +148,7 @@ async function downloadPDF(pdfURL, outputFilename) {
 }
 
 // Do stuff
+  // Docket number test: CP-51-CR-0503941-1997
 byDocket('CP-51-CR-0000000-1997')
   .then((value) => {
       // console.log(value); // Success!
