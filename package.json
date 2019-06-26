@@ -1,0 +1,25 @@
+{
+  "name": "pa-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knod/pa-data.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knod/pa-data/issues"
+  },
+  "homepage": "https://github.com/knod/pa-data#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "puppeteer": "^1.18.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
