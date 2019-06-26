@@ -10,23 +10,23 @@ let MC_types = ["CR"];//, "MD", "SA", "SU"];
 
 let create_docket_number = function (years) {
 
-  let court = courts[ Math.floor(Math.random() * courts.length) ];
+  let court = "CP";//courts[ Math.floor(Math.random() * courts.length) ];
   let county_num = random_digits(2);
   let docket_sequence = random_digits(7);
   let year = Math.floor(Math.random() * (years.max - years.min + 1)) + years.min;
 
-  if (court === "CP") {
-    let court_type = CP_types[ Math.floor(Math.random() * CP_types.length) ];
+  // if (court === "CP") {
+    let court_type = "CR"//CP_types[ Math.floor(Math.random() * CP_types.length) ];
     let idParts = ["CP", county_num, court_type, docket_sequence, year];
     let id = idParts.join('-');
     return id;
-  } else {  // MC?
-    // This part didn't match up with what I saw online, so I had to change it
-    let court_type = MC_types[ Math.floor(Math.random() * MC_types.length) ];
-    let idParts = ["MC", county_num, court_type, docket_sequence, year];
-    let id = idParts.join('-');
-    return id;
-  }
+  // } else {  // MC?
+  //   // This part didn't match up with what I saw online, so I had to change it
+  //   let court_type = MC_types[ Math.floor(Math.random() * MC_types.length) ];
+  //   let idParts = ["MC", county_num, court_type, docket_sequence, year];
+  //   let id = idParts.join('-');
+  //   return id;
+  // }
 }
 
 let random_digits = function(num_digits) {

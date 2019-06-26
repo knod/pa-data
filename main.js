@@ -62,35 +62,29 @@ let byDocket = async (docketNum) => {
     function (el, str) { el.value = str },
     docketNumData[3]
   );
-
   await page.$eval(
     '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_docketNumberControl_mtxtYear',
     function (el, str) { el.value = str },
     docketNumData[4]
   );
+
+  console.log(1);
   page.click("#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchCommandControl")
 
   let noneFound = false;
-  page.waitForSelector(
-    "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchResultsGridControl_noResultsPanel",
-  ).then(function () {
-    console.log("NO RECORDS FOUND");
-    noneFound = true;
-    return endSearch(browser, null);
-  });
-
-  await page
-    .waitForSelector(
+  // page.waitForSelector(
+  //   "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchResultsGridControl_noResultsPanel",
+  // ).then(function () {
+  //   console.log("NO RECORDS FOUND");
+  //   noneFound = true;
+  //   return endSearch(browser, null);
+  // });
+console.log(2)
+  await page.waitForSelector(
       "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchResultsGridControl_resultsPanel",
-      {timeout: 10000}
-    )
-    .catch(function(err){
-      if (!noneFound) {
-        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~');
-        return endSearch(browser, null);
-      }
-    });
-
+      {timeout: 5000}
+    );
+console.log(3)
   const docketPDFData = await page.evaluate(
     () => {
       let data = [document.querySelector('#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchResultsGridControl_caseList_ctl00_ctl00_docketNumberLabel').innerText];
@@ -101,17 +95,21 @@ let byDocket = async (docketNum) => {
       return data.concat(moreData);
     }
   );
-
+console.log(4)
   // downloadPDF(docketPDFData[1], docketPDFData[0], 'docket-' + docketPDFData[0] + '.pdf');
   // downloadPDF(docketPDFData[2], docketPDFData[0], 'summary-' + docketPDFData[0] + '.pdf');
   downloadPDF(docketPDFData[1], 'docket-' + docketPDFData[0] + '.pdf');
   downloadPDF(docketPDFData[2], 'summary-' + docketPDFData[0] + '.pdf');
 
+console.log(5)
   // await page.screenshot({path: 'docket.png'});
-  if (!noneFound) {
-    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~');
-    return endSearch(browser, docketPDFData);
-  }
+  // if (!noneFound) {
+  //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~');
+    // return endSearch(browser, docketPDFData);
+  // }
+
+  await browser.close();
+  return docketPDFData;
 };
 
 
@@ -148,19 +146,27 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 // Keep it running till we stop it manually
 async function forever () {
+  console.log('~~~~~\n~~~~~\n~~~~~\n~~~~~\n~~~~~\n')
   let id = create_docket_number({min: 2007, max: 2019});
-  let text = '\n' + id;
-  fs.appendFileSync('dockets-used.txt', text, function (err) {
-    if (err) console.log(err);
-    console.log(id);
-  });
 
+  let gotIt = false;
   await byDocket(id)
   .then((value) => {
+    gotIt = true;
       // console.log(value); // Success!
   }).catch((err) => {
     console.log(err);
   });
+
+  let text = '\n' + id + ': ' + gotIt;
+  fs.appendFileSync('dockets-used.txt', text, function (err) {
+    if (err) console.log(err);
+    console.log('~~used a docket~~');
+  });
+
+  console.log(id);
+
+  console.log('xxxxx\nxxxxx\nxxxxx\nxxxxx\nxxxxx\n')
 
   forever();
 }
