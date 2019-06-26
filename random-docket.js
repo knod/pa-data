@@ -12,7 +12,6 @@ let create_docket_number = function (years) {
 
   let court = courts[ Math.floor(Math.random() * courts.length) ];
   let county_num = random_digits(2);
-  console.log(county_num);
   let docket_sequence = random_digits(7);
   let year = Math.floor(Math.random() * (years.max - years.min + 1)) + years.min;
 
@@ -43,7 +42,7 @@ let random_digits = function(num_digits) {
 // // Test
 // console.log(create_docket_number({min: 2007, max: 2019}));
 
-module.exports.create_docket_numbers = create_docket_number;
+module.exports.create_docket_number = create_docket_number;
 
 // """
 // Generate srandom docket numbers

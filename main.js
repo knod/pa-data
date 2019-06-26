@@ -10,6 +10,9 @@ var fs = require('fs');
 // var spawn = require('child_process').spawn;
 const request = require("request-promise-native");
 
+const random_docket = require('./random-docket.js');
+let create_docket_number = random_docket.create_docket_number
+
 // async function getPic() {
 //   // const browser = await puppeteer.launch({ headless: true });
 //   // const page = await browser.newPage();
@@ -134,11 +137,32 @@ async function downloadPDF(pdfURL, outputFilename) {
   fs.writeFile(path, pdfBuffer, function (err) { if (err) {console.log(err)} });
 }
 
-// Do stuff
-  // Docket number test: CP-51-CR-0503941-1997
-byDocket('CP-51-CR-0000000-1997')
+// // Test
+//   // Docket number test: CP-51-CR-0503941-1997
+// byDocket('CP-51-CR-0000000-1997')
+//   .then((value) => {
+//       // console.log(value); // Success!
+//   }).catch((err) => {
+//     console.log(err);
+//   });
+
+// Keep it running till we stop it manually
+async function forever () {
+  let id = create_docket_number({min: 2007, max: 2019});
+  let text = '\n' + id;
+  fs.appendFileSync('dockets-used.txt', text, function (err) {
+    if (err) console.log(err);
+    console.log(id);
+  });
+
+  await byDocket(id)
   .then((value) => {
       // console.log(value); // Success!
   }).catch((err) => {
     console.log(err);
   });
+
+  forever();
+}
+
+forever();
