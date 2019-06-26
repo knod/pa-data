@@ -1,17 +1,4 @@
 // main.js
-// const rp = require('request-promise');
-// const $ = require('cheerio');
-// const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
-
-// rp(url)
-//   .then(function(html){
-//     //success!
-//     console.log($('div', html).length);
-//     // console.log($('big > a', html));
-//   })
-//   .catch(function(err){
-//     //handle error
-// });
 
 const puppeteer = require('puppeteer');
 // const downloads = require('download.js');
