@@ -27,9 +27,9 @@ let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicCont
     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
 
 let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let usedDocketsPath = 'named-dockets-used.txt';
+let usedDocketsPath = 'cp-named-dockets-used.txt';
 
-let pdfPath = 'data-cp';
+let pdfPath = 'data-cp/';
 
 // // MDJ Stuff
 // const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',// "ParticipantName"
@@ -303,7 +303,7 @@ async function getPDFs (browser, page, lastPageNum) {
 
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
-    if (/CP/.test(id)) {
+    if (requiredPrefix.test(id)) {
       let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
 
       // save docket id to dockets-used.txt?

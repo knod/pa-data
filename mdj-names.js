@@ -32,6 +32,8 @@ const request = require("request-promise-native");
 
 // let pdfPath = 'data-cp';
 
+// let requiredPrefix = /CP/;
+
 // MDJ Stuff
 const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',// "ParticipantName"
       lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName',
@@ -56,7 +58,8 @@ let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsP
 let nextSelector = paginationSelector + ' a:nth-last-child(2)';
 let usedDocketsPath = 'mdj-named-dockets-used.txt';
 
-let pdfPath = 'data-mdj';
+let pdfPath = 'data-mdj/';
+let requiredPrefix = /MJ/;
 
 // Standard
 const dates = {start: "01/01/2007", end: "06/25/2019"};
@@ -295,7 +298,7 @@ async function getPDFs (browser, page, lastPageNum) {
 
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
-    if (/CP/.test(id)) {
+    if (requiredPrefix.test(id)) {
       let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
 
       // save docket id to dockets-used.txt?
