@@ -9,3 +9,7 @@ mdj
 node mdj-names.js 0 0
 // node mdj-names.js 1 5
 // node mdj-names.js 6 10
+10 15 30000
+// node mdj-names.js 16 17 30000
+node mdj-names.js 18 20 30000
+// node mdj-names.js 21 23 3000

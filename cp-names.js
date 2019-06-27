@@ -125,6 +125,9 @@ async function byNamesDuring (dates) {
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\n~\n~\n~\n~\n~\n');
+
+    await page.waitFor(throttle * 10);
+
     let name = names[nameIndex];
     console.log(name);
 
