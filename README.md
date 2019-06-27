@@ -48,10 +48,16 @@ If you know sites with tutorials to do this better, let us know!
 1. wait
 1. type what michelle says to type (will be something like: `node mdj-names.js 6 10 15000`)
 1. press enter
-1. there will be a lot of errors that don't matter.
-1. As long as the number after the text 'new pg at end' keeps changing, it's good.
-1. Bad error looks like have this as their first line: Error: `Error: failed to find element matching selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl"`
-1. If that happens press `ctrl` and `C` at the same time, then message michelle
+1. this will take a long time
+1. there will be a lot of errors that don't matter
+
+## Errors to Worry About
+There will be a bunch of errors. As long as the number after the text 'new pg at end' keeps changing, it's good.
+
+Bad errors have this as their first line: Error: `Error: failed to find element matching selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl"`
+
+If that happens press `ctrl` and `C` at the same time, then message michelle
+
 
 ## Keeping Data
 

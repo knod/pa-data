@@ -3,7 +3,7 @@ already-run.txt
 #cp
 node cp-names.js 41 44
 node cp-names.js 45 47
-//node cp-names.js 48 50
+//node cp-names.js 48 50 3000
 
 mdj
 node mdj-names.js 0 0
@@ -15,3 +15,16 @@ node mdj-names.js 18 20 30000
 // node mdj-names.js 21 23 3000
 node mdj-names.js 24 26 3000
 node mdj-names.js 27 30 3000
+node mdj-names.js 31 33 3000
+node mdj-names.js 34 33 3000
+
+riley
+34 - 100
+
+m 101 - 115
+m 116 150
+node mdj-names.js 101 115 3000
+node mdj-names.js 116 150 3000
+
+v
+node mdj-names.js 200 200 3000
