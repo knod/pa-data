@@ -14,17 +14,31 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 const dates = {start: "01/01/2007", end: "06/25/2019"};
 
+// const url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx'
+
+// const searchTypeVal = "ParticipantName",
+//       docketTypeVal = "CR"
+//       nameIndexPath = 'mdj-name-index.json';
+// const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
+
+
+// let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
+//     linksSelector = '.gridViewRow a.DynamicMenuItem',
+//     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
+// let nextSelector = paginationSelector + ' a:nth-last-child(2)';
+// let usedDocketsPath = 'mdj-named-dockets-used.txt';
+
 
 async function byNamesDuring (dates) {
 
-  // Get last stored name index (number)
-  let nameIndex = JSON.parse(fs.readFileSync('name-index.json', 'utf8'));
+  // // Get last stored name index (number)
+  // let nameIndex = JSON.parse(fs.readFileSync('name-index.json', 'utf8'));
 
-  // Get next name after that
-  nameIndex += 1;
-  let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
-  let name = names[nameIndex];
-  console.log(name);
+  // // Get next name after that
+  // nameIndex += 1;
+  // let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
+  // let name = names[nameIndex];
+  // console.log(name);
 
   // submit to site along with date
   const browser = await puppeteer.launch({ headless: true });
@@ -53,79 +67,82 @@ async function byNamesDuring (dates) {
 
   await page.waitForSelector(lastNameSelector);
 
-  await page.$eval(
-    lastNameSelector,
-    function (el, str) { el.value = str },
-    name.lastName
-  );
 
-  await page.$eval(
-    firstNameSelector,
-    function (el, str) { el.value = str },
-    name.firstName
-  );
+  // Get last stored name index (number)
+  let nameIndex = JSON.parse(fs.readFileSync('name-index.json', 'utf8'));
+  let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 
-  page.select(
-    docketTypeSelector,
-    "Criminal"
-  );
+  while (nameIndex < names.length) {
+    console.log('~\n~\n~\n~\n~\n~\n~\n~\n~\n~\n');
+    let name = names[nameIndex];
+    console.log(name);
 
-  await page.$eval(
-    startDateSelector,
-    function (el, str) { el.value = str },
-    dates.start
-  );
+    await page.$eval(
+      lastNameSelector,
+      function (el, str) { el.value = str },
+      name.lastName
+    );
 
-  await page.$eval(
-    endDateSelector,
-    function (el, str) { el.value = str },
-    dates.end
-  );
+    await page.$eval(
+      firstNameSelector,
+      function (el, str) { el.value = str },
+      name.firstName
+    );
 
-  console.log(1);
-  page.click(searchSelector)
+    page.select(
+      docketTypeSelector,
+      "Criminal"
+    );
 
-  await getPDFs(browser, page, null);
+    await page.$eval(
+      startDateSelector,
+      function (el, str) { el.value = str },
+      dates.start
+    );
 
+    await page.$eval(
+      endDateSelector,
+      function (el, str) { el.value = str },
+      dates.end
+    );
+
+    console.log(1);
+    page.click(searchSelector)
+
+    let pageData = {done: false, page: 0};
+    while (!pageData.done) {
+      console.log(1.5);
+      pageData = await getPDFs(browser, page, pageData.page);
+      console.log(17);
+      console.log('pageData', pageData);
+    }  // ends while this name not done
+
+    console.log(18)
+
+    /// ***
+    // Update to new index
+    nameIndex += 1;
+    fs.writeFileSync('name-index.json', nameIndex);
+
+    console.log('x\nx\nx\nx\nx\nx\nx\nx\nx\nx\n');
+  }  // ends while name index
+
+  console.log(19);
   await browser.close();
-
-  console.log(17);
-  // Update to new index
-  fs.writeFileSync('name-index.json', nameIndex);
-
   return null;
 };  // Ends byNamesDuring
 
 
 
-
 let pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
-
-// let pageNum = 0;
 async function getPDFs (browser, page, lastPageNum) {
 
   await page.waitFor(3000);
 
   // wait for results to load
-  console.log(2);
+  console.log(2, 'last pg', lastPageNum);
   let newPageNum = lastPageNum + 1;
-  await page.waitFor(
-    async function (newPageNum, pageNumSelector) {
-
-      let elem = document.querySelector(pageNumSelector);
-      if (!elem) { return true; }
-      // console.log('a');
-      let currPage = parseInt(elem.innerText);
-      // console.log('b');
-      let isNew = currPage === newPageNum;
-      // console.log('isnew', isNew);
-      return isNew;
-    },
-    {},
-    newPageNum, pageNumSelector
-  ).catch(function(err){
-    // console.log(err);
-  });
+  console.log('new pg', newPageNum)
 
   // await page.waitForSelector(
   //     '#loading[style*="display: none;"]',
@@ -143,8 +160,6 @@ async function getPDFs (browser, page, lastPageNum) {
   let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
       linksSelector = '.gridViewRow a.DynamicMenuItem',
       docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
-      // docketIDSelector = tableSelector + ' ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_caseList_ctl00_ctl00_docketNumberLabel';
-
 
   await page.waitForSelector(
       tableSelector,
@@ -170,6 +185,22 @@ async function getPDFs (browser, page, lastPageNum) {
   }).catch(function(err){
     // console.log(err);
   });
+
+  // Make sure we're done going to the next page
+  if (paginated) {
+    await page.waitFor(
+      async function (newPageNum, pageNumSelector) {
+        let elem = document.querySelector(pageNumSelector);
+        let currPage = parseInt(elem.innerText);
+        let isNew = currPage === newPageNum;
+        return isNew;
+      },
+      {},
+      newPageNum, pageNumSelector
+    ).catch(function(err){
+      // console.log(err);
+    });
+  }
 
   console.log(4.5)
   // Because we're somehow missing this sometimes...?
@@ -230,7 +261,7 @@ async function getPDFs (browser, page, lastPageNum) {
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
     if (/CP/.test(id)) {
-      let text = '\n' + id;
+      let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
 
       // save docket id to dockets-used.txt?
       fs.appendFileSync('named-dockets-used.txt', text, function (err) {
@@ -238,17 +269,21 @@ async function getPDFs (browser, page, lastPageNum) {
       });
 
       // Download pdfs
-      downloadPDF(linksText[index + adder], id + '-docket' + '.pdf');
+      downloadPDF(linksText[index + adder], id + '-docket.pdf');
       // Because the linksText list is twice as long
       adder++
-      downloadPDF(linksText[index + adder], id + '-summary' + '.pdf');
+      downloadPDF(linksText[index + adder], id + '-summary.pdf');
     }
   }
 
 
   console.log(9, paginated);
   // hit 'next' if we need to
+
+  let done = true;
   if (paginated) {
+    // have to check
+    done = false;
 
     console.log(10);
     const disabledText = await page.evaluate(
@@ -267,16 +302,17 @@ async function getPDFs (browser, page, lastPageNum) {
 
 
     console.log(12);
+    // let thisPageNum = await page.evaluate(
+    //   (pageNumSelector) => {
+    //     return parseInt(document.querySelector(pageNumSelector).innerText);
+    //   },
+    //   pageNumSelector
+    // );
+
     if (disabledText.indexOf('Next') === -1) {
 
-      let thisPageNum = await page.evaluate(
-        (pageNumSelector) => {
-          return parseInt(document.querySelector(pageNumSelector).innerText);
-        },
-        pageNumSelector
-      );
 
-      console.log('curr page', thisPageNum)
+      // console.log('new page', newPageNum)
 
       console.log(13);
       // console.log(paginated, disabledText);
@@ -293,14 +329,22 @@ async function getPDFs (browser, page, lastPageNum) {
       page.click(nextButton)
 
 
-  console.log(14);
-      await getPDFs(browser, page, thisPageNum);
-    }
+      console.log(14);
+      // await getPDFs(browser, page, newPageNum);
+      // If done
+      // return {done: false, page: newPageNum};
+    } else {
+      // return {done: true, page: newPageNum};
+      done = true;
+    } // ends if on the last page
 
-  console.log(15);
-    return null;
+    // should never get here
+    console.log(15);
+
   }  // ends if paginated
-  console.log(16);
+  console.log(16, done);
+  console.log('new pg at end', newPageNum);
+  return {done: done, page: newPageNum};
 };  // Ends next
 
 

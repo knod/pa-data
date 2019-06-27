@@ -1,4 +1,4 @@
-// mdj-names.js
+// cp-names.js
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
@@ -40,7 +40,7 @@ const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSear
       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
       resultsSelctor = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
-      paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',// > table .PageNavigationContainer a',
+      paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',// > table .PageNavigationContainer a',
       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
 const searchTypeVal = "ParticipantName",
@@ -287,7 +287,6 @@ async function getPDFs (browser, page, lastPageNum) {
     if (/CP/.test(id)) {
       let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
 
-      console.log('saving docket id');
       // save docket id to dockets-used.txt?
       fs.appendFileSync(usedDocketsPath, text, function (err) {
         if (err) console.log(err);
