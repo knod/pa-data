@@ -39,7 +39,10 @@ If you know sites with tutorials to do this better, let us know!
   - If you downloaded and extracted: put it where node is
   - DO NOT DELETE THIS FOLDER
 
-1. **if it's not there already, add a folder called 'data-mdj'**
+## Directories
+1. **if it's not there already, add a folder called `data-mdj`**
+1. Make another folder somewhere so you can move the data there periodically. Call it whatever you want. `pa-data-data` is one idea and is how I'll talk about it from now on.  Thumb drive is good if you don't want it on your machine.
+1. Make a folder inside `pa-data-data` called `data-mdj`
 
 ## Command prompt/terminal
 1. open command prompt
@@ -64,8 +67,8 @@ If that happens press `ctrl` and `C` at the same time, then message michelle
 
 **When your program is stopped**
 
-1. *move* the pdfs from the 'data-mdj' folder into one of your folders, wherever you prefer. Thumb drive is good if you don't want it on your machine.
-1. **copy** the 'mdj-named-dockets-used.txt' into that folder too. Replace an older version if you need to.
+1. **move** the pdfs from the project's `data-mdj` folder into the `data-mdj` you made in `pa-data-data`.
+1. **copy** the 'mdj-named-dockets-used.txt' into just the `pa-data-data` folder. Replace an older version if you need to.
 
 ## If something is weird and you're not sure
 don't hesitate to message michelle. She wants your sweet sweet messages.

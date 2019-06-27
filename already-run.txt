@@ -1,12 +1,18 @@
 already-run.txt
 
-#cp
+# cp
 node cp-names.js 41 44
 node cp-names.js 45 47
 //node cp-names.js 48 50 3000
 node cp-names.js 51 53 3000
+node cp-names.js 69 80 3000
 
-mdj
+# mdj
+
+now in:
+
+https://docs.google.com/spreadsheets/d/1HkdWJVs0fMROBgHt8xol1gVV252ln8D5dhSEuDQzeT4/edit?usp=sharing
+
 node mdj-names.js 0 0
 // node mdj-names.js 1 5
 // node mdj-names.js 6 10
@@ -26,6 +32,7 @@ m 101 - 115
 m 116 150
 node mdj-names.js 101 115 3000
 node mdj-names.js 116 150 3000
+node mdj-names.js 206 207 3000
 
 v
 node mdj-names.js 200 200 3000
