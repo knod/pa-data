@@ -29,16 +29,17 @@ If you know sites with tutorials to do this better, let us know!
 - If you downloaded nodejs manually, find where it got installed on your computer. May be in a hidden folder. We're working on figuring that out.
 
 ## Get code
-- go to https://github.com/knod/pa-data
-- If you know how:
+1. go to https://github.com/knod/pa-data
+1. If you know how:
   - clone the repo
-- If not:
+1. If not:
   - click 'clone or download'
   - click 'download zip'?
   - extract folder
   - If you downloaded and extracted: put it where node is
   - DO NOT DELETE THIS FOLDER
-- if it's not there already, add a folder called 'data-mdj'
+
+1. *if it's not there already, add a folder called 'data-mdj'*
 
 ## Command prompt/terminal
 1. open command prompt
