@@ -31,9 +31,19 @@ async function byNamesDuring (dates) {
   const page = await browser.newPage();
   await page.setViewport({width: 1920, height: 2000});
 
-  await page.goto('https://ujsportal.pacourts.us/DocketSheets/CP.aspx');
+  await page.goto('https://ujsportal.pacourts.us/DocketSheets/CP.aspx')
 
-  await page.waitForSelector(searchTypeSelector);
+  // if page not found, stop
+  let notFound = false;
+  await page.waitForSelector(searchTypeSelector)
+    .catch(function(err){
+      notFound = true;
+      console.log('page not found');
+    });
+  if (notFound) {
+    await browser.close();
+    return false
+  };
 
   // Select search by name
   page.select(

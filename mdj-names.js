@@ -59,9 +59,19 @@ async function byNamesDuring (dates) {
   const page = await browser.newPage();
   await page.setViewport({width: 1920, height: 2000});
 
-  await page.goto(url);
+  await page.goto(url)
 
-  await page.waitForSelector(searchTypeSelector);
+  // If page not found, stop
+  let notFound = false;
+  await page.waitForSelector(searchTypeSelector)
+    .catch(function(err){
+      notFound = true;
+      console.log('page not found');
+    });
+  if (notFound) {
+    await browser.close();
+    return false
+  };
 
   // Select search by name
   page.select(
@@ -185,6 +195,7 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(4.5)
   // Because we're somehow missing this sometimes...?
+  // Maybe not...
   const navText = await page.evaluate(
     (paginationSelector) => {
       return document.querySelector(paginationSelector).innerText;
@@ -305,11 +316,11 @@ async function getPDFs (browser, page, lastPageNum) {
       page.click(nextButton)
 
 
-  console.log(14);
+      console.log(14);
       await getPDFs(browser, page, thisPageNum);
     }
 
-  console.log(15);
+    console.log(15);
     return null;
   }  // ends if paginated
   console.log(16);
