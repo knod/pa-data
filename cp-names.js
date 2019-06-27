@@ -301,7 +301,7 @@ async function downloadPDF(pdfURL, outputFilename) {
     uri: pdfURL, encoding: null,
     headers: {'User-Agent': 'cfb-data-analysis'}
   });
-  let path = 'data/' + outputFilename;
+  let path = 'data-cp/' + outputFilename;
   // console.log("To " + path);
   fs.writeFileSync(path, pdfBuffer, function (err) { if (err) {console.log(err)} });
 }
