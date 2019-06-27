@@ -8,7 +8,7 @@ to have these on your computer
 
 Use homebrew if you've got it (you'll know if you do). Installing globally is easiest.
 
-If you don't know how to install it already, download it: https://nodejs.org/en/download/. It may get put in a hidden folder. We're trying to figure that out.
+If you don't know how to install it already, download it manually: https://nodejs.org/en/download/. It may get put in a hidden folder. We're trying to figure that out.
 
 ## git
 
@@ -26,7 +26,7 @@ If you know sites with tutorials to do this better, let us know!
 - plug your computer into power
 
 ## nodejs
-- find where node got installed on your computer. May be in a hidden folder. We're working on figuring that out.
+- If you downloaded nodejs manually, find where it got installed on your computer. May be in a hidden folder. We're working on figuring that out.
 
 ## Get code
 - go to https://github.com/knod/pa-data
@@ -37,6 +37,7 @@ If you know sites with tutorials to do this better, let us know!
   - click 'download zip'?
   - extract folder
   - If you downloaded and extracted: put it where node is
+  - If changes need to be made, you may end up doing this multiple times. Sorry :(
 
 ## Command prompt/terminal
 1. open command prompt
