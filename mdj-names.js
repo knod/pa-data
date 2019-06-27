@@ -63,7 +63,7 @@ let requiredPrefix = /MJ/;
 
 // Standard
 const dates = {start: "01/01/2007", end: "06/25/2019"};
-const throttle = 15 * 1000;
+let throttle = 15 * 1000;
 // Inclusive
 // orignal run: index 5
 // latest: node mdj-names.js 5 10

@@ -63,7 +63,7 @@ let requiredPrefix = /CP/;
 
 // Standard
 const dates = {start: "01/01/2007", end: "06/25/2019"};
-const throttle = 15 * 1000;
+let throttle = 15 * 1000;
 // Inclusive
 // orignal run: index 41
 // latest: node cp-names.js 41 45
