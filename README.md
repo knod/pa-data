@@ -12,9 +12,13 @@ If you don't know how to install it already, download it: https://nodejs.org/en/
 
 ## git
 
-Same kind of deal here
+Same kind of deal here.
 
-Download here into the same folder as nodejs: https://git-scm.com/download/win
+Download here (https://git-scm.com/download/win) into the same folder as nodejs? We're working on figuring this out.
+
+## halp us!
+
+If you know sites with tutorials to do this better, let us know!
 
 
 # Do
