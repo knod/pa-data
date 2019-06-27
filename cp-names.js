@@ -61,18 +61,18 @@ let requiredPrefix = /CP/;
 
 
 
-
-
-
-
 // Standard
 const dates = {start: "01/01/2007", end: "06/25/2019"};
-const throttle = 10 * 1000;
+const throttle = 15 * 1000;
 // Inclusive
 // orignal run: index 41
 // latest: node cp-names.js 41 45
-let namesStartIndex = process.argv[2],
-    namesEndIndex   = process.argv[3];
+let namesStartIndex = parseInt(process.argv[2]),
+    namesEndIndex   = parseInt(process.argv[3]);
+
+if (process.argv[4]) {
+  throttle = parseInt(process.argv[4]);
+}
 
 console.log(namesStartIndex, namesEndIndex);
 

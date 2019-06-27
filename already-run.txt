@@ -1,9 +1,11 @@
 already-run.txt
 
 #cp
-cp-names.js 41 44
-cp-names.js 45 50
+node cp-names.js 41 44
+node cp-names.js 45 47
+//node cp-names.js 48 50
 
 mdj
 node mdj-names.js 0 0
-node mdj-names.js 1 5
+// node mdj-names.js 1 5
+// node mdj-names.js 6 10

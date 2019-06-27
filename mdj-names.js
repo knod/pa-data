@@ -63,12 +63,16 @@ let requiredPrefix = /MJ/;
 
 // Standard
 const dates = {start: "01/01/2007", end: "06/25/2019"};
-const throttle = 10 * 1000;
+const throttle = 15 * 1000;
 // Inclusive
 // orignal run: index 5
 // latest: node mdj-names.js 5 10
-let namesStartIndex = process.argv[2],
-    namesEndIndex   = process.argv[3];
+let namesStartIndex = parseInt(process.argv[2]),
+    namesEndIndex   = parseInt(process.argv[3]);
+
+if (process.argv[4]) {
+  throttle = parseInt(process.argv[4]);
+}
 
 async function byNamesDuring (dates) {
 
