@@ -67,6 +67,8 @@ let pdfPath = 'data-mdj';
 // Standard
 const dates = {start: "01/01/2007", end: "06/25/2019"};
 const throttle = 10 * 1000;
+// const waitToConnect = 120 * 1000;
+
 // Inclusive
 // orignal run: index?
 // last run: ? ?
@@ -96,7 +98,7 @@ async function byNamesDuring (dates) {
   // if page not found, stop
   let notFound = false;
   await page.waitForSelector(searchTypeSelector)
-    .catch(function(err){
+    .catch(async function(err){
       notFound = true;
       console.log('page not found');
       await browser.close();

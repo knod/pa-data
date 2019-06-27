@@ -14,7 +14,6 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
       resultsSelctor = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
-const dates = {start: "01/01/2007", end: "06/25/2019"};
 
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx'
 
@@ -74,6 +73,8 @@ const throttle = 10 * 1000;
 let namesStartIndex = process.argv[2],
     namesEndIndex   = process.argv[3];
 
+console.log(namesStartIndex, namesEndIndex);
+
 async function byNamesDuring (dates) {
 
   fs.writeFileSync(nameIndexPath, namesStartIndex);
@@ -97,7 +98,7 @@ async function byNamesDuring (dates) {
   // if page not found, stop
   let notFound = false;
   await page.waitForSelector(searchTypeSelector)
-    .catch(function(err){
+    .catch(async function(err){
       notFound = true;
       console.log('page not found');
       await browser.close();

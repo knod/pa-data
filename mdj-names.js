@@ -64,8 +64,8 @@ const throttle = 10 * 1000;
 // Inclusive
 // orignal run: index 5
 // latest: node mdj-names.js 5 10
-let startIndex = process.argv[2],
-    endIndex   = process.argv[3];
+let namesStartIndex = process.argv[2],
+    namesEndIndex   = process.argv[3];
 
 async function byNamesDuring (dates) {
 
@@ -90,7 +90,7 @@ async function byNamesDuring (dates) {
   // if page not found, stop
   let notFound = false;
   await page.waitForSelector(searchTypeSelector)
-    .catch(function(err){
+    .catch(async function(err){
       notFound = true;
       console.log('page not found');
       await browser.close();
