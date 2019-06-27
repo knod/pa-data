@@ -30,6 +30,7 @@ let nextSelector = paginationSelector + ' a:nth-last-child(2)';
 let usedDocketsPath = 'cp-named-dockets-used.txt';
 
 let pdfPath = 'data-cp/';
+let requiredPrefix = /CP/;
 
 // // MDJ Stuff
 // const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',// "ParticipantName"
