@@ -122,7 +122,7 @@ async function byNamesDuring (dates) {
   let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 
   while (nameIndex <= namesEndIndex) {
-    console.log('~\n~\n~\n~\n~\n' + nameIndex + '\n~\n~\n~\n~\n~\n');
+    console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
 
     await page.waitFor(throttle * 10);
 
@@ -314,10 +314,10 @@ async function getPDFs (browser, page, lastPageNum) {
       });
 
       // Download pdfs
-      downloadPDF(linksText[index + adder], id + '-docket.pdf');
+      downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
       adder++
-      downloadPDF(linksText[index + adder], id + '-summary.pdf');
+      downloadPDF(linksText[index + adder], text + '-summary.pdf');
     }
   }
 

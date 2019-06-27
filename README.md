@@ -39,7 +39,7 @@ If you know sites with tutorials to do this better, let us know!
   - If you downloaded and extracted: put it where node is
   - DO NOT DELETE THIS FOLDER
 
-1. *if it's not there already, add a folder called 'data-mdj'*
+1. **if it's not there already, add a folder called 'data-mdj'**
 
 ## Command prompt/terminal
 1. open command prompt
@@ -62,9 +62,10 @@ If that happens press `ctrl` and `C` at the same time, then message michelle
 
 ## Keeping Data
 
-When your program is stopped
-1. move data from the 'data-mdj' folder into one of your folders, wherever you prefer. Thumb drive is good if you don't want it on your machine.
-1. *copy* the 'mdj-named-dockets-used.txt' into that folder too. Replace an older version if you need to.
+**When your program is stopped**
+
+1. *move* the pdfs from the 'data-mdj' folder into one of your folders, wherever you prefer. Thumb drive is good if you don't want it on your machine.
+1. **copy** the 'mdj-named-dockets-used.txt' into that folder too. Replace an older version if you need to.
 
 ## If something is weird and you're not sure
 don't hesitate to message michelle. She wants your sweet sweet messages.
