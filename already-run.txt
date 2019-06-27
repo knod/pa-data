@@ -13,3 +13,5 @@ node mdj-names.js 0 0
 // node mdj-names.js 16 17 30000
 node mdj-names.js 18 20 30000
 // node mdj-names.js 21 23 3000
+node mdj-names.js 24 26 3000
+node mdj-names.js 27 30 3000

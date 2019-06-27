@@ -37,8 +37,7 @@ If you know sites with tutorials to do this better, let us know!
   - click 'download zip'?
   - extract folder
   - If you downloaded and extracted: put it where node is
-  - If changes need to be made, you may end up doing this multiple times. Sorry :(
-- go to extracted folder (pa-data)
+  - DO NOT DELETE THIS FOLDER
 - if it's not there already, add a folder called 'data-mdj'
 
 ## Command prompt/terminal
