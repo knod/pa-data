@@ -1,4 +1,5 @@
 // mdj-names.js
+
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
@@ -59,8 +60,16 @@ let pdfPath = 'data-mdj';
 
 // Standard
 const dates = {start: "01/01/2007", end: "06/25/2019"};
+const throttle = 10 * 1000;
+// Inclusive
+// orignal run: index 5
+// latest: node mdj-names.js 5 10
+let startIndex = process.argv[2],
+    endIndex   = process.argv[3];
 
 async function byNamesDuring (dates) {
+
+  fs.writeFileSync(nameIndexPath, namesStartIndex);
 
   // // Get last stored name index (number)
   // let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
@@ -84,6 +93,8 @@ async function byNamesDuring (dates) {
     .catch(function(err){
       notFound = true;
       console.log('page not found');
+      await browser.close();
+      return false
     });
   if (notFound) {
     await browser.close();
@@ -103,7 +114,7 @@ async function byNamesDuring (dates) {
   let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
   let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 
-  while (nameIndex < names.length) {
+  while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\n~\n~\n~\n~\n~\n');
     let name = names[nameIndex];
     console.log(name);
@@ -164,7 +175,7 @@ async function byNamesDuring (dates) {
 
 async function getPDFs (browser, page, lastPageNum) {
 
-  await page.waitFor(3000);
+  await page.waitFor(throttle);
 
   // wait for results to load
   console.log(2, 'last pg', lastPageNum);
@@ -287,7 +298,6 @@ async function getPDFs (browser, page, lastPageNum) {
     if (/CP/.test(id)) {
       let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
 
-      console.log('saving docket id');
       // save docket id to dockets-used.txt?
       fs.appendFileSync(usedDocketsPath, text, function (err) {
         if (err) console.log(err);

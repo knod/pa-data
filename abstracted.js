@@ -19,7 +19,7 @@ const request = require("request-promise-native");
 
 // const searchTypeVal = "Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
 //       docketTypeVal = "Criminal"
-//       nameIndexPath = 'name-index.json';
+//       nameIndexPath = 'cp-name-index.json';
 // const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
 // let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
@@ -57,10 +57,25 @@ let usedDocketsPath = 'mdj-named-dockets-used.txt';
 
 let pdfPath = 'data-mdj';
 
+
+
+
+
+
+
+
 // Standard
 const dates = {start: "01/01/2007", end: "06/25/2019"};
+const throttle = 10 * 1000;
+// Inclusive
+// orignal run: index?
+// last run: ? ?
+let namesStartIndex = process.argv[2],
+    namesEndIndex   = process.argv[3];
 
 async function byNamesDuring (dates) {
+
+  fs.writeFileSync(nameIndexPath, namesStartIndex);
 
   // // Get last stored name index (number)
   // let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
@@ -84,6 +99,8 @@ async function byNamesDuring (dates) {
     .catch(function(err){
       notFound = true;
       console.log('page not found');
+      await browser.close();
+      return false
     });
   if (notFound) {
     await browser.close();
@@ -103,7 +120,7 @@ async function byNamesDuring (dates) {
   let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
   let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 
-  while (nameIndex < names.length) {
+  while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\n~\n~\n~\n~\n~\n');
     let name = names[nameIndex];
     console.log(name);
@@ -164,7 +181,7 @@ async function byNamesDuring (dates) {
 
 async function getPDFs (browser, page, lastPageNum) {
 
-  await page.waitFor(3000);
+  await page.waitFor(throttle);
 
   // wait for results to load
   console.log(2, 'last pg', lastPageNum);
