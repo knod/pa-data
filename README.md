@@ -53,6 +53,12 @@ If you know sites with tutorials to do this better, let us know!
 1. Bad error looks like have this as their first line: Error: `Error: failed to find element matching selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl"`
 1. If that happens press `ctrl` and `C` at the same time, then message michelle
 
+## Keeping Data
+
+When your program is stopped
+1. move data from the 'data-mdj' folder into one of your folders, wherever you prefer. Thumb drive is good if you don't want it on your machine.
+1. *copy* the 'mdj-named-dockets-used.txt' into that folder too. Replace an older version if you need to.
+
 ## If something is weird and you're not sure
 don't hesitate to message michelle. She wants your sweet sweet messages.
 

@@ -122,7 +122,7 @@ async function byNamesDuring (dates) {
   let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 
   while (nameIndex <= namesEndIndex) {
-    console.log('~\n~\n~\n~\n~\n~\n~\n~\n~\n~\n');
+    console.log('~\n~\n~\n~\n~\n' + nameIndex + '\n~\n~\n~\n~\n~\n');
 
     await page.waitFor(throttle * 10);
 
