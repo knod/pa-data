@@ -24,7 +24,7 @@ async function byNamesDuring (dates) {
   index += 1;
   let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
   let name = names[0];
-  // console.log(name);
+  console.log(name);
 
   // submit to site along with date
   const browser = await puppeteer.launch({ headless: true });
@@ -78,8 +78,8 @@ async function byNamesDuring (dates) {
 
   await getPDFs(browser, page, null);
 
-  index++
-  fs.writeFileSync('name-index.json', index);
+  // index++
+  // fs.writeFileSync('name-index.json', index);
 
   // await page.screenshot({path: 'name-test.png'});
   await browser.close();
@@ -91,10 +91,10 @@ async function byNamesDuring (dates) {
 
 let pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
-let pageNum = 0;
+// let pageNum = 0;
 async function getPDFs (browser, page, lastPageNum) {
-  pageNum++
-  console.log('page', pageNum);
+  // pageNum++
+  // console.log('"page"', pageNum);
 
 
   // wait for results to load
@@ -105,16 +105,18 @@ async function getPDFs (browser, page, lastPageNum) {
 
       let elem = document.querySelector(pageNumSelector);
       if (!elem) { return true; }
-      console.log('a');
+      // console.log('a');
       let currPage = parseInt(elem.innerText);
-      console.log('b');
+      // console.log('b');
       let isNew = currPage === newPageNum;
-      console.log('isnew', isNew);
+      // console.log('isnew', isNew);
       return isNew;
     },
     {},
     newPageNum, pageNumSelector
-  );
+  ).catch(function(err){
+    // console.log(err);
+  });
 
   // await page.waitForSelector(
   //     '#loading[style*="display: none;"]',
@@ -122,9 +124,11 @@ async function getPDFs (browser, page, lastPageNum) {
   // );
 
   await page.waitForSelector(
-      resultsSelctor,
-      {timeout: 180000}
-  );
+      resultsSelctor//,
+      // {timeout: 180000}
+  ).catch(function(err){
+    // console.log(err);
+  });
   
   console.log(3);
   let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
@@ -136,17 +140,21 @@ async function getPDFs (browser, page, lastPageNum) {
   await page.waitForSelector(
       tableSelector,
       {timeout: 5000}
-  );
+  ).catch(function(err){
+    // console.log(err);
+  });
 
   console.log(4);
   // See if we're on the last page of multiple pages
   // Also wait a bit to let the table items load
   // I know of no other way that would be useful
   let paginated = false;
+  let nextSelector = paginationSelector + ' a:nth-last-child(2)';
   await page.waitForSelector(
-      paginationSelector,
+      nextSelector,
       {timeout: 5000}
   ).then(function(arg){
+    // console.log('pagination next:', arg.innerText);
     if (arg) {
       paginated = true;
     }
@@ -154,6 +162,22 @@ async function getPDFs (browser, page, lastPageNum) {
     // console.log(err);
   });
 
+  console.log(4.5)
+  Because we're somehow missing this sometimes...?
+  const navText = await page.evaluate(
+    (paginationSelector) => {
+      return document.querySelector(paginationSelector).innerText;
+    },
+    paginationSelector
+  ).then(function (navText) {
+    if (navText) {
+      console.log('nav:', paginated, navText);
+      paginated = true;
+    }
+  }).catch(function (err){
+    // console.log(err);
+  });
+  console.log('nav:', paginated, navText);
 
   console.log(5);
   // go down rows getting links and ids
@@ -188,7 +212,6 @@ async function getPDFs (browser, page, lastPageNum) {
   // (Because the linksText list is twice as long)
   let adder = 0;
 
-
   console.log(8);
   // download both pdfs
   for (let index = 0; index < docketIDTexts.length; index++) {
@@ -214,11 +237,11 @@ async function getPDFs (browser, page, lastPageNum) {
   }
 
 
-  console.log(9);
+  console.log(9, paginated);
   // hit 'next' if we need to
   if (paginated) {
 
-  console.log(10);
+    console.log(10);
     const disabledText = await page.evaluate(
       (paginationSelector) => {
         let selector = paginationSelector + ' a[disabled]';
@@ -247,7 +270,7 @@ async function getPDFs (browser, page, lastPageNum) {
       console.log('curr page', thisPageNum)
 
       console.log(13);
-      console.log(paginated, disabledText);
+      // console.log(paginated, disabledText);
 
       // const nextLink = await page.evaluate(
       //   (paginationSelector) => {
@@ -268,6 +291,7 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log(15);
     return null;
   }  // ends if paginated
+  console.log(16);
 };  // Ends next
 
 
@@ -287,9 +311,9 @@ async function downloadPDF(pdfURL, outputFilename) {
 // Test
 byNamesDuring(dates)
   .then((value) => {
-    gotIt = true;
+    // gotIt = true;
     console.log('success');
-      // console.log(value); // Success!
+    // console.log(value); // Success!
   }).catch((err) => {
     console.log(err);
 });
