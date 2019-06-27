@@ -90,7 +90,7 @@ console.log(3)
       let data = [document.querySelector('#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchResultsGridControl_caseList_ctl00_ctl00_docketNumberLabel').innerText];
       let moreData = Array.from(
         document.querySelectorAll('#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_docketNumberCriteriaControl_searchResultsGridControl_caseList_ctl00_ctl00_printControl_printMenun0Items a'),
-          element => element.href
+        element => element.href
       )
       return data.concat(moreData);
     }
