@@ -77,8 +77,9 @@ let namesStartIndex = parseInt(process.argv[2]),
 
 if (process.argv[4]) {
   throttle = parseInt(process.argv[4]);
-  fs.writeFileSync(nameIndexPath, namesStartIndex);
 }
+
+fs.writeFileSync(nameIndexPath, namesStartIndex);
 
 console.log(namesStartIndex, namesEndIndex);
 
