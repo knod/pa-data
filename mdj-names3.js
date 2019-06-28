@@ -102,7 +102,7 @@ async function byNamesDuring (dates) {
       notFound = true;
       console.log('page not found');
       await browser.close();
-      return false
+      return 'not found';
     });
   if (notFound) {
     await browser.close();
@@ -414,9 +414,16 @@ let doPlaySound = process.argv[5];
   byNamesDuring(dates)
     .then((value) => {
       // gotIt = true;
-      console.log('success');
+      console.log('success probably');
       // console.log(value); // Success!
-      if (doPlaySound !== 'no') { alert.success(); }
+      if (doPlaySound !== 'no') {
+        if (value === 'not found') {
+          alert.error();
+        } else {
+          alert.success();
+        }
+      }
+
     }).catch((err) => {
       console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
       console.log(err);
