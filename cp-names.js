@@ -134,7 +134,9 @@ async function byNamesDuring (dates) {
       lastNameSelector,
       function (el, str) { el.value = str },
       name.lastName
-    );
+    ).catch(function(err){
+      console.log('Sorry, manual rerun needed. Start from last finished name index. Check the "mdj-name-index.json" file.')
+    });
 
     await page.$eval(
       firstNameSelector,
@@ -408,11 +410,13 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 
 // Test
+
 byNamesDuring(dates)
   .then((value) => {
     // gotIt = true;
     console.log('success');
     // console.log(value); // Success!
   }).catch((err) => {
+    console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
     console.log(err);
 });

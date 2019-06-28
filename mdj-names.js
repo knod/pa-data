@@ -413,5 +413,6 @@ byNamesDuring(dates)
     console.log('success');
     // console.log(value); // Success!
   }).catch((err) => {
+    console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n')
     console.log(err);
 });

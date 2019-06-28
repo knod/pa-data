@@ -3,61 +3,66 @@ const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
 
-// // CP Stuff
-// const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
-//       lastNameSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl",
-//       firstNameSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_firstNameControl",
-//       docketTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_docketTypeListControl",
-//       startDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox",
-//       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
-//       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
-//       resultsSelctor = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
-//       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
-// const dates = {start: "01/01/2007", end: "06/25/2019"};
+// CP Stuff
+let cpVars = {
+  searchTypeSelector: "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
+  lastNameSelector: "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl",
+  firstNameSelector: "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_firstNameControl",
+  docketTypeSelector: "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_docketTypeListControl",
+  startDateSelector: "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox",
+  endDateSelector: "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
+  searchSelector: "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
+  resultsSelctor: "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+  paginationSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager',
 
-// const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx'
+  url: 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx',
 
-// const searchTypeVal = "Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-//       docketTypeVal = "Criminal"
-//       nameIndexPath = 'cp-name-index.json';
-// const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
+  searchTypeVal: "Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  docketTypeVal: "Criminal",
+  nameIndexPath: 'cp-name-index.json',
 
-// let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
-//     linksSelector = '.gridViewRow a.DynamicMenuItem',
-//     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
+  tableSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
+  linksSelector: '.gridViewRow a.DynamicMenuItem',
+  docketIDSelector: '.gridViewRow' + ' td:nth-child(2)',
 
-// let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-// let usedDocketsPath = 'cp-named-dockets-used.txt';
+  usedDocketsPath: 'cp-named-dockets-used.txt',
 
-// let pdfPath = 'data-cp/';
-// let requiredPrefix = /CP/;
+  pdfPath: 'data-cp/',
+  requiredPrefix: /CP/,
+
+};
+cpVars.pageNumSelector = cpVars.paginationSelector + ' a[style="text-decoration:none;"]';
+cpVars.nextSelector = cpVars.paginationSelector + ' a:nth-last-child(2)';
 
 // MDJ Stuff
-const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',// "ParticipantName"
-      lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName',
-      firstNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtFirstName',
-      docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType', // "CR"
-      startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
-      endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
-      searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-      resultsSelctor = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
-      paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',// > table .PageNavigationContainer a',
-      url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
+let mdjVars = {
+  searchTypeSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',// "ParticipantName,
+  lastNameSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName',
+  firstNameSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtFirstName',
+  docketTypeSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType', // "CR,
+  startDateSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
+  endDateSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
+  searchSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
+  resultsSelctor: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
+  paginationSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',// > table .PageNavigationContainer a',
+  url: 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx',
 
-const searchTypeVal = "ParticipantName",
-      docketTypeVal = "CR"
-      nameIndexPath = 'mdj-name-index.json';
-const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
+  searchTypeVal: "ParticipantName",
+  docketTypeVal: "CR",
+  nameIndexPath: 'mdj-name-index.json',
 
+  tableSelector: '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
+  linksSelector: '.gridViewRow a.DynamicMenuItem',
+  docketIDSelector: '.gridViewRow' + ' td:nth-child(2)',
 
-let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
-    linksSelector = '.gridViewRow a.DynamicMenuItem',
-    docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
-let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let usedDocketsPath = 'mdj-named-dockets-used.txt';
+  usedDocketsPath: 'mdj-named-dockets-used.txt',
 
-let pdfPath = 'data-mdj/';
-let requiredPrefix = /MJ/;
+  pdfPath: 'data-mdj/',
+  requiredPrefix: /MJ/,
+};
+mdjVars.pageNumSelector = mdjVars.paginationSelector + ' a[styl:"text-decoration:none;"]';
+mdjVars.nextSelector = mdjVars.paginationSelector + ' a:nth-last-child(2)';
+
 
 
 
@@ -81,7 +86,33 @@ if (process.argv[4]) {
   throttle = parseInt(process.argv[4]);
 }
 
-async function byNamesDuring (dates) {
+async function byNamesDuring (dates, vars) {
+
+  const searchTypeSelector = vars.searchTypeSelector,
+        lastNameSelector = vars.lastNameSelector,
+        firstNameSelector = vars.firstNameSelector,
+        docketTypeSelector = vars.docketTypeSelector,
+        startDateSelector = vars.startDateSelector,
+        endDateSelector = vars.endDateSelector,
+        searchSelector = vars.searchSelector,
+        resultsSelctor = vars.resultsSelctor,
+        paginationSelector = vars.paginationSelector,
+        url = vars.url;
+
+  const searchTypeVal = vars.searchTypeVal,
+        docketTypeVal = vars.docketTypeVal,
+        nameIndexPath = vars.nameIndexPath;
+  const pageNumSelector = vars.pageNumSelector;
+
+
+  let tableSelector = vars.tableSelector,
+      linksSelector = vars.linksSelector,
+      docketIDSelector = vars.docketIDSelector;
+  let nextSelector = vars.nextSelector;
+  let usedDocketsPath = vars.usedDocketsPath;
+
+  let pdfPath = vars.pdfPath;
+  let requiredPrefix = vars.requiredPrefix;
 
   fs.writeFileSync(nameIndexPath, namesStartIndex);
 
@@ -124,6 +155,14 @@ async function byNamesDuring (dates) {
   await page.waitForSelector(lastNameSelector);
 
 
+  let onStuck = async function (err) {
+      page.wait(stuckDelay);
+      console.log('waiting....\n\n\n\n', err);
+      repeatIfStuck();
+      await browser.close();
+      return;
+  }
+
   // Get last stored name index (number)
   let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
   let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
@@ -136,11 +175,17 @@ async function byNamesDuring (dates) {
     let name = names[nameIndex];
     console.log(name);
 
+    let stuckDelay = 60000 * stuckCount;
     await page.$eval(
       lastNameSelector,
-      function (el, str) { el.value = str },
+      function (el, str) {
+        el.value = str
+        return page;
+      },
       name.lastName
-    );
+    ).then(function(){
+      stuckCount = 0;
+    }).catch(onStuck);
 
     await page.$eval(
       firstNameSelector,
@@ -414,11 +459,29 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 
 // Test
-byNamesDuring(dates)
-  .then((value) => {
-    // gotIt = true;
-    console.log('success');
-    // console.log(value); // Success!
-  }).catch((err) => {
-    console.log(err);
-});
+let stuckCount = -1;
+let repeatIfStuck = function () {
+
+  // 10 mins at most
+  stuckCount++;
+  stuckCount = stuckCount % 10;
+
+  console.log('stuckCount:', stuckCount);
+
+  byNamesDuring(dates, mdjVars)
+    .then((value) => {
+      // gotIt = true;
+      console.log('success');
+      // console.log(value); // Success!
+    }).catch((err) => {
+      console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
+      console.log(err);
+  });
+}
+
+repeatIfStuck()
+
+module.exports.repeatIfStuck = repeatIfStuck;
+module.exports.byNamesDuring = byNamesDuring;
+module.exports.mdjVars = mdjVars;
+module.exports.cpVars = cpVars;

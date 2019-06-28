@@ -1,11 +1,22 @@
 already-run.txt
 
+420 names to start with
+
 # cp
 node cp-names.js 41 44
 node cp-names.js 45 47
-//node cp-names.js 48 50 3000
+node cp-names.js 48 50 3000
 node cp-names.js 51 53 3000
 node cp-names.js 69 80 3000
+node cp-names.js 81 90 3000
+node cp-names.js 91 111 3000
+
+node cp-names.js 401 419 3000
+xnode cp-names.js 301 320 3000
+node cp-names.js 309 320 3000
+node cp-names.js 321 332 3000
+node cp-names.js 333 350 3000
+node cp-names.js 345 350 3000
 
 # mdj
 
@@ -24,6 +35,8 @@ node mdj-names.js 24 26 3000
 node mdj-names.js 27 30 3000
 node mdj-names.js 31 33 3000
 node mdj-names.js 34 33 3000
+node mdj-names.js 301 305 3000
+node mdj-names.js 306 320 3000
 
 riley
 34 - 100

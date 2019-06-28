@@ -12,6 +12,17 @@ If you don't know how to install it already, download it manually: https://nodej
 
 ## git
 
+### New instructions!
+1. Make an account on Github
+2. Download the Github desktop application: https://desktop.github.com/
+3. Open the application and log-in
+- After you log-in it’ll show your username and some other information associated with your account – you can keep this information just as is it is
+4. On the far right of the screen select “clone repository”
+5. Move over to the “URL” tab and enter the URL for our project: https://github.com/knod/pa-data
+- You can also assign a file location for the folder your are cloning
+6. Click “Fetch origin” at the top of the page to make sure you have cloned the most up-to-date version of the code
+
+### Fallback
 Same kind of deal here.
 
 Download here (https://git-scm.com/download/win) into the same folder as nodejs? We're working on figuring this out.
@@ -41,7 +52,7 @@ If you know sites with tutorials to do this better, let us know!
 
 ## Directories
 1. **if it's not there already, add a folder called `data-mdj`**
-1. Make another folder somewhere so you can move the data there periodically. Call it whatever you want. `pa-data-data` is one idea and is how I'll talk about it from now on.  Thumb drive is good if you don't want it on your machine.
+1. Somewhere completely different on your computer, make another folder. Call it whatever you want. `pa-data-data` is one idea and is how I'll talk about it from now on. Later you'll see you're going to move the data there periodically. Thumb drive is good if you don't want it on your machine.
 1. Make a folder inside `pa-data-data` called `data-mdj`
 
 ## Command prompt/terminal
@@ -63,17 +74,15 @@ Bad errors have this as their first line: Error: `Error: failed to find element 
 If that happens press `ctrl` and `C` at the same time, then message michelle
 
 
-## Keeping Data
+# Keeping Data
+
+You don't really want to keep the data hanging around the project folder. What if you accidentally overwrite it with a `git pull origin master` or something weird. So...
 
 **When your program is stopped**
 
 1. **move** the pdfs from the project's `data-mdj` folder into the `data-mdj` you made in `pa-data-data`.
 1. **copy** the 'mdj-named-dockets-used.txt' into just the `pa-data-data` folder. Replace an older version if you need to.
 
-## If something is weird and you're not sure
+# If something is weird and you're not sure
 don't hesitate to message michelle. She wants your sweet sweet messages.
-
-
-
-
 
