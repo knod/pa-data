@@ -15,10 +15,10 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       resultsSelctor = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 
-const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx'
+const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
 
 const searchTypeVal = "Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      docketTypeVal = "Criminal"
+      docketTypeVal = "Criminal",
       nameIndexPath = 'cp-name-index.json';
 const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
@@ -33,19 +33,19 @@ let pdfPath = 'data-cp/';
 let requiredPrefix = /CP/;
 
 // // MDJ Stuff
-// const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',// "ParticipantName"
+// const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
 //       lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName',
 //       firstNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtFirstName',
-//       docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType', // "CR"
+//       docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType',
 //       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
 //       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
 //       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
 //       resultsSelctor = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
-//       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',// > table .PageNavigationContainer a',
+//       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
 // const searchTypeVal = "ParticipantName",
-//       docketTypeVal = "CR"
+//       docketTypeVal = "CR",
 //       nameIndexPath = 'mdj-name-index.json';
 // const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
@@ -56,7 +56,8 @@ let requiredPrefix = /CP/;
 // let nextSelector = paginationSelector + ' a:nth-last-child(2)';
 // let usedDocketsPath = 'mdj-named-dockets-used.txt';
 
-// let pdfPath = 'data-mdj';
+// let pdfPath = 'data-mdj/';
+// let requiredPrefix = /MJ/;
 
 
 
