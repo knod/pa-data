@@ -133,7 +133,7 @@ If you want to keep trying, I think you just have to either just come back in 2h
 
 # Keeping Data
 
-For now, when the program is taking a break, just put the PDFs into the `data-mdj` you made in `pa-data-data`.
+For now, when the program is stopped (when you can see the command prompt), just put the PDFs into the `data-mdj` you made in `pa-data-data`.
 
 ~You don't really want to keep the data hanging around the project folder. What if you accidentally overwrite it with a `git pull origin master` or something weird. So...~
 
