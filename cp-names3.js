@@ -488,7 +488,7 @@ let end = function (found, browser) {
 // Test
 
 let doPlaySound = process.argv[5];
-async function repeat () {
+async function repeat (process) {
 
   let browser = await puppeteer.launch({ headless: true });
   byNamesDuring(dates, browser)
@@ -503,7 +503,7 @@ async function repeat () {
           console.log('Probably ip problem. Let this go till log says "giving up". Or stop it yourself and deal with it a different way.');
         }
         // repeat with increased wait
-        handleRepeat();
+        handleRepeat(process);
       } else {
         console.log('success');
         if (doPlaySound !== 'no') {
@@ -529,15 +529,15 @@ async function repeat () {
       // How do we close the old browser?
       browser.close();
       console.log('Probably ip problem. Let this go till log says "giving up". Or stop it yourself and deal with it a different way.');
-      handleRepeat();
+      handleRepeat(process);
     });
-}
+};
 
-async function handleRepeat () {
+const handleRepeat = async (process) => {
   timesRepeated++;
   timesRepeated % 8;  // 8 will turn into 0
   console.log('timesRepeated:', timesRepeated);
-
+ 
   if (timesRepeated <= 3) {
     repeat();
   } else if (timesRepeated <= 5) {
@@ -545,13 +545,15 @@ async function handleRepeat () {
     console.log('an hour will pass.');
     setTimeout(function(){
       repeat();
-    }, 3600000);
+    // }, 3600000);
+    }, 60000);
   } else if (timesRepeated <= 6){
     // wait 15 min
     console.log('2 hours have passed');
     setTimeout(function(){
       repeat();
-    }, 900000);
+    // }, 900000);
+    }, 30000);
   } else {
     console.log("giving up");
     proccess.exit(1);
@@ -559,4 +561,4 @@ async function handleRepeat () {
 
 };
 
-repeat();
+repeat(process);

@@ -133,12 +133,14 @@ If you want to keep trying, I think you just have to either just come back in 2h
 
 # Keeping Data
 
-You don't really want to keep the data hanging around the project folder. What if you accidentally overwrite it with a `git pull origin master` or something weird. So...
+For now, when the program is taking a break, just put the PDFs into the `data-mdj` you made in `pa-data-data`.
 
-**When your program is stopped**
+~You don't really want to keep the data hanging around the project folder. What if you accidentally overwrite it with a `git pull origin master` or something weird. So...~
 
-1. **move** the pdfs from the project's `data-mdj` folder into the `data-mdj` you made in `pa-data-data`.
-1. **copy** the 'mdj-named-dockets-used.txt' into just the `pa-data-data` folder. Replace an older version if you need to.
+~**When your program is stopped**~
+
+1. ~**move** the pdfs from the project's `data-mdj` folder into the `data-mdj` you made in `pa-data-data`.~
+1. ~**copy** the 'mdj-named-dockets-used.txt' into just the `pa-data-data` folder. Replace an older version if you need to.~
 
 # If something is weird and you're not sure
 don't hesitate to message michelle. She wants your sweet sweet messages.
