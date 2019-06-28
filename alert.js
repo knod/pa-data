@@ -19,6 +19,13 @@ let nameIndex = function () {
   });
 };
 
+let gaveUp = function () {
+  player.play('gave-up/gave-up.mp3', (err) => {
+    if (err) console.log(`Could not play sound: ${err}`);
+  });
+};
+
 module.exports.success = success;
 module.exports.error = error;
 module.exports.nameIndex = nameIndex;
+module.exports.gaveUp = gaveUp;
