@@ -66,6 +66,7 @@ let requiredPrefix = /CP/;
 // Standard
 const dates = {start: "01/01/2007", end: "06/25/2019"};
 let throttle = 15 * 1000;
+let timesRepeated = 0;
 // Inclusive
 // orignal run: index 41
 // latest: node cp-names.js 41 45
@@ -78,8 +79,9 @@ if (process.argv[4]) {
 
 console.log(namesStartIndex, namesEndIndex);
 
-async function byNamesDuring (dates) {
+async function byNamesDuring (dates, browser) {
 
+  let err = null;
   fs.writeFileSync(nameIndexPath, namesStartIndex);
 
   // // Get last stored name index (number)
@@ -92,7 +94,6 @@ async function byNamesDuring (dates) {
   // console.log(name);
 
   // submit to site along with date
-  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.setViewport({width: 1920, height: 2000});
 
@@ -102,6 +103,7 @@ async function byNamesDuring (dates) {
   let notFound = false;
   await page.waitForSelector(searchTypeSelector)
     .catch(async function(err){
+      err = err;
       notFound = true;
       console.log('page not found');
       await browser.close();
@@ -109,7 +111,7 @@ async function byNamesDuring (dates) {
     });
   if (notFound) {
     await browser.close();
-    return false
+    return ['not found', err];
   };
 
   // Select search by name
@@ -137,10 +139,12 @@ async function byNamesDuring (dates) {
 
     await page.waitForSelector(lastNameSelector)
       .catch(function(err){
+        err = err;
         found = false;
         console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 1')
       });
-    if (found === false) {return 'not found';}
+
+    if (found === false) {return ['not found', err];}
     await page.$eval(
       lastNameSelector,
       function (el, str) { el.value = str },
@@ -151,10 +155,11 @@ async function byNamesDuring (dates) {
 
     await page.waitForSelector(firstNameSelector)
       .catch(function(err){
+        err = err;
         found = false;
         console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 3')
       });
-    if (found === false) {return 'not found';}
+    if (found === false) {return ['not found', err];}
     await page.$eval(
       firstNameSelector,
       function (el, str) { el.value = str },
@@ -163,10 +168,11 @@ async function byNamesDuring (dates) {
 
     await page.waitForSelector(docketTypeSelector)
       .catch(function(err){
+        err = err;
         found = false;
         console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 4')
       });
-    if (found === false) {return 'not found';}
+    if (found === false) {return ['not found', err];}
     page.select(
       docketTypeSelector,
       docketTypeVal
@@ -174,10 +180,11 @@ async function byNamesDuring (dates) {
 
     await page.waitForSelector(startDateSelector)
       .catch(function(err){
+        err = err;
         found = false;
         console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 5')
       });
-    if (found === false) {return 'not found';}
+    if (found === false) {return ['not found', err];}
     await page.$eval(
       startDateSelector,
       function (el, str) { el.value = str },
@@ -186,10 +193,11 @@ async function byNamesDuring (dates) {
 
     await page.waitForSelector(endDateSelector)
       .catch(function(err){
+        err = err;
         found = false;
         console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 6')
       });
-    if (found === false) {return 'not found';}
+    if (found === false) {return ['not found', err];}
     await page.$eval(
       endDateSelector,
       function (el, str) { el.value = str },
@@ -199,10 +207,11 @@ async function byNamesDuring (dates) {
     console.log(1);
     await page.waitForSelector(searchSelector)
       .catch(function(err){
+        err = err;
         found = false;
         console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 7')
       });
-    if (found === false) {return 'not found';}
+    if (found === false) {return ['not found', err];}
     page.click(searchSelector)
 
     let pageData = {done: false, page: 0};
@@ -222,7 +231,7 @@ async function byNamesDuring (dates) {
 
   console.log(19);
   await browser.close();
-  return null;
+  return [null, err];
 };  // Ends byNamesDuring
 
 
@@ -319,7 +328,9 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(5);
   // go down rows getting links and ids
-  await page.waitForSelector(linksSelector).catch(function(err){console.log('no link to pdf? maybe no results.')});
+  await page.waitForSelector(linksSelector).catch(function(err){
+    console.log('no link to pdf? maybe no results.')
+  });
   const linksText = await page.evaluate(
     (linksSelector) => {
       let links = Array.from(
@@ -329,12 +340,16 @@ async function getPDFs (browser, page, lastPageNum) {
       return links;
     },
     linksSelector
-  ).catch(function(err){console.log('no link to pdf? maybe no results.')});
+  ).catch(function(err){
+    console.log('no link to pdf? maybe no results.')}
+    );
   // console.log(linksText.length, linksText);
   console.log(6);
 
 
-  await page.waitForSelector(docketIDSelector).catch(function(err){console.log('no docket number? maybe no results.')});
+  await page.waitForSelector(docketIDSelector).catch(function(err){
+    console.log('no docket number? maybe no results.')
+  });
   const docketIDTexts = await page.evaluate(
     (docketIDSelector) => {
       let ids = Array.from(
@@ -344,7 +359,9 @@ async function getPDFs (browser, page, lastPageNum) {
       return ids;
     },
     docketIDSelector
-  ).catch(function(err){console.log('no docket number? maybe no results.')});
+  ).catch(function(err){
+    console.log('no docket number? maybe no results.')
+  });
   // console.log(docketIDTexts);
 
   console.log(7);
@@ -461,22 +478,46 @@ async function downloadPDF(pdfURL, outputFilename) {
 }
 
 
-// Test
-let doPlaySound = process.argv[5];
-// let repeat = function () {
+let end = function (found, browser) {
+  if (found === false) {
+    browser.close();
+    return found;
+  }
+}
 
-  byNamesDuring(dates)
-    .then((value) => {
-      // gotIt = true;
-      console.log('success');
-      // console.log(value); // Success!
-      if (doPlaySound !== 'no') {
-        if (value === 'not found') {
+// Test
+
+let doPlaySound = process.argv[5];
+async function repeat () {
+
+  let browser = await puppeteer.launch({ headless: true });
+  byNamesDuring(dates, browser)
+    .then((result) => {
+      let value = result[0],
+          err = result[1];
+      if (value === 'not found') {
+        console.log('page/element not found. page probably not loading.');
+        console.log(err);
+        if (doPlaySound !== 'no') {
           alert.error();
-        } else {
-          alert.success();
+          console.log('Probably ip problem. Let this go till log says "giving up". Or stop it yourself and deal with it a different way.');
+        }
+        // repeat with increased wait
+        handleRepeat();
+      } else {
+        console.log('success');
+        if (doPlaySound !== 'no') {
+            alert.success();
         }
       }
+      // gotIt = true;
+
+      try {
+        brower.close();
+      } catch (err) {
+        // probably already closed
+      }
+
     }).catch((err) => {
       console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
       console.log(err);
@@ -484,8 +525,38 @@ let doPlaySound = process.argv[5];
       //   repeat();
       // }, 60000);
       if (doPlaySound !== 'no') { alert.error(); }
-  });
+      console.log(err);
+      // How do we close the old browser?
+      browser.close();
+      console.log('Probably ip problem. Let this go till log says "giving up". Or stop it yourself and deal with it a different way.');
+      handleRepeat();
+    });
+}
 
-// }
+async function handleRepeat () {
+  timesRepeated++;
+  timesRepeated % 8;  // 8 will turn into 0
+  console.log('timesRepeated:', timesRepeated);
 
-// repeat();
+  if (timesRepeated <= 3) {
+    repeat();
+  } else if (timesRepeated <= 5) {
+    // wait an hour before trying again
+    console.log('an hour will pass.');
+    setTimeout(function(){
+      repeat();
+    }, 3600000);
+  } else if (timesRepeated <= 6){
+    // wait 15 min
+    console.log('2 hours have passed');
+    setTimeout(function(){
+      repeat();
+    }, 900000);
+  } else {
+    console.log("giving up");
+    proccess.exit(1);
+  }
+
+};
+
+repeat();
