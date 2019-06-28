@@ -2,6 +2,7 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
+const alert = require("./alert.js");
 
 // CP Stuff
 let cpVars = {
@@ -460,6 +461,7 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 // Test
 let stuckCount = -1;
+let doPlaySound = process.argv[5]
 let repeatIfStuck = function () {
 
   // 10 mins at most
@@ -473,9 +475,11 @@ let repeatIfStuck = function () {
       // gotIt = true;
       console.log('success');
       // console.log(value); // Success!
+      if (doPlaySound !== 'no') { alert.success(); }
     }).catch((err) => {
       console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
       console.log(err);
+      if (doPlaySound !== 'no') { alert.error(); }
   });
 }
 

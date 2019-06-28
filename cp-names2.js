@@ -3,6 +3,7 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
+const alert = require("./alert.js");
 
 // CP Stuff
 const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
@@ -410,13 +411,24 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 
 // Test
+let doPlaySound = process.argv[5];
+// let repeat = function () {
 
-byNamesDuring(dates)
-  .then((value) => {
-    // gotIt = true;
-    console.log('success');
-    // console.log(value); // Success!
-  }).catch((err) => {
-    console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
-    console.log(err);
-});
+  byNamesDuring(dates)
+    .then((value) => {
+      // gotIt = true;
+      console.log('success');
+      // console.log(value); // Success!
+      if (doPlaySound !== 'no') { alert.success(); }
+    }).catch((err) => {
+      console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
+      console.log(err);
+      // setTimeout(function () {
+      //   repeat();
+      // }, 60000);
+      if (doPlaySound !== 'no') { alert.error(); }
+  });
+
+// }
+
+// repeat();
