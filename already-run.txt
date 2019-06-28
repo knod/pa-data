@@ -20,7 +20,8 @@ node cp-names.js 345 350 3000
 node cp-names.js 351 380 3000
 node cp-names.js 381 399 3000
 
-node cp-names.js 91 111 3000
+node cp-names.js 112 200 3000
+node cp-names.js 121 200 3500
 
 # mdj
 
@@ -59,9 +60,24 @@ node mdj-names.js 204 250 3000
 
 
 -------
+total: 119070
 node cp-names2.js 0 500 2000
 
 
 ------
+total: 119070
 node mdj-names2.js 0 500 2000
+
+
+
+-------
+total: 43680
+node cp-names3.js 0 500 2000
+
+
+------
+total: 43680
+node mdj-names3.js 0 500 2000
+
+
 

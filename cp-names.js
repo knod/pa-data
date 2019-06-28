@@ -410,13 +410,21 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 
 // Test
+let repeat = function () {
 
-byNamesDuring(dates)
-  .then((value) => {
-    // gotIt = true;
-    console.log('success');
-    // console.log(value); // Success!
-  }).catch((err) => {
-    console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
-    console.log(err);
-});
+  byNamesDuring(dates)
+    .then((value) => {
+      // gotIt = true;
+      console.log('success');
+      // console.log(value); // Success!
+    }).catch((err) => {
+      console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
+      console.log(err);
+      setTimeout(function () {
+        repeat();
+      }, 60000);
+  });
+
+}
+
+repeat();

@@ -29,13 +29,15 @@ let letters = [
 let objs = [];
 
 
-let originals = [];
+let originalsCombos = [];
 for (letter of letters) {
   for (vowel of vowels) {
-    originals.push(letter + vowel);
-    originals.push(vowel + letter);
+    originalsCombos.push(letter + vowel);
+    originalsCombos.push(vowel + letter);
   }
 }
+
+let originalNames = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 
 // for (letter1 of letters) {
 //   for (letter2 of letters) {
@@ -43,27 +45,50 @@ for (letter of letters) {
 //   }
 // }
 
-for (letter of letters) {
-  for (secondL of seconders) {
+// What I should have done originally,
+// except avoiding dupes now I hope
+for (one of originalsCombos) {
+  for (two of originalsCombos) {
+    let name = {
+      firstName: one,
+      lastName: two,
+    };
 
-    let newCombo = letter + secondL;
+    let isDuplicate = false;
+    for (originalName of originalNames) {
+      if (name.firstName === originalName.firstName
+            && name.lastName === originalName.lastName) {
+        isDuplicate = true;
+      }
+    }
 
-    for (originalCombo of originals) {
-      objs.push({
-        firstName: newCombo,
-        lastName: newCombo,
-      })
-      objs.push({
-        firstName: newCombo,
-        lastName: originalCombo,
-      });
-      objs.push({
-        firstName: originalCombo,
-        lastName: newCombo,
-      });
+    if (!isDuplicate) {
+      objs.push(name);
     }
   }
 }
+
+// for (letter of letters) {
+//   for (secondL of seconders) {
+
+//     let newCombo = letter + secondL;
+
+//     for (originalCombo of originals) {
+//       objs.push({
+//         firstName: newCombo,
+//         lastName: newCombo,
+//       })
+//       objs.push({
+//         firstName: newCombo,
+//         lastName: originalCombo,
+//       });
+//       objs.push({
+//         firstName: originalCombo,
+//         lastName: newCombo,
+//       });
+//     }
+//   }
+// }
 
 // for (letter of letters) {
 //   for (vowel of vowels) {
@@ -87,7 +112,7 @@ for (letter of letters) {
 // }
 
 // fs.writeFile("names.json", JSON.stringify(objs), function(err) {
-fs.writeFile("names2.json", JSON.stringify(objs), function(err) {
+fs.writeFile("names3.json", JSON.stringify(objs), function(err) {
     if(err) {
         return console.log(err);
     }
