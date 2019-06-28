@@ -105,7 +105,7 @@ async function byNamesDuring (dates) {
       notFound = true;
       console.log('page not found');
       await browser.close();
-      return false
+      return 'not found';
     });
   if (notFound) {
     await browser.close();
@@ -208,12 +208,20 @@ async function getPDFs (browser, page, lastPageNum) {
   //     {timeout: 180000}
   // );
 
+  let noResults = false;
   await page.waitForSelector(
       resultsSelctor//,
       // {timeout: 180000}
   ).catch(function(err){
+    // if no results, skip this page?
+    noResults = true;
+    console.log('no results?');
+    return 'no results';
     // console.log(err);
   });
+  if (noResults) {
+    return 'no results';
+  }
   
   console.log(3);
 
@@ -277,7 +285,7 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(5);
   // go down rows getting links and ids
-  await page.waitForSelector(linksText);
+  await page.waitForSelector(linksSelector).catch(function(err){console.log('no link to pdf? maybe no results.')});
   const linksText = await page.evaluate(
     (linksSelector) => {
       let links = Array.from(
@@ -287,12 +295,12 @@ async function getPDFs (browser, page, lastPageNum) {
       return links;
     },
     linksSelector
-  );
+  ).catch(function(err){console.log('no link to pdf? maybe no results.')});
   // console.log(linksText.length, linksText);
   console.log(6);
 
 
-  await page.waitForSelector(docketIDSelector);
+  await page.waitForSelector(docketIDSelector).catch(function(err){console.log('no docket number? maybe no results.')});
   const docketIDTexts = await page.evaluate(
     (docketIDSelector) => {
       let ids = Array.from(
@@ -302,7 +310,7 @@ async function getPDFs (browser, page, lastPageNum) {
       return ids;
     },
     docketIDSelector
-  );
+  ).catch(function(err){console.log('no docket number? maybe no results.')});
   // console.log(docketIDTexts);
 
   console.log(7);
@@ -428,7 +436,13 @@ let doPlaySound = process.argv[5];
       // gotIt = true;
       console.log('success');
       // console.log(value); // Success!
-      if (doPlaySound !== 'no') { alert.success(); }
+      if (doPlaySound !== 'no') {
+        if (value === 'not found') {
+          alert.error();
+        } else {
+          alert.success();
+        }
+      }
     }).catch((err) => {
       console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
       console.log(err);
