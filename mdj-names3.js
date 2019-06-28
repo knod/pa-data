@@ -369,10 +369,10 @@ async function getPDFs (browser, page, lastPageNum) {
       });
 
       // Download pdfs
-      downloadPDF(linksText[index + adder], text + '-docket.pdf');
+      await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
       adder++
-      downloadPDF(linksText[index + adder], text + '-summary.pdf');
+      await downloadPDF(linksText[index + adder], text + '-summary.pdf');
     }
   }
 

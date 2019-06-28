@@ -385,11 +385,13 @@ async function getPDFs (browser, page, lastPageNum) {
         if (err) console.log(err);
       });
 
+      // await page.waitFor(3000);  // try this
       // Download pdfs
-      downloadPDF(linksText[index + adder], text + '-docket.pdf');
+      await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
+      // await page.waitFor(3000);  // try this
       adder++
-      downloadPDF(linksText[index + adder], text + '-summary.pdf');
+      await downloadPDF(linksText[index + adder], text + '-summary.pdf');
     }
   }
 
@@ -427,7 +429,6 @@ async function getPDFs (browser, page, lastPageNum) {
     // );
 
     if (disabledText.indexOf('Next') === -1) {
-
 
       // console.log('new page', newPageNum)
 
@@ -470,6 +471,7 @@ async function downloadPDF(pdfURL, outputFilename) {
   // console.log(pdfURL);
   let pdfBuffer = await request.get({
     uri: pdfURL, encoding: null,
+    // timeout: 10000,  // try this
     headers: {'User-Agent': 'cfb-data-analysis'}
   });
   let path = pdfPath + outputFilename;
@@ -535,25 +537,21 @@ async function repeat (process) {
 
 const handleRepeat = async (process) => {
   timesRepeated++;
-  timesRepeated % 8;  // 8 will turn into 0
+  timesRepeated % 11;  // 8 will turn into 0
   console.log('timesRepeated:', timesRepeated);
  
   if (timesRepeated <= 3) {
-    repeat();
+    setTimeout(repeat, 5000);
   } else if (timesRepeated <= 5) {
     // wait an hour before trying again
     console.log('an hour will pass.');
-    setTimeout(function(){
-      repeat();
-    // }, 3600000);
-    }, 60000);
-  } else if (timesRepeated <= 6){
+    setTimeout(repeat, 60000);
+    // , 3600000);
+  } else if (timesRepeated <= 9){
     // wait 15 min
     console.log('2 hours have passed');
-    setTimeout(function(){
-      repeat();
-    // }, 900000);
-    }, 30000);
+    setTimeout(repeat, 30000);
+    // , 900000);
   } else {
     console.log("giving up");
     proccess.exit(1);
