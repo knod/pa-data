@@ -64,6 +64,8 @@ let requiredPrefix = /CP/;
 
 
 // Standard
+let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
+// let names = require('./names3.json');
 const dates = {start: "01/01/2007", end: "06/25/2019"};
 let throttle = 15 * 1000;
 let timesRepeated = 0;
@@ -102,11 +104,10 @@ async function byNamesDuring (dates, browser) {
   // if page not found, stop
   let notFound = false;
   await page.waitForSelector(searchTypeSelector)
-    .catch(async function(err){
-      err = err;
+    .catch(async function(theError){
+      err = theError;
       notFound = true;
       console.log('page not found');
-      await browser.close();
       return 'not found';
     });
   if (notFound) {
@@ -124,11 +125,11 @@ async function byNamesDuring (dates, browser) {
 
   // Get last stored name index (number)
   let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
-  let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
+  // let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
-    if (doPlaySound !== 'no') { alert.page(); }
+    if (doPlaySound !== 'no') { alert.nameIndex(); }
 
     await page.waitFor(throttle * 10);
 
@@ -138,39 +139,52 @@ async function byNamesDuring (dates, browser) {
     let found = true;
 
     await page.waitForSelector(lastNameSelector)
-      .catch(function(err){
-        err = err;
+      .catch(function(theError){
+        err = theError;
         found = false;
-        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 1')
+        console.log('elment not found. 1')
       });
-
     if (found === false) {return ['not found', err];}
-    await page.$eval(
-      lastNameSelector,
-      function (el, str) { el.value = str },
-      name.lastName
-    ).catch(function(err){
-      console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 2')
-    });
+
+    try {
+      await page.$eval(
+        lastNameSelector,
+        function (el, str) { el.value = str },
+        name.lastName
+      );
+    } catch (theError) {
+      err = theError;
+      found = false;
+      console.log('elment not found. 2')
+    }
+    if (found === false) {return ['not found', err];}
 
     await page.waitForSelector(firstNameSelector)
-      .catch(function(err){
-        err = err;
+      .catch(function(theError){
+        err = theError;
         found = false;
-        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 3')
+        console.log('elment not found. 3')
       });
     if (found === false) {return ['not found', err];}
-    await page.$eval(
-      firstNameSelector,
-      function (el, str) { el.value = str },
-      name.firstName
-    );
+
+    try {
+      await page.$eval(
+        firstNameSelector,
+        function (el, str) { el.value = str },
+        name.firstName
+      ); /// *** notes stopped here at try/catch
+    } catch (theError) {
+      err = theError;
+      found = false;
+      console.log('elment not found. 3.5')
+    }
+    if (found === false) {return ['not found', err];}
 
     await page.waitForSelector(docketTypeSelector)
-      .catch(function(err){
-        err = err;
+      .catch(function(theError){
+        err = theError;
         found = false;
-        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 4')
+        console.log('elment not found. 4')
       });
     if (found === false) {return ['not found', err];}
     page.select(
@@ -179,10 +193,10 @@ async function byNamesDuring (dates, browser) {
     );
 
     await page.waitForSelector(startDateSelector)
-      .catch(function(err){
-        err = err;
+      .catch(function(theError){
+        err = theError;
         found = false;
-        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 5')
+        console.log('elment not found. 5')
       });
     if (found === false) {return ['not found', err];}
     await page.$eval(
@@ -192,24 +206,32 @@ async function byNamesDuring (dates, browser) {
     );
 
     await page.waitForSelector(endDateSelector)
-      .catch(function(err){
-        err = err;
+      .catch(function(theError){
+        err = theError;
         found = false;
-        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 6')
+        console.log('elment not found. 6')
       });
     if (found === false) {return ['not found', err];}
-    await page.$eval(
-      endDateSelector,
-      function (el, str) { el.value = str },
-      dates.end
-    );
+
+    try {
+      await page.$eval(
+        endDateSelector,
+        function (el, str) { el.value = str },
+        dates.end
+      );
+    } catch (theError) {
+      err = theError;
+      found = false;
+      console.log('elment not found. 6.5')
+    }
+    if (found === false) {return ['not found', err];}
 
     console.log(1);
     await page.waitForSelector(searchSelector)
-      .catch(function(err){
-        err = err;
+      .catch(function(theError){
+        err = theError;
         found = false;
-        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 7')
+        console.log('elment not found. 7')
       });
     if (found === false) {return ['not found', err];}
     page.click(searchSelector)
@@ -480,17 +502,10 @@ async function downloadPDF(pdfURL, outputFilename) {
 }
 
 
-let end = function (found, browser) {
-  if (found === false) {
-    browser.close();
-    return found;
-  }
-}
-
 // Test
 
 let doPlaySound = process.argv[5];
-async function repeat (process) {
+let startNewBrowser = function () {
 
   let browser = await puppeteer.launch({ headless: true });
   byNamesDuring(dates, browser)
@@ -505,7 +520,7 @@ async function repeat (process) {
           console.log('Probably ip problem. Let this go till log says "giving up". Or stop it yourself and deal with it a different way.');
         }
         // repeat with increased wait
-        handleRepeat(process);
+        waitThenRepeat();
       } else {
         console.log('success');
         if (doPlaySound !== 'no') {
@@ -524,39 +539,39 @@ async function repeat (process) {
       console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
       console.log(err);
       // setTimeout(function () {
-      //   repeat();
+      // startNewBrowser();
       // }, 60000);
       if (doPlaySound !== 'no') { alert.error(); }
       console.log(err);
       // How do we close the old browser?
       browser.close();
       console.log('Probably ip problem. Let this go till log says "giving up". Or stop it yourself and deal with it a different way.');
-      handleRepeat(process);
+      waitThenRepeat();
     });
 };
 
-const handleRepeat = async (process) => {
+const waitThenRepeat = async () => {
   timesRepeated++;
-  timesRepeated % 11;  // 8 will turn into 0
+  timesRepeated % 11;  // 11 will turn into 0
   console.log('timesRepeated:', timesRepeated);
  
   if (timesRepeated <= 3) {
-    setTimeout(repeat, 5000);
+    setTimeout(startNewBrowser, 5000);
   } else if (timesRepeated <= 5) {
     // wait an hour before trying again
     console.log('an hour will pass.');
-    setTimeout(repeat, 60000);
+    setTimeout(startNewBrowser, 60000);
     // , 3600000);
   } else if (timesRepeated <= 9){
     // wait 15 min
     console.log('2 hours have passed');
-    setTimeout(repeat, 30000);
+    setTimeout(startNewBrowser, 30000);
     // , 900000);
   } else {
     console.log("giving up");
-    proccess.exit(1);
+    process.exit(1);
   }
 
 };
 
-repeat(process);
+startNewBrowser();

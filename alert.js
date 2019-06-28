@@ -13,7 +13,7 @@ let error = function () {
   });
 };
 
-let page = function () {
+let nameIndex = function () {
   player.play('light.mp3', (err) => {
     if (err) console.log(`Could not play sound: ${err}`);
   });
@@ -21,4 +21,4 @@ let page = function () {
 
 module.exports.success = success;
 module.exports.error = error;
-module.exports.page = page;
+module.exports.nameIndex = nameIndex;

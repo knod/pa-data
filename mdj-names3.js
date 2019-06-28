@@ -102,7 +102,6 @@ async function byNamesDuring (dates) {
     .catch(async function(err){
       notFound = true;
       console.log('page not found');
-      await browser.close();
       return 'not found';
     });
   if (notFound) {
@@ -128,7 +127,7 @@ async function byNamesDuring (dates) {
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
-    if (doPlaySound !== 'no') { alert.page(); }
+    if (doPlaySound !== 'no') { alert.nameIndex(); }
 
     await page.waitFor(throttle * 10);
 
