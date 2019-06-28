@@ -18,6 +18,9 @@ node cp-names.js 321 332 3000
 node cp-names.js 333 350 3000
 node cp-names.js 345 350 3000
 node cp-names.js 351 380 3000
+node cp-names.js 381 399 3000
+
+node cp-names.js 91 111 3000
 
 # mdj
 
@@ -38,6 +41,7 @@ node mdj-names.js 31 33 3000
 node mdj-names.js 34 33 3000
 node mdj-names.js 301 305 3000
 node mdj-names.js 306 320 3000
+node mdj-names.js 321 350 3000
 
 riley
 34 - 100
@@ -51,3 +55,13 @@ node mdj-names.js 206 207 3000
 v
 node mdj-names.js 200 200 3000
 node mdj-names.js 201 205 3000
+node mdj-names.js 204 250 3000
+
+
+-------
+node cp-names2.js 0 500 2000
+
+
+------
+node mdj-names2.js 0 500 2000
+
