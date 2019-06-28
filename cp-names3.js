@@ -523,7 +523,7 @@ async function startNewBrowser () {
         console.log(err);
         if (doPlaySound !== 'no') {
           alert.error();
-          console.log('Probably ip problem. Let this go till log says "giving up". Or stop it yourself and deal with it a different way.');
+          console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
         }
         // repeat with increased wait
         waitThenRepeat();
@@ -551,7 +551,7 @@ async function startNewBrowser () {
       console.log(err);
       // How do we close the old browser?
       browser.close();
-      console.log('Probably ip problem. Let this go till log says "giving up". Or stop it yourself and deal with it a different way.');
+      console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
       waitThenRepeat();
     });
 };
