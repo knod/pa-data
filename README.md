@@ -44,7 +44,9 @@ If you're on windows and you want the alert sound to work and you don't have an 
 
 To stop it (I hope):
 
-Add ` no` to the end of your command (which I'll describe later). So something like `node mdj-names3.js 38001 39000 3000 no`.
+Add ` no` to the end of your command (which I'll describe later). So something like `node mdj-names3.js 38001 39000 3500 no`.
+
+Or `ctrl + c`
 
 I haven't figured out how to make the sounds shorter. Otherwise, I think they just have to finish. Let me know if you have a problem.
 
@@ -113,7 +115,7 @@ If that happens:
 1. If you `pull`ed, do `npm install`.
 1. You're going to type in a new command now.
 1. Look in the 'mdj-name-index.json' file.
-1. Use that number as the first number in the command. That is, if your original command was `node mdj-names3.js 42001 43000 3000` and 'mdj-name-index.json' has `42043`, then type in `node mdj-names3.js 42043 43000 3000`.
+1. Use that number as the first number in the command. That is, if your original command was `node mdj-names3.js 42001 43000 3500` and 'mdj-name-index.json' has `42043`, then type in `node mdj-names3.js 42043 43000 3500`.
 1. press enter.
 1. let it run again.
 

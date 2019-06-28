@@ -132,6 +132,7 @@ async function byNamesDuring (dates) {
     let name = names[nameIndex];
     console.log(name);
 
+    await page.waitForSelector(lastNameSelector);
     await page.$eval(
       lastNameSelector,
       function (el, str) { el.value = str },
@@ -140,23 +141,27 @@ async function byNamesDuring (dates) {
       console.log('Sorry, manual rerun needed. Start from last finished name index. Check the "mdj-name-index.json" file.')
     });
 
+    await page.waitForSelector(firstNameSelector);
     await page.$eval(
       firstNameSelector,
       function (el, str) { el.value = str },
       name.firstName
     );
 
+    await page.waitForSelector(docketTypeSelector);
     page.select(
       docketTypeSelector,
       docketTypeVal
     );
 
+    await page.waitForSelector(startDateSelector);
     await page.$eval(
       startDateSelector,
       function (el, str) { el.value = str },
       dates.start
     );
 
+    await page.waitForSelector(endDateSelector);
     await page.$eval(
       endDateSelector,
       function (el, str) { el.value = str },
@@ -164,6 +169,7 @@ async function byNamesDuring (dates) {
     );
 
     console.log(1);
+    await page.waitForSelector(searchSelector);
     page.click(searchSelector)
 
     let pageData = {done: false, page: 0};
@@ -271,6 +277,7 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(5);
   // go down rows getting links and ids
+  await page.waitForSelector(linksText);
   const linksText = await page.evaluate(
     (linksSelector) => {
       let links = Array.from(
@@ -285,6 +292,7 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log(6);
 
 
+  await page.waitForSelector(docketIDSelector);
   const docketIDTexts = await page.evaluate(
     (docketIDSelector) => {
       let ids = Array.from(
