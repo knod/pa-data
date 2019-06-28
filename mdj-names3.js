@@ -201,12 +201,21 @@ async function getPDFs (browser, page, lastPageNum) {
   //     {timeout: 180000}
   // );
 
+  let noResults = false;
   await page.waitForSelector(
       resultsSelctor//,
       // {timeout: 180000}
   ).catch(function(err){
+    // if no results, skip this page?
+    noResults = true;
+    console.log('no results');
+    return 'no results';
     // console.log(err);
   });
+  // If no results, return to continue loop
+  if (noResults) {
+    return {done: true, page: null};
+  }
   
   console.log(3);
 
