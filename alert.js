@@ -13,5 +13,12 @@ let error = function () {
   });
 };
 
+let page = function () {
+  player.play('light.mp3', (err) => {
+    if (err) console.log(`Could not play sound: ${err}`);
+  });
+};
+
 module.exports.success = success;
 module.exports.error = error;
+module.exports.page = page;

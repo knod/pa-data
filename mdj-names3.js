@@ -128,6 +128,7 @@ async function byNamesDuring (dates) {
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
+    if (doPlaySound !== 'no') { alert.light(); }
 
     await page.waitFor(throttle * 10);
 
