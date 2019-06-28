@@ -567,13 +567,13 @@ const waitThenRepeat = async () => {
   } else if (timesRepeated <= 8) {
     // wait an hour before trying again
     console.log('an hour will pass.');
-    setTimeout(startNewBrowser, 60000);
-    // , 3600000);
+    setTimeout(startNewBrowser, 3600000);
+    //, 60000);
   } else if (timesRepeated <= 9){
     // wait 15 min
     console.log('4 hours have passed');
-    setTimeout(startNewBrowser, 30000);
-    // , 900000);
+    setTimeout(startNewBrowser, 900000);
+    //, 30000);
   } else {
     console.log("giving up");
     alert.gaveUp();
