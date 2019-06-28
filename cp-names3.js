@@ -132,36 +132,63 @@ async function byNamesDuring (dates) {
     let name = names[nameIndex];
     console.log(name);
 
-    await page.waitForSelector(lastNameSelector);
+    let found = true;
+
+    await page.waitForSelector(lastNameSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 1')
+      });
+    if (found === false) {return 'not found';}
     await page.$eval(
       lastNameSelector,
       function (el, str) { el.value = str },
       name.lastName
     ).catch(function(err){
-      console.log('Sorry, manual rerun needed. Start from last finished name index. Check the "mdj-name-index.json" file.')
+      console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 2')
     });
 
-    await page.waitForSelector(firstNameSelector);
+    await page.waitForSelector(firstNameSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 3')
+      });
+    if (found === false) {return 'not found';}
     await page.$eval(
       firstNameSelector,
       function (el, str) { el.value = str },
       name.firstName
     );
 
-    await page.waitForSelector(docketTypeSelector);
+    await page.waitForSelector(docketTypeSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 4')
+      });
+    if (found === false) {return 'not found';}
     page.select(
       docketTypeSelector,
       docketTypeVal
     );
 
-    await page.waitForSelector(startDateSelector);
+    await page.waitForSelector(startDateSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 5')
+      });
+    if (found === false) {return 'not found';}
     await page.$eval(
       startDateSelector,
       function (el, str) { el.value = str },
       dates.start
     );
 
-    await page.waitForSelector(endDateSelector);
+    await page.waitForSelector(endDateSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 6')
+      });
+    if (found === false) {return 'not found';}
     await page.$eval(
       endDateSelector,
       function (el, str) { el.value = str },
@@ -169,7 +196,12 @@ async function byNamesDuring (dates) {
     );
 
     console.log(1);
-    await page.waitForSelector(searchSelector);
+    await page.waitForSelector(searchSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 7')
+      });
+    if (found === false) {return 'not found';}
     page.click(searchSelector)
 
     let pageData = {done: false, page: 0};
