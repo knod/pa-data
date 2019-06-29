@@ -15,6 +15,8 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+      noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
+      noResultsText = 'No Cases Found',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
@@ -33,6 +35,7 @@ let usedDocketsPath = 'cp-named-dockets-used.txt';
 
 let pdfPath = 'data-cp/';
 let requiredPrefix = /CP/;
+let type = 'cp';
 
 // // MDJ Stuff
 // const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
@@ -43,6 +46,8 @@ let requiredPrefix = /CP/;
 //       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
 //       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
 //       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
+//       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket',
+//       noResultsText = 'No Records Found', // === .innerText
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
@@ -60,6 +65,7 @@ let requiredPrefix = /CP/;
 
 // let pdfPath = 'data-mdj/';
 // let requiredPrefix = /MJ/;
+// let type = 'mdj'
 
 
 
@@ -290,12 +296,28 @@ async function byNamesDuring (dates, browser) {
     if (found === false) {return ['not found', err];}
     page.click(searchSelector)
 
-    let pageData = {done: false, page: 0};
+    // Search through the pages
+    let pageData = {done: false, page: 0, err: {message: null, value: null}};
     while (!pageData.done) {
+
+      // Make sure page is still there
+      await page.waitForSelector(searchSelector)
+        .catch(function(theError){
+          err = theError;
+          found = false;
+          console.log('elment not found. 7.5')
+        });
+      if (found === false) {return ['not found', err];}
+
       console.log(1.5);
       pageData = await getPDFs(browser, page, pageData.page);
       console.log(17);
       console.log('pageData', pageData);
+
+      // Return from error if needed
+      if (pageData.err && (pageData.err.message || pageData.err.value)) {
+        return [value, message];
+      }
     }  // ends while this name not done
 
     console.log(18)
@@ -321,15 +343,11 @@ async function getPDFs (browser, page, lastPageNum) {
   let newPageNum = lastPageNum + 1;
   console.log('new pg', newPageNum)
 
-  // await page.waitForSelector(
-  //     '#loading[style*="display: none;"]',
-  //     {timeout: 180000}
-  // );
-
+  // Look for results section
   let noResults = false;
   await page.waitForSelector(
-      resultsSelector,
-      {timeout: 40000}
+    resultsSelector,
+    {timeout: 20000}
   ).catch(function(err){
     // if no results, skip this page?
     noResults = true;
@@ -341,6 +359,45 @@ async function getPDFs (browser, page, lastPageNum) {
   if (noResults) {
     return {done: true, page: null};
   }
+
+///
+  // let foundResultsContainer = true;
+  // let foundResults = true;
+  // try {
+  //   await page.waitForSelector(
+  //     resultsSelector,
+  //     {timeout: 20000}
+  //   )
+  // } catch (theError) {
+  //   // Didn't find results elements
+  //   foundResults = false;
+  // }
+
+  // if (type === 'cp' && !foundResults) {
+  //   return {done: true, page: null}; 
+  // }
+
+  // if (!foundResults) {
+  //   try {
+  //     await page.waitFor(
+  //       function (noResultsSelector, noResultsText) {
+  //         let elem = document.querySelector(noResultsSelector);
+  //         let text = elem.innerText;
+  //         let hasNoResults = text === noResultsText;
+  //         return isNew;
+  //       },
+  //       {},
+  //       noResultsSelector, noResultsText
+  //     )
+  //   } catch (theError) {
+  //     // Didn't find any expected elements
+  //     return {
+  //       value: 'not found',
+  //       err: theError,
+  //     };
+  //   }
+  // }
+////
 
   // If there were results, we can start the repeat count again.
   timesRepeated = 0;
@@ -390,7 +447,7 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(4.5)
   // Because we're somehow missing this sometimes...?
-  let naveText = null;
+  let navText = null;
   await page.evaluate(
     (paginationSelector) => {
       return document.querySelector(paginationSelector).innerText;

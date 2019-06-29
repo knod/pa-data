@@ -35,6 +35,7 @@ const colors = require('colors');
 // let pdfPath = 'data-cp';
 
 // let requiredPrefix = /CP/;
+// let type = 'cp';
 
 // MDJ Stuff
 const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
@@ -62,6 +63,7 @@ let usedDocketsPath = 'mdj-named-dockets-used.txt';
 
 let pdfPath = 'data-mdj/';
 let requiredPrefix = /MJ/;
+let type = 'mdj';
 
 
 
@@ -339,7 +341,7 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(4.5)
   // Because we're somehow missing this sometimes...?
-  let naveText = null;
+  let navText = null;
   await page.evaluate(
     (paginationSelector) => {
       return document.querySelector(paginationSelector).innerText;
