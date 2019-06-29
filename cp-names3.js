@@ -32,7 +32,7 @@ let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicCont
 let nextSelector = paginationSelector + ' a:nth-last-child(2)';
 let usedDocketsPath = 'cp-named-dockets-used.txt';
 
-let pdfPath = 'data-cp/';
+let pdfPath = 'data-cp/2017-2018/';
 let requiredPrefix = /CP/;
 let type = 'cp';
 
@@ -62,7 +62,7 @@ let type = 'cp';
 
 // let pdfPath = 'data-mdj/';
 // let requiredPrefix = /MJ/;
-// let type = 'mdj'
+// let type = 'mdj';
 
 
 
