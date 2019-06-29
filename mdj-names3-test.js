@@ -45,7 +45,7 @@ const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSear
       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-      resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
+      resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
@@ -70,7 +70,7 @@ let type = 'mdj';
 // Standard
 let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
 // let names = require('./names3.json');
-const dates = {start: "01/01/2007", end: "06/25/2019"};
+const dates = {start: "06/01/2018", end: "12/31/2018"};
 let throttle = 15 * 1000;
 let timesRepeated = 0;
 // Inclusive
@@ -410,7 +410,7 @@ async function getPDFs (browser, page, lastPageNum) {
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
       let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
-      let fixedText = text + '_stabilized';
+      let fixedText = text + '_stabilized_06-18-12-18';
       // fixed at cp-names3 20184
 
       // save docket id to dockets-used.txt?
