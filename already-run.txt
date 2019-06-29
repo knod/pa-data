@@ -23,6 +23,14 @@ node cp-names.js 381 399 3000
 node cp-names.js 112 200 3000
 node cp-names.js 121 136 3500
 
+let doneRanges = [
+  // inclusive
+  {start: 0, end: 110},
+  {start: 401, end: 418},
+  {start: 301, end: 398},
+  {start: 112, end: 135},
+];
+
 # mdj
 
 now in:
@@ -74,6 +82,8 @@ node mdj-names2.js 0 500 2000
 total: 43680
 node cp-names3.js 0 92 3000
 92
+node cp-names3.js 92 1000 30
+
 
 node cp-names3.js 20001 20001 3000
 node cp-names3.js 20002 20002 3000 no
@@ -84,6 +94,14 @@ node cp-names3.js 20147 21000 300
 
 
 node cp-names3.js 30001 31000 300
+30409
+
+let doneRanges = [
+  // inclusive
+  {start: 0, end: },
+  {start: 20001, end: 20319},
+  {start: 30001, end: 30408},
+];
 
 
 ------

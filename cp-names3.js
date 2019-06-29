@@ -16,7 +16,6 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
-      noResultsText = 'No Cases Found',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
@@ -45,9 +44,7 @@ let type = 'cp';
 //       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
 //       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
 //       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-//       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
-//       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket',
-//       noResultsText = 'No Records Found', // === .innerText
+//       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
@@ -72,7 +69,7 @@ let type = 'cp';
 
 // Standard
 let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
-const dates = {start: "01/01/2007", end: "06/25/2019"};
+const dates = {start: "06/01/2018", end: "12/31/2018"};
 let throttle = 15 * 1000;
 let timesRepeated = 0;
 // Inclusive
@@ -159,6 +156,11 @@ async function byNamesDuring (dates, browser) {
   // submit to site along with date
   const page = await browser.newPage();
   await page.setViewport({width: 1920, height: 2000});
+  page.on('console', consoleMessageObject => function (consoleMessageObject) {
+    if (consoleMessageObject._type !== 'warning') {
+      console.debug(consoleMessageObject._text)
+    }
+  });
 
   await page.goto(url)
 
@@ -316,7 +318,7 @@ async function byNamesDuring (dates, browser) {
 
       // Return from error if needed
       if (pageData.err && (pageData.err.message || pageData.err.value)) {
-        return [value, message];
+        return [pageData.err.message, pageData.err.value];
       }
     }  // ends while this name not done
 
@@ -343,35 +345,37 @@ async function getPDFs (browser, page, lastPageNum) {
   let newPageNum = lastPageNum + 1;
   console.log('new pg', newPageNum)
 
-  // Look for results section
-  let noResults = false;
-  await page.waitForSelector(
-    resultsSelector,
-    {timeout: 20000}
-  ).catch(function(err){
-    // if no results, skip this page?
-    noResults = true;
-    console.log('no results');
-    return 'no results';
-    // console.log(err);
-  });
-  // If no results, return to continue loop
-  if (noResults) {
+  let startTime = Date.now()
+  console.log('start looking for result:', Date().toString());
+
+  let anError = null;
+  let resultsElemFound = page.waitForSelector(resultsSelector);
+  let noResultsElemFound = page.waitForSelector(noResultsSelector);
+  let foundSomeResults = false;
+  let foundNoResults = false;
+  await Promise.race([resultsElemFound, noResultsElemFound])
+    .then(function(value) {
+      console.log('race value:', value._remoteObject.description);
+      foundSomeResults = value._remoteObject.description.indexOf(resultsElemFound) >= 0
+      foundNoResults = !foundSomeResults
+      console.log('results found?', foundSomeResults);
+      console.log('no results found?', foundNoResults);
+      // Both resolve, but promise2 is faster
+    })
+    .catch(function (theError) {
+      anError = theError;
+    });
+
+  let endTime = Date.now();
+  let elapsed = endTime - startTime;
+  console.log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
+
+  if (foundNoResults) {
     return {done: true, page: null};
   }
-
-///
-  // let foundResultsContainer = true;
-  // let foundResults = true;
-  // try {
-  //   await page.waitForSelector(
-  //     resultsSelector,
-  //     {timeout: 20000}
-  //   )
-  // } catch (theError) {
-  //   // Didn't find results elements
-  //   foundResults = false;
-  // }
+  if (!foundNoResults && !foundSomeResults) {
+    return {done: true, page: null, err: {message: 'not found', value: anError}}
+  }
 
   // if (type === 'cp' && !foundResults) {
   //   return {done: true, page: null}; 
@@ -462,6 +466,11 @@ async function getPDFs (browser, page, lastPageNum) {
     // console.log(err);
   });
   console.log('paginated:', paginated, ', nav:', navText);
+  if (navText) {
+    let pages = navText.match(/\d+/g);
+    let lastPage = pages[pages.length - 1];
+    console.log('current last page:', lastPage);
+  }
 
   console.log(5);
   // go down rows getting links and ids
@@ -516,7 +525,7 @@ async function getPDFs (browser, page, lastPageNum) {
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
       let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
-      let fixedText = text + '_stabilized';
+      let fixedText = text + '_stabilized_06_18_12_18';
       // fixed at cp-names3 20184
 
       // save docket id to dockets-used.txt?
@@ -637,8 +646,8 @@ async function startNewBrowser () {
           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
           console.log(err.statusCode)
           if (err.statusCode === 429) {
-            console.log('waiting one minute');
-            setTimeout(waitThenRepeat, 60000);
+            console.log('waiting two minutes');
+            setTimeout(waitThenRepeat, 120000);
           } else {
             // repeat with increased wait
             waitThenRepeat();
@@ -674,8 +683,8 @@ async function startNewBrowser () {
       console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
       console.log(err.statusCode)
       if (err.statusCode === 429) {
-        console.log('waiting one minute');
-        setTimeout(waitThenRepeat, 60000);
+        console.log('waiting two minutes');
+        setTimeout(waitThenRepeat, 120000);
       } else {
         waitThenRepeat();
       }
