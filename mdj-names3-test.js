@@ -276,8 +276,8 @@ async function getPDFs (browser, page, lastPageNum) {
 
   let noResults = false;
   await page.waitForSelector(
-      resultsSelctor//,
-      // {timeout: 180000}
+      resultsSelctor,
+      {timeout: 10000}
   ).catch(function(err){
     // if no results, skip this page?
     noResults = true;
@@ -526,7 +526,7 @@ async function startNewBrowser () {
           alert.error();
           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
           if (err.statusCode === 429) {
-            setTimeout(waitThenRepeat, 30000);
+            setTimeout(waitThenRepeat, 60000);
           }
         }
         // repeat with increased wait
@@ -559,7 +559,7 @@ async function startNewBrowser () {
       console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
       console.log(err.statusCode);
       if (err.statusCode === 429) {
-        setTimeout(waitThenRepeat, 30000);
+        setTimeout(waitThenRepeat, 60000);
       }
     });
 };
@@ -570,7 +570,7 @@ const waitThenRepeat = async () => {
   console.log('timesRepeated:', timesRepeated);
  
   if (timesRepeated <= 4) {
-    setTimeout(startNewBrowser, 10000);
+    setTimeout(startNewBrowser, 20000);
   } else if (timesRepeated <= 8) {
     // wait an hour before trying again
     console.log('an hour will pass.');
