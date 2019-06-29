@@ -560,6 +560,11 @@ async function startNewBrowser () {
             '\x1b[33m%s\x1b[0m'
             console.log('waiting one minute');
             setTimeout(waitThenRepeat, 60000);
+          } else {
+            // repeat with increased wait
+            waitThenRepeat();
+          }
+        }
       } else {
         console.log('success');
         if (doPlaySound !== 'no') {
