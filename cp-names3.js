@@ -69,7 +69,7 @@ let type = 'cp';
 
 // Standard
 let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
-const dates = {start: "06/01/2018", end: "12/31/2018"};
+const dates = {start: "01/01/2017", end: "12/31/2018"};
 let throttle = 15 * 1000;
 let timesRepeated = 0;
 // Inclusive
@@ -499,7 +499,7 @@ async function getPDFs (browser, page, lastPageNum) {
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
       let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
-      let fixedText = text + '_stabilized_06_18_12_18';
+      let fixedText = text + '_stabilized_01_17_12_18';
       // fixed at cp-names3 20184
 
       // save docket id to dockets-used.txt?
