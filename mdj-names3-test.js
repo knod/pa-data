@@ -49,6 +49,9 @@ const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSear
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
+let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
+let noResultsText = 'No Records Found'
+
 const searchTypeVal = "ParticipantName",
       docketTypeVal = "CR",
       nameIndexPath = 'mdj-name-index.json';
@@ -350,7 +353,20 @@ async function getPDFs (browser, page, lastPageNum) {
 
   let anError = null;
   let resultsElemFound = page.waitForSelector(resultsSelector);
-  let noResultsElemFound = page.waitForSelector(noResultsSelector);
+  let noResultsElemFound = null;
+  if (type === 'cp') {
+    noResultsElemFound = page.waitForSelector(noResultsSelector);
+  } else {
+    noResultsElemFound = page.waitFor(
+      function (noResultsSelector, noResultsText) {
+        let text = document.querySelector(noResultsSelector).innerText;
+        let hasText = text === noResultsText;
+        return ishasTextNew;
+      },
+      {},
+      noResultsSelector, noResultsText
+    );
+  }
   let foundSomeResults = false;
   let foundNoResults = false;
   await Promise.race([resultsElemFound, noResultsElemFound])
