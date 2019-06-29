@@ -98,7 +98,10 @@ If you know sites with tutorials to do this better, let us know!
 ## Finish
 
 1. Do the [Keeping Data](#keeping-data) instructions.
-1. Possibly (if you cloned the repo) do `git pull origin master`. I'm not always sure when I'm introducing bugs, so do this at your own risk.
+1. Possibly (if you cloned the repo) do:
+  1. `git add .`
+  1. `git commit`
+  1. `git pull origin master`. I'm not always sure when I'm introducing bugs, so do this at your own risk.
 1. If you `pull`ed, do `npm install`.
 1. Pick a new row in the google doc. Do this again!
 

@@ -550,9 +550,11 @@ async function startNewBrowser () {
       // }, 60000);
       if (doPlaySound !== 'no') { alert.error(); }
       console.log(err);
+
       // How do we close the old browser?
       browser.close();
       console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
+      console.log(err.statusCode);
       waitThenRepeat();
     });
 };
