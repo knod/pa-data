@@ -346,6 +346,7 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log('new pg', newPageNum)
 
   let startTime = Date.now()
+  console.log('start looking for result:', Date().toString());
   let noResults = false;
   await page.waitForSelector(
     resultsSelector//,
@@ -365,10 +366,9 @@ async function getPDFs (browser, page, lastPageNum) {
   // Look for results section
   // How long can it take to find a result
 
-  console.log('start looking for result:', Date().toString());
   // // This assumes the page has loaded
   // let noResults = false;
-  // // try {
+  // try {
   //   console.log('-------------trying-------------');
   //   // await page.waitForSelector(
   //   //   resultsSelector//,
@@ -396,13 +396,12 @@ async function getPDFs (browser, page, lastPageNum) {
   //     },
   //     {},
   //     resultsSelector, noResultsSelector, startTime
-  //   )//;
-  // //} 
-  // .catch (function (theError) {
+  //   );
+  // } catch (theError) {
   //   // Didn't find any elements
   //   console.log('nothing found');
   //   return {done: true, page: null, err: {value: 'not found', message: theError + '\n from Results'.yellow}}
-  // })
+  // }
   // console.log(noResults);
   // if (noResults) {
   //   console.log('no results')
