@@ -15,8 +15,6 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
-      noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
-      noResultsText = 'No Cases Found',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
@@ -45,9 +43,7 @@ let type = 'cp';
 //       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
 //       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
 //       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-//       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
-//       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket',
-//       noResultsText = 'No Records Found', // === .innerText
+//       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
@@ -343,35 +339,43 @@ async function getPDFs (browser, page, lastPageNum) {
   let newPageNum = lastPageNum + 1;
   console.log('new pg', newPageNum)
 
+
+  // let noResults = false;
+  // await page.waitForSelector(
+  //   resultsSelector,
+  //   {timeout: 20000}
+  // ).catch(function(err){
+  //   // if no results, skip this page?
+  //   noResults = true;
+  //   console.log('no results');
+  //   return 'no results';
+  //   // console.log(err);
+  // });
+  // // If no results, return to continue loop
+  // if (noResults) {
+  //   return {done: true, page: null};
+  // }
+
   // Look for results section
-  let noResults = false;
-  await page.waitForSelector(
-    resultsSelector,
-    {timeout: 20000}
-  ).catch(function(err){
-    // if no results, skip this page?
-    noResults = true;
+  // How long can it take to find a result
+  let startTime = Date.now()
+  console.log('start looking for result:', Date().toString());
+  // This assumes the page has loaded
+  try {
+    await page.waitForSelector(
+      resultsSelector//,
+      // {timeout: 20000}
+    )
+  } catch (theError) {
+    // Didn't find results elements
+    foundResults = false;
     console.log('no results');
-    return 'no results';
-    // console.log(err);
-  });
-  // If no results, return to continue loop
-  if (noResults) {
     return {done: true, page: null};
   }
+  let endTime = Date.now();
+  let elapsed = endTime - startTime;
+  console.log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
 
-///
-  // let foundResultsContainer = true;
-  // let foundResults = true;
-  // try {
-  //   await page.waitForSelector(
-  //     resultsSelector,
-  //     {timeout: 20000}
-  //   )
-  // } catch (theError) {
-  //   // Didn't find results elements
-  //   foundResults = false;
-  // }
 
   // if (type === 'cp' && !foundResults) {
   //   return {done: true, page: null}; 
