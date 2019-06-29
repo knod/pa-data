@@ -156,6 +156,11 @@ async function byNamesDuring (dates, browser) {
   // submit to site along with date
   const page = await browser.newPage();
   await page.setViewport({width: 1920, height: 2000});
+  page.on('console', consoleMessageObject => function (consoleMessageObject) {
+    if (consoleMessageObject._type !== 'warning') {
+      console.debug(consoleMessageObject._text)
+    }
+  });
 
   await page.goto(url)
 
@@ -340,71 +345,71 @@ async function getPDFs (browser, page, lastPageNum) {
   let newPageNum = lastPageNum + 1;
   console.log('new pg', newPageNum)
 
-
-  // let noResults = false;
-  // await page.waitForSelector(
-  //   resultsSelector,
-  //   {timeout: 20000}
-  // ).catch(function(err){
-  //   // if no results, skip this page?
-  //   noResults = true;
-  //   console.log('no results');
-  //   return 'no results';
-  //   // console.log(err);
-  // });
-  // // If no results, return to continue loop
-  // if (noResults) {
-  //   return {done: true, page: null};
-  // }
+  let startTime = Date.now()
+  let noResults = false;
+  await page.waitForSelector(
+    resultsSelector//,
+    // {timeout: 20000}
+  ).catch(function(err){
+    // if no results, skip this page?
+    noResults = true;
+    console.log('no results');
+    return 'no results';
+    // console.log(err);
+  });
+  // If no results, return to continue loop
+  if (noResults) {
+    return {done: true, page: null};
+  }
 
   // Look for results section
   // How long can it take to find a result
-  let startTime = Date.now()
-  console.log('start looking for result:', Date().toString());
-  // This assumes the page has loaded
-  let noResults = false;
-  // try {
-    console.log('-------------trying-------------');
-    // await page.waitForSelector(
-    //   resultsSelector//,
-    //   // Wait a different amount for different numbers of pages?
-    //   // {timeout: 20000}
-    // );
 
-    // Find out what happened as quickly as possible
-    await page.waitFor(
-      (resultsSelector, noResultsSelector, startTime) => {
-        console.log('\n-\n-\n-\n-\nwaitFor results\n-\n-\n-\n-\n-');
-        let resultsExists = !!document.querySelector(resultsSelector);
-        let noResultsExists = !!document.querySelector(noResultsSelector);
-        console.log(resultsExists, noResultsExists);
-        if (noResultsExists) {
-          console.log('no results');
-          let endTime = Date.now();
-          let elapsed = endTime - startTime;
-          console.log('Time elapsed:', elapsed, '(seconds:', elapsed/1000 + ')');
-        }
-        if (resultsExists) {
-          console.log('results found');
-        }
-        return resultsExists || noResultsExists;
-      },
-      {},
-      resultsSelector, noResultsSelector, startTime
-    )//;
-  //} 
-  .catch (function (theError) {
-    // Didn't find any elements
-    console.log('nothing found');
-    return {done: true, page: null, err: {value: 'not found', message: theError + '\n from Results'.yellow}}
-  })
-  console.log(noResults);
-  if (noResults) {
-    console.log('no results')
-    return {done: true, page: null};
-  } else {
-    console.log('results found');
-  }
+  console.log('start looking for result:', Date().toString());
+  // // This assumes the page has loaded
+  // let noResults = false;
+  // // try {
+  //   console.log('-------------trying-------------');
+  //   // await page.waitForSelector(
+  //   //   resultsSelector//,
+  //   //   // Wait a different amount for different numbers of pages?
+  //   //   // {timeout: 20000}
+  //   // );
+
+  //   // Find out what happened as quickly as possible
+  //   await page.waitFor(
+  //     (resultsSelector, noResultsSelector, startTime) => {
+  //       console.log('\n-\n-\n-\n-\nwaitFor results\n-\n-\n-\n-\n-');
+  //       let resultsExists = !!document.querySelector(resultsSelector);
+  //       let noResultsExists = !!document.querySelector(noResultsSelector);
+  //       console.log(resultsExists, noResultsExists);
+  //       if (noResultsExists) {
+  //         console.log('no results');
+  //         let endTime = Date.now();
+  //         let elapsed = endTime - startTime;
+  //         console.log('Time elapsed:', elapsed, '(seconds:', elapsed/1000 + ')');
+  //       }
+  //       if (resultsExists) {
+  //         console.log('results found');
+  //       }
+  //       return resultsExists || noResultsExists;
+  //     },
+  //     {},
+  //     resultsSelector, noResultsSelector, startTime
+  //   )//;
+  // //} 
+  // .catch (function (theError) {
+  //   // Didn't find any elements
+  //   console.log('nothing found');
+  //   return {done: true, page: null, err: {value: 'not found', message: theError + '\n from Results'.yellow}}
+  // })
+  // console.log(noResults);
+  // if (noResults) {
+  //   console.log('no results')
+  //   return {done: true, page: null};
+  // } else {
+  //   console.log('results found');
+  // }
   let endTime = Date.now();
   let elapsed = endTime - startTime;
   console.log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
