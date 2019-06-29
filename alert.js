@@ -8,7 +8,7 @@ let success = function () {
 };
 
 let error = function () {
-  player.play('police.mp3', (err) => {
+  player.play('error.mp3', (err) => {
     if (err) console.log(`Could not play sound: ${err}`);
   });
 };

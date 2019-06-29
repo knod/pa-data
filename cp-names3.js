@@ -4,6 +4,7 @@ const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
 const alert = require("./alert.js");
+const colors = require('colors');
 
 // CP Stuff
 const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
@@ -13,7 +14,9 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       startDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox",
       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
-      resultsSelctor = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+      resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+      noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
+      noResultsText = 'No Cases Found',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
@@ -32,6 +35,7 @@ let usedDocketsPath = 'cp-named-dockets-used.txt';
 
 let pdfPath = 'data-cp/';
 let requiredPrefix = /CP/;
+let type = 'cp';
 
 // // MDJ Stuff
 // const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
@@ -41,7 +45,9 @@ let requiredPrefix = /CP/;
 //       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
 //       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
 //       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-//       resultsSelctor = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
+//       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
+//       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket',
+//       noResultsText = 'No Records Found', // === .innerText
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
@@ -59,13 +65,13 @@ let requiredPrefix = /CP/;
 
 // let pdfPath = 'data-mdj/';
 // let requiredPrefix = /MJ/;
+// let type = 'mdj'
 
 
 
 
 // Standard
 let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
-// let names = require('./names3.json');
 const dates = {start: "01/01/2007", end: "06/25/2019"};
 let throttle = 15 * 1000;
 let timesRepeated = 0;
@@ -74,28 +80,81 @@ let timesRepeated = 0;
 // latest: node cp-names.js 41 45
 let namesStartIndex = parseInt(process.argv[2]),
     namesEndIndex   = parseInt(process.argv[3]);
+let doPlaySound = process.argv[5];
 
 if (process.argv[4]) {
   throttle = parseInt(process.argv[4]);
 }
 
-fs.writeFileSync(nameIndexPath, namesStartIndex);
+// // command line command looks something like:
+// // node mdj-names3-test.js mdj '{"wait":"200","getFrom":"names3.js"}'
+// let type = process.argv[2];
+// let commandLineArgs = JSON.parse(process.argv[3]);
 
+// if (!commandLineArgs.user) {
+//   throw ReferenceError('You must at least write \'{"user":"yourFirstNameHere"}\' after the script name to add the "user" property.'.yellow);
+// }
+// if (commandLineArgs.user === 'yourFirstNameHere') {
+//   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
+// }
+// if (commandLineArgs.startIndex && !commandLineArgs.endIndex) {
+//   commandLineArgs.endIndex = commandLineArgs.startIndex + 500;  // names.length - 1
+// }
+
+// // In future 'type' will determine what selector and filename values are used
+// // let nameIndexPath = type + '-name-index.json';
+// let nameIndexVal = require('./' + nameIndexPath);
+// console.log('nameIndex required:', nameIndexVal);
+// let defaultArgs = {
+//   startIndex: nameIndexVal,
+//   endIndex: nameIndexVal + 500,
+//   startYear: 2017,
+//   endYear: 2019,
+//   wait: 300,
+// //   volume: 10,  // no way to implement this right now
+//   alerts: 'yes',
+//   getFrom: 'names3.json',
+// //   type: type,
+// }
+
+// let argvs = Object.assign(defaultArgvs, commandLineArgvs);
+// argvs.dates = {
+//   start: '01/01/' + argvs.startYear,
+//   end: '12/31' + argvs.endYear,
+// }
+// if (argvs.endYear === 2019) { argvs.dates.end = '06/25/2019'; }
+
+// // // In future 'type' will determine what selector and filename values are used
+// // let vars = whatever[type];
+// // // In future, which file to get names from will be determined by
+// // // files named after users
+// // if (!args.user || args.user === 'yourNameHere') {
+// //   throw ReferenceError('You must at least write \'{"user":"yourFirstNameHere"}\' after the script name to add the "user" property.'.yellow);
+// // }
+// // if (args.user === 'yourFirstNameHere') {
+// //   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
+// // }
+// // if (commandLineArgs.startIndex && !commandLineArgs.endIndex) {
+// //   argvs.endIndex = names.length - 1
+// // }
+// // console.log(args);
+
+
+/*
+let namesStartIndex = argvs.startIndex;
+let namesEndIndex = argvs.endIndex;
+let doPlaySound = argvs.alerts;
+let throttle = argvs.wait;
+*/
+
+fs.writeFileSync(nameIndexPath, namesStartIndex);
 console.log(namesStartIndex, namesEndIndex);
+
+
 
 async function byNamesDuring (dates, browser) {
 
   let err = null;
-  // fs.writeFileSync(nameIndexPath, namesStartIndex);
-
-  // // Get last stored name index (number)
-  // let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
-
-  // // Get next name after that
-  // nameIndex += 1;
-  // let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
-  // let name = names[nameIndex];
-  // console.log(name);
 
   // submit to site along with date
   const page = await browser.newPage();
@@ -127,7 +186,6 @@ async function byNamesDuring (dates, browser) {
 
   // Get last stored name index (number)
   let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
-  // let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
@@ -238,12 +296,28 @@ async function byNamesDuring (dates, browser) {
     if (found === false) {return ['not found', err];}
     page.click(searchSelector)
 
-    let pageData = {done: false, page: 0};
+    // Search through the pages
+    let pageData = {done: false, page: 0, err: {message: null, value: null}};
     while (!pageData.done) {
+
+      // Make sure page is still there
+      await page.waitForSelector(searchSelector)
+        .catch(function(theError){
+          err = theError;
+          found = false;
+          console.log('elment not found. 7.5')
+        });
+      if (found === false) {return ['not found', err];}
+
       console.log(1.5);
       pageData = await getPDFs(browser, page, pageData.page);
       console.log(17);
       console.log('pageData', pageData);
+
+      // Return from error if needed
+      if (pageData.err && (pageData.err.message || pageData.err.value)) {
+        return [value, message];
+      }
     }  // ends while this name not done
 
     console.log(18)
@@ -269,15 +343,11 @@ async function getPDFs (browser, page, lastPageNum) {
   let newPageNum = lastPageNum + 1;
   console.log('new pg', newPageNum)
 
-  // await page.waitForSelector(
-  //     '#loading[style*="display: none;"]',
-  //     {timeout: 180000}
-  // );
-
+  // Look for results section
   let noResults = false;
   await page.waitForSelector(
-      resultsSelctor//,
-      // {timeout: 180000}
+    resultsSelector,
+    {timeout: 20000}
   ).catch(function(err){
     // if no results, skip this page?
     noResults = true;
@@ -289,6 +359,45 @@ async function getPDFs (browser, page, lastPageNum) {
   if (noResults) {
     return {done: true, page: null};
   }
+
+///
+  // let foundResultsContainer = true;
+  // let foundResults = true;
+  // try {
+  //   await page.waitForSelector(
+  //     resultsSelector,
+  //     {timeout: 20000}
+  //   )
+  // } catch (theError) {
+  //   // Didn't find results elements
+  //   foundResults = false;
+  // }
+
+  // if (type === 'cp' && !foundResults) {
+  //   return {done: true, page: null}; 
+  // }
+
+  // if (!foundResults) {
+  //   try {
+  //     await page.waitFor(
+  //       function (noResultsSelector, noResultsText) {
+  //         let elem = document.querySelector(noResultsSelector);
+  //         let text = elem.innerText;
+  //         let hasNoResults = text === noResultsText;
+  //         return isNew;
+  //       },
+  //       {},
+  //       noResultsSelector, noResultsText
+  //     )
+  //   } catch (theError) {
+  //     // Didn't find any expected elements
+  //     return {
+  //       value: 'not found',
+  //       err: theError,
+  //     };
+  //   }
+  // }
+////
 
   // If there were results, we can start the repeat count again.
   timesRepeated = 0;
@@ -338,20 +447,21 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(4.5)
   // Because we're somehow missing this sometimes...?
-  const navText = await page.evaluate(
+  let navText = null;
+  await page.evaluate(
     (paginationSelector) => {
       return document.querySelector(paginationSelector).innerText;
     },
     paginationSelector
-  ).then(function (navText) {
-    if (navText) {
-      console.log('nav:', paginated, navText);
+  ).then(function (returnedNavText) {
+    if (returnedNavText) {
+      navText = returnedNavText;
       paginated = true;
     }
   }).catch(function (err){
     // console.log(err);
   });
-  console.log('nav:', paginated, navText);
+  console.log('paginated:', paginated, ', nav:', navText);
 
   console.log(5);
   // go down rows getting links and ids
@@ -511,7 +621,6 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 // Test
 
-let doPlaySound = process.argv[5];
 async function startNewBrowser () {
 
   let browser = await puppeteer.launch({ headless: true });
@@ -523,13 +632,18 @@ async function startNewBrowser () {
         console.log('page/element not found. page probably not loading.');
         console.log(err);
         if (doPlaySound !== 'no') {
+          // Temporary error
           alert.error();
-          console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
+          console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
           console.log(err.statusCode)
-          setTimeout(waitThenRepeat, 10000);
+          if (err.statusCode === 429) {
+            console.log('waiting one minute');
+            setTimeout(waitThenRepeat, 60000);
+          } else {
+            // repeat with increased wait
+            waitThenRepeat();
+          }
         }
-        // repeat with increased wait
-        waitThenRepeat();
       } else {
         console.log('success');
         if (doPlaySound !== 'no') {
@@ -550,34 +664,47 @@ async function startNewBrowser () {
       // setTimeout(function () {
       // startNewBrowser();
       // }, 60000);
-      if (doPlaySound !== 'no') { alert.error(); }
+      if (doPlaySound !== 'no') {
+        // Temporary error
+        alert.error();
+      }
       console.log(err);
       // How do we close the old browser?
       browser.close();
-      console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
+      console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
       console.log(err.statusCode)
-      setTimeout(waitThenRepeat, 10000);
+      if (err.statusCode === 429) {
+        console.log('waiting one minute');
+        setTimeout(waitThenRepeat, 60000);
+      } else {
+        waitThenRepeat();
+      }
     });
 };
 
+// BUG: Something is triggering multiple processes at the same time
+// Something above this must be calling this twice. Where is this happening?
+// Also, though, instantiating two different `timesRepeated` vars.
+// How can that even happen?
 const waitThenRepeat = async () => {
   timesRepeated++;
   timesRepeated % 11;  // 11 will turn into 0
   console.log('timesRepeated:', timesRepeated);
  
   if (timesRepeated <= 4) {
-    setTimeout(startNewBrowser, 10000);
+    setTimeout(startNewBrowser, 20000);
   } else if (timesRepeated <= 8) {
     // wait an hour before trying again
-    console.log('an hour will pass.');
-    setTimeout(startNewBrowser, 60000);
-    // , 3600000);
+    console.log('an hour should pass.');
+    setTimeout(startNewBrowser//, 60000);
+    , 3600000);
   } else if (timesRepeated <= 9){
     // wait 15 min
-    console.log('4 hours have passed');
-    setTimeout(startNewBrowser, 30000);
-    // , 900000);
+    console.log('4 hours should have passed');
+    setTimeout(startNewBrowser//, 30000);
+    , 900000);
   } else {
+    // Final error
     console.log("giving up");
     alert.gaveUp();
     process.exit(1);

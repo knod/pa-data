@@ -4,6 +4,7 @@ const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
 const alert = require("./alert.js");
+const colors = require('colors');
 
 // // CP Stuff
 // const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
@@ -13,7 +14,7 @@ const alert = require("./alert.js");
 //       startDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox",
 //       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
 //       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
-//       resultsSelctor = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+//       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 // const dates = {start: "01/01/2007", end: "06/25/2019"};
 
@@ -34,6 +35,7 @@ const alert = require("./alert.js");
 // let pdfPath = 'data-cp';
 
 // let requiredPrefix = /CP/;
+// let type = 'cp';
 
 // MDJ Stuff
 const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
@@ -43,7 +45,7 @@ const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSear
       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-      resultsSelctor = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
+      resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
@@ -61,6 +63,7 @@ let usedDocketsPath = 'mdj-named-dockets-used.txt';
 
 let pdfPath = 'data-mdj/';
 let requiredPrefix = /MJ/;
+let type = 'mdj';
 
 
 
@@ -276,8 +279,8 @@ async function getPDFs (browser, page, lastPageNum) {
 
   let noResults = false;
   await page.waitForSelector(
-      resultsSelctor//,
-      // {timeout: 180000}
+      resultsSelector,
+      {timeout: 40000}
   ).catch(function(err){
     // if no results, skip this page?
     noResults = true;
@@ -338,20 +341,21 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(4.5)
   // Because we're somehow missing this sometimes...?
-  const navText = await page.evaluate(
+  let navText = null;
+  await page.evaluate(
     (paginationSelector) => {
       return document.querySelector(paginationSelector).innerText;
     },
     paginationSelector
-  ).then(function (navText) {
-    if (navText) {
-      console.log('nav:', paginated, navText);
+  ).then(function (returnedNavText) {
+    if (returnedNavText) {
+      navText = returnedNavText;
       paginated = true;
     }
   }).catch(function (err){
     // console.log(err);
   });
-  console.log('nav:', paginated, navText);
+  console.log('paginated:', paginated, ', nav:', navText);
 
   console.log(5);
   // go down rows getting links and ids
@@ -523,11 +527,18 @@ async function startNewBrowser () {
         console.log('page/element not found. page probably not loading.');
         console.log(err);
         if (doPlaySound !== 'no') {
+          // Temporary error
           alert.error();
-          console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
+          console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
+          console.log(err.statusCode)
+          if (err.statusCode === 429) {
+            console.log('waiting one minute');
+            setTimeout(waitThenRepeat, 60000);
+          } else {
+            // repeat with increased wait
+            waitThenRepeat();
+          }
         }
-        // repeat with increased wait
-        waitThenRepeat();
       } else {
         console.log('success');
         if (doPlaySound !== 'no') {
@@ -548,35 +559,47 @@ async function startNewBrowser () {
       // setTimeout(function () {
       // startNewBrowser();
       // }, 60000);
-      if (doPlaySound !== 'no') { alert.error(); }
+      if (doPlaySound !== 'no') {
+        // Temporary error
+        alert.error();
+      }
       console.log(err);
-
       // How do we close the old browser?
       browser.close();
-      console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
-      console.log(err.statusCode);
-      waitThenRepeat();
+      console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
+      console.log(err.statusCode)
+      if (err.statusCode === 429) {
+        console.log('waiting one minute');
+        setTimeout(waitThenRepeat, 60000);
+      } else {
+        waitThenRepeat();
+      }
     });
 };
 
+// BUG: Something is triggering multiple processes at the same time
+// Something above this must be calling this twice. Where is this happening?
+// Also, though, instantiating two different `timesRepeated` vars.
+// How can that even happen?
 const waitThenRepeat = async () => {
   timesRepeated++;
   timesRepeated % 11;  // 11 will turn into 0
   console.log('timesRepeated:', timesRepeated);
  
   if (timesRepeated <= 4) {
-    setTimeout(startNewBrowser, 10000);
+    setTimeout(startNewBrowser, 20000);
   } else if (timesRepeated <= 8) {
     // wait an hour before trying again
-    console.log('an hour will pass.');
-    setTimeout(startNewBrowser, 3600000);
-    //, 60000);
+    console.log('an hour should pass.');
+    setTimeout(startNewBrowser//, 60000);
+    , 3600000);
   } else if (timesRepeated <= 9){
     // wait 15 min
-    console.log('4 hours have passed');
-    setTimeout(startNewBrowser, 900000);
-    //, 30000);
+    console.log('4 hours should have passed');
+    setTimeout(startNewBrowser//, 30000);
+    , 900000);
   } else {
+    // Final error
     console.log("giving up");
     alert.gaveUp();
     process.exit(1);
