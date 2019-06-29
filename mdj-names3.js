@@ -3,6 +3,7 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
+const alert = require("./alert.js");
 
 // // CP Stuff
 // const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
@@ -94,19 +95,21 @@ async function byNamesDuring (dates) {
 
   await page.goto(url)
 
+  console.log(-2);
   // if page not found, stop
   let notFound = false;
   await page.waitForSelector(searchTypeSelector)
     .catch(async function(err){
       notFound = true;
       console.log('page not found');
-      await browser.close();
-      return false
+      return 'not found';
     });
   if (notFound) {
     await browser.close();
-    return false
+    return 'not found';
   };
+
+  console.log(-1);
 
   // Select search by name
   page.select(
@@ -114,6 +117,7 @@ async function byNamesDuring (dates) {
     searchTypeVal
   );
 
+  console.log(0);
   await page.waitForSelector(lastNameSelector);
 
 
@@ -123,35 +127,70 @@ async function byNamesDuring (dates) {
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
+    if (doPlaySound !== 'no') { alert.nameIndex(); }
 
     await page.waitFor(throttle * 10);
 
     let name = names[nameIndex];
     console.log(name);
 
+    let found = true;
+
+    await page.waitForSelector(lastNameSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 1')
+      });
+    if (found === false) {return 'not found';}
     await page.$eval(
       lastNameSelector,
       function (el, str) { el.value = str },
       name.lastName
-    );
+    ).catch(function(err){
+      console.log('Sorry, manual rerun needed. Start from last finished name index. Check the "mdj-name-index.json" file.')
+    });
 
+    await page.waitForSelector(firstNameSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 3')
+      });
+    if (found === false) {return 'not found';}
     await page.$eval(
       firstNameSelector,
       function (el, str) { el.value = str },
       name.firstName
     );
 
+    await page.waitForSelector(docketTypeSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 4')
+      });
+    if (found === false) {return 'not found';}
     page.select(
       docketTypeSelector,
       docketTypeVal
     );
 
+    await page.waitForSelector(startDateSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 5')
+      });
+    if (found === false) {return 'not found';}
     await page.$eval(
       startDateSelector,
       function (el, str) { el.value = str },
       dates.start
     );
 
+    await page.waitForSelector(endDateSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 6')
+      });
+    if (found === false) {return 'not found';}
     await page.$eval(
       endDateSelector,
       function (el, str) { el.value = str },
@@ -159,6 +198,12 @@ async function byNamesDuring (dates) {
     );
 
     console.log(1);
+    await page.waitForSelector(searchSelector)
+      .catch(function(err){
+        found = false;
+        console.log('Sorry, manual rerun needed? Start from last finished name index. Check the "mdj-name-index.json" file. 7')
+      });
+    if (found === false) {return 'not found';}
     page.click(searchSelector)
 
     let pageData = {done: false, page: 0};
@@ -197,12 +242,21 @@ async function getPDFs (browser, page, lastPageNum) {
   //     {timeout: 180000}
   // );
 
+  let noResults = false;
   await page.waitForSelector(
       resultsSelctor//,
       // {timeout: 180000}
   ).catch(function(err){
+    // if no results, skip this page?
+    noResults = true;
+    console.log('no results');
+    return 'no results';
     // console.log(err);
   });
+  // If no results, return to continue loop
+  if (noResults) {
+    return {done: true, page: null};
+  }
   
   console.log(3);
 
@@ -314,10 +368,10 @@ async function getPDFs (browser, page, lastPageNum) {
       });
 
       // Download pdfs
-      downloadPDF(linksText[index + adder], text + '-docket.pdf');
+      await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
       adder++
-      downloadPDF(linksText[index + adder], text + '-summary.pdf');
+      await downloadPDF(linksText[index + adder], text + '-summary.pdf');
     }
   }
 
@@ -407,12 +461,31 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 
 // Test
-byNamesDuring(dates)
-  .then((value) => {
-    // gotIt = true;
-    console.log('success');
-    // console.log(value); // Success!
-  }).catch((err) => {
-    console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n')
-    console.log(err);
-});
+let doPlaySound = process.argv[5];
+// let repeat = function () {
+
+  byNamesDuring(dates)
+    .then((value) => {
+      // gotIt = true;
+      console.log('success probably');
+      // console.log(value); // Success!
+      if (doPlaySound !== 'no') {
+        if (value === 'not found') {
+          alert.error();
+        } else {
+          alert.success();
+        }
+      }
+
+    }).catch((err) => {
+      console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
+      console.log(err);
+      // setTimeout(function () {
+      //   repeat();
+      // }, 60000);
+      if (doPlaySound !== 'no') { alert.error(); }
+  });
+
+// }
+
+// repeat();
