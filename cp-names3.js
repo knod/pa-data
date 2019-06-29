@@ -95,7 +95,7 @@ if (process.argv[4]) {
 //   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
 // }
 // if (commandLineArgs.startIndex && !commandLineArgs.endIndex) {
-//   commandLineArgs.endIndex = commandLineArgs.startIndex + 500;  // names.length - 1
+//   commandLineArgs.endIndex = commandLineArgs.startIndex + 1000;  // names.length - 1
 // }
 
 // // In future 'type' will determine what selector and filename values are used
@@ -104,7 +104,7 @@ if (process.argv[4]) {
 // console.log('nameIndex required:', nameIndexVal);
 // let defaultArgs = {
 //   startIndex: nameIndexVal,
-//   endIndex: nameIndexVal + 500,
+//   endIndex: nameIndexVal + 1000,
 //   startYear: 2017,
 //   endYear: 2019,
 //   wait: 300,
@@ -311,6 +311,9 @@ async function byNamesDuring (dates, browser) {
         });
       if (found === false) {return ['not found', err];}
 
+      // If there were results, we can start the repeat count again.
+      timesRepeated = 0;
+
       console.log(1.5);
       pageData = await getPDFs(browser, page, pageData.page);
       console.log(17);
@@ -376,35 +379,6 @@ async function getPDFs (browser, page, lastPageNum) {
   if (!foundNoResults && !foundSomeResults) {
     return {done: true, page: null, err: {message: 'not found', value: anError}}
   }
-
-  // if (type === 'cp' && !foundResults) {
-  //   return {done: true, page: null}; 
-  // }
-
-  // if (!foundResults) {
-  //   try {
-  //     await page.waitFor(
-  //       function (noResultsSelector, noResultsText) {
-  //         let elem = document.querySelector(noResultsSelector);
-  //         let text = elem.innerText;
-  //         let hasNoResults = text === noResultsText;
-  //         return isNew;
-  //       },
-  //       {},
-  //       noResultsSelector, noResultsText
-  //     )
-  //   } catch (theError) {
-  //     // Didn't find any expected elements
-  //     return {
-  //       value: 'not found',
-  //       err: theError,
-  //     };
-  //   }
-  // }
-////
-
-  // If there were results, we can start the repeat count again.
-  timesRepeated = 0;
   
   console.log(3);
 
@@ -656,8 +630,9 @@ async function startNewBrowser () {
       } else {
         console.log('success');
         if (doPlaySound !== 'no') {
-            alert.success();
+          alert.success();
         }
+        process.exit();
       }
       // gotIt = true;
 

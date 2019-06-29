@@ -314,6 +314,9 @@ async function byNamesDuring (dates, browser) {
         });
       if (found === false) {return ['not found', err];}
 
+      // If there were results, we can start the repeat count again.
+      timesRepeated = 0;
+
       console.log(1.5);
       pageData = await getPDFs(browser, page, pageData.page);
       console.log(17);
@@ -352,25 +355,34 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log('start looking for result:', Date().toString());
 
   let anError = null;
-  let resultsElemFound = page.waitForSelector(resultsSelector);
+    let resultsElemFound = page.waitForSelector(resultsSelector,
+    { 'timeout': 120000 });
   let noResultsElemFound = null;
+
   if (type === 'cp') {
-    noResultsElemFound = page.waitForSelector(noResultsSelector);
+    noResultsElemFound = page.waitForSelector(noResultsSelector,
+      { 'timeout': 120000 });
   } else {
     noResultsElemFound = page.waitFor(
       function (noResultsSelector, noResultsText) {
-        if (!!document.querySelector(noResultsSelector)) {
-          let text = document.querySelector(noResultsSelector).innerText;
+        let elem = document.querySelector(noResultsSelector)
+        if (!!elem) {
+          let text = elem.innerText;
           let hasText = text === noResultsText;
-          return hasText;
+          if (hasText) {
+            return elem;
+          } else {
+            return false;
+          }
         } else {
           return false;
         }
       },
-      {},
+      { 'timeout': 120000 },
       noResultsSelector, noResultsText
     );
   }
+
   let foundSomeResults = false;
   let foundNoResults = false;
   await Promise.race([resultsElemFound, noResultsElemFound])
@@ -389,6 +401,10 @@ async function getPDFs (browser, page, lastPageNum) {
   let endTime = Date.now();
   let elapsed = endTime - startTime;
   console.log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
+
+  if (anError) {
+    return {done: true, page: null, err: {message: 'not found', value: anError}}
+  }
 
   if (foundNoResults) {
     return {done: true, page: null};
@@ -423,8 +439,6 @@ async function getPDFs (browser, page, lastPageNum) {
   // }
 ////
 
-  // If there were results, we can start the repeat count again.
-  timesRepeated = 0;
   
   console.log(3);
 
@@ -676,8 +690,9 @@ async function startNewBrowser () {
       } else {
         console.log('success');
         if (doPlaySound !== 'no') {
-            alert.success();
+          alert.success();
         }
+        process.exit();
       }
       // gotIt = true;
 
