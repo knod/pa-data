@@ -15,6 +15,7 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+      noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
@@ -68,7 +69,7 @@ let type = 'cp';
 
 // Standard
 let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
-const dates = {start: "01/01/2007", end: "06/25/2019"};
+const dates = {start: "06/01/2018", end: "12/31/2018"};
 let throttle = 15 * 1000;
 let timesRepeated = 0;
 // Inclusive
@@ -312,7 +313,7 @@ async function byNamesDuring (dates, browser) {
 
       // Return from error if needed
       if (pageData.err && (pageData.err.message || pageData.err.value)) {
-        return [value, message];
+        return [pageData.err.value, pageData.err.message];
       }
     }  // ends while this name not done
 
@@ -362,15 +363,32 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log('start looking for result:', Date().toString());
   // This assumes the page has loaded
   try {
-    await page.waitForSelector(
-      resultsSelector//,
-      // {timeout: 20000}
-    )
+    // await page.waitForSelector(
+    //   resultsSelector//,
+    //   // Wait a different amount for different numbers of pages?
+    //   // {timeout: 20000}
+    // );
+
+    // Find out what happened as quickly as possible
+    await page.waitFor(
+      (resultsSelector, noResultsSelector, startTime) => {
+        let resultsExists = document.querySelector(resultsSelector);
+        let noResultsExists = document.querySelector(noResultsSelector);
+        if (noResultsExists) {
+          console.log('no results', );
+          let endTime = Date.now();
+          let elapsed = endTime - startTime;
+          console.log('Time elapsed:', elapsed, '(seconds:', elapsed/1000 + ')');
+        }
+        return resultsExists || noResultsExists;
+      },
+      {},
+      resultsSelector, noResultsSelector, startTime
+    );
   } catch (theError) {
-    // Didn't find results elements
-    foundResults = false;
-    console.log('no results');
-    return {done: true, page: null};
+    // Didn't find any elements
+    console.log('nothing found');
+    return {done: true, page: null, err: {value: 'not found', message: theError + '\n from Results'.yellow}}
   }
   let endTime = Date.now();
   let elapsed = endTime - startTime;
@@ -466,6 +484,11 @@ async function getPDFs (browser, page, lastPageNum) {
     // console.log(err);
   });
   console.log('paginated:', paginated, ', nav:', navText);
+  if (navText) {
+    let pages = navText.match(/\d+/g);
+    let lastPage = pages[pages.length - 1];
+    console.log('current last page:', lastPage);
+  }
 
   console.log(5);
   // go down rows getting links and ids
@@ -520,7 +543,7 @@ async function getPDFs (browser, page, lastPageNum) {
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
       let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
-      let fixedText = text + '_stabilized';
+      let fixedText = text + '_stabilized_06_18_12_18';
       // fixed at cp-names3 20184
 
       // save docket id to dockets-used.txt?
@@ -641,8 +664,8 @@ async function startNewBrowser () {
           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
           console.log(err.statusCode)
           if (err.statusCode === 429) {
-            console.log('waiting one minute');
-            setTimeout(waitThenRepeat, 60000);
+            console.log('waiting two minutes');
+            setTimeout(waitThenRepeat, 120000);
           } else {
             // repeat with increased wait
             waitThenRepeat();
@@ -678,8 +701,8 @@ async function startNewBrowser () {
       console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
       console.log(err.statusCode)
       if (err.statusCode === 429) {
-        console.log('waiting one minute');
-        setTimeout(waitThenRepeat, 60000);
+        console.log('waiting two minutes');
+        setTimeout(waitThenRepeat, 120000);
       } else {
         waitThenRepeat();
       }
