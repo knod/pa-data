@@ -362,7 +362,9 @@ async function getPDFs (browser, page, lastPageNum) {
   let startTime = Date.now()
   console.log('start looking for result:', Date().toString());
   // This assumes the page has loaded
-  try {
+  let noResults = false;
+  // try {
+    console.log('-------------trying-------------');
     // await page.waitForSelector(
     //   resultsSelector//,
     //   // Wait a different amount for different numbers of pages?
@@ -372,23 +374,36 @@ async function getPDFs (browser, page, lastPageNum) {
     // Find out what happened as quickly as possible
     await page.waitFor(
       (resultsSelector, noResultsSelector, startTime) => {
-        let resultsExists = document.querySelector(resultsSelector);
-        let noResultsExists = document.querySelector(noResultsSelector);
+        console.log('\n-\n-\n-\n-\nwaitFor results\n-\n-\n-\n-\n-');
+        let resultsExists = !!document.querySelector(resultsSelector);
+        let noResultsExists = !!document.querySelector(noResultsSelector);
+        console.log(resultsExists, noResultsExists);
         if (noResultsExists) {
-          console.log('no results', );
+          console.log('no results');
           let endTime = Date.now();
           let elapsed = endTime - startTime;
           console.log('Time elapsed:', elapsed, '(seconds:', elapsed/1000 + ')');
+        }
+        if (resultsExists) {
+          console.log('results found');
         }
         return resultsExists || noResultsExists;
       },
       {},
       resultsSelector, noResultsSelector, startTime
-    );
-  } catch (theError) {
+    )//;
+  //} 
+  .catch (function (theError) {
     // Didn't find any elements
     console.log('nothing found');
     return {done: true, page: null, err: {value: 'not found', message: theError + '\n from Results'.yellow}}
+  })
+  console.log(noResults);
+  if (noResults) {
+    console.log('no results')
+    return {done: true, page: null};
+  } else {
+    console.log('results found');
   }
   let endTime = Date.now();
   let elapsed = endTime - startTime;
