@@ -66,7 +66,6 @@ let requiredPrefix = /CP/;
 
 // Standard
 let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
-// let names = require('./names3.json');
 const dates = {start: "01/01/2007", end: "06/25/2019"};
 let throttle = 15 * 1000;
 let timesRepeated = 0;
@@ -81,32 +80,66 @@ if (process.argv[4]) {
   throttle = parseInt(process.argv[4]);
 }
 
-
-// var colors = require('colors');
+// // command line command looks something like:
+// // node mdj-names3-test.js mdj '{"wait":"200","getFrom":"names3.js"}'
 // let type = process.argv[2];
 // let commandLineArgs = JSON.parse(process.argv[3]);
 
-// let nameIndexPath = type + '-name-index.json';
-// let nameIndexVal = require('./' + nameIndexPath);
-// let end = nameIndexVal + 100;
-// console.log('nameIndex required:', nameIndexVal);
-// let defaultArgs = {
-//   start: nameIndexVal,
-//   end: nameIndexVal + 100,
-//   wait: 300,
-//   volume: 10,
-//   getFrom: 'names3.json',
-//   type: type,
-// }
-
-// let args = Object.assign(defaultArgs, commandLineArgs);
-// if (!args.user || args.user === 'yourNameHere') {
+// if (!commandLineArgs.user) {
 //   throw ReferenceError('You must at least write \'{"user":"yourFirstNameHere"}\' after the script name to add the "user" property.'.yellow);
 // }
-// if (args.user === 'yourFirstNameHere') {
+// if (commandLineArgs.user === 'yourFirstNameHere') {
 //   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
 // }
-// console.log(args);
+// if (commandLineArgs.startIndex && !commandLineArgs.endIndex) {
+//   commandLineArgs.endIndex = commandLineArgs.startIndex + 500;  // names.length - 1
+// }
+
+// // In future 'type' will determine what selector and filename values are used
+// // let nameIndexPath = type + '-name-index.json';
+// let nameIndexVal = require('./' + nameIndexPath);
+// console.log('nameIndex required:', nameIndexVal);
+// let defaultArgs = {
+//   startIndex: nameIndexVal,
+//   endIndex: nameIndexVal + 500,
+//   startYear: 2017,
+//   endYear: 2019,
+//   wait: 300,
+// //   volume: 10,  // no way to implement this right now
+//   alerts: 'yes',
+//   getFrom: 'names3.json',
+// //   type: type,
+// }
+
+// let argvs = Object.assign(defaultArgvs, commandLineArgvs);
+// argvs.dates = {
+//   start: '01/01/' + argvs.startYear,
+//   end: '12/31' + argvs.endYear,
+// }
+// if (argvs.endYear === 2019) { argvs.dates.end = '06/25/2019'; }
+
+// // // In future 'type' will determine what selector and filename values are used
+// // let vars = whatever[type];
+// // // In future, which file to get names from will be determined by
+// // // files named after users
+// // if (!args.user || args.user === 'yourNameHere') {
+// //   throw ReferenceError('You must at least write \'{"user":"yourFirstNameHere"}\' after the script name to add the "user" property.'.yellow);
+// // }
+// // if (args.user === 'yourFirstNameHere') {
+// //   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
+// // }
+// // if (commandLineArgs.startIndex && !commandLineArgs.endIndex) {
+// //   argvs.endIndex = names.length - 1
+// // }
+// // console.log(args);
+
+
+/*
+let namesStartIndex = argvs.startIndex;
+let namesEndIndex = argvs.endIndex;
+let doPlaySound = argvs.alerts;
+let throttle = argvs.wait;
+*/
 
 fs.writeFileSync(nameIndexPath, namesStartIndex);
 console.log(namesStartIndex, namesEndIndex);
@@ -116,16 +149,6 @@ console.log(namesStartIndex, namesEndIndex);
 async function byNamesDuring (dates, browser) {
 
   let err = null;
-  // fs.writeFileSync(nameIndexPath, namesStartIndex);
-
-  // // Get last stored name index (number)
-  // let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
-
-  // // Get next name after that
-  // nameIndex += 1;
-  // let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
-  // let name = names[nameIndex];
-  // console.log(name);
 
   // submit to site along with date
   const page = await browser.newPage();
@@ -157,7 +180,6 @@ async function byNamesDuring (dates, browser) {
 
   // Get last stored name index (number)
   let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
-  // let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
@@ -307,7 +329,7 @@ async function getPDFs (browser, page, lastPageNum) {
   let noResults = false;
   await page.waitForSelector(
       resultsSelector,
-      {timeout: 20000}
+      {timeout: 40000}
   ).catch(function(err){
     // if no results, skip this page?
     noResults = true;
@@ -553,11 +575,11 @@ async function startNewBrowser () {
         console.log('page/element not found. page probably not loading.');
         console.log(err);
         if (doPlaySound !== 'no') {
+          // Temporary error
           alert.error();
           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
           console.log(err.statusCode)
           if (err.statusCode === 429) {
-            '\x1b[33m%s\x1b[0m'
             console.log('waiting one minute');
             setTimeout(waitThenRepeat, 60000);
           } else {
@@ -585,7 +607,10 @@ async function startNewBrowser () {
       // setTimeout(function () {
       // startNewBrowser();
       // }, 60000);
-      if (doPlaySound !== 'no') { alert.error(); }
+      if (doPlaySound !== 'no') {
+        // Temporary error
+        alert.error();
+      }
       console.log(err);
       // How do we close the old browser?
       browser.close();
@@ -622,6 +647,7 @@ const waitThenRepeat = async () => {
     setTimeout(startNewBrowser//, 30000);
     , 900000);
   } else {
+    // Final error
     console.log("giving up");
     alert.gaveUp();
     process.exit(1);

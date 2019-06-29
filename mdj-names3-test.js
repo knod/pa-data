@@ -278,7 +278,7 @@ async function getPDFs (browser, page, lastPageNum) {
   let noResults = false;
   await page.waitForSelector(
       resultsSelector,
-      {timeout: 20000}
+      {timeout: 40000}
   ).catch(function(err){
     // if no results, skip this page?
     noResults = true;
@@ -525,9 +525,12 @@ async function startNewBrowser () {
         console.log('page/element not found. page probably not loading.');
         console.log(err);
         if (doPlaySound !== 'no') {
+          // Temporary error
           alert.error();
-          console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
+          console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
+          console.log(err.statusCode)
           if (err.statusCode === 429) {
+            console.log('waiting one minute');
             setTimeout(waitThenRepeat, 60000);
           } else {
             // repeat with increased wait
@@ -554,14 +557,17 @@ async function startNewBrowser () {
       // setTimeout(function () {
       // startNewBrowser();
       // }, 60000);
-      if (doPlaySound !== 'no') { alert.error(); }
+      if (doPlaySound !== 'no') {
+        // Temporary error
+        alert.error();
+      }
       console.log(err);
-
       // How do we close the old browser?
       browser.close();
-      console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
-      console.log(err.statusCode);
+      console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
+      console.log(err.statusCode)
       if (err.statusCode === 429) {
+        console.log('waiting one minute');
         setTimeout(waitThenRepeat, 60000);
       } else {
         waitThenRepeat();
@@ -569,6 +575,10 @@ async function startNewBrowser () {
     });
 };
 
+// BUG: Something is triggering multiple processes at the same time
+// Something above this must be calling this twice. Where is this happening?
+// Also, though, instantiating two different `timesRepeated` vars.
+// How can that even happen?
 const waitThenRepeat = async () => {
   timesRepeated++;
   timesRepeated % 11;  // 11 will turn into 0
@@ -578,15 +588,16 @@ const waitThenRepeat = async () => {
     setTimeout(startNewBrowser, 20000);
   } else if (timesRepeated <= 8) {
     // wait an hour before trying again
-    console.log('an hour will pass.');
-    setTimeout(startNewBrowser, 3600000);
-    //, 60000);
+    console.log('an hour should pass.');
+    setTimeout(startNewBrowser//, 60000);
+    , 3600000);
   } else if (timesRepeated <= 9){
     // wait 15 min
-    console.log('4 hours have passed');
-    setTimeout(startNewBrowser, 900000);
-    //, 30000);
+    console.log('4 hours should have passed');
+    setTimeout(startNewBrowser//, 30000);
+    , 900000);
   } else {
+    // Final error
     console.log("giving up");
     alert.gaveUp();
     process.exit(1);
