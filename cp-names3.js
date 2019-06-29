@@ -524,10 +524,12 @@ async function startNewBrowser () {
         console.log(err);
         if (doPlaySound !== 'no') {
           alert.error();
-          console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
+          console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
           console.log(err.statusCode)
           if (err.statusCode === 429) {
             setTimeout(waitThenRepeat, 60000);
+          } else {
+            waitThenRepeat();
           }
         }
         // repeat with increased wait
@@ -560,6 +562,8 @@ async function startNewBrowser () {
       console.log(err.statusCode)
       if (err.statusCode === 429) {
         setTimeout(waitThenRepeat, 60000);
+      } else {
+        waitThenRepeat();
       }
     });
 };
