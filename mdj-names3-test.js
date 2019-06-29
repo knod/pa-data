@@ -13,7 +13,7 @@ const alert = require("./alert.js");
 //       startDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox",
 //       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
 //       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
-//       resultsSelctor = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+//       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 // const dates = {start: "01/01/2007", end: "06/25/2019"};
 
@@ -43,7 +43,7 @@ const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSear
       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-      resultsSelctor = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
+      resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
@@ -276,8 +276,8 @@ async function getPDFs (browser, page, lastPageNum) {
 
   let noResults = false;
   await page.waitForSelector(
-      resultsSelctor,
-      {timeout: 10000}
+      resultsSelector,
+      {timeout: 20000}
   ).catch(function(err){
     // if no results, skip this page?
     noResults = true;
@@ -345,13 +345,12 @@ async function getPDFs (browser, page, lastPageNum) {
     paginationSelector
   ).then(function (navText) {
     if (navText) {
-      console.log('nav:', paginated, navText);
       paginated = true;
     }
   }).catch(function (err){
     // console.log(err);
   });
-  console.log('nav:', paginated, navText);
+  console.log('paginated:', paginated, ', nav:', navText);
 
   console.log(5);
   // go down rows getting links and ids

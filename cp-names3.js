@@ -13,7 +13,7 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       startDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox",
       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
-      resultsSelctor = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+      resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
 
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
@@ -41,7 +41,7 @@ let requiredPrefix = /CP/;
 //       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
 //       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
 //       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-//       resultsSelctor = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
+//       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel',
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
@@ -74,14 +74,28 @@ let timesRepeated = 0;
 // latest: node cp-names.js 41 45
 let namesStartIndex = parseInt(process.argv[2]),
     namesEndIndex   = parseInt(process.argv[3]);
+let doPlaySound = process.argv[5];
 
 if (process.argv[4]) {
   throttle = parseInt(process.argv[4]);
 }
 
-fs.writeFileSync(nameIndexPath, namesStartIndex);
+// let nameIndexVal = require('./' + nameIndexPath);
+// console.log('nameIndex required:', nameIndex);
+// let defaultArgs = {
+//   start: nameIndex,
+//   end: nameIndex + 100,
+//   wait: 300,
+//   volume: 10,
+//   getFrom: 'names3' + .json,
+//   type: 'mdj',
+// }
+// let args = JSON.parse(process.argv[2]);
 
+fs.writeFileSync(nameIndexPath, namesStartIndex);
 console.log(namesStartIndex, namesEndIndex);
+
+
 
 async function byNamesDuring (dates, browser) {
 
@@ -276,8 +290,8 @@ async function getPDFs (browser, page, lastPageNum) {
 
   let noResults = false;
   await page.waitForSelector(
-      resultsSelctor,
-      {timeout: 10000}
+      resultsSelector,
+      {timeout: 20000}
   ).catch(function(err){
     // if no results, skip this page?
     noResults = true;
@@ -345,13 +359,12 @@ async function getPDFs (browser, page, lastPageNum) {
     paginationSelector
   ).then(function (navText) {
     if (navText) {
-      console.log('nav:', paginated, navText);
       paginated = true;
     }
   }).catch(function (err){
     // console.log(err);
   });
-  console.log('nav:', paginated, navText);
+  console.log('paginated:', paginated, ', nav:', navText);
 
   console.log(5);
   // go down rows getting links and ids
@@ -511,7 +524,6 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 // Test
 
-let doPlaySound = process.argv[5];
 async function startNewBrowser () {
 
   let browser = await puppeteer.launch({ headless: true });
@@ -527,6 +539,8 @@ async function startNewBrowser () {
           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
           console.log(err.statusCode)
           if (err.statusCode === 429) {
+            '\x1b[33m%s\x1b[0m'
+            console.log('waiting one minute');
             setTimeout(waitThenRepeat, 60000);
           } else {
             waitThenRepeat();
@@ -558,9 +572,10 @@ async function startNewBrowser () {
       console.log(err);
       // How do we close the old browser?
       browser.close();
-      console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
+      console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
       console.log(err.statusCode)
       if (err.statusCode === 429) {
+        console.log('waiting one minute');
         setTimeout(waitThenRepeat, 60000);
       } else {
         waitThenRepeat();
@@ -568,6 +583,10 @@ async function startNewBrowser () {
     });
 };
 
+// BUG: Something is triggering multiple processes at the same time
+// Something above this must be calling this twice. Where is this happening?
+// Also, though, instantiating two different `timesRepeated` vars.
+// How can that even happen?
 const waitThenRepeat = async () => {
   timesRepeated++;
   timesRepeated % 11;  // 11 will turn into 0
@@ -577,14 +596,14 @@ const waitThenRepeat = async () => {
     setTimeout(startNewBrowser, 20000);
   } else if (timesRepeated <= 8) {
     // wait an hour before trying again
-    console.log('an hour will pass.');
-    setTimeout(startNewBrowser, 60000);
-    // , 3600000);
+    console.log('an hour should pass.');
+    setTimeout(startNewBrowser//, 60000);
+    , 3600000);
   } else if (timesRepeated <= 9){
     // wait 15 min
-    console.log('4 hours have passed');
-    setTimeout(startNewBrowser, 30000);
-    // , 900000);
+    console.log('4 hours should have passed');
+    setTimeout(startNewBrowser//, 30000);
+    , 900000);
   } else {
     console.log("giving up");
     alert.gaveUp();
