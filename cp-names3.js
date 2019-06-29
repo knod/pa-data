@@ -318,7 +318,7 @@ async function byNamesDuring (dates, browser) {
 
       // Return from error if needed
       if (pageData.err && (pageData.err.message || pageData.err.value)) {
-        return [pageData.err.value, pageData.err.message];
+        return [pageData.err.message, pageData.err.value];
       }
     }  // ends while this name not done
 
