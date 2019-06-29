@@ -526,7 +526,9 @@ async function startNewBrowser () {
           alert.error();
           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
           console.log(err.statusCode)
-          setTimeout(waitThenRepeat, 10000);
+          if (err.statusCode === 429) {
+            setTimeout(waitThenRepeat, 30000);
+          }
         }
         // repeat with increased wait
         waitThenRepeat();
@@ -554,9 +556,11 @@ async function startNewBrowser () {
       console.log(err);
       // How do we close the old browser?
       browser.close();
-      console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
+      console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way.\n#\n#\n#');
       console.log(err.statusCode)
-      setTimeout(waitThenRepeat, 10000);
+      if (err.statusCode === 429) {
+        setTimeout(waitThenRepeat, 30000);
+      }
     });
 };
 
