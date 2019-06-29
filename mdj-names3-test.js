@@ -359,9 +359,13 @@ async function getPDFs (browser, page, lastPageNum) {
   } else {
     noResultsElemFound = page.waitFor(
       function (noResultsSelector, noResultsText) {
-        let text = document.querySelector(noResultsSelector).innerText;
-        let hasText = text === noResultsText;
-        return ishasTextNew;
+        if (!!document.querySelector(noResultsSelector)) {
+          let text = document.querySelector(noResultsSelector).innerText;
+          let hasText = text === noResultsText;
+          return hasText;
+        } else {
+          return false;
+        }
       },
       {},
       noResultsSelector, noResultsText
