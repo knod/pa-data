@@ -4,6 +4,7 @@ const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
 const alert = require("./alert.js");
+const colors = require('colors');
 
 // // CP Stuff
 // const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
@@ -338,13 +339,15 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(4.5)
   // Because we're somehow missing this sometimes...?
-  const navText = await page.evaluate(
+  let naveText = null;
+  await page.evaluate(
     (paginationSelector) => {
       return document.querySelector(paginationSelector).innerText;
     },
     paginationSelector
-  ).then(function (navText) {
-    if (navText) {
+  ).then(function (returnedNavText) {
+    if (returnedNavText) {
+      navText = returnedNavText;
       paginated = true;
     }
   }).catch(function (err){
@@ -527,11 +530,10 @@ async function startNewBrowser () {
           if (err.statusCode === 429) {
             setTimeout(waitThenRepeat, 60000);
           } else {
+            // repeat with increased wait
             waitThenRepeat();
           }
         }
-        // repeat with increased wait
-        waitThenRepeat();
       } else {
         console.log('success');
         if (doPlaySound !== 'no') {

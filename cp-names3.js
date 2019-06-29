@@ -4,6 +4,7 @@ const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
 const alert = require("./alert.js");
+const colors = require('colors');
 
 // CP Stuff
 const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
@@ -80,17 +81,32 @@ if (process.argv[4]) {
   throttle = parseInt(process.argv[4]);
 }
 
+
+// var colors = require('colors');
+// let type = process.argv[2];
+// let commandLineArgs = JSON.parse(process.argv[3]);
+
+// let nameIndexPath = type + '-name-index.json';
 // let nameIndexVal = require('./' + nameIndexPath);
-// console.log('nameIndex required:', nameIndex);
+// let end = nameIndexVal + 100;
+// console.log('nameIndex required:', nameIndexVal);
 // let defaultArgs = {
-//   start: nameIndex,
-//   end: nameIndex + 100,
+//   start: nameIndexVal,
+//   end: nameIndexVal + 100,
 //   wait: 300,
 //   volume: 10,
-//   getFrom: 'names3' + .json,
-//   type: 'mdj',
+//   getFrom: 'names3.json',
+//   type: type,
 // }
-// let args = JSON.parse(process.argv[2]);
+
+// let args = Object.assign(defaultArgs, commandLineArgs);
+// if (!args.user || args.user === 'yourNameHere') {
+//   throw ReferenceError('You must at least write \'{"user":"yourFirstNameHere"}\' after the script name to add the "user" property.'.yellow);
+// }
+// if (args.user === 'yourFirstNameHere') {
+//   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
+// }
+// console.log(args);
 
 fs.writeFileSync(nameIndexPath, namesStartIndex);
 console.log(namesStartIndex, namesEndIndex);
@@ -352,13 +368,15 @@ async function getPDFs (browser, page, lastPageNum) {
 
   console.log(4.5)
   // Because we're somehow missing this sometimes...?
-  const navText = await page.evaluate(
+  let naveText = null;
+  await page.evaluate(
     (paginationSelector) => {
       return document.querySelector(paginationSelector).innerText;
     },
     paginationSelector
-  ).then(function (navText) {
-    if (navText) {
+  ).then(function (returnedNavText) {
+    if (returnedNavText) {
+      navText = returnedNavText;
       paginated = true;
     }
   }).catch(function (err){
@@ -542,12 +560,6 @@ async function startNewBrowser () {
             '\x1b[33m%s\x1b[0m'
             console.log('waiting one minute');
             setTimeout(waitThenRepeat, 60000);
-          } else {
-            waitThenRepeat();
-          }
-        }
-        // repeat with increased wait
-        waitThenRepeat();
       } else {
         console.log('success');
         if (doPlaySound !== 'no') {
