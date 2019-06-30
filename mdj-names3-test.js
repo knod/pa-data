@@ -155,7 +155,7 @@ const doPlaySound = runData.alerts;
 
 
 // Global mutating state vars
-let nameIndex = runData.currentIndex;
+let nameIndex = runData.currentIndex || 0;
 let timesRepeated = 0;
 console.log('start index: ', nameIndex + ', end index:', namesEndIndex);
 
@@ -343,7 +343,7 @@ async function byNamesDuring (dates, browser) {
     // Permanently save that the current name was completed,
     // but all other data stays the same. Should changing data
     // and non-changing data be in the same file?
-    assignmentData.done[currentNameIndex] = true;
+    assignmentData.done[nameIndex] = true;
     // Update our temporary data too
     runData.done[nameIndex] = true;
 
@@ -366,13 +366,13 @@ async function byNamesDuring (dates, browser) {
 
     // Permanently remember the next name index needed
     assignmentData.currentIndex = nameIndex;
-    fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData));
+    fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
   }  // ends while name index <= ending index
 
   // Record that this data was finished
   assignmentData.completed = true;
-  fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData));
+  fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
   console.log(19);
   await browser.close();
@@ -598,20 +598,20 @@ async function getPDFs (browser, page, lastPageNum, currentNameIndex) {
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
-      let datedText = Date.now() + '_' + id + datesText + '_namei_' + nameIndex + '_page_' + newPageNum;
+      let datedText = Date.now() + '_' + id + datesText + '_namei_' + currentNameIndex + '_page_' + newPageNum;
 
       // save docket id for later reference
-      fs.appendFileSync(usedDocketsPath, datedText, function (err) {
+      fs.appendFileSync(usedDocketsPath, datedText + '\n', function (err) {
         if (err) console.log(err);
       });
       console.log('docket id written');
 
       // Download pdfs
-      await downloadPDF(linksText[index + adder], text + '-docket.pdf');
+      await downloadPDF(linksText[index + adder], datedText + '-docket.pdf');
       // Because the linksText list is twice as long
       console.log('docket', index, 'saved');
       adder++
-      await downloadPDF(linksText[index + adder], text + '-summary.pdf');
+      await downloadPDF(linksText[index + adder], datedText + '-summary.pdf');
       console.log('summary', index, 'saved');
     }
   }
