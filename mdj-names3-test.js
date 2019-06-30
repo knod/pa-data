@@ -69,97 +69,102 @@ let type = 'mdj';
 // Paths
 // // doesn't exist yet
 // let namesFilePath = './names/mdj_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
-let namesFilePath = './names3.json';  // `require`ed
-let pdfPath = 'data-mdj/';
-let usedDocketsPath = 'mdj-named-dockets-used.txt';
-let nameIndexPath = 'mdj-name-index.json';
+// let namesFilePath = './names3.json';  // `require`ed
+// let pdfPath = 'data-mdj/';
+// let usedDocketsPath = 'mdj-named-dockets-used.txt';
+// let nameIndexPath = 'mdj-name-index.json';
 
 
 
-// Standard
-let names = require(namesFilePath);
-const dates = {start: "01/01/2017", end: "12/31/2018"};
-// const dates = {start: "01/01/2017", end: "12/31/2018"};
-let throttle = 15;
-let timesRepeated = 0;
-// Inclusive
-// orignal run: index 41
-// latest: node cp-names.js 41 45
-let namesStartIndex = parseInt(process.argv[2]),
-    namesEndIndex   = parseInt(process.argv[3]);
-let nameIndex = namesStartIndex;
-let doPlaySound = process.argv[5];
+// Standard/shared
 
-if (process.argv[4]) {
-  throttle = parseInt(process.argv[4]);
+// command line command example
+// node mdj-names3-test.js 1zz '{"alerts":"no"}'
+const assignmentID = process.argv[2];
+if (!assignmentID) {
+  throw Error('Please include your assignment ID. For example: node mdj-names3-test.js 24z \'{"alerts":"no"}\' (that last bit means you won\'t hear the sounds)'.yellow);
+} else if (assignmentID === '24z') {
+  throw Error('I think you used the default assignemt ID (24z). That\'s not a real one.'.yellow);
 }
 
-// // command line command looks something like:
-// // node mdj-names3-test.js mdj '{"wait":"200","getFrom":"names3.js"}'
-// let type = process.argv[2];
-// let commandLineArgs = JSON.parse(process.argv[3]);
+const assignmentPath = 'assignemnts/' + assignmentID + '.json'
+const assignmentData = require(assignmentPath);
 
-// if (!commandLineArgs.user) {
-//   throw ReferenceError('You must at least write \'{"user":"yourFirstNameHere"}\' after the script name to add the "user" property.'.yellow);
-// }
-// if (commandLineArgs.user === 'yourFirstNameHere') {
-//   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
-// }
-// if (commandLineArgs.startIndex && !commandLineArgs.endIndex) {
-//   commandLineArgs.endIndex = commandLineArgs.startIndex + 1000;  // names.length - 1
-// }
+// Assignment settings overrides
+const commandLineArgvs = process.argv[3];
 
-// // In future 'type' will determine what selector and filename values are used
-// // let nameIndexPath = type + '-name-index.json';
-// let nameIndexVal = require('./' + nameIndexPath);
-// console.log('nameIndex required:', nameIndexVal);
-// let defaultArgs = {
-//   startIndex: nameIndexVal,
-//   endIndex: nameIndexVal + 1000,
-//   startYear: 2017,
-//   endYear: 2019,
-//   wait: 300,
-// //   volume: 10,  // no way to implement this right now
-//   alerts: 'yes',
-//   getFrom: 'names3.json',
-// //   type: type,
-// }
+// An object for this run of the code - combining the two objects
+let runData = null;
+if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
 
-// let argvs = Object.assign(defaultArgvs, commandLineArgvs);
-// argvs.dates = {
-//   start: '01/01/' + argvs.startYear,
-//   end: '12/31' + argvs.endYear,
-// }
-// if (argvs.endYear === 2019) { argvs.dates.end = '06/25/2019'; }
+  let arvObj = JSON.parse(commandLineArgvs);console.log('argv obj:', arvObj);
+  runData = Object.assign(assignmentData, arvObj);console.log('combined objects:', runData);
 
-// // // In future 'type' will determine what selector and filename values are used
-// // let vars = whatever[type];
-// // // In future, which file to get names from will be determined by
-// // // files named after users
-// // if (!args.user || args.user === 'yourNameHere') {
-// //   throw ReferenceError('You must at least write \'{"user":"yourFirstNameHere"}\' after the script name to add the "user" property.'.yellow);
-// // }
-// // if (args.user === 'yourFirstNameHere') {
-// //   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
-// // }
-// // if (commandLineArgs.startIndex && !commandLineArgs.endIndex) {
-// //   argvs.endIndex = names.length - 1
-// // }
-// // console.log(args);
+} else {
+  runData = assignmentData;
+}
+
+if (runData.completed && !runData.redo) {
+  throw Error('It looks like this assignment is already done! Get a new one! Google doc?'.green)
+}
+
+if (!runData.redo) {
+  console.warn('Be aware only new name indexes will be used. Nothing will be redone. That\'s good as long as it\'s what you want. You can change that with the "redo" custom property.');
+} else {
+  console.warn('Previously gotten names will be gotten again! Because of your "redo" custom property.');
+}
+
+// Using the runData
+const type = runData.type;  // cp or mdj
+
+// Paths
+const namesFilePath = runData.namesPath;
+const dataDirectory = runData.dataDirectory;
+const usedDocketsPath = dataDirectory + runData.usedDocketsFileName;
+// Make directory if needed
+mkdirp(dataDirectory, function (err) {
+    if (err) { console.error(err); }
+});
+
+// Assigned variables
+const names = require(namesFilePath);
+const namesEndIndex = runData.endIndexRange;
+
+const dates = {
+  start: runData.startDate,
+  end: runData.endDate,
+};
+/// *** CHANGE THIS INTO A TYPE STAMP
+// let dateStartObj = new Date(dates.start);
+// let dateEndObj = new Date(dates.end);
+// let datesText = '_' + dateStartObj.getTime() + '_' + dateEndObj.getTime();
+// let datesText = '_' + dateOb.getTime(dates.start) + '_' ;
+
+// Need to find a way to put this stuff in the metadata
+const dateTextParts = [
+  dates.start.substring(0, 2),  // startMonth
+  dates.start.substring(dates.start.length-2, dates.start.length),  // startYear
+  dates.end.substring(0, 2),  // endMonth
+  dates.end.substring(dates.end.length-2, dates.end.length),  // endYear
+}
+const datesText = '_' + dateTextParts.join('_');
+
+const throttle = runData.wait;
+const doPlaySound = runData.alerts;
 
 
-/*
-let namesStartIndex = argvs.startIndex;
-let namesEndIndex = argvs.endIndex;
-let doPlaySound = argvs.alerts;
-let throttle = argvs.wait;
-*/
 
-fs.writeFileSync(nameIndexPath, namesStartIndex);
-console.log('start index: ', namesStartIndex + ', end index:', namesEndIndex);
+
+// Global mutating state vars
+let nameIndex = runData.currentIndex;
+let timesRepeated = 0;
+console.log('start index: ', nameIndex + ', end index:', namesEndIndex);
 
 
 
+
+
+// FUNCTIONALITY
 async function byNamesDuring (dates, browser) {
 
   let err = null;
@@ -197,9 +202,6 @@ async function byNamesDuring (dates, browser) {
   );
 
   await page.waitForSelector(lastNameSelector);
-
-  // Get last stored name index (number)
-  nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
@@ -327,7 +329,7 @@ async function byNamesDuring (dates, browser) {
       timesRepeated = 0;
 
       console.log(1.5);
-      pageData = await getPDFs(browser, page, pageData.page);
+      pageData = await getPDFs(browser, page, pageData.page, nameIndex);
       console.log(17);
       console.log('pageData', pageData);
 
@@ -339,10 +341,39 @@ async function byNamesDuring (dates, browser) {
 
     console.log(18)
 
-    // Update to new index
-    nameIndex += 1;
-    fs.writeFileSync(nameIndexPath, nameIndex);
-  }  // ends while name index
+    // Permanently save that the current name was completed,
+    // but all other data stays the same. Should changing data
+    // and non-changing data be in the same file?
+    assignmentData.done[currentNameIndex] = true;
+    // Update our temporary data too
+    runData.done[nameIndex] = true;
+
+    // If we don't want to do redos, increase the index number
+    // till we get to an index that we haven't done
+    const weDoNotWantRedos = !runData.redo;
+    let thisNameIndexIsDone = true;
+
+    if (weDoNotWantRedos) {
+      while (thisNameIndexIsDone) {
+        // Update to new index
+        nameIndex += 1;
+        thisNameIndexIsDone = runData.done[nameIndex] === true;
+      }
+
+    // If we want redos, then just go to the next one
+    } else {
+      nameIndex += 1;
+    }
+
+    // Permanently remember the next name index needed
+    assignmentData.currentIndex = nameIndex;
+    fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData));
+
+  }  // ends while name index <= ending index
+
+  // Record that this data was finished
+  assignmentData.completed = true;
+  fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData));
 
   console.log(19);
   await browser.close();
@@ -351,7 +382,7 @@ async function byNamesDuring (dates, browser) {
 
 
 
-async function getPDFs (browser, page, lastPageNum) {
+async function getPDFs (browser, page, lastPageNum, currentNameIndex) {
 
   await page.waitFor(throttle);
 
@@ -513,8 +544,7 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log('paginated:', paginated, ', nav:', navText);
   if (navText) {
     let pages = navText.match(/\d+/g);
-    let lastPage = pages[pages.length - 1];
-    console.log('current last page:', lastPage);
+    let lastPage = pages[pages.length - 1];  // was logged as working
   }
 
   console.log(5);
@@ -569,25 +599,23 @@ async function getPDFs (browser, page, lastPageNum) {
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
-      let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + newPageNum;
-      let datedText = text + '_01_17_12_18';
-      // fixed at cp-names3 20184
+      let datedText = Date.now() + '_' + id + datesText + '_namei_' + nameIndex + '_page_' + newPageNum;
 
       // save docket id for later reference
       fs.appendFileSync(usedDocketsPath, datedText, function (err) {
         if (err) console.log(err);
       });
+      console.log('docket id written');
 
-      // await page.waitFor(3000);  // untried
       // Download pdfs
       await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
-      // await page.waitFor(3000);  // untried
+      console.log('docket', index, 'saved');
       adder++
       await downloadPDF(linksText[index + adder], text + '-summary.pdf');
+      console.log('summary', index, 'saved');
     }
   }
-
 
   console.log(9, paginated);
   // hit 'next' if we need to
@@ -667,7 +695,7 @@ async function downloadPDF(pdfURL, outputFilename) {
     // timeout: 10000,  // untried
     headers: {'User-Agent': 'cfb-data-analysis'}
   });
-  let path = pdfPath + outputFilename;
+  let path = dataDirectory + outputFilename;
   // console.log("To " + path);
   fs.writeFileSync(path, pdfBuffer, function (err) { if (err) {console.log(err)} });
 }
