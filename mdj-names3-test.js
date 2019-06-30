@@ -69,7 +69,7 @@ let type = 'mdj';
 // Paths
 // // doesn't exist yet
 // let namesFilePath = './names/mdj_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
-let namesFilePath = 'names3.json';
+let namesFilePath = './names3.json';  // `require`ed
 let pdfPath = 'data-mdj/';
 let usedDocketsPath = 'mdj-named-dockets-used.txt';
 let nameIndexPath = 'mdj-name-index.json';
