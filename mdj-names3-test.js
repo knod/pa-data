@@ -15,14 +15,14 @@ const colors = require('colors');
 //       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
 //       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
 //       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+//       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
-// const dates = {start: "01/01/2007", end: "06/25/2019"};
 
-// const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx'
+// const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
 
 // const searchTypeVal = "Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-//       docketTypeVal = "Criminal"
-//       nameIndexPath = 'name-index.json';
+//       docketTypeVal = "Criminal",
+//       nameIndexPath = 'cp-name-index.json';
 // const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
 // let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
@@ -30,12 +30,12 @@ const colors = require('colors');
 //     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
 
 // let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-// let usedDocketsPath = 'named-dockets-used.txt';
+// let usedDocketsPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-dockets-used.txt';
 
-// let pdfPath = 'data-cp';
-
+// let pdfPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/';
 // let requiredPrefix = /CP/;
 // let type = 'cp';
+// let namesFilePath = './names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
 
 // MDJ Stuff
 const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
@@ -53,8 +53,7 @@ let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults
 let noResultsText = 'No Records Found'
 
 const searchTypeVal = "ParticipantName",
-      docketTypeVal = "CR",
-      nameIndexPath = 'mdj-name-index.json';
+      docketTypeVal = "CR";
 const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
 
@@ -62,24 +61,33 @@ let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsP
     linksSelector = '.gridViewRow a.DynamicMenuItem',
     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
 let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let usedDocketsPath = 'mdj-named-dockets-used.txt';
 
-let pdfPath = 'data-mdj/';
 let requiredPrefix = /MJ/;
+
 let type = 'mdj';
+
+// Paths
+// // doesn't exist yet
+// let namesFilePath = './names/mdj_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
+let namesFilePath = 'names3.json';
+let pdfPath = 'data-mdj/';
+let usedDocketsPath = 'mdj-named-dockets-used.txt';
+let nameIndexPath = 'mdj-name-index.json';
 
 
 
 // Standard
-let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
-const dates = {start: "06/01/2018", end: "12/31/2018"};
-let throttle = 15 * 1000;
+let names = require(namesFilePath);
+const dates = {start: "01/01/2017", end: "12/31/2018"};
+// const dates = {start: "01/01/2017", end: "12/31/2018"};
+let throttle = 15;
 let timesRepeated = 0;
 // Inclusive
 // orignal run: index 41
 // latest: node cp-names.js 41 45
 let namesStartIndex = parseInt(process.argv[2]),
     namesEndIndex   = parseInt(process.argv[3]);
+let nameIndex = namesStartIndex;
 let doPlaySound = process.argv[5];
 
 if (process.argv[4]) {
@@ -148,7 +156,7 @@ let throttle = argvs.wait;
 */
 
 fs.writeFileSync(nameIndexPath, namesStartIndex);
-console.log(namesStartIndex, namesEndIndex);
+console.log('start index: ', namesStartIndex + ', end index:', namesEndIndex);
 
 
 
@@ -159,11 +167,12 @@ async function byNamesDuring (dates, browser) {
   // submit to site along with date
   const page = await browser.newPage();
   await page.setViewport({width: 1920, height: 2000});
-  page.on('console', consoleMessageObject => function (consoleMessageObject) {
-    if (consoleMessageObject._type !== 'warning') {
-      console.debug(consoleMessageObject._text)
-    }
-  });
+  // page.on('console', consoleMessageObject => function (consoleMessageObject) {
+  //   if (consoleMessageObject._type !== 'warning') {
+  //     console.debug(consoleMessageObject._text)
+  //   }
+  // });
+  // page.on('console', consoleObj => console.log(consoleObj.text + '\n'));//console.log(consoleObj.text()));  // untried
 
   await page.goto(url)
 
@@ -190,7 +199,7 @@ async function byNamesDuring (dates, browser) {
   await page.waitForSelector(lastNameSelector);
 
   // Get last stored name index (number)
-  let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
+  nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
@@ -355,15 +364,17 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log('start looking for result:', Date().toString());
 
   let anError = null;
-  let resultsElemFound = page.waitForSelector(resultsSelector,
+  let resultsElem = page.waitForSelector(resultsSelector,
     { 'timeout': 120000 });
-  let noResultsElemFound = null;
+  let noResultsElem = null;
+  // noResultsElem = page.waitForSelector(noResultsSelector,
+  //     { 'timeout': 120000 });
 
   if (type === 'cp') {
-    noResultsElemFound = page.waitForSelector(noResultsSelector,
+    noResultsElem = page.waitForSelector(noResultsSelector,
       { 'timeout': 120000 });
   } else {
-    noResultsElemFound = page.waitFor(
+    noResultsElem = page.waitFor(
       function (noResultsSelector, noResultsText) {
         let elem = document.querySelector(noResultsSelector)
         if (!!elem) {
@@ -558,12 +569,12 @@ async function getPDFs (browser, page, lastPageNum) {
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
-      let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
-      let fixedText = text + '_stabilized_06_18_12_18';
+      let text = '\n' + Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + newPageNum;
+      let datedText = text + '_01_17_12_18';
       // fixed at cp-names3 20184
 
-      // save docket id to dockets-used.txt?
-      fs.appendFileSync(usedDocketsPath, fixedText, function (err) {
+      // save docket id for later reference
+      fs.appendFileSync(usedDocketsPath, datedText, function (err) {
         if (err) console.log(err);
       });
 
