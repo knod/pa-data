@@ -29,9 +29,9 @@ let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicCont
     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
 
 let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let usedDocketsPath = 'test-dockets.txt';// 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-dockets-used.txt';
+let usedDocketsPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-dockets-used.txt';
 
-let pdfPath = '';//'data-cp/2017-2018-randomized-alternating-nonmatching/';
+let pdfPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/';
 let requiredPrefix = /CP/;
 let type = 'cp';
 
@@ -68,9 +68,15 @@ let type = 'cp';
 
 
 
+// TODO: build test repositories
+// let names = require('./quick-test/names-test.json');
+// let pdfPath = 'quick-test/data/';
+// let usedDocketsPath = 'quick-test/dockets-used.txt';
+// let nameIndexPath = 'quick-test/test-name-index.json';
+
+
 // Standard
-// let names = require('./names/cp_alternating_nonmatching_names01_15to12_18_remaining_shuffled.json');
-let names = require('./names/test.json');
+let names = require('./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json');
 const dates = {start: "01/01/2017", end: "12/31/2018"};
 let throttle = 15;
 let timesRepeated = 0;
@@ -565,9 +571,8 @@ async function getPDFs (browser, page, lastPageNum) {
       let datedText = text + '_01_17_12_18';
       // fixed at cp-names3 20184
 
-      // save docket id to dockets-used.txt?
-      // fs.appendFileSync(usedDocketsPath, datedText, function (err) {
-      fs.writeFileSync(usedDocketsPath, datedText, function (err) {
+      // save docket id for later reference
+      fs.appendFileSync(usedDocketsPath, datedText, function (err) {
         if (err) console.log(err);
       });
 
