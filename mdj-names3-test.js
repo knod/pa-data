@@ -355,7 +355,7 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log('start looking for result:', Date().toString());
 
   let anError = null;
-    let resultsElemFound = page.waitForSelector(resultsSelector,
+  let resultsElemFound = page.waitForSelector(resultsSelector,
     { 'timeout': 120000 });
   let noResultsElemFound = null;
 
