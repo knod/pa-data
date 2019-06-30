@@ -159,11 +159,12 @@ async function byNamesDuring (dates, browser) {
   // submit to site along with date
   const page = await browser.newPage();
   await page.setViewport({width: 1920, height: 2000});
-  page.on('console', consoleMessageObject => function (consoleMessageObject) {
-    if (consoleMessageObject._type !== 'warning') {
-      console.debug(consoleMessageObject._text)
-    }
-  });
+  // page.on('console', consoleMessageObject => function (consoleMessageObject) {
+  //   if (consoleMessageObject._type !== 'warning') {
+  //     console.debug(consoleMessageObject._text)
+  //   }
+  // });
+  // page.on('console', consoleObj => console.log(consoleObj.text()));  // untried
 
   await page.goto(url)
 
