@@ -5,6 +5,7 @@ const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
 const alert = require("./alert.js");
 const colors = require('colors');
+const mkdirp = require('mkdirp');
 
 // // CP Stuff
 // const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
@@ -64,8 +65,6 @@ let nextSelector = paginationSelector + ' a:nth-last-child(2)';
 
 let requiredPrefix = /MJ/;
 
-let type = 'mdj';
-
 // Paths
 // // doesn't exist yet
 // let namesFilePath = './names/mdj_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
@@ -87,7 +86,7 @@ if (!assignmentID) {
   throw Error('I think you used the default assignemt ID (24z). That\'s not a real one.'.yellow);
 }
 
-const assignmentPath = 'assignemnts/' + assignmentID + '.json'
+const assignmentPath = './assignments/' + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
 
 // Assignment settings overrides
@@ -146,7 +145,7 @@ const dateTextParts = [
   dates.start.substring(dates.start.length-2, dates.start.length),  // startYear
   dates.end.substring(0, 2),  // endMonth
   dates.end.substring(dates.end.length-2, dates.end.length),  // endYear
-}
+];
 const datesText = '_' + dateTextParts.join('_');
 
 const throttle = runData.wait;
@@ -456,7 +455,7 @@ async function getPDFs (browser, page, lastPageNum, currentNameIndex) {
   }
 
   // if (type === 'cp' && !foundResults) {
-  //   return {done: true, page: null}; 
+  //   return {done: true, page: null};
   // }
 
   // if (!foundResults) {
@@ -481,7 +480,7 @@ async function getPDFs (browser, page, lastPageNum, currentNameIndex) {
   // }
 ////
 
-  
+
   console.log(3);
 
   await page.waitForSelector(
@@ -773,7 +772,7 @@ const waitThenRepeat = async () => {
   timesRepeated++;
   timesRepeated % 11;  // 11 will turn into 0
   console.log('timesRepeated:', timesRepeated);
- 
+
   if (timesRepeated <= 4) {
     setTimeout(startNewBrowser, 20000);
   } else if (timesRepeated <= 8) {
