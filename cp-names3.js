@@ -30,47 +30,47 @@ let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicCont
     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
 
 let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let usedDocketsPath = 'cp-named-dockets-used.txt';
+let usedDocketsPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-dockets-used.txt';
 
-let pdfPath = 'data-cp/2017-2018/';
+let pdfPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/';
 let requiredPrefix = /CP/;
 let type = 'cp';
 
-// MDJ Stuff
-const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
-      lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName',
-      firstNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtFirstName',
-      docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType',
-      startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
-      endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
-      searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-      resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
-      paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
-      url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
+// // MDJ Stuff
+// const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
+//       lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName',
+//       firstNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtFirstName',
+//       docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType',
+//       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
+//       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
+//       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
+//       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
+//       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
+//       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
-let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
-let noResultsText = 'No Records Found'
+// let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
+// let noResultsText = 'No Records Found'
 
-const searchTypeVal = "ParticipantName",
-      docketTypeVal = "CR",
-      nameIndexPath = 'mdj-name-index.json';
-const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
+// const searchTypeVal = "ParticipantName",
+//       docketTypeVal = "CR",
+//       nameIndexPath = 'mdj-name-index.json';
+// const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
 
-let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
-    linksSelector = '.gridViewRow a.DynamicMenuItem',
-    docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
-let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let usedDocketsPath = 'mdj-named-dockets-used.txt';
+// let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
+//     linksSelector = '.gridViewRow a.DynamicMenuItem',
+//     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
+// let nextSelector = paginationSelector + ' a:nth-last-child(2)';
+// let usedDocketsPath = 'mdj-named-dockets-used.txt';
 
-let pdfPath = 'data-mdj/';
-let requiredPrefix = /MJ/;
-let type = 'mdj';
+// let pdfPath = 'data-mdj/';
+// let requiredPrefix = /MJ/;
+// let type = 'mdj';
 
 
 
 // Standard
-let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
+let names = require('./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json');
 const dates = {start: "01/01/2017", end: "12/31/2018"};
 let throttle = 15 * 1000;
 let timesRepeated = 0;
@@ -557,12 +557,12 @@ async function getPDFs (browser, page, lastPageNum) {
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
-      let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
-      let fixedText = text + '_stabilized_01_17_12_18';
+      let text = '\n' + Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + newPageNum;
+      let datedText = text + '_01_17_12_18';
       // fixed at cp-names3 20184
 
       // save docket id to dockets-used.txt?
-      fs.appendFileSync(usedDocketsPath, fixedText, function (err) {
+      fs.appendFileSync(usedDocketsPath, datedText, function (err) {
         if (err) console.log(err);
       });
 
