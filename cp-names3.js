@@ -48,6 +48,9 @@ let type = 'cp';
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
+// let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
+// let noResultsText = 'No Records Found'
+
 // const searchTypeVal = "ParticipantName",
 //       docketTypeVal = "CR",
 //       nameIndexPath = 'mdj-name-index.json';
@@ -66,10 +69,9 @@ let type = 'cp';
 
 
 
-
 // Standard
 let names = JSON.parse(fs.readFileSync('names3.json', 'utf8'));
-const dates = {start: "01/01/2017", end: "12/31/2018"};
+const dates = {start: "06/01/2018", end: "12/31/2018"};
 let throttle = 15 * 1000;
 let timesRepeated = 0;
 // Inclusive
@@ -352,8 +354,34 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log('start looking for result:', Date().toString());
 
   let anError = null;
-  let resultsElemFound = page.waitForSelector(resultsSelector);
-  let noResultsElemFound = page.waitForSelector(noResultsSelector);
+    let resultsElemFound = page.waitForSelector(resultsSelector,
+    { 'timeout': 120000 });
+  let noResultsElemFound = null;
+
+  if (type === 'cp') {
+    noResultsElemFound = page.waitForSelector(noResultsSelector,
+      { 'timeout': 120000 });
+  } else {
+    noResultsElemFound = page.waitFor(
+      function (noResultsSelector, noResultsText) {
+        let elem = document.querySelector(noResultsSelector)
+        if (!!elem) {
+          let text = elem.innerText;
+          let hasText = text === noResultsText;
+          if (hasText) {
+            return elem;
+          } else {
+            return false;
+          }
+        } else {
+          return false;
+        }
+      },
+      { 'timeout': 120000 },
+      noResultsSelector, noResultsText
+    );
+  }
+
   let foundSomeResults = false;
   let foundNoResults = false;
   await Promise.race([resultsElemFound, noResultsElemFound])
@@ -373,12 +401,43 @@ async function getPDFs (browser, page, lastPageNum) {
   let elapsed = endTime - startTime;
   console.log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
 
+  if (anError) {
+    return {done: true, page: null, err: {message: 'not found', value: anError}}
+  }
+
   if (foundNoResults) {
     return {done: true, page: null};
   }
   if (!foundNoResults && !foundSomeResults) {
     return {done: true, page: null, err: {message: 'not found', value: anError}}
   }
+
+  // if (type === 'cp' && !foundResults) {
+  //   return {done: true, page: null}; 
+  // }
+
+  // if (!foundResults) {
+  //   try {
+  //     await page.waitFor(
+  //       function (noResultsSelector, noResultsText) {
+  //         let elem = document.querySelector(noResultsSelector);
+  //         let text = elem.innerText;
+  //         let hasNoResults = text === noResultsText;
+  //         return isNew;
+  //       },
+  //       {},
+  //       noResultsSelector, noResultsText
+  //     )
+  //   } catch (theError) {
+  //     // Didn't find any expected elements
+  //     return {
+  //       value: 'not found',
+  //       err: theError,
+  //     };
+  //   }
+  // }
+////
+
   
   console.log(3);
 
@@ -499,7 +558,7 @@ async function getPDFs (browser, page, lastPageNum) {
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
       let text = '\n' + Date.now() + '_' + id + '_page_' + newPageNum;
-      let fixedText = text + '_stabilized_01_17_12_18';
+      let fixedText = text + '_stabilized_06_18_12_18';
       // fixed at cp-names3 20184
 
       // save docket id to dockets-used.txt?
