@@ -83,7 +83,7 @@ total: 43680
 node cp-names3.js 0 92 3000
 92
 node cp-names3.js 92 1000 30
-
+0 91
 
 node cp-names3.js 20001 20001 3000
 node cp-names3.js 20002 20002 3000 no
@@ -96,12 +96,13 @@ node cp-names3.js 20147 21000 300
 node cp-names3.js 30001 31000 300
 30409
 
+// at what date?
 node cp-names3.js 1001 3000 30
   {start: 1001, end: 3000},
 
 let doneRanges = [
   // inclusive
-  {start: 0, end: 1000},
+  {start: 0, end: 91},
   {start: 20001, end: 20319},
   {start: 30001, end: 30408},
 ];
@@ -110,6 +111,16 @@ let doneRanges = [
 ------
 total: 43680
 node mdj-names3.js 0 1000 3500
+
+
+---------
+cp-3 2018 half
+[{start: 92, end: 129}];
+----- 
+2017to2018 end
+
+[{start: 134, end: 174}];
+
 
 
 
