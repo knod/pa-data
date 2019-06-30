@@ -20,20 +20,23 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
 
 const searchTypeVal = "Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      docketTypeVal = "Criminal",
-      nameIndexPath = 'cp-name-index.json';
+      docketTypeVal = "Criminal";
 const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
 let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
     linksSelector = '.gridViewRow a.DynamicMenuItem',
-    docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
+    docketIDSelector = '.gridViewRow td:nth-child(2)';
 
 let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let usedDocketsPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-dockets-used.txt';
-
-let pdfPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/';
 let requiredPrefix = /CP/;
+
 let type = 'cp';
+
+// Paths
+let nameIndexPath = 'cp-name-index.json';
+let pdfPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/';
+let namesFilePath = './names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
+let usedDocketsPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-dockets-used.txt';
 
 // // MDJ Stuff
 // const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
@@ -51,8 +54,7 @@ let type = 'cp';
 // let noResultsText = 'No Records Found'
 
 // const searchTypeVal = "ParticipantName",
-//       docketTypeVal = "CR",
-//       nameIndexPath = 'mdj-name-index.json';
+//       docketTypeVal = "CR";
 // const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
 
@@ -60,26 +62,30 @@ let type = 'cp';
 //     linksSelector = '.gridViewRow a.DynamicMenuItem',
 //     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
 // let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-// let usedDocketsPath = 'mdj-named-dockets-used.txt';
 
-// let pdfPath = 'data-mdj/';
 // let requiredPrefix = /MJ/;
+
 // let type = 'mdj';
 
+// // Paths
+// // // doesn't exist yet
+// // let namesFilePath = './names/mdj_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
+// let namesFilePath = 'names3.json';
+// let pdfPath = 'data-mdj/';
+// let usedDocketsPath = 'mdj-named-dockets-used.txt';
+// let nameIndexPath = 'mdj-name-index.json';
 
-
-// TODO: build test repositories
-// let names = require('./quick-test/names-test.json');
-// let pdfPath = 'quick-test/data/';
-// let usedDocketsPath = 'quick-test/dockets-used.txt';
-// let nameIndexPath = 'quick-test/test-name-index.json';
 
 
 // Standard
-let names = require('./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json');
+let names = require(namesFilePath);
 const dates = {start: "01/01/2017", end: "12/31/2018"};
 let throttle = 15;
 let timesRepeated = 0;
+      
+let dateOb = new Date;
+let datesText = '_' + dateOb.getTime(dates.start) + '_' ;
+
 // Inclusive
 // orignal run: index 41
 // latest: node cp-names.js 41 45
@@ -91,67 +97,6 @@ let doPlaySound = process.argv[5];
 if (process.argv[4]) {
   throttle = parseInt(process.argv[4]);
 }
-
-// // command line command looks something like:
-// // node mdj-names3-test.js mdj '{"wait":"200","getFrom":"names3.js"}'
-// let type = process.argv[2];
-// let commandLineArgs = JSON.parse(process.argv[3]);
-
-// if (!commandLineArgs.user) {
-//   throw ReferenceError('You must at least write \'{"user":"yourFirstNameHere"}\' after the script name to add the "user" property.'.yellow);
-// }
-// if (commandLineArgs.user === 'yourFirstNameHere') {
-//   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
-// }
-// if (commandLineArgs.startIndex && !commandLineArgs.endIndex) {
-//   commandLineArgs.endIndex = commandLineArgs.startIndex + 1000;  // names.length - 1
-// }
-
-// // In future 'type' will determine what selector and filename values are used
-// // let nameIndexPath = type + '-name-index.json';
-// let nameIndexVal = require('./' + nameIndexPath);
-// console.log('nameIndex required:', nameIndexVal);
-// let defaultArgs = {
-//   startIndex: nameIndexVal,
-//   endIndex: nameIndexVal + 1000,
-//   startYear: 2017,
-//   endYear: 2019,
-//   wait: 300,
-// //   volume: 10,  // no way to implement this right now
-//   alerts: 'yes',
-//   getFrom: 'names3.json',
-// //   type: type,
-// }
-
-// let argvs = Object.assign(defaultArgvs, commandLineArgvs);
-// argvs.dates = {
-//   start: '01/01/' + argvs.startYear,
-//   end: '12/31' + argvs.endYear,
-// }
-// if (argvs.endYear === 2019) { argvs.dates.end = '06/25/2019'; }
-
-// // // In future 'type' will determine what selector and filename values are used
-// // let vars = whatever[type];
-// // // In future, which file to get names from will be determined by
-// // // files named after users
-// // if (!args.user || args.user === 'yourNameHere') {
-// //   throw ReferenceError('You must at least write \'{"user":"yourFirstNameHere"}\' after the script name to add the "user" property.'.yellow);
-// // }
-// // if (args.user === 'yourFirstNameHere') {
-// //   throw Error('Replace "yourFirstNameHere" with your actual first name. Sorry for not being clear.'.yellow)
-// // }
-// // if (commandLineArgs.startIndex && !commandLineArgs.endIndex) {
-// //   argvs.endIndex = names.length - 1
-// // }
-// // console.log(args);
-
-
-/*
-let namesStartIndex = argvs.startIndex;
-let namesEndIndex = argvs.endIndex;
-let doPlaySound = argvs.alerts;
-let throttle = argvs.wait;
-*/
 
 fs.writeFileSync(nameIndexPath, namesStartIndex);
 console.log('start index: ', namesStartIndex + ', end index:', namesEndIndex);
@@ -170,7 +115,7 @@ async function byNamesDuring (dates, browser) {
   //     console.debug(consoleMessageObject._text)
   //   }
   // });
-  // page.on('console', consoleObj => console.log(consoleObj.text()));  // untried
+  // page.on('console', consoleObj => console.log(consoleObj.text + '\n'));//console.log(consoleObj.text()));  // untried
 
   await page.goto(url)
 
@@ -512,7 +457,7 @@ async function getPDFs (browser, page, lastPageNum) {
   if (navText) {
     let pages = navText.match(/\d+/g);
     let lastPage = pages[pages.length - 1];
-    console.log('current last page:', lastPage);
+    console.log('current last listed page:', lastPage);
   }
 
   console.log(5);
@@ -567,22 +512,23 @@ async function getPDFs (browser, page, lastPageNum) {
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
-      let text = '\n' + Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + newPageNum;
-      let datedText = text + '_01_17_12_18';
+      let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + newPageNum;
+      let datedText = text + datesText;
       // fixed at cp-names3 20184
 
       // save docket id for later reference
       fs.appendFileSync(usedDocketsPath, datedText, function (err) {
         if (err) console.log(err);
       });
+      console.log('docket id written');
 
-      // await page.waitFor(3000);  // untried
       // Download pdfs
       await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
-      // await page.waitFor(3000);  // untried
+      console.log('docket', index, 'saved');
       adder++
       await downloadPDF(linksText[index + adder], text + '-summary.pdf');
+      console.log('summary', index, 'saved');
     }
   }
 
@@ -745,7 +691,7 @@ const waitThenRepeat = async () => {
   console.log('timesRepeated:', timesRepeated);
  
   if (timesRepeated <= 4) {
-    setTimeout(startNewBrowser, 20000);
+    setTimeout(startNewBrowser, 65000);
   } else if (timesRepeated <= 8) {
     // wait an hour before trying again
     console.log('an hour should pass.');

@@ -569,7 +569,7 @@ async function getPDFs (browser, page, lastPageNum) {
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
-      let text = '\n' + Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + newPageNum;
+      let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + newPageNum;
       let datedText = text + '_01_17_12_18';
       // fixed at cp-names3 20184
 
