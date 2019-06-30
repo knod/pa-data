@@ -3,6 +3,7 @@ already-run.txt
 420 names to start with
 
 # cp
+alternating-matching-names
 node cp-names.js 41 44
 node cp-names.js 45 47
 node cp-names.js 48 50 3000
@@ -52,7 +53,6 @@ node mdj-names.js 301 305 3000
 node mdj-names.js 306 320 3000
 node mdj-names.js 321 350 3000
 
-riley
 34 - 100
 
 m 101 - 115
@@ -69,17 +69,20 @@ node mdj-names.js 204 250 3000
 
 -------
 total: 119070
+consecutive-?-names
 node cp-names2.js 0 500 2000
 
 
 ------
 total: 119070
+consecutive-?-names
 node mdj-names2.js 0 500 2000
 
 
 
 -------
 total: 43680
+alternating-nonmatching-names
 node cp-names3.js 0 92 3000
 92
 node cp-names3.js 92 1000 30

@@ -1,5 +1,4 @@
 // cp-names.js
-
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
@@ -30,9 +29,9 @@ let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicCont
     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
 
 let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let usedDocketsPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-dockets-used.txt';
+let usedDocketsPath = 'test-dockets.txt';// 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-dockets-used.txt';
 
-let pdfPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/';
+let pdfPath = '';//'data-cp/2017-2018-randomized-alternating-nonmatching/';
 let requiredPrefix = /CP/;
 let type = 'cp';
 
@@ -70,15 +69,17 @@ let type = 'cp';
 
 
 // Standard
-let names = require('./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json');
+// let names = require('./names/cp_alternating_nonmatching_names01_15to12_18_remaining_shuffled.json');
+let names = require('./names/test.json');
 const dates = {start: "01/01/2017", end: "12/31/2018"};
-let throttle = 15 * 1000;
+let throttle = 15;
 let timesRepeated = 0;
 // Inclusive
 // orignal run: index 41
 // latest: node cp-names.js 41 45
 let namesStartIndex = parseInt(process.argv[2]),
     namesEndIndex   = parseInt(process.argv[3]);
+let nameIndex = namesStartIndex;
 let doPlaySound = process.argv[5];
 
 if (process.argv[4]) {
@@ -147,7 +148,7 @@ let throttle = argvs.wait;
 */
 
 fs.writeFileSync(nameIndexPath, namesStartIndex);
-console.log(namesStartIndex, namesEndIndex);
+console.log('start index: ', namesStartIndex + ', end index:', namesEndIndex);
 
 
 
@@ -189,7 +190,7 @@ async function byNamesDuring (dates, browser) {
   await page.waitForSelector(lastNameSelector);
 
   // Get last stored name index (number)
-  let nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
+  nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
@@ -354,15 +355,17 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log('start looking for result:', Date().toString());
 
   let anError = null;
-  let resultsElemFound = page.waitForSelector(resultsSelector,
+  let resultsElem = page.waitForSelector(resultsSelector,
     { 'timeout': 120000 });
-  let noResultsElemFound = null;
+  let noResultsElem = null;
+  // noResultsElem = page.waitForSelector(noResultsSelector,
+  //     { 'timeout': 120000 });
 
   if (type === 'cp') {
-    noResultsElemFound = page.waitForSelector(noResultsSelector,
+    noResultsElem = page.waitForSelector(noResultsSelector,
       { 'timeout': 120000 });
   } else {
-    noResultsElemFound = page.waitFor(
+    noResultsElem = page.waitFor(
       function (noResultsSelector, noResultsText) {
         let elem = document.querySelector(noResultsSelector)
         if (!!elem) {
@@ -384,11 +387,11 @@ async function getPDFs (browser, page, lastPageNum) {
 
   let foundSomeResults = false;
   let foundNoResults = false;
-  await Promise.race([resultsElemFound, noResultsElemFound])
+  await Promise.race([resultsElem, noResultsElem])
     .then(function(value) {
       console.log('race value:', value._remoteObject.description);
-      foundSomeResults = value._remoteObject.description.indexOf(resultsElemFound) >= 0
-      foundNoResults = !foundSomeResults
+      foundSomeResults = value._remoteObject.description.indexOf(resultsSelector) >= 0;
+      foundNoResults = !foundSomeResults;
       console.log('results found?', foundSomeResults);
       console.log('no results found?', foundNoResults);
       // Both resolve, but promise2 is faster
@@ -562,7 +565,8 @@ async function getPDFs (browser, page, lastPageNum) {
       // fixed at cp-names3 20184
 
       // save docket id to dockets-used.txt?
-      fs.appendFileSync(usedDocketsPath, datedText, function (err) {
+      // fs.appendFileSync(usedDocketsPath, datedText, function (err) {
+      fs.writeFileSync(usedDocketsPath, datedText, function (err) {
         if (err) console.log(err);
       });
 

@@ -385,11 +385,11 @@ async function getPDFs (browser, page, lastPageNum) {
 
   let foundSomeResults = false;
   let foundNoResults = false;
-  await Promise.race([resultsElemFound, noResultsElemFound])
+  await Promise.race([resultsElem, noResultsElem])
     .then(function(value) {
       console.log('race value:', value._remoteObject.description);
-      foundSomeResults = value._remoteObject.description.indexOf(resultsElemFound) >= 0
-      foundNoResults = !foundSomeResults
+      foundSomeResults = value._remoteObject.description.indexOf(resultsSelector) >= 0;
+      foundNoResults = !foundSomeResults;
       console.log('results found?', foundSomeResults);
       console.log('no results found?', foundNoResults);
       // Both resolve, but promise2 is faster
