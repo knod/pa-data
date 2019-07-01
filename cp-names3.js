@@ -77,6 +77,9 @@ let usedDocketsPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-d
 
 
 
+let pdfsDownloaded = 0;
+
+
 // Standard
 let names = require(namesFilePath);
 const dates = {start: "01/01/2017", end: "12/31/2018"};
@@ -524,9 +527,18 @@ async function getPDFs (browser, page, lastPageNum) {
       await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
       console.log('docket', index, 'saved');
+      pdfsDownloaded++;
       adder++
       await downloadPDF(linksText[index + adder], text + '-summary.pdf');
       console.log('summary', index, 'saved');
+      pdfsDownloaded++;
+
+
+      if (pdfsDownloaded > 800) {
+        console.log('approaching 429. wait for 55min @', getTime());
+        await page.waitFor(3600000);
+        console.log('done waiting for 429');
+      }
     }
   }
 
@@ -622,7 +634,7 @@ async function startNewBrowser () {
   let browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   byNamesDuring(dates, browser, page)
-    .then((result) => {
+    .then(async (result) => {
       let value = result[0],
           err = result[1];
       if (value === 'not found') {
@@ -634,10 +646,11 @@ async function startNewBrowser () {
           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
           console.log(err.statusCode)
           if (err.statusCode === 429) {
+            console.log(err)
             await show429(page);
-            browser.close()
-            // console.log('waiting two minutes');
-            // setTimeout(waitThenRepeat, 120000);
+            // browser.close()
+            console.log('waiting two minutes');
+            setTimeout(waitThenRepeat, 120000);
           } else {
             // repeat with increased wait
             waitThenRepeat();
@@ -653,12 +666,12 @@ async function startNewBrowser () {
       // gotIt = true;
 
       try {
-        brower.close();
+        await brower.close();
       } catch (err) {
         // probably already closed
       }
 
-    }).catch((err) => {
+    }).catch(async (err) => {
       console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
       console.log('status code:', err.statusCode);
       // setTimeout(function () {
@@ -668,16 +681,16 @@ async function startNewBrowser () {
         // Temporary error
         alert.error();
       }
-      console.log('status code:', err.statusCode);
-      // How do we close the old browser?
-      browser.close();
+
+      // await browser.close();
       console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
       console.log(err.statusCode)
       if (err.statusCode === 429) {
+        console.log(err)
         await show429(page);
-        browser.close();
-        // console.log('waiting two minutes');
-        // setTimeout(waitThenRepeat, 120000);
+        // browser.close();
+        console.log('waiting two minutes');
+        setTimeout(waitThenRepeat, 120000);
       } else {
         waitThenRepeat();
       }
@@ -727,6 +740,14 @@ async function show429 (page) {
   // Should show how long we need to wait
   console.log(html);
 };
+
+
+let getNowHHMM = function () {
+  let date = new Date();  // now
+  let time = date.toTimeString();
+  let hhmm = time.substring(0, 5); // military time
+  return hhmm;
+}
 
 
 startNewBrowser();
