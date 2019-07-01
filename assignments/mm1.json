@@ -4,7 +4,7 @@
   "endDate": "12/31/2018",
   "startIndexRange": 0,
   "endIndexRange": 1000,
-  "currentIndex": null,
+  "currentIndex": 817,
   "completed": false,
   "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
   "dataDirectory": "data-cp/2017-2018-randomized-alternating-nonmatching/",
