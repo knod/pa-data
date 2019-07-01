@@ -634,7 +634,7 @@ async function startNewBrowser () {
           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
           console.log(err.statusCode)
           if (err.statusCode === 429) {
-            show429(page);
+            await show429(page);
             browser.close()
             // console.log('waiting two minutes');
             // setTimeout(waitThenRepeat, 120000);
@@ -674,7 +674,7 @@ async function startNewBrowser () {
       console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
       console.log(err.statusCode)
       if (err.statusCode === 429) {
-        show429(page);
+        await show429(page);
         browser.close();
         // console.log('waiting two minutes');
         // setTimeout(waitThenRepeat, 120000);
