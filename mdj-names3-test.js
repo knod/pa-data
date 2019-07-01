@@ -5,6 +5,7 @@ const puppeteer = require('puppeteer');
 const request = require("request-promise-native");
 const alert = require("./alert.js");
 const colors = require('colors');
+const mkdirp = require('mkdirp');
 
 // // CP Stuff
 // const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
@@ -64,8 +65,6 @@ let nextSelector = paginationSelector + ' a:nth-last-child(2)';
 
 let requiredPrefix = /MJ/;
 
-let type = 'mdj';
-
 // Paths
 // // doesn't exist yet
 // let namesFilePath = './names/mdj_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
@@ -87,7 +86,7 @@ if (!assignmentID) {
   throw Error('I think you used the default assignemt ID (24z). That\'s not a real one.'.yellow);
 }
 
-const assignmentPath = 'assignemnts/' + assignmentID + '.json'
+const assignmentPath = './assignments/' + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
 
 // Assignment settings overrides
@@ -146,7 +145,7 @@ const dateTextParts = [
   dates.start.substring(dates.start.length-2, dates.start.length),  // startYear
   dates.end.substring(0, 2),  // endMonth
   dates.end.substring(dates.end.length-2, dates.end.length),  // endYear
-}
+];
 const datesText = '_' + dateTextParts.join('_');
 
 const throttle = runData.wait;
@@ -156,7 +155,7 @@ const doPlaySound = runData.alerts;
 
 
 // Global mutating state vars
-let nameIndex = runData.currentIndex;
+let nameIndex = runData.currentIndex || 0;
 let timesRepeated = 0;
 console.log('start index: ', nameIndex + ', end index:', namesEndIndex);
 
@@ -344,7 +343,7 @@ async function byNamesDuring (dates, browser) {
     // Permanently save that the current name was completed,
     // but all other data stays the same. Should changing data
     // and non-changing data be in the same file?
-    assignmentData.done[currentNameIndex] = true;
+    assignmentData.done[nameIndex] = true;
     // Update our temporary data too
     runData.done[nameIndex] = true;
 
@@ -367,13 +366,13 @@ async function byNamesDuring (dates, browser) {
 
     // Permanently remember the next name index needed
     assignmentData.currentIndex = nameIndex;
-    fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData));
+    fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
   }  // ends while name index <= ending index
 
   // Record that this data was finished
   assignmentData.completed = true;
-  fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData));
+  fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
   console.log(19);
   await browser.close();
@@ -456,7 +455,7 @@ async function getPDFs (browser, page, lastPageNum, currentNameIndex) {
   }
 
   // if (type === 'cp' && !foundResults) {
-  //   return {done: true, page: null}; 
+  //   return {done: true, page: null};
   // }
 
   // if (!foundResults) {
@@ -481,7 +480,7 @@ async function getPDFs (browser, page, lastPageNum, currentNameIndex) {
   // }
 ////
 
-  
+
   console.log(3);
 
   await page.waitForSelector(
@@ -599,20 +598,20 @@ async function getPDFs (browser, page, lastPageNum, currentNameIndex) {
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
-      let datedText = Date.now() + '_' + id + datesText + '_namei_' + nameIndex + '_page_' + newPageNum;
+      let datedText = Date.now() + '_' + id + datesText + '_namei_' + currentNameIndex + '_page_' + newPageNum;
 
       // save docket id for later reference
-      fs.appendFileSync(usedDocketsPath, datedText, function (err) {
+      fs.appendFileSync(usedDocketsPath, datedText + '\n', function (err) {
         if (err) console.log(err);
       });
       console.log('docket id written');
 
       // Download pdfs
-      await downloadPDF(linksText[index + adder], text + '-docket.pdf');
+      await downloadPDF(linksText[index + adder], datedText + '-docket.pdf');
       // Because the linksText list is twice as long
       console.log('docket', index, 'saved');
       adder++
-      await downloadPDF(linksText[index + adder], text + '-summary.pdf');
+      await downloadPDF(linksText[index + adder], datedText + '-summary.pdf');
       console.log('summary', index, 'saved');
     }
   }
@@ -773,7 +772,7 @@ const waitThenRepeat = async () => {
   timesRepeated++;
   timesRepeated % 11;  // 11 will turn into 0
   console.log('timesRepeated:', timesRepeated);
- 
+
   if (timesRepeated <= 4) {
     setTimeout(startNewBrowser, 20000);
   } else if (timesRepeated <= 8) {
