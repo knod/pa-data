@@ -2,15 +2,15 @@
   "type": "mdj",
   "startDate": "01/01/2017",
   "endDate": "12/31/2018",
-  "startIndexRange": 1001,
-  "endIndexRange": 2000,
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
   "currentIndex": 0,
   "completed": false,
   "namesPath": "./names/mdj_1_see_data-mdj_readme.json",
   "dataDirectory": "data-mdj/mdj_1_see_data-mdj_readme/",
   "usedDocketsFileName": "ek1-dockets-used.txt",
   "wait": 30,
-  "alerts": "no",
+  "alerts": "yes",
   "redo": false,
   "done": {}
 }
