@@ -76,8 +76,16 @@ let usedDocketsPath = 'data-cp/2017-2018-randomized-alternating-nonmatching/cp-d
 // let nameIndexPath = 'mdj-name-index.json';
 
 
+// Limit yourself to whatever 429 is going to say.
+let numPDFs = 0;
+let timeStartedRunning = Date.now();
+
 
 // Standard
+// start 8,095
+// 9,164
+// 9,667
+// Maybe sometimes in the middle of a page it gets overloaded, but doesn't give 429
 let names = require(namesFilePath);
 const dates = {start: "01/01/2017", end: "12/31/2018"};
 let throttle = 15;
@@ -141,6 +149,8 @@ async function byNamesDuring (dates, browser, page) {
 
   // Get last stored name index (number)
   nameIndex = JSON.parse(fs.readFileSync(nameIndexPath, 'utf8'));
+
+  // await show429(page);
 
   while (nameIndex <= namesEndIndex) {
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
@@ -523,10 +533,15 @@ async function getPDFs (browser, page, lastPageNum) {
       // Download pdfs
       await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
-      console.log('docket', index, 'saved');
+      console.log('docket #' + index, 'saved');
+      numPDFs++;
+
       adder++
       await downloadPDF(linksText[index + adder], text + '-summary.pdf');
-      console.log('summary', index, 'saved');
+      console.log('summary #' + index, 'saved');
+      numPDFs++;
+
+      console.log('# pdfs downloaded:', numPDFs, ', time elapsed:', (Date.now() - timeStartedRunning)/1000);
     }
   }
 
@@ -622,7 +637,7 @@ async function startNewBrowser () {
   let browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   byNamesDuring(dates, browser, page)
-    .then((result) => {
+    .then(async (result) => {
       let value = result[0],
           err = result[1];
       if (value === 'not found') {
@@ -635,12 +650,14 @@ async function startNewBrowser () {
           console.log(err.statusCode)
           if (err.statusCode === 429) {
             await show429(page);
-            browser.close()
+            await browser.close();
+            process.exit()
+            // browser.close()
             // console.log('waiting two minutes');
-            // setTimeout(waitThenRepeat, 120000);
+            // setTimeout(function(){waitThenRepeat(browser)}, 120000);
           } else {
             // repeat with increased wait
-            waitThenRepeat();
+            waitThenRepeat(browser);
           }
         }
       } else {
@@ -658,7 +675,7 @@ async function startNewBrowser () {
         // probably already closed
       }
 
-    }).catch((err) => {
+    }).catch(async (err) => {
       console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
       console.log('status code:', err.statusCode);
       // setTimeout(function () {
@@ -669,17 +686,18 @@ async function startNewBrowser () {
         alert.error();
       }
       console.log('status code:', err.statusCode);
-      // How do we close the old browser?
-      browser.close();
+
+      // browser.close();
       console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
       console.log(err.statusCode)
       if (err.statusCode === 429) {
         await show429(page);
-        browser.close();
+        await browser.close();
         // console.log('waiting two minutes');
-        // setTimeout(waitThenRepeat, 120000);
+        // setTimeout(function () {waitThenRepeat(browser)}, 120000);
+        process.exit()
       } else {
-        waitThenRepeat();
+        waitThenRepeat(browser);
       }
     });
 };
@@ -688,7 +706,7 @@ async function startNewBrowser () {
 // Something above this must be calling this twice. Where is this happening?
 // Also, though, instantiating two different `timesRepeated` vars.
 // How can that even happen?
-const waitThenRepeat = async () => {
+async function waitThenRepeat (browser) {
   timesRepeated++;
   timesRepeated % 11;  // 11 will turn into 0
   console.log('timesRepeated:', timesRepeated);
@@ -709,6 +727,7 @@ const waitThenRepeat = async () => {
     // Final error
     console.log("giving up");
     alert.gaveUp();
+    await browser.close();
     process.exit(1);
   }
 
@@ -717,15 +736,29 @@ const waitThenRepeat = async () => {
 
 async function show429 (page) {
 
-  let html = await page.waitFor(
-    function () {
-      let elem = document.querySelector('body');
-      return elem;
-    }
-  );
+  // console.log('in show 429');
+  // await page.waitFor(5000);
 
-  // Should show how long we need to wait
-  console.log(html);
+  // conclusion: It just showed the reguar page
+
+  // try {
+  //   await page.screenshot({path: '429.png'});  
+  // } catch (err) {
+  //   console.log('no screenshot:', err)
+  // }
+  
+  // let html = await page.waitFor(
+  //   function () {
+  //     let elem = document.querySelector('body');
+  //     console.log(elem.innerText());
+  //     return elem;
+  //   }
+  // );
+
+  // // Should show how long we need to wait
+  // console.log('html:', html.innerText());
+
+  return;
 };
 
 
