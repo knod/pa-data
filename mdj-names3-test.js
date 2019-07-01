@@ -718,8 +718,8 @@ async function startNewBrowser () {
           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
           console.log(err.statusCode)
           if (err.statusCode === 429) {
-            console.log('waiting two minutes');
-            setTimeout(waitThenRepeat, 120000);
+            console.log('waiting 15 minutes @', getNowHHMM());
+            setTimeout(waitThenRepeat, 900000);
           } else {
             // repeat with increased wait
             waitThenRepeat();
@@ -756,8 +756,8 @@ async function startNewBrowser () {
       console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
       console.log(err.statusCode)
       if (err.statusCode === 429) {
-        console.log('waiting two minutes');
-        setTimeout(waitThenRepeat, 120000);
+        console.log('waiting 15 minutes @', getNowHHMM());
+        setTimeout(waitThenRepeat, 900000);
       } else {
         waitThenRepeat();
       }
@@ -774,17 +774,16 @@ const waitThenRepeat = async () => {
   console.log('timesRepeated:', timesRepeated);
 
   if (timesRepeated <= 4) {
-    setTimeout(startNewBrowser, 20000);
+    console.log('waiting 1 min @', getNowHHMM());
+    setTimeout(startNewBrowser, 60000);
   } else if (timesRepeated <= 8) {
     // wait an hour before trying again
-    console.log('an hour should pass.');
-    setTimeout(startNewBrowser//, 60000);
-    , 3600000);
+    console.log('waiting an hour @', getNowHHMM()');
+    setTimeout(startNewBrowser, 3600000);
   } else if (timesRepeated <= 9){
     // wait 15 min
-    console.log('4 hours should have passed');
-    setTimeout(startNewBrowser//, 30000);
-    , 900000);
+    console.log('4 hours should have passed. Waiting 15 min @', getNowHHMM());
+    setTimeout(startNewBrowser, 900000);
   } else {
     // Final error
     console.log("giving up");
@@ -793,5 +792,13 @@ const waitThenRepeat = async () => {
   }
 
 };
+
+let getNowHHMM = function () {
+  let date = new Date();  // now
+  let time = date.toTimeString();
+  let hhmm = time.substring(0, 5); // military time
+  return hhmm;
+}
+
 
 startNewBrowser();
