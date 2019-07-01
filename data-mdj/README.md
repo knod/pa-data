@@ -32,7 +32,7 @@ Examples:
 Descriptions of the different files and what they have in them.
 
 ## mdj_1
-**Alternating, nonmatching, shuffled, partial**
+**Alternating, nonmatching, shuffled, partial, from 01/01/2017 to 12/31/2018**
 
 Removed these name indexes from `names3.js` because we weren't sure if they'd been downloaded or not.
 ```

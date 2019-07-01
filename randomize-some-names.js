@@ -76,7 +76,7 @@ let makeMDJNames1 = function () {
 
 }
 
-makeMDJNames1();
+// makeMDJNames1();
 
 // let mdj_alternating_names2007to2019_path = pathPrefix + 'mdj_alternating_names2007to2019.json';
 // let mdj_alternating_names06_18to12_18_path = pathPrefix + 'mdj_alternating_names06_18to12_18.json';
