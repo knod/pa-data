@@ -5,15 +5,12 @@
   "startIndexRange": 0,
   "endIndexRange": 1000,
   "currentIndex": null,
-  "note_customIndex": "customIndex will be reset each time",
   "completed": false,
   "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
-  "usedDocketsDirectory": "data-cp/2017-2018-randomized-alternating-nonmatching/",
+  "dataDirectory": "data-cp/2017-2018-randomized-alternating-nonmatching/",
   "usedDocketsFileName": "1m-dockets-used.txt",
   "wait": 1,
   "alerts": "yes",
-  "note_done": "Needs to be implemented. Object of finished indexes",
   "done": {},
-  "note_redo": "Needs to be implemented. Will allow redoing 'done' indexes",
   "redo": false
 }
