@@ -5,7 +5,7 @@
   "startIndexRange": 2001,
   "endIndexRange": 3000,
   "position": {
-    "index": 2012,
+    "index": 2014,
     "page": 1
   },
   "completed": false,
@@ -26,6 +26,8 @@
     "2008": true,
     "2009": true,
     "2010": true,
-    "2011": true
+    "2011": true,
+    "2012": true,
+    "2013": true
   }
 }
