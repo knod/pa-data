@@ -13,7 +13,7 @@
   "dataDirectory": "data-mdj/mdj_1_see_data-mdj_readme/",
   "usedDocketsFileName": "-dockets-used.txt",
   "wait": 500,
-  "alerts": "no",
+  "alerts": "yes",
   "redo": false,
   "done": {
     "2001": true,
