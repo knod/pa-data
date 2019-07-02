@@ -9,7 +9,7 @@
   "namesPath": "./names/mdj_1_see_data-mdj_readme.json",
   "dataDirectory": "data-mdj/mdj_1_see_data-mdj_readme/",
   "usedDocketsFileName": "ek1-dockets-used.txt",
-  "wait": 30,
+  "wait": 450,
   "alerts": "yes",
   "redo": false,
   "done": {}
