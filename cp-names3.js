@@ -450,9 +450,7 @@ async function getPDFs (browser, page, pageData) {
           let indexOfClick = null
           for (let navIndex = 2; navIndex < navParts.length; navIndex++) {
             let navItem = navParts[navIndex];
-            if (isNaN(parseInt(navItem))) {
-              break;
-            } else {
+            if (!isNaN(parseInt(navItem))) {
               indexOfClick = navIndex;
             }
           }

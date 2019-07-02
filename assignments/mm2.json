@@ -5,7 +5,7 @@
   "startIndexRange": 1001,
   "endIndexRange": 3000,
   "position": {
-    "index": 1060,
+    "index": 1061,
     "page": 1
   },
   "completed": false,
@@ -61,7 +61,8 @@
     "1056": true,
     "1057": true,
     "1058": true,
-    "1059": true
+    "1059": true,
+    "1060": true
   },
   "redo": false
 }
