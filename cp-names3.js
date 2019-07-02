@@ -96,8 +96,8 @@ const commandLineArgvs = process.argv[3];
 let runData = null;
 if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
 
-  let arvObj = JSON.parse(commandLineArgvs);console.log('argv obj:', arvObj);
-  runData = Object.assign(assignmentData, arvObj);console.log('combined objects:', runData);
+  let arvObj = JSON.parse(commandLineArgvs);//console.log('argv obj:', arvObj);
+  runData = Object.assign(assignmentData, arvObj);//console.log('combined objects:', runData);
 
 } else {
   runData = assignmentData;
@@ -179,14 +179,7 @@ async function byNamesDuring (dates, browser, page) {
   let err = null;
 
   await page.setViewport({width: 1920, height: 2000});
-  // // Logging from inside puppeteer page.$eval (not working so far)
-  // page.on('console', consoleMessageObject => function (consoleMessageObject) {
-  //   if (consoleMessageObject._type !== 'warning') {
-  //     console.debug(consoleMessageObject._text)
-  //   }
-  // });
-  // // untried
-  // page.on('console', consoleObj => console.log(consoleObj.text + '\n'));//console.log(consoleObj.text()));
+  page.on('console', consoleObj => console.log(consoleObj.text()));//console.log(consoleObj.text()));
 
   await page.goto(url)
   await page.waitForSelector(searchTypeSelector)
@@ -291,7 +284,7 @@ async function getPDFs (browser, page, pageData) {
   // It's our page goal for where to start downloading
   // files.
   let goalPageNumber = runData.position.page;
-  console.log('page: '.blue, goalPageNumber);
+  console.log('Goal page: '.blue, goalPageNumber);
 
 
   let resultsStartTime = Date.now()
@@ -379,6 +372,8 @@ async function getPDFs (browser, page, pageData) {
 
   // If we're paginated
   if (paginated) {
+
+  console.log('paginated:', paginated);
     // PAGINATION
     // don't download pdfs till we know we're on the right page.
     // don't increment page till we've finished downloading pdfs.
@@ -390,7 +385,7 @@ async function getPDFs (browser, page, pageData) {
     // and return to prevous function to do another loop
     // with `done` being `false`
     let navText = null;
-    let navData = await page.waitFor(
+    let navData = await page.evaluate(
       function (paginationSelector, pageNumSelector, goalPageNumber) {
 
         // Examples:
@@ -417,8 +412,9 @@ async function getPDFs (browser, page, pageData) {
           return false;
         }
 
-        let currentPage = parseInt(currentPageElem.innerText());
-        let atGoal = currentPage !== goalPageNumber;
+        let currentPageNumber = parseInt(currentPageElem.innerText);
+        console.log('current actual page indicated in nav:', currentPageNumber);
+        let atGoal = currentPageNumber === goalPageNumber;
 
         // If we're there, no need to click on anything
         if (atGoal) {
@@ -434,21 +430,36 @@ async function getPDFs (browser, page, pageData) {
 
         // Look to see if our goal page number is in there
         let navText = navElem.innerText;
-        console.log('paginated:', paginated, ', nav:', navText);  // (log comforting info if it's possible in here)
-        let navParts = navText.split(' ');
+        console.log('nav:', navText);  // (log comforting info if it's possible in here)
+        let navParts = navText.split(/\s/);
 
         let goalStr = goalPageNumber.toString();
         let goalIndex = navParts.indexOf(goalStr);
         // If goal page is there, return it to be clicked
         if (goalIndex !== -1) {
+          // CSS is not 0 indexed
+          goalIndex += 1;
+          console.log('Index of button to goal:', goalIndex)
           return goalIndex;
 
         // Otherwise go to the very last page available
         } else {
-          // Which is just before the 'Next' link
-          // (sometimes there's an extra space at the end that messes up the splitting indexes)
-          let indexOfNext = navParts.indexOf('Next');
-          return indexOfNext - 1;
+
+          // Find the last nav item that is a number
+          // Spacing between elements can't be trusted, so we have to do it the hard way
+          let indexOfClick = null
+          for (let navIndex = 2; navIndex < navParts.length; navIndex++) {
+            let navItem = navParts[navIndex];
+            if (isNaN(parseInt(navItem))) {
+              break;
+            } else {
+              indexOfClick = navIndex;
+            }
+          }
+          // CSS is not 0 indexed
+          indexOfClick += 1;
+          console.log('Index to click on:', indexOfClick);
+          return indexOfClick;
         }
 
       },
@@ -460,12 +471,15 @@ async function getPDFs (browser, page, pageData) {
     // If we need to keep looking for our goal page,
     // click on a new page and cycle through this again
     if (typeof navData === 'number') {
-      let pageButton = paginationSelector + ' a:nth-child(' + navData + ')';
-      page.click(nextButton)
+      let pageButtonSelector = paginationSelector + ' a:nth-child(' + navData + ')';
+      console.log('selector:', pageButtonSelector);
+      page.click(pageButtonSelector)
       return {done: false};
     }
 
   }  // ends if paginated make sure to get to our goal
+
+  // return {done: true};
 
 
   console.log(5);

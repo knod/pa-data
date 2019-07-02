@@ -1,0 +1,22 @@
+{
+  "type": "cp",
+  "startDate": "01/01/2017",
+  "endDate": "12/31/2018",
+  "startIndexRange": 1058,
+  "endIndexRange": 1059,
+  "position": {
+    "index": 1060,
+    "page": 1
+  },
+  "completed": true,
+  "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
+  "dataDirectory": "pagetest/",
+  "usedDocketsFileName": "pagetest.txt",
+  "wait": 450,
+  "alerts": "yes",
+  "redo": true,
+  "done": {
+    "1058": true,
+    "1059": true
+  }
+}
