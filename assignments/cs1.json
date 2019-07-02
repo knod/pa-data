@@ -1,0 +1,19 @@
+{
+  "type": "mdj",
+  "startDate": "01/01/2017",
+  "endDate": "12/31/2018",
+  "startIndexRange": 3001,
+  "endIndexRange": 4000,
+  "position": {
+    "index": null,
+    "page": null
+  },
+  "completed": false,
+  "namesPath": "./names/mdj_1_see_data-mdj_readme.json",
+  "dataDirectory": "data-mdj/mdj_1_see_data-mdj_readme/",
+  "usedDocketsFileName": "-dockets-used.txt",
+  "wait": 500,
+  "alerts": "yes",
+  "redo": true,
+  "done": {}
+}
