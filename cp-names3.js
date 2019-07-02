@@ -373,7 +373,7 @@ async function getPDFs (browser, page, pageData) {
   // If we're paginated
   if (paginated) {
 
-  console.log('paginated:', paginated);
+    console.log('paginated:', paginated);
     // PAGINATION
     // don't download pdfs till we know we're on the right page.
     // don't increment page till we've finished downloading pdfs.
@@ -418,6 +418,7 @@ async function getPDFs (browser, page, pageData) {
 
         // If we're there, no need to click on anything
         if (atGoal) {
+          console.log('Reached goal page');
           return true;
         }
 
@@ -641,10 +642,10 @@ let nextIndex = function () {
   // till we get to an index that we haven't done
   const weDoNotWantRedos = !runData.redo;
   let alreadyBeenDone = true;
-  console.log('been done', alreadyBeenDone);
+
   if (weDoNotWantRedos) {
     while (alreadyBeenDone && nameIndex <= runData.endIndexRange) {
-  console.log('while index', nameIndex);
+      console.log('been done:', nameIndex);
       // Update to new index
       nameIndex += 1;
       alreadyBeenDone = runData.done[nameIndex] === true;
