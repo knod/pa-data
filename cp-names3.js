@@ -72,14 +72,6 @@ let requiredPrefix = /CP/;
 // let nameIndexPath = 'mdj-name-index.json';
 
 
-// Limit yourself to whatever 429 is going to say.
-let numPDFs = 0;
-let timeStartedRunning = Date.now();
-// start 8,095
-// 9,164
-// 9,667
-
-
 // Standard/shared
 
 // command line command example
@@ -165,45 +157,12 @@ let startPageNum = runData.position.index || 0;
 let timesRepeated = 0;
 console.log('start index: ', nameIndex + ', end index:', namesEndIndex);
 
+// Limit yourself to whatever 429 is going to say.
+// 429 error didn't reveal any secrets.
+// Assume about 830 downloads per hour
+let numPDFs = 0;
+let timeStartedRunning = Date.now();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Maybe sometimes in the middle of a page it gets overloaded, but doesn't give 429
-// let names = require(namesFilePath);
-// const dates = {start: "01/01/2017", end: "12/31/2018"};
-// let throttle = 15;
-// let timesRepeated = 0;
-      
-// let dateOb = new Date;
-// let datesText = '_' + dateOb.getTime(dates.start) + '_' ;
-
-// // Inclusive
-// // orignal run: index 41
-// // latest: node cp-names.js 41 45
-// let namesStartIndex = parseInt(process.argv[2]),
-//     namesEndIndex   = parseInt(process.argv[3]);
-// let nameIndex = namesStartIndex;
-// let doPlaySound = process.argv[5];
-
-// if (process.argv[4]) {
-//   throttle = parseInt(process.argv[4]);
-// }
-
-// fs.writeFileSync(nameIndexPath, namesStartIndex);
-// console.log('start index: ', namesStartIndex + ', end index:', namesEndIndex);
 
 
 
@@ -220,15 +179,19 @@ async function byNamesDuring (dates, browser, page) {
   let err = null;
 
   await page.setViewport({width: 1920, height: 2000});
+  // // Logging from inside puppeteer page.$eval (not working so far)
   // page.on('console', consoleMessageObject => function (consoleMessageObject) {
   //   if (consoleMessageObject._type !== 'warning') {
   //     console.debug(consoleMessageObject._text)
   //   }
   // });
-  // page.on('console', consoleObj => console.log(consoleObj.text + '\n'));//console.log(consoleObj.text()));  // untried
+  // // untried
+  // page.on('console', consoleObj => console.log(consoleObj.text + '\n'));//console.log(consoleObj.text()));
 
   await page.goto(url)
   await page.waitForSelector(searchTypeSelector)
+  // If the page is back, we can start the repeat count again.
+  timesRepeated = 0;
 
   // Fill in fields
 
@@ -283,27 +246,23 @@ async function byNamesDuring (dates, browser, page) {
     page.click(searchSelector);
 
     let count = 0;
-    // Search through the pages
-    let pageData = {done: false, page: 0, err: {message: null, value: null}};
+    // Look through the page for relevant files
+    let pageData = {done: false};
     while (!pageData.done) {
 
       // apparently this seems to go too fast otherwise somehow and give itself an error...
       // it doesn't even seem to actually wait for a full timeout
       await page.waitFor(throttle);
+      // This doesn't actually seem to wait for some reason. Is that
+      // because it was found before?
       await page.waitForSelector(searchSelector);
-      // If the page is back, we can start the repeat count again.
-      timesRepeated = 0;
 
-      pageData = await getPDFs(browser, page, pageData.page);
+      pageData = await getPDFs(browser, page);
 
     }  // ends while this name not done
 
-    // Start page count over again
-    assignmentData.position.page = 0;
-    fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
-
     console.log(18)
-    updateIndex();
+    nextIndex();
   }  // ends while name index
 
   // Record that this data was finished
@@ -315,16 +274,25 @@ async function byNamesDuring (dates, browser, page) {
 };  // Ends byNamesDuring()
 
 
-let pageCount = 0;
-async function getPDFs (browser, page, lastPageNum) {
+
+
+
+
+
+
+
+async function getPDFs (browser, page, pageData) {
   console.log('getting pdfs');
 
-  let newPageNum = lastPageNum + 1;
-  console.log('page: '.blue, newPageNum)
 
-  // Permanently remember the page we were on
-  assignmentData.position.page = newPageNum || 0;
-  fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
+  // See the page we were last one when the program stopped
+  // Doesn't actually need to be here, but it's nice for
+  // logging something.
+  // It's our page goal for where to start downloading
+  // files.
+  let goalPageNumber = runData.position.page;
+  console.log('page: '.blue, goalPageNumber);
+
 
   let resultsStartTime = Date.now()
   console.log('start looking for result:', Date().toString());
@@ -382,15 +350,17 @@ async function getPDFs (browser, page, lastPageNum) {
   console.log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
 
   if (foundNoResults) {
-    return {done: true, page: null};
+    return {done: true};
   }
-  if (!foundNoResults && !foundSomeResults) {
-    return {done: true, page: null, err: {message: 'not found', value: anError}}
-  }
+  // This will be taken care of by error?
+  // if (!foundNoResults && !foundSomeResults) {
+  //   return {done: true}
+  // }
   
   console.log(3);
 
-  await page.waitForSelector(tableSelector, {timeout: 5000});
+  // Do we still need this?
+  await page.waitForSelector(tableSelector);
 
   console.log(4);
   // See if we're on the last page of multiple pages
@@ -407,42 +377,96 @@ async function getPDFs (browser, page, lastPageNum) {
     console.log('One-pager');
   });
 
-  // Make sure we finish getting to the correct page
+  // If we're paginated
   if (paginated) {
-    await page.waitFor(
-      async function (newPageNum, pageNumSelector) {
-        // The correct number should have no underline
-        let elem = document.querySelector(pageNumSelector);
-        let currPage = parseInt(elem.innerText);
-        let isNew = currPage === newPageNum;
-        return isNew;
-      },
-      {},
-      newPageNum, pageNumSelector
-    );
-  }
+    // PAGINATION
+    // don't download pdfs till we know we're on the right page.
+    // don't increment page till we've finished downloading pdfs.
+    // only increment page if we're not done.
 
-  console.log(4.5)
-  // Because we're somehow missing this sometimes...?
-  let navText = null;
-  await page.evaluate(
-    (paginationSelector) => {
-      return document.querySelector(paginationSelector).innerText;
-    },
-    paginationSelector
-  ).then(function (returnedNavText) {
-    if (returnedNavText) {
-      navText = returnedNavText;
-      paginated = true;
+    // The right page is our goal page number
+    // Look to see if our goal page number is in the nav menu
+    // If all pages listed are lower, click the highest one
+    // and return to prevous function to do another loop
+    // with `done` being `false`
+    let navText = null;
+    let navData = await page.waitFor(
+      function (paginationSelector, pageNumSelector, goalPageNumber) {
+
+        // Examples:
+
+        // our goal page is 1.
+        // go to page. starts as 1.
+        // 1 is not underlined.
+        // we're at our goal page.
+
+        // our goal page is 4
+        // go to page. starts as 1.
+        // 4 is underlined.
+        // click on 4.
+
+        // our goal page is 7
+        // go to page. starts as 1.
+        // 7 is not there.
+        // click on 5.
+
+        // See if we're already on the right page (the number that isn't underlined)
+        let currentPageElem = document.querySelector(pageNumSelector);
+        if (!currentPageElem) {
+          // Wait some more for this to appear
+          return false;
+        }
+
+        let currentPage = parseInt(currentPageElem.innerText());
+        let atGoal = currentPage !== goalPageNumber;
+
+        // If we're there, no need to click on anything
+        if (atGoal) {
+          return true;
+        }
+
+        // Otherwise, what should we click on?
+        // Is our goal page on the screen?
+        // Or do we need to go to the highest page possible?
+
+        // Get all the page navigation options
+        let navElem = document.querySelector(paginationSelector);
+
+        // Look to see if our goal page number is in there
+        let navText = navElem.innerText;
+        console.log('paginated:', paginated, ', nav:', navText);  // (log comforting info if it's possible in here)
+        let navParts = navText.split(' ');
+
+        let goalStr = goalPageNumber.toString();
+        let goalIndex = navParts.indexOf(goalStr);
+        // If goal page is there, return it to be clicked
+        if (goalIndex !== -1) {
+          return goalIndex;
+
+        // Otherwise go to the very last page available
+        } else {
+          // Which is just before the 'Next' link
+          // (sometimes there's an extra space at the end that messes up the splitting indexes)
+          let indexOfNext = navParts.indexOf('Next');
+          return indexOfNext - 1;
+        }
+
+      },
+      paginationSelector, pageNumSelector, goalPageNumber
+    );  // ends wait for nav data
+
+    console.log('navData:'.bgYellow, navData);
+
+    // If we need to keep looking for our goal page,
+    // click on a new page and cycle through this again
+    if (typeof navData === 'number') {
+      let pageButton = paginationSelector + ' a:nth-child(' + navData + ')';
+      page.click(nextButton)
+      return {done: false};
     }
-  }).catch(function (err){
-    // Not sure if we need to catch this one or not
-  });
-  console.log('paginated:', paginated, ', nav:', navText);
-  if (navText) {
-    let pages = navText.match(/\d+/g);
-    let lastPage = pages[pages.length - 1];
-  }
+
+  }  // ends if paginated make sure to get to our goal
+
 
   console.log(5);
   // go down rows getting links and ids
@@ -495,7 +519,7 @@ async function getPDFs (browser, page, lastPageNum) {
     let id = docketIDTexts[index]
     // We just want CP data, or so they tell us
     if (requiredPrefix.test(id)) {
-      let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + newPageNum;
+      let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + goalPageNumber;
       let datedText = text + datesText;
 
       // save docket id for later reference
@@ -520,17 +544,23 @@ async function getPDFs (browser, page, lastPageNum) {
 
       console.log('# pdfs downloaded:', numPDFs, ', time elapsed:', (Date.now() - timeStartedRunning)/1000);
     }
-  }
+  }  // ends for all dockets
 
 
   console.log(9);
 
   let done = true;
   if (paginated) {
-    // have to check
+    // PAGINATION
+    // √ don't download pdfs till we know we're on the right page.
+    // √ don't increment page till we've finished downloading pdfs.
+    // only increment page if we're not done.
+
+    // if paginated, we're not sure we're done
     done = false;
 
     console.log(10);
+    // Look for what nav elements are disabled
     const disabledText = await page.evaluate(
       (paginationSelector) => {
         let selector = paginationSelector + ' a[disabled]';
@@ -547,31 +577,35 @@ async function getPDFs (browser, page, lastPageNum) {
 
     console.log(12);
 
-    // hit 'next' if we need to (if the next button isn't disabled)
-    if (disabledText.indexOf('Next') === -1) {
-
-      console.log(13);
-      let nextButton = paginationSelector + ' a:nth-last-child(2)';
-      page.click(nextButton)
-
-      console.log(14);
+    let nextIsDisabled = disabledText.indexOf('Next') === -1;
+    if (nextIsDisabled) {
+      // Means we're on the last page
+      done = true;
 
     } else {
-      // if the next button is disabled for results that have multiple pages
-      // we're done with all the pages
-      done = true;
-    } // ends if on the last page
+      // If there are still more pages to go, add another page number
+      // and store it (we're going on to the next page)
+      runData.position.page += 1;
+      assignmentData.position.page += 1;
+      fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
+
+      console.log(13);
+      // Nothing fancy, just click the 'next' button
+      let nextButton = paginationSelector + ' a:nth-last-child(2)';
+      page.click(nextButton);
+
+      console.log(14);
+    }  // ends if we're at the last page
 
     console.log(15);
 
   }  // ends if paginated
 
   console.log(16, done);
-  return {done: done, page: newPageNum};
+  return {done: done};
 };  // Ends getPDFs()
 
 
-// async function downloadPDF(pdfURL, docket, outputFilename) {
 async function downloadPDF(pdfURL, outputFilename) {
   // console.log(pdfURL);
   let pdfBuffer = await request.get({
@@ -583,7 +617,7 @@ async function downloadPDF(pdfURL, outputFilename) {
 }
 
 
-let updateIndex = function () {
+let nextIndex = function () {
   // Permanently save that the current name was completed,
   // but all other data stays the same. Should changing data
   // and non-changing data be in the same file?
@@ -611,10 +645,12 @@ let updateIndex = function () {
 
   // Permanently remember the next name index needed
   assignmentData.position.index = nameIndex;
+  // Start page count over again
+  assignmentData.position.page = 1;
   fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
   return;
-}  // Ends updateIndex()
+}  // Ends nextIndex()
 
 
 // Test
@@ -662,70 +698,6 @@ async function startNewBrowser () {
   }  // ends catch byNamesDuring errors
 
 };
-  
-//     .then(async (result) => {
-//       let value = result[0],
-//           err = result[1];
-//       if (value === 'not found') {
-//         console.log('page/element not found. page probably not loading.');
-//         console.log('status code:', err.statusCode);
-//         if (doPlaySound !== 'no') {
-//           // Temporary error
-//           alert.error();
-//           console.log('\n#\n#\n# >> Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 1\n#\n#\n#');
-//           console.log(err.statusCode)
-//           if (err.statusCode === 429) {
-//             await show429(page);
-//             await browser.close();
-//             process.exit()
-//             // browser.close()
-//             // console.log('waiting two minutes');
-//             // setTimeout(function(){waitThenRepeat(browser)}, 120000);
-//           } else {
-//             // repeat with increased wait
-//             waitThenRepeat(browser);
-//           }
-//         }
-//       } else {
-//         console.log('success');
-//         if (doPlaySound !== 'no') {
-//           alert.success();
-//         }
-//         process.exit();
-//       }
-//       // gotIt = true;
-
-//       try {
-//         brower.close();
-//       } catch (err) {
-//         // probably already closed
-//       }
-
-//     }).catch(async (err) => {
-//       console.log('\n****\n****\n****\n****\n****\n****\n****\n****\n****\n****\n');
-//       console.log('status code:', err.statusCode);
-//       // setTimeout(function () {
-//       // startNewBrowser();
-//       // }, 60000);
-//       if (doPlaySound !== 'no') {
-//         // Temporary error
-//         alert.error();
-//       }
-//       console.log('status code:', err.statusCode);
-
-//       // browser.close();
-//       console.log('\n#\n#\n#\n### Let this go till log says "giving up". Or stop it yourself and deal with it a different way. 2\n#\n#\n#');
-//       console.log(err.statusCode)
-//       if (err.statusCode === 429) {
-//         await show429(page);
-//         await browser.close();
-//         // console.log('waiting two minutes');
-//         // setTimeout(function () {waitThenRepeat(browser)}, 120000);
-//         process.exit()
-//       } else {
-//         waitThenRepeat(browser);
-//       }
-//     });
 
 
 
@@ -769,6 +741,7 @@ async function waitThenRepeat (dates, browser, page, errStatusCode) {
 };
 
 
+// Just keep track of the darn time
 let getNowHHMM = function () {
   let date = new Date();  // now
   let time = date.toTimeString();
