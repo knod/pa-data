@@ -726,8 +726,9 @@ async function waitThenRepeat (dates, browser, page, errStatusCode) {
     // Website really means business with 429
     // Don't know how long it needs. The 429 page didn't seem to show.
     // This is a guess.
-    console.log('waiting an hour @', getNowHHMM());
-    setTimeout(startNewBrowser, 3601000);
+    // Note: Still got 429 while on 500ms throttle (5 secs for pdfs)
+    console.log('waiting 15 minutes @', getNowHHMM());
+    setTimeout(startNewBrowser, 900000);
 
   } else {
     if (timesRepeated <= 2) {
