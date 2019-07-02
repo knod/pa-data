@@ -540,7 +540,7 @@ async function getPDFs (browser, page, pageData) {
       let datedText = text + datesText;
 
       // save docket id for later reference
-      fs.appendFileSync(usedDocketsPath, datedText, function (err) {
+      fs.appendFileSync(usedDocketsPath, datedText + '\n', function (err) {
         if (err) console.log(err);
       });
       console.log('docket id written');
