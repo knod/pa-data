@@ -8,8 +8,8 @@
   "completed": false,
   "namesPath": "./names/mdj_1_see_data-mdj_readme.json",
   "dataDirectory": "data-mdj/mdj_1_see_data-mdj_readme/",
-  "usedDocketsFileName": "ek1-dockets-used.txt",
-  "wait": 30,
+  "usedDocketsFileName": "-dockets-used.txt",
+  "wait": 500,
   "alerts": "no",
   "redo": false,
   "done": {}

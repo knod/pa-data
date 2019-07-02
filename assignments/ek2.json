@@ -11,8 +11,8 @@
   "completed": false,
   "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
   "dataDirectory": "data-cp/2017-2018-randomized-alternating-nonmatching/",
-  "usedDocketsFileName": "ek2-dockets-used.txt",
-  "wait": 450,
+  "usedDocketsFileName": "-dockets-used.txt",
+  "wait": 500,
   "alerts": "yes",
   "redo": false,
   "done": {}

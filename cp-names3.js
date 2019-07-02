@@ -120,7 +120,7 @@ const type = runData.type;  // cp or mdj
 // Paths
 const namesFilePath = runData.namesPath;
 const dataDirectory = runData.dataDirectory;
-const usedDocketsPath = dataDirectory + runData.usedDocketsFileName;
+const usedDocketsPath = dataDirectory + type + '_' + assignmentID + runData.usedDocketsFileName;
 // Make directory if needed
 mkdirp(dataDirectory, function (err) {
     if (err) { console.error(err); }
