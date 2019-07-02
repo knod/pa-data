@@ -133,7 +133,7 @@ const dates = {
   start: runData.startDate,
   end: runData.endDate,
 };
-/// *** CHANGE THIS INTO A TYPE STAMP
+/// *** CHANGE THIS INTO A TIME STAMP
 // let dateStartObj = new Date(dates.start);
 // let dateEndObj = new Date(dates.end);
 // let datesText = '_' + dateStartObj.getTime() + '_' + dateEndObj.getTime();
@@ -778,7 +778,7 @@ const waitThenRepeat = async () => {
     setTimeout(startNewBrowser, 60000);
   } else if (timesRepeated <= 8) {
     // wait an hour before trying again
-    console.log('waiting an hour @', getNowHHMM()');
+    console.log('waiting an hour @', getNowHHMM());
     setTimeout(startNewBrowser, 3600000);
   } else if (timesRepeated <= 9){
     // wait 15 min
