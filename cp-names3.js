@@ -555,7 +555,7 @@ async function getPDFs (browser, page, pageData) {
       console.log('summary #' + index, 'saved');
       numPDFs++;
 
-      console.log('# pdfs downloaded:', numPDFs, ', time elapsed:', (Date.now() - timeStartedRunning)/1000);
+      console.log('# pdfs downloaded:', numPDFs, ', time elapsed:', (Date.now() - timeStartedRunning)/1000, 'seconds');
     }
   }  // ends for all dockets
 
