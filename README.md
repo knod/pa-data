@@ -1,21 +1,33 @@
-# Warning
-DO NOT SHARE THE DATA YOU GET OR PUT IT PUBLICLY ONLINE (like in a public repo). This is for analysis only and it will be anonymized.
+# WARNING
+DO NOT SHARE THE DATA YOU GET AND DO NOT PUT IT PUBLICLY ONLINE (no public repo or anything like that). This is for analysis only and it will be anonymized.
+
+# First, thank you!
+
+# Table of Contents
+- tl;dr is at the top
+- [Setting Up](#setting-up)
+- [Running the Code](#running-the-code)
+- [FAQ](#faq)
 
 # tl;dr
 
-Pick a row at the bottom of https://docs.google.com/spreadsheets/d/1HkdWJVs0fMROBgHt8xol1gVV252ln8D5dhSEuDQzeT4/edit?usp=sharing and add your name.
+1. Clone at https://github.com/knod/pa-data
+2. Pick a row at https://docs.google.com/spreadsheets/d/1HkdWJVs0fMROBgHt8xol1gVV252ln8D5dhSEuDQzeT4/edit?usp=sharing that hasn't been assigned to someone and add your name. Run the command in the **Command** column.
 
-**Without sound:**
-Add ` no` to the end of the command on your row
+**Do not run this in multiple terminals. It's slow on purpose.**
 
-# You need
-to have these on your computer
+# Without Sound
+
+Add `"{\"alerts\":\"no\"}"` to the end of your command. (See lower down for [settings](#settings))
+
+# Setting Up
+You need to have these on your computer
 
 ## nodejs
 
 Use homebrew if you've got it (you'll know if you do). Installing globally is easiest.
 
-If you don't know how to install it already, download it manually: https://nodejs.org/en/download/. It may get put in a hidden folder. We're trying to figure that out.
+If you don't know how to install it already, download it manually: https://nodejs.org/en/download/. It may get put in a hidden folder. We're trying to figure out if that's bad. Let us know if you have it figured out.
 
 ## git
 
@@ -29,40 +41,13 @@ If you don't know how to install it already, download it manually: https://nodej
 - You can also assign a file location for the folder your are cloning
 6. Click “Fetch origin” at the top of the page to make sure you have cloned the most up-to-date version of the code
 
-### Fallback
-Same kind of deal here.
-
+### Windows: Git Fallback
 Download here (https://git-scm.com/download/win) into the same folder as nodejs? We're working on figuring this out.
 
-## Audio
-
-### Windows
-
-If you're on windows and you want the alert sound to work and you don't have an mp3 player, try these instructions (see 'Windows – install audio player'): https://thisdavej.com/node-js-playing-sounds-to-provide-notifications/. No one I know has tried this yet.
-
-### Sound is Annoying
-
-To stop it (I hope):
-
-Add ` no` to the end of your command (which I'll describe later). So something like `node mdj-names3.js 38001 39000 3500 no`.
-
-Or `ctrl + c`
-
-I haven't figured out how to make the sounds shorter. Otherwise, I think they just have to finish. Let me know if you have a problem.
-
-## halp us!
-
-If you know sites with tutorials to do this better, let us know!
-
-
-# Do
-- make sure your computer isn't going to go to sleep
-- plug your computer into power
-
 ## nodejs
-- If you downloaded nodejs manually, find where it got installed on your computer. May be in a hidden folder. We're working on figuring that out.
+- If you're on **windows** and downloaded nodejs manually, find where it got installed on your computer. Put all the other folders in this folder with it. It may be in a hidden folder. We're working on figuring that out.
 
-## Get code
+## Get the Code
 1. go to https://github.com/knod/pa-data
 1. If you know how:
   - clone the repo
@@ -70,81 +55,90 @@ If you know sites with tutorials to do this better, let us know!
   - click 'clone or download'
   - click 'download zip'?
   - extract folder
-  - If you downloaded and extracted: put it where node is
+  - If you downloaded and extracted on **windows**: put it in the same folder where nodejs is
   - DO NOT DELETE THIS FOLDER
 
-## Directories
-1. **if it's not there already, add a folder called `data-mdj`**
-1. Somewhere completely different on your computer, make another folder. Call it whatever you want. `pa-data-data` is one idea and is how I'll talk about it from now on. Later you'll see you're going to move the data there periodically. Thumb drive is good if you don't want it on your machine.
-1. Make a folder inside `pa-data-data` called `data-mdj`
+## Windows: Audio
 
-## Command prompt/terminal
+If you're on windows and you want the alert sound to work and you don't have an mp3 player already, try these instructions (see 'Windows – install audio player'): https://thisdavej.com/node-js-playing-sounds-to-provide-notifications/. No one I know has tried this yet.
+
+# Runninng the Code
+
+## Before Anything Else!
+- Make sure your computer isn't going to go to sleep.
+- Plug your computer into power.
+
+## Command Prompt/Terminal
 1. open command prompt
-1. navigate into extracted folder
+1. [navigate](https://www.groovypost.com/howto/open-command-window-terminal-window-specific-folder-windows-mac-linux/) into extracted folder
 1. type: `npm install`
 1. press enter
 1. wait
-1. Open a browser and go to [the spreadsheet](https://docs.google.com/spreadsheets/d/1HkdWJVs0fMROBgHt8xol1gVV252ln8D5dhSEuDQzeT4/edit?usp=sharing). At the bottom table, pick a row and put your name next to one of the commands listed under 'Current Range of Indexes'. That will be the command you're going for. The first number is what index you're starting at. The second number is your goal index. They're inclusive. ~type what michelle says to type (will be something like: `node mdj-names.js 6 10 15000`)~
+
+## Get Your Assignment
+1. You don't have to do one whole assignment all at once. Completing an assignment can take at least 9 or 10 hours in total.
+1. Open a browser and go to [the spreadsheet](https://docs.google.com/spreadsheets/d/1HkdWJVs0fMROBgHt8xol1gVV252ln8D5dhSEuDQzeT4/edit?usp=sharing).
+1. Pick a row (if you don't already have an assignment) and put your name under the **Who** column.
+1. Copy the text in the **Command** column.
 
 ## Run it
-1. Go to your command prompt and put in the command that was in your row.
-1. press enter
-1. this will take a long time
-1. there will be a lot of errors that don't matter
-1. I get between 40 and 100 'Name index: #' messages before something goes wrong and the program stops. See [Errors to Worry About](#errors-to-worry-about). If not, you're a lucky duck!
-1. There might be a clucking alert sound when the process is done running. Somewhere near the bottom (maybe before some errors) the word `success` should appear
-1. Wait for the command prompt to reappear or (if it takes over 2 min or something) open a new terminal window in that same directory. (Yeah, not sure what's going on there...)
+1. **Do not run this in multiple terminal windows.** It's slow on purpose.
+1. Go to your command prompt and paste the code from the google doc
+1. Press enter
+1. It'll now probably keep going till it's done with the assignment and prints the message 'success'.
 
-## Finish
+## Things
+1. There might be sound effects if your sound is on, including a clucking sound effect for finishing.
+1. There will sometimes be errors. You can usually just let it run - the code can usually deal with those, though sometimes it has to make itself wait for an hour or two.
+1. **When in any doubt whatsoever**, you know who to contact!
 
-1. Do the [Keeping Data](#keeping-data) instructions.
-1. Possibly (if you cloned the repo) do:
+## After Finishing an Assignment... Start a New One!
+1. Check the google doc to put your name next to another assignment. (See [getting your assignment](#get-your-assignment))
+1. The command may have changed. It should be updated in there, so copying and pasting should be fine.
+1. Possibly (if you cloned the repo and want to risk possible new bugs) do:
   1. `git add .`
   1. `git commit`
-  1. `git pull origin master`. I'm not always sure when I'm introducing bugs, so do this at your own risk.
-1. If you `pull`ed, do `npm install`.
-1. Pick a new row in the google doc. Do this again!
-
-## Errors to Worry About
-There will be a bunch of errors. As long as the number after the text 'new pg at end' keeps changing, it's good.
-
-Bad errors may cause the 'police' alert sound. They have this as their first line: `page not found`or `Error: Error: failed to find element matching selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl"`.
-
-If that happens:
-1. Wait for the command prompt to appear again (hoping this lets any last files download). If it takes too long (over 2 min or something), move to the next step.
-1. Press `ctrl` and `C` at the same time to quit the process.
-1. Do the [Keeping Data](#keeping-data) instructions.
-1. Possibly (if you cloned the repo) do `git pull origin master`. I'm not always sure when I'm introducing bugs, so do this at your own risk.
-1. If you `pull`ed, do `npm install`.
-1. You're going to type in a new command now.
-1. Look in the 'mdj-name-index.json' file.
-1. Use that number as the first number in the command. That is, if your original command was `node mdj-names3.js 42001 43000 3500` and 'mdj-name-index.json' has `42043`, then type in `node mdj-names3.js 42043 43000 3500`.
-1. press enter.
-1. let it run again.
-
-If you get the same error, your IP address might be blocked. To test this go to a new browser window and go to https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx. If you get an error message, your IP has been blocked. That's to keep their servers from getting overloaded, but I'm pretty sure we're not doing that.
-
-If you have a VPN, you can switch your IP address, which is a shame, but you've already done so much!
-
-If you want to keep trying, I think you just have to either just come back in 2hrs or so to be safe or:
-1. wait a 10 or 20 min.
-2. **Click in the address bar, delete the address, and paste in that address again.** (you get false negatives otherwise)
-3. Go to that page.
-4. See if it loads.
-5. Try again until it loads.
+  1. `git pull origin master`
+  1. `npm install`
 
 
-# Keeping Data
+# Settings
 
-For now, when the program is stopped (when you can see the command prompt), just put the PDFs into the `data-mdj` you made in `pa-data-data`.
+In the `assignments` folder, you will find your assignment json file containing your default object. Those are your settings. If you want to change any of them, you can put a json object at the end of your command. It'd look something like this:
 
-~You don't really want to keep the data hanging around the project folder. What if you accidentally overwrite it with a `git pull origin master` or something weird. So...~
+**windows**
 
-~**When your program is stopped**~
+`node mdj-by-names.js mdj5k "{\"wait\":600,\"alerts\":\"no\"}"`
 
-1. ~**move** the pdfs from the project's `data-mdj` folder into the `data-mdj` you made in `pa-data-data`.~
-1. ~**copy** the 'mdj-named-dockets-used.txt' into just the `pa-data-data` folder. Replace an older version if you need to.~
+**mac**
+
+`node mdj-by-names.js mdj5k '{"wait":600,"alerts":"no"}'`
+
+- `wait`: It's used to `throttle` in several places. It's multiplied by different values in those places. If you need more throttling, give this a larger value.
+- `alerts`: Sounds will alert you to the state of the program, but it's meant to be just left to run. If you don't want the sounds, set this to `"no"`.
+
+It's probably not a good idea to customize other ones. They're what's keeping everyone in line.
+
+
+# FAQ
+1. You'll still be able to do other stuff on your computer.
+1. You can run it at night safely.
+1. **You should not run this in multiple terminal windows.** It's slow on purpose. See the last item here.
+1. You'll be able to use other terminal windows for other things.
+1. You don't have to do one whole assignment all at once. Completing an assignment can take at least 9 or 10 hours in total.
+1. There will sometimes be errors. You can usually just let it run - the code can usually deal with those, though sometimes it has to make itself wait for an hour or two.
+1. There are sound effects. You can opt out. See [Settings](#settings).
+1. The code should run by itself. You shouldn't have to do anything after running the command. It should do the whole assignment.
+1. When it finishes all of the assignment, it'll show the message 'success' at the bottom. It might cluck.
+1. If it gets interrupted and you have to put in the command again, it should remember where it was when it stopped.
+1. If it gets stuck on the site in various ways, it'll deal with that too. It'll first wait a couple minutes and try again and then wait an hour or two before trying again. Those tactics usually work. If not, it will stop itself eventually with the message 'gave up'. You can definitely try starting again.
+1. The code tries to limit itself to less than 1 file per 4.5 seconds. If you go over 830 files in 1 hour you have a good chance that their servers won't like your computer anymore for (we think) 2 hours.
+
+
+# halp us!
+
+If you know sites with tutorials we can link to for some of this stuff, let us know. If you have thoughts on improving the instructions, give us a shout.
+
 
 # If something is weird and you're not sure
-don't hesitate to message michelle. She wants your sweet sweet messages.
-
+Don't hesitate to reach out. We want your sweet sweet messages!
