@@ -1,0 +1,20 @@
+{
+  "command": "node mdj-names3-test.js mdj07k17",
+  "type": "mdj",
+  "startDate": "01/01/2017",
+  "endDate": "12/31/2018",
+  "startIndexRange": 6001,
+  "endIndexRange": 7000,
+  "position": {
+    "index": null,
+    "page": null
+  },
+  "completed": false,
+  "namesPath": "./names/mdj_1_see_data-mdj_readme.json",
+  "dataDirectory": "data-mdj/mdj_1_see_data-mdj_readme/",
+  "usedDocketsFileName": "-dockets-used.txt",
+  "wait": 550,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}

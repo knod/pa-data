@@ -74,8 +74,8 @@ let requiredPrefix = /MJ/;
 // let nameIndexPath = 'mdj-name-index.json';
 
 
-
 // Standard/shared
+let versionNumber = '\n0.43.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -102,8 +102,20 @@ if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
   let arvObj = JSON.parse(commandLineArgvs);//console.log('argv obj:', arvObj);
   runData = Object.assign(assignmentData, arvObj);//console.log('combined objects:', runData);
 
+  // Need to be clear about deep cloning
+  runData.position = {
+    index: runData.position.index,
+    page: runData.position.page,
+  };
+
 } else {
-  runData = assignmentData;
+  runData = Object.assign({}, assignmentData);
+
+  // Need to be clear about deep cloning
+  runData.position = {
+    index: assignmentData.position.index,
+    page: assignmentData.position.page,
+  };
 }
 
 if (runData.completed && !runData.redo) {
@@ -127,6 +139,11 @@ const usedDocketsPath = dataDirectory + type + '_' + assignmentID + runData.used
 // Make directory if needed
 mkdirp(dataDirectory, function (err) {
     if (err) { console.error(err); }
+});
+// Keeping track of what code version number we're at so
+// in future we know where to backtrack to.
+fs.appendFileSync(usedDocketsPath, versionNumber, function (err) {
+  if (err) console.log(err);
 });
 
 // Assigned variables
@@ -156,7 +173,7 @@ const doPlaySound = runData.alerts;
 
 // Global mutating state vars
 let nameIndex = runData.position.index || runData.startIndexRange;
-let startPageNum = runData.position.index || 0;
+runData.position.page = runData.position.page || 1;
 let timesRepeated = 0;
 console.log('start index: ', nameIndex + ', end index:', namesEndIndex);
 
@@ -419,6 +436,11 @@ async function getPDFs (browser, page, pageData) {
         console.log('current actual page indicated in nav:', currentPageNumber);
         let atGoal = currentPageNumber === goalPageNumber;
 
+        // Get all the page navigation options. Something funky is going on.
+        let navElem = document.querySelector(paginationSelector);
+        let navText = navElem.innerText;
+        console.log('nav:', navText);  // (log comforting info if it's possible in here)
+
         // If we're there, no need to click on anything
         if (atGoal) {
           console.log('Reached goal page');
@@ -429,14 +451,8 @@ async function getPDFs (browser, page, pageData) {
         // Is our goal page on the screen?
         // Or do we need to go to the highest page possible?
 
-        // Get all the page navigation options
-        let navElem = document.querySelector(paginationSelector);
-
         // Look to see if our goal page number is in there
-        let navText = navElem.innerText;
-        console.log('nav:', navText);  // (log comforting info if it's possible in here)
         let navParts = navText.split(/\s/);
-
         let goalStr = goalPageNumber.toString();
         let goalIndex = navParts.indexOf(goalStr);
         // If goal page is there, return it to be clicked
@@ -544,8 +560,8 @@ async function getPDFs (browser, page, pageData) {
       });
       console.log('docket id written');
 
-      await page.waitFor(throttle * 10);
       // Download pdfs
+      await page.waitFor(throttle * 10);
       await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
       console.log('docket #' + index, 'saved');
@@ -593,15 +609,19 @@ async function getPDFs (browser, page, pageData) {
 
     console.log(12);
 
-    let nextIsDisabled = disabledText.indexOf('Next') === -1;
+    let nextIsDisabled = disabledText.indexOf('Next') > -1;
     if (nextIsDisabled) {
       // Means we're on the last page
+      console.log('On the last page');
       done = true;
 
     } else {
+
+      console.log('still more pages to go!')
       // If there are still more pages to go, add another page number
       // and store it (we're going on to the next page)
       runData.position.page += 1;
+      // Don't store other custom command line arguments, though
       assignmentData.position.page += 1;
       fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
