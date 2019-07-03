@@ -536,7 +536,7 @@ async function getPDFs (browser, page, pageData) {
       let datedText = text + datesText;
 
       // save docket id for later reference
-      fs.appendFileSync(usedDocketsPath, datedText, function (err) {
+      fs.appendFileSync(usedDocketsPath, datedText + '\n', function (err) {
         if (err) console.log(err);
       });
       console.log('docket id written');
@@ -722,6 +722,7 @@ async function waitThenRepeat (dates, browser, page, errStatusCode) {
   // How to keep going only at the right times?
   let keepGoing = function () {}
 
+  console.log(errStatusCode, typeof errStatusCode);
   if (errStatusCode === 429) {
     // Website really means business with 429
     // Don't know how long it needs. The 429 page didn't seem to show.
