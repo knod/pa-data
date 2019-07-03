@@ -317,7 +317,7 @@ async function getPDFs (browser, page, pageData) {
           return false;
         }
       },
-      { timeout: 120000 },
+      {},
       noResultsSelector, noResultsText
     );
   }
@@ -719,7 +719,7 @@ async function waitThenRepeat (dates, browser, page, errStatusCode) {
   timesRepeated % 7;  // Will turn into 0
   console.log('timesRepeated:', timesRepeated);
 
-  // How to keep going only at the right times?
+  // How to keep using the previous browser?
   let keepGoing = function () {}
 
   console.log(errStatusCode, typeof errStatusCode);

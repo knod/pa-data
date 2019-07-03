@@ -310,7 +310,6 @@ async function getPDFs (browser, page, pageData) {
         let elem = document.querySelector(noResultsSelector)
         if (!!elem) {
           let text = elem.innerText;
-          // console.log('inner text of noResults element:', text);
           let hasText = text === noResultsText;
           if (hasText) {
             return elem;
@@ -723,9 +722,10 @@ async function waitThenRepeat (dates, browser, page, errStatusCode) {
   timesRepeated % 7;  // Will turn into 0
   console.log('timesRepeated:', timesRepeated);
 
-  // How to keep going only at the right times?
+  // How to keep using the previous browser?
   let keepGoing = function () {}
 
+  console.log(errStatusCode, typeof errStatusCode);
   if (errStatusCode === 429) {
     // Website really means business with 429
     // Don't know how long it needs. The 429 page didn't seem to show.
