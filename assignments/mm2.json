@@ -5,15 +5,16 @@
   "startIndexRange": 1001,
   "endIndexRange": 3000,
   "position": {
-    "index": 1059,
-    "page": 0
-  }
+    "index": 1086,
+    "page": 3
+  },
   "completed": false,
   "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
   "dataDirectory": "data-cp/2017-2018-randomized-alternating-nonmatching/",
-  "usedDocketsFileName": "1m-dockets-used.txt",
+  "usedDocketsFileName": "-dockets-used.txt",
   "wait": 500,
   "alerts": "yes",
+  "redo": false,
   "done": {
     "1013": true,
     "1014": true,
@@ -60,7 +61,33 @@
     "1055": true,
     "1056": true,
     "1057": true,
-    "1058": true
-  },
-  "redo": false
+    "1058": true,
+    "1059": true,
+    "1060": true,
+    "1061": true,
+    "1062": true,
+    "1063": true,
+    "1064": true,
+    "1065": true,
+    "1066": true,
+    "1067": true,
+    "1068": true,
+    "1069": true,
+    "1070": true,
+    "1071": true,
+    "1072": true,
+    "1073": true,
+    "1074": true,
+    "1075": true,
+    "1076": true,
+    "1077": true,
+    "1078": true,
+    "1079": true,
+    "1080": true,
+    "1081": true,
+    "1082": true,
+    "1083": true,
+    "1084": true,
+    "1085": true
+  }
 }

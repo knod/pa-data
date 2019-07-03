@@ -16,6 +16,7 @@ let vowels = [
 
 let seconders = [
   'r', 'h', 't', 'y', 'm', 'n', 'w', 'g', 's',
+  //l gorramit!
 ];
 let letters = [
   'b', 'c', 'd', 'f', 'g', 'h',
