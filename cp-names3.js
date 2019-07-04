@@ -199,6 +199,7 @@ async function byNamesDuring (dates, browser, page) {
   await page.setViewport({width: 1920, height: 2000});
   page.on('console', consoleObj => console.log(consoleObj.text()));//console.log(consoleObj.text()));
 
+  console.log('Opening page');
   await page.goto(url)
   await page.waitForSelector(searchTypeSelector)
   // If the page is back, we can start the repeat count again.
@@ -695,6 +696,7 @@ async function startNewBrowser () {
     await previousBrowser.close();
   }
 
+  console.log('Creating browser');
   let browser = await puppeteer.launch({ headless: true });
   previousBrowser = browser;
   const page = await browser.newPage();
