@@ -73,7 +73,7 @@ let requiredPrefix = /CP/;
 
 
 // Standard/shared
-let versionNumber = '\nv0.46.0\n';
+let versionNumber = '\nv0.46.2\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -292,7 +292,7 @@ async function byNamesDuring (dates, browser, page) {
 
 
 async function getPDFs (browser, page, pageData) {
-  console.log('new page');
+  console.log('new page'.bgYellow);
 
   // See the page we were last one when the program stopped
   // Doesn't actually need to be here, but it's nice for
@@ -404,7 +404,7 @@ async function getPDFs (browser, page, pageData) {
     // with `done` being `false`
 
     await page.waitForSelector(pageNumSelector);
-    await page.waitFor(
+    let waitedForCurrentPage = await page.waitFor(
       function (pageNumSelector, previousPageNumber){
 
         let currentPageElem = document.querySelector(pageNumSelector);
@@ -415,12 +415,16 @@ async function getPDFs (browser, page, pageData) {
           return false;
         } else {
           console.log('on new page:', currentPageNumber);
-          return true;
+          return currentPageNumber;
         }
       },
       {},
       pageNumSelector, previousPageNumber
     );
+
+    // Implement this sometime
+    let currentPage = waitedForCurrentPage._remoteObject.value;
+    console.log('waited for current page:', currentPage);
 
 
     let navData = await page.evaluate(
@@ -494,15 +498,18 @@ async function getPDFs (browser, page, pageData) {
         }
 
         return {selector: selector, newPageNumber: parseInt(currentPageNumber)};
+        // Implement this sometime
+        // return {selector: selector};
       },
       paginationSelector, pageNumSelector, goalPageNumber
     );
 
-    console.log('navData:'.bgYellow, navData);
+    console.log('navData:', navData);
 
     // If we need to keep looking for our goal page,
     // click on a new page and cycle through this again
     if (typeof navData === 'object') {
+      console.log('clicking to a new page');
       previousPageNumber = navData.newPageNumber;
       page.click(navData.selector);
       return {done: false, previous: navData.newPageNumber};
@@ -628,7 +635,7 @@ async function getPDFs (browser, page, pageData) {
 
     } else {
 
-      console.log('still more pages to go!')
+      console.log('Still more pages to go! Clicking the next button'.yellow)
       // If there are still more pages to go, add another page number
       // and store it (we're going on to the next page)
       runData.position.page += 1;
@@ -650,6 +657,8 @@ async function getPDFs (browser, page, pageData) {
 
   console.log(16, done);
   return {done: done, previous: previousPageNumber};
+  // Implement this sometime
+  // return {done: done, previous: currentPage};
 };  // Ends getPDFs()
 
 
