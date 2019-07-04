@@ -1,6 +1,8 @@
 node_modules/
 /data-cp/*/*.pdf
 /data-mdj/*/*.pdf
+/data-cp/*/*/*.pdf
+/data-mdj/*/*/*.pdf
 /mdj-name-index.json
 /mdj-named-dockets-used.txt
 /cp-name-index.json
