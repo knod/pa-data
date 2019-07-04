@@ -5,7 +5,7 @@
   "startIndexRange": 1001,
   "endIndexRange": 3000,
   "position": {
-    "index": 1098,
+    "index": 1104,
     "page": 1
   },
   "completed": false,
@@ -100,6 +100,12 @@
     "1094": true,
     "1095": true,
     "1096": true,
-    "1097": true
+    "1097": true,
+    "1098": true,
+    "1099": true,
+    "1100": true,
+    "1101": true,
+    "1102": true,
+    "1103": true
   }
 }
