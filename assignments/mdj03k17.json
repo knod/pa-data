@@ -1,5 +1,5 @@
 {
-  "command": "node mdj-names3-test.js mdj03k17"
+  "command": "node mdj-names3-test.js mdj03k17",
   "type": "mdj",
   "startDate": "01/01/2017",
   "endDate": "12/31/2018",
