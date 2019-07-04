@@ -73,7 +73,7 @@ let requiredPrefix = /CP/;
 
 
 // Standard/shared
-let versionNumber = '\n0.45.0\n';
+let versionNumber = '\nv0.46.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -111,7 +111,7 @@ runData.position = {
 };
 
 if (runData.completed && !runData.redo) {
-  throw Error('It looks like this assignment is already done! Get a new one! Google doc?'.green)
+  throw Error('It looks like this assignment is already done! Get a new one! Google doc?'.red)
 }
 
 if (!runData.redo) {
@@ -261,7 +261,7 @@ async function byNamesDuring (dates, browser, page) {
 
     let count = 0;
     // Look through the page for relevant files
-    let pageData = {done: false};
+    let pageData = {done: false, previous: null};
     while (!pageData.done) {
 
       // apparently this seems to go too fast otherwise somehow and give itself an error...
@@ -271,7 +271,7 @@ async function byNamesDuring (dates, browser, page) {
       // because it was found before?
       await page.waitForSelector(searchSelector);
 
-      pageData = await getPDFs(browser, page);
+      pageData = await getPDFs(browser, page, pageData);
 
     }  // ends while this name not done
 
@@ -291,13 +291,8 @@ async function byNamesDuring (dates, browser, page) {
 
 
 
-
-
-
-
 async function getPDFs (browser, page, pageData) {
-  console.log('getting pdfs');
-
+  console.log('new page');
 
   // See the page we were last one when the program stopped
   // Doesn't actually need to be here, but it's nice for
@@ -306,6 +301,8 @@ async function getPDFs (browser, page, pageData) {
   // files.
   let goalPageNumber = runData.position.page;
   console.log('Goal page: '.blue, goalPageNumber);
+  let previousPageNumber = pageData.previous;
+  console.log('Previous page: '.yellow, previousPageNumber);
 
 
   let resultsStartTime = Date.now()
@@ -405,10 +402,29 @@ async function getPDFs (browser, page, pageData) {
     // If all pages listed are lower, click the highest one
     // and return to prevous function to do another loop
     // with `done` being `false`
-    let navText = null;
-    let navData = await page.evaluate(
-      function (paginationSelector, pageNumSelector, goalPageNumber) {
 
+    await page.waitForSelector(pageNumSelector);
+    await page.waitFor(
+      function (pageNumSelector, previousPageNumber){
+
+        let currentPageElem = document.querySelector(pageNumSelector);
+        let currentPageNumber = parseInt(currentPageElem.innerText);
+        // If we're on the same page as before,
+        // we need to wait some more
+        if (previousPageNumber !== null && currentPageNumber === previousPageNumber){
+          return false;
+        } else {
+          console.log('on new page:', currentPageNumber);
+          return true;
+        }
+      },
+      {},
+      pageNumSelector, previousPageNumber
+    );
+
+
+    let navData = await page.evaluate(
+      function (paginationSelector, pageNumSelector, goalPageNumber){
         // Examples:
 
         // our goal page is 1.
@@ -426,42 +442,38 @@ async function getPDFs (browser, page, pageData) {
         // 7 is not there.
         // click on 5.
 
-        // See if we're already on the right page (the number that isn't underlined)
         let currentPageElem = document.querySelector(pageNumSelector);
-        if (!currentPageElem) {
-          // Wait some more for this to appear
-          return false;
-        }
-
-        let currentPageNumber = parseInt(currentPageElem.innerText);
-        console.log('current actual page indicated in nav:', currentPageNumber);
-        let atGoal = currentPageNumber === goalPageNumber;
+        let currentPageNumber = currentPageElem.innerText;
 
         // Get all the page navigation options. Something funky is going on.
         let navElem = document.querySelector(paginationSelector);
         let navText = navElem.innerText;
         console.log('nav:', navText);  // (log comforting info if it's possible in here)
 
+        let goalStr = goalPageNumber.toString();
+        console.log('current actual page indicated in nav:', currentPageNumber);
+
+        let atGoal = currentPageNumber === goalStr;
+        console.log('current is goal?', currentPageNumber, goalStr, atGoal);
         // If we're there, no need to click on anything
         if (atGoal) {
           console.log('Reached goal page');
           return true;
         }
 
-        // Otherwise, what should we click on?
-        // Is our goal page on the screen?
-        // Or do we need to go to the highest page possible?
+        // Will need a selector to click on the right link for the next page
+        let selector = null;
 
         // Look to see if our goal page number is in there
         let navParts = navText.split(/\s/);
-        let goalStr = goalPageNumber.toString();
         let goalIndex = navParts.indexOf(goalStr);
+
         // If goal page is there, return it to be clicked
         if (goalIndex !== -1) {
           // CSS is not 0 indexed
           goalIndex += 1;
-          console.log('Index of button to goal:', goalIndex)
-          return goalIndex;
+          console.log('CSS index of link to goal:', goalIndex)
+          selector = paginationSelector + ' a:nth-child(' + goalIndex + ')';
 
         // Otherwise go to the very last page available
         } else {
@@ -478,27 +490,25 @@ async function getPDFs (browser, page, pageData) {
           // CSS is not 0 indexed
           indexOfClick += 1;
           console.log('Index to click on:', indexOfClick);
-          return indexOfClick;
+          selector = paginationSelector + ' a:nth-child(' + goalIndex + ')';
         }
 
+        return {selector: selector, newPageNumber: parseInt(currentPageNumber)};
       },
       paginationSelector, pageNumSelector, goalPageNumber
-    );  // ends wait for nav data
+    );
 
     console.log('navData:'.bgYellow, navData);
 
     // If we need to keep looking for our goal page,
     // click on a new page and cycle through this again
-    if (typeof navData === 'number') {
-      let pageButtonSelector = paginationSelector + ' a:nth-child(' + navData + ')';
-      console.log('selector:', pageButtonSelector);
-      page.click(pageButtonSelector)
-      return {done: false};
+    if (typeof navData === 'object') {
+      previousPageNumber = navData.newPageNumber;
+      page.click(navData.selector);
+      return {done: false, previous: navData.newPageNumber};
     }
 
   }  // ends if paginated make sure to get to our goal
-
-  // return {done: true};
 
 
   console.log(5);
@@ -518,9 +528,8 @@ async function getPDFs (browser, page, pageData) {
   ).catch(function(err){
     console.log('no link to pdf? maybe no results.')}
     );
-  // console.log(linksText.length, linksText);
-  console.log(6);
 
+  console.log(6);
 
   await page.waitForSelector(docketIDSelector).catch(function(err){
     console.log('no docket number? maybe no results.')
@@ -550,7 +559,7 @@ async function getPDFs (browser, page, pageData) {
     // See if docket was already gotten?
 
     let id = docketIDTexts[index]
-    // We just want CP data, or so they tell us
+    // We just want some kinds of data, or so they tell us
     if (requiredPrefix.test(id)) {
       let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + goalPageNumber;
       let datedText = text + datesText;
@@ -559,7 +568,7 @@ async function getPDFs (browser, page, pageData) {
       fs.appendFileSync(usedDocketsPath, datedText + '\n', function (err) {
         if (err) console.log(err);
       });
-      console.log('docket id written');
+      console.log('docket id written:', text);
 
       // Download pdfs
       await page.waitFor(throttle * 10);
@@ -610,6 +619,7 @@ async function getPDFs (browser, page, pageData) {
 
     console.log(12);
 
+    console.log('disabledText:'.bgYellow, disabledText)
     let nextIsDisabled = disabledText.indexOf('Next') > -1;
     if (nextIsDisabled) {
       // Means we're on the last page
@@ -639,7 +649,7 @@ async function getPDFs (browser, page, pageData) {
   }  // ends if paginated
 
   console.log(16, done);
-  return {done: done};
+  return {done: done, previous: previousPageNumber};
 };  // Ends getPDFs()
 
 

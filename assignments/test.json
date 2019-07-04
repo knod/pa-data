@@ -3,9 +3,9 @@
   "startDate": "01/01/2017",
   "endDate": "12/31/2018",
   "startIndexRange": 1643,
-  "endIndexRange": 1643,
+  "endIndexRange": 1645,
   "position": {
-    "index": 1644,
+    "index": 1646,
     "page": 1
   },
   "completed": true,
@@ -15,7 +15,9 @@
   "wait": 500,
   "alerts": "yes",
   "done": {
-    "1643": true
+    "1643": true,
+    "1644": true,
+    "1645": true
   },
   "redo": true
 }
