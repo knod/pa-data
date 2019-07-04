@@ -16,6 +16,7 @@ let vowels = [
 
 let seconders = [
   'r', 'h', 't', 'y', 'm', 'n', 'w', 'g', 's',
+  //l gorramit!
 ];
 let letters = [
   'b', 'c', 'd', 'f', 'g', 'h',
@@ -90,26 +91,32 @@ for (one of originalsCombos) {
 //   }
 // }
 
-// for (letter of letters) {
-//   for (vowel of vowels) {
-//     objs.push({
-//       firstName: letter + vowel,
-//       lastName: letter + vowel,
-//     });
-//     objs.push({
-//       firstName: vowel + letter,
-//       lastName: vowel + letter,
-//     });
-//     objs.push({
-//       firstName: letter + vowel,
-//       lastName: vowel + letter,
-//     });
-//     objs.push({
-//       firstName: vowel + letter,
-//       lastName: letter + vowel,
-//     });
-//   }
-// }
+
+// First attempt
+// {ab, ab}
+// {ba, ba}
+// {ba, ab}
+// {ab, ba}
+for (letter of letters) {
+  for (vowel of vowels) {
+    objs.push({
+      firstName: letter + vowel,
+      lastName: letter + vowel,
+    });
+    objs.push({
+      firstName: vowel + letter,
+      lastName: vowel + letter,
+    });
+    objs.push({
+      firstName: letter + vowel,
+      lastName: vowel + letter,
+    });
+    objs.push({
+      firstName: vowel + letter,
+      lastName: letter + vowel,
+    });
+  }
+}
 
 // fs.writeFile("names.json", JSON.stringify(objs), function(err) {
 fs.writeFile("names3.json", JSON.stringify(objs), function(err) {

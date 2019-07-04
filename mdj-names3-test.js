@@ -74,8 +74,8 @@ let requiredPrefix = /MJ/;
 // let nameIndexPath = 'mdj-name-index.json';
 
 
-
 // Standard/shared
+let versionNumber = '\n0.43.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -102,8 +102,20 @@ if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
   let arvObj = JSON.parse(commandLineArgvs);//console.log('argv obj:', arvObj);
   runData = Object.assign(assignmentData, arvObj);//console.log('combined objects:', runData);
 
+  // Need to be clear about deep cloning
+  runData.position = {
+    index: runData.position.index,
+    page: runData.position.page,
+  };
+
 } else {
-  runData = assignmentData;
+  runData = Object.assign({}, assignmentData);
+
+  // Need to be clear about deep cloning
+  runData.position = {
+    index: assignmentData.position.index,
+    page: assignmentData.position.page,
+  };
 }
 
 if (runData.completed && !runData.redo) {
@@ -122,11 +134,16 @@ const type = runData.type;  // cp or mdj
 
 // Paths
 const namesFilePath = runData.namesPath;
-const dataDirectory = runData.dataDirectory;
-const usedDocketsPath = dataDirectory + type + '_' + assignmentID + runData.usedDocketsFileName;
+const dataDirectory = runData.dataDirectory + assignmentID + '/';
+const usedDocketsPath = dataDirectory + type + runData.usedDocketsFileName;
 // Make directory if needed
 mkdirp(dataDirectory, function (err) {
     if (err) { console.error(err); }
+});
+// Keeping track of what code version number we're at so
+// in future we know where to backtrack to.
+fs.appendFileSync(usedDocketsPath, versionNumber, function (err) {
+  if (err) console.log(err);
 });
 
 // Assigned variables
@@ -156,7 +173,7 @@ const doPlaySound = runData.alerts;
 
 // Global mutating state vars
 let nameIndex = runData.position.index || runData.startIndexRange;
-let startPageNum = runData.position.index || 0;
+runData.position.page = runData.position.page || 1;
 let timesRepeated = 0;
 console.log('start index: ', nameIndex + ', end index:', namesEndIndex);
 
@@ -184,7 +201,16 @@ async function byNamesDuring (dates, browser, page) {
   await page.setViewport({width: 1920, height: 2000});
   page.on('console', consoleObj => console.log(consoleObj.text()));//console.log(consoleObj.text()));
 
+  console.log('Opening page');
   await page.goto(url)
+  console.log('Opening page');
+  let goto = await page.goto(url);
+  console.log('Status:', goto.status());
+  let status = goto.status();
+  if (status === 429 || status === 500) {
+    throw Error('Error code ' + status);
+  }
+
   await page.waitForSelector(searchTypeSelector)
   // If the page is back, we can start the repeat count again.
   timesRepeated = 0;
@@ -310,7 +336,6 @@ async function getPDFs (browser, page, pageData) {
         let elem = document.querySelector(noResultsSelector)
         if (!!elem) {
           let text = elem.innerText;
-          // console.log('inner text of noResults element:', text);
           let hasText = text === noResultsText;
           if (hasText) {
             return elem;
@@ -420,6 +445,11 @@ async function getPDFs (browser, page, pageData) {
         console.log('current actual page indicated in nav:', currentPageNumber);
         let atGoal = currentPageNumber === goalPageNumber;
 
+        // Get all the page navigation options. Something funky is going on.
+        let navElem = document.querySelector(paginationSelector);
+        let navText = navElem.innerText;
+        console.log('nav:', navText);  // (log comforting info if it's possible in here)
+
         // If we're there, no need to click on anything
         if (atGoal) {
           console.log('Reached goal page');
@@ -430,14 +460,8 @@ async function getPDFs (browser, page, pageData) {
         // Is our goal page on the screen?
         // Or do we need to go to the highest page possible?
 
-        // Get all the page navigation options
-        let navElem = document.querySelector(paginationSelector);
-
         // Look to see if our goal page number is in there
-        let navText = navElem.innerText;
-        console.log('nav:', navText);  // (log comforting info if it's possible in here)
         let navParts = navText.split(/\s/);
-
         let goalStr = goalPageNumber.toString();
         let goalIndex = navParts.indexOf(goalStr);
         // If goal page is there, return it to be clicked
@@ -545,8 +569,8 @@ async function getPDFs (browser, page, pageData) {
       });
       console.log('docket id written');
 
-      await page.waitFor(throttle * 10);
       // Download pdfs
+      await page.waitFor(throttle * 10);
       await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
       console.log('docket #' + index, 'saved');
@@ -594,15 +618,19 @@ async function getPDFs (browser, page, pageData) {
 
     console.log(12);
 
-    let nextIsDisabled = disabledText.indexOf('Next') === -1;
+    let nextIsDisabled = disabledText.indexOf('Next') > -1;
     if (nextIsDisabled) {
       // Means we're on the last page
+      console.log('On the last page');
       done = true;
 
     } else {
+
+      console.log('still more pages to go!')
       // If there are still more pages to go, add another page number
       // and store it (we're going on to the next page)
       runData.position.page += 1;
+      // Don't store other custom command line arguments, though
       assignmentData.position.page += 1;
       fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
@@ -663,6 +691,8 @@ let nextIndex = function () {
   // Permanently remember the next name index needed
   assignmentData.position.index = nameIndex;
   // Start page count over again
+  console.log('resetting page to 1');
+  runData.position.page = 1;
   assignmentData.position.page = 1;
   fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
@@ -678,6 +708,7 @@ async function startNewBrowser () {
     await previousBrowser.close();
   }
 
+  console.log('Creating browser');
   let browser = await puppeteer.launch({ headless: true });
   previousBrowser = browser;
   const page = await browser.newPage();
@@ -723,9 +754,10 @@ async function waitThenRepeat (dates, browser, page, errStatusCode) {
   timesRepeated % 7;  // Will turn into 0
   console.log('timesRepeated:', timesRepeated);
 
-  // How to keep going only at the right times?
+  // How to keep using the previous browser?
   let keepGoing = function () {}
 
+  console.log(errStatusCode, typeof errStatusCode);
   if (errStatusCode === 429) {
     // Website really means business with 429
     // Don't know how long it needs. The 429 page didn't seem to show.
