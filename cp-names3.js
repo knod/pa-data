@@ -73,7 +73,7 @@ let requiredPrefix = /CP/;
 
 
 // Standard/shared
-let versionNumber = '\nv0.46.2\n';
+let versionNumber = '\nv0.47.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -494,7 +494,7 @@ async function getPDFs (browser, page, pageData) {
           // CSS is not 0 indexed
           indexOfClick += 1;
           console.log('Index to click on:', indexOfClick);
-          selector = paginationSelector + ' a:nth-child(' + goalIndex + ')';
+          selector = paginationSelector + ' a:nth-child(' + indexOfClick + ')';
         }
 
         return {selector: selector, newPageNumber: parseInt(currentPageNumber)};
