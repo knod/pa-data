@@ -73,7 +73,7 @@ let requiredPrefix = /CP/;
 
 
 // Standard/shared
-let versionNumber = '\n0.43.0\n';
+let versionNumber = '\n0.45.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -98,23 +98,17 @@ let runData = null;
 if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
 
   let arvObj = JSON.parse(commandLineArgvs);//console.log('argv obj:', arvObj);
-  runData = Object.assign(assignmentData, arvObj);//console.log('combined objects:', runData);
-
-  // Need to be clear about deep cloning
-  runData.position = {
-    index: runData.position.index,
-    page: runData.position.page,
-  };
+  runData = Object.assign({}, assignmentData, arvObj);//console.log('combined objects:', runData);
 
 } else {
   runData = Object.assign({}, assignmentData);
-
-  // Need to be clear about deep cloning
-  runData.position = {
-    index: assignmentData.position.index,
-    page: assignmentData.position.page,
-  };
 }
+
+// Need to be clear about deep cloning
+runData.position = {
+  index: runData.position.index,
+  page: runData.position.page,
+};
 
 if (runData.completed && !runData.redo) {
   throw Error('It looks like this assignment is already done! Get a new one! Google doc?'.green)
@@ -125,6 +119,8 @@ if (!runData.redo) {
 } else {
   console.warn('Previously gotten names will be gotten again! Because of your "redo" custom property.'.red);
 }
+
+console.log('runData:\n', runData);
 
 
 // Using the runData
