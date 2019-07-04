@@ -6,15 +6,44 @@
   "startIndexRange": 5001,
   "endIndexRange": 6000,
   "position": {
-    "index": null,
-    "page": null
+    "index": 5029,
+    "page": 3
   },
   "completed": false,
   "namesPath": "./names/mdj_1_see_data-mdj_readme.json",
   "dataDirectory": "data-mdj/mdj_1_see_data-mdj_readme/",
   "usedDocketsFileName": "-dockets-used.txt",
   "wait": 550,
-  "alerts": "yes",
+  "alerts": "no",
   "redo": false,
-  "done": {}
+  "done": {
+    "5001": true,
+    "5002": true,
+    "5003": true,
+    "5004": true,
+    "5005": true,
+    "5006": true,
+    "5007": true,
+    "5008": true,
+    "5009": true,
+    "5010": true,
+    "5011": true,
+    "5012": true,
+    "5013": true,
+    "5014": true,
+    "5015": true,
+    "5016": true,
+    "5017": true,
+    "5018": true,
+    "5019": true,
+    "5020": true,
+    "5021": true,
+    "5022": true,
+    "5023": true,
+    "5024": true,
+    "5025": true,
+    "5026": true,
+    "5027": true,
+    "5028": true
+  }
 }
