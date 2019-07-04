@@ -73,7 +73,7 @@ let requiredPrefix = /CP/;
 
 
 // Standard/shared
-let versionNumber = '\n0.43.0\n';
+let versionNumber = '\n0.44.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -125,6 +125,8 @@ if (!runData.redo) {
 } else {
   console.warn('Previously gotten names will be gotten again! Because of your "redo" custom property.'.red);
 }
+
+console.log('runData:\n', runData);
 
 
 // Using the runData

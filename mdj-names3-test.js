@@ -75,7 +75,7 @@ let requiredPrefix = /MJ/;
 
 
 // Standard/shared
-let versionNumber = '\n0.43.0\n';
+let versionNumber = '\n0.44.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -127,6 +127,8 @@ if (!runData.redo) {
 } else {
   console.warn('Previously gotten names will be gotten again! Because of your "redo" custom property.'.red);
 }
+
+console.log('runData:\n', runData);
 
 
 // Using the runData
@@ -201,8 +203,6 @@ async function byNamesDuring (dates, browser, page) {
   await page.setViewport({width: 1920, height: 2000});
   page.on('console', consoleObj => console.log(consoleObj.text()));//console.log(consoleObj.text()));
 
-  console.log('Opening page');
-  await page.goto(url)
   console.log('Opening page');
   let goto = await page.goto(url);
   console.log('Status:', goto.status());
@@ -663,6 +663,7 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 
 let nextIndex = function () {
+  console.log('onto the next index');
   // Permanently save that the current name was completed,
   // but all other data stays the same. Should changing data
   // and non-changing data be in the same file?
