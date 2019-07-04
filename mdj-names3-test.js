@@ -203,6 +203,14 @@ async function byNamesDuring (dates, browser, page) {
 
   console.log('Opening page');
   await page.goto(url)
+  console.log('Opening page');
+  let goto = await page.goto(url);
+  console.log('Status:', goto.status());
+  let status = goto.status();
+  if (status === 429 || status === 500) {
+    throw Error('Error code ' + status);
+  }
+
   await page.waitForSelector(searchTypeSelector)
   // If the page is back, we can start the repeat count again.
   timesRepeated = 0;
@@ -683,6 +691,8 @@ let nextIndex = function () {
   // Permanently remember the next name index needed
   assignmentData.position.index = nameIndex;
   // Start page count over again
+  console.log('resetting page to 1');
+  runData.position.page = 1;
   assignmentData.position.page = 1;
   fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
