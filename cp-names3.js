@@ -200,7 +200,13 @@ async function byNamesDuring (dates, browser, page) {
   page.on('console', consoleObj => console.log(consoleObj.text()));//console.log(consoleObj.text()));
 
   console.log('Opening page');
-  await page.goto(url)
+  let goto = await page.goto(url);
+  console.log('Status:', goto.status());
+  let status = goto.status();
+  if (status === 429 || status === 500) {
+    throw Error('Error code ' + status);
+  }
+
   await page.waitForSelector(searchTypeSelector)
   // If the page is back, we can start the repeat count again.
   timesRepeated = 0;
@@ -653,6 +659,7 @@ async function downloadPDF(pdfURL, outputFilename) {
 
 
 let nextIndex = function () {
+  console.log('onto the next index');
   // Permanently save that the current name was completed,
   // but all other data stays the same. Should changing data
   // and non-changing data be in the same file?
@@ -681,6 +688,8 @@ let nextIndex = function () {
   // Permanently remember the next name index needed
   assignmentData.position.index = nameIndex;
   // Start page count over again
+  console.log('resetting page to 1');
+  runData.position.page = 1;
   assignmentData.position.page = 1;
   fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
 
