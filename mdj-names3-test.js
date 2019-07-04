@@ -298,8 +298,10 @@ async function byNamesDuring (dates, browser, page) {
 
 
 async function getPDFs (browser, page, pageData) {
-  console.log('getting pdfs');
+  console.log('new page');
 
+
+  await page.waitFor(5000);
 
   // See the page we were last one when the program stopped
   // Doesn't actually need to be here, but it's nice for
@@ -435,6 +437,7 @@ async function getPDFs (browser, page, pageData) {
           return false;
         }
 
+        console.log('pageNumSelector:', pageNumSelector);
         let currentPageNumber = parseInt(currentPageElem.innerText);
         console.log('current actual page indicated in nav:', currentPageNumber);
         let atGoal = currentPageNumber === goalPageNumber;
@@ -450,6 +453,8 @@ async function getPDFs (browser, page, pageData) {
           return true;
         }
 
+        let selector = null;
+
         // Otherwise, what should we click on?
         // Is our goal page on the screen?
         // Or do we need to go to the highest page possible?
@@ -463,7 +468,12 @@ async function getPDFs (browser, page, pageData) {
           // CSS is not 0 indexed
           goalIndex += 1;
           console.log('Index of button to goal:', goalIndex)
-          return goalIndex;
+
+          selector = paginationSelector + ' a:nth-child(' + goalIndex + ')';
+          let button = document.querySelector(selector);
+          console.log('new page link inner text:', button.innerText);
+
+          // return goalIndex;
 
         // Otherwise go to the very last page available
         } else {
@@ -480,21 +490,25 @@ async function getPDFs (browser, page, pageData) {
           // CSS is not 0 indexed
           indexOfClick += 1;
           console.log('Index to click on:', indexOfClick);
-          return indexOfClick;
+          selector = paginationSelector + ' a:nth-child(' + goalIndex + ')';
+
+          // return indexOfClick;
         }
 
+        return selector;
       },
       paginationSelector, pageNumSelector, goalPageNumber
     );  // ends wait for nav data
 
-    console.log('navData:'.bgYellow, navData);
+    console.log('navData, selector:'.bgYellow, navData);
 
     // If we need to keep looking for our goal page,
     // click on a new page and cycle through this again
-    if (typeof navData === 'number') {
-      let pageButtonSelector = paginationSelector + ' a:nth-child(' + navData + ')';
-      console.log('selector:', pageButtonSelector);
-      page.click(pageButtonSelector)
+    if (typeof navData === 'string') {
+      // let pageButtonSelector = paginationSelector + ' a:nth-child(' + navData + ')';
+      // console.log('selector:', pageButtonSelector);
+      // console.log('selector:', navData);
+      page.click(navData);
       return {done: false};
     }
 
@@ -564,8 +578,8 @@ async function getPDFs (browser, page, pageData) {
       console.log('docket id written');
 
       // Download pdfs
-      await page.waitFor(throttle * 10);
-      await downloadPDF(linksText[index + adder], text + '-docket.pdf');
+      // await page.waitFor(throttle * 10);
+      // await downloadPDF(linksText[index + adder], text + '-docket.pdf');
       // Because the linksText list is twice as long
       console.log('docket #' + index, 'saved');
       numPDFs++;
@@ -573,7 +587,7 @@ async function getPDFs (browser, page, pageData) {
       adder++
 
       await page.waitFor(throttle * 10);
-      await downloadPDF(linksText[index + adder], text + '-summary.pdf');
+      // await downloadPDF(linksText[index + adder], text + '-summary.pdf');
       console.log('summary #' + index, 'saved');
       numPDFs++;
 
