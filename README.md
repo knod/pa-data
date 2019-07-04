@@ -62,7 +62,7 @@ Download here (https://git-scm.com/download/win) into the same folder as nodejs?
 
 If you're on windows and you want the alert sound to work and you don't have an mp3 player already, try these instructions (see 'Windows – install audio player'): https://thisdavej.com/node-js-playing-sounds-to-provide-notifications/. No one I know has tried this yet.
 
-# Runninng the Code
+# Running the Code
 
 ## Before Anything Else!
 - Make sure your computer isn't going to go to sleep.
@@ -85,6 +85,7 @@ If you're on windows and you want the alert sound to work and you don't have an 
 1. **Do not run this in multiple terminal windows.** It's slow on purpose.
 1. Go to your command prompt and paste the code from the google doc
 1. Press enter
+1. You might get an error the first time you run the assignment. Just run it again.
 1. It'll now probably keep going till it's done with the assignment and prints the message 'success'.
 
 ## Things
