@@ -247,7 +247,10 @@ async function byNamesDuring (dates, browser, page) {
       dates.end
     );
 
-    await page.waitForSelector(searchSelector);
+    await page.waitForSelector(
+      searchSelector,
+      {timeout: 90000}
+    );
     page.click(searchSelector);
 
     let count = 0;
@@ -260,7 +263,10 @@ async function byNamesDuring (dates, browser, page) {
       await page.waitFor(throttle);
       // This doesn't actually seem to wait for some reason. Is that
       // because it was found before?
-      await page.waitForSelector(searchSelector);
+      await page.waitForSelector(
+        searchSelector,
+        {timeout: 90000}
+      );
 
       pageData = await getPDFs(browser, page, pageData);
 
@@ -396,7 +402,7 @@ async function getPDFs (browser, page, pageData) {
 
     await page.waitForSelector(
       pageNumSelector,
-      {timeout: 90000}
+      {timeout: 60000}
     );
     let waitedForCurrentPage = await page.waitFor(
       function (pageNumSelector, previousPageNumber){
