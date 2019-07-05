@@ -61,19 +61,10 @@ let requiredPrefix = /CP/;
 
 // let requiredPrefix = /MJ/;
 
-// let type = 'mdj';
-
-// // Paths
-// // // doesn't exist yet
-// // let namesFilePath = './names/mdj_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
-// let namesFilePath = 'names3.json';
-// let pdfPath = 'data-mdj/';
-// let usedDocketsPath = 'mdj-named-dockets-used.txt';
-// let nameIndexPath = 'mdj-name-index.json';
 
 
 // Standard/shared
-let versionNumber = '\nv0.47.0\n';
+let versionNumber = '\nv0.47.1\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -771,12 +762,14 @@ async function waitThenRepeat (dates, browser, page, errStatusCode) {
 
   console.log(errStatusCode, typeof errStatusCode);
   if (errStatusCode === 429) {
-    // Website really means business with 429
-    // Don't know how long it needs. The 429 page didn't seem to show.
-    // This is a guess.
-    // Note: Still got 429 while on 500ms throttle (5 secs for pdfs)
-    console.log('waiting 15 minutes @', getNowHHMM());
-    setTimeout(startNewBrowser, 900000);
+    // Note: Still got 429 while on 550ms throttle (5 secs for pdfs)
+    // on some machines.
+    // Website really means business with 429. 1 hour.
+    // Add 5 min to make sure time is reached
+    // then go straight to an hour.
+    timesRepeated = 3;
+    console.log('waiting 5 minutes @', getNowHHMM());
+    setTimeout(startNewBrowser, 300000);
 
   } else {
     if (timesRepeated <= 2) {
