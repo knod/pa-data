@@ -3,7 +3,7 @@ server-limits.txt
 This is what we know about what the PA site doesn't want:
 
 **PDF downloads:** No more than ~ 830/hr. See any logs with PDF downloads and 429 errors.
-**Page requests(?):** 970 in 11min. Not sure what these were. We weren't clicking on any active link, just one for the same page over and over, but it didn't like it anyway. At all. See '07-04-05-12pm-mdj-hung--.txt' in owner local folder. Summary:
+**Page requests(?):** 970 in 11min. Not sure what these were. We weren't clicking on any active link, just one for the same page over and over whihc shouldn't have done anything (CSS index 4), but it didn't like it anyway. At all. See '07-04-05-12pm-mdj-hung--.txt' in owner local folder. Summary:
 
 **Finished page 1, then cylcled because of bug:**
 
@@ -68,7 +68,6 @@ Index of button to goal: 4
 navData: 4
 
 selector: #ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer a:nth-child(4)
-
 
 **etc.**
 
