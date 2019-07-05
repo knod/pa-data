@@ -6,8 +6,8 @@
   "startIndexRange": 8001,
   "endIndexRange": 9000,
   "position": {
-    "index": null,
-    "page": null
+    "index": 8012,
+    "page": 2
   },
   "completed": false,
   "namesPath": "./names/mdj_1_see_data-mdj_readme.json",
@@ -16,5 +16,17 @@
   "wait": 550,
   "alerts": "yes",
   "redo": false,
-  "done": {}
+  "done": {
+    "8001": true,
+    "8002": true,
+    "8003": true,
+    "8004": true,
+    "8005": true,
+    "8006": true,
+    "8007": true,
+    "8008": true,
+    "8009": true,
+    "8010": true,
+    "8011": true
+  }
 }
