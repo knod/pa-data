@@ -1,10 +1,10 @@
 {
-  "command": "node mdj-names3-test.js mdj12k17",
+  "command": "node mdj-names3-test.js mdj14k17",
   "type": "mdj",
   "startDate": "01/01/2017",
   "endDate": "12/31/2018",
-  "startIndexRange": 11001,
-  "endIndexRange": 12000,
+  "startIndexRange": 13001,
+  "endIndexRange": 14000,
   "position": {
     "index": null,
     "page": null
