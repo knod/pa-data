@@ -3,22 +3,55 @@
 const puppeteer = require('puppeteer');
 
 
-// See if we're on mutliple pages
-async function checkForPagination (vars, page) {
+// Puts values into inputs
+async function setupSearch (vars, page, name) {
 
-  const nextSelector = vars.nextSelector;
+  console.log(name);
 
-  let paginated = false;
-  // TODO: Instead of a timeout, can it be managed in a
-  // similar way as the results? I think I checked, but...
-  await page.waitForSelector(
-      nextSelector,
-      {timeout: 5000}
-  ).then(function(arg){
-    if (arg) { paginated = true; }
-  }).catch(function(){
-    console.log('One-pager');
-  });
+  // Values
+  const dates = vars.dates;
 
-  return paginated;
-}; // Ends async checkForPagination()
+  // Selectors
+  const lastNameSelector = vars.lastNameSelector;
+  const firstNameSelector = vars.firstNameSelector;
+  const docketTypeSelector = vars.docketTypeSelector;
+  const docketTypeVal = vars.docketTypeVal;
+  const startDateSelector = vars.startDateSelector;
+  const endDateSelector = vars.endDateSelector;
+  const searchSelector = vars.searchSelector;
+
+  await page.$eval(
+    lastNameSelector,
+    function (el, str) { el.value = str },
+    name.lastName
+  );
+
+  await page.$eval(
+    firstNameSelector,
+    function (el, str) { el.value = str },
+    name.firstName
+  );
+
+  await page.select(
+    docketTypeSelector,
+    docketTypeVal
+  );
+
+  await page.$eval(
+    startDateSelector,
+    function (el, str) { el.value = str },
+    dates.start
+  );
+
+  await page.$eval(
+    endDateSelector,
+    function (el, str) { el.value = str },
+    dates.end
+  );
+
+  await page.waitForSelector(searchSelector);
+
+};  // Ends async setupSearch()
+
+
+module.exports.setupSearch = setupSearch;

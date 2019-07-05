@@ -50,7 +50,7 @@ async function skipSomePagesIfNeeded (vars, funcs, page, pageData, paginated) {
     } else if (skipData.skip === true) {
       console.log('clicking to a new page');
       previousPageNumber = skipData.newPageNumber;
-      page.click(skipData.selector);
+      await page.click(skipData.selector);
       return {skip: true, previous: skipData.newPageNumber};
 
     } else {

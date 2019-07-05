@@ -5,6 +5,7 @@ const puppeteer = require('puppeteer');
 
 // In-house
 const alert = require('../alert.js');
+const setupSearch = require('./setupSearch.js').setupSearch;
 const checkForResults = require('./checkForResults.js').checkForResults;
 const skipSomePagesIfNeeded = require('./skipSomePagesIfNeeded.js').skipSomePagesIfNeeded;
 const doWithDocketsFuncs = require('./doWithDockets.js');
@@ -30,7 +31,7 @@ async function iterNames (vars, funcs, browser, page) {
   const runData = vars.runData;  // Used in this and its child processes from now on
   const namesEndIndex = runData.namesEndIndex;
   const doPlaySound = runData.doPlaySound;
-  const dates = runData.dates;
+  const dates = runData.dates;  // Not needed. Remove after test.
   const throttle = vars.throttle;
   console.log('running data vars:' +
     '\n' + names +
@@ -58,17 +59,16 @@ async function iterNames (vars, funcs, browser, page) {
   const searchTypeSelector = vars.searchTypeSelector;
   const searchTypeVal = vars.searchTypeVal;
   const lastNameSelector = vars.lastNameSelector;
-  const firstNameSelector = vars.firstNameSelector;
-  const docketTypeSelector = vars.docketTypeSelector;
-  const docketTypeVal = vars.docketTypeVal;
-  const startDateSelector = vars.startDateSelector;
-  const endDateSelector = vars.endDateSelector;
+  const firstNameSelector = vars.firstNameSelector;  // Remove after testing
+  const docketTypeSelector = vars.docketTypeSelector;  // Remove after testing
+  const docketTypeVal = vars.docketTypeVal;  // Remove after testing
+  const startDateSelector = vars.startDateSelector;  // Remove after testing
+  const endDateSelector = vars.endDateSelector;  // Remove after testing
   const searchSelector = vars.searchSelector;
   console.log('site-specific vars:' +
     '\n' + url +
     '\n' + searchTypeSelector +
     '\n' + searchTypeVal +
-    '\n' + lastNameSelector +
     '\n' + lastNameSelector +
     '\n' + firstNameSelector +
     '\n' + docketTypeSelector +
@@ -93,7 +93,7 @@ async function iterNames (vars, funcs, browser, page) {
   // Fill in fields
 
   // Select search by name
-  page.select(
+  await page.select(
     searchTypeSelector,
     searchTypeVal
   );
@@ -108,39 +108,9 @@ async function iterNames (vars, funcs, browser, page) {
     if (doPlaySound !== 'no') { alert.nameIndex(); }
 
     let name = names[nameIndex];
-    console.log(name);
 
-    await page.$eval(
-      lastNameSelector,
-      function (el, str) { el.value = str },
-      name.lastName
-    );
-
-    await page.$eval(
-      firstNameSelector,
-      function (el, str) { el.value = str },
-      name.firstName
-    );
-
-    page.select(
-      docketTypeSelector,
-      docketTypeVal
-    );
-
-    await page.$eval(
-      startDateSelector,
-      function (el, str) { el.value = str },
-      dates.start
-    );
-
-    await page.$eval(
-      endDateSelector,
-      function (el, str) { el.value = str },
-      dates.end
-    );
-
-    await page.waitForSelector(searchSelector);
-    page.click(searchSelector);
+    await setupSearch(vars, page, name);
+    await page.click(searchSelector);
 
     // Look through the page for relevant files
     let doneWithAllPages = false;
@@ -224,7 +194,7 @@ async function iterNames (vars, funcs, browser, page) {
             console.log(14);
             // Nothing fancy, just click the 'next' button
             let nextButton = paginationSelector + ' a:nth-last-child(2)';
-            page.click(nextButton);
+            await page.click(nextButton);
           }
 
         }  // ends if paginated
