@@ -64,7 +64,7 @@ let requiredPrefix = /CP/;
 
 
 // Standard/shared
-let versionNumber = '\nv0.47.1\n';
+let versionNumber = '\nv0.47.2\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -755,6 +755,7 @@ async function startNewBrowser () {
 async function waitThenRepeat (dates, browser, page, errStatusCode) {
   timesRepeated++;
   timesRepeated % 7;  // Will turn into 0
+  console.log('Hang tight, the code will work on taking care of this'.bgWhite.blue.underline.bold);
   console.log('timesRepeated:', timesRepeated);
 
   // How to keep using the previous browser?
@@ -768,21 +769,21 @@ async function waitThenRepeat (dates, browser, page, errStatusCode) {
     // Add 5 min to make sure time is reached
     // then go straight to an hour.
     timesRepeated = 3;
-    console.log('waiting 5 minutes @', getNowHHMM());
+    console.log('waiting 5 minutes'.bgWhite.blue + ' @', getNowHHMM());
     setTimeout(startNewBrowser, 300000);
 
   } else {
     if (timesRepeated <= 2) {
-      console.log('waiting 1 min @', getNowHHMM());
+      console.log('waiting 1 min'.bgWhite.blue + ' @', getNowHHMM());
       setTimeout(startNewBrowser, 60000);
 
     } else if (timesRepeated <= 5) {
-      console.log('waiting an hour @', getNowHHMM());
+      console.log('waiting an hour'.bgWhite.blue + ' @', getNowHHMM());
       setTimeout(startNewBrowser, 3600000);
 
     } else if (timesRepeated <= 6){
       // wait 15 min
-      console.log('3 hours should have passed. Waiting 15 min @', getNowHHMM());
+      console.log('3 hours should have passed. Waiting 15 min'.bgWhite.blue + ' @', getNowHHMM());
       setTimeout(startNewBrowser, 900000);
 
     } else {
