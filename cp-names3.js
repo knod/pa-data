@@ -394,7 +394,10 @@ async function getPDFs (browser, page, pageData) {
     // and return to prevous function to do another loop
     // with `done` being `false`
 
-    await page.waitForSelector(pageNumSelector);
+    await page.waitForSelector(
+      pageNumSelector,
+      {timeout: 90000}
+    );
     let waitedForCurrentPage = await page.waitFor(
       function (pageNumSelector, previousPageNumber){
 
