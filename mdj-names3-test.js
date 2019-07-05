@@ -68,7 +68,7 @@ let requiredPrefix = /MJ/;
 
 
 // Standard/shared
-let versionNumber = '\nv0.47.2\n';
+let versionNumber = '\nv0.48.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -251,6 +251,8 @@ async function byNamesDuring (dates, browser, page) {
       dates.end
     );
 
+    // wait 15 min
+    console.log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
     await page.waitForSelector(
       searchSelector,
       {timeout: 90000}
@@ -265,8 +267,8 @@ async function byNamesDuring (dates, browser, page) {
       // apparently this seems to go too fast otherwise somehow and give itself an error...
       // it doesn't even seem to actually wait for a full timeout
       await page.waitFor(throttle);
-      // This doesn't actually seem to wait for some reason. Is that
-      // because it was found before?
+      // wait 15 min
+      console.log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
       await page.waitForSelector(
         searchSelector,
         {timeout: 90000}
