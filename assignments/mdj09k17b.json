@@ -1,4 +1,5 @@
 {
+  "note": "Actual 9k was accidentally saved as 6k, so now need new 9k."
   "command": "node mdj-names3-test.js mdj09_06k17",
   "type": "mdj",
   "startDate": "01/01/2017",
