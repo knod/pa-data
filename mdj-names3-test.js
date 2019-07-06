@@ -68,7 +68,7 @@ let requiredPrefix = /MJ/;
 
 
 // Standard/shared
-let versionNumber = '\nv0.48.0\n';
+let versionNumber = '\nv0.49.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -205,7 +205,7 @@ async function byNamesDuring (dates, browser, page) {
   // Fill in fields
 
   // Select search by name
-  page.select(
+  await page.select(
     searchTypeSelector,
     searchTypeVal
   );
@@ -234,7 +234,7 @@ async function byNamesDuring (dates, browser, page) {
       name.firstName
     );
 
-    page.select(
+    await page.select(
       docketTypeSelector,
       docketTypeVal
     );
@@ -255,9 +255,9 @@ async function byNamesDuring (dates, browser, page) {
     console.log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
     await page.waitForSelector(
       searchSelector,
-      {timeout: 90000}
+      {timeout: 15 * 60 * 1000}
     );
-    page.click(searchSelector);
+    await page.click(searchSelector);
 
     let count = 0;
     // Look through the page for relevant files
@@ -271,7 +271,7 @@ async function byNamesDuring (dates, browser, page) {
       console.log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
       await page.waitForSelector(
         searchSelector,
-        {timeout: 90000}
+        {timeout: 15 * 60 * 1000}
       );
 
       pageData = await getPDFs(browser, page, pageData);
@@ -652,7 +652,7 @@ async function getPDFs (browser, page, pageData) {
       console.log(13);
       // Nothing fancy, just click the 'next' button
       let nextButton = paginationSelector + ' a:nth-last-child(2)';
-      page.click(nextButton);
+      await page.click(nextButton);
 
       console.log(14);
     }  // ends if we're at the last page
