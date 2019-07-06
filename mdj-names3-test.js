@@ -68,7 +68,7 @@ let requiredPrefix = /MJ/;
 
 
 // Standard/shared
-let versionNumber = '\nv0.49.0\n';
+let versionNumber = '\nv0.51.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -126,7 +126,7 @@ const namesFilePath = runData.namesPath;
 const dataDirectory = runData.dataDirectory + assignmentID + '/';
 const usedDocketsPath = dataDirectory + type + runData.usedDocketsFileName;
 // Make directory if needed
-mkdirp(dataDirectory, function (err) {
+mkdirp.sync(dataDirectory, function (err) {
     if (err) { console.error(err); }
 });
 // Keeping track of what code version number we're at so
@@ -424,7 +424,7 @@ async function getPDFs (browser, page, pageData) {
           return currentPageNumber;
         }
       },
-      {},
+      {timeout: 15 * 60 * 1000},
       pageNumSelector, previousPageNumber
     );
 
