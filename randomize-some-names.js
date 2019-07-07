@@ -2,7 +2,6 @@
 
 let fs = require('fs');
 let utils = require('./utils.js');
-let alternatingNames = require('./names3.json');
 const mkdirp = require('mkdirp');
 
 // names with only vowel and consonant combinations and
@@ -17,9 +16,10 @@ let shuffle = utils.shuffle;
 let pathPrefix = 'names/';
 
 let makeSomeCPNames = function () {
-  let cp_alternating_nonmatching_names2007to2019_path = pathPrefix + 'cp_alternating_nonmatching_names2007to2019_remaining_shuffled.json';
-  let cp_alternating_nonmatching_names06_18to12_18_path = pathPrefix + 'cp_alternating_nonmatching_names06_18to12_18_remaining_shuffled.json';
-  let cp_alternating_nonmatching_names01_17to12_18_path = pathPrefix + 'cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';
+
+  let cp_alternating_nonmatching_names2007to2019_path = pathPrefix + 'cp_alternating_nonmatching_names2007to2019_remaining_shuffled.json';  // before sync pdf downloading
+  let cp_alternating_nonmatching_names06_18to12_18_path = pathPrefix + 'cp_alternating_nonmatching_names06_18to12_18_remaining_shuffled.json';  // after sync?
+  let cp_alternating_nonmatching_names01_17to12_18_path = pathPrefix + 'cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json';  // after sync, pretty sure
 
   let cp_alternating_nonmatching_names2007to2019_removing = [
     // inclusive

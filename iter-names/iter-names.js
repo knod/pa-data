@@ -17,7 +17,7 @@ const arePagesDone = require('./arePagesDone.js').arePagesDone;
 // Global
 let nameIndex = null;
 
-async function iterNames (vars, funcs, browser, page) {
+async function iterNames (vars, funcs, page) {
 
   // await page.setViewport({width: 1920, height: 2000});  // for snapshot peeking
   page.on('console', consoleObj => console.log(consoleObj.text()));
@@ -55,7 +55,7 @@ async function iterNames (vars, funcs, browser, page) {
   );
 
   // Site-specific data
-  const url = vars.url;
+  const url = vars.url;  // Remove after testing
   const searchTypeSelector = vars.searchTypeSelector;
   const searchTypeVal = vars.searchTypeVal;
   const lastNameSelector = vars.lastNameSelector;
@@ -66,7 +66,7 @@ async function iterNames (vars, funcs, browser, page) {
   const endDateSelector = vars.endDateSelector;  // Remove after testing
   const searchSelector = vars.searchSelector;
   console.log('site-specific vars:' +
-    '\n' + url +
+    '\n' + url +  // Remove after testing
     '\n' + searchTypeSelector +
     '\n' + searchTypeVal +
     '\n' + lastNameSelector +
@@ -78,13 +78,6 @@ async function iterNames (vars, funcs, browser, page) {
     '\n' + searchSelector
   );
 
-  console.log('Opening page');
-  let goto = await page.goto(url);
-  console.log('Status:', goto.status());
-  let status = goto.status();
-  if (status === 429 || status === 500) {
-    throw Error('Error code ' + status);
-  }
 
   await page.waitForSelector(searchTypeSelector)
   // If the page is back, we can start the repeat count again.
