@@ -22,14 +22,14 @@ async function checkForResults (vars, page) {
   let err = null;
   let resultsElem = page.waitForSelector(
     resultsSelector,
-    { 'timeout': 120000 }
+    { 'timeout': 2 * 60 * 1000}
   );
   let noResultsElem = null;
 
   // The two pages have two different html structures
   if (type === 'cp') {
     noResultsElem = page.waitForSelector(noResultsSelector,
-      { 'timeout': 120000 });
+      { 'timeout': 2 * 60 * 1000 });
   } else {
     noResultsElem = page.waitFor(
       function (noResultsSelector, noResultsText) {

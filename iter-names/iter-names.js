@@ -132,12 +132,16 @@ async function iterNames (vars, funcs, page) {
       // Keep doing stuff if there were results for this name
       if (!doneWithAllPages) {
 
-        // apparently this seems to go too fast otherwise somehow and give itself an error...
-        // it doesn't even seem to actually wait for a full timeout
-        await page.waitFor(throttle/2);
+        // // apparently this seems to go too fast otherwise somehow and give itself an error...
+        // // it doesn't even seem to actually wait for a full timeout
+        // await page.waitFor(throttle/2);
         // This doesn't actually seem to wait for some reason. Is that
         // because it was found before?
-        await page.waitForSelector(searchSelector);
+        await page.waitForSelector(
+          searchSelector,
+          // For large results
+          {timeout: 15 * 60 * 1000}
+        );
 
         let currentPageNumber = 1;
 
@@ -276,7 +280,7 @@ async function checkForPagination (vars, page) {
   // similar way as the results? I think I checked, but...
   await page.waitForSelector(
       nextSelector,
-      {timeout: 5000}
+      {timeout: 5 * 1000}
   ).then(function(arg){
     if (arg) { paginated = true; }
   }).catch(function(){

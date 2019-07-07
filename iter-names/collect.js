@@ -140,16 +140,16 @@ async function waitThenRepeat (vars, browser, page, errStatusCode) {
   } else {
     if (timesRepeated <= 2) {
       console.log('waiting 1 min @', getNowHHMM());
-      setTimeout(startNewBrowser, 60000);
+      setTimeout(startNewBrowser, 1 * 60 * 1000);
 
     } else if (timesRepeated <= 5) {
       console.log('waiting an hour @', getNowHHMM());
-      setTimeout(startNewBrowser, 3600000);
+      setTimeout(startNewBrowser, 60 * 60 * 1000);
 
     } else if (timesRepeated <= 6){
       // wait 15 min
-      console.log('3 hours should have passed. Waiting 15 min @', getNowHHMM());
-      setTimeout(startNewBrowser, 900000);
+      console.log('3 hours should have passed. Waiting 5 min @', getNowHHMM());
+      setTimeout(startNewBrowser, 5 * 60 * 1000);
 
     } else {
       // Final error
