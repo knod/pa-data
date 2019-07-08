@@ -49,7 +49,11 @@ async function setupSearch (vars, page, name) {
     dates.end
   );
 
-  await page.waitForSelector(searchSelector);
+  await page.waitForSelector(
+    searchSelector,
+    // For large results
+    {timeout: 15 * 60 * 1000}
+  );
 
 };  // Ends async setupSearch()
 

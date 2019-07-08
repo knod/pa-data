@@ -17,7 +17,7 @@ const arePagesDone = require('./arePagesDone.js').arePagesDone;
 // Global
 let nameIndex = null;
 
-async function iterNames (vars, funcs, browser, page) {
+async function iterNames (vars, funcs, page) {
 
   // await page.setViewport({width: 1920, height: 2000});  // for snapshot peeking
   page.on('console', consoleObj => console.log(consoleObj.text()));
@@ -55,7 +55,7 @@ async function iterNames (vars, funcs, browser, page) {
   );
 
   // Site-specific data
-  const url = vars.url;
+  const url = vars.url;  // Remove after testing
   const searchTypeSelector = vars.searchTypeSelector;
   const searchTypeVal = vars.searchTypeVal;
   const lastNameSelector = vars.lastNameSelector;
@@ -66,7 +66,7 @@ async function iterNames (vars, funcs, browser, page) {
   const endDateSelector = vars.endDateSelector;  // Remove after testing
   const searchSelector = vars.searchSelector;
   console.log('site-specific vars:' +
-    '\n' + url +
+    '\n' + url +  // Remove after testing
     '\n' + searchTypeSelector +
     '\n' + searchTypeVal +
     '\n' + lastNameSelector +
@@ -78,13 +78,6 @@ async function iterNames (vars, funcs, browser, page) {
     '\n' + searchSelector
   );
 
-  console.log('Opening page');
-  let goto = await page.goto(url);
-  console.log('Status:', goto.status());
-  let status = goto.status();
-  if (status === 429 || status === 500) {
-    throw Error('Error code ' + status);
-  }
 
   await page.waitForSelector(searchTypeSelector)
   // If the page is back, we can start the repeat count again.
@@ -139,12 +132,16 @@ async function iterNames (vars, funcs, browser, page) {
       // Keep doing stuff if there were results for this name
       if (!doneWithAllPages) {
 
-        // apparently this seems to go too fast otherwise somehow and give itself an error...
-        // it doesn't even seem to actually wait for a full timeout
-        await page.waitFor(throttle/2);
+        // // apparently this seems to go too fast otherwise somehow and give itself an error...
+        // // it doesn't even seem to actually wait for a full timeout
+        // await page.waitFor(throttle/2);
         // This doesn't actually seem to wait for some reason. Is that
         // because it was found before?
-        await page.waitForSelector(searchSelector);
+        await page.waitForSelector(
+          searchSelector,
+          // For large results
+          {timeout: 15 * 60 * 1000}
+        );
 
         let currentPageNumber = 1;
 
@@ -283,7 +280,7 @@ async function checkForPagination (vars, page) {
   // similar way as the results? I think I checked, but...
   await page.waitForSelector(
       nextSelector,
-      {timeout: 5000}
+      {timeout: 5 * 1000}
   ).then(function(arg){
     if (arg) { paginated = true; }
   }).catch(function(){
