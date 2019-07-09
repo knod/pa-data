@@ -13,7 +13,7 @@ let alternating_nonmatching_names = require('./names3.json');
 let removeRanges = utils.removeRanges;
 let shuffle = utils.shuffle;
 
-let pathPrefix = 'names/';
+let pathPrefix = './';
 
 let makeSomeCPNames = function () {
 

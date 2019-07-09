@@ -1,5 +1,15 @@
 // setupSearch.js
 
+// // vars
+// runData.dates;
+// lastNameSelector;
+// firstNameSelector;
+// docketTypeSelector;
+// docketTypeVal;
+// startDateSelector;
+// endDateSelector;
+// searchSelector;
+
 const puppeteer = require('puppeteer');
 
 
@@ -8,8 +18,8 @@ async function setupSearch (vars, page, name) {
 
   console.log(name);
 
-  // Values
-  const dates = vars.dates;
+  // Run data
+  const dates = vars.runData.dates;
 
   // Selectors
   const lastNameSelector = vars.lastNameSelector;

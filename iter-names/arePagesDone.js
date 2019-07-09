@@ -1,5 +1,9 @@
 // arePagesDone.js
 
+// // vars
+// paginationSelector
+
+
 const puppeteer = require('puppeteer');
 const colors = require('colors');
 

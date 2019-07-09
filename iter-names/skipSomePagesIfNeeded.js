@@ -1,10 +1,17 @@
 // nextPage.js
 
+// // vars
+// tableSelector;
+// pageNumSelector;
+// pageNumSelector;
+// paginationSelector;
+// runData;
+
 const puppeteer = require('puppeteer');
 const colors = require('colors');
 
 // In-house
-const getCurrentPageNumber = require('./getCurrentPageNumber.js');
+const waitForDifferentPageNumber = require('./waitForDifferentPageNumber.js').waitForDifferentPageNumber;
 
 
 async function skipSomePagesIfNeeded (vars, funcs, page, pageData, paginated) {
@@ -31,7 +38,7 @@ async function skipSomePagesIfNeeded (vars, funcs, page, pageData, paginated) {
     // don't increment page till we've finished downloading pdfs.
     // only increment page if we're not done.
 
-    let currentPageNumber = await getCurrentPageNumber(vars, page);
+    let currentPageNumber = await waitForDifferentPageNumber(vars, page, previousPageNumber);
 
     // If we need to skip ahead a few pages
     // The right page is our goal page number
