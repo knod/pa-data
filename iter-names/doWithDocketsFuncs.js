@@ -1,7 +1,32 @@
 // doWithDocketsFuncs.js
 
+// // From `vars`
+// to add to world view
+// cpRowSelector  // (rowsSelector)
+// filingDateSelector
+
+// already in the picture
+// runData.startDate;
+// runData.endDate;
+// runData.throttle;
+// type;
+// linksSelector;
+// docketIDSelector;
+// nameIndex;
+// currentPage;
+// datesText;
+// requiredPrefix;  // regex for id in docket id
+// runData.usedDocketsPath;
+// runData.dataDirectory;
+// assignmentID;
+
+// Old
+// toDoWithDocketIDs
+
 // fs?
+const fs = require('fs');
 const puppeteer = require('puppeteer');
+const mkdirp = require('mkdirp');
 const request = require("request-promise-native");
 
 
@@ -10,26 +35,29 @@ const request = require("request-promise-native");
 let numPDFs = 0;
 let timeStartedRunning = Date.now();
 
+let cpRowSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow';
+
 
 
 // Do something with those docket table items
-async function doWithDockets (vars, funcs, page, nameIndex, currentPage) {
+async function doWithDockets (vars, funcs, page, nameIndex, currentPage, doWithRow) {
+  // maybe just put some of those into vars
 
-  const start = runData.startDate;
-  const end = runData.endDate;
-  const = usedDocketsPath = vars.runData.usedDocketsPath;
-  const = throttle = vars.runData.throttle;
+  const start = vars.runData.startDate;
+  const end = vars.runData.endDate;
+  const throttle = vars.runData.throttle;
+
+  // Other stuff
+  const type = vars.type;
 
   // Selectors
   const linksSelector = vars.linksSelector;
   const docketIDSelector = vars.docketIDSelector;
 
-  // Functions
-  const toDoWithDocketIDs = funcs.toDoWithDocketIDs;
+  // // Functions
+  // const toDoWithDocketIDs = funcs.toDoWithDocketIDs;
+  // const getFromRow = funcs.getFromRow;
 
-
-
-  // For later
   /// *** CHANGE THIS INTO META DATA (PDFs. Psh.)
   const dateTextParts = [
     start.substring(0, 2),  // startMonth
@@ -43,99 +71,230 @@ async function doWithDockets (vars, funcs, page, nameIndex, currentPage) {
 
   console.log(6);
 
-  await page.waitForSelector(docketIDSelector);
+  // await page.waitForSelector(docketIDSelector);
 
-  const docketIDTexts = await page.evaluate(
-    (docketIDSelector) => {
-      let ids = Array.from(
-        document.querySelectorAll(docketIDSelector),
-        element => element.innerText
-      )
-      return ids;
+  // const docketIDTexts = await page.evaluate(
+  //   (docketIDSelector) => {
+  //     let ids = Array.from(
+  //       document.querySelectorAll(docketIDSelector),
+  //       element => element.innerText
+  //     )
+  //     return ids;
+  //   },
+  //   docketIDSelector
+  // );
+
+  // console.log(7);
+
+  // // Maybe just pass in all the rows?
+  // await toDoWithDocketIDs(vars, page, docketIDTexts, datesText);
+
+
+
+
+  let rowSelector = null;
+  if (type === 'cp') {
+    rowSelector = cpRowSelector;
+  } else {
+    throw new Error('The program is not ready for MDJ assignments')
+  }
+
+  await page.waitForSelector(rowSelector);
+
+  // smells funny...
+  let moreVars = Object.assign({}, vars, {
+    nameIndex: nameIndex,
+    currentPage: currentPage,
+    datesText: datesText,
+  })
+
+  await page.evaluate(
+    (rowSelector, vars, doWithRow) => {
+
+      let rowElems = document.querySelectorAll(rowSelector);
+      let elemsList = rowElems.values();  // Is this a node list? or is this a speciall puppeteer thing?
+      console.log('rowElems.values().length:', elemsList.length);
+
+      for (let elem of elemsList) { 
+        console.log(elem.id);
+        await doWithRow(elem, vars);
+      }
+
+      // let allRowsData = Array.from(
+      //   document.querySelectorAll(rowSelector),
+      //   doWithRow,
+      //   vars
+      // );
     },
-    docketIDSelector
+    rowSelector, moreVars, doWithRow
   );
 
   console.log(7);
 
-  await toDoWithDocketIDs(vars, page, docketIDTexts, datesText);
+  // // Get what you want from rows?
+  // await getFromRows(vars, page, rowSelector);
+  // // Pass in all the rows?
+  // await toDoWithDocketIDs(vars, page, rowData, nameIndex, currentPage, datesText);
 
 };  // Ends async doWithDockets()
 
 
+// Could just download in here?
+async function doDownload (rowElem, vars) {
 
-async function doDownload (vars, page, docketIDTexts, datesText) {
+  const nameIndex = vars.nameIndex;
+  const currentPage = vars.currentPage;
+  const datesText = vars.datesText;
+  const usedDocketsPath = vars.runData.usedDocketsPath;
 
-  const linksSelector = vars.linksSelector;
+  // console.log('In doDownload vars prop:', vars.linksSelector);
 
-  // go down rows getting links and ids
-  await page.waitForSelector(linksSelector);
+  const docketIDSelector = 'td:nth-child(2)';
+  const linksSelector = 'td:nth-child(1)';
+  // const docketIDSelector = vars.docketIDSelector;
+  // const linksSelector = vars.linksSelector;
 
-  const linksText = await page.evaluate(
-    (linksSelector) => {
-      let links = Array.from(
-        document.querySelectorAll(linksSelector),
-        element => element.href
-      )
-      return links;
-    },
-    linksSelector  // argument
+  let id = rowElem.querySelector(docketIDSelector).innerText;
+  let links = Array.from(
+    rowElem.querySelectorAll(linksSelector),
+    element => element.href
   );
 
-  
-  // (Because the linksText list is twice as long)
-  let adder = 0;
+  let rowData = {
+    id: id,
+    docketLink: links[0],
+    summaryLink: links[1],
+  };
 
-  console.log(8);
-  // download both pdfs
-  for (let index = 0; index < docketIDTexts.length; index++) {
+  console.log('rowData:', rowData);
 
-    // See if docket was already gotten?
+  // See if docket was already gotten?
 
-    let id = docketIDTexts[index]
-    // We just want some kinds of data, or so they tell us
-    if (requiredPrefix.test(id)) {
-      let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + currentPage;
-      let datedText = text + datesText;
+  // We just want some kinds of data, or so they tell us
+  if (requiredPrefix.test(id)) {
+    let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + currentPage;
+    let datedText = text + datesText;
 
-      // save docket id for later reference
-      fs.appendFileSync(usedDocketsPath, datedText + '\n', function (anError) {
-        if (anError) console.log(anError);
-      });
-      console.log('docket id written:', text);
+    // save docket id for later reference
+    // Does the path need to be relative?
+    // path.join(__dirname, '../templates') (https://stackoverflow.com/a/13052018)
+    // var appRootDir = process.cwd() - windows? (https://stackoverflow.com/a/13060087)
+    // or put this in the root
+    fs.appendFileSync(usedDocketsPath, datedText + '\n', function (anError) {
+      if (anError) console.log(anError);
+    });
+    console.log('docket id written:', text);
 
-      // Download pdfs
-      await page.waitFor(throttle * 10);
-      await downloadPDF(vars, linksText[index + adder], text + '-docket.pdf');
-      // Because the linksText list is twice as long
-      console.log('docket #' + index, 'saved');
-      numPDFs++;
+    // Download pdfs
+    await page.waitFor(throttle * 10);  // Limit site wants to avoid 429
+    await downloadPDF(vars, rowData.docketLink, text + '-docket.pdf');
+    // Because the linksText list is twice as long
+    console.log('docket #' + rowIndex, 'saved this run');
+    numPDFs++;
 
-      adder++
+    await page.waitFor(throttle * 10);  // Limit site wants to avoid 429
+    await downloadPDF(vars, rowData.summaryLink, text + '-summary.pdf');
+    console.log('summary #' + rowIndex, 'saved this run');
+    numPDFs++;
 
-      await page.waitFor(throttle * 10);
-      await downloadPDF(vars, linksText[index + adder], text + '-summary.pdf');
-      console.log('summary #' + index, 'saved');
-      numPDFs++;
+    console.log('# pdfs downloaded:', numPDFs, ', time elapsed this run:', (Date.now() - timeStartedRunning)/1000, 'seconds');
+  }
 
-      console.log('# pdfs downloaded:', numPDFs, ', time elapsed:', (Date.now() - timeStartedRunning)/1000, 'seconds');
-    }
-  }  // ends for all dockets
+  return rowData;
 
 };  // Ends async doDownload()
 
 
+// async function doDownload (vars, page, rowData, nameIndex, currentPage, datesText) {
 
-async function doIDCollection (vars, page, docketIDTexts, datesText) {
-  // TODO
+//   // const linksSelector = vars.linksSelector;
+//   // const docketIDSelector = vars.docketIDSelector;
+//   const requiredPrefix = vars.requiredPrefix;
+//   const usedDocketsPath = vars.runData.usedDocketsPath;
+//   const throttle = vars.runData.throttle;
 
-};  // Ends async doIDCollection()
+//   // // go down rows getting links and ids
+//   // await page.waitForSelector(linksSelector);
+
+//   // // Get needed data for each row
+//   // let rowsData = [];
+//   // for (let rowElem of rowElems) {
+//   //   let oneRow = await page.evaluate(
+//   //     (linksSelector, docketIDSelector, rowElem) => {
+
+//   //       let id = rowElem.querySelector(docketIDSelector);
+
+//   //       let links = Array.from(
+//   //         rowElem.querySelectorAll(linksSelector),
+//   //         element => element.href
+//   //       )
+
+//   //       let rowData = {
+//   //         id: id,
+//   //         docketLink: links[0],
+//   //         summaryLink: links[1],
+//   //       };
+
+//   //       return rowData;
+//   //     },
+//   //     linksSelector, docketIDSelector, rowElem  // argument
+//   //   );
+
+//   //   rowsData.push(oneRow);
+//   // }
+
+//   for (let rowIndex = 0; rowIndex < rowData.length; rowIndex++) {
+
+//     let docket = rowData[rowIndex];
+//     let id = docket.id;
+
+//     // See if docket was already gotten?
+
+//     // We just want some kinds of data, or so they tell us
+//     if (requiredPrefix.test(id)) {
+//       let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + currentPage;
+//       let datedText = text + datesText;
+
+//       // save docket id for later reference
+//       // Does the path need to be relative?
+//       // path.join(__dirname, '../templates') (https://stackoverflow.com/a/13052018)
+//       // var appRootDir = process.cwd() - windows? (https://stackoverflow.com/a/13060087)
+//       // or put this in the root
+//       fs.appendFileSync(usedDocketsPath, datedText + '\n', function (anError) {
+//         if (anError) console.log(anError);
+//       });
+//       console.log('docket id written:', text);
+
+//       // Download pdfs
+//       await page.waitFor(throttle * 10);  // Limit site wants to avoid 429
+//       await downloadPDF(vars, docket.docketLink, text + '-docket.pdf');
+//       // Because the linksText list is twice as long
+//       console.log('docket #' + rowIndex, 'saved this run');
+//       numPDFs++;
+
+//       await page.waitFor(throttle * 10);  // Limit site wants to avoid 429
+//       await downloadPDF(vars, docket.summaryLink, text + '-summary.pdf');
+//       console.log('summary #' + rowIndex, 'saved this run');
+//       numPDFs++;
+
+//       console.log('# pdfs downloaded:', numPDFs, ', time elapsed this run:', (Date.now() - timeStartedRunning)/1000, 'seconds');
+//     }
+
+//   }  // ends for all dockets
+
+// };  // Ends async doDownload()
 
 
 
 async function downloadPDF (vars, pdfURL, outputFilename) {
 
   const dataDirectory = vars.runData.dataDirectory;
+
+  // save docket id for later reference
+  // Does the path need to be relative?
+  // path.join(__dirname, '../templates') (https://stackoverflow.com/a/13052018)
+  // var appRootDir = process.cwd() - windows? (https://stackoverflow.com/a/13060087)
+  // or put this in the root
 
   // console.log(pdfURL);
   let pdfBuffer = await request.get({
@@ -148,6 +307,64 @@ async function downloadPDF (vars, pdfURL, outputFilename) {
 
 
 
+
+let checkIDsPath = './IDsFound/';
+// IDsFound/cp/assignmentName.json
+// Create timestamp for assignment?
+
+// For now just create all the docket ids in each file
+// for each assignment. Later check them against each other
+async function makeIDCollection (rowElem, vars) {
+
+  console.log('makeIDCollection');
+  const requiredPrefix = vars.requiredPrefix;
+  const type = vars.runData.type;
+  // MAKE THIS!!! (Way up there when first called)
+  const assignmentID = vars.assignmentID;
+
+  let thisDir = checkIDsPath + type + '/';
+  mkdirp.sync(dataDirectory, function (err) {
+      if (err) { console.error(err); }
+  });
+  let thisPath = thisDir + assignmentID + '.json';
+
+  // where do we get the filename for all the dockets?
+  let pastDockets = require(thisPath);  // JSON - array? Object?
+  pastDockets = pastDockets || {};
+
+  // let cpFilingDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_caseList_ctl00_ctl00_filingDateLabel';
+  const docketIDSelector = 'td:nth-child(2)';
+  const filingDateSelector = 'td:nth-child(4)';
+
+  let id = rowElem.querySelector(docketIDSelector).innerText;
+  let filingDate = rowElem.querySelector(filingDateSelector).innerText;
+
+  let rowData = {
+    id: id,
+    filingDate: filingDate,
+    timestamp: Date.now(),
+  };
+
+  console.log('makeIDCollection rowData:', rowData);
+
+  // See if docket was already gotten?
+
+  // We just want some kinds of data, or so they tell us
+  if (requiredPrefix.test(id)) {
+    // Add data to a file
+    pastDockets[id] = rowData;
+    let json = JSON.stringify(pastDockets, null, 2);
+    fs.writeFileSync(thisPath, json);
+    // Should we collect all of this data and then write it all to
+    // a file outside of the loop?
+  }
+
+  // return rowData;
+};  // Ends async makeIDCollection()
+
+
+
 module.exports.doWithDockets = doWithDockets;
 module.exports.doDownload = doDownload;
-module.exports.doIDCollection = doIDCollection;
+module.exports.makeIDCollection = makeIDCollection;
+// module.exports.checkAgainstInitialIDCollection = checkAgainstInitialIDCollection;

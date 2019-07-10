@@ -6,8 +6,8 @@
   "startIndexRange": 9001,
   "endIndexRange": 10000,
   "position": {
-    "index": null,
-    "page": null
+    "index": 9005,
+    "page": 2
   },
   "completed": false,
   "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
@@ -16,5 +16,10 @@
   "wait": 600,
   "alerts": "yes",
   "redo": false,
-  "done": {}
+  "done": {
+    "9001": true,
+    "9002": true,
+    "9003": true,
+    "9004": true
+  }
 }

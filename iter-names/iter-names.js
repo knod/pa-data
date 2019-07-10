@@ -3,15 +3,39 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
+// // vars
+// nameIndex;  // global
+// names;
+// assignmentData;  // For now this gets mutated :/
+// runData;  // Used in this and its child processes from now on
+// throttle;
+// url;  // Remove after testing
+// searchTypeSelector;
+// searchTypeVal;
+// lastNameSelector;
+// firstNameSelector;  // Remove after testing
+// docketTypeSelector;  // Remove after testing
+// docketTypeVal;  // Remove after testing
+// startDateSelector;  // Remove after testing
+// endDateSelector;  // Remove after testing
+// searchSelector;
+// runData;
+// nextSelector;
+
+// // funcs
+// funcs.updateTimesRepeated;
+// funcs.updateAssignment;
+// funcs.toDoWithDocketRows;
+// funcs.updateAssignment;
+
+
 // In-house
 const alert = require('../alert.js');
 const setupSearch = require('./setupSearch.js').setupSearch;
 const checkForResults = require('./checkForResults.js').checkForResults;
 const skipSomePagesIfNeeded = require('./skipSomePagesIfNeeded.js').skipSomePagesIfNeeded;
-const doWithDocketsFuncs = require('./doWithDockets.js');
-const doWithDockets = doWithDocketsFuncs.doWithDockets;
-const doDownload = doWithDocketsFuncs.doDownload;
-const getCurrentPageNumber = require('./getCurrentPageNumber.js').getCurrentPageNumber;
+const doWithDocketsFuncs = require('./doWithDocketsFuncs.js');
+const doWithDocketsRows = doWithDocketsRowsFuncs.doWithDocketsRows;
 const arePagesDone = require('./arePagesDone.js').arePagesDone;
 
 // Global
@@ -47,11 +71,11 @@ async function iterNames (vars, funcs, page) {
   // Callback funcs
   const updateTimesRepeated = funcs.updateTimesRepeated;
   const updateAssignment = funcs.updateAssignment;
-  const toDoWithDocketIDs = funcs.toDoWithDocketIDs;
+  const toDoWithDocketRows = funcs.toDoWithDocketRows;
   console.log('type of func vars:' +
     '\n' + typeof updateTimesRepeated +
     '\n' + typeof updateAssignment +
-    '\n' + typeof toDoWithDocketIDs
+    '\n' + typeof toDoWithDocketRows
   );
 
   // Site-specific data
@@ -143,8 +167,6 @@ async function iterNames (vars, funcs, page) {
           {timeout: 15 * 60 * 1000}
         );
 
-        let currentPageNumber = 1;
-
         // TODO: Refactor to figure out pagination out here
 
         // See if there are multiple pages
@@ -152,8 +174,6 @@ async function iterNames (vars, funcs, page) {
         let paginated = await checkForPagination(vars, page);
 
         if (paginated) {
-
-          currentPageNumber = await getCurrentPageNumber(vars, page)
 
           // Skip pages till we get to the page we need
           // Yeah, we could make `skip` true by default, but
@@ -167,7 +187,7 @@ async function iterNames (vars, funcs, page) {
 
         console.log(5);
         // Once we're at the right page, get the PDFs
-        await doWithDockets(vars, funcs, page, nameIndex, currentPage, doDownload);
+        await doWithDocketsRows(vars, funcs, page, nameIndex, currentPage, doDownload);
 
         console.log(9);
         doneWithAllPages = true;  // might undo this in just a bit
@@ -221,9 +241,11 @@ async function iterNames (vars, funcs, page) {
 // For now it mutates both runData and assignmentData
 let nextIndex = function (vars, funcs, page) {
 
+  // nameIndex is global now
+
   // Run data
   const runData = vars.runData;
-  // nameIndex is global now
+  const assignmentData = vars.assignmentData;
 
   // Callback funcs
   const updateAssignment = funcs.updateAssignment;

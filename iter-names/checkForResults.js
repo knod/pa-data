@@ -1,5 +1,13 @@
 // checkForResults.js
 
+// // vars
+// runData.type;
+// resultsSelector;
+// noResultsSelector;
+// noResultsText;
+
+
+
 const puppeteer = require('puppeteer');
 
 

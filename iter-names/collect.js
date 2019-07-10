@@ -1,5 +1,13 @@
 // collect.js
 
+// // From `vars`
+// url;
+// doPlaySound;
+// assignmentPath;
+// toDoWithDocketRows
+// runData.assignmentID
+
+
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
@@ -27,8 +35,8 @@ async function collect (vars, previousBrowser, previousPage) {
   const page = await browser.newPage();
 
   // Vars
-  const url = vars.url;
-  const doPlaySound = vars.doPlaySound;
+  const url = vars.runData.url;
+  const doPlaySound = vars.runData.doPlaySound;
 
 
   const updateAssignment = function (assignmentData) {
@@ -36,8 +44,9 @@ async function collect (vars, previousBrowser, previousPage) {
     fs.writeFileSync(path, JSON.stringify(assignmentData, null, 2));
   };
   
+  // Funcs should be... just in `vars`?
   const funcs = {
-    toDoWithDocketIDs: vars.toDoWithDocketIDs,
+    toDoWithDocketRows: vars.toDoWithDocketRows,
     updateAssignment: updateAssignment,
     updateTimesRepeated: updateTimesRepeated,
   };
@@ -84,15 +93,13 @@ async function collect (vars, previousBrowser, previousPage) {
     await iterNames(vars, funcs, page)
       .then(async function(value){
         console.log('value:', value);
-        console.log('success');
-        if (doPlaySound !== 'no') {
-          alert.success();
-        }
+        console.log('SUCCESS! ASSIGNMENT DONE! :D :D :D');
+        if (doPlaySound !== 'no') { alert.success(); }
 
         try {
           await brower.close();
         } catch (anError) {
-          // probably already closed
+          // browser probably already closed
         }
         process.exit();
 
@@ -116,6 +123,8 @@ async function collect (vars, previousBrowser, previousPage) {
 
 
 async function waitThenRepeat (vars, browser, page, errStatusCode) {
+  let numRepeatsTillWaitForAnHour = 3;
+
   timesRepeated++;
   timesRepeated % 7;  // Will turn into 0
   console.log('timesRepeated:', timesRepeated);
@@ -123,42 +132,37 @@ async function waitThenRepeat (vars, browser, page, errStatusCode) {
   // // How to keep using the previous browser?
   // let keepGoing = function () {}
 
-  let repeat = function () {
+  let tryCollectAgain = function () {
     collect(vars, browser, page);
   }
 
   console.log(errStatusCode, typeof errStatusCode);
   if (errStatusCode === 429) {
-    // Website really means business with 429
-    // Don't know how long it needs. The 429 page didn't seem to show.
-    // This is a guess.
-    // Note: Still got 429 while on 500ms throttle (5 secs for pdfs)
-    // console.log('waiting 15 minutes @', getNowHHMM());
-    //   setTimeout(startNewBrowser, 900000);
-    timesRepeated = 3;
+    // With 429 (or 500?), site wants a break. Skip to waiting for an hour
+    timesRepeated = numRepeatsTillWaitForAnHour;
+  }
+
+  if (timesRepeated < numRepeatsTillWaitForAnHour) {
+    console.log('waiting 1 min @', getNowHHMM());
+    setTimeout(tryCollectAgain, 1 * 60 * 1000);
+
+  } else if (timesRepeated <= 5) {
+    console.log('waiting an hour @', getNowHHMM());
+    setTimeout(tryCollectAgain, 60 * 60 * 1000);
+
+  } else if (timesRepeated <= 6){
+    // wait 15 min
+    console.log('3 hours should have passed. Waiting 5 min @', getNowHHMM());
+    setTimeout(tryCollectAgain, 5 * 60 * 1000);
 
   } else {
-    if (timesRepeated <= 2) {
-      console.log('waiting 1 min @', getNowHHMM());
-      setTimeout(startNewBrowser, 1 * 60 * 1000);
-
-    } else if (timesRepeated <= 5) {
-      console.log('waiting an hour @', getNowHHMM());
-      setTimeout(startNewBrowser, 60 * 60 * 1000);
-
-    } else if (timesRepeated <= 6){
-      // wait 15 min
-      console.log('3 hours should have passed. Waiting 5 min @', getNowHHMM());
-      setTimeout(startNewBrowser, 5 * 60 * 1000);
-
-    } else {
-      // Final error
-      console.log("giving up");
-      alert.gaveUp();
-      await browser.close();
-      process.exit(1);
-    }
+    // Final error
+    console.log("giving up");
+    if (vars.doPlaySound !== 'no') { alert.gaveUp(); }
+    await browser.close();
+    process.exit(1);
   }
+
 };  // Ends async waitThenRepeat()
 
 

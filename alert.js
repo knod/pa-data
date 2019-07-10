@@ -2,25 +2,25 @@
 const player = require('play-sound')();
 
 let success = function () {
-  player.play('cluck.mp3', (err) => {
+  player.play('media/cluck.mp3', (err) => {
     if (err) console.log(`Could not play sound: ${err}`);
   });
 };
 
 let error = function () {
-  player.play('error.mp3', (err) => {
+  player.play('media/error.mp3', (err) => {
     if (err) console.log(`Could not play sound: ${err}`);
   });
 };
 
 let nameIndex = function () {
-  player.play('light.mp3', (err) => {
+  player.play('media/light.mp3', (err) => {
     if (err) console.log(`Could not play sound: ${err}`);
   });
 };
 
 let gaveUp = function () {
-  player.play('gave-up/gave-up.mp3', (err) => {
+  player.play('media/gave-up/gave-up.mp3', (err) => {
     if (err) console.log(`Could not play sound: ${err}`);
   });
 };
