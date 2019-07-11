@@ -10,6 +10,7 @@
 
 const fs = require('fs');
 const puppeteer = require('puppeteer');
+const colors = require('colors');
 
 // In-house
 const iterNames = require('./iterNames.js').iterNames;
@@ -38,14 +39,13 @@ async function collect (vars, previousBrowser, previousPage) {
   const url = vars.url;
   const assignmentPath = vars.assignmentPath;
   const doPlaySound = vars.runData.doPlaySound;
-  console.log('url:', url);
 
   const updateAssignment = function (assignmentData) {
     // Make sure it's not null or undefined or something
     if (assignmentData.startDate) {
       fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
     } else {
-      throw Error('This is bad assignmentData:', assignmentData);
+      throw Error('This is bad assignmentData:', JSON.stringify(assignmentData, null, 2));
     }
   };
   
@@ -54,6 +54,7 @@ async function collect (vars, previousBrowser, previousPage) {
     toDoWithDocketRows: vars.toDoWithDocketRows,
     updateAssignment: updateAssignment,
     updateTimesRepeated: updateTimesRepeated,
+    waitThenRepeat: waitThenRepeat,
   };
 
 
@@ -88,7 +89,7 @@ async function collect (vars, previousBrowser, previousPage) {
     let goto = await page.goto(url);
     console.log('Status:', goto.status());
     let status = goto.status();
-    if (status === 429 || status === 500) {
+    if (status === 429) {
       throw Error({
         message: 'Error code ' + status,
         statusCode: status
@@ -98,7 +99,7 @@ async function collect (vars, previousBrowser, previousPage) {
     // await page.screenshot({path: './collect/test.png'});
     // throw Error('test error');
 
-    await iterNames(vars, funcs, page)
+    await iterNames(vars, funcs, page, browser)
       .then(async function(value){
         console.log('Success value:', value);
         console.log('SUCCESS! ASSIGNMENT DONE! :D :D :D');
@@ -129,8 +130,20 @@ async function collect (vars, previousBrowser, previousPage) {
 };  // Ends async collect()
 
 
-
+let runningWaitThenRepeat = false;
 async function waitThenRepeat (vars, browser, page, errStatusCode) {
+
+  if (runningWaitThenRepeat === true) {
+    // Don't duplicate work
+    return;
+
+  // Otherwise indicate that we're now in the middle
+  // of running this.
+  } else {
+    runningWaitThenRepeat = true;
+  }
+
+
   let numRepeatsTillWaitForAnHour = 3;
 
   timesRepeated++;  // global
@@ -140,6 +153,8 @@ async function waitThenRepeat (vars, browser, page, errStatusCode) {
 
   // How to keep using the previous browser?
   let tryCollectAgain = function () {
+    runningWaitThenRepeat = false;  // In here? Surely not...
+    // Have to be done with... what?
     collect(vars, browser, page);
   }
 
@@ -148,6 +163,9 @@ async function waitThenRepeat (vars, browser, page, errStatusCode) {
     // With 429 (or 500?), site wants a break. Skip straight to waiting for an hour.
     // Note: Still got 429 while on 550ms throttle (5 secs for pdfs) sometimes.
     timesRepeated = numRepeatsTillWaitForAnHour;
+  } else if (errStatusCode === 500) {
+    browser.close();
+    browser = null;
   }
 
   if (timesRepeated < numRepeatsTillWaitForAnHour) {

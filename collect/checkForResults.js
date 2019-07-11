@@ -7,15 +7,15 @@
 // noResultsText;
 
 
-
 const puppeteer = require('puppeteer');
+
+// In-house
+const getNowHHMM = require('./getNowHHMM.js').getNowHHMM;
 
 
 // See which element is on the page when it finishes loading -
 // a results element or a no results element
 async function checkForResults (vars, page) {
-
-  page.on('console', consoleObj => console.log(consoleObj.text()));
 
   const type = vars.runData.type;
   // Selectors
@@ -26,18 +26,22 @@ async function checkForResults (vars, page) {
   let resultsStartTime = Date.now()
   console.log('start looking for result:', Date().toString());
 
-  // wait for results to load
-  let err = null;
+  // let err = null;
+
+  // wait for large results to load
+  console.log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
   let resultsElem = page.waitForSelector(
     resultsSelector,
-    { 'timeout': 2 * 60 * 1000}
+    {timeout: 15 * 60 * 1000}
   );
   let noResultsElem = null;
 
   // The two pages have two different html structures
   if (type === 'cp') {
-    noResultsElem = page.waitForSelector(noResultsSelector,
-      { 'timeout': 2 * 60 * 1000 });
+    noResultsElem = page.waitForSelector(
+      noResultsSelector,
+      { 'timeout': 2 * 60 * 1000 }  // This won't take as long we can hope
+    );
   } else {
     noResultsElem = page.waitFor(
       function (noResultsSelector, noResultsText) {
@@ -72,7 +76,7 @@ async function checkForResults (vars, page) {
       });
   } catch (anError) {
     console.log('no results or non-results elements found');
-    throw anError;
+    throw Error(anError);
   }
 
   let endTime = Date.now();
