@@ -8,3 +8,5 @@ node_modules/
 /cp-name-index.json
 /cp-named-dockets-used.txt
 /already-run.txt
+
+.gitignore
