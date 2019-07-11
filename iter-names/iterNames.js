@@ -46,26 +46,27 @@ async function iterNames (vars, funcs, page) {
   // await page.setViewport({width: 1920, height: 2000});  // for snapshot peeking
   page.on('console', consoleObj => console.log(consoleObj.text()));
 
+  const runData = vars.runData;  // Used in this and its child processes from now on
+  const assignmentData = vars.assignmentData;  // For now this gets mutated :/
+
   // Global vars
-  nameIndex = vars.nameIndex;  // global
+  nameIndex = runData.position.index || runData.startIndexRange;  // global
 
   // arg vars
-  const names = vars.names;
-  const assignmentData = vars.assignmentData;  // For now this gets mutated :/
-  const runData = vars.runData;  // Used in this and its child processes from now on
-  const namesEndIndex = runData.namesEndIndex;
+  const names = runData.names;
+  const namesEndIndex = runData.endIndexRange;
   const doPlaySound = runData.doPlaySound;
   const dates = runData.dates;  // Not needed. Remove after test.
-  const throttle = vars.throttle;
+  const throttle = runData.throttle;
   console.log('running data vars:' +
-    '\n' + names +
-    '\n' + nameIndex +
-    '\n' + runData +
-    '\n' + assignmentData +
-    '\n' + namesEndIndex +
-    '\n' + doPlaySound +
-    '\n' + dates +
-    '\n' + throttle
+    '\nnames: ' + names +
+    '\nnameIndex: ' + nameIndex +
+    '\nrunData: ' + runData +
+    '\nassignmentData: ' + assignmentData +
+    '\nnamesEndIndex: ' + namesEndIndex +
+    '\ndoPlaySound: ' + doPlaySound +
+    '\ndates: ' + dates +
+    '\nthrottle: ' + throttle
   );
 
   // Callback funcs
@@ -90,16 +91,16 @@ async function iterNames (vars, funcs, page) {
   const endDateSelector = vars.endDateSelector;  // Remove after testing
   const searchSelector = vars.searchSelector;
   console.log('site-specific vars:' +
-    '\n' + url +  // Remove after testing
-    '\n' + searchTypeSelector +
-    '\n' + searchTypeVal +
-    '\n' + lastNameSelector +
-    '\n' + firstNameSelector +
-    '\n' + docketTypeSelector +
-    '\n' + docketTypeVal +
-    '\n' + startDateSelector +
-    '\n' + endDateSelector +
-    '\n' + searchSelector
+    '\nurl: ' + url +  // Remove after testing
+    '\nsearchTypeSelector: ' + searchTypeSelector +
+    '\nsearchTypeVal: ' + searchTypeVal +
+    '\nlastNameSelector: ' + lastNameSelector +
+    '\nfirstNameSelector: ' + firstNameSelector +
+    '\ndocketTypeSelector: ' + docketTypeSelector +
+    '\ndocketTypeVal: ' + docketTypeVal +
+    '\nstartDateSelector: ' + startDateSelector +
+    '\nendDateSelector: ' + endDateSelector +
+    '\nsearchSelector: ' + searchSelector
   );
 
 
@@ -221,7 +222,7 @@ async function iterNames (vars, funcs, page) {
     }  // ends while this page not done
 
     console.log(18)
-    nextIndex(vars);
+    nextIndex(vars, funcs);
   }  // ends while name index not done
 
   // Record that this data was finished
@@ -239,7 +240,7 @@ async function iterNames (vars, funcs, page) {
 
 
 // For now it mutates both runData and assignmentData
-let nextIndex = function (vars, funcs, page) {
+let nextIndex = function (vars, funcs) {
 
   // nameIndex is global now
 
@@ -261,7 +262,7 @@ let nextIndex = function (vars, funcs, page) {
   // If we don't want to do redos, increase the index number
   // till we get to an index that we haven't done
   const weDoNotWantRedos = !runData.redo;
-  let alreadyBeenDone = true;
+  let alreadyBeenDone = true;  // To be clear, this is legit - this one _has_ already been done
 
   if (weDoNotWantRedos) {
     while (alreadyBeenDone && nameIndex <= runData.endIndexRange) {

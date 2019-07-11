@@ -19,7 +19,10 @@ async function setupSearch (vars, page, name) {
   console.log(name);
 
   // Run data
-  const dates = vars.runData.dates;
+  const dates = {
+    start: vars.runData.startDate,
+    end: vars.runData.endDate,
+  };
 
   // Selectors
   const lastNameSelector = vars.lastNameSelector;

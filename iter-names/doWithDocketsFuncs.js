@@ -36,7 +36,7 @@ let numPDFs = 0;
 let timeStartedRunning = Date.now();
 
 let cpRowSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow';
-
+'#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket > table > tbody > tr.gridViewRow'
 
 
 // Do something with those docket table items
@@ -53,6 +53,7 @@ async function doWithDockets (vars, funcs, page, nameIndex, currentPage, doWithR
   // Selectors
   const linksSelector = vars.linksSelector;
   const docketIDSelector = vars.docketIDSelector;
+  const rowSelector = vars.rowSelector;
 
   // // Functions
   // const toDoWithDocketIDs = funcs.toDoWithDocketIDs;
@@ -84,29 +85,18 @@ async function doWithDockets (vars, funcs, page, nameIndex, currentPage, doWithR
   //   docketIDSelector
   // );
 
-  // console.log(7);
-
-  // // Maybe just pass in all the rows?
-  // await toDoWithDocketIDs(vars, page, docketIDTexts, datesText);
-
-
-
-
-  let rowSelector = null;
-  if (type === 'cp') {
-    rowSelector = cpRowSelector;
-  } else {
-    throw new Error('The program is not ready for MDJ assignments')
-  }
-
-  await page.waitForSelector(rowSelector);
-
   // smells funny...
   let moreVars = Object.assign({}, vars, {
     nameIndex: nameIndex,
     currentPage: currentPage,
     datesText: datesText,
   })
+
+  // // Maybe just pass in all the rows?
+  // await toDoWithDocketIDs(vars, page, docketIDTexts, datesText);
+  await page.waitForSelector(rowSelector);
+
+  console.log(7);
 
   await page.evaluate(
     (rowSelector, vars, doWithRow) => {
@@ -142,17 +132,17 @@ async function doWithDockets (vars, funcs, page, nameIndex, currentPage, doWithR
 // Could just download in here?
 async function doDownload (rowElem, vars) {
 
+  const linksSelector = vars.linksSelector;
+  const idChildNum = vars.idChildNum;
   const nameIndex = vars.nameIndex;
   const currentPage = vars.currentPage;
   const datesText = vars.datesText;
   const usedDocketsPath = vars.runData.usedDocketsPath;
+  const requiredPrefix = vars.requiredPrefix;
+
+  const docketIDSelector = 'td:nth-child(' + idChildNum + ')';
 
   // console.log('In doDownload vars prop:', vars.linksSelector);
-
-  const docketIDSelector = 'td:nth-child(2)';
-  const linksSelector = 'td:nth-child(1)';
-  // const docketIDSelector = vars.docketIDSelector;
-  // const linksSelector = vars.linksSelector;
 
   let id = rowElem.querySelector(docketIDSelector).innerText;
   let links = Array.from(
@@ -315,12 +305,17 @@ let checkIDsPath = './IDsFound/';
 // For now just create all the docket ids in each file
 // for each assignment. Later check them against each other
 async function makeIDCollection (rowElem, vars) {
-
   console.log('makeIDCollection');
-  const requiredPrefix = vars.requiredPrefix;
+
+  // vars
   const type = vars.runData.type;
-  // MAKE THIS!!! (Way up there when first called)
   const assignmentID = vars.assignmentID;
+  const requiredPrefix = vars.requiredPrefix;
+  const idChildNum = vars.idChildNum;
+  const filingDateChildNum = vars.filingDateChildNum;
+
+
+  // All these paths should probably be worked out... elsewhere?
 
   let thisDir = checkIDsPath + type + '/';
   mkdirp.sync(dataDirectory, function (err) {
@@ -333,8 +328,8 @@ async function makeIDCollection (rowElem, vars) {
   pastDockets = pastDockets || {};
 
   // let cpFilingDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_caseList_ctl00_ctl00_filingDateLabel';
-  const docketIDSelector = 'td:nth-child(2)';
-  const filingDateSelector = 'td:nth-child(4)';
+  const docketIDSelector = 'td:nth-child(' + idChildNum + ')';
+  const filingDateSelector = 'td:nth-child(' + filingDateChildNum + ')';
 
   let id = rowElem.querySelector(docketIDSelector).innerText;
   let filingDate = rowElem.querySelector(filingDateSelector).innerText;

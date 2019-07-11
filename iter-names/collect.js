@@ -12,7 +12,7 @@ const fs = require('fs');
 const puppeteer = require('puppeteer');
 
 // In-house
-const iterNames = require('./iter-names.js').iterNames;
+const iterNames = require('./iterNames.js').iterNames;
 const alert = require('../alert.js');
 const getNowHHMM = require('./getNowHHMM.js').getNowHHMM;
 

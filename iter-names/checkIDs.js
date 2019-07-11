@@ -73,48 +73,54 @@ const puppeteer = require('puppeteer');
 const colors = require('colors');
 
 // In-house
-const getRunData = require('./getRunData').getRunData;
+const getRunData = require('./getRunData.js').getRunData;
+const getSiteVars = require('./siteVars.js').getSiteVars;
+const collect = require('./collect.js').collect;
 
 
 // From version 0.46.2. Please catch up
 let versionNumber = '\nv0.1.0\n';
 
 
-let vars = {};
-
 // get the assignment stuff
-const assignmentID = argvs[2];
-const assignmentPath = './assignments/' + assignmentID + '.json'
+const assignmentID = process.argv[2];
+const assignmentPath = '../assignments/' + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
 
-vars.assignmentID = assignmentID;
-vars.assignmentPath = assignmentPath;
-vars.assignmentData = assignmentData;
+// Assignment settings overrides
+const customSettings = process.argv[3];
 
-// Make vars
+// Make data for this run, combining assignment args and command line args
+let runData = getRunData(assignmentID, assignmentPath, assignmentData, customSettings);
 
-// date range?
-// name indexes?
-// page number?
-// etc...?
-// use it to get the site-specific data
+// // Assigning new stuff that makes sense to be in runData later on
+// // Not needed in checking IDs
+// const dataDirectory = runData.dataDirectory + assignmentID + '/';
+// runData.usedDocketsPath = dataDirectory + runData.type + runData.usedDocketsFileName;
 
-// get the names array
+// I honestly have no brainpower right now for figuring out where paths should come from
 
-// get the previously found docket ids list
+// Assigning new stuff that makes sense to be in runData later on
 
-// iterate through the names
+console.log('runData:\n', runData);
 
-  // iterate through the pages
-    // go to the page
-    // search for the name
-    // look for results
-    // record all docket ids that don't exist anymore in
-      // a time-stamp-named array that's a property on an
-      // object in a file? Same object every time?
-      // play an alert for it?
+// Too long to log
+runData.names = require(runData.namesPath);
 
 
+// Get cp vs mdj vars... yeah let's make those...
+let siteVars = getSiteVars(runData.type);
 
+let vars = {
+  ...siteVars,
+  runData: runData,
+  assignmentID: assignmentID,
+  assignmentPath: assignmentPath,
+  assignmentData: assignmentData,
+};
 
+// Get the previously found docket ids list
+// Nope, deal with that comparison later
 
+// Go get 'em!
+await collect(vars, null, null);
