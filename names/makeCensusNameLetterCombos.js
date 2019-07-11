@@ -2,9 +2,9 @@
 
 const fs = require('fs');
 
-const last1990 = require('./census1990LastNames.js');
-const last2000 = require('./census2000LastNames.js');
-const first1990 = require('./census1990FirstNames.js');
+const last1990 = require('./censusData/census1990LastNames.js');
+const last2000 = require('./censusData/census2000LastNames.js');
+const first1990 = require('./censusData/census1990FirstNames.js');
 
 // We're not actually going to split them into first
 // and last names. We're going to extract all the

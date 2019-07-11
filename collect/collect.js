@@ -11,8 +11,8 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
-// In-house
-const iterNames = require('./iterNames.js').iterNames;
+// // In-house
+// const iterNames = require('./iterNames.js').iterNames;
 const alert = require('../alert.js');
 const getNowHHMM = require('./getNowHHMM.js').getNowHHMM;
 
@@ -35,13 +35,18 @@ async function collect (vars, previousBrowser, previousPage) {
   const page = await browser.newPage();
 
   // Vars
-  const url = vars.runData.url;
+  const url = vars.url;
+  const assignmentPath = vars.assignmentPath;
   const doPlaySound = vars.runData.doPlaySound;
-
+  console.log('url:', url);
 
   const updateAssignment = function (assignmentData) {
-    let path = vars.assignmentPath;
-    fs.writeFileSync(path, JSON.stringify(assignmentData, null, 2));
+    // Make sure it's not null or undefined or something
+    if (assignmentData.startDate) {
+      fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
+    } else {
+      throw Error('This is bad assignmentData:', assignmentData);
+    }
   };
   
   // Funcs should be... just in `vars`?
@@ -90,11 +95,13 @@ async function collect (vars, previousBrowser, previousPage) {
       });
     }
 
-    await iterNames(vars, funcs, page)
-      .then(async function(value){
-        console.log('value:', value);
-        console.log('SUCCESS! ASSIGNMENT DONE! :D :D :D');
-        if (doPlaySound !== 'no') { alert.success(); }
+    // await page.screenshot({path: './collect/test.png'});
+
+    // await iterNames(vars, funcs, page)
+    //   .then(async function(value){
+    //     console.log('value:', value);
+    //     console.log('SUCCESS! ASSIGNMENT DONE! :D :D :D');
+    //     if (doPlaySound !== 'no') { alert.success(); }
 
         try {
           await brower.close();
@@ -103,7 +110,7 @@ async function collect (vars, previousBrowser, previousPage) {
         }
         process.exit();
 
-      });
+    //   });
 
   } catch (anError) {
 

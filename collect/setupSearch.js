@@ -19,9 +19,10 @@ async function setupSearch (vars, page, name) {
   console.log(name);
 
   // Run data
+  const datesData = vars.runData.dates;
   const dates = {
-    start: vars.runData.startDate,
-    end: vars.runData.endDate,
+    start: datesData.startDate,
+    end: datesData.endDate,
   };
 
   // Selectors

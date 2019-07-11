@@ -1,0 +1,21 @@
+{
+  "command": "node checkIDs.js cp01k09",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "07/10/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1001,
+  "position": {
+    "index": null,
+    "page": null
+  },
+  "completed": false,
+  "assignmentDirectory": "./pattern",
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "data-cp/checkIDs/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}

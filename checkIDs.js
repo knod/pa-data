@@ -73,9 +73,9 @@ const puppeteer = require('puppeteer');
 const colors = require('colors');
 
 // In-house
-const getRunData = require('./getRunData.js').getRunData;
-const getSiteVars = require('./siteVars.js').getSiteVars;
-const collect = require('./collect.js').collect;
+const getRunData = require('./collect/getRunData.js').getRunData;
+const getSiteVars = require('./collect/siteVars.js').getSiteVars;
+const collect = require('./collect/collect.js').collect;
 
 
 // From version 0.46.2. Please catch up
@@ -84,7 +84,7 @@ let versionNumber = '\nv0.1.0\n';
 
 // get the assignment stuff
 const assignmentID = process.argv[2];
-const assignmentPath = '../assignments/' + assignmentID + '.json'
+const assignmentPath = './assignments/pattern/' + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
 
 // Assignment settings overrides
@@ -123,4 +123,8 @@ let vars = {
 // Nope, deal with that comparison later
 
 // Go get 'em!
-await collect(vars, null, null);
+async function run () {
+  await collect(vars, null, null);
+}
+
+run();

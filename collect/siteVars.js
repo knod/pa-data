@@ -25,8 +25,8 @@ const cp = {
   requiredPrefix: /CP/,
 };  // ends cp
 
-cp.pageNumSelector = cp.paginationSelector + ' a[style="text-decoration:none;"]',
-cp.nextSelector = cp.paginationSelector + ' a:nth-last-child(2)',
+cp.pageNumSelector = cp.paginationSelector + ' a[style="text-decoration:none;"]';
+cp.nextSelector = cp.paginationSelector + ' a:nth-last-child(2)';
 
 
 // MDJ site stuff
@@ -54,8 +54,8 @@ const mdj = {
   requiredPrefix: /MJ/,
 };  // ends mdj
 
-mdj.nextSelector = mdj.paginationSelector + ' a:nth-last-child(2)',
-mdj.pageNumSelector = mdj.paginationSelector + ' a[style="text-decoration:none;"]',
+mdj.nextSelector = mdj.paginationSelector + ' a:nth-last-child(2)';
+mdj.pageNumSelector = mdj.paginationSelector + ' a[style="text-decoration:none;"]';
 
 
 const getSiteVars = function (type) {
