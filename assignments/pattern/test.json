@@ -1,10 +1,10 @@
 {
-  "command": "node checkIDs.js cp01k09",
+  "command": "node checkIDs.js test",
   "type": "cp",
   "startDate": "01/01/2009",
-  "endDate": "07/10/2019",
+  "endDate": "06/25/2019",
   "startIndexRange": 0,
-  "endIndexRange": 1001,
+  "endIndexRange": 3,
   "position": {
     "index": null,
     "page": null

@@ -75,6 +75,7 @@ const colors = require('colors');
 // In-house
 const getRunData = require('./collect/getRunData.js').getRunData;
 const getSiteVars = require('./collect/siteVars.js').getSiteVars;
+const makeIDCollection = require('./collect/doWithDocketsFuncs.js').makeIDCollection;
 const collect = require('./collect/collect.js').collect;
 
 
@@ -117,6 +118,7 @@ let vars = {
   assignmentID: assignmentID,
   assignmentPath: assignmentPath,
   assignmentData: assignmentData,
+  toDoWithDocketRows: makeIDCollection,
 };
 
 // Get the previously found docket ids list

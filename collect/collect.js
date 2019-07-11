@@ -11,8 +11,8 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
-// // In-house
-// const iterNames = require('./iterNames.js').iterNames;
+// In-house
+const iterNames = require('./iterNames.js').iterNames;
 const alert = require('../alert.js');
 const getNowHHMM = require('./getNowHHMM.js').getNowHHMM;
 
@@ -96,12 +96,13 @@ async function collect (vars, previousBrowser, previousPage) {
     }
 
     // await page.screenshot({path: './collect/test.png'});
+    // throw Error('test error');
 
-    // await iterNames(vars, funcs, page)
-    //   .then(async function(value){
-    //     console.log('value:', value);
-    //     console.log('SUCCESS! ASSIGNMENT DONE! :D :D :D');
-    //     if (doPlaySound !== 'no') { alert.success(); }
+    await iterNames(vars, funcs, page)
+      .then(async function(value){
+        console.log('Success value:', value);
+        console.log('SUCCESS! ASSIGNMENT DONE! :D :D :D');
+        if (doPlaySound !== 'no') { alert.success(); }
 
         try {
           await brower.close();
@@ -110,7 +111,7 @@ async function collect (vars, previousBrowser, previousPage) {
         }
         process.exit();
 
-    //   });
+      });
 
   } catch (anError) {
 
@@ -132,35 +133,35 @@ async function collect (vars, previousBrowser, previousPage) {
 async function waitThenRepeat (vars, browser, page, errStatusCode) {
   let numRepeatsTillWaitForAnHour = 3;
 
-  timesRepeated++;
+  timesRepeated++;  // global
   timesRepeated % 7;  // Will turn into 0
+  console.log('Hang tight, the code will work on taking care of this'.bgWhite.blue.underline.bold);
   console.log('timesRepeated:', timesRepeated);
 
-  // // How to keep using the previous browser?
-  // let keepGoing = function () {}
-
+  // How to keep using the previous browser?
   let tryCollectAgain = function () {
     collect(vars, browser, page);
   }
 
-  console.log(errStatusCode, typeof errStatusCode);
+  console.log('errStatusCode:', errStatusCode, typeof errStatusCode);
   if (errStatusCode === 429) {
-    // With 429 (or 500?), site wants a break. Skip to waiting for an hour
+    // With 429 (or 500?), site wants a break. Skip straight to waiting for an hour.
+    // Note: Still got 429 while on 550ms throttle (5 secs for pdfs) sometimes.
     timesRepeated = numRepeatsTillWaitForAnHour;
   }
 
   if (timesRepeated < numRepeatsTillWaitForAnHour) {
-    console.log('waiting 1 min @', getNowHHMM());
-    setTimeout(tryCollectAgain, 1 * 60 * 1000);
+    console.log('Waiting 1 min'.bgWhite.blue + ' @', getNowHHMM());
+    setTimeout(tryCollectAgain, 1 * 60)// * 1000);
 
   } else if (timesRepeated <= 5) {
-    console.log('waiting an hour @', getNowHHMM());
-    setTimeout(tryCollectAgain, 60 * 60 * 1000);
+    console.log('We\'re still cool. Waiting 1 hour and 5 min'.bgWhite.blue + ' @', getNowHHMM());
+    setTimeout(tryCollectAgain, 65)// * 60 * 1000);
 
   } else if (timesRepeated <= 6){
-    // wait 15 min
-    console.log('3 hours should have passed. Waiting 5 min @', getNowHHMM());
-    setTimeout(tryCollectAgain, 5 * 60 * 1000);
+    // wait 5 min
+    console.log('3 hours should have passed. Last try. Waiting 5 min'.bgWhite.blue + ' @', getNowHHMM());
+    setTimeout(tryCollectAgain, 5)// * 60 * 1000);
 
   } else {
     // Final error

@@ -99,7 +99,7 @@ async function doWithDockets (vars, funcs, page, nameIndex, currentPage, doWithR
   console.log(7);
 
   await page.evaluate(
-    (rowSelector, vars, doWithRow) => {
+    async function (rowSelector, vars, doWithRow) {
 
       let rowElems = document.querySelectorAll(rowSelector);
       let elemsList = rowElems.values();  // Is this a node list? or is this a speciall puppeteer thing?

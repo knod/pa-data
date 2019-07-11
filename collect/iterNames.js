@@ -14,10 +14,6 @@ const puppeteer = require('puppeteer');
 // searchTypeVal;
 // lastNameSelector;
 // firstNameSelector;  // Remove after testing
-// docketTypeSelector;  // Remove after testing
-// docketTypeVal;  // Remove after testing
-// startDateSelector;  // Remove after testing
-// endDateSelector;  // Remove after testing
 // searchSelector;
 // runData;
 // nextSelector;
@@ -25,18 +21,19 @@ const puppeteer = require('puppeteer');
 // // funcs
 // funcs.updateTimesRepeated;
 // funcs.updateAssignment;
-// funcs.toDoWithDocketRows;
-// funcs.updateAssignment;
 
 
-// In-house
+// // In-house
 const alert = require('../alert.js');
-const setupSearch = require('./setupSearch.js').setupSearch;
-const checkForResults = require('./checkForResults.js').checkForResults;
-const skipSomePagesIfNeeded = require('./skipSomePagesIfNeeded.js').skipSomePagesIfNeeded;
-const doWithDocketsFuncs = require('./doWithDocketsFuncs.js');
-const doWithDocketsRows = doWithDocketsRowsFuncs.doWithDocketsRows;
-const arePagesDone = require('./arePagesDone.js').arePagesDone;
+const setupSearches = require('./setupSearches.js');
+const setupSiteSearchValues = setupSearches.setupSiteSearchValues;
+const setupNameSearch = setupSearches.setupNameSearch;
+const getNowHHMM = require('./getNowHHMM.js').getNowHHMM;
+// const checkForResults = require('./checkForResults.js').checkForResults;
+// const skipSomePagesIfNeeded = require('./skipSomePagesIfNeeded.js').skipSomePagesIfNeeded;
+// const doWithDocketsFuncs = require('./doWithDocketsFuncs.js');
+// const doWithDocketsRows = doWithDocketsRowsFuncs.doWithDocketsRows;
+// const arePagesDone = require('./arePagesDone.js').arePagesDone;
 
 // Global
 let nameIndex = null;
@@ -54,184 +51,155 @@ async function iterNames (vars, funcs, page) {
 
   // arg vars
   const names = runData.names;
-  const namesEndIndex = runData.endIndexRange;
-  const doPlaySound = runData.doPlaySound;
-  const dates = runData.dates;  // Not needed. Remove after test.
-  const throttle = runData.throttle;
-  console.log('running data vars:' +
-    '\nnames: ' + names +
-    '\nnameIndex: ' + nameIndex +
-    '\nrunData: ' + runData +
-    '\nassignmentData: ' + assignmentData +
-    '\nnamesEndIndex: ' + namesEndIndex +
-    '\ndoPlaySound: ' + doPlaySound +
-    '\ndates: ' + dates +
-    '\nthrottle: ' + throttle
-  );
+  const namesEndIndex = runData.endIndexRange;  // Inclusive √
+  const doPlaySound = runData.alerts;
+  const throttle = runData.wait;
 
   // Callback funcs
   const updateTimesRepeated = funcs.updateTimesRepeated;
   const updateAssignment = funcs.updateAssignment;
-  const toDoWithDocketRows = funcs.toDoWithDocketRows;
-  console.log('type of func vars:' +
-    '\n' + typeof updateTimesRepeated +
-    '\n' + typeof updateAssignment +
-    '\n' + typeof toDoWithDocketRows
-  );
 
   // Site-specific data
-  const url = vars.url;  // Remove after testing
-  const searchTypeSelector = vars.searchTypeSelector;
+  const searchTypeSelector = vars.searchTypeSelector; 
   const searchTypeVal = vars.searchTypeVal;
   const lastNameSelector = vars.lastNameSelector;
-  const firstNameSelector = vars.firstNameSelector;  // Remove after testing
-  const docketTypeSelector = vars.docketTypeSelector;  // Remove after testing
-  const docketTypeVal = vars.docketTypeVal;  // Remove after testing
-  const startDateSelector = vars.startDateSelector;  // Remove after testing
-  const endDateSelector = vars.endDateSelector;  // Remove after testing
   const searchSelector = vars.searchSelector;
-  console.log('site-specific vars:' +
-    '\nurl: ' + url +  // Remove after testing
-    '\nsearchTypeSelector: ' + searchTypeSelector +
-    '\nsearchTypeVal: ' + searchTypeVal +
-    '\nlastNameSelector: ' + lastNameSelector +
-    '\nfirstNameSelector: ' + firstNameSelector +
-    '\ndocketTypeSelector: ' + docketTypeSelector +
-    '\ndocketTypeVal: ' + docketTypeVal +
-    '\nstartDateSelector: ' + startDateSelector +
-    '\nendDateSelector: ' + endDateSelector +
-    '\nsearchSelector: ' + searchSelector
-  );
 
 
   await page.waitForSelector(searchTypeSelector)
   // If the page is back, we can start the repeat count again.
-  updateTimesRepeated(0);  // global var in here?
+  updateTimesRepeated(0);
 
-  // Fill in fields
+  // Should only have to do these onces once per site load
+  await setupSiteSearchValues(vars, page);
 
-  // Select search by name
-  await page.select(
-    searchTypeSelector,
-    searchTypeVal
-  );
+  // while (nameIndex <= namesEndIndex) {
 
-  while (nameIndex <= namesEndIndex) {
-
-    await page.waitFor(throttle * 1);
-    // Make sure the page is there
-    await page.waitForSelector(lastNameSelector);
+  //   // Not needed anymore?
+  //   await page.waitFor(throttle * 1);
+  //   // Make sure the page is there
+  //   await page.waitForSelector(lastNameSelector);
 
     console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
     if (doPlaySound !== 'no') { alert.nameIndex(); }
 
     let name = names[nameIndex];
 
-    await setupSearch(vars, page, name);
+    await setupNameSearch(vars, page, name);
+    // Click to run search
     await page.click(searchSelector);
 
-    // Look through the page for relevant files
-    let doneWithAllPages = false;
-    let pageData = {skip: false, previous: null};
-    while (!doneWithAllPages) {
+    console.log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
+    await page.waitForSelector(
+      searchSelector,
+      // For large results
+      {timeout: 15 * 60 * 1000}
+    );
 
-      console.log('new page'.bgYellow);
+    await page.screenshot({path: './collect/test.png'});
 
-      // TODO: Needed?
-      // See the page we were last one when the program stopped
-      let previousPageNumber = pageData.previous;
-      console.log('Previous page: '.yellow, previousPageNumber);
+  //   // Look through the page for relevant files
+  //   let doneWithAllPages = false;
+  //   let pageData = {skip: false, previous: null};
+  //   while (!doneWithAllPages) {
 
-      // Wait till results load, if any
-      let resultsElementFound = await checkForResults(vars, page);
-      // If no results found for this name, we're done with it
-      doneWithAllPages = !resultsElementFound;
+  //     // wait for something? Or is that happening somewhere else?
+  //     console.log('new page'.bgYellow);
 
-      // // To clarify following code:
-      // // Basically, move on if there are no results.
-      // if (doneWithAllPages) {
-      //   pageData = {previous: null, skip: false};
-      //   break;
-      // }
+  //     // TODO: Needed? Elsewhere? In skipPagesIfNeeded?
+  //     // See the page we were last one when the program stopped
+  //     let previousPageNumber = pageData.previous;
+  //     console.log('Previous page: '.yellow, previousPageNumber);
 
-      // Keep doing stuff if there were results for this name
-      if (!doneWithAllPages) {
+  //     // Wait till results load, if any
+  //     let resultsElementFound = await checkForResults(vars, page);
+  //     // If no results found for this name, we're done with it
+  //     doneWithAllPages = !resultsElementFound;
 
-        // // apparently this seems to go too fast otherwise somehow and give itself an error...
-        // // it doesn't even seem to actually wait for a full timeout
-        // await page.waitFor(throttle/2);
-        // This doesn't actually seem to wait for some reason. Is that
-        // because it was found before?
-        await page.waitForSelector(
-          searchSelector,
-          // For large results
-          {timeout: 15 * 60 * 1000}
-        );
+  //     // // To clarify following code:
+  //     // // Basically, move on if there are no results.
+  //     // if (doneWithAllPages) {
+  //     //   pageData = {previous: null, skip: false};
+  //     //   break;
+  //     // }
 
-        // TODO: Refactor to figure out pagination out here
+  //     // Keep doing stuff if there were results for this name
+  //     if (!doneWithAllPages) {
 
-        // See if there are multiple pages
-        // ....we're on the last page of multiple pages?
-        let paginated = await checkForPagination(vars, page);
+  //       // // apparently this seems to go too fast otherwise somehow and give itself an error...
+  //       // // it doesn't even seem to actually wait for a full timeout
+  //       // await page.waitFor(throttle/2);
+  //       // We need to check on it for each page
+  //       await page.waitForSelector(
+  //         searchSelector,
+  //         // For large results
+  //         {timeout: 15 * 60 * 1000}
+  //       );
 
-        if (paginated) {
+  //       // TODO: Refactor to figure out pagination out here
 
-          // Skip pages till we get to the page we need
-          // Yeah, we could make `skip` true by default, but
-          // I think it's more confusing. Anyway, works better
-          // for iteration return value.
-          pageData = await skipSomePagesIfNeeded(vars, funcs, page, pageData, paginated);
-          while (pageData.skip) {
-            pageData = await skipSomePagesIfNeeded(vars, funcs, page, pageData, paginated)
-          }
-        }
+  //       // See if there are multiple pages
+  //       // ....we're on the last page of multiple pages?
+  //       let paginated = await checkForPagination(vars, page);
 
-        console.log(5);
-        // Once we're at the right page, get the PDFs
-        await doWithDocketsRows(vars, funcs, page, nameIndex, currentPage, doDownload);
+  //       if (paginated) {
 
-        console.log(9);
-        doneWithAllPages = true;  // might undo this in just a bit
+  //         // Skip pages till we get to the page we need
+  //         // Yeah, we could make `skip` true by default, but
+  //         // I think it's more confusing. Anyway, works better
+  //         // for iteration return value.
+  //         pageData = await skipSomePagesIfNeeded(vars, funcs, page, pageData, paginated);
+  //         while (pageData.skip) {
+  //           pageData = await skipSomePagesIfNeeded(vars, funcs, page, pageData, paginated)
+  //         }
+  //       }
 
-        // May not be done if paginated
-        if (paginated) {
+  //       console.log(5);
+  //       // Once we're at the right page, get the PDFs
+  //       await doWithDocketsRows(vars, funcs, page, nameIndex, currentPage, doDownload);
 
-          doneWithAllPages = await arePagesDone(vars, funcs, page);
+  //       console.log(9);
+  //       doneWithAllPages = true;  // might undo this in just a bit
 
-          if (doneWithAllPages) {
-            console.log(13);
-            // If there are still more pages to go, add another page number
-            // and store it (we're going on to the next page)
-            runData.position.page += 1;
-            // Don't store other custom command line arguments, though
-            assignmentData.position.page += 1;
-            // fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
-            updateAssignment(assignmentData);  // writes to a file
+  //       // May not be done if paginated
+  //       if (paginated) {
 
-          } else {
-            console.log(14);
-            // Nothing fancy, just click the 'next' button
-            let nextButton = paginationSelector + ' a:nth-last-child(2)';
-            await page.click(nextButton);
-          }
+  //         doneWithAllPages = await arePagesDone(vars, funcs, page);
 
-        }  // ends if paginated
+  //         if (doneWithAllPages) {
+  //           console.log(13);
+  //           // If there are still more pages to go, add another page number
+  //           // and store it (we're going on to the next page)
+  //           runData.position.page += 1;
+  //           // Don't store other custom command line arguments, though
+  //           assignmentData.position.page += 1;
+  //           // fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
+  //           updateAssignment(assignmentData);  // writes to a file
 
-      }  // ends if not done with all pages
+  //         } else {
+  //           console.log(14);
+  //           // Nothing fancy, just click the 'next' button
+  //           let nextButton = paginationSelector + ' a:nth-last-child(2)';
+  //           await page.click(nextButton);
+  //         }
 
-    }  // ends while this page not done
+  //       }  // ends if paginated
 
-    console.log(18)
-    nextIndex(vars, funcs);
-  }  // ends while name index not done
+  //     }  // ends if not done with all pages
 
-  // Record that this data was finished
-  assignmentData.completed = true;
-  // fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
-  updateAssignment(assignmentData);  // writes to a file
+  //   }  // ends while this page not done
 
-  console.log(19);
-  console.log('previous name:', name);
+  //   console.log(18)
+  //   nextIndex(vars, funcs);
+  // }  // ends while name index not done
+
+  // // Record that this data was finished
+  // assignmentData.completed = true;
+  // // fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
+  // updateAssignment(assignmentData);  // writes to a file
+
+  // console.log(19);
+  // console.log('previous name:', name);
   return;
 };  // Ends iterNames()
 
