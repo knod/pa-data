@@ -1,0 +1,20 @@
+{
+  "command": "node cp-names3.js cp12k17",
+  "type": "cp",
+  "startDate": "01/01/2017",
+  "endDate": "12/31/2018",
+  "startIndexRange": 11001,
+  "endIndexRange": 12000,
+  "position": {
+    "index": null,
+    "page": null
+  },
+  "completed": false,
+  "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
+  "dataDirectory": "data-cp/2017-2018-randomized-alternating-nonmatching/",
+  "usedDocketsFileName": "-dockets-used.txt",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
