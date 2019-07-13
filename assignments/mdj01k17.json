@@ -6,8 +6,8 @@
   "startIndexRange": 0,
   "endIndexRange": 1000,
   "position": {
-    "index": 682,
-    "page": 19
+    "index": 683,
+    "page": 1
   },
   "completed": false,
   "namesPath": "./names/mdj_1_see_data-mdj_readme.json",
@@ -698,6 +698,7 @@
     "678": true,
     "679": true,
     "680": true,
-    "681": true
+    "681": true,
+    "682": true
   }
 }
