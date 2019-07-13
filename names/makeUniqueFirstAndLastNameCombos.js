@@ -3,9 +3,9 @@
 const fs = require('fs');
 
 // In-house
-const last1990 = require('./census1990LastNames.js');
-const last2000 = require('./census2000LastNames.js');
-const first1990 = require('./census1990FirstNames.js');
+const last1990 = require('./censusData/census1990LastNames.js');
+const last2000 = require('./censusData/census2000LastNames.js');
+const first1990 = require('./censusData/census1990FirstNames.js');
 
 
 let putUniqueInCombos = function (arrAccumulator, objAccumulator, nameArr) {

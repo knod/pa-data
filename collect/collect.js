@@ -10,9 +10,10 @@
 
 const fs = require('fs');
 const puppeteer = require('puppeteer');
+const colors = require('colors');
 
 // In-house
-const iterNames = require('./iter-names.js').iterNames;
+const iterNames = require('./iterNames.js').iterNames;
 const alert = require('../alert.js');
 const getNowHHMM = require('./getNowHHMM.js').getNowHHMM;
 
@@ -35,13 +36,17 @@ async function collect (vars, previousBrowser, previousPage) {
   const page = await browser.newPage();
 
   // Vars
-  const url = vars.runData.url;
+  const url = vars.url;
+  const assignmentPath = vars.assignmentPath;
   const doPlaySound = vars.runData.doPlaySound;
 
-
   const updateAssignment = function (assignmentData) {
-    let path = vars.assignmentPath;
-    fs.writeFileSync(path, JSON.stringify(assignmentData, null, 2));
+    // Make sure it's not null or undefined or something
+    if (assignmentData.startDate) {
+      fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
+    } else {
+      throw Error('This is bad assignmentData:', JSON.stringify(assignmentData, null, 2));
+    }
   };
   
   // Funcs should be... just in `vars`?
@@ -49,6 +54,7 @@ async function collect (vars, previousBrowser, previousPage) {
     toDoWithDocketRows: vars.toDoWithDocketRows,
     updateAssignment: updateAssignment,
     updateTimesRepeated: updateTimesRepeated,
+    waitThenRepeat: waitThenRepeat,
   };
 
 
@@ -83,16 +89,19 @@ async function collect (vars, previousBrowser, previousPage) {
     let goto = await page.goto(url);
     console.log('Status:', goto.status());
     let status = goto.status();
-    if (status === 429 || status === 500) {
+    if (status === 429) {
       throw Error({
         message: 'Error code ' + status,
         statusCode: status
       });
     }
 
-    await iterNames(vars, funcs, page)
+    // await page.screenshot({path: './collect/test.png'});
+    // throw Error('test error');
+
+    await iterNames(vars, funcs, page, browser)
       .then(async function(value){
-        console.log('value:', value);
+        console.log('Success value:', value);
         console.log('SUCCESS! ASSIGNMENT DONE! :D :D :D');
         if (doPlaySound !== 'no') { alert.success(); }
 
@@ -121,39 +130,56 @@ async function collect (vars, previousBrowser, previousPage) {
 };  // Ends async collect()
 
 
-
+let runningWaitThenRepeat = false;
 async function waitThenRepeat (vars, browser, page, errStatusCode) {
+
+  if (runningWaitThenRepeat === true) {
+    // Don't duplicate work
+    return;
+
+  // Otherwise indicate that we're now in the middle
+  // of running this.
+  } else {
+    runningWaitThenRepeat = true;
+  }
+
+
   let numRepeatsTillWaitForAnHour = 3;
 
-  timesRepeated++;
+  timesRepeated++;  // global
   timesRepeated % 7;  // Will turn into 0
+  console.log('Hang tight, the code will work on taking care of this'.bgWhite.blue.underline.bold);
   console.log('timesRepeated:', timesRepeated);
 
-  // // How to keep using the previous browser?
-  // let keepGoing = function () {}
-
+  // How to keep using the previous browser?
   let tryCollectAgain = function () {
+    runningWaitThenRepeat = false;  // In here? Surely not...
+    // Have to be done with... what?
     collect(vars, browser, page);
   }
 
-  console.log(errStatusCode, typeof errStatusCode);
+  console.log('errStatusCode:', errStatusCode, typeof errStatusCode);
   if (errStatusCode === 429) {
-    // With 429 (or 500?), site wants a break. Skip to waiting for an hour
+    // With 429 (or 500?), site wants a break. Skip straight to waiting for an hour.
+    // Note: Still got 429 while on 550ms throttle (5 secs for pdfs) sometimes.
     timesRepeated = numRepeatsTillWaitForAnHour;
+  } else if (errStatusCode === 500) {
+    browser.close();
+    browser = null;
   }
 
   if (timesRepeated < numRepeatsTillWaitForAnHour) {
-    console.log('waiting 1 min @', getNowHHMM());
-    setTimeout(tryCollectAgain, 1 * 60 * 1000);
+    console.log('Waiting 1 min'.bgWhite.blue + ' @', getNowHHMM());
+    setTimeout(tryCollectAgain, 1 * 60)// * 1000);
 
   } else if (timesRepeated <= 5) {
-    console.log('waiting an hour @', getNowHHMM());
-    setTimeout(tryCollectAgain, 60 * 60 * 1000);
+    console.log('We\'re still cool. Waiting 1 hour and 5 min'.bgWhite.blue + ' @', getNowHHMM());
+    setTimeout(tryCollectAgain, 65)// * 60 * 1000);
 
   } else if (timesRepeated <= 6){
-    // wait 15 min
-    console.log('3 hours should have passed. Waiting 5 min @', getNowHHMM());
-    setTimeout(tryCollectAgain, 5 * 60 * 1000);
+    // wait 5 min
+    console.log('3 hours should have passed. Last try. Waiting 5 min'.bgWhite.blue + ' @', getNowHHMM());
+    setTimeout(tryCollectAgain, 5)// * 60 * 1000);
 
   } else {
     // Final error
