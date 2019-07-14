@@ -11,62 +11,56 @@ const puppeteer = require('puppeteer');
 const colors = require('colors');
 
 // In-house
-const waitForDifferentPageNumber = require('./waitForDifferentPageNumber.js').waitForDifferentPageNumber;
+const waitForCurrentPageNumber = require('./waitForCurrentPageNumber.js').waitForCurrentPageNumber;
+const getNowHHMM = require('./getNowHHMM.js').getNowHHMM;
 
 
-async function skipSomePagesIfNeeded (vars, funcs, page, pageData, paginated) {
+async function skipSomePagesIfNeeded (vars, funcs, page, pageData) {
+  // have to be paginated to get in here
+
+  // PAGINATION
+  // don't download pdfs till we know we're on the right page.
+  // don't increment page till we've finished downloading pdfs.
+  // only increment page if we're not done.
 
   const tableSelector = vars.tableSelector;
   const pageNumSelector = vars.pageNumSelector;
-
-  page.on('console', consoleObj => console.log(consoleObj.text()));
 
   // See the page we were last one when the program stopped
   let previousPageNumber = pageData.previous;
   console.log('Previous page: '.yellow, previousPageNumber);
 
-  // Do we still need this? Table contains docket ids and links
-  await page.waitForSelector(tableSelector);
+  console.log('Waiting up to 15 min for search selector to load with large results'.bgWhite.blue + ' @', getNowHHMM());
+  await page.waitForSelector(
+    pageNumSelector,
+    // For large results
+    {timeout: 15 * 60 * 1000}
+  );
 
-  console.log(4);
+  // let currentPageNumber = await waitForCurrentPageNumber(vars, page, previousPageNumber);
 
-  if (paginated) {
-    console.log('multiple pages found');
+  // // Look to see if our goal page number is in the nav menu
+  // // If all pages listed are lower, click the highest one
+  // // and return to prevous function to do another loop
+  // // with `done` being `false`
+  // let skipData = await findSkipping(vars, page, previousPageNumber);
+  // console.log('skipData:', skipData);
 
-    // PAGINATION
-    // don't download pdfs till we know we're on the right page.
-    // don't increment page till we've finished downloading pdfs.
-    // only increment page if we're not done.
+  // // If we need to keep looking for our goal page,
+  // // click on a new page and cycle through this again
+  // if (skipData.skip === false) {
+  //   return {skip: false, previous: skipData.newPageNumber};
+    return {skip: false, previous: 1};
 
-    let currentPageNumber = await waitForDifferentPageNumber(vars, page, previousPageNumber);
+  // } else if (skipData.skip === true) {
+  //   console.log('clicking to a new page');
+  //   previousPageNumber = skipData.newPageNumber;
+  //   await page.click(skipData.selector);
+  //   return {skip: true, previous: skipData.newPageNumber};
 
-    // If we need to skip ahead a few pages
-    // The right page is our goal page number
-    // Look to see if our goal page number is in the nav menu
-    // If all pages listed are lower, click the highest one
-    // and return to prevous function to do another loop
-    // with `done` being `false`
-    let skipData = await findSkipping(vars, page, previousPageNumber);
-    console.log('skipData:', skipData);
-
-    // If we need to keep looking for our goal page,
-    // click on a new page and cycle through this again
-    if (skipData.skip === false) {
-      return {skip: false, previous: skipData.newPageNumber};
-
-    } else if (skipData.skip === true) {
-      console.log('clicking to a new page');
-      previousPageNumber = skipData.newPageNumber;
-      await page.click(skipData.selector);
-      return {skip: true, previous: skipData.newPageNumber};
-
-    } else {
-      console.log('What\'s going on with our `skipData`?');
-    }
-  } else {
-    // Otherwise it's not paginated
-    return {skip: false, previous: null}
-  }
+  // } else {
+  //   console.log('What\'s going on with our `skipData`?');
+  // }
 
 };  // Ends async skipSomePagesIfNeeded()
 

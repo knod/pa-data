@@ -40,7 +40,7 @@ let cpRowSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicCont
 
 
 // Do something with those docket table items
-async function doWithDockets (vars, funcs, page, nameIndex, currentPage, doWithRow) {
+async function doWithDocketRows (vars, funcs, page, nameIndex, currentPage, doWithRow) {
   // maybe just put some of those into vars
 
   const start = vars.runData.startDate;
@@ -126,7 +126,7 @@ async function doWithDockets (vars, funcs, page, nameIndex, currentPage, doWithR
   // // Pass in all the rows?
   // await toDoWithDocketIDs(vars, page, rowData, nameIndex, currentPage, datesText);
 
-};  // Ends async doWithDockets()
+};  // Ends async doWithDocketRows()
 
 
 // Could just download in here?
@@ -359,7 +359,7 @@ async function makeIDCollection (rowElem, vars) {
 
 
 
-module.exports.doWithDockets = doWithDockets;
+module.exports.doWithDocketRows = doWithDocketRows;
 module.exports.doDownload = doDownload;
 module.exports.makeIDCollection = makeIDCollection;
 // module.exports.checkAgainstInitialIDCollection = checkAgainstInitialIDCollection;

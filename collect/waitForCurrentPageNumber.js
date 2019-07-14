@@ -1,4 +1,4 @@
-// waitForDifferentPageNumber.js
+// waitForCurrentPageNumber.js
 
 // // vars
 // pageNumSelector
@@ -7,7 +7,7 @@
 const puppeteer = require('puppeteer');
 
 
-async function waitForDifferentPageNumber (vars, page, previousPageNumber) {
+async function waitForCurrentPageNumber (vars, page, previousPageNumber) {
 
   const pageNumSelector = vars.pageNumSelector;
 
@@ -36,7 +36,7 @@ async function waitForDifferentPageNumber (vars, page, previousPageNumber) {
   console.log('waited for current page:', currentPageNumber);
 
   return currentPageNumber;
-};  // Ends async waitForDifferentPageNumber()
+};  // Ends async waitForCurrentPageNumber()
 
 
-module.exports.waitForDifferentPageNumber = waitForDifferentPageNumber;
+module.exports.waitForCurrentPageNumber = waitForCurrentPageNumber;

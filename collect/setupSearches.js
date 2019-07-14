@@ -22,8 +22,6 @@ async function setupSiteSearchValues (vars, page) {
     end: runData.endDate,
   };
 
-  console.log('dates:', dates);
-
   // Selectors
   const searchTypeSelector = vars.searchTypeSelector;
   const searchTypeVal = vars.searchTypeVal;

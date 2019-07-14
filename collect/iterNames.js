@@ -11,10 +11,10 @@ const setupSiteSearchValues = setupSearches.setupSiteSearchValues;
 const setupNameSearch = setupSearches.setupNameSearch;
 const getNowHHMM = require('./getNowHHMM.js').getNowHHMM;
 const checkForResults = require('./checkForResults.js').checkForResults;
-// const skipSomePagesIfNeeded = require('./skipSomePagesIfNeeded.js').skipSomePagesIfNeeded;
-// const doWithDocketsFuncs = require('./doWithDocketsFuncs.js');
-// const doWithDocketsRows = doWithDocketsRowsFuncs.doWithDocketsRows;
-// const arePagesDone = require('./arePagesDone.js').arePagesDone;
+const skipSomePagesIfNeeded = require('./skipSomePagesIfNeeded.js').skipSomePagesIfNeeded;
+const doWithDocketsFuncs = require('./doWithDocketsFuncs.js');
+const doWithDocketRows = doWithDocketsFuncs.doWithDocketRows;
+const arePagesDone = require('./arePagesDone.js').arePagesDone;
 
 // Global
 let nameIndex = null;
@@ -40,7 +40,6 @@ async function iterNames (vars, funcs, page, browser) {
   page.on("response", response => {
     const request = response.request();
     const status = response.status();
-    console.log(status);
     if (status === 500) {
       // Maybe this is fine and will be taken care of with the next error
       console.log("\n\nresponse request failed status:".red, status, '\n\n');
@@ -73,6 +72,8 @@ async function iterNames (vars, funcs, page, browser) {
   const searchTypeVal = vars.searchTypeVal;
   const lastNameSelector = vars.lastNameSelector;
   const searchSelector = vars.searchSelector;
+  const paginationSelector = vars.paginationSelector;
+  const nextSelector = paginationSelector + ' a:nth-last-child(2)';
 
   console.log(1);
   await page.waitForSelector(searchTypeSelector)
@@ -105,7 +106,7 @@ async function iterNames (vars, funcs, page, browser) {
     let doneWithAllPages = false;
     let pageData = {skip: false, previous: null};
     while (!doneWithAllPages) {
-      console.log('a page while loop');
+      console.log('a page `while` loop');
       // // wait for stuff to load... we hope... (non-error-throwing 500 show up here sometimes)
       // console.log('Waiting up to 15 min for search selector to load with large results'.bgWhite.blue + ' @', getNowHHMM());
       // await page.waitForSelector(
@@ -120,9 +121,9 @@ async function iterNames (vars, funcs, page, browser) {
       // The last page the program was at when it was stopped
       let goalPageNumber = runData.position.page;
       console.log('Goal page: '.blue, goalPageNumber);
-      // The page seen in the DOM from the previous loop
-      let previousPageNumber = pageData.previous;
-      console.log('Previous page: '.yellow, previousPageNumber);
+      // // The page seen in the DOM from the previous loop
+      // let previousPageNumber = pageData.previous;
+      // console.log('Previous page: '.yellow, previousPageNumber);
 
       // Wait till results load, if any
       let resultsElementWasFound = await checkForResults(vars, page);
@@ -143,34 +144,47 @@ async function iterNames (vars, funcs, page, browser) {
   //       // // apparently this seems to go too fast otherwise somehow and give itself an error...
   //       // // it doesn't even seem to actually wait for a full timeout
   //       // await page.waitFor(throttle/2);
-  //       // We need to check on it for each page
-  //       await page.waitForSelector(
-  //         searchSelector,
-  //         // For large results
-  //         {timeout: 15 * 60 * 1000}
-  //       );
+        // We need to check on it for each page
+        console.log('Waiting up to 15 min for search selector to load with large results'.bgWhite.blue + ' @', getNowHHMM());
+        await page.waitForSelector(
+          searchSelector,
+          // For large results
+          {timeout: 15 * 60 * 1000}
+        );
 
-  //       // TODO: Refactor to figure out pagination out here
+        // TODO: Refactor to figure pagination out here (Done?)
 
-  //       // See if there are multiple pages
-  //       // ....we're on the last page of multiple pages?
-  //       let paginated = await checkForPagination(vars, page);
+        console.log(4);
+        // See if we have multiple pages
+        let paginated = false;
+        await page.waitForSelector(
+            nextSelector,
+            {timeout: 5000}
+        ).then(function(arg){
+          if (arg) { paginated = true; }
+        }).catch(function(){
+          console.log('One-pager');
+        });
 
-  //       if (paginated) {
+        // // See if there are multiple pages
+        // // ....we're on the last page of multiple pages?
+        // let paginated = await checkForPagination(vars, page);
 
-  //         // Skip pages till we get to the page we need
-  //         // Yeah, we could make `skip` true by default, but
-  //         // I think it's more confusing. Anyway, works better
-  //         // for iteration return value.
-  //         pageData = await skipSomePagesIfNeeded(vars, funcs, page, pageData, paginated);
-  //         while (pageData.skip) {
-  //           pageData = await skipSomePagesIfNeeded(vars, funcs, page, pageData, paginated)
-  //         }
-  //       }
+        if (paginated) {
+          console.log('multiple pages found');
+          // Skip pages till we get to the page we need
+          // Yeah, we could make `skip` true by default, but
+          // I think it's more confusing. Anyway, works better
+          // for iteration return value.
+          pageData = await skipSomePagesIfNeeded(vars, funcs, page, pageData);
+          while (pageData.skip) {
+            pageData = await skipSomePagesIfNeeded(vars, funcs, page, pageData)
+          }
+        }
 
   //       console.log(5);
   //       // Once we're at the right page, get the PDFs
-  //       await doWithDocketsRows(vars, funcs, page, nameIndex, currentPage, doDownload);
+  //       await doWithDocketRows(vars, funcs, page, nameIndex, currentPage, doDownload);
 
   //       console.log(9);
   //       doneWithAllPages = true;  // might undo this in just a bit
@@ -193,8 +207,8 @@ async function iterNames (vars, funcs, page, browser) {
   //         } else {
   //           console.log(14);
   //           // Nothing fancy, just click the 'next' button
-  //           let nextButton = paginationSelector + ' a:nth-last-child(2)';
-  //           await page.click(nextButton);
+  //           // let nextButton = paginationSelector + ' a:nth-last-child(2)';
+  //           await page.click(nextSelector);
   //         }
 
   //       }  // ends if paginated
