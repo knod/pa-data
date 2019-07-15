@@ -1,0 +1,2544 @@
+
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{
+  "index": 166,
+  "page": 1
+}
+runData:
+ {
+  "command": "node check-pattern-cp.js cp00k01k09",
+  "patternIDFileName": "round1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 166,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {
+    "0": true,
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true,
+    "9": true,
+    "10": true,
+    "11": true,
+    "12": true,
+    "13": true,
+    "14": true,
+    "15": true,
+    "16": true,
+    "17": true,
+    "18": true,
+    "19": true,
+    "20": true,
+    "21": true,
+    "22": true,
+    "23": true,
+    "24": true,
+    "25": true,
+    "26": true,
+    "27": true,
+    "28": true,
+    "29": true,
+    "30": true,
+    "31": true,
+    "32": true,
+    "33": true,
+    "34": true,
+    "35": true,
+    "36": true,
+    "37": true,
+    "38": true,
+    "39": true,
+    "40": true,
+    "41": true,
+    "42": true,
+    "43": true,
+    "44": true,
+    "45": true,
+    "46": true,
+    "47": true,
+    "48": true,
+    "49": true,
+    "50": true,
+    "51": true,
+    "52": true,
+    "53": true,
+    "54": true,
+    "55": true,
+    "56": true,
+    "57": true,
+    "58": true,
+    "59": true,
+    "60": true,
+    "61": true,
+    "62": true,
+    "63": true,
+    "64": true,
+    "65": true,
+    "66": true,
+    "67": true,
+    "68": true,
+    "69": true,
+    "70": true,
+    "71": true,
+    "72": true,
+    "73": true,
+    "74": true,
+    "75": true,
+    "76": true,
+    "77": true,
+    "78": true,
+    "79": true,
+    "80": true,
+    "81": true,
+    "82": true,
+    "83": true,
+    "84": true,
+    "85": true,
+    "86": true,
+    "87": true,
+    "88": true,
+    "89": true,
+    "90": true,
+    "91": true,
+    "92": true,
+    "93": true,
+    "94": true,
+    "95": true,
+    "96": true,
+    "97": true,
+    "98": true,
+    "99": true,
+    "100": true,
+    "101": true,
+    "102": true,
+    "103": true,
+    "104": true,
+    "105": true,
+    "106": true,
+    "107": true,
+    "108": true,
+    "109": true,
+    "110": true,
+    "111": true,
+    "112": true,
+    "113": true,
+    "114": true,
+    "115": true,
+    "116": true,
+    "117": true,
+    "118": true,
+    "119": true,
+    "120": true,
+    "121": true,
+    "122": true,
+    "123": true,
+    "124": true,
+    "125": true,
+    "126": true,
+    "127": true,
+    "128": true,
+    "129": true,
+    "130": true,
+    "131": true,
+    "132": true,
+    "133": true,
+    "134": true,
+    "135": true,
+    "136": true,
+    "137": true,
+    "138": true,
+    "139": true,
+    "140": true,
+    "141": true,
+    "142": true,
+    "143": true,
+    "144": true,
+    "145": true,
+    "146": true,
+    "147": true,
+    "148": true,
+    "149": true,
+    "150": true,
+    "151": true,
+    "152": true,
+    "153": true,
+    "154": true,
+    "155": true,
+    "156": true,
+    "157": true,
+    "158": true,
+    "159": true,
+    "160": true,
+    "161": true,
+    "162": true,
+    "163": true,
+    "164": true,
+    "165": true
+  }
+}
+{
+  "index": 166,
+  "page": 1
+}
+Creating browser
+{
+  "index": 166,
+  "page": 1
+}
+Opening page
+{
+  "index": 166,
+  "page": 1
+}
+Status: 200
+{
+  "index": 166,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 166
+~
+~
+~
+~
+~
+
+{
+  "index": 166,
+  "page": 1
+}
+[object Object]
+{
+  "index": 166,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:36
+{
+  "index": 166,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:36
+{
+  "index": 166,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 166,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 166,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 166,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 08:36:46 GMT-0400 (GMT-04:00)
+{
+  "index": 166,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{
+  "index": 166,
+  "page": 1
+}
+results found? false
+{
+  "index": 166,
+  "page": 1
+}
+no results found? true
+{
+  "index": 166,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 166,
+  "page": 1
+}
+18
+{
+  "index": 166,
+  "page": 1
+}
+onto the next index
+{
+  "index": 166,
+  "page": 1
+}
+been done: 166
+{
+  "index": 166,
+  "page": 1
+}
+resetting page to 1
+{
+  "index": 166,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 167
+~
+~
+~
+~
+~
+
+{
+  "index": 166,
+  "page": 1
+}
+[object Object]
+{
+  "index": 166,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:36
+{
+  "index": 166,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:36
+{
+  "index": 166,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 166,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 166,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 166,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 08:36:50 GMT-0400 (GMT-04:00)
+{
+  "index": 166,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 166,
+  "page": 1
+}
+results found? true
+{
+  "index": 166,
+  "page": 1
+}
+no results found? false
+{
+  "index": 166,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 166,
+  "page": 1
+}
+3
+{
+  "index": 166,
+  "page": 1
+}
+4
+{
+  "index": 166,
+  "page": 1
+}
+One-pager
+{
+  "index": 166,
+  "page": 1
+}
+5
+{
+  "index": 166,
+  "page": 1
+}
+6
+{
+  "index": 166,
+  "page": 1
+}
+7
+{
+  "index": 166,
+  "page": 1
+}
+8
+{
+  "index": 166,
+  "page": 1
+}
+filing date: 2/22/2019 11:13:00 AM
+{
+  "index": 166,
+  "page": 1
+}
+num found so far: 1
+{
+  "index": 166,
+  "page": 1
+}
+filing date: 2/22/2019 11:13:00 AM
+{
+  "index": 166,
+  "page": 1
+}
+num found so far: 2
+{
+  "index": 166,
+  "page": 1
+}
+filing date: 2/22/2019 11:13:00 AM
+{
+  "index": 166,
+  "page": 1
+}
+num found so far: 3
+{
+  "index": 166,
+  "page": 1
+}
+9
+{
+  "index": 166,
+  "page": 1
+}
+16 true
+{
+  "index": 166,
+  "page": 1
+}
+18
+{
+  "index": 166,
+  "page": 1
+}
+onto the next index
+{
+  "index": 166,
+  "page": 1
+}
+been done: 167
+{
+  "index": 166,
+  "page": 1
+}
+resetting page to 1
+{
+  "index": 166,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{
+  "index": 166,
+  "page": 1
+}
+[object Object]
+{
+  "index": 166,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:36
+{
+  "index": 166,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:37
+{
+  "index": 166,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 166,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 166,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 166,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 08:37:10 GMT-0400 (GMT-04:00)
+{
+  "index": 166,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 166,
+  "page": 1
+}
+results found? true
+{
+  "index": 166,
+  "page": 1
+}
+no results found? false
+{
+  "index": 166,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 166,
+  "page": 1
+}
+3
+{
+  "index": 166,
+  "page": 1
+}
+4
+{
+  "index": 166,
+  "page": 1
+}
+paginated: true
+{
+  "index": 166,
+  "page": 1
+}
+[33mbyNamesDuring catch clause @[39m [33m08:37[39m
+{
+  "index": 166,
+  "page": 1
+}
+Error: Evaluation failed: ReferenceError: log is not defined
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:12:11)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:15:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{
+  "index": 166,
+  "page": 1
+}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{
+  "index": 168,
+  "page": 1
+}
+runData:
+ {
+  "command": "node check-pattern-cp.js cp00k01k09",
+  "patternIDFileName": "round1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {
+    "0": true,
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true,
+    "9": true,
+    "10": true,
+    "11": true,
+    "12": true,
+    "13": true,
+    "14": true,
+    "15": true,
+    "16": true,
+    "17": true,
+    "18": true,
+    "19": true,
+    "20": true,
+    "21": true,
+    "22": true,
+    "23": true,
+    "24": true,
+    "25": true,
+    "26": true,
+    "27": true,
+    "28": true,
+    "29": true,
+    "30": true,
+    "31": true,
+    "32": true,
+    "33": true,
+    "34": true,
+    "35": true,
+    "36": true,
+    "37": true,
+    "38": true,
+    "39": true,
+    "40": true,
+    "41": true,
+    "42": true,
+    "43": true,
+    "44": true,
+    "45": true,
+    "46": true,
+    "47": true,
+    "48": true,
+    "49": true,
+    "50": true,
+    "51": true,
+    "52": true,
+    "53": true,
+    "54": true,
+    "55": true,
+    "56": true,
+    "57": true,
+    "58": true,
+    "59": true,
+    "60": true,
+    "61": true,
+    "62": true,
+    "63": true,
+    "64": true,
+    "65": true,
+    "66": true,
+    "67": true,
+    "68": true,
+    "69": true,
+    "70": true,
+    "71": true,
+    "72": true,
+    "73": true,
+    "74": true,
+    "75": true,
+    "76": true,
+    "77": true,
+    "78": true,
+    "79": true,
+    "80": true,
+    "81": true,
+    "82": true,
+    "83": true,
+    "84": true,
+    "85": true,
+    "86": true,
+    "87": true,
+    "88": true,
+    "89": true,
+    "90": true,
+    "91": true,
+    "92": true,
+    "93": true,
+    "94": true,
+    "95": true,
+    "96": true,
+    "97": true,
+    "98": true,
+    "99": true,
+    "100": true,
+    "101": true,
+    "102": true,
+    "103": true,
+    "104": true,
+    "105": true,
+    "106": true,
+    "107": true,
+    "108": true,
+    "109": true,
+    "110": true,
+    "111": true,
+    "112": true,
+    "113": true,
+    "114": true,
+    "115": true,
+    "116": true,
+    "117": true,
+    "118": true,
+    "119": true,
+    "120": true,
+    "121": true,
+    "122": true,
+    "123": true,
+    "124": true,
+    "125": true,
+    "126": true,
+    "127": true,
+    "128": true,
+    "129": true,
+    "130": true,
+    "131": true,
+    "132": true,
+    "133": true,
+    "134": true,
+    "135": true,
+    "136": true,
+    "137": true,
+    "138": true,
+    "139": true,
+    "140": true,
+    "141": true,
+    "142": true,
+    "143": true,
+    "144": true,
+    "145": true,
+    "146": true,
+    "147": true,
+    "148": true,
+    "149": true,
+    "150": true,
+    "151": true,
+    "152": true,
+    "153": true,
+    "154": true,
+    "155": true,
+    "156": true,
+    "157": true,
+    "158": true,
+    "159": true,
+    "160": true,
+    "161": true,
+    "162": true,
+    "163": true,
+    "164": true,
+    "165": true,
+    "166": true,
+    "167": true
+  }
+}
+{
+  "index": 168,
+  "page": 1
+}
+Creating browser
+{
+  "index": 168,
+  "page": 1
+}
+Opening page
+{
+  "index": 168,
+  "page": 1
+}
+Status: 200
+{
+  "index": 168,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{
+  "index": 168,
+  "page": 1
+}
+[object Object]
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:56
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:56
+{
+  "index": 168,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 168,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 168,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 168,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 08:56:55 GMT-0400 (GMT-04:00)
+{
+  "index": 168,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 168,
+  "page": 1
+}
+results found? true
+{
+  "index": 168,
+  "page": 1
+}
+no results found? false
+{
+  "index": 168,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 168,
+  "page": 1
+}
+3
+{
+  "index": 168,
+  "page": 1
+}
+4
+{
+  "index": 168,
+  "page": 1
+}
+paginated: true
+{
+  "index": 168,
+  "page": 1
+}
+[33mbyNamesDuring catch clause @[39m [33m08:56[39m
+{
+  "index": 168,
+  "page": 1
+}
+Error: Evaluation failed: ReferenceError: log is not defined
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:12:11)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:15:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{
+  "index": 168,
+  "page": 1
+}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{
+  "index": 168,
+  "page": 1
+}
+runData:
+ {
+  "command": "node check-pattern-cp.js cp00k01k09",
+  "patternIDFileName": "round1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {
+    "0": true,
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true,
+    "9": true,
+    "10": true,
+    "11": true,
+    "12": true,
+    "13": true,
+    "14": true,
+    "15": true,
+    "16": true,
+    "17": true,
+    "18": true,
+    "19": true,
+    "20": true,
+    "21": true,
+    "22": true,
+    "23": true,
+    "24": true,
+    "25": true,
+    "26": true,
+    "27": true,
+    "28": true,
+    "29": true,
+    "30": true,
+    "31": true,
+    "32": true,
+    "33": true,
+    "34": true,
+    "35": true,
+    "36": true,
+    "37": true,
+    "38": true,
+    "39": true,
+    "40": true,
+    "41": true,
+    "42": true,
+    "43": true,
+    "44": true,
+    "45": true,
+    "46": true,
+    "47": true,
+    "48": true,
+    "49": true,
+    "50": true,
+    "51": true,
+    "52": true,
+    "53": true,
+    "54": true,
+    "55": true,
+    "56": true,
+    "57": true,
+    "58": true,
+    "59": true,
+    "60": true,
+    "61": true,
+    "62": true,
+    "63": true,
+    "64": true,
+    "65": true,
+    "66": true,
+    "67": true,
+    "68": true,
+    "69": true,
+    "70": true,
+    "71": true,
+    "72": true,
+    "73": true,
+    "74": true,
+    "75": true,
+    "76": true,
+    "77": true,
+    "78": true,
+    "79": true,
+    "80": true,
+    "81": true,
+    "82": true,
+    "83": true,
+    "84": true,
+    "85": true,
+    "86": true,
+    "87": true,
+    "88": true,
+    "89": true,
+    "90": true,
+    "91": true,
+    "92": true,
+    "93": true,
+    "94": true,
+    "95": true,
+    "96": true,
+    "97": true,
+    "98": true,
+    "99": true,
+    "100": true,
+    "101": true,
+    "102": true,
+    "103": true,
+    "104": true,
+    "105": true,
+    "106": true,
+    "107": true,
+    "108": true,
+    "109": true,
+    "110": true,
+    "111": true,
+    "112": true,
+    "113": true,
+    "114": true,
+    "115": true,
+    "116": true,
+    "117": true,
+    "118": true,
+    "119": true,
+    "120": true,
+    "121": true,
+    "122": true,
+    "123": true,
+    "124": true,
+    "125": true,
+    "126": true,
+    "127": true,
+    "128": true,
+    "129": true,
+    "130": true,
+    "131": true,
+    "132": true,
+    "133": true,
+    "134": true,
+    "135": true,
+    "136": true,
+    "137": true,
+    "138": true,
+    "139": true,
+    "140": true,
+    "141": true,
+    "142": true,
+    "143": true,
+    "144": true,
+    "145": true,
+    "146": true,
+    "147": true,
+    "148": true,
+    "149": true,
+    "150": true,
+    "151": true,
+    "152": true,
+    "153": true,
+    "154": true,
+    "155": true,
+    "156": true,
+    "157": true,
+    "158": true,
+    "159": true,
+    "160": true,
+    "161": true,
+    "162": true,
+    "163": true,
+    "164": true,
+    "165": true,
+    "166": true,
+    "167": true
+  }
+}
+{
+  "index": 168,
+  "page": 1
+}
+Creating browser
+{
+  "index": 168,
+  "page": 1
+}
+Opening page
+{
+  "index": 168,
+  "page": 1
+}
+Status: 200
+{
+  "index": 168,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{
+  "index": 168,
+  "page": 1
+}
+[object Object]
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:58
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 08:58
+{
+  "index": 168,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 168,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 168,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 168,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 08:58:48 GMT-0400 (GMT-04:00)
+{
+  "index": 168,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 168,
+  "page": 1
+}
+results found? true
+{
+  "index": 168,
+  "page": 1
+}
+no results found? false
+{
+  "index": 168,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 168,
+  "page": 1
+}
+3
+{
+  "index": 168,
+  "page": 1
+}
+4
+{
+  "index": 168,
+  "page": 1
+}
+paginated: true
+{
+  "index": 168,
+  "page": 1
+}
+[33mbyNamesDuring catch clause @[39m [33m08:58[39m
+{
+  "index": 168,
+  "page": 1
+}
+Error: Evaluation failed: ReferenceError: log is not defined
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:12:11)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:15:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{
+  "index": 168,
+  "page": 1
+}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{
+  "index": 168,
+  "page": 1
+}
+timesRepeated: 1
+{
+  "index": 168,
+  "page": 1
+}
+ undefined
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mwaiting 1 min[49m[39m @ 08:58
+{
+  "index": 168,
+  "page": 1
+}
+Creating browser
+{
+  "index": 168,
+  "page": 1
+}
+Opening page
+{
+  "index": 168,
+  "page": 1
+}
+Status: 200
+{
+  "index": 168,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{
+  "index": 168,
+  "page": 1
+}
+[object Object]
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:00
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:00
+{
+  "index": 168,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 168,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 168,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 168,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 09:00:22 GMT-0400 (GMT-04:00)
+{
+  "index": 168,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 168,
+  "page": 1
+}
+results found? true
+{
+  "index": 168,
+  "page": 1
+}
+no results found? false
+{
+  "index": 168,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 168,
+  "page": 1
+}
+3
+{
+  "index": 168,
+  "page": 1
+}
+4
+{
+  "index": 168,
+  "page": 1
+}
+paginated: true
+{
+  "index": 168,
+  "page": 1
+}
+[33mbyNamesDuring catch clause @[39m [33m09:00[39m
+{
+  "index": 168,
+  "page": 1
+}
+Error: Evaluation failed: ReferenceError: log is not defined
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:12:11)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:15:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{
+  "index": 168,
+  "page": 1
+}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{
+  "index": 168,
+  "page": 1
+}
+timesRepeated: 1
+{
+  "index": 168,
+  "page": 1
+}
+ undefined
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mwaiting 1 min[49m[39m @ 09:00
+{
+  "index": 168,
+  "page": 1
+}
+Creating browser
+{
+  "index": 168,
+  "page": 1
+}
+Opening page
+{
+  "index": 168,
+  "page": 1
+}
+Status: 200
+{
+  "index": 168,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{
+  "index": 168,
+  "page": 1
+}
+[object Object]
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:01
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:01
+{
+  "index": 168,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 168,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 168,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 168,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 09:01:55 GMT-0400 (GMT-04:00)
+{
+  "index": 168,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 168,
+  "page": 1
+}
+results found? true
+{
+  "index": 168,
+  "page": 1
+}
+no results found? false
+{
+  "index": 168,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 168,
+  "page": 1
+}
+3
+{
+  "index": 168,
+  "page": 1
+}
+4
+{
+  "index": 168,
+  "page": 1
+}
+paginated: true
+{
+  "index": 168,
+  "page": 1
+}
+[33mbyNamesDuring catch clause @[39m [33m09:01[39m
+{
+  "index": 168,
+  "page": 1
+}
+Error: Evaluation failed: ReferenceError: log is not defined
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:12:11)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:15:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{
+  "index": 168,
+  "page": 1
+}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{
+  "index": 168,
+  "page": 1
+}
+timesRepeated: 1
+{
+  "index": 168,
+  "page": 1
+}
+ undefined
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mwaiting 1 min[49m[39m @ 09:01
+{
+  "index": 168,
+  "page": 1
+}
+Creating browser
+{
+  "index": 168,
+  "page": 1
+}
+Opening page
+{
+  "index": 168,
+  "page": 1
+}
+Status: 200
+{
+  "index": 168,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{
+  "index": 168,
+  "page": 1
+}
+[object Object]
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:03
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:03
+{
+  "index": 168,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 168,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 168,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 168,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 09:03:38 GMT-0400 (GMT-04:00)
+{
+  "index": 168,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 168,
+  "page": 1
+}
+results found? true
+{
+  "index": 168,
+  "page": 1
+}
+no results found? false
+{
+  "index": 168,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 168,
+  "page": 1
+}
+3
+{
+  "index": 168,
+  "page": 1
+}
+4
+{
+  "index": 168,
+  "page": 1
+}
+paginated: true
+{
+  "index": 168,
+  "page": 1
+}
+[33mbyNamesDuring catch clause @[39m [33m09:03[39m
+{
+  "index": 168,
+  "page": 1
+}
+Error: Evaluation failed: ReferenceError: log is not defined
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:12:11)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:15:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{
+  "index": 168,
+  "page": 1
+}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{
+  "index": 168,
+  "page": 1
+}
+timesRepeated: 1
+{
+  "index": 168,
+  "page": 1
+}
+ undefined
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mwaiting 1 min[49m[39m @ 09:03
+{
+  "index": 168,
+  "page": 1
+}
+Creating browser
+{
+  "index": 168,
+  "page": 1
+}
+Opening page
+{
+  "index": 168,
+  "page": 1
+}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{
+  "index": 168,
+  "page": 1
+}
+runData:
+ {
+  "command": "node check-pattern-cp.js cp00k01k09",
+  "patternIDFileName": "round1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {
+    "0": true,
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true,
+    "9": true,
+    "10": true,
+    "11": true,
+    "12": true,
+    "13": true,
+    "14": true,
+    "15": true,
+    "16": true,
+    "17": true,
+    "18": true,
+    "19": true,
+    "20": true,
+    "21": true,
+    "22": true,
+    "23": true,
+    "24": true,
+    "25": true,
+    "26": true,
+    "27": true,
+    "28": true,
+    "29": true,
+    "30": true,
+    "31": true,
+    "32": true,
+    "33": true,
+    "34": true,
+    "35": true,
+    "36": true,
+    "37": true,
+    "38": true,
+    "39": true,
+    "40": true,
+    "41": true,
+    "42": true,
+    "43": true,
+    "44": true,
+    "45": true,
+    "46": true,
+    "47": true,
+    "48": true,
+    "49": true,
+    "50": true,
+    "51": true,
+    "52": true,
+    "53": true,
+    "54": true,
+    "55": true,
+    "56": true,
+    "57": true,
+    "58": true,
+    "59": true,
+    "60": true,
+    "61": true,
+    "62": true,
+    "63": true,
+    "64": true,
+    "65": true,
+    "66": true,
+    "67": true,
+    "68": true,
+    "69": true,
+    "70": true,
+    "71": true,
+    "72": true,
+    "73": true,
+    "74": true,
+    "75": true,
+    "76": true,
+    "77": true,
+    "78": true,
+    "79": true,
+    "80": true,
+    "81": true,
+    "82": true,
+    "83": true,
+    "84": true,
+    "85": true,
+    "86": true,
+    "87": true,
+    "88": true,
+    "89": true,
+    "90": true,
+    "91": true,
+    "92": true,
+    "93": true,
+    "94": true,
+    "95": true,
+    "96": true,
+    "97": true,
+    "98": true,
+    "99": true,
+    "100": true,
+    "101": true,
+    "102": true,
+    "103": true,
+    "104": true,
+    "105": true,
+    "106": true,
+    "107": true,
+    "108": true,
+    "109": true,
+    "110": true,
+    "111": true,
+    "112": true,
+    "113": true,
+    "114": true,
+    "115": true,
+    "116": true,
+    "117": true,
+    "118": true,
+    "119": true,
+    "120": true,
+    "121": true,
+    "122": true,
+    "123": true,
+    "124": true,
+    "125": true,
+    "126": true,
+    "127": true,
+    "128": true,
+    "129": true,
+    "130": true,
+    "131": true,
+    "132": true,
+    "133": true,
+    "134": true,
+    "135": true,
+    "136": true,
+    "137": true,
+    "138": true,
+    "139": true,
+    "140": true,
+    "141": true,
+    "142": true,
+    "143": true,
+    "144": true,
+    "145": true,
+    "146": true,
+    "147": true,
+    "148": true,
+    "149": true,
+    "150": true,
+    "151": true,
+    "152": true,
+    "153": true,
+    "154": true,
+    "155": true,
+    "156": true,
+    "157": true,
+    "158": true,
+    "159": true,
+    "160": true,
+    "161": true,
+    "162": true,
+    "163": true,
+    "164": true,
+    "165": true,
+    "166": true,
+    "167": true
+  }
+}
+{
+  "index": 168,
+  "page": 1
+}
+Creating browser
+{
+  "index": 168,
+  "page": 1
+}
+Opening page
+{
+  "index": 168,
+  "page": 1
+}
+Status: 200
+{
+  "index": 168,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{
+  "index": 168,
+  "page": 1
+}
+[object Object]
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:06
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:06
+{
+  "index": 168,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 168,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 168,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 168,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 09:06:44 GMT-0400 (GMT-04:00)
+{
+  "index": 168,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 168,
+  "page": 1
+}
+results found? true
+{
+  "index": 168,
+  "page": 1
+}
+no results found? false
+{
+  "index": 168,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 168,
+  "page": 1
+}
+3
+{
+  "index": 168,
+  "page": 1
+}
+4
+{
+  "index": 168,
+  "page": 1
+}
+paginated: true
+{
+  "index": 168,
+  "page": 1
+}
+[33mbyNamesDuring catch clause @[39m [33m09:06[39m
+{
+  "index": 168,
+  "page": 1
+}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:12:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:15:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{
+  "index": 168,
+  "page": 1
+}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{
+  "index": 168,
+  "page": 1
+}
+timesRepeated: 1
+{
+  "index": 168,
+  "page": 1
+}
+ undefined
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mwaiting 1 min[49m[39m @ 09:06
+{
+  "index": 168,
+  "page": 1
+}
+Creating browser
+{
+  "index": 168,
+  "page": 1
+}
+Opening page
+{
+  "index": 168,
+  "page": 1
+}
+Status: 200
+{
+  "index": 168,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{
+  "index": 168,
+  "page": 1
+}
+[object Object]
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:08
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:08
+{
+  "index": 168,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 168,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 168,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 168,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 09:08:16 GMT-0400 (GMT-04:00)
+{
+  "index": 168,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 168,
+  "page": 1
+}
+results found? true
+{
+  "index": 168,
+  "page": 1
+}
+no results found? false
+{
+  "index": 168,
+  "page": 1
+}
+Time elapsed to find results: 3 (seconds: 0.003)
+{
+  "index": 168,
+  "page": 1
+}
+3
+{
+  "index": 168,
+  "page": 1
+}
+4
+{
+  "index": 168,
+  "page": 1
+}
+paginated: true
+{
+  "index": 168,
+  "page": 1
+}
+[33mbyNamesDuring catch clause @[39m [33m09:08[39m
+{
+  "index": 168,
+  "page": 1
+}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:12:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:15:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{
+  "index": 168,
+  "page": 1
+}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{
+  "index": 168,
+  "page": 1
+}
+timesRepeated: 1
+{
+  "index": 168,
+  "page": 1
+}
+ undefined
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mwaiting 1 min[49m[39m @ 09:08
+{
+  "index": 168,
+  "page": 1
+}
+Creating browser
+{
+  "index": 168,
+  "page": 1
+}
+Opening page
+{
+  "index": 168,
+  "page": 1
+}
+Status: 200
+{
+  "index": 168,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{
+  "index": 168,
+  "page": 1
+}
+[object Object]
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:09
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:10
+{
+  "index": 168,
+  "page": 1
+}
+[43mnew page[49m
+{
+  "index": 168,
+  "page": 1
+}
+[34mGoal page: [39m 1
+{
+  "index": 168,
+  "page": 1
+}
+[33mPrevious page: [39m 
+{
+  "index": 168,
+  "page": 1
+}
+start looking for result: Mon Jul 15 2019 09:10:12 GMT-0400 (GMT-04:00)
+{
+  "index": 168,
+  "page": 1
+}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{
+  "index": 168,
+  "page": 1
+}
+results found? true
+{
+  "index": 168,
+  "page": 1
+}
+no results found? false
+{
+  "index": 168,
+  "page": 1
+}
+Time elapsed to find results: 4 (seconds: 0.004)
+{
+  "index": 168,
+  "page": 1
+}
+3
+{
+  "index": 168,
+  "page": 1
+}
+4
+{
+  "index": 168,
+  "page": 1
+}
+One-pager
+{
+  "index": 168,
+  "page": 1
+}
+5
+{
+  "index": 168,
+  "page": 1
+}
+6
+{
+  "index": 168,
+  "page": 1
+}
+7
+{
+  "index": 168,
+  "page": 1
+}
+8
+{
+  "index": 168,
+  "page": 1
+}
+filing date: 6/20/2019 10:52:00 AM
+{
+  "index": 168,
+  "page": 1
+}
+num found so far: 1
+{
+  "index": 168,
+  "page": 1
+}
+filing date: 6/20/2019 10:52:00 AM
+{
+  "index": 168,
+  "page": 1
+}
+num found so far: 2
+{
+  "index": 168,
+  "page": 1
+}
+filing date: 6/20/2019 10:52:00 AM
+{
+  "index": 168,
+  "page": 1
+}
+num found so far: 3
+{
+  "index": 168,
+  "page": 1
+}
+filing date: 6/20/2019 10:52:00 AM
+{
+  "index": 168,
+  "page": 1
+}
+num found so far: 4
+{
+  "index": 168,
+  "page": 1
+}
+9
+{
+  "index": 168,
+  "page": 1
+}
+16 true
+{
+  "index": 168,
+  "page": 1
+}
+18
+{
+  "index": 168,
+  "page": 1
+}
+onto the next index
+{
+  "index": 168,
+  "page": 1
+}
+been done: 168
+{
+  "index": 168,
+  "page": 1
+}
+resetting page to 1
+{
+  "index": 168,
+  "page": 1
+}
+~
+~
+~
+~
+~
+Name index: 169
+~
+~
+~
+~
+~
+
+{
+  "index": 168,
+  "page": 1
+}
+[object Object]
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:10
+{
+  "index": 168,
+  "page": 1
+}
+Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+{
+  "index": 168,
+  "page": 1
+}
+Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+{
+  "index": 168,
+  "page": 1
+}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:10
+{
+  "index": 168,
+  "page": 1
+}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js cp00k01k09",
+  "patternIDFileName": "round1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {
+    "0": true,
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true,
+    "9": true,
+    "10": true,
+    "11": true,
+    "12": true,
+    "13": true,
+    "14": true,
+    "15": true,
+    "16": true,
+    "17": true,
+    "18": true,
+    "19": true,
+    "20": true,
+    "21": true,
+    "22": true,
+    "23": true,
+    "24": true,
+    "25": true,
+    "26": true,
+    "27": true,
+    "28": true,
+    "29": true,
+    "30": true,
+    "31": true,
+    "32": true,
+    "33": true,
+    "34": true,
+    "35": true,
+    "36": true,
+    "37": true,
+    "38": true,
+    "39": true,
+    "40": true,
+    "41": true,
+    "42": true,
+    "43": true,
+    "44": true,
+    "45": true,
+    "46": true,
+    "47": true,
+    "48": true,
+    "49": true,
+    "50": true,
+    "51": true,
+    "52": true,
+    "53": true,
+    "54": true,
+    "55": true,
+    "56": true,
+    "57": true,
+    "58": true,
+    "59": true,
+    "60": true,
+    "61": true,
+    "62": true,
+    "63": true,
+    "64": true,
+    "65": true,
+    "66": true,
+    "67": true,
+    "68": true,
+    "69": true,
+    "70": true,
+    "71": true,
+    "72": true,
+    "73": true,
+    "74": true,
+    "75": true,
+    "76": true,
+    "77": true,
+    "78": true,
+    "79": true,
+    "80": true,
+    "81": true,
+    "82": true,
+    "83": true,
+    "84": true,
+    "85": true,
+    "86": true,
+    "87": true,
+    "88": true,
+    "89": true,
+    "90": true,
+    "91": true,
+    "92": true,
+    "93": true,
+    "94": true,
+    "95": true,
+    "96": true,
+    "97": true,
+    "98": true,
+    "99": true,
+    "100": true,
+    "101": true,
+    "102": true,
+    "103": true,
+    "104": true,
+    "105": true,
+    "106": true,
+    "107": true,
+    "108": true,
+    "109": true,
+    "110": true,
+    "111": true,
+    "112": true,
+    "113": true,
+    "114": true,
+    "115": true,
+    "116": true,
+    "117": true,
+    "118": true,
+    "119": true,
+    "120": true,
+    "121": true,
+    "122": true,
+    "123": true,
+    "124": true,
+    "125": true,
+    "126": true,
+    "127": true,
+    "128": true,
+    "129": true,
+    "130": true,
+    "131": true,
+    "132": true,
+    "133": true,
+    "134": true,
+    "135": true,
+    "136": true,
+    "137": true,
+    "138": true,
+    "139": true,
+    "140": true,
+    "141": true,
+    "142": true,
+    "143": true,
+    "144": true,
+    "145": true,
+    "146": true,
+    "147": true,
+    "148": true,
+    "149": true,
+    "150": true,
+    "151": true,
+    "152": true,
+    "153": true,
+    "154": true,
+    "155": true,
+    "156": true,
+    "157": true,
+    "158": true,
+    "159": true,
+    "160": true,
+    "161": true,
+    "162": true,
+    "163": true,
+    "164": true,
+    "165": true,
+    "166": true,
+    "167": true
+  }
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}

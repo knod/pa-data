@@ -1,13 +1,13 @@
 {
-  "command": "node check-pattern-cp.js test",
-  "patternIDFileName": "test1",
+  "command": "node check-pattern-cp.js cp00k01k09b",
+  "patternIDFileName": "round1",
   "type": "cp",
   "startDate": "01/01/2009",
   "endDate": "06/25/2019",
-  "startIndexRange": 168,
-  "endIndexRange": 169,
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
   "position": {
-    "index": 168,
+    "index": null,
     "page": 7
   },
   "completed": false,
