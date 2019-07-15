@@ -19,7 +19,8 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
-      paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
+      paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager',
+      filingDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow td:nth-child(4)';
 
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
 
@@ -44,6 +45,7 @@ let requiredPrefix = /CP/;
 //       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
 //       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
+//       filingDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket > table > tbody > tr.gridViewRow td:nth-child(5)',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
 // let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
@@ -63,8 +65,19 @@ let requiredPrefix = /CP/;
 
 
 
+// // For downloading PDFS
+// let assignmentsPathStart = './assignments/';
+// let doWithDocket = downloadBothFiles;
+
+// For finding all current dockets
+let assignmentsPathStart = './assignments/pattern/';
+let doWithDocket = makeIDCollection;
+
+
+
+
 // Standard/shared
-let versionNumber = '\nv0.51.0\n';
+let versionNumber = '\nv0.52.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -78,7 +91,7 @@ if (!assignmentID) {
   throw Error('I think you used the default assignemt ID (24z). That\'s not a real one.'.yellow);
 }
 
-const assignmentPath = './assignments/' + assignmentID + '.json'
+const assignmentPath = assignmentsPathStart + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
 
 // Assignment settings overrides
@@ -570,30 +583,7 @@ async function getPDFs (browser, page, pageData) {
     let id = docketIDTexts[index]
     // We just want some kinds of data, or so they tell us
     if (requiredPrefix.test(id)) {
-      let text = Date.now() + '_' + id + '_namei_' + nameIndex + '_page_' + goalPageNumber;
-      let datedText = text + datesText;
-
-      // save docket id for later reference
-      fs.appendFileSync(usedDocketsPath, datedText + '\n', function (err) {
-        if (err) console.log(err);
-      });
-      console.log('docket id written:', text);
-
-      // Download pdfs
-      await page.waitFor(throttle * 10);
-      await downloadPDF(linksText[index + adder], text + '-docket.pdf');
-      // Because the linksText list is twice as long
-      console.log('docket #' + index, 'saved');
-      numPDFs++;
-
-      adder++
-
-      await page.waitFor(throttle * 10);
-      await downloadPDF(linksText[index + adder], text + '-summary.pdf');
-      console.log('summary #' + index, 'saved');
-      numPDFs++;
-
-      console.log('# pdfs downloaded:', numPDFs, ', time elapsed:', (Date.now() - timeStartedRunning)/1000, 'seconds');
+      adder = await doWithDocket(id, goalPageNumber, page, linksText, index, adder);
     }
   }  // ends for all dockets
 
@@ -664,6 +654,40 @@ async function getPDFs (browser, page, pageData) {
 };  // Ends getPDFs()
 
 
+async function downloadBothFiles (docketID, goalPageNumber, page, linksText, index, adder) {
+
+  let text = Date.now() + '_' + docketID + '_namei_' + nameIndex + '_page_' + goalPageNumber;
+  let datedText = text + datesText;
+
+  // save docket id for later reference
+  fs.appendFileSync(usedDocketsPath, datedText + '\n', function (err) {
+    if (err) console.log(err);
+  });
+  console.log('docket id written:', text);
+
+  // Download pdfs
+  await page.waitFor(throttle * 10);
+  await downloadPDF(linksText[index + adder], text + '-docket.pdf', docketID);
+  // Because the linksText list is twice as long
+  console.log('docket #' + index, 'saved');
+  numPDFs++;
+
+  adder++
+
+  await page.waitFor(throttle * 10);
+  await downloadPDF(linksText[index + adder], text + '-summary.pdf', docketID);
+  console.log('summary #' + index, 'saved');
+  numPDFs++;
+
+  console.log('# pdfs downloaded:', numPDFs, ', time elapsed:', (Date.now() - timeStartedRunning)/1000, 'seconds');
+
+  // Keep iterating properly through the links
+  return adder;
+};  // Ends async downloadBothFiles()
+
+
+
+
 async function downloadPDF(pdfURL, outputFilename) {
   // console.log(pdfURL);
   let pdfBuffer = await request.get({
@@ -673,6 +697,66 @@ async function downloadPDF(pdfURL, outputFilename) {
   let path = dataDirectory + outputFilename;
   fs.writeFileSync(path, pdfBuffer, function (err) { if (err) {console.log(err)} });
 }
+
+
+
+
+
+// For now just create all the docket ids in each file
+// for each assignment. Later check them against each other
+async function makeIDCollection (docketID, goalPageNumber, page, linksText, index, adder) {
+
+  let dir = runData.dataDirectory;
+  mkdirp.sync(dir, function (err) {
+      if (err) { console.error(err); }
+  });
+
+  let fileName = runData.patternIDFileName;
+  let thisPath = dir + fileName;
+
+  let currentDocketsData;
+  // If the file already exists, get that
+  try {
+    let pastDockets = require(thisPath);  // JSON - array? Object?
+    currentDocketsData = pastDockets || {};
+
+  // If not, we'll create it later
+  } catch (err) {
+    currentDocketsData = {};
+  }
+
+  let filingDate = await page.evaluate(
+    function (filingDateSelector) {
+      return document.querySelector(filingDateSelector).innerText;
+    },
+    filingDateSelector
+  );
+  console.log('filing date:', filingDate);
+
+  let rowData = {
+    assignmentID: assignmentID,
+    id: docketID,
+    filingDate: filingDate,
+    foundTimestamp: Date.now(),
+  };
+
+  // See if docket was already gotten? Maybe in future.
+
+  // Add data to a file
+  currentDocketsData[docketID] = rowData;
+  let json = JSON.stringify(currentDocketsData, null, 2);
+  // Will also create file if it doesn't exist
+  fs.writeFileSync(thisPath, json);
+
+  numPDFs++;
+  console.log('num found so far:', numPDFs);
+
+};  // Ends async makeIDCollection()
+
+
+
+
+
 
 
 let nextIndex = function () {
