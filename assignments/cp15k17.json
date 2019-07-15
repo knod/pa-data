@@ -6,8 +6,8 @@
   "startIndexRange": 14001,
   "endIndexRange": 15000,
   "position": {
-    "index": null,
-    "page": null
+    "index": 14007,
+    "page": 3
   },
   "completed": false,
   "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
@@ -16,5 +16,12 @@
   "wait": 600,
   "alerts": "yes",
   "redo": false,
-  "done": {}
+  "done": {
+    "14001": true,
+    "14002": true,
+    "14003": true,
+    "14004": true,
+    "14005": true,
+    "14006": true
+  }
 }

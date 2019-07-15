@@ -21,7 +21,8 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
       pageNavContainerSelector = '',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager',
-      filingDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow td:nth-child(4)';
+      filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow:nth-child(',
+      filingDateSelectorEnd = ') td:nth-child(4)';
 
 const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
 
@@ -47,7 +48,8 @@ let requiredPrefix = /CP/;
 //       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
 //       pageNavContainerSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel > table > tbody > tr:nth-child(2) > td',
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
-//       filingDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket > table > tbody > tr.gridViewRow td:nth-child(5)',
+//       filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket > table > tbody > tr.gridViewRow:nth-child(',
+//       filingDateSelectorEnd = ') td:nth-child(5)',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
 // let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
@@ -79,7 +81,7 @@ let doWithDocket = makeIDCollection;
 
 
 // Standard/shared
-let versionNumber = '\nv0.53.0\n';
+let versionNumber = '\nv0.55.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -793,6 +795,9 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
   let fileName = runData.patternIDFileName + '_' + assignmentID + '.json';
   let thisPath = dir + fileName;
 
+  let cssIndex = index + 1;
+  let thisFilingDateSelector = filingDateSelectorStart + cssIndex + filingDateSelectorEnd;
+
   let currentDocketsData;
   // If the file already exists, get that
   try {
@@ -805,10 +810,10 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
   }
 
   let filingDate = await page.evaluate(
-    function (filingDateSelector) {
-      return document.querySelector(filingDateSelector).innerText;
+    function (thisFilingDateSelector) {
+      return document.querySelector(thisFilingDateSelector).innerText;
     },
-    filingDateSelector
+    thisFilingDateSelector
   );
   await log('filing date:', filingDate);
 

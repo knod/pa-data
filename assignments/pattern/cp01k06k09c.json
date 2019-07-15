@@ -1,21 +1,21 @@
 {
-  "command": "node check-pattern-cp.js test",
-  "patternIDFileName": "test1",
+  "command": "node check-pattern-cp.js cp01k06k09c",
+  "patternIDFileName": "round1",
   "type": "cp",
   "startDate": "01/01/2009",
   "endDate": "06/25/2019",
-  "startIndexRange": 168,
-  "endIndexRange": 169,
+  "startIndexRange": 1001,
+  "endIndexRange": 6000,
   "position": {
-    "index": 168,
-    "page": 9
+    "index": null,
+    "page": null
   },
   "completed": false,
   "namesPath": "./names/censusNamesSmallShuffled.json",
   "dataDirectory": "./data-cp/pattern/",
   "usedDocketsFileName": "",
   "wait": 600,
-  "alerts": "yes",
+  "alerts": "no",
   "redo": false,
   "done": {}
 }
