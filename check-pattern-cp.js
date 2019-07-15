@@ -19,6 +19,7 @@ const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDyna
       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
+      pageNavContainerSelector = '',
       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager',
       filingDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow td:nth-child(4)';
 
@@ -44,6 +45,7 @@ let requiredPrefix = /CP/;
 //       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
 //       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
 //       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
+//       pageNavContainerSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel > table > tbody > tr:nth-child(2) > td',
 //       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
 //       filingDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket > table > tbody > tr.gridViewRow td:nth-child(5)',
 //       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
@@ -77,7 +79,7 @@ let doWithDocket = makeIDCollection;
 
 
 // Standard/shared
-let versionNumber = '\nv0.52.0\n';
+let versionNumber = '\nv0.53.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -94,6 +96,10 @@ if (!assignmentID) {
 const assignmentPath = assignmentsPathStart + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
 
+
+
+
+
 // Assignment settings overrides
 const commandLineArgvs = process.argv[3];
 
@@ -101,8 +107,8 @@ const commandLineArgvs = process.argv[3];
 let runData = null;
 if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
 
-  let arvObj = JSON.parse(commandLineArgvs);//console.log('argv obj:', arvObj);
-  runData = Object.assign({}, assignmentData, arvObj);//console.log('combined objects:', runData);
+  let arvObj = JSON.parse(commandLineArgvs);//await log('argv obj:', arvObj);
+  runData = Object.assign({}, assignmentData, arvObj);//await log('combined objects:', runData);
 
 } else {
   runData = Object.assign({}, assignmentData);
@@ -111,20 +117,70 @@ if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
 // Need to be clear about deep cloning
 runData.position = {
   index: runData.position.index,
-  page: runData.position.page,
+  page: runData.position.page || 1,
 };
 
 if (runData.completed && !runData.redo) {
   throw Error('It looks like this assignment is already done! Get a new one! Google doc?'.red)
 }
 
-if (!runData.redo) {
-  console.warn('Be aware only new name indexes will be used. Nothing will be redone. That\'s good as long as it\'s what you want. You can change that with the "redo" custom property.'.yellow);
-} else {
-  console.warn('Previously gotten names will be gotten again! Because of your "redo" custom property.'.red);
+
+
+
+
+
+
+
+let stringify = function (toStringify) {
+  let string = JSON.stringify(toStringify, null, 2);
+  return string;
+};
+
+const logDir = runData.dataDirectory + 'logs/';
+const logPath = logDir + assignmentID + '.txt';
+// Make directory if needed
+mkdirp.sync(logDir, async function (err) {
+    if (err) { log('Error::', err); }
+});
+
+// TODO: Make this a higher order function taking a 'logPath' arg
+// Try this sometime (though `window.log` didn't work): https://stackoverflow.com/a/52176714
+async function log (...all) {
+  console.log(...all);
+
+  let thisLogPath = logPath;
+
+  let combined = all.join(' ');
+  let runPosition = JSON.stringify(runData.position);
+  try {
+    fs.appendFileSync(thisLogPath, '\n' + combined + '\n' + runPosition);
+
+    // If error, file doesn't exist yet
+  } catch (err) {
+    try {
+      fs.writeFileSync(thisLogPath, combined);
+      fs.appendFileSync(thisLogPath, '\n' + combined + '\n' + runPosition);
+    } catch (err) {
+      throw err;
+    }  // second try
+  }  // first try
 }
 
-console.log('runData:\n', runData);
+let logObj = {log: log};
+
+
+
+
+
+
+
+if (!runData.redo) {
+  log('Warning:', 'Be aware only new name indexes will be used. Nothing will be redone. That\'s good as long as it\'s what you want. You can change that with the "redo" custom property.'.yellow);
+} else {
+  log('Warning:', 'Previously gotten names will be gotten again! Because of your "redo" custom property.'.red);
+}
+
+log('runData:\n', stringify(runData));
 
 
 // Using the runData
@@ -135,13 +191,13 @@ const namesFilePath = runData.namesPath;
 const dataDirectory = runData.dataDirectory + assignmentID + '/';
 const usedDocketsPath = dataDirectory + type + runData.usedDocketsFileName;
 // Make directory if needed
-mkdirp.sync(dataDirectory, function (err) {
-    if (err) { console.error(err); }
+mkdirp.sync(dataDirectory, async function (err) {
+    if (err) { log('Error::', err); }
 });
 // Keeping track of what code version number we're at so
 // in future we know where to backtrack to.
-fs.appendFileSync(usedDocketsPath, versionNumber, function (err) {
-  if (err) console.log(err);
+fs.appendFileSync(usedDocketsPath, versionNumber, async function (err) {
+  if (err) log(err);
 });
 
 // Assigned variables
@@ -173,7 +229,7 @@ const doPlaySound = runData.alerts;
 let nameIndex = runData.position.index || runData.startIndexRange;
 runData.position.page = runData.position.page || 1;
 let timesRepeated = 0;
-console.log('start index: ', nameIndex + ', end index:', namesEndIndex);
+// await log('start index: ', nameIndex + ', end index:', namesEndIndex);
 
 // Limit yourself to whatever 429 is going to say.
 // 429 error didn't reveal any secrets.
@@ -192,16 +248,21 @@ let timeStartedRunning = Date.now();
 
 
 
+
 async function byNamesDuring (dates, browser, page) {
 
   let err = null;
 
   await page.setViewport({width: 1920, height: 2000});
-  page.on('console', consoleObj => console.log(consoleObj.text()));//console.log(consoleObj.text()));
+  page.on('console',
+    async function pageLog (consoleObj) {
+      await log(consoleObj.text());
+    }
+  );//await log(consoleObj.text()));
 
-  console.log('Opening page');
+  await log('Opening page');
   let goto = await page.goto(url);
-  console.log('Status:', goto.status());
+  await log('Status:', goto.status());
   let status = goto.status();
   if (status === 429 || status === 500) {
     throw Error('Error code ' + status);
@@ -225,11 +286,11 @@ async function byNamesDuring (dates, browser, page) {
     // Make sure the page is there
     await page.waitForSelector(lastNameSelector);
 
-    console.log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
+    await log('~\n~\n~\n~\n~\nName index: ' + nameIndex + '\n~\n~\n~\n~\n~\n');
     if (doPlaySound !== 'no') { alert.nameIndex(); }
 
     let name = names[nameIndex];
-    console.log(name);
+    await log(name);
 
     await page.$eval(
       lastNameSelector,
@@ -261,7 +322,7 @@ async function byNamesDuring (dates, browser, page) {
     );
 
     // wait 15 min
-    console.log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
+    await log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
     await page.waitForSelector(
       searchSelector,
       {timeout: 15 * 60 * 1000}
@@ -277,7 +338,7 @@ async function byNamesDuring (dates, browser, page) {
       // it doesn't even seem to actually wait for a full timeout
       await page.waitFor(throttle);
       // wait 15 min
-      console.log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
+      await log('Waiting up to 15 min for large results to load'.bgWhite.blue + ' @', getNowHHMM());
       await page.waitForSelector(
         searchSelector,
         {timeout: 15 * 60 * 1000}
@@ -287,15 +348,15 @@ async function byNamesDuring (dates, browser, page) {
 
     }  // ends while this name not done
 
-    console.log(18)
-    nextIndex();
+    await log(18)
+    await nextIndex();
   }  // ends while name index
 
   // Record that this data was finished
   assignmentData.completed = true;
-  fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
+  fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
 
-  console.log(19);
+  await log(19);
   return;
 };  // Ends byNamesDuring()
 
@@ -304,7 +365,7 @@ async function byNamesDuring (dates, browser, page) {
 
 
 async function getPDFs (browser, page, pageData) {
-  console.log('new page'.bgYellow);
+  await log('new page'.bgYellow);
 
   // See the page we were last one when the program stopped
   // Doesn't actually need to be here, but it's nice for
@@ -312,13 +373,13 @@ async function getPDFs (browser, page, pageData) {
   // It's our page goal for where to start downloading
   // files.
   let goalPageNumber = runData.position.page;
-  console.log('Goal page: '.blue, goalPageNumber);
+  await log('Goal page: '.blue, goalPageNumber);
   let previousPageNumber = pageData.previous;
-  console.log('Previous page: '.yellow, previousPageNumber);
+  await log('Previous page: '.yellow, previousPageNumber);
 
 
   let resultsStartTime = Date.now()
-  console.log('start looking for result:', Date().toString());
+  await log('start looking for result:', Date().toString());
 
   // wait for results to load
   let err = null;
@@ -332,7 +393,7 @@ async function getPDFs (browser, page, pageData) {
     noResultsElem = page.waitForSelector(noResultsSelector,
       { 'timeout': 120000 });
   } else {
-    noResultsElem = page.waitFor(
+    noResultsElem = page.waitForFunction(
       function (noResultsSelector, noResultsText) {
         let elem = document.querySelector(noResultsSelector)
         if (!!elem) {
@@ -356,21 +417,21 @@ async function getPDFs (browser, page, pageData) {
   let foundNoResults = false;
   try {
     await Promise.race([resultsElem, noResultsElem])
-      .then(function(value) {
-        console.log('race value:', value._remoteObject.description);
+      .then(async function(value) {
+        await log('race value:', value._remoteObject.description);
         foundSomeResults = value._remoteObject.description.indexOf(resultsSelector) >= 0;
         foundNoResults = !foundSomeResults;
-        console.log('results found?', foundSomeResults);
-        console.log('no results found?', foundNoResults);
+        await log('results found?', foundSomeResults);
+        await log('no results found?', foundNoResults);
       });
   } catch (anError) {
-    console.log('no results or non-results elements found');
+    await log('no results or non-results elements found');
     throw anError;
   }
 
   let endTime = Date.now();
   let elapsed = endTime - resultsStartTime;
-  console.log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
+  await log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
 
   if (foundNoResults) {
     return {done: true};
@@ -380,12 +441,12 @@ async function getPDFs (browser, page, pageData) {
   //   return {done: true}
   // }
   
-  console.log(3);
+  await log(3);
 
   // Do we still need this?
   await page.waitForSelector(tableSelector);
 
-  console.log(4);
+  await log(4);
   // See if we're on the last page of multiple pages
   // Also wait a bit to let the table items load
   // I know of no other way that would be useful
@@ -393,17 +454,17 @@ async function getPDFs (browser, page, pageData) {
   let nextSelector = paginationSelector + ' a:nth-last-child(2)';
   await page.waitForSelector(
       nextSelector,
-      {timeout: 5000}
-  ).then(function(arg){
+      {timeout: 60000}
+  ).then(async function(arg){
     if (arg) { paginated = true; }
-  }).catch(function(){
-    console.log('One-pager');
+  }).catch(async function(){
+    await log('One-pager');
   });
 
   // If we're paginated
   if (paginated) {
 
-    console.log('paginated:', paginated);
+    await log('paginated:', paginated);
     // PAGINATION
     // don't download pdfs till we know we're on the right page.
     // don't increment page till we've finished downloading pdfs.
@@ -419,31 +480,35 @@ async function getPDFs (browser, page, pageData) {
       pageNumSelector,
       {timeout: 60000}
     );
-    let waitedForCurrentPage = await page.waitFor(
-      function (pageNumSelector, previousPageNumber){
-
+    // console.log('a', typeof log);
+    let waitedForCurrentPage = await page.waitForFunction(
+      async function (pageNumSelector, previousPageNumber, log){
+        // console.log('b', JSON.stringify(pageNumSelector), JSON.stringify(previousPageNumber), typeof log);
         let currentPageElem = document.querySelector(pageNumSelector);
         let currentPageNumber = parseInt(currentPageElem.innerText);
         // If we're on the same page as before,
         // we need to wait some more
+        // console.log('c:', JSON.stringify(previousPageNumber), JSON.stringify(currentPageNumber));
         if (previousPageNumber !== null && currentPageNumber === previousPageNumber){
           return false;
         } else {
+          // await log('on new page:', currentPageNumber);
           console.log('on new page:', currentPageNumber);
           return currentPageNumber;
         }
       },
       {timeout: 15 * 60 * 1000},
-      pageNumSelector, previousPageNumber
+      pageNumSelector, previousPageNumber, log
     );
 
+    // console.log('d');
     // Implement this sometime
     let currentPage = waitedForCurrentPage._remoteObject.value;
-    console.log('waited for current page:', currentPage);
+    await log('waited for current page:', currentPage);
 
-
+    // console.log('e');
     let navData = await page.evaluate(
-      function (paginationSelector, pageNumSelector, goalPageNumber){
+      async function (paginationSelector, pageNumSelector, goalPageNumber, logObj){
         // Examples:
 
         // our goal page is 1.
@@ -461,23 +526,33 @@ async function getPDFs (browser, page, pageData) {
         // 7 is not there.
         // click on 5.
 
+        // let funcStr = logObj.log;
+        // let log = new Function(`return ${funStr}.apply(null, arguments)`);
+
+        // // think this doesn't work because trying to save stuff at the root folder, etc
+        // log('\n\n\n\n\n\n\n\n\nblah\n\n\n\n\n\n\n\n\n');
+
         let currentPageElem = document.querySelector(pageNumSelector);
         let currentPageNumber = currentPageElem.innerText;
 
         // Get all the page navigation options. Something funky is going on.
         let navElem = document.querySelector(paginationSelector);
         let navText = navElem.innerText;
+        // await log('nav:', navText);  // (log comforting info if it's possible in here)
         console.log('nav:', navText);  // (log comforting info if it's possible in here)
 
         let goalStr = goalPageNumber.toString();
+        // await log('current actual page indicated in nav:', currentPageNumber);
         console.log('current actual page indicated in nav:', currentPageNumber);
 
         let atGoal = currentPageNumber === goalStr;
+        // await log('current is goal?', currentPageNumber, goalStr, atGoal);
         console.log('current is goal?', currentPageNumber, goalStr, atGoal);
         // If we're there, no need to click on anything
         if (atGoal) {
+          // await log('Reached goal page');
           console.log('Reached goal page');
-          return true;
+          return {reachedGoal: true, navText: navText};
         }
 
         // Will need a selector to click on the right link for the next page
@@ -491,6 +566,7 @@ async function getPDFs (browser, page, pageData) {
         if (goalIndex !== -1) {
           // CSS is not 0 indexed
           goalIndex += 1;
+          // await log('CSS index of link to goal:', goalIndex)
           console.log('CSS index of link to goal:', goalIndex)
           selector = paginationSelector + ' a:nth-child(' + goalIndex + ')';
 
@@ -508,23 +584,24 @@ async function getPDFs (browser, page, pageData) {
           }
           // CSS is not 0 indexed
           indexOfClick += 1;
+          // await log('Index to click on:', indexOfClick);
           console.log('Index to click on:', indexOfClick);
           selector = paginationSelector + ' a:nth-child(' + indexOfClick + ')';
         }
 
-        return {selector: selector, newPageNumber: parseInt(currentPageNumber)};
+        return {selector: selector, newPageNumber: parseInt(currentPageNumber), navText: navText};
         // Implement this sometime
         // return {selector: selector};
       },
-      paginationSelector, pageNumSelector, goalPageNumber
+      paginationSelector, pageNumSelector, goalPageNumber, logObj
     );
 
-    console.log('navData:', navData);
+    await log('navData:', navData);
 
     // If we need to keep looking for our goal page,
     // click on a new page and cycle through this again
-    if (typeof navData === 'object') {
-      console.log('clicking to a new page');
+    if (navData.reachedGoal !== true) {
+      await log('clicking to a new page');
       previousPageNumber = navData.newPageNumber;
       page.click(navData.selector);
       return {done: false, previous: navData.newPageNumber};
@@ -533,13 +610,13 @@ async function getPDFs (browser, page, pageData) {
   }  // ends if paginated make sure to get to our goal
 
 
-  console.log(5);
+  await log(5);
   // go down rows getting links and ids
-  await page.waitForSelector(linksSelector).catch(function(err){
-    console.log('no link to pdf? maybe no results.')
+  await page.waitForSelector(linksSelector).catch(async function(err){
+    await log('no link to pdf? maybe no results.')
   });
   const linksText = await page.evaluate(
-    (linksSelector) => {
+    async function (linksSelector) {
       let links = Array.from(
         document.querySelectorAll(linksSelector),
         element => element.href
@@ -547,17 +624,18 @@ async function getPDFs (browser, page, pageData) {
       return links;
     },
     linksSelector
-  ).catch(function(err){
-    console.log('no link to pdf? maybe no results.')}
-    );
-
-  console.log(6);
-
-  await page.waitForSelector(docketIDSelector).catch(function(err){
-    console.log('no docket number? maybe no results.')
+  ).catch(async function(err){
+    await log('no link to pdf? maybe no results.')
   });
+
+  await log(6);
+
+  await page.waitForSelector(docketIDSelector)
+    .catch(async function(err){
+      await log('no docket number? maybe no results.')
+    });
   const docketIDTexts = await page.evaluate(
-    (docketIDSelector) => {
+    async function (docketIDSelector) {
       let ids = Array.from(
         document.querySelectorAll(docketIDSelector),
         element => element.innerText
@@ -565,16 +643,16 @@ async function getPDFs (browser, page, pageData) {
       return ids;
     },
     docketIDSelector
-  ).catch(function(err){
-    console.log('no docket number? maybe no results.')
+  ).catch(async function(err){
+    await log('no docket number? maybe no results.')
   });
 
-  console.log(7);
+  await log(7);
 
   // (Because the linksText list is twice as long)
   let adder = 0;
 
-  console.log(8);
+  await log(8);
   // download both pdfs
   for (let index = 0; index < docketIDTexts.length; index++) {
 
@@ -588,7 +666,7 @@ async function getPDFs (browser, page, pageData) {
   }  // ends for all dockets
 
 
-  console.log(9);
+  await log(9);
 
   let done = true;
   if (paginated) {
@@ -600,12 +678,13 @@ async function getPDFs (browser, page, pageData) {
     // if paginated, we're not sure we're done
     done = false;
 
-    console.log(10);
+    await log(10);
     // Look for what nav elements are disabled
     const disabledText = await page.evaluate(
-      (paginationSelector) => {
+      async function (paginationSelector, log) {
         let selector = paginationSelector + ' a[disabled]';
 
+        // await log(11);
         console.log(11);
         let allDisabled = Array.from(
           document.querySelectorAll(selector),
@@ -613,41 +692,41 @@ async function getPDFs (browser, page, pageData) {
         )
         return allDisabled;
       },
-      paginationSelector
+      paginationSelector, log
     );
 
-    console.log(12);
+    await log(12);
 
-    console.log('disabledText:'.bgYellow, disabledText)
+    await log('disabledText:'.bgYellow, disabledText)
     let nextIsDisabled = disabledText.indexOf('Next') > -1;
     if (nextIsDisabled) {
       // Means we're on the last page
-      console.log('On the last page');
+      await log('On the last page');
       done = true;
 
     } else {
 
-      console.log('Still more pages to go! Clicking the next button'.yellow)
+      await log('Still more pages to go! Clicking the next button'.yellow)
       // If there are still more pages to go, add another page number
       // and store it (we're going on to the next page)
       runData.position.page += 1;
       // Don't store other custom command line arguments, though
       assignmentData.position.page += 1;
-      fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
+      fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
 
-      console.log(13);
+      await log(13);
       // Nothing fancy, just click the 'next' button
       let nextButton = paginationSelector + ' a:nth-last-child(2)';
       await page.click(nextButton);
 
-      console.log(14);
+      await log(14);
     }  // ends if we're at the last page
 
-    console.log(15);
+    await log(15);
 
   }  // ends if paginated
 
-  console.log(16, done);
+  await log(16, done);
   return {done: done, previous: previousPageNumber};
   // Implement this sometime
   // return {done: done, previous: currentPage};
@@ -660,26 +739,26 @@ async function downloadBothFiles (docketID, goalPageNumber, page, linksText, ind
   let datedText = text + datesText;
 
   // save docket id for later reference
-  fs.appendFileSync(usedDocketsPath, datedText + '\n', function (err) {
-    if (err) console.log(err);
+  fs.appendFileSync(usedDocketsPath, datedText + '\n', async function (err) {
+    if (err) await log(err);
   });
-  console.log('docket id written:', text);
+  await log('docket id written:', text);
 
   // Download pdfs
   await page.waitFor(throttle * 10);
   await downloadPDF(linksText[index + adder], text + '-docket.pdf', docketID);
   // Because the linksText list is twice as long
-  console.log('docket #' + index, 'saved');
+  await log('docket #' + index, 'saved');
   numPDFs++;
 
   adder++
 
   await page.waitFor(throttle * 10);
   await downloadPDF(linksText[index + adder], text + '-summary.pdf', docketID);
-  console.log('summary #' + index, 'saved');
+  await log('summary #' + index, 'saved');
   numPDFs++;
 
-  console.log('# pdfs downloaded:', numPDFs, ', time elapsed:', (Date.now() - timeStartedRunning)/1000, 'seconds');
+  await log('# pdfs downloaded:', numPDFs, ', time elapsed:', (Date.now() - timeStartedRunning)/1000, 'seconds');
 
   // Keep iterating properly through the links
   return adder;
@@ -689,13 +768,13 @@ async function downloadBothFiles (docketID, goalPageNumber, page, linksText, ind
 
 
 async function downloadPDF(pdfURL, outputFilename) {
-  // console.log(pdfURL);
+  // await log(pdfURL);
   let pdfBuffer = await request.get({
     uri: pdfURL, encoding: null,
     headers: {'User-Agent': 'cfb-data-analysis'}
   });
   let path = dataDirectory + outputFilename;
-  fs.writeFileSync(path, pdfBuffer, function (err) { if (err) {console.log(err)} });
+  fs.writeFileSync(path, pdfBuffer, async function (err) { if (err) {await log(err)} });
 }
 
 
@@ -707,11 +786,11 @@ async function downloadPDF(pdfURL, outputFilename) {
 async function makeIDCollection (docketID, goalPageNumber, page, linksText, index, adder) {
 
   let dir = runData.dataDirectory;
-  mkdirp.sync(dir, function (err) {
-      if (err) { console.error(err); }
+  mkdirp.sync(dir, async function (err) {
+      if (err) { log('Error::', err); }
   });
 
-  let fileName = runData.patternIDFileName;
+  let fileName = runData.patternIDFileName + '_' + assignmentID + '.json';
   let thisPath = dir + fileName;
 
   let currentDocketsData;
@@ -731,7 +810,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
     },
     filingDateSelector
   );
-  console.log('filing date:', filingDate);
+  await log('filing date:', filingDate);
 
   let rowData = {
     assignmentID: assignmentID,
@@ -744,12 +823,12 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
   // Add data to a file
   currentDocketsData[docketID] = rowData;
-  let json = JSON.stringify(currentDocketsData, null, 2);
+  let json = stringify(currentDocketsData, null, 2);
   // Will also create file if it doesn't exist
   fs.writeFileSync(thisPath, json);
 
   numPDFs++;
-  console.log('num found so far:', numPDFs);
+  await log('num found so far:', numPDFs);
 
 };  // Ends async makeIDCollection()
 
@@ -759,14 +838,14 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
 
 
-let nextIndex = function () {
-  console.log('onto the next index');
+async function nextIndex () {
+  await log('onto the next index');
   // Permanently save that the current name was completed,
   // but all other data stays the same. Should changing data
   // and non-changing data be in the same file?
-  assignmentData.done[nameIndex] = true;
+  assignmentData.done[nameIndex] = runData.position.page;
   // Update our temporary data too
-  runData.done[nameIndex] = true;
+  runData.done[nameIndex] = runData.position.page;
 
   // If we don't want to do redos, increase the index number
   // till we get to an index that we haven't done
@@ -775,10 +854,10 @@ let nextIndex = function () {
 
   if (weDoNotWantRedos) {
     while (alreadyBeenDone && nameIndex <= runData.endIndexRange) {
-      console.log('been done:', nameIndex);
+      await log('been done:', nameIndex);
       // Update to new index
       nameIndex += 1;
-      alreadyBeenDone = runData.done[nameIndex] === true;
+      alreadyBeenDone = typeof runData.done[nameIndex] === 'number';
     }
 
   // If we want redos, then just go to the next one
@@ -789,10 +868,10 @@ let nextIndex = function () {
   // Permanently remember the next name index needed
   assignmentData.position.index = nameIndex;
   // Start page count over again
-  console.log('resetting page to 1');
+  await log('resetting page to 1');
   runData.position.page = 1;
   assignmentData.position.page = 1;
-  fs.writeFileSync(assignmentPath, JSON.stringify(assignmentData, null, 2));
+  fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
 
   return;
 }  // Ends nextIndex()
@@ -806,7 +885,7 @@ async function startNewBrowser () {
     await previousBrowser.close();
   }
 
-  console.log('Creating browser');
+  await log('Creating browser');
   let browser = await puppeteer.launch({ headless: true });
   previousBrowser = browser;
   const page = await browser.newPage();
@@ -815,8 +894,8 @@ async function startNewBrowser () {
 
     await byNamesDuring(dates, browser, page)
       .then(async function(value){
-        console.log('value:', value);
-        console.log('success');
+        await log('value:', value);
+        await log('success');
         if (doPlaySound !== 'no') {
           alert.success();
         }
@@ -832,8 +911,8 @@ async function startNewBrowser () {
 
   } catch (anError) {
 
-    console.log('byNamesDuring catch clause @'.yellow, getNowHHMM().yellow);
-    console.log(anError);
+    await log('byNamesDuring catch clause @'.yellow, getNowHHMM().yellow);
+    await log(anError);
     if (doPlaySound !== 'no') {
       // Temporary error
       alert.error();
@@ -850,13 +929,13 @@ async function startNewBrowser () {
 async function waitThenRepeat (dates, browser, page, errStatusCode) {
   timesRepeated++;
   timesRepeated % 7;  // Will turn into 0
-  console.log('Hang tight, the code will work on taking care of this'.bgWhite.blue.underline.bold);
-  console.log('timesRepeated:', timesRepeated);
+  await log('Hang tight, the code will work on taking care of this'.bgWhite.blue.underline.bold);
+  await log('timesRepeated:', timesRepeated);
 
   // How to keep using the previous browser?
   let keepGoing = function () {}
 
-  console.log(errStatusCode, typeof errStatusCode);
+  await log(errStatusCode, typeof errStatusCode);
   if (errStatusCode === 429) {
     // Note: Still got 429 while on 550ms throttle (5 secs for pdfs)
     // on some machines.
@@ -864,26 +943,26 @@ async function waitThenRepeat (dates, browser, page, errStatusCode) {
     // Add 5 min to make sure time is reached
     // then go straight to an hour.
     timesRepeated = 3;
-    console.log('waiting 5 minutes'.bgWhite.blue + ' @', getNowHHMM());
+    await log('waiting 5 minutes'.bgWhite.blue + ' @', getNowHHMM());
     setTimeout(startNewBrowser, 300000);
 
   } else {
     if (timesRepeated <= 2) {
-      console.log('waiting 1 min'.bgWhite.blue + ' @', getNowHHMM());
+      await log('waiting 1 min'.bgWhite.blue + ' @', getNowHHMM());
       setTimeout(startNewBrowser, 60000);
 
     } else if (timesRepeated <= 5) {
-      console.log('waiting an hour'.bgWhite.blue + ' @', getNowHHMM());
+      await log('waiting an hour'.bgWhite.blue + ' @', getNowHHMM());
       setTimeout(startNewBrowser, 3600000);
 
     } else if (timesRepeated <= 6){
       // wait 15 min
-      console.log('3 hours should have passed. Waiting 15 min'.bgWhite.blue + ' @', getNowHHMM());
+      await log('3 hours should have passed. Waiting 15 min'.bgWhite.blue + ' @', getNowHHMM());
       setTimeout(startNewBrowser, 900000);
 
     } else {
       // Final error
-      console.log("giving up");
+      await log("giving up").red;
       alert.gaveUp();
       await browser.close();
       process.exit(1);

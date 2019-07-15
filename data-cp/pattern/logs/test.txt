@@ -1,0 +1,2300 @@
+
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:37
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:37
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 09:37:24 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+b
+{"index":168,"page":1}
+c:  1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:37[39m
+{"index":168,"page":1}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:13:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:16:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:37
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:38
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:40
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:40
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 09:40:49 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+b undefined
+{"index":168,"page":1}
+c: null 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:40[39m
+{"index":168,"page":1}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:13:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:16:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:40
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:43
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:43
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 09:43:23 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+b "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager a[style=\"text-decoration:none;\"]" null undefined
+{"index":168,"page":1}
+c: null 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:43[39m
+{"index":168,"page":1}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:13:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:16:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:43
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:48
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:48
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 09:48:49 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+b "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager a[style=\"text-decoration:none;\"]" null undefined
+{"index":168,"page":1}
+c: null 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:48[39m
+{"index":168,"page":1}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:13:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:16:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:48
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:50[39m
+{"index":168,"page":1}
+TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 2
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:50
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:51
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:51
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 09:51:55 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+b "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager a[style=\"text-decoration:none;\"]" null undefined
+{"index":168,"page":1}
+c: null 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:51[39m
+{"index":168,"page":1}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:13:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:16:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:51
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:53
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:54
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:54
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 09:54:23 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+b "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager a[style=\"text-decoration:none;\"]" null undefined
+{"index":168,"page":1}
+c: null 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:54[39m
+{"index":168,"page":1}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:13:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:16:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:54
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:55
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:55
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 09:55:57 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+b "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager a[style=\"text-decoration:none;\"]" null undefined
+{"index":168,"page":1}
+c: null 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:55[39m
+{"index":168,"page":1}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:13:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:16:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:55
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:57
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:57
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 09:57:32 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+b "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager a[style=\"text-decoration:none;\"]" null undefined
+{"index":168,"page":1}
+c: null 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:57[39m
+{"index":168,"page":1}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:13:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:16:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:57
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:58
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:59
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 09:59:05 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 3 (seconds: 0.003)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+b "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager a[style=\"text-decoration:none;\"]" null undefined
+{"index":168,"page":1}
+c: null 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m09:59[39m
+{"index":168,"page":1}
+Error: Evaluation failed: TypeError: log is not a function
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:13:17)
+    at eval (eval at waitForPredicatePageFunction (:2:21), <anonymous>:16:9)
+    at onRaf (__puppeteer_evaluation_script__:56:33)
+    at pollRaf (__puppeteer_evaluation_script__:48:5)
+    at waitForPredicatePageFunction (__puppeteer_evaluation_script__:7:18)
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 09:59
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:26
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:26
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 10:26:57 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:30
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:30
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 10:30:36 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+waited for current page: 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m10:30[39m
+{"index":168,"page":1}
+Error: Evaluation failed: [object Object]
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 10:30
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:33
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:33
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 10:33:34 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+waited for current page: 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m10:33[39m
+{"index":168,"page":1}
+Error: Evaluation failed: [object Object]
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 10:33
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:35
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:35
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 10:35:53 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+waited for current page: 1
+{"index":168,"page":1}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":168,"page":1}
+current actual page indicated in nav: 1
+{"index":168,"page":1}
+current is goal? 1 1 true
+{"index":168,"page":1}
+Reached goal page
+{"index":168,"page":1}
+navData: true
+{"index":168,"page":1}
+5
+{"index":168,"page":1}
+6
+{"index":168,"page":1}
+7
+{"index":168,"page":1}
+8
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 1
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 2
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 3
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 4
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 5
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 6
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 7
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 8
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 9
+{"index":168,"page":1}
+9
+{"index":168,"page":1}
+10
+{"index":168,"page":1}
+11
+{"index":168,"page":1}
+12
+{"index":168,"page":1}
+[43mdisabledText:[49m First,Previous
+{"index":168,"page":1}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":168,"page":1}
+13
+{"index":168,"page":2}
+14
+{"index":168,"page":2}
+15
+{"index":168,"page":2}
+16 false
+{"index":168,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:35
+{"index":168,"page":2}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:37
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:37
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 10:37:28 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+waited for current page: 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m10:37[39m
+{"index":168,"page":1}
+Error: Evaluation failed: [object Object]
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 10:37
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:43
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:44
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 10:44:07 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+waited for current page: 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m10:44[39m
+{"index":168,"page":1}
+Error: Evaluation failed: [object Object]
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 10:44
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:49
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:49
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 10:49:31 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+waited for current page: 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m10:49[39m
+{"index":168,"page":1}
+Error: Evaluation failed: [object Object]
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 10:49
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:49
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:49
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 14:49:56 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+waited for current page: 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m14:49[39m
+{"index":168,"page":1}
+Error: Evaluation failed: [object Object]
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 14:49
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:51
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:51
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 14:51:40 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+waited for current page: 1
+{"index":168,"page":1}
+[33mbyNamesDuring catch clause @[39m [33m14:51[39m
+{"index":168,"page":1}
+Error: Evaluation failed: [object Object]
+{"index":168,"page":1}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":168,"page":1}
+timesRepeated: 1
+{"index":168,"page":1}
+ undefined
+{"index":168,"page":1}
+[34m[47mwaiting 1 min[49m[39m @ 14:51
+{"index":168,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":168,"page":1}
+runData:
+ {
+  "command": "node check-pattern-cp.js test",
+  "patternIDFileName": "test1.json",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 168,
+  "endIndexRange": 169,
+  "position": {
+    "index": 168,
+    "page": 1
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":168,"page":1}
+Creating browser
+{"index":168,"page":1}
+Opening page
+{"index":168,"page":1}
+Status: 200
+{"index":168,"page":1}
+~
+~
+~
+~
+~
+Name index: 168
+~
+~
+~
+~
+~
+
+{"index":168,"page":1}
+[object Object]
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:53
+{"index":168,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:53
+{"index":168,"page":1}
+[43mnew page[49m
+{"index":168,"page":1}
+[34mGoal page: [39m 1
+{"index":168,"page":1}
+[33mPrevious page: [39m 
+{"index":168,"page":1}
+start looking for result: Mon Jul 15 2019 14:54:00 GMT-0400 (GMT-04:00)
+{"index":168,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":1}
+results found? true
+{"index":168,"page":1}
+no results found? false
+{"index":168,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":1}
+3
+{"index":168,"page":1}
+4
+{"index":168,"page":1}
+paginated: true
+{"index":168,"page":1}
+on new page: 1
+{"index":168,"page":1}
+waited for current page: 1
+{"index":168,"page":1}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":168,"page":1}
+current actual page indicated in nav: 1
+{"index":168,"page":1}
+current is goal? 1 1 true
+{"index":168,"page":1}
+Reached goal page
+{"index":168,"page":1}
+navData: true
+{"index":168,"page":1}
+5
+{"index":168,"page":1}
+6
+{"index":168,"page":1}
+7
+{"index":168,"page":1}
+8
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 1
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 2
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 3
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 4
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 5
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 6
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 7
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 8
+{"index":168,"page":1}
+filing date: 6/20/2019 10:52:00 AM
+{"index":168,"page":1}
+num found so far: 9
+{"index":168,"page":1}
+9
+{"index":168,"page":1}
+10
+{"index":168,"page":1}
+11
+{"index":168,"page":1}
+12
+{"index":168,"page":1}
+[43mdisabledText:[49m First,Previous
+{"index":168,"page":1}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":168,"page":1}
+13
+{"index":168,"page":2}
+14
+{"index":168,"page":2}
+15
+{"index":168,"page":2}
+16 false
+{"index":168,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:54
+{"index":168,"page":2}
+[43mnew page[49m
+{"index":168,"page":2}
+[34mGoal page: [39m 2
+{"index":168,"page":2}
+[33mPrevious page: [39m 
+{"index":168,"page":2}
+start looking for result: Mon Jul 15 2019 14:54:20 GMT-0400 (GMT-04:00)
+{"index":168,"page":2}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":2}
+results found? true
+{"index":168,"page":2}
+no results found? false
+{"index":168,"page":2}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":168,"page":2}
+3
+{"index":168,"page":2}
+4
+{"index":168,"page":2}
+paginated: true
+{"index":168,"page":2}
+on new page: 2
+{"index":168,"page":2}
+waited for current page: 2
+{"index":168,"page":2}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":168,"page":2}
+current actual page indicated in nav: 2
+{"index":168,"page":2}
+current is goal? 2 2 true
+{"index":168,"page":2}
+Reached goal page
+{"index":168,"page":2}
+navData: true
+{"index":168,"page":2}
+5
+{"index":168,"page":2}
+6
+{"index":168,"page":2}
+7
+{"index":168,"page":2}
+8
+{"index":168,"page":2}
+filing date: 3/27/2019 3:42:00 PM
+{"index":168,"page":2}
+num found so far: 10
+{"index":168,"page":2}
+filing date: 3/27/2019 3:42:00 PM
+{"index":168,"page":2}
+num found so far: 11
+{"index":168,"page":2}
+filing date: 3/27/2019 3:42:00 PM
+{"index":168,"page":2}
+num found so far: 12
+{"index":168,"page":2}
+filing date: 3/27/2019 3:42:00 PM
+{"index":168,"page":2}
+num found so far: 13
+{"index":168,"page":2}
+filing date: 3/27/2019 3:42:00 PM
+{"index":168,"page":2}
+num found so far: 14
+{"index":168,"page":2}
+filing date: 3/27/2019 3:42:00 PM
+{"index":168,"page":2}
+num found so far: 15
+{"index":168,"page":2}
+filing date: 3/27/2019 3:42:00 PM
+{"index":168,"page":2}
+num found so far: 16
+{"index":168,"page":2}
+9
+{"index":168,"page":2}
+10
+{"index":168,"page":2}
+11
+{"index":168,"page":2}
+12
+{"index":168,"page":2}
+[43mdisabledText:[49m 
+{"index":168,"page":2}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":168,"page":2}
+13
+{"index":168,"page":3}
+14
+{"index":168,"page":3}
+15
+{"index":168,"page":3}
+16 false
+{"index":168,"page":3}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:54
+{"index":168,"page":3}
+[43mnew page[49m
+{"index":168,"page":3}
+[34mGoal page: [39m 3
+{"index":168,"page":3}
+[33mPrevious page: [39m 
+{"index":168,"page":3}
+start looking for result: Mon Jul 15 2019 14:54:44 GMT-0400 (GMT-04:00)
+{"index":168,"page":3}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":3}
+results found? true
+{"index":168,"page":3}
+no results found? false
+{"index":168,"page":3}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":3}
+3
+{"index":168,"page":3}
+4
+{"index":168,"page":3}
+paginated: true
+{"index":168,"page":3}
+on new page: 3
+{"index":168,"page":3}
+waited for current page: 3
+{"index":168,"page":3}
+nav: First Previous 2 3 4 5 6  Next Last
+{"index":168,"page":3}
+current actual page indicated in nav: 3
+{"index":168,"page":3}
+current is goal? 3 3 true
+{"index":168,"page":3}
+Reached goal page
+{"index":168,"page":3}
+navData: true
+{"index":168,"page":3}
+5
+{"index":168,"page":3}
+6
+{"index":168,"page":3}
+7
+{"index":168,"page":3}
+8
+{"index":168,"page":3}
+filing date: 2/22/2019 4:22:00 PM
+{"index":168,"page":3}
+num found so far: 17
+{"index":168,"page":3}
+filing date: 2/22/2019 4:22:00 PM
+{"index":168,"page":3}
+num found so far: 18
+{"index":168,"page":3}
+filing date: 2/22/2019 4:22:00 PM
+{"index":168,"page":3}
+num found so far: 19
+{"index":168,"page":3}
+filing date: 2/22/2019 4:22:00 PM
+{"index":168,"page":3}
+num found so far: 20
+{"index":168,"page":3}
+filing date: 2/22/2019 4:22:00 PM
+{"index":168,"page":3}
+num found so far: 21
+{"index":168,"page":3}
+filing date: 2/22/2019 4:22:00 PM
+{"index":168,"page":3}
+num found so far: 22
+{"index":168,"page":3}
+filing date: 2/22/2019 4:22:00 PM
+{"index":168,"page":3}
+num found so far: 23
+{"index":168,"page":3}
+filing date: 2/22/2019 4:22:00 PM
+{"index":168,"page":3}
+num found so far: 24
+{"index":168,"page":3}
+filing date: 2/22/2019 4:22:00 PM
+{"index":168,"page":3}
+num found so far: 25
+{"index":168,"page":3}
+9
+{"index":168,"page":3}
+10
+{"index":168,"page":3}
+11
+{"index":168,"page":3}
+12
+{"index":168,"page":3}
+[43mdisabledText:[49m 
+{"index":168,"page":3}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":168,"page":3}
+13
+{"index":168,"page":4}
+14
+{"index":168,"page":4}
+15
+{"index":168,"page":4}
+16 false
+{"index":168,"page":4}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:54
+{"index":168,"page":4}
+[43mnew page[49m
+{"index":168,"page":4}
+[34mGoal page: [39m 4
+{"index":168,"page":4}
+[33mPrevious page: [39m 
+{"index":168,"page":4}
+start looking for result: Mon Jul 15 2019 14:55:06 GMT-0400 (GMT-04:00)
+{"index":168,"page":4}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":4}
+results found? true
+{"index":168,"page":4}
+no results found? false
+{"index":168,"page":4}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":4}
+3
+{"index":168,"page":4}
+4
+{"index":168,"page":4}
+paginated: true
+{"index":168,"page":4}
+on new page: 4
+{"index":168,"page":4}
+waited for current page: 4
+{"index":168,"page":4}
+nav: First Previous 3 4 5 6 7  Next Last
+{"index":168,"page":4}
+current actual page indicated in nav: 4
+{"index":168,"page":4}
+current is goal? 4 4 true
+{"index":168,"page":4}
+Reached goal page
+{"index":168,"page":4}
+navData: true
+{"index":168,"page":4}
+5
+{"index":168,"page":4}
+6
+{"index":168,"page":4}
+7
+{"index":168,"page":4}
+8
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 26
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 27
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 28
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 29
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 30
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 31
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 32
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 33
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 34
+{"index":168,"page":4}
+filing date: 12/24/2018 11:28:00 AM
+{"index":168,"page":4}
+num found so far: 35
+{"index":168,"page":4}
+9
+{"index":168,"page":4}
+10
+{"index":168,"page":4}
+11
+{"index":168,"page":4}
+12
+{"index":168,"page":4}
+[43mdisabledText:[49m 
+{"index":168,"page":4}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":168,"page":4}
+13
+{"index":168,"page":5}
+14
+{"index":168,"page":5}
+15
+{"index":168,"page":5}
+16 false
+{"index":168,"page":5}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:55
+{"index":168,"page":5}
+[43mnew page[49m
+{"index":168,"page":5}
+[34mGoal page: [39m 5
+{"index":168,"page":5}
+[33mPrevious page: [39m 
+{"index":168,"page":5}
+start looking for result: Mon Jul 15 2019 14:55:31 GMT-0400 (GMT-04:00)
+{"index":168,"page":5}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":5}
+results found? true
+{"index":168,"page":5}
+no results found? false
+{"index":168,"page":5}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":5}
+3
+{"index":168,"page":5}
+4
+{"index":168,"page":5}
+paginated: true
+{"index":168,"page":5}
+on new page: 5
+{"index":168,"page":5}
+waited for current page: 5
+{"index":168,"page":5}
+nav: First Previous 4 5 6 7 8  Next Last
+{"index":168,"page":5}
+current actual page indicated in nav: 5
+{"index":168,"page":5}
+current is goal? 5 5 true
+{"index":168,"page":5}
+Reached goal page
+{"index":168,"page":5}
+navData: true
+{"index":168,"page":5}
+5
+{"index":168,"page":5}
+6
+{"index":168,"page":5}
+7
+{"index":168,"page":5}
+8
+{"index":168,"page":5}
+filing date: 11/20/2018 1:43:00 PM
+{"index":168,"page":5}
+num found so far: 36
+{"index":168,"page":5}
+filing date: 11/20/2018 1:43:00 PM
+{"index":168,"page":5}
+num found so far: 37
+{"index":168,"page":5}
+filing date: 11/20/2018 1:43:00 PM
+{"index":168,"page":5}
+num found so far: 38
+{"index":168,"page":5}
+filing date: 11/20/2018 1:43:00 PM
+{"index":168,"page":5}
+num found so far: 39
+{"index":168,"page":5}
+filing date: 11/20/2018 1:43:00 PM
+{"index":168,"page":5}
+num found so far: 40
+{"index":168,"page":5}
+filing date: 11/20/2018 1:43:00 PM
+{"index":168,"page":5}
+num found so far: 41
+{"index":168,"page":5}
+filing date: 11/20/2018 1:43:00 PM
+{"index":168,"page":5}
+num found so far: 42
+{"index":168,"page":5}
+filing date: 11/20/2018 1:43:00 PM
+{"index":168,"page":5}
+num found so far: 43
+{"index":168,"page":5}
+9
+{"index":168,"page":5}
+10
+{"index":168,"page":5}
+11
+{"index":168,"page":5}
+12
+{"index":168,"page":5}
+[43mdisabledText:[49m 
+{"index":168,"page":5}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":168,"page":5}
+13
+{"index":168,"page":6}
+14
+{"index":168,"page":6}
+15
+{"index":168,"page":6}
+16 false
+{"index":168,"page":6}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:55
+{"index":168,"page":6}
+[43mnew page[49m
+{"index":168,"page":6}
+[34mGoal page: [39m 6
+{"index":168,"page":6}
+[33mPrevious page: [39m 
+{"index":168,"page":6}
+start looking for result: Mon Jul 15 2019 14:55:57 GMT-0400 (GMT-04:00)
+{"index":168,"page":6}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":168,"page":6}
+results found? true
+{"index":168,"page":6}
+no results found? false
+{"index":168,"page":6}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":168,"page":6}
+3
+{"index":168,"page":6}
+4
+{"index":168,"page":6}
+paginated: true
+{"index":168,"page":6}
+on new page: 6
+{"index":168,"page":6}
+waited for current page: 6
+{"index":168,"page":6}
+nav: First Previous 5 6 7 8 9  Next Last
+{"index":168,"page":6}
+current actual page indicated in nav: 6
+{"index":168,"page":6}
+current is goal? 6 6 true
+{"index":168,"page":6}
+Reached goal page
+{"index":168,"page":6}
+navData: true
+{"index":168,"page":6}
+5
+{"index":168,"page":6}
+6
+{"index":168,"page":6}
+7
+{"index":168,"page":6}
+8
+{"index":168,"page":6}
+filing date: 10/11/2018 10:11:00 AM
+{"index":168,"page":6}
+num found so far: 44
+{"index":168,"page":6}
+filing date: 10/11/2018 10:11:00 AM
+{"index":168,"page":6}
+num found so far: 45
+{"index":168,"page":6}
+filing date: 10/11/2018 10:11:00 AM
+{"index":168,"page":6}
+num found so far: 46
+{"index":168,"page":6}
+filing date: 10/11/2018 10:11:00 AM
+{"index":168,"page":6}
+num found so far: 47
+{"index":168,"page":6}
+filing date: 10/11/2018 10:11:00 AM
+{"index":168,"page":6}
+num found so far: 48
+{"index":168,"page":6}
+filing date: 10/11/2018 10:11:00 AM
+{"index":168,"page":6}
+num found so far: 49
+{"index":168,"page":6}
+filing date: 10/11/2018 10:11:00 AM
+{"index":168,"page":6}
+num found so far: 50
+{"index":168,"page":6}
+filing date: 10/11/2018 10:11:00 AM
+{"index":168,"page":6}
+num found so far: 51
+{"index":168,"page":6}
+filing date: 10/11/2018 10:11:00 AM
+{"index":168,"page":6}
+num found so far: 52
+{"index":168,"page":6}
+9
+{"index":168,"page":6}
+10
+{"index":168,"page":6}
+11
+{"index":168,"page":6}
+12
+{"index":168,"page":6}
+[43mdisabledText:[49m 
+{"index":168,"page":6}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":168,"page":6}
+13
+{"index":168,"page":7}
+14
+{"index":168,"page":7}
+15
+{"index":168,"page":7}
+16 false
+{"index":168,"page":7}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 14:56
+{"index":168,"page":7}
