@@ -1,6 +1,6 @@
 {
-  "command": "node check-pattern-cp.js test",
-  "patternIDFileName": "test1",
+  "command": "node check-pattern-cp.js checkTest",
+  "patternIDFileName": "check-test1",
   "type": "cp",
   "startDate": "01/01/2009",
   "endDate": "06/25/2019",
