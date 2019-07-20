@@ -81,7 +81,7 @@ let doWithDocket = makeIDCollection;
 
 
 // Standard/shared
-let versionNumber = '\nv0.55.0\n';
+let versionNumber = '\nv0.59.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -97,6 +97,16 @@ if (!assignmentID) {
 
 const assignmentPath = assignmentsPathStart + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
+
+
+// let initialDockets = null;
+// if (/check/.test(assignmentID)) {
+//   if (assignmentData.type === 'cp') {
+//     let initialDocketsPath = 'data-cp/pattern/' + assignmentData.initialDockets;
+//     initialDockets = require(initialDocketsPath);
+//   }
+//   doWithDocket = checkID;
+// }
 
 
 
@@ -119,7 +129,7 @@ if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
 // Need to be clear about deep cloning
 runData.position = {
   index: runData.position.index,
-  page: runData.position.page || 1,
+  page: runData.position.page || 0,
 };
 
 if (runData.completed && !runData.redo) {
@@ -229,7 +239,7 @@ const doPlaySound = runData.alerts;
 
 // Global mutating state vars
 let nameIndex = runData.position.index || runData.startIndexRange;
-runData.position.page = runData.position.page || 1;
+runData.position.page = runData.position.page || 0;
 let timesRepeated = 0;
 // await log('start index: ', nameIndex + ', end index:', namesEndIndex);
 
@@ -351,7 +361,7 @@ async function byNamesDuring (dates, browser, page) {
     }  // ends while this name not done
 
     await log(18)
-    await nextIndex();
+    await nextIndex(pageData.resultsFound);
   }  // ends while name index
 
   // Record that this data was finished
@@ -374,7 +384,7 @@ async function getPDFs (browser, page, pageData) {
   // logging something.
   // It's our page goal for where to start downloading
   // files.
-  let goalPageNumber = runData.position.page;
+  let goalPageNumber = runData.position.page || 1;
   await log('Goal page: '.blue, goalPageNumber);
   let previousPageNumber = pageData.previous;
   await log('Previous page: '.yellow, previousPageNumber);
@@ -436,7 +446,7 @@ async function getPDFs (browser, page, pageData) {
   await log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
 
   if (foundNoResults) {
-    return {done: true};
+    return {done: true, resultsFound: foundSomeResults};
   }
   // This will be taken care of by error?
   // if (!foundNoResults && !foundSomeResults) {
@@ -453,10 +463,14 @@ async function getPDFs (browser, page, pageData) {
   // Also wait a bit to let the table items load
   // I know of no other way that would be useful
   let paginated = false;
-  let nextSelector = paginationSelector + ' a:nth-last-child(2)';
+  // Waiting for a long time mostly hurst one-pagers
+  // With a long date range, names that have one-pagers should be more rare
+  // TODO: possibly remember pagination and know... to wait longer...? Problematic.
+  // One pagers have results with no nav, but there's no positive to look
+  // for, just the missing place where the nav should be...
   await page.waitForSelector(
       nextSelector,
-      {timeout: 60000}
+      {timeout: 1/2 * 60 * 1000}
   ).then(async function(arg){
     if (arg) { paginated = true; }
   }).catch(async function(){
@@ -711,9 +725,10 @@ async function getPDFs (browser, page, pageData) {
       await log('Still more pages to go! Clicking the next button'.yellow)
       // If there are still more pages to go, add another page number
       // and store it (we're going on to the next page)
+      runData.position.page = goalPageNumber;
       runData.position.page += 1;
       // Don't store other custom command line arguments, though
-      assignmentData.position.page += 1;
+      assignmentData.position.page = runData.position.page;
       fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
 
       await log(13);
@@ -841,14 +856,78 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
 
 
+async function checkID (docketID, goalPageNumber, page, linksText, index, adder) {
+
+  // let toAdd = null;
+
+  // for (let docketID in initialDockets) {
+  //   if () {}
+  // }
+
+  let dir = runData.dataDirectory;
+  mkdirp.sync(dir, async function (err) {
+      if (err) { log('Error::', err); }
+  });
+
+  let fileName = runData.patternIDFileName + '_' + assignmentID + '.json';
+  let thisPath = dir + fileName;
+
+  let cssIndex = index + 1;
+  let thisFilingDateSelector = filingDateSelectorStart + cssIndex + filingDateSelectorEnd;
+
+  let currentDocketsData;
+  // If the file already exists, get that
+  try {
+    let pastDockets = require(thisPath);  // JSON - array? Object?
+    currentDocketsData = pastDockets || {};
+
+  // If not, we'll create it later
+  } catch (err) {
+    currentDocketsData = {};
+  }
+
+  let filingDate = await page.evaluate(
+    function (thisFilingDateSelector) {
+      return document.querySelector(thisFilingDateSelector).innerText;
+    },
+    thisFilingDateSelector
+  );
+  await log('filing date:', filingDate);
+
+  let rowData = {
+    assignmentID: assignmentID,
+    id: docketID,
+    filingDate: filingDate,
+    foundTimestamp: Date.now(),
+  };
+
+  // See if docket was already gotten? Maybe in future.
+
+  // Add data to a file
+  currentDocketsData[docketID] = rowData;
+  let json = stringify(currentDocketsData, null, 2);
+  // Will also create file if it doesn't exist
+  fs.writeFileSync(thisPath, json);
+
+  numPDFs++;
+  await log('num found so far:', numPDFs);
 
 
-async function nextIndex () {
+
+};  // Ends async checkID()
+
+
+
+
+async function nextIndex (resultsWereFound) {
   await log('onto the next index');
   // Permanently save that the current name was completed,
   // but all other data stays the same. Should changing data
   // and non-changing data be in the same file?
-  assignmentData.done[nameIndex] = runData.position.page;
+  if (resultsWereFound) {
+    assignmentData.done[nameIndex] = runData.position.page;
+    // otherwise it will stay `0`
+  }
   // Update our temporary data too
   runData.done[nameIndex] = runData.position.page;
 
@@ -875,7 +954,7 @@ async function nextIndex () {
   // Start page count over again
   await log('resetting page to 1');
   runData.position.page = 1;
-  assignmentData.position.page = 1;
+  assignmentData.position.page = 0;
   fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
 
   return;
