@@ -6,8 +6,8 @@
   "startIndexRange": 14001,
   "endIndexRange": 15000,
   "position": {
-    "index": 14319,
-    "page": 6
+    "index": 14345,
+    "page": 1
   },
   "completed": false,
   "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
@@ -334,6 +334,32 @@
     "14315": true,
     "14316": true,
     "14317": true,
-    "14318": true
+    "14318": true,
+    "14319": true,
+    "14320": true,
+    "14321": true,
+    "14322": true,
+    "14323": true,
+    "14324": true,
+    "14325": true,
+    "14326": true,
+    "14327": true,
+    "14328": true,
+    "14329": true,
+    "14330": true,
+    "14331": true,
+    "14332": true,
+    "14333": true,
+    "14334": true,
+    "14335": true,
+    "14336": true,
+    "14337": true,
+    "14338": true,
+    "14339": true,
+    "14340": true,
+    "14341": true,
+    "14342": true,
+    "14343": true,
+    "14344": true
   }
 }
