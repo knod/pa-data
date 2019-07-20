@@ -81,7 +81,7 @@ let doWithDocket = makeIDCollection;
 
 
 // Standard/shared
-let versionNumber = '\nv0.60.0\n';
+let versionNumber = '\nv0.62.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -99,14 +99,6 @@ const assignmentPath = assignmentsPathStart + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
 
 
-// let initialDockets = null;
-// if (/check/.test(assignmentID)) {
-//   if (assignmentData.type === 'cp') {
-//     let initialDocketsPath = 'data-cp/pattern/' + assignmentData.initialDockets;
-//     initialDockets = require(initialDocketsPath);
-//   }
-//   doWithDocket = checkID;
-// }
 
 
 
@@ -132,13 +124,19 @@ runData.position = {
   page: runData.position.page || 0,
 };
 
+runData.done = Object.assign({}, runData.done);
+
 if (runData.completed && !runData.redo) {
   throw Error('It looks like this assignment is already done! Get a new one! Google doc?'.red)
 }
 
 
-
-
+let docketsToCheck = null;
+let finishNameIndex = async function () {};
+if (/check/.test(assignmentID)) {
+  docketsToCheck = [];
+  finishNameIndex = checkIDs;
+}
 
 
 
@@ -361,7 +359,7 @@ async function byNamesDuring (dates, browser, page) {
     }  // ends while this name not done
 
     await log(18)
-    await nextIndex(pageData.resultsFound);
+    await nextIndex(pageData.foundNonResult);
   }  // ends while name index
 
   // Record that this data was finished
@@ -426,15 +424,15 @@ async function getPDFs (browser, page, pageData) {
   }
 
   let foundSomeResults = false;
-  let foundNoResults = false;
+  let foundNonResult = false;
   try {
     await Promise.race([resultsElem, noResultsElem])
       .then(async function(value) {
         await log('race value:', value._remoteObject.description);
         foundSomeResults = value._remoteObject.description.indexOf(resultsSelector) >= 0;
-        foundNoResults = !foundSomeResults;
+        foundNonResult = !foundSomeResults;
         await log('results found?', foundSomeResults);
-        await log('no results found?', foundNoResults);
+        await log('no results found?', foundNonResult);
       });
   } catch (anError) {
     await log('no results or non-results elements found');
@@ -445,11 +443,11 @@ async function getPDFs (browser, page, pageData) {
   let elapsed = endTime - resultsStartTime;
   await log('Time elapsed to find results:', elapsed, '(seconds:', elapsed/1000 + ')');
 
-  if (foundNoResults) {
-    return {done: true, resultsFound: foundSomeResults};
+  if (foundNonResult) {
+    return {done: true, foundNonResult: foundNonResult};
   }
   // This will be taken care of by error?
-  // if (!foundNoResults && !foundSomeResults) {
+  // if (!foundNonResult && !foundSomeResults) {
   //   return {done: true}
   // }
   
@@ -843,6 +841,11 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
   // Add data to a file
   currentDocketsData[docketID] = rowData;
+  // Prepare for checking on missing at... end of nameIndex
+  if (Array.isArray(docketsToCheck)) {
+    docketsToCheck.push(docketID);
+  }
+
   let json = stringify(currentDocketsData, null, 2);
   // Will also create file if it doesn't exist
   fs.writeFileSync(thisPath, json);
@@ -856,7 +859,25 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
 
 
-async function checkID (docketID, goalPageNumber, page, linksText, index, adder) {
+async function checkIDs (docketID, goalPageNumber, page, linksText, index, adder) {
+
+  let initialDockets = null;
+  if (/check/.test(assignmentID)) {
+    let initialDocketsDir = 'data-' + runData.type + '/pattern/';
+    let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
+    initialDockets = require(initialDocketsPath);
+    finish = checkIDs;
+  }
+
+  let notFoundThisIndex = require;
+  for (let key in initialDockets) {
+    if (!docketsToCheck.includes(key)) {
+      log('docket not found');
+    }
+  }
+
+
+
 
   // let toAdd = null;
 
@@ -914,21 +935,20 @@ async function checkID (docketID, goalPageNumber, page, linksText, index, adder)
 
 
 
-};  // Ends async checkID()
+};  // Ends async checkIDs()
 
 
 
 
-async function nextIndex (resultsWereFound) {
+async function nextIndex (nonResultWasFound) {
   await log('onto the next index');
   // Permanently save that the current name was completed,
   // but all other data stays the same. Should changing data
   // and non-changing data be in the same file?
-  if (resultsWereFound) {
-    assignmentData.done[nameIndex] = runData.position.page;
-    // otherwise it will stay `0`
-  } else {
+  if (nonResultWasFound) {
     assignmentData.done[nameIndex] = 0;
+  } else {
+    assignmentData.done[nameIndex] = runData.position.page;
   }
   // Update our temporary data too
   runData.done[nameIndex] = runData.position.page;
@@ -958,6 +978,9 @@ async function nextIndex (resultsWereFound) {
   runData.position.page = 1;
   assignmentData.position.page = 0;
   fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
+
+
+  finishNameIndex();
 
   return;
 }  // Ends nextIndex()

@@ -1,0 +1,752 @@
+
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":463,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js checkTest",
+  "patternIDFileName": "check-test1",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 463,
+  "endIndexRange": 463,
+  "position": {
+    "index": 463,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":463,"page":0}
+Creating browser
+{"index":463,"page":0}
+Opening page
+{"index":463,"page":0}
+Status: 200
+{"index":463,"page":0}
+~
+~
+~
+~
+~
+Name index: 463
+~
+~
+~
+~
+~
+
+{"index":463,"page":0}
+[object Object]
+{"index":463,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:23
+{"index":463,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:23
+{"index":463,"page":0}
+[43mnew page[49m
+{"index":463,"page":0}
+[34mGoal page: [39m 1
+{"index":463,"page":0}
+[33mPrevious page: [39m 
+{"index":463,"page":0}
+start looking for result: Sat Jul 20 2019 10:23:43 GMT-0400 (GMT-04:00)
+{"index":463,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":463,"page":0}
+results found? false
+{"index":463,"page":0}
+no results found? true
+{"index":463,"page":0}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":463,"page":0}
+18
+{"index":463,"page":0}
+onto the next index
+{"index":463,"page":0}
+[31mnonResult consequence 1:[39m true 0
+{"index":463,"page":0}
+been done: 463
+{"index":463,"page":0}
+resetting page to 1
+{"index":463,"page":0}
+[31mnonResult consequence 2:[39m true 0
+{"index":463,"page":1}
+19
+{"index":463,"page":1}
+value: 
+{"index":463,"page":1}
+success
+{"index":463,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":null,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js checkTest",
+  "patternIDFileName": "check-test1",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 461,
+  "endIndexRange": 463,
+  "position": {
+    "index": null,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":null,"page":0}
+Creating browser
+{"index":null,"page":0}
+Opening page
+{"index":null,"page":0}
+Status: 200
+{"index":null,"page":0}
+~
+~
+~
+~
+~
+Name index: 461
+~
+~
+~
+~
+~
+
+{"index":null,"page":0}
+[object Object]
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":null,"page":0}
+[43mnew page[49m
+{"index":null,"page":0}
+[34mGoal page: [39m 1
+{"index":null,"page":0}
+[33mPrevious page: [39m 
+{"index":null,"page":0}
+start looking for result: Sat Jul 20 2019 10:25:18 GMT-0400 (GMT-04:00)
+{"index":null,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":null,"page":0}
+results found? false
+{"index":null,"page":0}
+no results found? true
+{"index":null,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":null,"page":0}
+18
+{"index":null,"page":0}
+onto the next index
+{"index":null,"page":0}
+[31mnonResult consequence 1:[39m true 0
+{"index":null,"page":0}
+been done: 461
+{"index":null,"page":0}
+resetting page to 1
+{"index":null,"page":0}
+[31mnonResult consequence 2:[39m true 0
+{"index":null,"page":1}
+~
+~
+~
+~
+~
+Name index: 462
+~
+~
+~
+~
+~
+
+{"index":null,"page":1}
+[object Object]
+{"index":null,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":null,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":null,"page":1}
+[43mnew page[49m
+{"index":null,"page":1}
+[34mGoal page: [39m 1
+{"index":null,"page":1}
+[33mPrevious page: [39m 
+{"index":null,"page":1}
+start looking for result: Sat Jul 20 2019 10:25:20 GMT-0400 (GMT-04:00)
+{"index":null,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":null,"page":1}
+results found? false
+{"index":null,"page":1}
+no results found? true
+{"index":null,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":null,"page":1}
+18
+{"index":null,"page":1}
+onto the next index
+{"index":null,"page":1}
+[31mnonResult consequence 1:[39m true 1
+{"index":null,"page":1}
+been done: 462
+{"index":null,"page":1}
+resetting page to 1
+{"index":null,"page":1}
+[31mnonResult consequence 2:[39m true 1
+{"index":null,"page":1}
+~
+~
+~
+~
+~
+Name index: 463
+~
+~
+~
+~
+~
+
+{"index":null,"page":1}
+[object Object]
+{"index":null,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":null,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":null,"page":1}
+[43mnew page[49m
+{"index":null,"page":1}
+[34mGoal page: [39m 1
+{"index":null,"page":1}
+[33mPrevious page: [39m 
+{"index":null,"page":1}
+start looking for result: Sat Jul 20 2019 10:25:22 GMT-0400 (GMT-04:00)
+{"index":null,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":null,"page":1}
+results found? false
+{"index":null,"page":1}
+no results found? true
+{"index":null,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":null,"page":1}
+18
+{"index":null,"page":1}
+onto the next index
+{"index":null,"page":1}
+[31mnonResult consequence 1:[39m true 1
+{"index":null,"page":1}
+been done: 463
+{"index":null,"page":1}
+resetting page to 1
+{"index":null,"page":1}
+[31mnonResult consequence 2:[39m true 1
+{"index":null,"page":1}
+19
+{"index":null,"page":1}
+value: 
+{"index":null,"page":1}
+success
+{"index":null,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":461,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js checkTest",
+  "patternIDFileName": "check-test1",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 461,
+  "endIndexRange": 461,
+  "position": {
+    "index": 461,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {
+    "461": 0,
+    "462": 1,
+    "463": 1
+  }
+}
+{"index":461,"page":0}
+Creating browser
+{"index":461,"page":0}
+Opening page
+{"index":461,"page":0}
+Status: 200
+{"index":461,"page":0}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":461,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js checkTest",
+  "patternIDFileName": "check-test1",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 461,
+  "endIndexRange": 461,
+  "position": {
+    "index": 461,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":461,"page":0}
+Creating browser
+{"index":461,"page":0}
+Opening page
+{"index":461,"page":0}
+Status: 200
+{"index":461,"page":0}
+~
+~
+~
+~
+~
+Name index: 461
+~
+~
+~
+~
+~
+
+{"index":461,"page":0}
+[object Object]
+{"index":461,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:46
+{"index":461,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:46
+{"index":461,"page":0}
+[43mnew page[49m
+{"index":461,"page":0}
+[34mGoal page: [39m 1
+{"index":461,"page":0}
+[33mPrevious page: [39m 
+{"index":461,"page":0}
+start looking for result: Sat Jul 20 2019 10:46:23 GMT-0400 (GMT-04:00)
+{"index":461,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":461,"page":0}
+results found? false
+{"index":461,"page":0}
+no results found? true
+{"index":461,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":461,"page":0}
+18
+{"index":461,"page":0}
+onto the next index
+{"index":461,"page":0}
+[31mnonResult consequence 0:[39m true 0
+{"index":461,"page":0}
+[31mnonResult consequence 1:[39m true 0
+{"index":461,"page":0}
+been done: 461
+{"index":461,"page":0}
+resetting page to 1
+{"index":461,"page":0}
+[31mnonResult consequence 2:[39m true 0
+{"index":461,"page":1}
+19
+{"index":461,"page":1}
+value: 
+{"index":461,"page":1}
+success
+{"index":461,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":461,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js checkTest",
+  "patternIDFileName": "check-test1",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 461,
+  "endIndexRange": 463,
+  "position": {
+    "index": 461,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":461,"page":0}
+Creating browser
+{"index":461,"page":0}
+Opening page
+{"index":461,"page":0}
+Status: 200
+{"index":461,"page":0}
+~
+~
+~
+~
+~
+Name index: 461
+~
+~
+~
+~
+~
+
+{"index":461,"page":0}
+[object Object]
+{"index":461,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:47
+{"index":461,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:47
+{"index":461,"page":0}
+[43mnew page[49m
+{"index":461,"page":0}
+[34mGoal page: [39m 1
+{"index":461,"page":0}
+[33mPrevious page: [39m 
+{"index":461,"page":0}
+start looking for result: Sat Jul 20 2019 10:47:10 GMT-0400 (GMT-04:00)
+{"index":461,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":461,"page":0}
+results found? false
+{"index":461,"page":0}
+no results found? true
+{"index":461,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":461,"page":0}
+18
+{"index":461,"page":0}
+onto the next index
+{"index":461,"page":0}
+[31mnonResult consequence 0:[39m true 0
+{"index":461,"page":0}
+[31mnonResult consequence 1:[39m true 0
+{"index":461,"page":0}
+been done: 461
+{"index":461,"page":0}
+resetting page to 1
+{"index":461,"page":0}
+[31mnonResult consequence 2:[39m true 0
+{"index":461,"page":1}
+~
+~
+~
+~
+~
+Name index: 462
+~
+~
+~
+~
+~
+
+{"index":461,"page":1}
+[object Object]
+{"index":461,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:47
+{"index":461,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:47
+{"index":461,"page":1}
+[43mnew page[49m
+{"index":461,"page":1}
+[34mGoal page: [39m 1
+{"index":461,"page":1}
+[33mPrevious page: [39m 
+{"index":461,"page":1}
+start looking for result: Sat Jul 20 2019 10:47:13 GMT-0400 (GMT-04:00)
+{"index":461,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":461,"page":1}
+results found? false
+{"index":461,"page":1}
+no results found? true
+{"index":461,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":461,"page":1}
+18
+{"index":461,"page":1}
+onto the next index
+{"index":461,"page":1}
+[31mnonResult consequence 0:[39m true 0
+{"index":461,"page":1}
+[31mnonResult consequence 1:[39m true 1
+{"index":461,"page":1}
+been done: 462
+{"index":461,"page":1}
+resetting page to 1
+{"index":461,"page":1}
+[31mnonResult consequence 2:[39m true 1
+{"index":461,"page":1}
+~
+~
+~
+~
+~
+Name index: 463
+~
+~
+~
+~
+~
+
+{"index":461,"page":1}
+[object Object]
+{"index":461,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:47
+{"index":461,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:47
+{"index":461,"page":1}
+[43mnew page[49m
+{"index":461,"page":1}
+[34mGoal page: [39m 1
+{"index":461,"page":1}
+[33mPrevious page: [39m 
+{"index":461,"page":1}
+start looking for result: Sat Jul 20 2019 10:47:16 GMT-0400 (GMT-04:00)
+{"index":461,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":461,"page":1}
+results found? false
+{"index":461,"page":1}
+no results found? true
+{"index":461,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":461,"page":1}
+18
+{"index":461,"page":1}
+onto the next index
+{"index":461,"page":1}
+[31mnonResult consequence 0:[39m true 0
+{"index":461,"page":1}
+[31mnonResult consequence 1:[39m true 1
+{"index":461,"page":1}
+been done: 463
+{"index":461,"page":1}
+resetting page to 1
+{"index":461,"page":1}
+[31mnonResult consequence 2:[39m true 1
+{"index":461,"page":1}
+19
+{"index":461,"page":1}
+value: 
+{"index":461,"page":1}
+success
+{"index":461,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":461,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js checkTest",
+  "patternIDFileName": "check-test1",
+  "type": "cp",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 461,
+  "endIndexRange": 463,
+  "position": {
+    "index": 461,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":461,"page":0}
+Creating browser
+{"index":461,"page":0}
+Opening page
+{"index":461,"page":0}
+Status: 200
+{"index":461,"page":0}
+~
+~
+~
+~
+~
+Name index: 461
+~
+~
+~
+~
+~
+
+{"index":461,"page":0}
+[object Object]
+{"index":461,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:49
+{"index":461,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:49
+{"index":461,"page":0}
+[43mnew page[49m
+{"index":461,"page":0}
+[34mGoal page: [39m 1
+{"index":461,"page":0}
+[33mPrevious page: [39m 
+{"index":461,"page":0}
+start looking for result: Sat Jul 20 2019 10:49:20 GMT-0400 (GMT-04:00)
+{"index":461,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":461,"page":0}
+results found? false
+{"index":461,"page":0}
+no results found? true
+{"index":461,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":461,"page":0}
+18
+{"index":461,"page":0}
+onto the next index
+{"index":461,"page":0}
+[31mnonResult consequence 0:[39m true 0
+{"index":461,"page":0}
+[31mnonResult consequence 1:[39m true 0
+{"index":461,"page":0}
+been done: 461
+{"index":461,"page":0}
+resetting page to 1
+{"index":461,"page":0}
+[31mnonResult consequence 2:[39m true 0
+{"index":461,"page":1}
+~
+~
+~
+~
+~
+Name index: 462
+~
+~
+~
+~
+~
+
+{"index":461,"page":1}
+[object Object]
+{"index":461,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:49
+{"index":461,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:49
+{"index":461,"page":1}
+[43mnew page[49m
+{"index":461,"page":1}
+[34mGoal page: [39m 1
+{"index":461,"page":1}
+[33mPrevious page: [39m 
+{"index":461,"page":1}
+start looking for result: Sat Jul 20 2019 10:49:22 GMT-0400 (GMT-04:00)
+{"index":461,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":461,"page":1}
+results found? false
+{"index":461,"page":1}
+no results found? true
+{"index":461,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":461,"page":1}
+18
+{"index":461,"page":1}
+onto the next index
+{"index":461,"page":1}
+[31mnonResult consequence 0:[39m true 0
+{"index":461,"page":1}
+[31mnonResult consequence 1:[39m true 0
+{"index":461,"page":1}
+been done: 462
+{"index":461,"page":1}
+resetting page to 1
+{"index":461,"page":1}
+[31mnonResult consequence 2:[39m true 0
+{"index":461,"page":1}
+~
+~
+~
+~
+~
+Name index: 463
+~
+~
+~
+~
+~
+
+{"index":461,"page":1}
+[object Object]
+{"index":461,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:49
+{"index":461,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:49
+{"index":461,"page":1}
+[43mnew page[49m
+{"index":461,"page":1}
+[34mGoal page: [39m 1
+{"index":461,"page":1}
+[33mPrevious page: [39m 
+{"index":461,"page":1}
+start looking for result: Sat Jul 20 2019 10:49:25 GMT-0400 (GMT-04:00)
+{"index":461,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":461,"page":1}
+results found? false
+{"index":461,"page":1}
+no results found? true
+{"index":461,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":461,"page":1}
+18
+{"index":461,"page":1}
+onto the next index
+{"index":461,"page":1}
+[31mnonResult consequence 0:[39m true 0
+{"index":461,"page":1}
+[31mnonResult consequence 1:[39m true 0
+{"index":461,"page":1}
+been done: 463
+{"index":461,"page":1}
+resetting page to 1
+{"index":461,"page":1}
+[31mnonResult consequence 2:[39m true 0
+{"index":461,"page":1}
+19
+{"index":461,"page":1}
+value: 
+{"index":461,"page":1}
+success
+{"index":461,"page":1}
