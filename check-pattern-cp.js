@@ -81,7 +81,7 @@ let doWithDocket = makeIDCollection;
 
 
 // Standard/shared
-let versionNumber = '\nv0.59.0\n';
+let versionNumber = '\nv0.60.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -927,6 +927,8 @@ async function nextIndex (resultsWereFound) {
   if (resultsWereFound) {
     assignmentData.done[nameIndex] = runData.position.page;
     // otherwise it will stay `0`
+  } else {
+    assignmentData.done[nameIndex] = 0;
   }
   // Update our temporary data too
   runData.done[nameIndex] = runData.position.page;
