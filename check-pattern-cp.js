@@ -81,7 +81,7 @@ let doWithDocket = makeIDCollection;
 
 
 // Standard/shared
-let versionNumber = '\nv0.63.0\n';
+let versionNumber = '\nv0.64.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -97,9 +97,6 @@ if (!assignmentID) {
 
 const assignmentPath = assignmentsPathStart + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
-
-
-
 
 
 
@@ -131,11 +128,12 @@ if (runData.completed && !runData.redo) {
 }
 
 
-let checkingIDs = false;
+
+// let checkingIDs = false;
 let afterNameIndex = async function () {};
 if (runData.mode === 'check') {
-  checkingIDs = true;
-  afterNameIndex = checkIDs;
+  // checkingIDs = true;
+  doWithDocket = justIDs;
 }
 
 
@@ -805,8 +803,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
       if (err) { log('Error::', err); }
   });
 
-  let fileName = runData.patternIDFileName + '_' + assignmentID + '.json';
-  let thisPath = dir + fileName;
+  let resultsPath = getIDsResultsPath(runData);
 
   let cssIndex = index + 1;
   let thisFilingDateSelector = filingDateSelectorStart + cssIndex + filingDateSelectorEnd;
@@ -814,7 +811,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
   let currentDocketsData;
   // If the file already exists, get that
   try {
-    let pastDockets = require(thisPath);  // JSON - array? Object?
+    let pastDockets = require(resultsPath);  // JSON - array? Object?
     currentDocketsData = pastDockets || { found: {} };
 
   // If not, we'll create it later
@@ -842,18 +839,18 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
   // Add data to a file
   currentDocketsData[docketID] = rowData;
 
-  // Prepare for checking on missing at... end of nameIndex?
-  if (checkingIDs) {
-    if (Array.isArray(currentDocketsData.found[nameIndex])) {
-      currentDocketsData.found[nameIndex].push(docketID);
-    } else {
-      currentDocketsData.found[nameIndex] = [ docketID ];
-    }
-  }
+  // // Prepare for checking on missing at... end of nameIndex?
+  // if (checkingIDs) {
+  //   if (Array.isArray(currentDocketsData.found[nameIndex])) {
+  //     currentDocketsData.found[nameIndex].push(docketID);
+  //   } else {
+  //     currentDocketsData.found[nameIndex] = [ docketID ];
+  //   }
+  // }
 
   let json = stringify(currentDocketsData, null, 2);
   // Will also create file if it doesn't exist
-  fs.writeFileSync(thisPath, json);
+  fs.writeFileSync(resultsPath, json);
 
   numPDFs++;
   await log('num found so far:', numPDFs);
@@ -863,81 +860,62 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
 
 
+// Should we store these ones by name index now...?
+// Compounding problems? Hmm
+// async function justIDs (docketID, nameIndex) {
+async function justIDs (docketID) {
+  let resultsPath = getIDsResultsPath(runData);
+  let results = require(resultsPath) || {};
 
-async function checkIDs (nameIndex) {
-
-  let initialDocketsDir = 'data-' + runData.type + '/pattern/';
-  let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
-  let initialDockets = require(initialDocketsPath)[nameIndex];
-
-  // Get current name index ids found. Now where's that being stored...?
-  // let IDsFoundInThisIndex = require();
-  for (let key in initialDockets) {
-    if (!docketsToCheck.includes(key)) {
-      log('docket not found');
-    }
+  if (!Array.isArray(results[nameIndex])) {
+    results[nameIndex] = [ docketID ];
+  } else {
+    results[nameIndex].push(docketID);
   }
 
+  let json = stringify(results);
+
+  fs.writeFileSync(resultsPath, json);
+};  // Ends async justIDs()
 
 
 
-  // let toAdd = null;
+// // This can only work if we stored them by name index, which we didn't
+// // So we'll have to wait to check them in a separate script after
+// // they've all been processed :(
+// async function checkIDs (nameIndex, resultsPath) {
 
-  // for (let docketID in initialDockets) {
-  //   if () {}
-  // }
+//   if (!resultsPath) {
+//     resultsPath = getIDsResultsPath(runData);
+//   }
 
+//   let initialDocketsDir = 'data-' + runData.type + '/pattern/';
+//   let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
+//   let initialDockets = require(initialDocketsPath);
+
+//   // Get current name index ids found. Now where's that being stored...?
+//   let IDsFoundInThisIndex = require(resultsPath);
+
+//   // Damn. Way I stored them we have to go through all of them each time. Bleh.
+//   for (let key in initialDockets) {
+//     if (!docketsToCheck.includes(key)) {
+//       log('docket not found');
+//     }
+//   }
+
+// };  // Ends async checkIDs()
+
+
+async function getIDsResultsPath (runData) {
   let dir = runData.dataDirectory;
   mkdirp.sync(dir, async function (err) {
       if (err) { log('Error::', err); }
   });
 
   let fileName = runData.patternIDFileName + '_' + assignmentID + '.json';
-  let thisPath = dir + fileName;
-
-  let cssIndex = index + 1;
-  let thisFilingDateSelector = filingDateSelectorStart + cssIndex + filingDateSelectorEnd;
-
-  let currentDocketsData;
-  // If the file already exists, get that
-  try {
-    let pastDockets = require(thisPath);  // JSON - array? Object?
-    currentDocketsData = pastDockets || {};
-
-  // If not, we'll create it later
-  } catch (err) {
-    currentDocketsData = {};
-  }
-
-  let filingDate = await page.evaluate(
-    function (thisFilingDateSelector) {
-      return document.querySelector(thisFilingDateSelector).innerText;
-    },
-    thisFilingDateSelector
-  );
-  await log('filing date:', filingDate);
-
-  let rowData = {
-    assignmentID: assignmentID,
-    id: docketID,
-    filingDate: filingDate,
-    foundTimestamp: Date.now(),
-  };
-
-  // See if docket was already gotten? Maybe in future.
-
-  // Add data to a file
-  currentDocketsData[docketID] = rowData;
-  let json = stringify(currentDocketsData, null, 2);
-  // Will also create file if it doesn't exist
-  fs.writeFileSync(thisPath, json);
-
-  numPDFs++;
-  await log('num found so far:', numPDFs);
-
-
-
-};  // Ends async checkIDs()
+  let resultsPath = dir + fileName;
+  return resultsPath;
+};
 
 
 
