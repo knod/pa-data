@@ -10,72 +10,72 @@ const colors = require('colors');
 const mkdirp = require('mkdirp');
 
 // CP Stuff
-const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
-      lastNameSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl",
-      firstNameSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_firstNameControl",
-      docketTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_docketTypeListControl",
-      startDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox",
-      endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
-      searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
-      resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
-      noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
-      pageNavContainerSelector = '',
-      paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager',
-      filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow:nth-child(',
-      filingDateSelectorEnd = ') td:nth-child(4)';
-
-const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
-
-const searchTypeVal = "Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      docketTypeVal = "Criminal";
-const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
-
-let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
-    linksSelector = '.gridViewRow a.DynamicMenuItem',
-    docketIDSelector = '.gridViewRow td:nth-child(2)';
-
-let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let requiredPrefix = /CP/;
+// const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
+//       lastNameSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl",
+//       firstNameSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_firstNameControl",
+//       docketTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_docketTypeListControl",
+//       startDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox",
+//       endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
+//       searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
+//       resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
+//       noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
+//       pageNavContainerSelector = '',
+//       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager',
+//       filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow:nth-child(',
+//       filingDateSelectorEnd = ') td:nth-child(4)';
+//
+// const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
+//
+// const searchTypeVal = "Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+//       docketTypeVal = "Criminal";
+// const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
+//
+// let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
+//     linksSelector = '.gridViewRow a.DynamicMenuItem',
+//     docketIDSelector = '.gridViewRow td:nth-child(2)';
+//
+// let nextSelector = paginationSelector + ' a:nth-last-child(2)';
+// let requiredPrefix = /CP/;
 
 // // MDJ Stuff
-// const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
-//       lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName',
-//       firstNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtFirstName',
-//       docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType',
-//       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
-//       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
-//       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-//       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
-//       pageNavContainerSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel > table > tbody > tr:nth-child(2) > td',
-//       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
-//       filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket > table > tbody > tr.gridViewRow:nth-child(',
-//       filingDateSelectorEnd = ') td:nth-child(5)',
-//       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
+const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
+      lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName',
+      firstNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtFirstName',
+      docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType',
+      startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
+      endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
+      searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
+      resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
+      pageNavContainerSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel > table > tbody > tr:nth-child(2) > td',
+      paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
+      filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket > table > tbody > tr.gridViewRow:nth-child(',
+      filingDateSelectorEnd = ') td:nth-child(5)',
+      url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
 
-// let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
-// let noResultsText = 'No Records Found'
+let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
+let noResultsText = 'No Records Found'
 
-// const searchTypeVal = "ParticipantName",
-//       docketTypeVal = "CR";
-// const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
+const searchTypeVal = "ParticipantName",
+      docketTypeVal = "CR";
+const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
 
 
-// let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
-//     linksSelector = '.gridViewRow a.DynamicMenuItem',
-//     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
-// let nextSelector = paginationSelector + ' a:nth-last-child(2)';
+let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
+    linksSelector = '.gridViewRow a.DynamicMenuItem',
+    docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
+let nextSelector = paginationSelector + ' a:nth-last-child(2)';
 
-// let requiredPrefix = /MJ/;
+let requiredPrefix = /MJ/;
 
 
 
 // // For downloading PDFS
-// let assignmentsPathStart = './assignments/';
-// let doWithDocket = downloadBothFiles;
+let assignmentsPathStart = './assignments/';
+let doWithDocket = downloadBothFiles;
 
 // For finding all current dockets
-let assignmentsPathStart = './assignments/pattern/';
-let doWithDocket = makeIDCollection;
+// let assignmentsPathStart = './assignments/pattern/';
+// let doWithDocket = makeIDCollection;
 
 
 
@@ -99,6 +99,14 @@ const assignmentPath = assignmentsPathStart + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
 
 
+// let initialDockets = null;
+// if (/check/.test(assignmentID)) {
+//   if (assignmentData.type === 'cp') {
+//     let initialDocketsPath = 'data-cp/pattern/' + assignmentData.initialDockets;
+//     initialDockets = require(initialDocketsPath);
+//   }
+//   doWithDocket = checkID;
+// }
 
 
 
@@ -131,12 +139,8 @@ if (runData.completed && !runData.redo) {
 }
 
 
-let checkingIDs = false;
-let afterNameIndex = async function () {};
-if (/check/.test(assignmentID)) {
-  checkingIDs = true;
-  afterNameIndex = checkIDs;
-}
+
+
 
 
 
@@ -450,7 +454,7 @@ async function getPDFs (browser, page, pageData) {
   // if (!foundNonResult && !foundSomeResults) {
   //   return {done: true}
   // }
-  
+
   await log(3);
 
   // Do we still need this?
@@ -496,7 +500,7 @@ async function getPDFs (browser, page, pageData) {
     );
     // console.log('a', typeof log);
     let waitedForCurrentPage = await page.waitForFunction(
-      async function (pageNumSelector, previousPageNumber, log){
+      function (pageNumSelector, previousPageNumber, log){
         // console.log('b', JSON.stringify(pageNumSelector), JSON.stringify(previousPageNumber), typeof log);
         let currentPageElem = document.querySelector(pageNumSelector);
         let currentPageNumber = parseInt(currentPageElem.innerText);
@@ -815,7 +819,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
   // If the file already exists, get that
   try {
     let pastDockets = require(thisPath);  // JSON - array? Object?
-    currentDocketsData = pastDockets || { found: {} };
+    currentDocketsData = pastDockets || {};
 
   // If not, we'll create it later
   } catch (err) {
@@ -841,16 +845,6 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
   // Add data to a file
   currentDocketsData[docketID] = rowData;
-
-  // Prepare for checking on missing at... end of nameIndex?
-  if (checkingIDs) {
-    if (Array.isArray(currentDocketsData.found[nameIndex])) {
-      currentDocketsData.found[nameIndex].push(docketID);
-    } else {
-      currentDocketsData.found[nameIndex] = [ docketID ];
-    }
-  }
-
   let json = stringify(currentDocketsData, null, 2);
   // Will also create file if it doesn't exist
   fs.writeFileSync(thisPath, json);
@@ -864,22 +858,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
 
 
-async function checkIDs (nameIndex) {
-
-  let initialDocketsDir = 'data-' + runData.type + '/pattern/';
-  let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
-  let initialDockets = require(initialDocketsPath);
-
-  // Get current name index ids found. Now where's that being stored...?
-  // let IDsFoundInThisIndex = require();
-  for (let key in initialDockets) {
-    if (!docketsToCheck.includes(key)) {
-      log('docket not found');
-    }
-  }
-
-
-
+async function checkID (docketID, goalPageNumber, page, linksText, index, adder) {
 
   // let toAdd = null;
 
@@ -937,7 +916,7 @@ async function checkIDs (nameIndex) {
 
 
 
-};  // Ends async checkIDs()
+};  // Ends async checkID()
 
 
 
@@ -980,8 +959,6 @@ async function nextIndex (nonResultWasFound) {
   runData.position.page = 1;
   assignmentData.position.page = 0;
   fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
-
-  afterNameIndex(nameIndex - 1);
 
   return;
 }  // Ends nextIndex()

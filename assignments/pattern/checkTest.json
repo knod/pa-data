@@ -4,18 +4,22 @@
   "type": "cp",
   "startDate": "01/01/2009",
   "endDate": "06/25/2019",
-  "startIndexRange": 168,
-  "endIndexRange": 169,
+  "startIndexRange": 461,
+  "endIndexRange": 463,
   "position": {
-    "index": 168,
-    "page": null
+    "index": 464,
+    "page": 0
   },
-  "completed": false,
+  "completed": true,
   "namesPath": "./names/censusNamesSmallShuffled.json",
   "dataDirectory": "./data-cp/pattern/",
   "usedDocketsFileName": "",
   "wait": 600,
   "alerts": "yes",
   "redo": false,
-  "done": {}
+  "done": {
+    "461": 0,
+    "462": 0,
+    "463": 0
+  }
 }
