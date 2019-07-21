@@ -131,11 +131,11 @@ if (runData.completed && !runData.redo) {
 }
 
 
-let docketsToCheck = null;
-let finishNameIndex = async function () {};
+let checkingIDs = false;
+let afterNameIndex = async function () {};
 if (/check/.test(assignmentID)) {
-  docketsToCheck = [];
-  finishNameIndex = checkIDs;
+  checkingIDs = true;
+  afterNameIndex = checkIDs;
 }
 
 
@@ -815,7 +815,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
   // If the file already exists, get that
   try {
     let pastDockets = require(thisPath);  // JSON - array? Object?
-    currentDocketsData = pastDockets || {};
+    currentDocketsData = pastDockets || { found: {} };
 
   // If not, we'll create it later
   } catch (err) {
@@ -841,9 +841,14 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
   // Add data to a file
   currentDocketsData[docketID] = rowData;
-  // Prepare for checking on missing at... end of nameIndex
-  if (Array.isArray(docketsToCheck)) {
-    docketsToCheck.push(docketID);
+
+  // Prepare for checking on missing at... end of nameIndex?
+  if (checkingIDs) {
+    if (Array.isArray(currentDocketsData.found[nameIndex])) {
+      currentDocketsData.found[nameIndex].push(docketID);
+    } else {
+      currentDocketsData.found[nameIndex] = [ docketID ];
+    }
   }
 
   let json = stringify(currentDocketsData, null, 2);
@@ -859,17 +864,13 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
 
 
-async function checkIDs (docketID, goalPageNumber, page, linksText, index, adder) {
+async function checkIDs (nameIndex) {
 
-  let initialDockets = null;
-  if (/check/.test(assignmentID)) {
-    let initialDocketsDir = 'data-' + runData.type + '/pattern/';
-    let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
-    initialDockets = require(initialDocketsPath);
-    finish = checkIDs;
-  }
+  let initialDocketsDir = 'data-' + runData.type + '/pattern/';
+  let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
+  let initialDockets = require(initialDocketsPath);
 
-  let notFoundThisIndex = require;
+  let IDsFoundInThisIndex = require();
   for (let key in initialDockets) {
     if (!docketsToCheck.includes(key)) {
       log('docket not found');
@@ -979,8 +980,7 @@ async function nextIndex (nonResultWasFound) {
   assignmentData.position.page = 0;
   fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
 
-
-  finishNameIndex();
+  afterNameIndex(nameIndex - 1);
 
   return;
 }  // Ends nextIndex()
