@@ -870,7 +870,8 @@ async function checkIDs (nameIndex) {
   let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
   let initialDockets = require(initialDocketsPath);
 
-  let IDsFoundInThisIndex = require();
+  // Get current name index ids found. Now where's that being stored...?
+  // let IDsFoundInThisIndex = require();
   for (let key in initialDockets) {
     if (!docketsToCheck.includes(key)) {
       log('docket not found');
