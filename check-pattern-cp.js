@@ -81,7 +81,7 @@ let doWithDocket = makeIDCollection;
 
 
 // Standard/shared
-let versionNumber = '\nv0.62.0\n';
+let versionNumber = '\nv0.63.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -111,8 +111,8 @@ const commandLineArgvs = process.argv[3];
 let runData = null;
 if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
 
-  let arvObj = JSON.parse(commandLineArgvs);//await log('argv obj:', arvObj);
-  runData = Object.assign({}, assignmentData, arvObj);//await log('combined objects:', runData);
+  let arvObj = JSON.parse(commandLineArgvs);
+  runData = Object.assign({}, assignmentData, arvObj);
 
 } else {
   runData = Object.assign({}, assignmentData);
@@ -133,7 +133,7 @@ if (runData.completed && !runData.redo) {
 
 let checkingIDs = false;
 let afterNameIndex = async function () {};
-if (/check/.test(assignmentID)) {
+if (runData.mode === 'check') {
   checkingIDs = true;
   afterNameIndex = checkIDs;
 }
@@ -154,6 +154,7 @@ mkdirp.sync(logDir, async function (err) {
 });
 
 // TODO: Make this a higher order function taking a 'logPath' arg
+// Doesn't work in `page` higher order functions (think it can't save file there)
 // Try this sometime (though `window.log` didn't work): https://stackoverflow.com/a/52176714
 async function log (...all) {
   console.log(...all);
@@ -496,7 +497,7 @@ async function getPDFs (browser, page, pageData) {
     );
     // console.log('a', typeof log);
     let waitedForCurrentPage = await page.waitForFunction(
-      async function (pageNumSelector, previousPageNumber, log){
+      function (pageNumSelector, previousPageNumber){
         // console.log('b', JSON.stringify(pageNumSelector), JSON.stringify(previousPageNumber), typeof log);
         let currentPageElem = document.querySelector(pageNumSelector);
         let currentPageNumber = parseInt(currentPageElem.innerText);
@@ -512,7 +513,7 @@ async function getPDFs (browser, page, pageData) {
         }
       },
       {timeout: 15 * 60 * 1000},
-      pageNumSelector, previousPageNumber, log
+      pageNumSelector, previousPageNumber
     );
 
     // console.log('d');
@@ -522,7 +523,7 @@ async function getPDFs (browser, page, pageData) {
 
     // console.log('e');
     let navData = await page.evaluate(
-      async function (paginationSelector, pageNumSelector, goalPageNumber, logObj){
+      function (paginationSelector, pageNumSelector, goalPageNumber){
         // Examples:
 
         // our goal page is 1.
@@ -607,7 +608,7 @@ async function getPDFs (browser, page, pageData) {
         // Implement this sometime
         // return {selector: selector};
       },
-      paginationSelector, pageNumSelector, goalPageNumber, logObj
+      paginationSelector, pageNumSelector, goalPageNumber
     );
 
     await log('navData:', navData);
@@ -695,10 +696,9 @@ async function getPDFs (browser, page, pageData) {
     await log(10);
     // Look for what nav elements are disabled
     const disabledText = await page.evaluate(
-      async function (paginationSelector, log) {
+      function (paginationSelector) {
         let selector = paginationSelector + ' a[disabled]';
 
-        // await log(11);
         console.log(11);
         let allDisabled = Array.from(
           document.querySelectorAll(selector),
@@ -706,7 +706,7 @@ async function getPDFs (browser, page, pageData) {
         )
         return allDisabled;
       },
-      paginationSelector, log
+      paginationSelector
     );
 
     await log(12);
@@ -868,7 +868,7 @@ async function checkIDs (nameIndex) {
 
   let initialDocketsDir = 'data-' + runData.type + '/pattern/';
   let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
-  let initialDockets = require(initialDocketsPath);
+  let initialDockets = require(initialDocketsPath)[nameIndex];
 
   // Get current name index ids found. Now where's that being stored...?
   // let IDsFoundInThisIndex = require();
