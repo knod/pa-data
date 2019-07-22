@@ -79,7 +79,7 @@ let assignmentsPathStart = './assignments/pattern/';
 
 
 // Standard/shared
-let versionNumber = '\nv0.68.1\n';
+let versionNumber = '\nv0.69.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz "{\"alerts\":\"no\"}"
@@ -831,7 +831,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
     thisFilingDateSelector
   );
 
-  let position = require(assignmentPath).position;
+  let position = JSON.parse(fs.readFileSync(assignmentPath)).position;
   await log('position:', JSON.stringify(position));
   await log('id:', docketID);
   await log('filing date:', filingDate);

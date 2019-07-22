@@ -1,7 +1,9 @@
 {
   "command": "node check-pattern-cp.js cp00k01k09c",
   "patternIDFileName": "round1",
+  "initialDockets": "",
   "type": "cp",
+  "mode": "pattern",
   "startDate": "01/01/2009",
   "endDate": "06/25/2019",
   "startIndexRange": 0,
