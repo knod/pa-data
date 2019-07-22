@@ -838,6 +838,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
   let rowData = {
     assignmentID: assignmentID,
+    position: runData.position,
     id: docketID,
     filingDate: filingDate,
     foundTimestamp: Date.now(),
