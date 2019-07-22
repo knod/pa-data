@@ -9,8 +9,8 @@
   "startIndexRange": 1001,
   "endIndexRange": 6000,
   "position": {
-    "index": null,
-    "page": null
+    "index": 1012,
+    "page": 7
   },
   "completed": false,
   "namesPath": "./names/censusNamesSmallShuffled.json",
@@ -19,5 +19,17 @@
   "wait": 500,
   "alerts": "no",
   "redo": false,
-  "done": {}
+  "done": {
+    "1001": 0,
+    "1002": 0,
+    "1003": 2,
+    "1004": 0,
+    "1005": 0,
+    "1006": 0,
+    "1007": 1,
+    "1008": 0,
+    "1009": 0,
+    "1010": 0,
+    "1011": 0
+  }
 }

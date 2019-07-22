@@ -832,13 +832,15 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
     },
     thisFilingDateSelector
   );
-  await log('position:', JSON.stringify(runData.position));
+
+  let position = require(assignmentPath).position;
+  await log('position:', JSON.stringify(position));
   await log('id:', docketID);
   await log('filing date:', filingDate);
 
   let rowData = {
     assignmentID: assignmentID,
-    position: runData.position,
+    position: position,
     id: docketID,
     filingDate: filingDate,
     foundTimestamp: Date.now(),
