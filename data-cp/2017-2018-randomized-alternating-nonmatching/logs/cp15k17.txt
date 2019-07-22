@@ -40480,3 +40480,3508 @@ Time elapsed to find results: 5 (seconds: 0.005)
 {"index":14519,"page":1}
 4
 {"index":14519,"page":1}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":14801,"page":0}
+runData:
+ {
+  "command": "node cp-names3.js cp15k17",
+  "type": "cp",
+  "startDate": "01/01/2017",
+  "endDate": "12/31/2018",
+  "startIndexRange": 14001,
+  "endIndexRange": 15000,
+  "position": {
+    "index": 14801,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/cp_alternating_nonmatching_names01_17to12_18_remaining_shuffled.json",
+  "dataDirectory": "data-cp/2017-2018-randomized-alternating-nonmatching/",
+  "usedDocketsFileName": "-dockets-used.txt",
+  "wait": 600,
+  "alerts": "yes",
+  "redo": false,
+  "done": {
+    "14001": true,
+    "14002": true,
+    "14003": true,
+    "14004": true,
+    "14005": true,
+    "14006": true,
+    "14007": true,
+    "14008": true,
+    "14009": true,
+    "14010": true,
+    "14011": true,
+    "14012": true,
+    "14013": true,
+    "14014": true,
+    "14015": true,
+    "14016": true,
+    "14017": true,
+    "14018": true,
+    "14019": true,
+    "14020": true,
+    "14021": true,
+    "14022": true,
+    "14023": true,
+    "14024": true,
+    "14025": true,
+    "14026": true,
+    "14027": true,
+    "14028": true,
+    "14029": true,
+    "14030": true,
+    "14031": true,
+    "14032": true,
+    "14033": true,
+    "14034": true,
+    "14035": true,
+    "14036": true,
+    "14037": true,
+    "14038": true,
+    "14039": true,
+    "14040": true,
+    "14041": true,
+    "14042": true,
+    "14043": true,
+    "14044": true,
+    "14045": true,
+    "14046": true,
+    "14047": true,
+    "14048": true,
+    "14049": true,
+    "14050": true,
+    "14051": true,
+    "14052": true,
+    "14053": true,
+    "14054": true,
+    "14055": true,
+    "14056": true,
+    "14057": true,
+    "14058": true,
+    "14059": true,
+    "14060": true,
+    "14061": true,
+    "14062": true,
+    "14063": true,
+    "14064": true,
+    "14065": true,
+    "14066": true,
+    "14067": true,
+    "14068": true,
+    "14069": true,
+    "14070": true,
+    "14071": true,
+    "14072": true,
+    "14073": true,
+    "14074": true,
+    "14075": true,
+    "14076": true,
+    "14077": true,
+    "14078": true,
+    "14079": true,
+    "14080": true,
+    "14081": true,
+    "14082": true,
+    "14083": true,
+    "14084": true,
+    "14085": true,
+    "14086": true,
+    "14087": true,
+    "14088": true,
+    "14089": true,
+    "14090": true,
+    "14091": true,
+    "14092": true,
+    "14093": true,
+    "14094": true,
+    "14095": true,
+    "14096": true,
+    "14097": true,
+    "14098": true,
+    "14099": true,
+    "14100": true,
+    "14101": true,
+    "14102": true,
+    "14103": true,
+    "14104": true,
+    "14105": true,
+    "14106": true,
+    "14107": true,
+    "14108": true,
+    "14109": true,
+    "14110": true,
+    "14111": true,
+    "14112": true,
+    "14113": true,
+    "14114": true,
+    "14115": true,
+    "14116": true,
+    "14117": true,
+    "14118": true,
+    "14119": true,
+    "14120": true,
+    "14121": true,
+    "14122": true,
+    "14123": true,
+    "14124": true,
+    "14125": true,
+    "14126": true,
+    "14127": true,
+    "14128": true,
+    "14129": true,
+    "14130": true,
+    "14131": true,
+    "14132": true,
+    "14133": true,
+    "14134": true,
+    "14135": true,
+    "14136": true,
+    "14137": true,
+    "14138": true,
+    "14139": true,
+    "14140": true,
+    "14141": true,
+    "14142": true,
+    "14143": true,
+    "14144": true,
+    "14145": true,
+    "14146": true,
+    "14147": true,
+    "14148": true,
+    "14149": true,
+    "14150": true,
+    "14151": true,
+    "14152": true,
+    "14153": true,
+    "14154": true,
+    "14155": true,
+    "14156": true,
+    "14157": true,
+    "14158": true,
+    "14159": true,
+    "14160": true,
+    "14161": true,
+    "14162": true,
+    "14163": true,
+    "14164": true,
+    "14165": true,
+    "14166": true,
+    "14167": true,
+    "14168": true,
+    "14169": true,
+    "14170": true,
+    "14171": true,
+    "14172": true,
+    "14173": true,
+    "14174": true,
+    "14175": true,
+    "14176": true,
+    "14177": true,
+    "14178": true,
+    "14179": true,
+    "14180": true,
+    "14181": true,
+    "14182": true,
+    "14183": true,
+    "14184": true,
+    "14185": true,
+    "14186": true,
+    "14187": true,
+    "14188": true,
+    "14189": true,
+    "14190": true,
+    "14191": true,
+    "14192": true,
+    "14193": true,
+    "14194": true,
+    "14195": true,
+    "14196": true,
+    "14197": true,
+    "14198": true,
+    "14199": true,
+    "14200": true,
+    "14201": true,
+    "14202": true,
+    "14203": true,
+    "14204": true,
+    "14205": true,
+    "14206": true,
+    "14207": true,
+    "14208": true,
+    "14209": true,
+    "14210": true,
+    "14211": true,
+    "14212": true,
+    "14213": true,
+    "14214": true,
+    "14215": true,
+    "14216": true,
+    "14217": true,
+    "14218": true,
+    "14219": true,
+    "14220": true,
+    "14221": true,
+    "14222": true,
+    "14223": true,
+    "14224": true,
+    "14225": true,
+    "14226": true,
+    "14227": true,
+    "14228": true,
+    "14229": true,
+    "14230": true,
+    "14231": true,
+    "14232": true,
+    "14233": true,
+    "14234": true,
+    "14235": true,
+    "14236": true,
+    "14237": true,
+    "14238": true,
+    "14239": true,
+    "14240": true,
+    "14241": true,
+    "14242": true,
+    "14243": true,
+    "14244": true,
+    "14245": true,
+    "14246": true,
+    "14247": true,
+    "14248": true,
+    "14249": true,
+    "14250": true,
+    "14251": true,
+    "14252": true,
+    "14253": true,
+    "14254": true,
+    "14255": true,
+    "14256": true,
+    "14257": true,
+    "14258": true,
+    "14259": true,
+    "14260": true,
+    "14261": true,
+    "14262": true,
+    "14263": true,
+    "14264": true,
+    "14265": true,
+    "14266": true,
+    "14267": true,
+    "14268": true,
+    "14269": true,
+    "14270": true,
+    "14271": true,
+    "14272": true,
+    "14273": true,
+    "14274": true,
+    "14275": true,
+    "14276": true,
+    "14277": true,
+    "14278": true,
+    "14279": true,
+    "14280": true,
+    "14281": true,
+    "14282": true,
+    "14283": true,
+    "14284": true,
+    "14285": true,
+    "14286": true,
+    "14287": true,
+    "14288": true,
+    "14289": true,
+    "14290": true,
+    "14291": true,
+    "14292": true,
+    "14293": true,
+    "14294": true,
+    "14295": true,
+    "14296": true,
+    "14297": true,
+    "14298": true,
+    "14299": true,
+    "14300": true,
+    "14301": true,
+    "14302": true,
+    "14303": true,
+    "14304": true,
+    "14305": true,
+    "14306": true,
+    "14307": true,
+    "14308": true,
+    "14309": true,
+    "14310": true,
+    "14311": true,
+    "14312": true,
+    "14313": true,
+    "14314": true,
+    "14315": true,
+    "14316": true,
+    "14317": true,
+    "14318": true,
+    "14319": true,
+    "14320": true,
+    "14321": true,
+    "14322": true,
+    "14323": true,
+    "14324": true,
+    "14325": true,
+    "14326": true,
+    "14327": true,
+    "14328": true,
+    "14329": true,
+    "14330": true,
+    "14331": true,
+    "14332": true,
+    "14333": true,
+    "14334": true,
+    "14335": true,
+    "14336": true,
+    "14337": true,
+    "14338": true,
+    "14339": true,
+    "14340": true,
+    "14341": true,
+    "14342": true,
+    "14343": true,
+    "14344": true,
+    "14345": true,
+    "14346": true,
+    "14347": true,
+    "14348": true,
+    "14349": true,
+    "14350": true,
+    "14351": true,
+    "14352": true,
+    "14353": true,
+    "14354": true,
+    "14355": true,
+    "14356": true,
+    "14357": true,
+    "14358": true,
+    "14359": true,
+    "14360": true,
+    "14361": true,
+    "14362": true,
+    "14363": true,
+    "14364": true,
+    "14365": true,
+    "14366": true,
+    "14367": true,
+    "14368": true,
+    "14369": true,
+    "14370": true,
+    "14371": true,
+    "14372": true,
+    "14373": true,
+    "14374": true,
+    "14375": true,
+    "14376": true,
+    "14377": true,
+    "14378": true,
+    "14379": true,
+    "14380": true,
+    "14381": true,
+    "14382": true,
+    "14383": true,
+    "14384": true,
+    "14385": true,
+    "14386": true,
+    "14387": true,
+    "14388": true,
+    "14389": true,
+    "14390": true,
+    "14391": true,
+    "14392": true,
+    "14393": true,
+    "14394": true,
+    "14395": true,
+    "14396": true,
+    "14397": true,
+    "14398": true,
+    "14399": true,
+    "14400": true,
+    "14401": true,
+    "14402": true,
+    "14403": true,
+    "14404": true,
+    "14405": true,
+    "14406": true,
+    "14407": true,
+    "14408": true,
+    "14409": true,
+    "14410": true,
+    "14411": true,
+    "14412": true,
+    "14413": true,
+    "14414": true,
+    "14415": true,
+    "14416": true,
+    "14417": true,
+    "14418": true,
+    "14419": true,
+    "14420": true,
+    "14421": true,
+    "14422": true,
+    "14423": true,
+    "14424": true,
+    "14425": true,
+    "14426": true,
+    "14427": true,
+    "14428": true,
+    "14429": true,
+    "14430": true,
+    "14431": true,
+    "14432": true,
+    "14433": true,
+    "14434": true,
+    "14435": true,
+    "14436": true,
+    "14437": true,
+    "14438": true,
+    "14439": true,
+    "14440": true,
+    "14441": true,
+    "14442": true,
+    "14443": true,
+    "14444": true,
+    "14445": true,
+    "14446": true,
+    "14447": true,
+    "14448": true,
+    "14449": true,
+    "14450": true,
+    "14451": true,
+    "14452": true,
+    "14453": true,
+    "14454": true,
+    "14455": true,
+    "14456": true,
+    "14457": true,
+    "14458": true,
+    "14459": true,
+    "14460": true,
+    "14461": true,
+    "14462": true,
+    "14463": true,
+    "14464": true,
+    "14465": true,
+    "14466": true,
+    "14467": true,
+    "14468": true,
+    "14469": true,
+    "14470": true,
+    "14471": true,
+    "14472": true,
+    "14473": true,
+    "14474": true,
+    "14475": true,
+    "14476": true,
+    "14477": true,
+    "14478": true,
+    "14479": true,
+    "14480": true,
+    "14481": true,
+    "14482": true,
+    "14483": true,
+    "14484": true,
+    "14485": true,
+    "14486": true,
+    "14487": true,
+    "14488": true,
+    "14489": true,
+    "14490": true,
+    "14491": true,
+    "14492": true,
+    "14493": true,
+    "14494": true,
+    "14495": true,
+    "14496": true,
+    "14497": true,
+    "14498": true,
+    "14499": true,
+    "14500": true,
+    "14501": true,
+    "14502": true,
+    "14503": true,
+    "14504": true,
+    "14505": true,
+    "14506": true,
+    "14507": true,
+    "14508": true,
+    "14509": true,
+    "14510": true,
+    "14511": true,
+    "14512": true,
+    "14513": true,
+    "14514": true,
+    "14515": true,
+    "14516": true,
+    "14517": true,
+    "14518": true,
+    "14519": 29,
+    "14520": 0,
+    "14521": 0,
+    "14522": 0,
+    "14523": 3,
+    "14524": 0,
+    "14525": 1,
+    "14526": 0,
+    "14527": 0,
+    "14528": 1,
+    "14529": 0,
+    "14530": 0,
+    "14531": 1,
+    "14532": 33,
+    "14533": 0,
+    "14534": 0,
+    "14535": 0,
+    "14536": 0,
+    "14537": 0,
+    "14538": 3,
+    "14539": 10,
+    "14540": 1,
+    "14541": 2,
+    "14542": 0,
+    "14543": 0,
+    "14544": 0,
+    "14545": 0,
+    "14546": 0,
+    "14547": 0,
+    "14548": 0,
+    "14549": 0,
+    "14550": 0,
+    "14551": 0,
+    "14552": 0,
+    "14553": 0,
+    "14554": 0,
+    "14555": 0,
+    "14556": 0,
+    "14557": 2,
+    "14558": 0,
+    "14559": 0,
+    "14560": 0,
+    "14561": 0,
+    "14562": 0,
+    "14563": 1,
+    "14564": 0,
+    "14565": 0,
+    "14566": 0,
+    "14567": 0,
+    "14568": 0,
+    "14569": 0,
+    "14570": 0,
+    "14571": 0,
+    "14572": 0,
+    "14573": 0,
+    "14574": 0,
+    "14575": 0,
+    "14576": 0,
+    "14577": 0,
+    "14578": 0,
+    "14579": 0,
+    "14580": 0,
+    "14581": 0,
+    "14582": 5,
+    "14583": 0,
+    "14584": 0,
+    "14585": 0,
+    "14586": 1,
+    "14587": 1,
+    "14588": 0,
+    "14589": 0,
+    "14590": 0,
+    "14591": 5,
+    "14592": 1,
+    "14593": 14,
+    "14594": 0,
+    "14595": 1,
+    "14596": 1,
+    "14597": 0,
+    "14598": 0,
+    "14599": 0,
+    "14600": 0,
+    "14601": 0,
+    "14602": 0,
+    "14603": 0,
+    "14604": 1,
+    "14605": 0,
+    "14606": 0,
+    "14607": 0,
+    "14608": 0,
+    "14609": 1,
+    "14610": 1,
+    "14611": 0,
+    "14612": 0,
+    "14613": 1,
+    "14614": 0,
+    "14615": 0,
+    "14616": 1,
+    "14617": 1,
+    "14618": 0,
+    "14619": 1,
+    "14620": 0,
+    "14621": 0,
+    "14622": 1,
+    "14623": 1,
+    "14624": 0,
+    "14625": 0,
+    "14626": 0,
+    "14627": 0,
+    "14628": 1,
+    "14629": 0,
+    "14630": 0,
+    "14631": 0,
+    "14632": 1,
+    "14633": 0,
+    "14634": 0,
+    "14635": 0,
+    "14636": 0,
+    "14637": 0,
+    "14638": 1,
+    "14639": 1,
+    "14640": 0,
+    "14641": 0,
+    "14642": 0,
+    "14643": 0,
+    "14644": 1,
+    "14645": 0,
+    "14646": 6,
+    "14647": 0,
+    "14648": 1,
+    "14649": 0,
+    "14650": 1,
+    "14651": 1,
+    "14652": 1,
+    "14653": 0,
+    "14654": 0,
+    "14655": 0,
+    "14656": 0,
+    "14657": 0,
+    "14658": 0,
+    "14659": 0,
+    "14660": 1,
+    "14661": 0,
+    "14662": 0,
+    "14663": 1,
+    "14664": 30,
+    "14665": 0,
+    "14666": 0,
+    "14667": 0,
+    "14668": 0,
+    "14669": 0,
+    "14670": 0,
+    "14671": 0,
+    "14672": 0,
+    "14673": 0,
+    "14674": 1,
+    "14675": 0,
+    "14676": 0,
+    "14677": 1,
+    "14678": 0,
+    "14679": 1,
+    "14680": 0,
+    "14681": 0,
+    "14682": 0,
+    "14683": 0,
+    "14684": 2,
+    "14685": 0,
+    "14686": 0,
+    "14687": 1,
+    "14688": 0,
+    "14689": 0,
+    "14690": 0,
+    "14691": 0,
+    "14692": 1,
+    "14693": 0,
+    "14694": 0,
+    "14695": 0,
+    "14696": 1,
+    "14697": 0,
+    "14698": 0,
+    "14699": 2,
+    "14700": 0,
+    "14701": 0,
+    "14702": 1,
+    "14703": 0,
+    "14704": 0,
+    "14705": 3,
+    "14706": 0,
+    "14707": 0,
+    "14708": 0,
+    "14709": 0,
+    "14710": 2,
+    "14711": 1,
+    "14712": 1,
+    "14713": 0,
+    "14714": 1,
+    "14715": 0,
+    "14716": 0,
+    "14717": 0,
+    "14718": 0,
+    "14719": 0,
+    "14720": 1,
+    "14721": 0,
+    "14722": 2,
+    "14723": 0,
+    "14724": 0,
+    "14725": 0,
+    "14726": 0,
+    "14727": 0,
+    "14728": 0,
+    "14729": 0,
+    "14730": 1,
+    "14731": 1,
+    "14732": 0,
+    "14733": 0,
+    "14734": 0,
+    "14735": 0,
+    "14736": 1,
+    "14737": 0,
+    "14738": 0,
+    "14739": 0,
+    "14740": 0,
+    "14741": 0,
+    "14742": 0,
+    "14743": 0,
+    "14744": 0,
+    "14745": 0,
+    "14746": 0,
+    "14747": 1,
+    "14748": 11,
+    "14749": 1,
+    "14750": 0,
+    "14751": 0,
+    "14752": 1,
+    "14753": 1,
+    "14754": 0,
+    "14755": 1,
+    "14756": 0,
+    "14757": 0,
+    "14758": 0,
+    "14759": 1,
+    "14760": 1,
+    "14761": 0,
+    "14762": 0,
+    "14763": 0,
+    "14764": 1,
+    "14765": 8,
+    "14766": 17,
+    "14767": 2,
+    "14768": 1,
+    "14769": 0,
+    "14770": 1,
+    "14771": 1,
+    "14772": 0,
+    "14773": 0,
+    "14774": 0,
+    "14775": 0,
+    "14776": 1,
+    "14777": 0,
+    "14778": 0,
+    "14779": 0,
+    "14780": 2,
+    "14781": 0,
+    "14782": 5,
+    "14783": 0,
+    "14784": 0,
+    "14785": 0,
+    "14786": 1,
+    "14787": 0,
+    "14788": 0,
+    "14789": 0,
+    "14790": 5,
+    "14791": 0,
+    "14792": 1,
+    "14793": 0,
+    "14794": 1,
+    "14795": 1,
+    "14796": 1,
+    "14797": 0,
+    "14798": 0,
+    "14799": 0,
+    "14800": 1
+  }
+}
+{"index":14801,"page":0}
+Creating browser
+{"index":14801,"page":0}
+Opening page
+{"index":14801,"page":0}
+Status: 200
+{"index":14801,"page":0}
+~
+~
+~
+~
+~
+Name index: 14801
+~
+~
+~
+~
+~
+
+{"index":14801,"page":0}
+[object Object]
+{"index":14801,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:59
+{"index":14801,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:59
+{"index":14801,"page":0}
+[43mnew page[49m
+{"index":14801,"page":0}
+[34mGoal page: [39m 1
+{"index":14801,"page":0}
+[33mPrevious page: [39m 
+{"index":14801,"page":0}
+start looking for result: Mon Jul 22 2019 11:59:35 GMT-0400 (GMT-04:00)
+{"index":14801,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":0}
+results found? true
+{"index":14801,"page":0}
+no results found? false
+{"index":14801,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":0}
+3
+{"index":14801,"page":0}
+4
+{"index":14801,"page":0}
+One-pager
+{"index":14801,"page":0}
+5
+{"index":14801,"page":0}
+6
+{"index":14801,"page":0}
+7
+{"index":14801,"page":0}
+8
+{"index":14801,"page":0}
+docket id written: 1563811205676_CP-46-CR-0004517-2018_namei_14801_page_1
+{"index":14801,"page":0}
+docket #0 saved
+{"index":14801,"page":0}
+summary #0 saved
+{"index":14801,"page":0}
+# pdfs downloaded: 2 , time elapsed: 58.211 seconds
+{"index":14801,"page":0}
+docket id written: 1563811228028_CP-28-CR-0000978-2018_namei_14801_page_1
+{"index":14801,"page":0}
+docket #1 saved
+{"index":14801,"page":0}
+summary #1 saved
+{"index":14801,"page":0}
+# pdfs downloaded: 4 , time elapsed: 75.492 seconds
+{"index":14801,"page":0}
+9
+{"index":14801,"page":0}
+16 true
+{"index":14801,"page":0}
+18
+{"index":14801,"page":0}
+onto the next index
+{"index":14801,"page":0}
+been done: 14801
+{"index":14801,"page":0}
+resetting page to 1
+{"index":14801,"page":0}
+~
+~
+~
+~
+~
+Name index: 14802
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:00
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:00
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:00:48 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14802
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14803
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:00
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:00
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:00:51 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 3 (seconds: 0.003)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14803
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14804
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:00
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:00
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:00:54 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14804
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14805
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:00
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:00
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:00:58 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14805
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14806
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:00
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:01
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:01:00 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14806
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14807
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:01
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:01
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:01:03 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14807
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14808
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:01
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:01
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:01:07 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14808
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14809
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:01
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:01
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:01:10 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":1}
+results found? true
+{"index":14801,"page":1}
+no results found? false
+{"index":14801,"page":1}
+Time elapsed to find results: 3 (seconds: 0.003)
+{"index":14801,"page":1}
+3
+{"index":14801,"page":1}
+4
+{"index":14801,"page":1}
+One-pager
+{"index":14801,"page":1}
+5
+{"index":14801,"page":1}
+6
+{"index":14801,"page":1}
+7
+{"index":14801,"page":1}
+8
+{"index":14801,"page":1}
+docket id written: 1563811300944_CP-09-CR-0006273-2018_namei_14809_page_1
+{"index":14801,"page":1}
+docket #0 saved
+{"index":14801,"page":1}
+summary #0 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 6 , time elapsed: 149.67 seconds
+{"index":14801,"page":1}
+docket id written: 1563811319486_CP-23-CR-0003746-2018_namei_14809_page_1
+{"index":14801,"page":1}
+docket #1 saved
+{"index":14801,"page":1}
+summary #1 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 8 , time elapsed: 169.136 seconds
+{"index":14801,"page":1}
+docket id written: 1563811338954_CP-23-CR-0001962-2018_namei_14809_page_1
+{"index":14801,"page":1}
+docket #2 saved
+{"index":14801,"page":1}
+summary #2 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 10 , time elapsed: 190.598 seconds
+{"index":14801,"page":1}
+9
+{"index":14801,"page":1}
+16 true
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14809
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14810
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:02
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:02
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:02:46 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":1}
+results found? true
+{"index":14801,"page":1}
+no results found? false
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+3
+{"index":14801,"page":1}
+4
+{"index":14801,"page":1}
+One-pager
+{"index":14801,"page":1}
+5
+{"index":14801,"page":1}
+6
+{"index":14801,"page":1}
+7
+{"index":14801,"page":1}
+8
+{"index":14801,"page":1}
+docket id written: 1563811396982_CP-43-CR-0001678-2018_namei_14810_page_1
+{"index":14801,"page":1}
+docket #0 saved
+{"index":14801,"page":1}
+summary #0 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 12 , time elapsed: 251.697 seconds
+{"index":14801,"page":1}
+docket id written: 1563811421515_CP-32-CR-0000504-2018_namei_14810_page_1
+{"index":14801,"page":1}
+docket #1 saved
+{"index":14801,"page":1}
+summary #1 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 14 , time elapsed: 272.37 seconds
+{"index":14801,"page":1}
+docket id written: 1563811442187_CP-32-CR-0000175-2018_namei_14810_page_1
+{"index":14801,"page":1}
+docket #2 saved
+{"index":14801,"page":1}
+summary #2 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 16 , time elapsed: 289.256 seconds
+{"index":14801,"page":1}
+docket id written: 1563811459074_CP-43-CR-0001951-2017_namei_14810_page_1
+{"index":14801,"page":1}
+docket #3 saved
+{"index":14801,"page":1}
+summary #3 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 18 , time elapsed: 308.637 seconds
+{"index":14801,"page":1}
+9
+{"index":14801,"page":1}
+16 true
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14810
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14811
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:04:41 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14811
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14812
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:04:45 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14812
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14813
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:04:48 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14813
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14814
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:04:52 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 3 (seconds: 0.003)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14814
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14815
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:04:56 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14815
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14816
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:04
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:05
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:05:00 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 3 (seconds: 0.003)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14816
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14817
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:05
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:05
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:05:04 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14817
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14818
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:05
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:05
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:05:10 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":1}
+results found? true
+{"index":14801,"page":1}
+no results found? false
+{"index":14801,"page":1}
+Time elapsed to find results: 3 (seconds: 0.003)
+{"index":14801,"page":1}
+3
+{"index":14801,"page":1}
+4
+{"index":14801,"page":1}
+One-pager
+{"index":14801,"page":1}
+5
+{"index":14801,"page":1}
+6
+{"index":14801,"page":1}
+7
+{"index":14801,"page":1}
+8
+{"index":14801,"page":1}
+docket id written: 1563811540073_CP-23-CR-0002758-2018_namei_14818_page_1
+{"index":14801,"page":1}
+docket #0 saved
+{"index":14801,"page":1}
+summary #0 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 20 , time elapsed: 389.189 seconds
+{"index":14801,"page":1}
+docket id written: 1563811559007_CP-23-CR-0001050-2018_namei_14818_page_1
+{"index":14801,"page":1}
+docket #1 saved
+{"index":14801,"page":1}
+summary #1 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 22 , time elapsed: 406.706 seconds
+{"index":14801,"page":1}
+docket id written: 1563811576523_CP-54-CR-0001853-2017_namei_14818_page_1
+{"index":14801,"page":1}
+docket #2 saved
+{"index":14801,"page":1}
+summary #2 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 24 , time elapsed: 430.581 seconds
+{"index":14801,"page":1}
+docket id written: 1563811600399_CP-28-CR-0001627-2017_namei_14818_page_1
+{"index":14801,"page":1}
+docket #3 saved
+{"index":14801,"page":1}
+summary #3 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 26 , time elapsed: 448.505 seconds
+{"index":14801,"page":1}
+docket id written: 1563811618321_CP-28-CR-0001017-2017_namei_14818_page_1
+{"index":14801,"page":1}
+docket #4 saved
+{"index":14801,"page":1}
+summary #4 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 28 , time elapsed: 469.071 seconds
+{"index":14801,"page":1}
+9
+{"index":14801,"page":1}
+16 true
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14818
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14819
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:07
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:07
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:07:23 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":1}
+results found? true
+{"index":14801,"page":1}
+no results found? false
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+3
+{"index":14801,"page":1}
+4
+{"index":14801,"page":1}
+One-pager
+{"index":14801,"page":1}
+5
+{"index":14801,"page":1}
+6
+{"index":14801,"page":1}
+7
+{"index":14801,"page":1}
+8
+{"index":14801,"page":1}
+docket id written: 1563811673295_CP-64-CR-0000445-2018_namei_14819_page_1
+{"index":14801,"page":1}
+docket #0 saved
+{"index":14801,"page":1}
+summary #0 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 30 , time elapsed: 520.75 seconds
+{"index":14801,"page":1}
+9
+{"index":14801,"page":1}
+16 true
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14819
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14820
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:08
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:08
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:08:16 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":1}
+results found? true
+{"index":14801,"page":1}
+no results found? false
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+3
+{"index":14801,"page":1}
+4
+{"index":14801,"page":1}
+One-pager
+{"index":14801,"page":1}
+5
+{"index":14801,"page":1}
+6
+{"index":14801,"page":1}
+7
+{"index":14801,"page":1}
+8
+{"index":14801,"page":1}
+docket id written: 1563811726736_CP-23-CR-0005350-2018_namei_14820_page_1
+{"index":14801,"page":1}
+docket #0 saved
+{"index":14801,"page":1}
+summary #0 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 32 , time elapsed: 576.848 seconds
+{"index":14801,"page":1}
+docket id written: 1563811746665_CP-46-CR-0005273-2018_namei_14820_page_1
+{"index":14801,"page":1}
+docket #1 saved
+{"index":14801,"page":1}
+summary #1 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 34 , time elapsed: 595.138 seconds
+{"index":14801,"page":1}
+docket id written: 1563811764956_CP-14-CR-0001098-2018_namei_14820_page_1
+{"index":14801,"page":1}
+docket #2 saved
+{"index":14801,"page":1}
+summary #2 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 36 , time elapsed: 612.594 seconds
+{"index":14801,"page":1}
+docket id written: 1563811782412_CP-46-CR-0002246-2018_namei_14820_page_1
+{"index":14801,"page":1}
+docket #3 saved
+{"index":14801,"page":1}
+summary #3 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 38 , time elapsed: 631.211 seconds
+{"index":14801,"page":1}
+docket id written: 1563811801029_CP-09-CR-0001659-2018_namei_14820_page_1
+{"index":14801,"page":1}
+docket #4 saved
+{"index":14801,"page":1}
+summary #4 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 40 , time elapsed: 648.589 seconds
+{"index":14801,"page":1}
+docket id written: 1563811818407_CP-46-CR-0000009-2018_namei_14820_page_1
+{"index":14801,"page":1}
+docket #5 saved
+{"index":14801,"page":1}
+summary #5 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 42 , time elapsed: 666.436 seconds
+{"index":14801,"page":1}
+docket id written: 1563811836254_CP-46-CR-0008430-2017_namei_14820_page_1
+{"index":14801,"page":1}
+docket #6 saved
+{"index":14801,"page":1}
+summary #6 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 44 , time elapsed: 684.645 seconds
+{"index":14801,"page":1}
+9
+{"index":14801,"page":1}
+16 true
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14820
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14821
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:10
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:10
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:10:57 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":1}
+results found? true
+{"index":14801,"page":1}
+no results found? false
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+3
+{"index":14801,"page":1}
+4
+{"index":14801,"page":1}
+One-pager
+{"index":14801,"page":1}
+5
+{"index":14801,"page":1}
+6
+{"index":14801,"page":1}
+7
+{"index":14801,"page":1}
+8
+{"index":14801,"page":1}
+docket id written: 1563811887762_CP-02-CR-0008342-2018_namei_14821_page_1
+{"index":14801,"page":1}
+docket #0 saved
+{"index":14801,"page":1}
+summary #0 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 46 , time elapsed: 735.33 seconds
+{"index":14801,"page":1}
+9
+{"index":14801,"page":1}
+16 true
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14821
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14822
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:11
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:12
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:12:01 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":1}
+results found? true
+{"index":14801,"page":1}
+no results found? false
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+3
+{"index":14801,"page":1}
+4
+{"index":14801,"page":1}
+paginated: true
+{"index":14801,"page":1}
+on new page: 1
+{"index":14801,"page":1}
+waited for current page: 1
+{"index":14801,"page":1}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":14801,"page":1}
+current actual page indicated in nav: 1
+{"index":14801,"page":1}
+current is goal? 1 1 true
+{"index":14801,"page":1}
+Reached goal page
+{"index":14801,"page":1}
+navData: [object Object]
+{"index":14801,"page":1}
+5
+{"index":14801,"page":1}
+6
+{"index":14801,"page":1}
+7
+{"index":14801,"page":1}
+8
+{"index":14801,"page":1}
+docket id written: 1563811921253_CP-67-CR-0007584-2018_namei_14822_page_1
+{"index":14801,"page":1}
+docket #0 saved
+{"index":14801,"page":1}
+summary #0 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 48 , time elapsed: 769.431 seconds
+{"index":14801,"page":1}
+docket id written: 1563811939249_CP-11-CR-0001774-2018_namei_14822_page_1
+{"index":14801,"page":1}
+docket #1 saved
+{"index":14801,"page":1}
+summary #1 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 50 , time elapsed: 791.222 seconds
+{"index":14801,"page":1}
+docket id written: 1563811961040_CP-03-CR-0000936-2018_namei_14822_page_1
+{"index":14801,"page":1}
+docket #2 saved
+{"index":14801,"page":1}
+summary #2 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 52 , time elapsed: 809.073 seconds
+{"index":14801,"page":1}
+docket id written: 1563811978890_CP-11-CR-0001596-2018_namei_14822_page_1
+{"index":14801,"page":1}
+docket #3 saved
+{"index":14801,"page":1}
+summary #3 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 54 , time elapsed: 825.988 seconds
+{"index":14801,"page":1}
+docket id written: 1563811995806_CP-46-CR-0007091-2018_namei_14822_page_1
+{"index":14801,"page":1}
+docket #4 saved
+{"index":14801,"page":1}
+summary #4 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 56 , time elapsed: 843.79 seconds
+{"index":14801,"page":1}
+docket id written: 1563812013608_CP-66-CR-0000332-2018_namei_14822_page_1
+{"index":14801,"page":1}
+docket #5 saved
+{"index":14801,"page":1}
+summary #5 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 58 , time elapsed: 862.885 seconds
+{"index":14801,"page":1}
+docket id written: 1563812032703_CP-63-CR-0002220-2018_namei_14822_page_1
+{"index":14801,"page":1}
+docket #6 saved
+{"index":14801,"page":1}
+summary #6 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 60 , time elapsed: 879.793 seconds
+{"index":14801,"page":1}
+docket id written: 1563812049611_CP-41-CR-0001447-2018_namei_14822_page_1
+{"index":14801,"page":1}
+docket #7 saved
+{"index":14801,"page":1}
+summary #7 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 62 , time elapsed: 898.11 seconds
+{"index":14801,"page":1}
+docket id written: 1563812067927_CP-43-CR-0001623-2018_namei_14822_page_1
+{"index":14801,"page":1}
+docket #9 saved
+{"index":14801,"page":1}
+summary #9 saved
+{"index":14801,"page":1}
+# pdfs downloaded: 64 , time elapsed: 917.297 seconds
+{"index":14801,"page":1}
+9
+{"index":14801,"page":1}
+10
+{"index":14801,"page":1}
+11
+{"index":14801,"page":1}
+12
+{"index":14801,"page":1}
+[43mdisabledText:[49m First,Previous
+{"index":14801,"page":1}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":14801,"page":1}
+13
+{"index":14801,"page":2}
+14
+{"index":14801,"page":2}
+15
+{"index":14801,"page":2}
+16 false
+{"index":14801,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:14
+{"index":14801,"page":2}
+[43mnew page[49m
+{"index":14801,"page":2}
+[34mGoal page: [39m 2
+{"index":14801,"page":2}
+[33mPrevious page: [39m 
+{"index":14801,"page":2}
+start looking for result: Mon Jul 22 2019 12:14:51 GMT-0400 (GMT-04:00)
+{"index":14801,"page":2}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":2}
+results found? true
+{"index":14801,"page":2}
+no results found? false
+{"index":14801,"page":2}
+Time elapsed to find results: 10 (seconds: 0.01)
+{"index":14801,"page":2}
+3
+{"index":14801,"page":2}
+4
+{"index":14801,"page":2}
+paginated: true
+{"index":14801,"page":2}
+on new page: 2
+{"index":14801,"page":2}
+waited for current page: 2
+{"index":14801,"page":2}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":14801,"page":2}
+current actual page indicated in nav: 2
+{"index":14801,"page":2}
+current is goal? 2 2 true
+{"index":14801,"page":2}
+Reached goal page
+{"index":14801,"page":2}
+navData: [object Object]
+{"index":14801,"page":2}
+5
+{"index":14801,"page":2}
+6
+{"index":14801,"page":2}
+7
+{"index":14801,"page":2}
+8
+{"index":14801,"page":2}
+docket id written: 1563812091515_CP-01-CR-0000985-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #0 saved
+{"index":14801,"page":2}
+summary #0 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 66 , time elapsed: 939.855 seconds
+{"index":14801,"page":2}
+docket id written: 1563812109673_CP-65-CR-0003677-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #1 saved
+{"index":14801,"page":2}
+summary #1 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 68 , time elapsed: 958.918 seconds
+{"index":14801,"page":2}
+docket id written: 1563812128736_CP-43-CR-0001570-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #2 saved
+{"index":14801,"page":2}
+summary #2 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 70 , time elapsed: 976.1 seconds
+{"index":14801,"page":2}
+docket id written: 1563812145916_CP-43-CR-0001571-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #3 saved
+{"index":14801,"page":2}
+summary #3 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 72 , time elapsed: 994.32 seconds
+{"index":14801,"page":2}
+docket id written: 1563812164138_CP-10-CR-0001471-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #4 saved
+{"index":14801,"page":2}
+summary #4 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 74 , time elapsed: 1011.313 seconds
+{"index":14801,"page":2}
+docket id written: 1563812181131_CP-19-CR-0000725-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #5 saved
+{"index":14801,"page":2}
+summary #5 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 76 , time elapsed: 1028.899 seconds
+{"index":14801,"page":2}
+docket id written: 1563812198716_CP-11-CR-0001020-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #6 saved
+{"index":14801,"page":2}
+summary #6 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 78 , time elapsed: 1049.159 seconds
+{"index":14801,"page":2}
+docket id written: 1563812218975_CP-11-CR-0001019-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #7 saved
+{"index":14801,"page":2}
+summary #7 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 80 , time elapsed: 1066.63 seconds
+{"index":14801,"page":2}
+docket id written: 1563812236448_CP-07-CR-0001095-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #8 saved
+{"index":14801,"page":2}
+summary #8 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 82 , time elapsed: 1083.656 seconds
+{"index":14801,"page":2}
+docket id written: 1563812253474_CP-51-CR-0003882-2018_namei_14822_page_2
+{"index":14801,"page":2}
+docket #9 saved
+{"index":14801,"page":2}
+summary #9 saved
+{"index":14801,"page":2}
+# pdfs downloaded: 84 , time elapsed: 1104.599 seconds
+{"index":14801,"page":2}
+9
+{"index":14801,"page":2}
+10
+{"index":14801,"page":2}
+11
+{"index":14801,"page":2}
+12
+{"index":14801,"page":2}
+[43mdisabledText:[49m 
+{"index":14801,"page":2}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":14801,"page":2}
+13
+{"index":14801,"page":3}
+14
+{"index":14801,"page":3}
+15
+{"index":14801,"page":3}
+16 false
+{"index":14801,"page":3}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:17
+{"index":14801,"page":3}
+[43mnew page[49m
+{"index":14801,"page":3}
+[34mGoal page: [39m 3
+{"index":14801,"page":3}
+[33mPrevious page: [39m 
+{"index":14801,"page":3}
+start looking for result: Mon Jul 22 2019 12:17:58 GMT-0400 (GMT-04:00)
+{"index":14801,"page":3}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":3}
+results found? true
+{"index":14801,"page":3}
+no results found? false
+{"index":14801,"page":3}
+Time elapsed to find results: 9 (seconds: 0.009)
+{"index":14801,"page":3}
+3
+{"index":14801,"page":3}
+4
+{"index":14801,"page":3}
+paginated: true
+{"index":14801,"page":3}
+on new page: 3
+{"index":14801,"page":3}
+waited for current page: 3
+{"index":14801,"page":3}
+nav: First Previous 2 3 4 5 6  Next Last
+{"index":14801,"page":3}
+current actual page indicated in nav: 3
+{"index":14801,"page":3}
+current is goal? 3 3 true
+{"index":14801,"page":3}
+Reached goal page
+{"index":14801,"page":3}
+navData: [object Object]
+{"index":14801,"page":3}
+5
+{"index":14801,"page":3}
+6
+{"index":14801,"page":3}
+7
+{"index":14801,"page":3}
+8
+{"index":14801,"page":3}
+docket id written: 1563812279291_CP-52-CR-0000186-2018_namei_14822_page_3
+{"index":14801,"page":3}
+docket #0 saved
+{"index":14801,"page":3}
+summary #0 saved
+{"index":14801,"page":3}
+# pdfs downloaded: 86 , time elapsed: 1127.744 seconds
+{"index":14801,"page":3}
+docket id written: 1563812297562_CP-43-CR-0000807-2018_namei_14822_page_3
+{"index":14801,"page":3}
+docket #1 saved
+{"index":14801,"page":3}
+summary #1 saved
+{"index":14801,"page":3}
+# pdfs downloaded: 88 , time elapsed: 1143.648 seconds
+{"index":14801,"page":3}
+docket id written: 1563812313465_CP-67-CR-0002580-2018_namei_14822_page_3
+{"index":14801,"page":3}
+docket #2 saved
+{"index":14801,"page":3}
+summary #2 saved
+{"index":14801,"page":3}
+# pdfs downloaded: 90 , time elapsed: 1161.805 seconds
+{"index":14801,"page":3}
+docket id written: 1563812331621_CP-51-CR-0002268-2018_namei_14822_page_3
+{"index":14801,"page":3}
+docket #5 saved
+{"index":14801,"page":3}
+summary #5 saved
+{"index":14801,"page":3}
+# pdfs downloaded: 92 , time elapsed: 1184.241 seconds
+{"index":14801,"page":3}
+docket id written: 1563812354059_CP-43-CR-0000272-2018_namei_14822_page_3
+{"index":14801,"page":3}
+docket #6 saved
+{"index":14801,"page":3}
+summary #6 saved
+{"index":14801,"page":3}
+# pdfs downloaded: 94 , time elapsed: 1205.373 seconds
+{"index":14801,"page":3}
+docket id written: 1563812375191_CP-43-CR-0000274-2018_namei_14822_page_3
+{"index":14801,"page":3}
+docket #7 saved
+{"index":14801,"page":3}
+summary #7 saved
+{"index":14801,"page":3}
+# pdfs downloaded: 96 , time elapsed: 1224.004 seconds
+{"index":14801,"page":3}
+docket id written: 1563812393822_CP-51-CR-0000643-2018_namei_14822_page_3
+{"index":14801,"page":3}
+docket #8 saved
+{"index":14801,"page":3}
+summary #8 saved
+{"index":14801,"page":3}
+# pdfs downloaded: 98 , time elapsed: 1240.156 seconds
+{"index":14801,"page":3}
+docket id written: 1563812409973_CP-51-CR-0000595-2018_namei_14822_page_3
+{"index":14801,"page":3}
+docket #9 saved
+{"index":14801,"page":3}
+summary #9 saved
+{"index":14801,"page":3}
+# pdfs downloaded: 100 , time elapsed: 1265.704 seconds
+{"index":14801,"page":3}
+9
+{"index":14801,"page":3}
+10
+{"index":14801,"page":3}
+11
+{"index":14801,"page":3}
+12
+{"index":14801,"page":3}
+[43mdisabledText:[49m 
+{"index":14801,"page":3}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":14801,"page":3}
+13
+{"index":14801,"page":4}
+14
+{"index":14801,"page":4}
+15
+{"index":14801,"page":4}
+16 false
+{"index":14801,"page":4}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:20
+{"index":14801,"page":4}
+[43mnew page[49m
+{"index":14801,"page":4}
+[34mGoal page: [39m 4
+{"index":14801,"page":4}
+[33mPrevious page: [39m 
+{"index":14801,"page":4}
+start looking for result: Mon Jul 22 2019 12:20:39 GMT-0400 (GMT-04:00)
+{"index":14801,"page":4}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":4}
+results found? true
+{"index":14801,"page":4}
+no results found? false
+{"index":14801,"page":4}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":14801,"page":4}
+3
+{"index":14801,"page":4}
+4
+{"index":14801,"page":4}
+paginated: true
+{"index":14801,"page":4}
+on new page: 4
+{"index":14801,"page":4}
+waited for current page: 4
+{"index":14801,"page":4}
+nav: First Previous 3 4 5 6 7  Next Last
+{"index":14801,"page":4}
+current actual page indicated in nav: 4
+{"index":14801,"page":4}
+current is goal? 4 4 true
+{"index":14801,"page":4}
+Reached goal page
+{"index":14801,"page":4}
+navData: [object Object]
+{"index":14801,"page":4}
+5
+{"index":14801,"page":4}
+6
+{"index":14801,"page":4}
+7
+{"index":14801,"page":4}
+8
+{"index":14801,"page":4}
+docket id written: 1563812439525_CP-51-CR-0000596-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #0 saved
+{"index":14801,"page":4}
+summary #0 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 102 , time elapsed: 1289.069 seconds
+{"index":14801,"page":4}
+docket id written: 1563812458887_CP-51-CR-0000597-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #1 saved
+{"index":14801,"page":4}
+summary #1 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 104 , time elapsed: 1307.264 seconds
+{"index":14801,"page":4}
+docket id written: 1563812477082_CP-51-CR-0000598-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #2 saved
+{"index":14801,"page":4}
+summary #2 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 106 , time elapsed: 1330.367 seconds
+{"index":14801,"page":4}
+docket id written: 1563812500185_CP-51-CR-0000599-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #3 saved
+{"index":14801,"page":4}
+summary #3 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 108 , time elapsed: 1349.306 seconds
+{"index":14801,"page":4}
+docket id written: 1563812519124_CP-51-CR-0000600-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #4 saved
+{"index":14801,"page":4}
+summary #4 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 110 , time elapsed: 1367.76 seconds
+{"index":14801,"page":4}
+docket id written: 1563812537577_CP-51-CR-0000601-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #5 saved
+{"index":14801,"page":4}
+summary #5 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 112 , time elapsed: 1385.518 seconds
+{"index":14801,"page":4}
+docket id written: 1563812555335_CP-51-CR-0000602-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #6 saved
+{"index":14801,"page":4}
+summary #6 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 114 , time elapsed: 1403.692 seconds
+{"index":14801,"page":4}
+docket id written: 1563812573510_CP-51-CR-0000603-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #7 saved
+{"index":14801,"page":4}
+summary #7 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 116 , time elapsed: 1421.986 seconds
+{"index":14801,"page":4}
+docket id written: 1563812591804_CP-51-CR-0000604-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #8 saved
+{"index":14801,"page":4}
+summary #8 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 118 , time elapsed: 1440.813 seconds
+{"index":14801,"page":4}
+docket id written: 1563812610631_CP-51-CR-0000605-2018_namei_14822_page_4
+{"index":14801,"page":4}
+docket #9 saved
+{"index":14801,"page":4}
+summary #9 saved
+{"index":14801,"page":4}
+# pdfs downloaded: 120 , time elapsed: 1461.195 seconds
+{"index":14801,"page":4}
+9
+{"index":14801,"page":4}
+10
+{"index":14801,"page":4}
+11
+{"index":14801,"page":4}
+12
+{"index":14801,"page":4}
+[43mdisabledText:[49m 
+{"index":14801,"page":4}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":14801,"page":4}
+13
+{"index":14801,"page":5}
+14
+{"index":14801,"page":5}
+15
+{"index":14801,"page":5}
+16 false
+{"index":14801,"page":5}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:23
+{"index":14801,"page":5}
+[43mnew page[49m
+{"index":14801,"page":5}
+[34mGoal page: [39m 5
+{"index":14801,"page":5}
+[33mPrevious page: [39m 
+{"index":14801,"page":5}
+start looking for result: Mon Jul 22 2019 12:23:55 GMT-0400 (GMT-04:00)
+{"index":14801,"page":5}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":5}
+results found? true
+{"index":14801,"page":5}
+no results found? false
+{"index":14801,"page":5}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":14801,"page":5}
+3
+{"index":14801,"page":5}
+4
+{"index":14801,"page":5}
+paginated: true
+{"index":14801,"page":5}
+on new page: 5
+{"index":14801,"page":5}
+waited for current page: 5
+{"index":14801,"page":5}
+nav: First Previous 4 5 6 7 8  Next Last
+{"index":14801,"page":5}
+current actual page indicated in nav: 5
+{"index":14801,"page":5}
+current is goal? 5 5 true
+{"index":14801,"page":5}
+Reached goal page
+{"index":14801,"page":5}
+navData: [object Object]
+{"index":14801,"page":5}
+5
+{"index":14801,"page":5}
+6
+{"index":14801,"page":5}
+7
+{"index":14801,"page":5}
+8
+{"index":14801,"page":5}
+docket id written: 1563812636288_CP-51-CR-0000606-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #0 saved
+{"index":14801,"page":5}
+summary #0 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 122 , time elapsed: 1484.844 seconds
+{"index":14801,"page":5}
+docket id written: 1563812654662_CP-51-CR-0000607-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #1 saved
+{"index":14801,"page":5}
+summary #1 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 124 , time elapsed: 1504.805 seconds
+{"index":14801,"page":5}
+docket id written: 1563812674622_CP-51-CR-0000608-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #2 saved
+{"index":14801,"page":5}
+summary #2 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 126 , time elapsed: 1523.166 seconds
+{"index":14801,"page":5}
+docket id written: 1563812692984_CP-51-CR-0000609-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #3 saved
+{"index":14801,"page":5}
+summary #3 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 128 , time elapsed: 1541.897 seconds
+{"index":14801,"page":5}
+docket id written: 1563812711715_CP-51-CR-0000589-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #4 saved
+{"index":14801,"page":5}
+summary #4 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 130 , time elapsed: 1560.242 seconds
+{"index":14801,"page":5}
+docket id written: 1563812730059_CP-51-CR-0000590-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #5 saved
+{"index":14801,"page":5}
+summary #5 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 132 , time elapsed: 1579.797 seconds
+{"index":14801,"page":5}
+docket id written: 1563812749615_CP-51-CR-0000591-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #6 saved
+{"index":14801,"page":5}
+summary #6 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 134 , time elapsed: 1597.748 seconds
+{"index":14801,"page":5}
+docket id written: 1563812767566_CP-51-CR-0000592-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #7 saved
+{"index":14801,"page":5}
+summary #7 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 136 , time elapsed: 1618.163 seconds
+{"index":14801,"page":5}
+docket id written: 1563812787981_CP-51-CR-0000593-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #8 saved
+{"index":14801,"page":5}
+summary #8 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 138 , time elapsed: 1636.41 seconds
+{"index":14801,"page":5}
+docket id written: 1563812806229_CP-51-CR-0000594-2018_namei_14822_page_5
+{"index":14801,"page":5}
+docket #9 saved
+{"index":14801,"page":5}
+summary #9 saved
+{"index":14801,"page":5}
+# pdfs downloaded: 140 , time elapsed: 1654.446 seconds
+{"index":14801,"page":5}
+9
+{"index":14801,"page":5}
+10
+{"index":14801,"page":5}
+11
+{"index":14801,"page":5}
+12
+{"index":14801,"page":5}
+[43mdisabledText:[49m 
+{"index":14801,"page":5}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":14801,"page":5}
+13
+{"index":14801,"page":6}
+14
+{"index":14801,"page":6}
+15
+{"index":14801,"page":6}
+16 false
+{"index":14801,"page":6}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:27
+{"index":14801,"page":6}
+[43mnew page[49m
+{"index":14801,"page":6}
+[34mGoal page: [39m 6
+{"index":14801,"page":6}
+[33mPrevious page: [39m 
+{"index":14801,"page":6}
+start looking for result: Mon Jul 22 2019 12:27:08 GMT-0400 (GMT-04:00)
+{"index":14801,"page":6}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":6}
+results found? true
+{"index":14801,"page":6}
+no results found? false
+{"index":14801,"page":6}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":6}
+3
+{"index":14801,"page":6}
+4
+{"index":14801,"page":6}
+paginated: true
+{"index":14801,"page":6}
+on new page: 6
+{"index":14801,"page":6}
+waited for current page: 6
+{"index":14801,"page":6}
+nav: First Previous 5 6 7 8 9  Next Last
+{"index":14801,"page":6}
+current actual page indicated in nav: 6
+{"index":14801,"page":6}
+current is goal? 6 6 true
+{"index":14801,"page":6}
+Reached goal page
+{"index":14801,"page":6}
+navData: [object Object]
+{"index":14801,"page":6}
+5
+{"index":14801,"page":6}
+6
+{"index":14801,"page":6}
+7
+{"index":14801,"page":6}
+8
+{"index":14801,"page":6}
+docket id written: 1563812828749_CP-62-CR-0000016-2018_namei_14822_page_6
+{"index":14801,"page":6}
+docket #1 saved
+{"index":14801,"page":6}
+summary #1 saved
+{"index":14801,"page":6}
+# pdfs downloaded: 142 , time elapsed: 1674.907 seconds
+{"index":14801,"page":6}
+docket id written: 1563812844723_CP-02-CR-0015937-2017_namei_14822_page_6
+{"index":14801,"page":6}
+docket #3 saved
+{"index":14801,"page":6}
+summary #3 saved
+{"index":14801,"page":6}
+# pdfs downloaded: 144 , time elapsed: 1694.479 seconds
+{"index":14801,"page":6}
+docket id written: 1563812864297_CP-51-CR-0011071-2017_namei_14822_page_6
+{"index":14801,"page":6}
+docket #4 saved
+{"index":14801,"page":6}
+summary #4 saved
+{"index":14801,"page":6}
+# pdfs downloaded: 146 , time elapsed: 1712.907 seconds
+{"index":14801,"page":6}
+docket id written: 1563812882725_CP-60-CR-0000367-2017_namei_14822_page_6
+{"index":14801,"page":6}
+docket #5 saved
+{"index":14801,"page":6}
+summary #5 saved
+{"index":14801,"page":6}
+# pdfs downloaded: 148 , time elapsed: 1730.994 seconds
+{"index":14801,"page":6}
+docket id written: 1563812900812_CP-22-CR-0006368-2017_namei_14822_page_6
+{"index":14801,"page":6}
+docket #6 saved
+{"index":14801,"page":6}
+summary #6 saved
+{"index":14801,"page":6}
+# pdfs downloaded: 150 , time elapsed: 1748.162 seconds
+{"index":14801,"page":6}
+9
+{"index":14801,"page":6}
+10
+{"index":14801,"page":6}
+11
+{"index":14801,"page":6}
+12
+{"index":14801,"page":6}
+[43mdisabledText:[49m 
+{"index":14801,"page":6}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":14801,"page":6}
+13
+{"index":14801,"page":7}
+14
+{"index":14801,"page":7}
+15
+{"index":14801,"page":7}
+16 false
+{"index":14801,"page":7}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:28
+{"index":14801,"page":7}
+[43mnew page[49m
+{"index":14801,"page":7}
+[34mGoal page: [39m 7
+{"index":14801,"page":7}
+[33mPrevious page: [39m 
+{"index":14801,"page":7}
+start looking for result: Mon Jul 22 2019 12:28:41 GMT-0400 (GMT-04:00)
+{"index":14801,"page":7}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":7}
+results found? true
+{"index":14801,"page":7}
+no results found? false
+{"index":14801,"page":7}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":14801,"page":7}
+3
+{"index":14801,"page":7}
+4
+{"index":14801,"page":7}
+paginated: true
+{"index":14801,"page":7}
+on new page: 7
+{"index":14801,"page":7}
+waited for current page: 7
+{"index":14801,"page":7}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":14801,"page":7}
+current actual page indicated in nav: 7
+{"index":14801,"page":7}
+current is goal? 7 7 true
+{"index":14801,"page":7}
+Reached goal page
+{"index":14801,"page":7}
+navData: [object Object]
+{"index":14801,"page":7}
+5
+{"index":14801,"page":7}
+6
+{"index":14801,"page":7}
+7
+{"index":14801,"page":7}
+8
+{"index":14801,"page":7}
+9
+{"index":14801,"page":7}
+10
+{"index":14801,"page":7}
+11
+{"index":14801,"page":7}
+12
+{"index":14801,"page":7}
+[43mdisabledText:[49m 
+{"index":14801,"page":7}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":14801,"page":7}
+13
+{"index":14801,"page":8}
+14
+{"index":14801,"page":8}
+15
+{"index":14801,"page":8}
+16 false
+{"index":14801,"page":8}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:28
+{"index":14801,"page":8}
+[43mnew page[49m
+{"index":14801,"page":8}
+[34mGoal page: [39m 8
+{"index":14801,"page":8}
+[33mPrevious page: [39m 
+{"index":14801,"page":8}
+start looking for result: Mon Jul 22 2019 12:28:45 GMT-0400 (GMT-04:00)
+{"index":14801,"page":8}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":8}
+results found? true
+{"index":14801,"page":8}
+no results found? false
+{"index":14801,"page":8}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":8}
+3
+{"index":14801,"page":8}
+4
+{"index":14801,"page":8}
+paginated: true
+{"index":14801,"page":8}
+on new page: 8
+{"index":14801,"page":8}
+waited for current page: 8
+{"index":14801,"page":8}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":14801,"page":8}
+current actual page indicated in nav: 8
+{"index":14801,"page":8}
+current is goal? 8 8 true
+{"index":14801,"page":8}
+Reached goal page
+{"index":14801,"page":8}
+navData: [object Object]
+{"index":14801,"page":8}
+5
+{"index":14801,"page":8}
+6
+{"index":14801,"page":8}
+7
+{"index":14801,"page":8}
+8
+{"index":14801,"page":8}
+9
+{"index":14801,"page":8}
+10
+{"index":14801,"page":8}
+11
+{"index":14801,"page":8}
+12
+{"index":14801,"page":8}
+[43mdisabledText:[49m 
+{"index":14801,"page":8}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":14801,"page":8}
+13
+{"index":14801,"page":9}
+14
+{"index":14801,"page":9}
+15
+{"index":14801,"page":9}
+16 false
+{"index":14801,"page":9}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:28
+{"index":14801,"page":9}
+[43mnew page[49m
+{"index":14801,"page":9}
+[34mGoal page: [39m 9
+{"index":14801,"page":9}
+[33mPrevious page: [39m 
+{"index":14801,"page":9}
+start looking for result: Mon Jul 22 2019 12:28:49 GMT-0400 (GMT-04:00)
+{"index":14801,"page":9}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":9}
+results found? true
+{"index":14801,"page":9}
+no results found? false
+{"index":14801,"page":9}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":9}
+3
+{"index":14801,"page":9}
+4
+{"index":14801,"page":9}
+paginated: true
+{"index":14801,"page":9}
+on new page: 9
+{"index":14801,"page":9}
+waited for current page: 9
+{"index":14801,"page":9}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":14801,"page":9}
+current actual page indicated in nav: 9
+{"index":14801,"page":9}
+current is goal? 9 9 true
+{"index":14801,"page":9}
+Reached goal page
+{"index":14801,"page":9}
+navData: [object Object]
+{"index":14801,"page":9}
+5
+{"index":14801,"page":9}
+6
+{"index":14801,"page":9}
+7
+{"index":14801,"page":9}
+8
+{"index":14801,"page":9}
+docket id written: 1563812929688_CP-40-CR-0003985-2017_namei_14822_page_9
+{"index":14801,"page":9}
+docket #0 saved
+{"index":14801,"page":9}
+summary #0 saved
+{"index":14801,"page":9}
+# pdfs downloaded: 152 , time elapsed: 1777.868 seconds
+{"index":14801,"page":9}
+docket id written: 1563812947686_CP-20-CR-0000975-2017_namei_14822_page_9
+{"index":14801,"page":9}
+docket #2 saved
+{"index":14801,"page":9}
+summary #2 saved
+{"index":14801,"page":9}
+# pdfs downloaded: 154 , time elapsed: 1800.954 seconds
+{"index":14801,"page":9}
+docket id written: 1563812970772_CP-09-CR-0006990-2017_namei_14822_page_9
+{"index":14801,"page":9}
+docket #3 saved
+{"index":14801,"page":9}
+summary #3 saved
+{"index":14801,"page":9}
+# pdfs downloaded: 156 , time elapsed: 1824.13 seconds
+{"index":14801,"page":9}
+docket id written: 1563812993948_CP-51-CR-0008637-2017_namei_14822_page_9
+{"index":14801,"page":9}
+docket #4 saved
+{"index":14801,"page":9}
+summary #4 saved
+{"index":14801,"page":9}
+# pdfs downloaded: 158 , time elapsed: 1841.79 seconds
+{"index":14801,"page":9}
+docket id written: 1563813011608_CP-25-CR-0003077-2017_namei_14822_page_9
+{"index":14801,"page":9}
+docket #5 saved
+{"index":14801,"page":9}
+summary #5 saved
+{"index":14801,"page":9}
+# pdfs downloaded: 160 , time elapsed: 1859.271 seconds
+{"index":14801,"page":9}
+docket id written: 1563813029089_CP-67-CR-0005022-2017_namei_14822_page_9
+{"index":14801,"page":9}
+docket #6 saved
+{"index":14801,"page":9}
+summary #6 saved
+{"index":14801,"page":9}
+# pdfs downloaded: 162 , time elapsed: 1876.948 seconds
+{"index":14801,"page":9}
+docket id written: 1563813046764_CP-62-CR-0000299-2017_namei_14822_page_9
+{"index":14801,"page":9}
+docket #7 saved
+{"index":14801,"page":9}
+summary #7 saved
+{"index":14801,"page":9}
+# pdfs downloaded: 164 , time elapsed: 1895.032 seconds
+{"index":14801,"page":9}
+docket id written: 1563813064850_CP-01-CR-0000667-2017_namei_14822_page_9
+{"index":14801,"page":9}
+docket #9 saved
+{"index":14801,"page":9}
+summary #9 saved
+{"index":14801,"page":9}
+# pdfs downloaded: 166 , time elapsed: 1912.044 seconds
+{"index":14801,"page":9}
+9
+{"index":14801,"page":9}
+10
+{"index":14801,"page":9}
+11
+{"index":14801,"page":9}
+12
+{"index":14801,"page":9}
+[43mdisabledText:[49m 
+{"index":14801,"page":9}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":14801,"page":9}
+13
+{"index":14801,"page":10}
+14
+{"index":14801,"page":10}
+15
+{"index":14801,"page":10}
+16 false
+{"index":14801,"page":10}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:31
+{"index":14801,"page":10}
+[43mnew page[49m
+{"index":14801,"page":10}
+[34mGoal page: [39m 10
+{"index":14801,"page":10}
+[33mPrevious page: [39m 
+{"index":14801,"page":10}
+start looking for result: Mon Jul 22 2019 12:31:25 GMT-0400 (GMT-04:00)
+{"index":14801,"page":10}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":10}
+results found? true
+{"index":14801,"page":10}
+no results found? false
+{"index":14801,"page":10}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":10}
+3
+{"index":14801,"page":10}
+4
+{"index":14801,"page":10}
+paginated: true
+{"index":14801,"page":10}
+on new page: 10
+{"index":14801,"page":10}
+waited for current page: 10
+{"index":14801,"page":10}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":14801,"page":10}
+current actual page indicated in nav: 10
+{"index":14801,"page":10}
+current is goal? 10 10 true
+{"index":14801,"page":10}
+Reached goal page
+{"index":14801,"page":10}
+navData: [object Object]
+{"index":14801,"page":10}
+5
+{"index":14801,"page":10}
+6
+{"index":14801,"page":10}
+7
+{"index":14801,"page":10}
+8
+{"index":14801,"page":10}
+docket id written: 1563813085748_CP-13-CR-0000696-2017_namei_14822_page_10
+{"index":14801,"page":10}
+docket #0 saved
+{"index":14801,"page":10}
+summary #0 saved
+{"index":14801,"page":10}
+# pdfs downloaded: 168 , time elapsed: 1933.319 seconds
+{"index":14801,"page":10}
+docket id written: 1563813103136_CP-39-CR-0002313-2017_namei_14822_page_10
+{"index":14801,"page":10}
+docket #1 saved
+{"index":14801,"page":10}
+summary #1 saved
+{"index":14801,"page":10}
+# pdfs downloaded: 170 , time elapsed: 1951.752 seconds
+{"index":14801,"page":10}
+docket id written: 1563813121570_CP-39-CR-0002308-2017_namei_14822_page_10
+{"index":14801,"page":10}
+docket #2 saved
+{"index":14801,"page":10}
+summary #2 saved
+{"index":14801,"page":10}
+# pdfs downloaded: 172 , time elapsed: 1969.078 seconds
+{"index":14801,"page":10}
+docket id written: 1563813138896_CP-25-CR-0000060-2017_namei_14822_page_10
+{"index":14801,"page":10}
+docket #4 saved
+{"index":14801,"page":10}
+summary #4 saved
+{"index":14801,"page":10}
+# pdfs downloaded: 174 , time elapsed: 1991.205 seconds
+{"index":14801,"page":10}
+9
+{"index":14801,"page":10}
+10
+{"index":14801,"page":10}
+11
+{"index":14801,"page":10}
+12
+{"index":14801,"page":10}
+[43mdisabledText:[49m Next,Last
+{"index":14801,"page":10}
+On the last page
+{"index":14801,"page":10}
+15
+{"index":14801,"page":10}
+16 true
+{"index":14801,"page":10}
+18
+{"index":14801,"page":10}
+onto the next index
+{"index":14801,"page":10}
+been done: 14822
+{"index":14801,"page":10}
+resetting page to 1
+{"index":14801,"page":10}
+~
+~
+~
+~
+~
+Name index: 14823
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:32
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:32
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:32:48 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14823
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14824
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:32
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:32
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:32:52 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 3 (seconds: 0.003)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14824
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14825
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:32
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:33
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:33:00 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14825
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14826
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:33
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:33
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:33:08 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14826
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14827
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:33
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:33
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:33:16 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14801,"page":1}
+results found? false
+{"index":14801,"page":1}
+no results found? true
+{"index":14801,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14801,"page":1}
+18
+{"index":14801,"page":1}
+onto the next index
+{"index":14801,"page":1}
+been done: 14827
+{"index":14801,"page":1}
+resetting page to 1
+{"index":14801,"page":1}
+~
+~
+~
+~
+~
+Name index: 14828
+~
+~
+~
+~
+~
+
+{"index":14801,"page":1}
+[object Object]
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:33
+{"index":14801,"page":1}
+Failed to load resource: the server responded with a status of 429 (Service Unavailable)
+{"index":14801,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 12:33
+{"index":14801,"page":1}
+[43mnew page[49m
+{"index":14801,"page":1}
+[34mGoal page: [39m 1
+{"index":14801,"page":1}
+[33mPrevious page: [39m 
+{"index":14801,"page":1}
+start looking for result: Mon Jul 22 2019 12:33:21 GMT-0400 (GMT-04:00)
+{"index":14801,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14801,"page":1}
+results found? true
+{"index":14801,"page":1}
+no results found? false
+{"index":14801,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14801,"page":1}
+3
+{"index":14801,"page":1}
+4
+{"index":14801,"page":1}
+One-pager
+{"index":14801,"page":1}
+5
+{"index":14801,"page":1}
+6
+{"index":14801,"page":1}
+7
+{"index":14801,"page":1}
+8
+{"index":14801,"page":1}
+docket id written: 1563813231775_CP-46-CR-0003330-2017_namei_14828_page_1
+{"index":14801,"page":1}

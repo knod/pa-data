@@ -1,0 +1,33 @@
+{
+  "command": "node check-pattern-cp.js cp00k01k09check1",
+  "patternIDFileName": "check1",
+  "initialDockets": "round1_cp00k01k09c.json",
+  "type": "cp",
+  "mode": "check",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 9,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "yes",
+  "redo": false,
+  "done": {
+    "0": 12,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 1
+  }
+}
