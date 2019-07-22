@@ -16,7 +16,7 @@
   "namesPath": "./names/censusNamesSmallShuffled.json",
   "dataDirectory": "./data-cp/pattern/",
   "usedDocketsFileName": "",
-  "wait": 600,
+  "wait": 500,
   "alerts": "no",
   "redo": false,
   "done": {}

@@ -68,6 +68,14 @@ let requiredPrefix = /CP/;
 // let requiredPrefix = /MJ/;
 
 
+// For finding all current dockets
+let assignmentsPathStart = './assignments/pattern/';
+
+// // For downloading PDFS
+// assignmentsPathStart = './assignments/';
+
+
+
 
 
 // Standard/shared
@@ -75,12 +83,6 @@ let versionNumber = '\nv0.66.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz "{\"alerts\":\"no\"}"
-
-
-
-// For downloading PDFS
-let assignmentsPathStart = './assignments/';
-let doWithDocket = downloadBothFiles;
 
 
 // In new file? No, we need these vars...
@@ -134,8 +136,10 @@ if (runData.mode === 'check' || runData.mode === 'pattern') {
   // doWithDocket = justIDs;
 
   // For finding all current dockets
-  assignmentsPathStart = './assignments/pattern/';
   doWithDocket = makeIDCollection;
+} else {
+  // For downloading PDFS
+  let doWithDocket = downloadBothFiles;
 }
 
 

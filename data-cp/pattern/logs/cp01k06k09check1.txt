@@ -1,0 +1,346 @@
+
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":null,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js cp01k06k09check1",
+  "patternIDFileName": "check1",
+  "initialDockets": "round1_cp01k06k09c.json",
+  "type": "cp",
+  "mode": "check",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 1001,
+  "endIndexRange": 6000,
+  "position": {
+    "index": null,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 500,
+  "alerts": "no",
+  "redo": false,
+  "done": {}
+}
+{"index":null,"page":0}
+Creating browser
+{"index":null,"page":0}
+Opening page
+{"index":null,"page":0}
+Status: 200
+{"index":null,"page":0}
+~
+~
+~
+~
+~
+Name index: 1001
+~
+~
+~
+~
+~
+
+{"index":null,"page":0}
+[object Object]
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:21
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:22
+{"index":null,"page":0}
+[43mnew page[49m
+{"index":null,"page":0}
+[34mGoal page: [39m 1
+{"index":null,"page":0}
+[33mPrevious page: [39m 
+{"index":null,"page":0}
+start looking for result: Mon Jul 22 2019 11:22:00 GMT-0400 (GMT-04:00)
+{"index":null,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":null,"page":0}
+results found? true
+{"index":null,"page":0}
+no results found? false
+{"index":null,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":null,"page":0}
+3
+{"index":null,"page":0}
+4
+{"index":null,"page":0}
+One-pager
+{"index":null,"page":0}
+5
+{"index":null,"page":0}
+6
+{"index":null,"page":0}
+7
+{"index":null,"page":0}
+8
+{"index":null,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m11:22[39m
+{"index":null,"page":0}
+Error: Cannot find module './data-cp/pattern/check1_cp01k06k09check1.json'
+{"index":null,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":null,"page":0}
+timesRepeated: 1
+{"index":null,"page":0}
+ undefined
+{"index":null,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 11:22
+{"index":null,"page":0}
+Creating browser
+{"index":null,"page":0}
+Opening page
+{"index":null,"page":0}
+Status: 200
+{"index":null,"page":0}
+~
+~
+~
+~
+~
+Name index: 1001
+~
+~
+~
+~
+~
+
+{"index":null,"page":0}
+[object Object]
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:23
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:23
+{"index":null,"page":0}
+[43mnew page[49m
+{"index":null,"page":0}
+[34mGoal page: [39m 1
+{"index":null,"page":0}
+[33mPrevious page: [39m 
+{"index":null,"page":0}
+start looking for result: Mon Jul 22 2019 11:23:36 GMT-0400 (GMT-04:00)
+{"index":null,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":null,"page":0}
+results found? true
+{"index":null,"page":0}
+no results found? false
+{"index":null,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":null,"page":0}
+3
+{"index":null,"page":0}
+4
+{"index":null,"page":0}
+One-pager
+{"index":null,"page":0}
+5
+{"index":null,"page":0}
+6
+{"index":null,"page":0}
+7
+{"index":null,"page":0}
+8
+{"index":null,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m11:24[39m
+{"index":null,"page":0}
+Error: Cannot find module './data-cp/pattern/check1_cp01k06k09check1.json'
+{"index":null,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":null,"page":0}
+timesRepeated: 1
+{"index":null,"page":0}
+ undefined
+{"index":null,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 11:24
+{"index":null,"page":0}
+Creating browser
+{"index":null,"page":0}
+Opening page
+{"index":null,"page":0}
+Status: 200
+{"index":null,"page":0}
+~
+~
+~
+~
+~
+Name index: 1001
+~
+~
+~
+~
+~
+
+{"index":null,"page":0}
+[object Object]
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:25
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:25
+{"index":null,"page":0}
+[43mnew page[49m
+{"index":null,"page":0}
+[34mGoal page: [39m 1
+{"index":null,"page":0}
+[33mPrevious page: [39m 
+{"index":null,"page":0}
+start looking for result: Mon Jul 22 2019 11:25:13 GMT-0400 (GMT-04:00)
+{"index":null,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":null,"page":0}
+results found? true
+{"index":null,"page":0}
+no results found? false
+{"index":null,"page":0}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":null,"page":0}
+3
+{"index":null,"page":0}
+4
+{"index":null,"page":0}
+One-pager
+{"index":null,"page":0}
+5
+{"index":null,"page":0}
+6
+{"index":null,"page":0}
+7
+{"index":null,"page":0}
+8
+{"index":null,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m11:25[39m
+{"index":null,"page":0}
+Error: Cannot find module './data-cp/pattern/check1_cp01k06k09check1.json'
+{"index":null,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":null,"page":0}
+timesRepeated: 1
+{"index":null,"page":0}
+ undefined
+{"index":null,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 11:25
+{"index":null,"page":0}
+Creating browser
+{"index":null,"page":0}
+Opening page
+{"index":null,"page":0}
+Status: 200
+{"index":null,"page":0}
+~
+~
+~
+~
+~
+Name index: 1001
+~
+~
+~
+~
+~
+
+{"index":null,"page":0}
+[object Object]
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:26
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:26
+{"index":null,"page":0}
+[43mnew page[49m
+{"index":null,"page":0}
+[34mGoal page: [39m 1
+{"index":null,"page":0}
+[33mPrevious page: [39m 
+{"index":null,"page":0}
+start looking for result: Mon Jul 22 2019 11:26:50 GMT-0400 (GMT-04:00)
+{"index":null,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":null,"page":0}
+results found? true
+{"index":null,"page":0}
+no results found? false
+{"index":null,"page":0}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":null,"page":0}
+3
+{"index":null,"page":0}
+4
+{"index":null,"page":0}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":null,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js cp01k06k09check1",
+  "patternIDFileName": "check1",
+  "initialDockets": "round1_cp01k06k09c.json",
+  "type": "cp",
+  "mode": "check",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 1001,
+  "endIndexRange": 6000,
+  "position": {
+    "index": null,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 500,
+  "alerts": "no",
+  "redo": false,
+  "done": {}
+}
+{"index":null,"page":0}
+Creating browser
+{"index":null,"page":0}
+Opening page
+{"index":null,"page":0}
+Status: 200
+{"index":null,"page":0}
+~
+~
+~
+~
+~
+Name index: 1001
+~
+~
+~
+~
+~
+
+{"index":null,"page":0}
+[object Object]
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:26
+{"index":null,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:27
+{"index":null,"page":0}
+[43mnew page[49m
+{"index":null,"page":0}
+[34mGoal page: [39m 1
+{"index":null,"page":0}
+[33mPrevious page: [39m 
+{"index":null,"page":0}
+start looking for result: Mon Jul 22 2019 11:27:02 GMT-0400 (GMT-04:00)
+{"index":null,"page":0}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":null,"page":0}
+results found? true
+{"index":null,"page":0}
+no results found? false
+{"index":null,"page":0}
+Time elapsed to find results: 8 (seconds: 0.008)
+{"index":null,"page":0}
+3
+{"index":null,"page":0}
+4
+{"index":null,"page":0}
