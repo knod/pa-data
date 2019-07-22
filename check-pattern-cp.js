@@ -79,7 +79,7 @@ let assignmentsPathStart = './assignments/pattern/';
 
 
 // Standard/shared
-let versionNumber = '\nv0.67.0\n';
+let versionNumber = '\nv0.68.1\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz "{\"alerts\":\"no\"}"
@@ -832,13 +832,15 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
     },
     thisFilingDateSelector
   );
-  await log('position:', JSON.stringify(runData.position));
+
+  let position = require(assignmentPath).position;
+  await log('position:', JSON.stringify(position));
   await log('id:', docketID);
   await log('filing date:', filingDate);
 
   let rowData = {
     assignmentID: assignmentID,
-    position: runData.position,
+    position: position,
     id: docketID,
     filingDate: filingDate,
     foundTimestamp: Date.now(),
