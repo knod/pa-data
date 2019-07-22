@@ -69,22 +69,19 @@ let requiredPrefix = /CP/;
 
 
 
-// // For downloading PDFS
-// let assignmentsPathStart = './assignments/';
-// let doWithDocket = downloadBothFiles;
-
-// For finding all current dockets
-let assignmentsPathStart = './assignments/pattern/';
-let doWithDocket = makeIDCollection;
-
-
-
 
 // Standard/shared
-let versionNumber = '\nv0.65.0\n';
+let versionNumber = '\nv0.66.0\n';
 
 // command line command example
-// node mdj-names3-test.js 1zz '{"alerts":"no"}'
+// node mdj-names3-test.js 1zz "{\"alerts\":\"no\"}"
+
+
+
+// For downloading PDFS
+let assignmentsPathStart = './assignments/';
+let doWithDocket = downloadBothFiles;
+
 
 // In new file? No, we need these vars...
 // Get assignment ID from command line
@@ -129,12 +126,18 @@ if (runData.completed && !runData.redo) {
 
 
 
+
 // let checkingIDs = false;
 // let afterNameIndex = async function () {};
-if (runData.mode === 'check') {
+if (runData.mode === 'check' || runData.mode === 'pattern') {
   // checkingIDs = true;
-  doWithDocket = justIDs;
+  // doWithDocket = justIDs;
+
+  // For finding all current dockets
+  assignmentsPathStart = './assignments/pattern/';
+  doWithDocket = makeIDCollection;
 }
+
 
 
 
