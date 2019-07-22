@@ -68,23 +68,22 @@ let requiredPrefix = /CP/;
 // let requiredPrefix = /MJ/;
 
 
-
-// // For downloading PDFS
-// let assignmentsPathStart = './assignments/';
-// let doWithDocket = downloadBothFiles;
-
 // For finding all current dockets
 let assignmentsPathStart = './assignments/pattern/';
-let doWithDocket = makeIDCollection;
+
+// // For downloading PDFS
+// assignmentsPathStart = './assignments/';
+
 
 
 
 
 // Standard/shared
-let versionNumber = '\nv0.62.0\n';
+let versionNumber = '\nv0.67.0\n';
 
 // command line command example
-// node mdj-names3-test.js 1zz '{"alerts":"no"}'
+// node mdj-names3-test.js 1zz "{\"alerts\":\"no\"}"
+
 
 // In new file? No, we need these vars...
 // Get assignment ID from command line
@@ -101,9 +100,6 @@ const assignmentData = require(assignmentPath);
 
 
 
-
-
-
 // Assignment settings overrides
 const commandLineArgvs = process.argv[3];
 
@@ -111,8 +107,8 @@ const commandLineArgvs = process.argv[3];
 let runData = null;
 if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
 
-  let arvObj = JSON.parse(commandLineArgvs);//await log('argv obj:', arvObj);
-  runData = Object.assign({}, assignmentData, arvObj);//await log('combined objects:', runData);
+  let arvObj = JSON.parse(commandLineArgvs);
+  runData = Object.assign({}, assignmentData, arvObj);
 
 } else {
   runData = Object.assign({}, assignmentData);
@@ -131,12 +127,21 @@ if (runData.completed && !runData.redo) {
 }
 
 
-let checkingIDs = false;
-let afterNameIndex = async function () {};
-if (/check/.test(assignmentID)) {
-  checkingIDs = true;
-  afterNameIndex = checkIDs;
+
+
+// let checkingIDs = false;
+// let afterNameIndex = async function () {};
+if (runData.mode === 'check' || runData.mode === 'pattern') {
+  // checkingIDs = true;
+  // doWithDocket = justIDs;
+
+  // For finding all current dockets
+  doWithDocket = makeIDCollection;
+} else {
+  // For downloading PDFS
+  let doWithDocket = downloadBothFiles;
 }
+
 
 
 
@@ -154,6 +159,7 @@ mkdirp.sync(logDir, async function (err) {
 });
 
 // TODO: Make this a higher order function taking a 'logPath' arg
+// Doesn't work in `page` higher order functions (think it can't save file there)
 // Try this sometime (though `window.log` didn't work): https://stackoverflow.com/a/52176714
 async function log (...all) {
   console.log(...all);
@@ -176,7 +182,7 @@ async function log (...all) {
   }  // first try
 }
 
-let logObj = {log: log};
+// let logObj = {log: log};
 
 
 
@@ -207,7 +213,7 @@ mkdirp.sync(dataDirectory, async function (err) {
 // Keeping track of what code version number we're at so
 // in future we know where to backtrack to.
 fs.appendFileSync(usedDocketsPath, versionNumber, async function (err) {
-  if (err) log(err);
+  if (err) {log(err);}
 });
 
 // Assigned variables
@@ -496,7 +502,7 @@ async function getPDFs (browser, page, pageData) {
     );
     // console.log('a', typeof log);
     let waitedForCurrentPage = await page.waitForFunction(
-      async function (pageNumSelector, previousPageNumber, log){
+      function (pageNumSelector, previousPageNumber){
         // console.log('b', JSON.stringify(pageNumSelector), JSON.stringify(previousPageNumber), typeof log);
         let currentPageElem = document.querySelector(pageNumSelector);
         let currentPageNumber = parseInt(currentPageElem.innerText);
@@ -512,7 +518,7 @@ async function getPDFs (browser, page, pageData) {
         }
       },
       {timeout: 15 * 60 * 1000},
-      pageNumSelector, previousPageNumber, log
+      pageNumSelector, previousPageNumber
     );
 
     // console.log('d');
@@ -522,7 +528,7 @@ async function getPDFs (browser, page, pageData) {
 
     // console.log('e');
     let navData = await page.evaluate(
-      async function (paginationSelector, pageNumSelector, goalPageNumber, logObj){
+      function (paginationSelector, pageNumSelector, goalPageNumber){
         // Examples:
 
         // our goal page is 1.
@@ -607,7 +613,7 @@ async function getPDFs (browser, page, pageData) {
         // Implement this sometime
         // return {selector: selector};
       },
-      paginationSelector, pageNumSelector, goalPageNumber, logObj
+      paginationSelector, pageNumSelector, goalPageNumber
     );
 
     await log('navData:', navData);
@@ -695,10 +701,9 @@ async function getPDFs (browser, page, pageData) {
     await log(10);
     // Look for what nav elements are disabled
     const disabledText = await page.evaluate(
-      async function (paginationSelector, log) {
+      function (paginationSelector) {
         let selector = paginationSelector + ' a[disabled]';
 
-        // await log(11);
         console.log(11);
         let allDisabled = Array.from(
           document.querySelectorAll(selector),
@@ -706,7 +711,7 @@ async function getPDFs (browser, page, pageData) {
         )
         return allDisabled;
       },
-      paginationSelector, log
+      paginationSelector
     );
 
     await log(12);
@@ -805,8 +810,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
       if (err) { log('Error::', err); }
   });
 
-  let fileName = runData.patternIDFileName + '_' + assignmentID + '.json';
-  let thisPath = dir + fileName;
+  let resultsPath = await getIDsResultsPath(runData);
 
   let cssIndex = index + 1;
   let thisFilingDateSelector = filingDateSelectorStart + cssIndex + filingDateSelectorEnd;
@@ -814,7 +818,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
   let currentDocketsData;
   // If the file already exists, get that
   try {
-    let pastDockets = require(thisPath);  // JSON - array? Object?
+    let pastDockets = require(resultsPath);  // JSON - array? Object?
     currentDocketsData = pastDockets || { found: {} };
 
   // If not, we'll create it later
@@ -828,10 +832,13 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
     },
     thisFilingDateSelector
   );
+  await log('position:', JSON.stringify(runData.position));
+  await log('id:', docketID);
   await log('filing date:', filingDate);
 
   let rowData = {
     assignmentID: assignmentID,
+    position: runData.position,
     id: docketID,
     filingDate: filingDate,
     foundTimestamp: Date.now(),
@@ -842,18 +849,18 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
   // Add data to a file
   currentDocketsData[docketID] = rowData;
 
-  // Prepare for checking on missing at... end of nameIndex?
-  if (checkingIDs) {
-    if (Array.isArray(currentDocketsData.found[nameIndex])) {
-      currentDocketsData.found[nameIndex].push(docketID);
-    } else {
-      currentDocketsData.found[nameIndex] = [ docketID ];
-    }
-  }
+  // // Prepare for checking on missing at... end of nameIndex?
+  // if (checkingIDs) {
+  //   if (Array.isArray(currentDocketsData.found[nameIndex])) {
+  //     currentDocketsData.found[nameIndex].push(docketID);
+  //   } else {
+  //     currentDocketsData.found[nameIndex] = [ docketID ];
+  //   }
+  // }
 
   let json = stringify(currentDocketsData, null, 2);
   // Will also create file if it doesn't exist
-  fs.writeFileSync(thisPath, json);
+  fs.writeFileSync(resultsPath, json);
 
   numPDFs++;
   await log('num found so far:', numPDFs);
@@ -863,81 +870,62 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 
 
 
+// Should we store these ones by name index now...?
+// Compounding problems? Hmm
+// async function justIDs (docketID, nameIndex) {
+async function justIDs (docketID) {
+  let resultsPath = await getIDsResultsPath(runData);
+  let results = require(resultsPath) || {};
 
-async function checkIDs (nameIndex) {
-
-  let initialDocketsDir = 'data-' + runData.type + '/pattern/';
-  let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
-  let initialDockets = require(initialDocketsPath);
-
-  // Get current name index ids found. Now where's that being stored...?
-  // let IDsFoundInThisIndex = require();
-  for (let key in initialDockets) {
-    if (!docketsToCheck.includes(key)) {
-      log('docket not found');
-    }
+  if (!Array.isArray(results[nameIndex])) {
+    results[nameIndex] = [ docketID ];
+  } else {
+    results[nameIndex].push(docketID);
   }
 
+  let json = stringify(results);
+
+  fs.writeFileSync(resultsPath, json);
+};  // Ends async justIDs()
 
 
 
-  // let toAdd = null;
+// // This can only work if we stored them by name index, which we didn't
+// // So we'll have to wait to check them in a separate script after
+// // they've all been processed :(
+// async function checkIDs (nameIndex, resultsPath) {
 
-  // for (let docketID in initialDockets) {
-  //   if () {}
-  // }
+//   if (!resultsPath) {
+//     resultsPath = await getIDsResultsPath(runData);
+//   }
 
+//   let initialDocketsDir = 'data-' + runData.type + '/pattern/';
+//   let initialDocketsPath = initialDocketsDir + assignmentData.initialDockets;
+//   let initialDockets = require(initialDocketsPath);
+
+//   // Get current name index ids found. Now where's that being stored...?
+//   let IDsFoundInThisIndex = require(resultsPath);
+
+//   // Damn. Way I stored them we have to go through all of them each time. Bleh.
+//   for (let key in initialDockets) {
+//     if (!docketsToCheck.includes(key)) {
+//       log('docket not found');
+//     }
+//   }
+
+// };  // Ends async checkIDs()
+
+
+async function getIDsResultsPath (runData) {
   let dir = runData.dataDirectory;
   mkdirp.sync(dir, async function (err) {
       if (err) { log('Error::', err); }
   });
 
   let fileName = runData.patternIDFileName + '_' + assignmentID + '.json';
-  let thisPath = dir + fileName;
-
-  let cssIndex = index + 1;
-  let thisFilingDateSelector = filingDateSelectorStart + cssIndex + filingDateSelectorEnd;
-
-  let currentDocketsData;
-  // If the file already exists, get that
-  try {
-    let pastDockets = require(thisPath);  // JSON - array? Object?
-    currentDocketsData = pastDockets || {};
-
-  // If not, we'll create it later
-  } catch (err) {
-    currentDocketsData = {};
-  }
-
-  let filingDate = await page.evaluate(
-    function (thisFilingDateSelector) {
-      return document.querySelector(thisFilingDateSelector).innerText;
-    },
-    thisFilingDateSelector
-  );
-  await log('filing date:', filingDate);
-
-  let rowData = {
-    assignmentID: assignmentID,
-    id: docketID,
-    filingDate: filingDate,
-    foundTimestamp: Date.now(),
-  };
-
-  // See if docket was already gotten? Maybe in future.
-
-  // Add data to a file
-  currentDocketsData[docketID] = rowData;
-  let json = stringify(currentDocketsData, null, 2);
-  // Will also create file if it doesn't exist
-  fs.writeFileSync(thisPath, json);
-
-  numPDFs++;
-  await log('num found so far:', numPDFs);
-
-
-
-};  // Ends async checkIDs()
+  let resultsPath = dir + fileName;
+  return resultsPath;
+};
 
 
 
@@ -981,7 +969,7 @@ async function nextIndex (nonResultWasFound) {
   assignmentData.position.page = 0;
   fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
 
-  afterNameIndex(nameIndex - 1);
+  // afterNameIndex(nameIndex - 1);
 
   return;
 }  // Ends nextIndex()

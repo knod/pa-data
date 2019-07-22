@@ -3,6 +3,7 @@
   "patternIDFileName": "check1",
   "initialDockets": "round1_cp01k06k09c.json",
   "type": "cp",
+  "mode": "check",
   "startDate": "01/01/2009",
   "endDate": "06/25/2019",
   "startIndexRange": 1001,
@@ -15,7 +16,7 @@
   "namesPath": "./names/censusNamesSmallShuffled.json",
   "dataDirectory": "./data-cp/pattern/",
   "usedDocketsFileName": "",
-  "wait": 600,
+  "wait": 500,
   "alerts": "no",
   "redo": false,
   "done": {}
