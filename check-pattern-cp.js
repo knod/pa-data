@@ -131,15 +131,13 @@ if (runData.completed && !runData.redo) {
 
 // let checkingIDs = false;
 // let afterNameIndex = async function () {};
+let doWithDocket = downloadBothFiles;
 if (runData.mode === 'check' || runData.mode === 'pattern') {
   // checkingIDs = true;
   // doWithDocket = justIDs;
 
   // For finding all current dockets
   doWithDocket = makeIDCollection;
-} else {
-  // For downloading PDFS
-  let doWithDocket = downloadBothFiles;
 }
 
 
