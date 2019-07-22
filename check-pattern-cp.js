@@ -79,7 +79,7 @@ let assignmentsPathStart = './assignments/pattern/';
 
 
 // Standard/shared
-let versionNumber = '\nv0.68.0\n';
+let versionNumber = '\nv0.68.1\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz "{\"alerts\":\"no\"}"
