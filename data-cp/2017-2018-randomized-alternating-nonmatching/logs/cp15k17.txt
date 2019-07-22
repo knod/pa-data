@@ -39887,3 +39887,596 @@ summary #1 saved
 {"index":14519,"page":1}
 docket id written: 1563810113596_CP-02-CR-0014359-2017_namei_14792_page_1
 {"index":14519,"page":1}
+docket #2 saved
+{"index":14519,"page":1}
+summary #2 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3443 , time elapsed: 47275.767 seconds
+{"index":14519,"page":1}
+docket id written: 1563810130532_CP-51-CR-0009957-2017_namei_14792_page_1
+{"index":14519,"page":1}
+docket #3 saved
+{"index":14519,"page":1}
+summary #3 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3445 , time elapsed: 47295.902 seconds
+{"index":14519,"page":1}
+docket id written: 1563810150667_CP-43-CR-0001837-2017_namei_14792_page_1
+{"index":14519,"page":1}
+docket #4 saved
+{"index":14519,"page":1}
+summary #4 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3447 , time elapsed: 47314.38 seconds
+{"index":14519,"page":1}
+9
+{"index":14519,"page":1}
+16 true
+{"index":14519,"page":1}
+18
+{"index":14519,"page":1}
+onto the next index
+{"index":14519,"page":1}
+been done: 14792
+{"index":14519,"page":1}
+resetting page to 1
+{"index":14519,"page":1}
+~
+~
+~
+~
+~
+Name index: 14793
+~
+~
+~
+~
+~
+
+{"index":14519,"page":1}
+[object Object]
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:42
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:43
+{"index":14519,"page":1}
+[43mnew page[49m
+{"index":14519,"page":1}
+[34mGoal page: [39m 1
+{"index":14519,"page":1}
+[33mPrevious page: [39m 
+{"index":14519,"page":1}
+start looking for result: Mon Jul 22 2019 11:43:24 GMT-0400 (GMT-04:00)
+{"index":14519,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14519,"page":1}
+results found? false
+{"index":14519,"page":1}
+no results found? true
+{"index":14519,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14519,"page":1}
+18
+{"index":14519,"page":1}
+onto the next index
+{"index":14519,"page":1}
+been done: 14793
+{"index":14519,"page":1}
+resetting page to 1
+{"index":14519,"page":1}
+~
+~
+~
+~
+~
+Name index: 14794
+~
+~
+~
+~
+~
+
+{"index":14519,"page":1}
+[object Object]
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:43
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:44
+{"index":14519,"page":1}
+[43mnew page[49m
+{"index":14519,"page":1}
+[34mGoal page: [39m 1
+{"index":14519,"page":1}
+[33mPrevious page: [39m 
+{"index":14519,"page":1}
+start looking for result: Mon Jul 22 2019 11:44:02 GMT-0400 (GMT-04:00)
+{"index":14519,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14519,"page":1}
+results found? true
+{"index":14519,"page":1}
+no results found? false
+{"index":14519,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14519,"page":1}
+3
+{"index":14519,"page":1}
+4
+{"index":14519,"page":1}
+One-pager
+{"index":14519,"page":1}
+5
+{"index":14519,"page":1}
+6
+{"index":14519,"page":1}
+7
+{"index":14519,"page":1}
+8
+{"index":14519,"page":1}
+docket id written: 1563810272071_CP-25-CR-0003302-2018_namei_14794_page_1
+{"index":14519,"page":1}
+docket #0 saved
+{"index":14519,"page":1}
+summary #0 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3449 , time elapsed: 47433.6 seconds
+{"index":14519,"page":1}
+docket id written: 1563810288364_CP-08-CR-0000024-2017_namei_14794_page_1
+{"index":14519,"page":1}
+docket #1 saved
+{"index":14519,"page":1}
+summary #1 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3451 , time elapsed: 47452.456 seconds
+{"index":14519,"page":1}
+9
+{"index":14519,"page":1}
+16 true
+{"index":14519,"page":1}
+18
+{"index":14519,"page":1}
+onto the next index
+{"index":14519,"page":1}
+been done: 14794
+{"index":14519,"page":1}
+resetting page to 1
+{"index":14519,"page":1}
+~
+~
+~
+~
+~
+Name index: 14795
+~
+~
+~
+~
+~
+
+{"index":14519,"page":1}
+[object Object]
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:45
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:45
+{"index":14519,"page":1}
+[43mnew page[49m
+{"index":14519,"page":1}
+[34mGoal page: [39m 1
+{"index":14519,"page":1}
+[33mPrevious page: [39m 
+{"index":14519,"page":1}
+start looking for result: Mon Jul 22 2019 11:45:54 GMT-0400 (GMT-04:00)
+{"index":14519,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14519,"page":1}
+results found? true
+{"index":14519,"page":1}
+no results found? false
+{"index":14519,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14519,"page":1}
+3
+{"index":14519,"page":1}
+4
+{"index":14519,"page":1}
+One-pager
+{"index":14519,"page":1}
+5
+{"index":14519,"page":1}
+6
+{"index":14519,"page":1}
+7
+{"index":14519,"page":1}
+8
+{"index":14519,"page":1}
+docket id written: 1563810384083_CP-15-CR-0001495-2018_namei_14795_page_1
+{"index":14519,"page":1}
+docket #0 saved
+{"index":14519,"page":1}
+summary #0 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3453 , time elapsed: 47548.082 seconds
+{"index":14519,"page":1}
+docket id written: 1563810402847_CP-11-CR-0000452-2018_namei_14795_page_1
+{"index":14519,"page":1}
+docket #1 saved
+{"index":14519,"page":1}
+summary #1 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3455 , time elapsed: 47566.205 seconds
+{"index":14519,"page":1}
+docket id written: 1563810420969_CP-06-CR-0004014-2017_namei_14795_page_1
+{"index":14519,"page":1}
+docket #2 saved
+{"index":14519,"page":1}
+summary #2 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3457 , time elapsed: 47588.905 seconds
+{"index":14519,"page":1}
+docket id written: 1563810443670_CP-01-CR-0000555-2017_namei_14795_page_1
+{"index":14519,"page":1}
+docket #3 saved
+{"index":14519,"page":1}
+summary #3 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3459 , time elapsed: 47607.815 seconds
+{"index":14519,"page":1}
+docket id written: 1563810462580_CP-62-CR-0000008-2017_namei_14795_page_1
+{"index":14519,"page":1}
+docket #4 saved
+{"index":14519,"page":1}
+summary #4 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3461 , time elapsed: 47626.809 seconds
+{"index":14519,"page":1}
+9
+{"index":14519,"page":1}
+16 true
+{"index":14519,"page":1}
+18
+{"index":14519,"page":1}
+onto the next index
+{"index":14519,"page":1}
+been done: 14795
+{"index":14519,"page":1}
+resetting page to 1
+{"index":14519,"page":1}
+~
+~
+~
+~
+~
+Name index: 14796
+~
+~
+~
+~
+~
+
+{"index":14519,"page":1}
+[object Object]
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:48
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:48
+{"index":14519,"page":1}
+[43mnew page[49m
+{"index":14519,"page":1}
+[34mGoal page: [39m 1
+{"index":14519,"page":1}
+[33mPrevious page: [39m 
+{"index":14519,"page":1}
+start looking for result: Mon Jul 22 2019 11:48:24 GMT-0400 (GMT-04:00)
+{"index":14519,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14519,"page":1}
+results found? true
+{"index":14519,"page":1}
+no results found? false
+{"index":14519,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14519,"page":1}
+3
+{"index":14519,"page":1}
+4
+{"index":14519,"page":1}
+One-pager
+{"index":14519,"page":1}
+5
+{"index":14519,"page":1}
+6
+{"index":14519,"page":1}
+7
+{"index":14519,"page":1}
+8
+{"index":14519,"page":1}
+docket id written: 1563810534764_CP-09-CR-0005515-2018_namei_14796_page_1
+{"index":14519,"page":1}
+docket #0 saved
+{"index":14519,"page":1}
+summary #0 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3463 , time elapsed: 47697.659 seconds
+{"index":14519,"page":1}
+9
+{"index":14519,"page":1}
+16 true
+{"index":14519,"page":1}
+18
+{"index":14519,"page":1}
+onto the next index
+{"index":14519,"page":1}
+been done: 14796
+{"index":14519,"page":1}
+resetting page to 1
+{"index":14519,"page":1}
+~
+~
+~
+~
+~
+Name index: 14797
+~
+~
+~
+~
+~
+
+{"index":14519,"page":1}
+[object Object]
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:49
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:49
+{"index":14519,"page":1}
+[43mnew page[49m
+{"index":14519,"page":1}
+[34mGoal page: [39m 1
+{"index":14519,"page":1}
+[33mPrevious page: [39m 
+{"index":14519,"page":1}
+start looking for result: Mon Jul 22 2019 11:49:47 GMT-0400 (GMT-04:00)
+{"index":14519,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14519,"page":1}
+results found? false
+{"index":14519,"page":1}
+no results found? true
+{"index":14519,"page":1}
+Time elapsed to find results: 10 (seconds: 0.01)
+{"index":14519,"page":1}
+18
+{"index":14519,"page":1}
+onto the next index
+{"index":14519,"page":1}
+been done: 14797
+{"index":14519,"page":1}
+resetting page to 1
+{"index":14519,"page":1}
+~
+~
+~
+~
+~
+Name index: 14798
+~
+~
+~
+~
+~
+
+{"index":14519,"page":1}
+[object Object]
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:49
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:50
+{"index":14519,"page":1}
+[43mnew page[49m
+{"index":14519,"page":1}
+[34mGoal page: [39m 1
+{"index":14519,"page":1}
+[33mPrevious page: [39m 
+{"index":14519,"page":1}
+start looking for result: Mon Jul 22 2019 11:50:22 GMT-0400 (GMT-04:00)
+{"index":14519,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14519,"page":1}
+results found? false
+{"index":14519,"page":1}
+no results found? true
+{"index":14519,"page":1}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":14519,"page":1}
+18
+{"index":14519,"page":1}
+onto the next index
+{"index":14519,"page":1}
+been done: 14798
+{"index":14519,"page":1}
+resetting page to 1
+{"index":14519,"page":1}
+~
+~
+~
+~
+~
+Name index: 14799
+~
+~
+~
+~
+~
+
+{"index":14519,"page":1}
+[object Object]
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:50
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:50
+{"index":14519,"page":1}
+[43mnew page[49m
+{"index":14519,"page":1}
+[34mGoal page: [39m 1
+{"index":14519,"page":1}
+[33mPrevious page: [39m 
+{"index":14519,"page":1}
+start looking for result: Mon Jul 22 2019 11:50:59 GMT-0400 (GMT-04:00)
+{"index":14519,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel
+{"index":14519,"page":1}
+results found? false
+{"index":14519,"page":1}
+no results found? true
+{"index":14519,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14519,"page":1}
+18
+{"index":14519,"page":1}
+onto the next index
+{"index":14519,"page":1}
+been done: 14799
+{"index":14519,"page":1}
+resetting page to 1
+{"index":14519,"page":1}
+~
+~
+~
+~
+~
+Name index: 14800
+~
+~
+~
+~
+~
+
+{"index":14519,"page":1}
+[object Object]
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:51
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:51
+{"index":14519,"page":1}
+[43mnew page[49m
+{"index":14519,"page":1}
+[34mGoal page: [39m 1
+{"index":14519,"page":1}
+[33mPrevious page: [39m 
+{"index":14519,"page":1}
+start looking for result: Mon Jul 22 2019 11:51:18 GMT-0400 (GMT-04:00)
+{"index":14519,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14519,"page":1}
+results found? true
+{"index":14519,"page":1}
+no results found? false
+{"index":14519,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14519,"page":1}
+3
+{"index":14519,"page":1}
+4
+{"index":14519,"page":1}
+One-pager
+{"index":14519,"page":1}
+5
+{"index":14519,"page":1}
+6
+{"index":14519,"page":1}
+7
+{"index":14519,"page":1}
+8
+{"index":14519,"page":1}
+docket id written: 1563810708302_CP-23-CR-0007626-2018_namei_14800_page_1
+{"index":14519,"page":1}
+docket #0 saved
+{"index":14519,"page":1}
+summary #0 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3465 , time elapsed: 47870.941 seconds
+{"index":14519,"page":1}
+docket id written: 1563810725704_CP-23-CR-0006625-2018_namei_14800_page_1
+{"index":14519,"page":1}
+docket #1 saved
+{"index":14519,"page":1}
+summary #1 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3467 , time elapsed: 47887.723 seconds
+{"index":14519,"page":1}
+docket id written: 1563810742488_CP-22-CR-0001166-2018_namei_14800_page_1
+{"index":14519,"page":1}
+docket #2 saved
+{"index":14519,"page":1}
+summary #2 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3469 , time elapsed: 47904.798 seconds
+{"index":14519,"page":1}
+docket id written: 1563810759562_CP-46-CR-0006994-2017_namei_14800_page_1
+{"index":14519,"page":1}
+docket #3 saved
+{"index":14519,"page":1}
+summary #3 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3471 , time elapsed: 47924.028 seconds
+{"index":14519,"page":1}
+docket id written: 1563810778791_CP-51-CR-0004454-2017_namei_14800_page_1
+{"index":14519,"page":1}
+docket #4 saved
+{"index":14519,"page":1}
+summary #4 saved
+{"index":14519,"page":1}
+# pdfs downloaded: 3473 , time elapsed: 47943.436 seconds
+{"index":14519,"page":1}
+9
+{"index":14519,"page":1}
+16 true
+{"index":14519,"page":1}
+18
+{"index":14519,"page":1}
+onto the next index
+{"index":14519,"page":1}
+been done: 14800
+{"index":14519,"page":1}
+resetting page to 1
+{"index":14519,"page":1}
+~
+~
+~
+~
+~
+Name index: 14801
+~
+~
+~
+~
+~
+
+{"index":14519,"page":1}
+[object Object]
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:53
+{"index":14519,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:53
+{"index":14519,"page":1}
+[43mnew page[49m
+{"index":14519,"page":1}
+[34mGoal page: [39m 1
+{"index":14519,"page":1}
+[33mPrevious page: [39m 
+{"index":14519,"page":1}
+start looking for result: Mon Jul 22 2019 11:53:40 GMT-0400 (GMT-04:00)
+{"index":14519,"page":1}
+race value: div#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel
+{"index":14519,"page":1}
+results found? true
+{"index":14519,"page":1}
+no results found? false
+{"index":14519,"page":1}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":14519,"page":1}
+3
+{"index":14519,"page":1}
+4
+{"index":14519,"page":1}
