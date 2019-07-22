@@ -81,7 +81,7 @@ let doWithDocket = makeIDCollection;
 
 
 // Standard/shared
-let versionNumber = '\nv0.64.0\n';
+let versionNumber = '\nv0.65.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz '{"alerts":"no"}'
@@ -130,7 +130,7 @@ if (runData.completed && !runData.redo) {
 
 
 // let checkingIDs = false;
-let afterNameIndex = async function () {};
+// let afterNameIndex = async function () {};
 if (runData.mode === 'check') {
   // checkingIDs = true;
   doWithDocket = justIDs;
@@ -175,7 +175,7 @@ async function log (...all) {
   }  // first try
 }
 
-let logObj = {log: log};
+// let logObj = {log: log};
 
 
 
@@ -206,7 +206,7 @@ mkdirp.sync(dataDirectory, async function (err) {
 // Keeping track of what code version number we're at so
 // in future we know where to backtrack to.
 fs.appendFileSync(usedDocketsPath, versionNumber, async function (err) {
-  if (err) log(err);
+  if (err) {log(err);}
 });
 
 // Assigned variables
@@ -803,7 +803,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
       if (err) { log('Error::', err); }
   });
 
-  let resultsPath = getIDsResultsPath(runData);
+  let resultsPath = await getIDsResultsPath(runData);
 
   let cssIndex = index + 1;
   let thisFilingDateSelector = filingDateSelectorStart + cssIndex + filingDateSelectorEnd;
@@ -825,6 +825,8 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
     },
     thisFilingDateSelector
   );
+  await log('position:', JSON.stringify(runData.position));
+  await log('id:', docketID);
   await log('filing date:', filingDate);
 
   let rowData = {
@@ -864,7 +866,7 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
 // Compounding problems? Hmm
 // async function justIDs (docketID, nameIndex) {
 async function justIDs (docketID) {
-  let resultsPath = getIDsResultsPath(runData);
+  let resultsPath = await getIDsResultsPath(runData);
   let results = require(resultsPath) || {};
 
   if (!Array.isArray(results[nameIndex])) {
@@ -886,7 +888,7 @@ async function justIDs (docketID) {
 // async function checkIDs (nameIndex, resultsPath) {
 
 //   if (!resultsPath) {
-//     resultsPath = getIDsResultsPath(runData);
+//     resultsPath = await getIDsResultsPath(runData);
 //   }
 
 //   let initialDocketsDir = 'data-' + runData.type + '/pattern/';
@@ -959,7 +961,7 @@ async function nextIndex (nonResultWasFound) {
   assignmentData.position.page = 0;
   fs.writeFileSync(assignmentPath, stringify(assignmentData, null, 2));
 
-  afterNameIndex(nameIndex - 1);
+  // afterNameIndex(nameIndex - 1);
 
   return;
 }  // Ends nextIndex()
