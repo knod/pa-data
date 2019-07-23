@@ -1,0 +1,23 @@
+{
+  "command": "node check-pattern-cp.js mdj00k01k09initial",
+  "patternIDFileName": "initial",
+  "initialDockets": "",
+  "type": "mdj",
+  "mode": "pattern",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 0,
+    "page": 5
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-mdj/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}

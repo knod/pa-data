@@ -1,0 +1,1653 @@
+
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":0,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js mdj00k01k09initial",
+  "patternIDFileName": "initial",
+  "initialDockets": "",
+  "type": "mdj",
+  "mode": "pattern",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 0,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-mdj/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:01
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:03
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 09:03:13 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 10 (seconds: 0.01)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m09:03[39m
+{"index":0,"page":0}
+Error: Evaluation failed: TypeError: Cannot read property 'innerText' of null
+    at __puppeteer_evaluation_script__:2:60
+{"index":0,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":0}
+timesRepeated: 1
+{"index":0,"page":0}
+ undefined
+{"index":0,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 09:03
+{"index":0,"page":0}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":0,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js mdj00k01k09initial",
+  "patternIDFileName": "initial",
+  "initialDockets": "",
+  "type": "mdj",
+  "mode": "pattern",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 0,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-mdj/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:05
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 09:05
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 09:05:18 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 8 (seconds: 0.008)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":0,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js mdj00k01k09initial",
+  "patternIDFileName": "initial",
+  "initialDockets": "",
+  "type": "mdj",
+  "mode": "pattern",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 0,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-mdj/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:14
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:14
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 10:14:56 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 7 (seconds: 0.007)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m10:14[39m
+{"index":0,"page":0}
+Error: Evaluation failed: TypeError: Cannot read property 'innerText' of null
+    at __puppeteer_evaluation_script__:2:60
+{"index":0,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":0}
+timesRepeated: 1
+{"index":0,"page":0}
+ undefined
+{"index":0,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 10:14
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:15
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:16
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 10:16:03 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m10:16[39m
+{"index":0,"page":0}
+Error: Evaluation failed: TypeError: Cannot read property 'innerText' of null
+    at __puppeteer_evaluation_script__:2:60
+{"index":0,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":0}
+timesRepeated: 1
+{"index":0,"page":0}
+ undefined
+{"index":0,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 10:16
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:17
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:17
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 10:17:12 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 9 (seconds: 0.009)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m10:17[39m
+{"index":0,"page":0}
+Error: Evaluation failed: TypeError: Cannot read property 'innerText' of null
+    at __puppeteer_evaluation_script__:2:60
+{"index":0,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":0}
+timesRepeated: 1
+{"index":0,"page":0}
+ undefined
+{"index":0,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 10:17
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:18
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:18
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 10:18:19 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m10:18[39m
+{"index":0,"page":0}
+Error: Evaluation failed: TypeError: Cannot read property 'innerText' of null
+    at __puppeteer_evaluation_script__:2:60
+{"index":0,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":0}
+timesRepeated: 1
+{"index":0,"page":0}
+ undefined
+{"index":0,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 10:18
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:19
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:19
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 10:19:27 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m10:19[39m
+{"index":0,"page":0}
+Error: Evaluation failed: TypeError: Cannot read property 'innerText' of null
+    at __puppeteer_evaluation_script__:2:60
+{"index":0,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":0}
+timesRepeated: 1
+{"index":0,"page":0}
+ undefined
+{"index":0,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 10:19
+{"index":0,"page":0}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":0,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js mdj00k01k09initial",
+  "patternIDFileName": "initial",
+  "initialDockets": "",
+  "type": "mdj",
+  "mode": "pattern",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 0,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-mdj/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:20
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:20
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 10:20:50 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":0,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js mdj00k01k09initial",
+  "patternIDFileName": "initial",
+  "initialDockets": "",
+  "type": "mdj",
+  "mode": "pattern",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 0,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-mdj/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:22
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:22
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 10:22:42 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 17 (seconds: 0.017)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":0,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js mdj00k01k09initial",
+  "patternIDFileName": "initial",
+  "initialDockets": "",
+  "type": "mdj",
+  "mode": "pattern",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 1000,
+  "position": {
+    "index": 0,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-mdj/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "yes",
+  "redo": false,
+  "done": {}
+}
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:24
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:24
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Tue Jul 23 2019 10:24:58 GMT-0400 (GMT-04:00)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-47101-CR-0000235-2019
+{"index":0,"page":0}
+filing date: 06/18/2019
+{"index":0,"page":0}
+num found so far: 1
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-32247-CR-0000085-2019
+{"index":0,"page":0}
+filing date: 03/08/2019
+{"index":0,"page":0}
+num found so far: 2
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-52305-CR-0000041-2019
+{"index":0,"page":0}
+filing date: 02/28/2019
+{"index":0,"page":0}
+num found so far: 3
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-02302-CR-0000093-2019
+{"index":0,"page":0}
+filing date: 02/19/2019
+{"index":0,"page":0}
+num found so far: 4
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-32133-CR-0000569-2018
+{"index":0,"page":0}
+filing date: 11/28/2018
+{"index":0,"page":0}
+num found so far: 5
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-43301-CR-0000173-2018
+{"index":0,"page":0}
+filing date: 07/24/2018
+{"index":0,"page":0}
+num found so far: 6
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-31201-CR-0000184-2018
+{"index":0,"page":0}
+filing date: 04/13/2018
+{"index":0,"page":0}
+num found so far: 7
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-03204-CR-0000074-2018
+{"index":0,"page":0}
+filing date: 04/06/2018
+{"index":0,"page":0}
+num found so far: 8
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-43401-CR-0000085-2018
+{"index":0,"page":0}
+filing date: 02/15/2018
+{"index":0,"page":0}
+num found so far: 9
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-12205-CR-0000052-2018
+{"index":0,"page":0}
+filing date: 01/30/2018
+{"index":0,"page":0}
+num found so far: 10
+{"index":0,"page":0}
+9
+{"index":0,"page":0}
+10
+{"index":0,"page":0}
+11
+{"index":0,"page":0}
+12
+{"index":0,"page":0}
+[43mdisabledText:[49m First,Previous
+{"index":0,"page":0}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":0}
+13
+{"index":0,"page":2}
+14
+{"index":0,"page":2}
+15
+{"index":0,"page":2}
+16 false
+{"index":0,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:24
+{"index":0,"page":2}
+[43mnew page[49m
+{"index":0,"page":2}
+[34mGoal page: [39m 2
+{"index":0,"page":2}
+[33mPrevious page: [39m 
+{"index":0,"page":2}
+start looking for result: Tue Jul 23 2019 10:24:58 GMT-0400 (GMT-04:00)
+{"index":0,"page":2}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":2}
+results found? true
+{"index":0,"page":2}
+no results found? false
+{"index":0,"page":2}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":2}
+3
+{"index":0,"page":2}
+4
+{"index":0,"page":2}
+paginated: true
+{"index":0,"page":2}
+on new page: 1
+{"index":0,"page":2}
+waited for current page: 1
+{"index":0,"page":2}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":2}
+current actual page indicated in nav: 1
+{"index":0,"page":2}
+current is goal? 1 2 false
+{"index":0,"page":2}
+CSS index of link to goal: 4
+{"index":0,"page":2}
+navData: [object Object]
+{"index":0,"page":2}
+clicking to a new page
+{"index":0,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:24
+{"index":0,"page":2}
+[43mnew page[49m
+{"index":0,"page":2}
+[34mGoal page: [39m 2
+{"index":0,"page":2}
+[33mPrevious page: [39m 1
+{"index":0,"page":2}
+start looking for result: Tue Jul 23 2019 10:24:58 GMT-0400 (GMT-04:00)
+{"index":0,"page":2}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":2}
+results found? true
+{"index":0,"page":2}
+no results found? false
+{"index":0,"page":2}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":0,"page":2}
+3
+{"index":0,"page":2}
+4
+{"index":0,"page":2}
+paginated: true
+{"index":0,"page":2}
+on new page: 2
+{"index":0,"page":2}
+waited for current page: 2
+{"index":0,"page":2}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":2}
+current actual page indicated in nav: 2
+{"index":0,"page":2}
+current is goal? 2 2 true
+{"index":0,"page":2}
+Reached goal page
+{"index":0,"page":2}
+navData: [object Object]
+{"index":0,"page":2}
+5
+{"index":0,"page":2}
+6
+{"index":0,"page":2}
+7
+{"index":0,"page":2}
+8
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-12204-CR-0000036-2018
+{"index":0,"page":2}
+filing date: 01/23/2018
+{"index":0,"page":2}
+num found so far: 11
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-02000-CR-0001373-2017
+{"index":0,"page":2}
+filing date: 11/17/2017
+{"index":0,"page":2}
+num found so far: 12
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-02102-CR-0000629-2017
+{"index":0,"page":2}
+filing date: 11/17/2017
+{"index":0,"page":2}
+num found so far: 13
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-12201-CR-0001182-2017
+{"index":0,"page":2}
+filing date: 11/08/2017
+{"index":0,"page":2}
+num found so far: 14
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-19306-CR-0000252-2017
+{"index":0,"page":2}
+filing date: 10/23/2017
+{"index":0,"page":2}
+num found so far: 15
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-23201-CR-0000414-2017
+{"index":0,"page":2}
+filing date: 10/19/2017
+{"index":0,"page":2}
+num found so far: 16
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-19104-CR-0000422-2017
+{"index":0,"page":2}
+filing date: 10/12/2017
+{"index":0,"page":2}
+num found so far: 17
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-15307-CR-0000163-2017
+{"index":0,"page":2}
+filing date: 08/08/2017
+{"index":0,"page":2}
+num found so far: 18
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-19203-CR-0000193-2017
+{"index":0,"page":2}
+filing date: 05/16/2017
+{"index":0,"page":2}
+num found so far: 19
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-19306-CR-0000120-2017
+{"index":0,"page":2}
+filing date: 05/16/2017
+{"index":0,"page":2}
+num found so far: 20
+{"index":0,"page":2}
+9
+{"index":0,"page":2}
+10
+{"index":0,"page":2}
+11
+{"index":0,"page":2}
+12
+{"index":0,"page":2}
+[43mdisabledText:[49m 
+{"index":0,"page":2}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":2}
+13
+{"index":0,"page":3}
+14
+{"index":0,"page":3}
+15
+{"index":0,"page":3}
+16 false
+{"index":0,"page":3}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":0,"page":3}
+[43mnew page[49m
+{"index":0,"page":3}
+[34mGoal page: [39m 3
+{"index":0,"page":3}
+[33mPrevious page: [39m 1
+{"index":0,"page":3}
+start looking for result: Tue Jul 23 2019 10:25:07 GMT-0400 (GMT-04:00)
+{"index":0,"page":3}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":3}
+results found? true
+{"index":0,"page":3}
+no results found? false
+{"index":0,"page":3}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":0,"page":3}
+3
+{"index":0,"page":3}
+4
+{"index":0,"page":3}
+paginated: true
+{"index":0,"page":3}
+on new page: 2
+{"index":0,"page":3}
+waited for current page: 2
+{"index":0,"page":3}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":3}
+current actual page indicated in nav: 2
+{"index":0,"page":3}
+current is goal? 2 3 false
+{"index":0,"page":3}
+CSS index of link to goal: 5
+{"index":0,"page":3}
+navData: [object Object]
+{"index":0,"page":3}
+clicking to a new page
+{"index":0,"page":3}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":0,"page":3}
+[43mnew page[49m
+{"index":0,"page":3}
+[34mGoal page: [39m 3
+{"index":0,"page":3}
+[33mPrevious page: [39m 2
+{"index":0,"page":3}
+start looking for result: Tue Jul 23 2019 10:25:07 GMT-0400 (GMT-04:00)
+{"index":0,"page":3}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":3}
+results found? true
+{"index":0,"page":3}
+no results found? false
+{"index":0,"page":3}
+Time elapsed to find results: 7 (seconds: 0.007)
+{"index":0,"page":3}
+3
+{"index":0,"page":3}
+4
+{"index":0,"page":3}
+paginated: true
+{"index":0,"page":3}
+on new page: 3
+{"index":0,"page":3}
+waited for current page: 3
+{"index":0,"page":3}
+nav: First Previous 2 3 4 5 6  Next Last
+{"index":0,"page":3}
+current actual page indicated in nav: 3
+{"index":0,"page":3}
+current is goal? 3 3 true
+{"index":0,"page":3}
+Reached goal page
+{"index":0,"page":3}
+navData: [object Object]
+{"index":0,"page":3}
+5
+{"index":0,"page":3}
+6
+{"index":0,"page":3}
+7
+{"index":0,"page":3}
+8
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-19203-CR-0000194-2017
+{"index":0,"page":3}
+filing date: 05/16/2017
+{"index":0,"page":3}
+num found so far: 21
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-19307-CR-0000141-2017
+{"index":0,"page":3}
+filing date: 05/16/2017
+{"index":0,"page":3}
+num found so far: 22
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-23309-CR-0000098-2017
+{"index":0,"page":3}
+filing date: 05/04/2017
+{"index":0,"page":3}
+num found so far: 23
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-06102-CR-0000125-2017
+{"index":0,"page":3}
+filing date: 04/09/2017
+{"index":0,"page":3}
+num found so far: 24
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-02101-CR-0000199-2017
+{"index":0,"page":3}
+filing date: 04/06/2017
+{"index":0,"page":3}
+num found so far: 25
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-06103-CR-0000121-2017
+{"index":0,"page":3}
+filing date: 03/24/2017
+{"index":0,"page":3}
+num found so far: 26
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-19205-CR-0000046-2017
+{"index":0,"page":3}
+filing date: 02/05/2017
+{"index":0,"page":3}
+num found so far: 27
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-06102-CR-0000428-2016
+{"index":0,"page":3}
+filing date: 12/18/2016
+{"index":0,"page":3}
+num found so far: 28
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-23106-CR-0000482-2016
+{"index":0,"page":3}
+filing date: 10/25/2016
+{"index":0,"page":3}
+num found so far: 29
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-26303-CR-0000111-2016
+{"index":0,"page":3}
+filing date: 09/22/2016
+{"index":0,"page":3}
+num found so far: 30
+{"index":0,"page":3}
+9
+{"index":0,"page":3}
+10
+{"index":0,"page":3}
+11
+{"index":0,"page":3}
+12
+{"index":0,"page":3}
+[43mdisabledText:[49m 
+{"index":0,"page":3}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":3}
+13
+{"index":0,"page":4}
+14
+{"index":0,"page":4}
+15
+{"index":0,"page":4}
+16 false
+{"index":0,"page":4}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":0,"page":4}
+[43mnew page[49m
+{"index":0,"page":4}
+[34mGoal page: [39m 4
+{"index":0,"page":4}
+[33mPrevious page: [39m 2
+{"index":0,"page":4}
+start looking for result: Tue Jul 23 2019 10:25:15 GMT-0400 (GMT-04:00)
+{"index":0,"page":4}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":4}
+results found? true
+{"index":0,"page":4}
+no results found? false
+{"index":0,"page":4}
+Time elapsed to find results: 3 (seconds: 0.003)
+{"index":0,"page":4}
+3
+{"index":0,"page":4}
+4
+{"index":0,"page":4}
+paginated: true
+{"index":0,"page":4}
+on new page: 3
+{"index":0,"page":4}
+waited for current page: 3
+{"index":0,"page":4}
+nav: First Previous 2 3 4 5 6  Next Last
+{"index":0,"page":4}
+current actual page indicated in nav: 3
+{"index":0,"page":4}
+current is goal? 3 4 false
+{"index":0,"page":4}
+CSS index of link to goal: 5
+{"index":0,"page":4}
+navData: [object Object]
+{"index":0,"page":4}
+clicking to a new page
+{"index":0,"page":4}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":0,"page":4}
+[43mnew page[49m
+{"index":0,"page":4}
+[34mGoal page: [39m 4
+{"index":0,"page":4}
+[33mPrevious page: [39m 3
+{"index":0,"page":4}
+start looking for result: Tue Jul 23 2019 10:25:16 GMT-0400 (GMT-04:00)
+{"index":0,"page":4}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":4}
+results found? true
+{"index":0,"page":4}
+no results found? false
+{"index":0,"page":4}
+Time elapsed to find results: 7 (seconds: 0.007)
+{"index":0,"page":4}
+3
+{"index":0,"page":4}
+4
+{"index":0,"page":4}
+paginated: true
+{"index":0,"page":4}
+on new page: 4
+{"index":0,"page":4}
+waited for current page: 4
+{"index":0,"page":4}
+nav: First Previous 3 4 5 6 7  Next Last
+{"index":0,"page":4}
+current actual page indicated in nav: 4
+{"index":0,"page":4}
+current is goal? 4 4 true
+{"index":0,"page":4}
+Reached goal page
+{"index":0,"page":4}
+navData: [object Object]
+{"index":0,"page":4}
+5
+{"index":0,"page":4}
+6
+{"index":0,"page":4}
+7
+{"index":0,"page":4}
+8
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-19104-CR-0000252-2016
+{"index":0,"page":4}
+filing date: 05/30/2016
+{"index":0,"page":4}
+num found so far: 31
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-37401-CR-0000040-2016
+{"index":0,"page":4}
+filing date: 05/18/2016
+{"index":0,"page":4}
+num found so far: 32
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-15404-CR-0000161-2016
+{"index":0,"page":4}
+filing date: 05/06/2016
+{"index":0,"page":4}
+num found so far: 33
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-02306-CR-0000091-2016
+{"index":0,"page":4}
+filing date: 04/15/2016
+{"index":0,"page":4}
+num found so far: 34
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-31101-CR-0000063-2016
+{"index":0,"page":4}
+filing date: 02/01/2016
+{"index":0,"page":4}
+num found so far: 35
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-07112-CR-0001063-2015
+{"index":0,"page":4}
+filing date: 09/27/2015
+{"index":0,"page":4}
+num found so far: 36
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-19204-CR-0000371-2015
+{"index":0,"page":4}
+filing date: 08/13/2015
+{"index":0,"page":4}
+num found so far: 37
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-31201-CR-0000287-2015
+{"index":0,"page":4}
+filing date: 05/14/2015
+{"index":0,"page":4}
+num found so far: 38
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-41302-CR-0000038-2015
+{"index":0,"page":4}
+filing date: 04/16/2015
+{"index":0,"page":4}
+num found so far: 39
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-31105-CR-0000764-2014
+{"index":0,"page":4}
+filing date: 12/17/2014
+{"index":0,"page":4}
+num found so far: 40
+{"index":0,"page":4}
+9
+{"index":0,"page":4}
+10
+{"index":0,"page":4}
+11
+{"index":0,"page":4}
+12
+{"index":0,"page":4}
+[43mdisabledText:[49m 
+{"index":0,"page":4}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":4}
+13
+{"index":0,"page":5}
+14
+{"index":0,"page":5}
+15
+{"index":0,"page":5}
+16 false
+{"index":0,"page":5}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":0,"page":5}
+[43mnew page[49m
+{"index":0,"page":5}
+[34mGoal page: [39m 5
+{"index":0,"page":5}
+[33mPrevious page: [39m 3
+{"index":0,"page":5}
+start looking for result: Tue Jul 23 2019 10:25:23 GMT-0400 (GMT-04:00)
+{"index":0,"page":5}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":5}
+results found? true
+{"index":0,"page":5}
+no results found? false
+{"index":0,"page":5}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":5}
+3
+{"index":0,"page":5}
+4
+{"index":0,"page":5}
+paginated: true
+{"index":0,"page":5}
+on new page: 4
+{"index":0,"page":5}
+waited for current page: 4
+{"index":0,"page":5}
+nav: First Previous 3 4 5 6 7  Next Last
+{"index":0,"page":5}
+current actual page indicated in nav: 4
+{"index":0,"page":5}
+current is goal? 4 5 false
+{"index":0,"page":5}
+CSS index of link to goal: 5
+{"index":0,"page":5}
+navData: [object Object]
+{"index":0,"page":5}
+clicking to a new page
+{"index":0,"page":5}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 10:25
+{"index":0,"page":5}
+[43mnew page[49m
+{"index":0,"page":5}
+[34mGoal page: [39m 5
+{"index":0,"page":5}
+[33mPrevious page: [39m 4
+{"index":0,"page":5}
+start looking for result: Tue Jul 23 2019 10:25:24 GMT-0400 (GMT-04:00)
+{"index":0,"page":5}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":5}
+results found? true
+{"index":0,"page":5}
+no results found? false
+{"index":0,"page":5}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":0,"page":5}
+3
+{"index":0,"page":5}
+4
+{"index":0,"page":5}
+paginated: true
+{"index":0,"page":5}

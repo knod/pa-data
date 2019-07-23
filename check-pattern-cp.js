@@ -9,83 +9,44 @@ const alert = require("./alert.js");
 const colors = require('colors');
 const mkdirp = require('mkdirp');
 
-// CP Stuff
-const searchTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl",
-      lastNameSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl",
-      firstNameSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_firstNameControl",
-      docketTypeSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_docketTypeListControl",
-      startDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox",
-      endDateSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox",
-      searchSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl",
-      resultsSelector = "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel",
-      noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel',
-      pageNavContainerSelector = '',
-      paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager',
-      filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow:nth-child(',
-      filingDateSelectorEnd = ') td:nth-child(4)';
-
-const url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
-
-const searchTypeVal = "Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      docketTypeVal = "Criminal";
-const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
-
-let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel',
-    linksSelector = '.gridViewRow a.DynamicMenuItem',
-    docketIDSelector = '.gridViewRow td:nth-child(2)';
-
-let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-let requiredPrefix = /CP/;
-
-// // MDJ Stuff
-// const searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType',
-//       lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName',
-//       firstNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtFirstName',
-//       docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType',
-//       startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox',
-//       endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox',
-//       searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch',
-//       resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions',
-//       pageNavContainerSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel > table > tbody > tr:nth-child(2) > td',
-//       paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
-//       filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket > table > tbody > tr.gridViewRow:nth-child(',
-//       filingDateSelectorEnd = ') td:nth-child(5)',
-//       url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
-
-// let noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
-// let noResultsText = 'No Records Found'
-
-// const searchTypeVal = "ParticipantName",
-//       docketTypeVal = "CR";
-// const pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
-
-
-// let tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer',
-//     linksSelector = '.gridViewRow a.DynamicMenuItem',
-//     docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
-// let nextSelector = paginationSelector + ' a:nth-last-child(2)';
-
-// let requiredPrefix = /MJ/;
-
-
-// For finding all current dockets
-let assignmentsPathStart = './assignments/pattern/';
-
-// // For downloading PDFS
-// assignmentsPathStart = './assignments/';
-
-
-
-
 
 // Standard/shared
-let versionNumber = '\nv0.69.0\n';
+let versionNumber = '\nv0.71.0\n';
 
 // command line command example
 // node mdj-names3-test.js 1zz "{\"alerts\":\"no\"}"
 
 
-// In new file? No, we need these vars...
+// CHANGE THIS DEPENDING ON YOUR PURPOSE
+// For finding all current dockets
+let assignmentsPathStart = './assignments/pattern/';
+// // For downloading PDFS
+// assignmentsPathStart = './assignments/';
+
+
+let url,
+    searchTypeSelector,
+    lastNameSelector,
+    firstNameSelector,
+    docketTypeSelector,
+    startDateSelector,
+    endDateSelector,
+    searchSelector,
+    resultsSelector,
+    noResultsSelector,
+    pageNavContainerSelector,
+    paginationSelector,
+    filingDateSelectorStart,
+    filingDateSelectorEnd,
+    searchTypeVal,
+    docketTypeVal,
+    pageNumSelector,
+    tableSelector,
+    linksSelector,
+    docketIDSelector,
+    nextSelector,
+    requiredPrefix;
+
 // Get assignment ID from command line
 const assignmentID = process.argv[2];
 if (!assignmentID) {
@@ -96,9 +57,6 @@ if (!assignmentID) {
 
 const assignmentPath = assignmentsPathStart + assignmentID + '.json'
 const assignmentData = require(assignmentPath);
-
-
-
 
 // Assignment settings overrides
 const commandLineArgvs = process.argv[3];
@@ -114,19 +72,91 @@ if (commandLineArgvs && typeof JSON.parse(commandLineArgvs) === 'object') {
   runData = Object.assign({}, assignmentData);
 }
 
-// Need to be clear about deep cloning
-runData.position = {
-  index: runData.position.index,
-  page: runData.position.page || 0,
-};
 
-runData.done = Object.assign({}, runData.done);
 
+// CP Stuff
+if (runData.type === 'cp') {
+  url = 'https://ujsportal.pacourts.us/DocketSheets/CP.aspx';
+
+  searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_searchTypeListControl';
+  lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_lastNameControl';
+  firstNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_firstNameControl';
+  docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_docketTypeListControl';
+  startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_beginDateChildControl_DateTextBox';
+  endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_dateFiledControl_endDateChildControl_DateTextBox';
+  searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchCommandControl';
+  resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel';
+  pageNavContainerSelector = '';
+  paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_casePager';
+  filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel > table > tbody > tr.gridViewRow:nth-child(';
+  filingDateSelectorEnd = ') td:nth-child(4)';
+
+  noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_noResultsPanel';
+
+  searchTypeVal = 'Aopc.Cp.Views.DocketSheets.IParticipantSearchView, CPCMSApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null';
+  docketTypeVal = 'Criminal';
+  pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
+
+  tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphDynamicContent_participantCriteriaControl_searchResultsGridControl_resultsPanel';
+  linksSelector = '.gridViewRow a.DynamicMenuItem';
+  docketIDSelector = '.gridViewRow td:nth-child(2)';
+  nextSelector = paginationSelector + ' a:nth-last-child(2)';
+
+  requiredPrefix = /CP/;
+}
+
+// MDJ Stuff
+if (runData.type === 'mdj') {
+  url = 'https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx';
+
+  searchTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_ddlSearchType';
+  lastNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName';
+  firstNameSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtFirstName';
+  docketTypeSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_ddlDocketType';
+  startDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_beginDateChildControl_DateTextBox';
+  endDateSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_DateFiledDateRangePicker_endDateChildControl_DateTextBox';
+  searchSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_btnSearch';
+  resultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions';
+  pageNavContainerSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel > table > tbody > tr:nth-child(2) > td';
+  paginationSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer';
+  filingDateSelectorStart = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket > tbody > tr.gridViewRow:nth-child(';
+  filingDateSelectorEnd = ') td:nth-child(5)';
+
+  noResultsSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket';
+  noResultsText = 'No Records Found';
+
+  searchTypeVal = 'ParticipantName';
+  docketTypeVal = 'CR';
+  pageNumSelector = paginationSelector + ' a[style="text-decoration:none;"]';
+
+  tableSelector = '#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer';
+  linksSelector = '.gridViewRow a.DynamicMenuItem';
+  docketIDSelector = '.gridViewRow' + ' td:nth-child(2)';
+  nextSelector = paginationSelector + ' a:nth-last-child(2)';
+
+  requiredPrefix = /MJ/;
+}
+
+
+
+// Don't override stuff if we don't intend to
 if (runData.completed && !runData.redo) {
   throw Error('It looks like this assignment is already done! Get a new one! Google doc?'.red)
 }
 
+// Set it up right for old assignments
+assignmentData.position = {
+  index: assignmentData.position.index || 0,
+  page: assignmentData.position.page || 0,
+};
 
+// Clone deeply. TODO lodash
+runData.position = {
+  index: runData.position.index || 0,
+  page: runData.position.page || 0,
+};
+
+runData.done = Object.assign({}, runData.done);
 
 
 // let checkingIDs = false;
@@ -139,8 +169,6 @@ if (runData.mode === 'check' || runData.mode === 'pattern') {
   // For finding all current dockets
   doWithDocket = makeIDCollection;
 }
-
-
 
 
 
@@ -179,12 +207,6 @@ async function log (...all) {
     }  // second try
   }  // first try
 }
-
-// let logObj = {log: log};
-
-
-
-
 
 
 
@@ -811,9 +833,12 @@ async function makeIDCollection (docketID, goalPageNumber, page, linksText, inde
   let resultsPath = await getIDsResultsPath(runData);
 
   let cssIndex = index + 1;
-  let thisFilingDateSelector = filingDateSelectorStart + cssIndex + filingDateSelectorEnd;
+  if (type === 'mdj') {
+    cssIndex += 1;
+  }
 
-  let currentDocketsData;
+  let thisFilingDateSelector = filingDateSelectorStart + cssIndex + filingDateSelectorEnd;
+  let currentDocketsData = null;
   // If the file already exists, get that
   try {
     let pastDockets = require(resultsPath);  // JSON - array? Object?
