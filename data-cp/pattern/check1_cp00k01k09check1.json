@@ -45458,5 +45458,2815 @@
     "id": "CP-06-CR-0001391-2010",
     "filingDate": "4/12/2010 3:55:00 PM",
     "foundTimestamp": 1563886903226
+  },
+  "CP-54-CR-0000976-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-54-CR-0000976-2019",
+    "filingDate": "5/30/2019 2:00:00 PM",
+    "foundTimestamp": 1563895329307
+  },
+  "CP-04-CR-0001082-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-04-CR-0001082-2019",
+    "filingDate": "5/24/2019 2:03:00 PM",
+    "foundTimestamp": 1563895329326
+  },
+  "CP-04-CR-0001083-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-04-CR-0001083-2019",
+    "filingDate": "5/24/2019 2:03:00 PM",
+    "foundTimestamp": 1563895329337
+  },
+  "CP-09-CR-0002198-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-09-CR-0002198-2019",
+    "filingDate": "4/22/2019 1:09:00 PM",
+    "foundTimestamp": 1563895329346
+  },
+  "CP-65-CR-0001542-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-65-CR-0001542-2019",
+    "filingDate": "4/11/2019 11:48:00 AM",
+    "foundTimestamp": 1563895329361
+  },
+  "CP-67-CR-0002142-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-67-CR-0002142-2019",
+    "filingDate": "4/2/2019 11:38:00 AM",
+    "foundTimestamp": 1563895329379
+  },
+  "CP-09-CR-0001624-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-09-CR-0001624-2019",
+    "filingDate": "3/25/2019 11:02:00 AM",
+    "foundTimestamp": 1563895329391
+  },
+  "CP-61-CR-0000203-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-61-CR-0000203-2019",
+    "filingDate": "2/28/2019 4:29:00 PM",
+    "foundTimestamp": 1563895329404
+  },
+  "CP-23-CR-0000951-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-23-CR-0000951-2019",
+    "filingDate": "2/15/2019 1:28:00 PM",
+    "foundTimestamp": 1563895329415
+  },
+  "CP-39-CR-0000658-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 0
+    },
+    "id": "CP-39-CR-0000658-2019",
+    "filingDate": "2/13/2019 3:29:00 PM",
+    "foundTimestamp": 1563895329426
+  },
+  "CP-16-CR-0000075-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-16-CR-0000075-2019",
+    "filingDate": "2/12/2019 4:07:00 PM",
+    "foundTimestamp": 1563895333403
+  },
+  "CP-16-CR-0000076-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-16-CR-0000076-2019",
+    "filingDate": "2/12/2019 4:07:00 PM",
+    "foundTimestamp": 1563895333414
+  },
+  "CP-15-CR-0000423-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-15-CR-0000423-2019",
+    "filingDate": "2/4/2019 9:31:00 AM",
+    "foundTimestamp": 1563895333423
+  },
+  "CP-61-CR-0000832-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-61-CR-0000832-2018",
+    "filingDate": "11/29/2018 3:37:00 PM",
+    "foundTimestamp": 1563895333437
+  },
+  "CP-54-CR-0001987-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-54-CR-0001987-2018",
+    "filingDate": "10/24/2018 1:47:00 PM",
+    "foundTimestamp": 1563895333452
+  },
+  "CP-39-CR-0003915-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-39-CR-0003915-2018",
+    "filingDate": "9/11/2018 2:11:00 PM",
+    "foundTimestamp": 1563895333469
+  },
+  "CP-39-CR-0003831-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-39-CR-0003831-2018",
+    "filingDate": "9/5/2018 1:47:00 PM",
+    "foundTimestamp": 1563895333483
+  },
+  "CP-59-CR-0000288-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-59-CR-0000288-2018",
+    "filingDate": "9/4/2018 9:30:00 AM",
+    "foundTimestamp": 1563895333495
+  },
+  "CP-59-CR-0000287-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-59-CR-0000287-2018",
+    "filingDate": "9/4/2018 9:10:00 AM",
+    "foundTimestamp": 1563895333505
+  },
+  "CP-02-CR-0009524-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 2
+    },
+    "id": "CP-02-CR-0009524-2018",
+    "filingDate": "8/6/2018 2:40:00 PM",
+    "foundTimestamp": 1563895333518
+  },
+  "CP-38-CR-0001070-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-38-CR-0001070-2018",
+    "filingDate": "7/12/2018 8:56:00 AM",
+    "foundTimestamp": 1563895338547
+  },
+  "CP-19-CR-0000427-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-19-CR-0000427-2018",
+    "filingDate": "5/11/2018 10:30:00 AM",
+    "foundTimestamp": 1563895338562
+  },
+  "CP-36-CR-0000530-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-36-CR-0000530-2018",
+    "filingDate": "1/24/2018 2:40:00 PM",
+    "foundTimestamp": 1563895338574
+  },
+  "CP-02-CR-0000264-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-02-CR-0000264-2018",
+    "filingDate": "1/11/2018 3:06:00 PM",
+    "foundTimestamp": 1563895338590
+  },
+  "CP-28-CR-0002062-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-28-CR-0002062-2017",
+    "filingDate": "11/7/2017 10:53:00 AM",
+    "foundTimestamp": 1563895338603
+  },
+  "CP-04-CR-0002058-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-04-CR-0002058-2017",
+    "filingDate": "10/27/2017 12:06:00 PM",
+    "foundTimestamp": 1563895338615
+  },
+  "CP-21-CR-0003608-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-21-CR-0003608-2017",
+    "filingDate": "10/27/2017 12:04:00 PM",
+    "foundTimestamp": 1563895338625
+  },
+  "CP-67-CR-0006467-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-67-CR-0006467-2017",
+    "filingDate": "10/12/2017 11:48:00 AM",
+    "foundTimestamp": 1563895338640
+  },
+  "CP-39-CR-0004514-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-39-CR-0004514-2017",
+    "filingDate": "10/4/2017 8:25:00 AM",
+    "foundTimestamp": 1563895338657
+  },
+  "CP-35-CR-0001899-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 3
+    },
+    "id": "CP-35-CR-0001899-2017",
+    "filingDate": "8/21/2017 3:36:00 PM",
+    "foundTimestamp": 1563895338673
+  },
+  "CP-04-CR-0000987-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-04-CR-0000987-2017",
+    "filingDate": "5/30/2017 11:13:00 AM",
+    "foundTimestamp": 1563895345175
+  },
+  "CP-25-CR-0001479-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-25-CR-0001479-2017",
+    "filingDate": "5/15/2017 10:34:00 AM",
+    "foundTimestamp": 1563895345196
+  },
+  "CP-10-CR-0000803-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-10-CR-0000803-2017",
+    "filingDate": "4/12/2017 9:34:00 AM",
+    "foundTimestamp": 1563895345208
+  },
+  "CP-22-CR-0001846-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-22-CR-0001846-2017",
+    "filingDate": "4/11/2017 1:48:00 PM",
+    "foundTimestamp": 1563895345223
+  },
+  "CP-52-CR-0000107-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-52-CR-0000107-2017",
+    "filingDate": "3/10/2017 12:21:00 PM",
+    "foundTimestamp": 1563895345237
+  },
+  "CP-37-CR-0000140-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-37-CR-0000140-2017",
+    "filingDate": "2/23/2017 12:22:00 PM",
+    "foundTimestamp": 1563895345248
+  },
+  "CP-43-CR-0000244-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-43-CR-0000244-2017",
+    "filingDate": "2/21/2017 12:22:00 PM",
+    "foundTimestamp": 1563895345260
+  },
+  "CP-22-CR-0000924-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-22-CR-0000924-2017",
+    "filingDate": "2/17/2017 4:07:00 PM",
+    "foundTimestamp": 1563895345289
+  },
+  "CP-21-CR-0000324-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-21-CR-0000324-2017",
+    "filingDate": "2/3/2017 2:30:00 PM",
+    "foundTimestamp": 1563895345300
+  },
+  "CP-21-CR-0003828-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 4
+    },
+    "id": "CP-21-CR-0003828-2016",
+    "filingDate": "12/8/2016 12:36:00 PM",
+    "foundTimestamp": 1563895345312
+  },
+  "CP-67-CR-0007411-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 5
+    },
+    "id": "CP-67-CR-0007411-2016",
+    "filingDate": "11/15/2016 2:44:00 PM",
+    "foundTimestamp": 1563895350757
+  },
+  "CP-67-CR-0007377-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 5
+    },
+    "id": "CP-67-CR-0007377-2016",
+    "filingDate": "11/15/2016 2:12:00 PM",
+    "foundTimestamp": 1563895350767
+  },
+  "CP-39-CR-0004919-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 5
+    },
+    "id": "CP-39-CR-0004919-2016",
+    "filingDate": "11/9/2016 10:09:00 AM",
+    "foundTimestamp": 1563895350779
+  },
+  "CP-67-CR-0006177-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 5
+    },
+    "id": "CP-67-CR-0006177-2016",
+    "filingDate": "9/22/2016 2:18:00 PM",
+    "foundTimestamp": 1563895350789
+  },
+  "CP-39-CR-0004164-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 5
+    },
+    "id": "CP-39-CR-0004164-2016",
+    "filingDate": "9/22/2016 10:45:00 AM",
+    "foundTimestamp": 1563895350803
+  },
+  "CP-49-CR-0000920-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 5
+    },
+    "id": "CP-49-CR-0000920-2016",
+    "filingDate": "8/5/2016 3:37:00 PM",
+    "foundTimestamp": 1563895350838
+  },
+  "CP-39-CR-0003096-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 5
+    },
+    "id": "CP-39-CR-0003096-2016",
+    "filingDate": "7/19/2016 9:32:00 AM",
+    "foundTimestamp": 1563895350848
+  },
+  "CP-15-CR-0001816-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 5
+    },
+    "id": "CP-15-CR-0001816-2016",
+    "filingDate": "5/23/2016 8:51:00 AM",
+    "foundTimestamp": 1563895350857
+  },
+  "CP-51-CR-0003808-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 5
+    },
+    "id": "CP-51-CR-0003808-2016",
+    "filingDate": "4/19/2016 8:49:00 AM",
+    "foundTimestamp": 1563895350866
+  },
+  "CP-04-CR-0000761-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 6
+    },
+    "id": "CP-04-CR-0000761-2016",
+    "filingDate": "4/11/2016 1:31:00 PM",
+    "foundTimestamp": 1563895357670
+  },
+  "CP-54-CR-0000598-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 6
+    },
+    "id": "CP-54-CR-0000598-2016",
+    "filingDate": "3/24/2016 2:32:00 PM",
+    "foundTimestamp": 1563895357682
+  },
+  "CP-28-CR-0000280-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 6
+    },
+    "id": "CP-28-CR-0000280-2016",
+    "filingDate": "2/18/2016 3:47:00 PM",
+    "foundTimestamp": 1563895357696
+  },
+  "CP-26-CR-0000301-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 6
+    },
+    "id": "CP-26-CR-0000301-2016",
+    "filingDate": "2/17/2016 2:14:00 PM",
+    "foundTimestamp": 1563895357709
+  },
+  "CP-16-CR-0000076-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 6
+    },
+    "id": "CP-16-CR-0000076-2016",
+    "filingDate": "2/3/2016 1:19:00 PM",
+    "foundTimestamp": 1563895357721
+  },
+  "CP-02-CR-0001165-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 6
+    },
+    "id": "CP-02-CR-0001165-2016",
+    "filingDate": "2/1/2016 4:01:00 PM",
+    "foundTimestamp": 1563895357739
+  },
+  "CP-35-CR-0002632-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 6
+    },
+    "id": "CP-35-CR-0002632-2015",
+    "filingDate": "12/11/2015 10:39:00 AM",
+    "foundTimestamp": 1563895357752
+  },
+  "CP-04-CR-0002389-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 6
+    },
+    "id": "CP-04-CR-0002389-2015",
+    "filingDate": "11/19/2015 2:39:00 PM",
+    "foundTimestamp": 1563895357775
+  },
+  "CP-35-CR-0002249-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 6
+    },
+    "id": "CP-35-CR-0002249-2015",
+    "filingDate": "10/28/2015 2:25:00 PM",
+    "foundTimestamp": 1563895357795
+  },
+  "CP-54-CR-0001966-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-54-CR-0001966-2015",
+    "filingDate": "10/8/2015 1:08:00 PM",
+    "foundTimestamp": 1563895363660
+  },
+  "CP-06-CR-0004491-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-06-CR-0004491-2015",
+    "filingDate": "9/11/2015 3:47:00 PM",
+    "foundTimestamp": 1563895363678
+  },
+  "CP-23-CR-0005284-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-23-CR-0005284-2015",
+    "filingDate": "9/9/2015 3:52:00 PM",
+    "foundTimestamp": 1563895363705
+  },
+  "CP-30-CR-0000245-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-30-CR-0000245-2015",
+    "filingDate": "8/13/2015 11:59:00 AM",
+    "foundTimestamp": 1563895363723
+  },
+  "CP-54-CR-0001561-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-54-CR-0001561-2015",
+    "filingDate": "8/12/2015 7:41:00 AM",
+    "foundTimestamp": 1563895363737
+  },
+  "CP-36-CR-0002963-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-36-CR-0002963-2015",
+    "filingDate": "7/1/2015 9:51:00 AM",
+    "foundTimestamp": 1563895363759
+  },
+  "CP-49-CR-0000592-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-49-CR-0000592-2015",
+    "filingDate": "6/10/2015 11:50:00 AM",
+    "foundTimestamp": 1563895363775
+  },
+  "CP-67-CR-0003012-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-67-CR-0003012-2015",
+    "filingDate": "5/12/2015 10:42:00 AM",
+    "foundTimestamp": 1563895363787
+  },
+  "CP-67-CR-0002078-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-67-CR-0002078-2015",
+    "filingDate": "4/2/2015 2:39:00 PM",
+    "foundTimestamp": 1563895363801
+  },
+  "CP-67-CR-0001876-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 7
+    },
+    "id": "CP-67-CR-0001876-2015",
+    "filingDate": "3/24/2015 10:00:00 AM",
+    "foundTimestamp": 1563895363814
+  },
+  "CP-67-CR-0001571-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 8
+    },
+    "id": "CP-67-CR-0001571-2015",
+    "filingDate": "3/11/2015 2:06:00 PM",
+    "foundTimestamp": 1563895368033
+  },
+  "CP-16-CR-0000069-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 8
+    },
+    "id": "CP-16-CR-0000069-2015",
+    "filingDate": "2/3/2015 1:37:00 PM",
+    "foundTimestamp": 1563895368052
+  },
+  "CP-54-CR-0001771-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 8
+    },
+    "id": "CP-54-CR-0001771-2014",
+    "filingDate": "11/12/2014 9:16:00 AM",
+    "foundTimestamp": 1563895368067
+  },
+  "CP-54-CR-0001529-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 8
+    },
+    "id": "CP-54-CR-0001529-2014",
+    "filingDate": "9/25/2014 11:23:00 AM",
+    "foundTimestamp": 1563895368080
+  },
+  "CP-51-CR-0010511-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 8
+    },
+    "id": "CP-51-CR-0010511-2014",
+    "filingDate": "9/16/2014 9:42:00 AM",
+    "foundTimestamp": 1563895368093
+  },
+  "CP-54-CR-0001136-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 8
+    },
+    "id": "CP-54-CR-0001136-2014",
+    "filingDate": "7/29/2014 2:37:00 PM",
+    "foundTimestamp": 1563895368111
+  },
+  "CP-54-CR-0001143-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 8
+    },
+    "id": "CP-54-CR-0001143-2014",
+    "filingDate": "7/29/2014 2:37:00 PM",
+    "foundTimestamp": 1563895368125
+  },
+  "CP-51-CR-0007689-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 8
+    },
+    "id": "CP-51-CR-0007689-2014",
+    "filingDate": "7/2/2014 10:26:00 AM",
+    "foundTimestamp": 1563895368151
+  },
+  "CP-22-CR-0003318-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 8
+    },
+    "id": "CP-22-CR-0003318-2014",
+    "filingDate": "6/30/2014 8:00:00 AM",
+    "foundTimestamp": 1563895368164
+  },
+  "CP-38-CR-0001004-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 9
+    },
+    "id": "CP-38-CR-0001004-2014",
+    "filingDate": "6/16/2014 11:36:00 AM",
+    "foundTimestamp": 1563895374215
+  },
+  "CP-09-CR-0002351-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 9
+    },
+    "id": "CP-09-CR-0002351-2014",
+    "filingDate": "4/21/2014 11:05:00 AM",
+    "foundTimestamp": 1563895374227
+  },
+  "CP-26-CR-0000532-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 9
+    },
+    "id": "CP-26-CR-0000532-2014",
+    "filingDate": "3/19/2014 1:23:00 PM",
+    "foundTimestamp": 1563895374237
+  },
+  "CP-37-CR-0000212-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 9
+    },
+    "id": "CP-37-CR-0000212-2014",
+    "filingDate": "3/4/2014 3:07:00 PM",
+    "foundTimestamp": 1563895374249
+  },
+  "CP-35-CR-0000063-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 9
+    },
+    "id": "CP-35-CR-0000063-2014",
+    "filingDate": "1/13/2014 3:28:00 PM",
+    "foundTimestamp": 1563895374261
+  },
+  "CP-04-CR-0002161-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 9
+    },
+    "id": "CP-04-CR-0002161-2013",
+    "filingDate": "11/1/2013 10:42:00 AM",
+    "foundTimestamp": 1563895374278
+  },
+  "CP-25-CR-0003216-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 9
+    },
+    "id": "CP-25-CR-0003216-2013",
+    "filingDate": "10/28/2013 4:14:00 PM",
+    "foundTimestamp": 1563895374294
+  },
+  "CP-67-CR-0006892-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 9
+    },
+    "id": "CP-67-CR-0006892-2013",
+    "filingDate": "10/1/2013 2:06:00 PM",
+    "foundTimestamp": 1563895374307
+  },
+  "CP-55-CR-0000268-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 9
+    },
+    "id": "CP-55-CR-0000268-2013",
+    "filingDate": "9/30/2013 9:34:00 AM",
+    "foundTimestamp": 1563895374317
+  },
+  "CP-25-CR-0002811-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-25-CR-0002811-2013",
+    "filingDate": "9/19/2013 8:51:00 AM",
+    "foundTimestamp": 1563895379181
+  },
+  "CP-36-CR-0004247-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-36-CR-0004247-2013",
+    "filingDate": "9/13/2013 4:16:00 PM",
+    "foundTimestamp": 1563895379212
+  },
+  "CP-43-CR-0001202-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-43-CR-0001202-2013",
+    "filingDate": "8/23/2013 3:36:00 PM",
+    "foundTimestamp": 1563895379230
+  },
+  "CP-39-CR-0003262-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-39-CR-0003262-2013",
+    "filingDate": "7/24/2013 11:39:00 AM",
+    "foundTimestamp": 1563895379245
+  },
+  "CP-04-CR-0000843-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-04-CR-0000843-2013",
+    "filingDate": "5/7/2013 1:22:00 PM",
+    "foundTimestamp": 1563895379258
+  },
+  "CP-04-CR-0000852-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-04-CR-0000852-2013",
+    "filingDate": "5/7/2013 1:22:00 PM",
+    "foundTimestamp": 1563895379272
+  },
+  "CP-67-CR-0002079-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-67-CR-0002079-2013",
+    "filingDate": "3/27/2013 12:00:00 AM",
+    "foundTimestamp": 1563895379287
+  },
+  "CP-04-CR-0000518-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-04-CR-0000518-2013",
+    "filingDate": "3/21/2013 11:52:00 AM",
+    "foundTimestamp": 1563895379307
+  },
+  "CP-04-CR-0000519-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-04-CR-0000519-2013",
+    "filingDate": "3/21/2013 11:52:00 AM",
+    "foundTimestamp": 1563895379319
+  },
+  "CP-67-CR-0001187-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 10
+    },
+    "id": "CP-67-CR-0001187-2013",
+    "filingDate": "2/21/2013 12:00:00 AM",
+    "foundTimestamp": 1563895379331
+  },
+  "CP-67-CR-0000673-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 11
+    },
+    "id": "CP-67-CR-0000673-2013",
+    "filingDate": "1/29/2013 12:00:00 AM",
+    "foundTimestamp": 1563895384019
+  },
+  "CP-21-CR-0003418-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 11
+    },
+    "id": "CP-21-CR-0003418-2012",
+    "filingDate": "11/30/2012 11:38:00 AM",
+    "foundTimestamp": 1563895384040
+  },
+  "CP-67-CR-0008248-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 11
+    },
+    "id": "CP-67-CR-0008248-2012",
+    "filingDate": "11/27/2012 12:00:00 AM",
+    "foundTimestamp": 1563895384054
+  },
+  "CP-67-CR-0007725-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 11
+    },
+    "id": "CP-67-CR-0007725-2012",
+    "filingDate": "10/31/2012 12:00:00 AM",
+    "foundTimestamp": 1563895384069
+  },
+  "CP-67-CR-0007490-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 11
+    },
+    "id": "CP-67-CR-0007490-2012",
+    "filingDate": "10/19/2012 12:00:00 AM",
+    "foundTimestamp": 1563895384084
+  },
+  "CP-04-CR-0001548-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 11
+    },
+    "id": "CP-04-CR-0001548-2012",
+    "filingDate": "8/21/2012 12:00:00 AM",
+    "foundTimestamp": 1563895384098
+  },
+  "CP-54-CR-0001158-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 11
+    },
+    "id": "CP-54-CR-0001158-2012",
+    "filingDate": "8/6/2012 12:00:00 AM",
+    "foundTimestamp": 1563895384112
+  },
+  "CP-02-CR-0009087-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 11
+    },
+    "id": "CP-02-CR-0009087-2012",
+    "filingDate": "7/16/2012 12:00:00 AM",
+    "foundTimestamp": 1563895384125
+  },
+  "CP-55-CR-0000159-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 11
+    },
+    "id": "CP-55-CR-0000159-2012",
+    "filingDate": "5/11/2012 10:30:00 AM",
+    "foundTimestamp": 1563895384137
+  },
+  "CP-67-CR-0001708-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-67-CR-0001708-2012",
+    "filingDate": "3/6/2012 12:00:00 AM",
+    "foundTimestamp": 1563895389596
+  },
+  "CP-22-CR-0000059-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-22-CR-0000059-2012",
+    "filingDate": "1/6/2012 12:00:00 AM",
+    "foundTimestamp": 1563895389619
+  },
+  "CP-41-CR-0001627-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-41-CR-0001627-2011",
+    "filingDate": "11/28/2011 12:00:00 AM",
+    "foundTimestamp": 1563895389635
+  },
+  "CP-02-CR-0013690-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-02-CR-0013690-2011",
+    "filingDate": "11/7/2011 12:00:00 AM",
+    "foundTimestamp": 1563895389653
+  },
+  "CP-15-CR-0003999-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-15-CR-0003999-2011",
+    "filingDate": "10/21/2011 8:30:00 AM",
+    "foundTimestamp": 1563895389674
+  },
+  "CP-38-CR-0001263-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-38-CR-0001263-2011",
+    "filingDate": "8/30/2011 12:08:00 PM",
+    "foundTimestamp": 1563895389696
+  },
+  "CP-04-CR-0001641-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-04-CR-0001641-2011",
+    "filingDate": "8/23/2011 12:00:00 AM",
+    "foundTimestamp": 1563895389711
+  },
+  "CP-21-CR-0002378-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-21-CR-0002378-2011",
+    "filingDate": "8/18/2011 11:09:00 AM",
+    "foundTimestamp": 1563895389721
+  },
+  "CP-42-CR-0000271-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-42-CR-0000271-2011",
+    "filingDate": "5/18/2011 9:56:00 AM",
+    "foundTimestamp": 1563895389733
+  },
+  "CP-04-CR-0000472-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 12
+    },
+    "id": "CP-04-CR-0000472-2011",
+    "filingDate": "3/10/2011 12:00:00 AM",
+    "foundTimestamp": 1563895389749
+  },
+  "CP-04-CR-0000473-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-04-CR-0000473-2011",
+    "filingDate": "3/10/2011 12:00:00 AM",
+    "foundTimestamp": 1563895394815
+  },
+  "CP-01-CR-0000006-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-01-CR-0000006-2011",
+    "filingDate": "1/11/2011 9:11:00 AM",
+    "foundTimestamp": 1563895394834
+  },
+  "CP-28-CR-0002295-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-28-CR-0002295-2010",
+    "filingDate": "12/21/2010 12:00:00 AM",
+    "foundTimestamp": 1563895394849
+  },
+  "CP-04-CR-0002490-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-04-CR-0002490-2010",
+    "filingDate": "12/13/2010 12:00:00 AM",
+    "foundTimestamp": 1563895394867
+  },
+  "CP-55-CR-0000385-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-55-CR-0000385-2010",
+    "filingDate": "11/19/2010 12:00:00 PM",
+    "foundTimestamp": 1563895394883
+  },
+  "CP-67-CR-0006506-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-67-CR-0006506-2010",
+    "filingDate": "11/5/2010 12:00:00 AM",
+    "foundTimestamp": 1563895394900
+  },
+  "CP-21-CR-0003030-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-21-CR-0003030-2010",
+    "filingDate": "10/28/2010 10:47:00 AM",
+    "foundTimestamp": 1563895394915
+  },
+  "CP-04-CR-0002081-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-04-CR-0002081-2010",
+    "filingDate": "10/18/2010 12:00:00 AM",
+    "foundTimestamp": 1563895394928
+  },
+  "CP-04-CR-0002059-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-04-CR-0002059-2010",
+    "filingDate": "10/14/2010 12:00:00 AM",
+    "foundTimestamp": 1563895394941
+  },
+  "CP-67-CR-0005922-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 13
+    },
+    "id": "CP-67-CR-0005922-2010",
+    "filingDate": "10/8/2010 12:00:00 AM",
+    "foundTimestamp": 1563895394956
+  },
+  "CP-38-CR-0001069-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-38-CR-0001069-2010",
+    "filingDate": "7/9/2010 1:22:00 PM",
+    "foundTimestamp": 1563895401098
+  },
+  "CP-42-CR-0000262-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-42-CR-0000262-2010",
+    "filingDate": "6/18/2010 12:00:00 AM",
+    "foundTimestamp": 1563895401112
+  },
+  "CP-25-CR-0001480-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-25-CR-0001480-2010",
+    "filingDate": "6/11/2010 12:00:00 AM",
+    "foundTimestamp": 1563895401124
+  },
+  "CP-25-CR-0001343-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-25-CR-0001343-2010",
+    "filingDate": "6/1/2010 12:00:00 AM",
+    "foundTimestamp": 1563895401136
+  },
+  "CP-54-CR-0000218-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-54-CR-0000218-2010",
+    "filingDate": "1/29/2010 12:00:00 AM",
+    "foundTimestamp": 1563895401153
+  },
+  "CP-15-CR-0000085-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-15-CR-0000085-2010",
+    "filingDate": "1/8/2010 9:35:00 AM",
+    "foundTimestamp": 1563895401173
+  },
+  "CP-23-CR-0007524-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-23-CR-0007524-2009",
+    "filingDate": "12/14/2009 11:26:00 AM",
+    "foundTimestamp": 1563895401186
+  },
+  "CP-25-CR-0002437-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-25-CR-0002437-2009",
+    "filingDate": "10/1/2009 12:00:00 AM",
+    "foundTimestamp": 1563895401197
+  },
+  "CP-67-CR-0005874-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-67-CR-0005874-2009",
+    "filingDate": "9/29/2009 12:00:00 AM",
+    "foundTimestamp": 1563895401208
+  },
+  "CP-54-CR-0001479-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 14
+    },
+    "id": "CP-54-CR-0001479-2009",
+    "filingDate": "9/24/2009 12:00:00 AM",
+    "foundTimestamp": 1563895401219
+  },
+  "CP-38-CR-0001193-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 15
+    },
+    "id": "CP-38-CR-0001193-2009",
+    "filingDate": "7/6/2009 12:54:00 PM",
+    "foundTimestamp": 1563895405622
+  },
+  "CP-54-CR-0000959-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 15
+    },
+    "id": "CP-54-CR-0000959-2009",
+    "filingDate": "6/25/2009 12:00:00 AM",
+    "foundTimestamp": 1563895405640
+  },
+  "CP-09-CR-0003248-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 15
+    },
+    "id": "CP-09-CR-0003248-2009",
+    "filingDate": "5/13/2009 12:00:00 AM",
+    "foundTimestamp": 1563895405660
+  },
+  "CP-51-CR-0005716-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 15
+    },
+    "id": "CP-51-CR-0005716-2009",
+    "filingDate": "4/29/2009 9:53:00 AM",
+    "foundTimestamp": 1563895405682
+  },
+  "CP-51-CR-0005621-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 15
+    },
+    "id": "CP-51-CR-0005621-2009",
+    "filingDate": "4/29/2009 9:20:00 AM",
+    "foundTimestamp": 1563895405699
+  },
+  "CP-38-CR-0000718-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 15
+    },
+    "id": "CP-38-CR-0000718-2009",
+    "filingDate": "4/9/2009 11:37:00 AM",
+    "foundTimestamp": 1563895405718
+  },
+  "CP-67-CR-0001397-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 221,
+      "page": 15
+    },
+    "id": "CP-67-CR-0001397-2009",
+    "filingDate": "3/10/2009 12:00:00 AM",
+    "foundTimestamp": 1563895405733
+  },
+  "CP-07-CR-0001841-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 231,
+      "page": 0
+    },
+    "id": "CP-07-CR-0001841-2017",
+    "filingDate": "9/8/2017 9:59:00 AM",
+    "foundTimestamp": 1563895500558
+  },
+  "CP-07-CR-0001845-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 231,
+      "page": 0
+    },
+    "id": "CP-07-CR-0001845-2017",
+    "filingDate": "9/8/2017 9:59:00 AM",
+    "foundTimestamp": 1563895500577
+  },
+  "CP-02-CR-0003481-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 231,
+      "page": 0
+    },
+    "id": "CP-02-CR-0003481-2017",
+    "filingDate": "3/21/2017 1:51:00 PM",
+    "foundTimestamp": 1563895500595
+  },
+  "CP-07-CR-0000821-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 231,
+      "page": 0
+    },
+    "id": "CP-07-CR-0000821-2015",
+    "filingDate": "4/22/2015 11:23:00 AM",
+    "foundTimestamp": 1563895500610
+  },
+  "CP-51-CR-0012578-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 231,
+      "page": 0
+    },
+    "id": "CP-51-CR-0012578-2010",
+    "filingDate": "10/8/2010 9:33:00 AM",
+    "foundTimestamp": 1563895500627
+  },
+  "CP-21-CR-0001302-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 0
+    },
+    "id": "CP-21-CR-0001302-2019",
+    "filingDate": "5/16/2019 8:21:00 AM",
+    "foundTimestamp": 1563895517707
+  },
+  "CP-46-CR-0002904-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 0
+    },
+    "id": "CP-46-CR-0002904-2019",
+    "filingDate": "5/14/2019 10:08:00 AM",
+    "foundTimestamp": 1563895517725
+  },
+  "CP-46-CR-0002901-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 0
+    },
+    "id": "CP-46-CR-0002901-2019",
+    "filingDate": "5/13/2019 2:39:00 PM",
+    "foundTimestamp": 1563895517755
+  },
+  "CP-28-CR-0000770-2019": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 0
+    },
+    "id": "CP-28-CR-0000770-2019",
+    "filingDate": "5/1/2019 3:31:00 PM",
+    "foundTimestamp": 1563895517766
+  },
+  "CP-23-CR-0007554-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 0
+    },
+    "id": "CP-23-CR-0007554-2018",
+    "filingDate": "12/26/2018 3:15:00 PM",
+    "foundTimestamp": 1563895517779
+  },
+  "CP-28-CR-0002302-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 0
+    },
+    "id": "CP-28-CR-0002302-2018",
+    "filingDate": "12/19/2018 2:41:00 PM",
+    "foundTimestamp": 1563895517794
+  },
+  "CP-23-CR-0006710-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 0
+    },
+    "id": "CP-23-CR-0006710-2018",
+    "filingDate": "11/13/2018 2:07:00 PM",
+    "foundTimestamp": 1563895517807
+  },
+  "CP-51-CR-0007815-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 0
+    },
+    "id": "CP-51-CR-0007815-2018",
+    "filingDate": "10/31/2018 9:39:00 AM",
+    "foundTimestamp": 1563895517819
+  },
+  "CP-39-CR-0004615-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 0
+    },
+    "id": "CP-39-CR-0004615-2018",
+    "filingDate": "10/25/2018 10:41:00 AM",
+    "foundTimestamp": 1563895517836
+  },
+  "CP-13-CR-0001201-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 2
+    },
+    "id": "CP-13-CR-0001201-2018",
+    "filingDate": "10/12/2018 11:37:00 AM",
+    "foundTimestamp": 1563895527850
+  },
+  "CP-13-CR-0001202-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 2
+    },
+    "id": "CP-13-CR-0001202-2018",
+    "filingDate": "10/12/2018 11:37:00 AM",
+    "foundTimestamp": 1563895527865
+  },
+  "CP-39-CR-0004265-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 2
+    },
+    "id": "CP-39-CR-0004265-2018",
+    "filingDate": "10/3/2018 10:45:00 AM",
+    "foundTimestamp": 1563895527880
+  },
+  "CP-21-CR-0002673-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 2
+    },
+    "id": "CP-21-CR-0002673-2018",
+    "filingDate": "10/1/2018 8:04:00 AM",
+    "foundTimestamp": 1563895527902
+  },
+  "CP-21-CR-0002662-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 2
+    },
+    "id": "CP-21-CR-0002662-2018",
+    "filingDate": "10/1/2018 8:03:00 AM",
+    "foundTimestamp": 1563895527917
+  },
+  "CP-06-CR-0004207-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 2
+    },
+    "id": "CP-06-CR-0004207-2018",
+    "filingDate": "9/21/2018 3:50:00 PM",
+    "foundTimestamp": 1563895527932
+  },
+  "CP-06-CR-0004116-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 2
+    },
+    "id": "CP-06-CR-0004116-2018",
+    "filingDate": "9/14/2018 3:31:00 PM",
+    "foundTimestamp": 1563895527946
+  },
+  "CP-06-CR-0004117-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 2
+    },
+    "id": "CP-06-CR-0004117-2018",
+    "filingDate": "9/14/2018 3:31:00 PM",
+    "foundTimestamp": 1563895527959
+  },
+  "CP-63-CR-0000780-2018": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 2
+    },
+    "id": "CP-63-CR-0000780-2018",
+    "filingDate": "4/10/2018 12:28:00 PM",
+    "foundTimestamp": 1563895527974
+  },
+  "CP-09-CR-0008251-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 3
+    },
+    "id": "CP-09-CR-0008251-2017",
+    "filingDate": "12/8/2017 9:31:00 AM",
+    "foundTimestamp": 1563895538300
+  },
+  "CP-25-CR-0003651-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 3
+    },
+    "id": "CP-25-CR-0003651-2017",
+    "filingDate": "11/20/2017 11:38:00 AM",
+    "foundTimestamp": 1563895538317
+  },
+  "CP-09-CR-0007757-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 3
+    },
+    "id": "CP-09-CR-0007757-2017",
+    "filingDate": "11/17/2017 11:03:00 AM",
+    "foundTimestamp": 1563895538332
+  },
+  "CP-06-CR-0004333-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 3
+    },
+    "id": "CP-06-CR-0004333-2017",
+    "filingDate": "9/11/2017 11:32:00 AM",
+    "foundTimestamp": 1563895538352
+  },
+  "CP-06-CR-0003142-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 3
+    },
+    "id": "CP-06-CR-0003142-2017",
+    "filingDate": "6/27/2017 1:45:00 PM",
+    "foundTimestamp": 1563895538366
+  },
+  "CP-21-CR-0001745-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 3
+    },
+    "id": "CP-21-CR-0001745-2017",
+    "filingDate": "5/31/2017 8:12:00 AM",
+    "foundTimestamp": 1563895538380
+  },
+  "CP-15-CR-0001673-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 3
+    },
+    "id": "CP-15-CR-0001673-2017",
+    "filingDate": "5/24/2017 8:55:00 AM",
+    "foundTimestamp": 1563895538398
+  },
+  "CP-40-CR-0001563-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 3
+    },
+    "id": "CP-40-CR-0001563-2017",
+    "filingDate": "5/3/2017 12:03:00 PM",
+    "foundTimestamp": 1563895538421
+  },
+  "CP-14-CR-0000677-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 3
+    },
+    "id": "CP-14-CR-0000677-2017",
+    "filingDate": "5/1/2017 10:17:00 AM",
+    "foundTimestamp": 1563895538433
+  },
+  "CP-22-CR-0001852-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 4
+    },
+    "id": "CP-22-CR-0001852-2017",
+    "filingDate": "4/7/2017 2:15:00 PM",
+    "foundTimestamp": 1563895548072
+  },
+  "CP-51-CR-0002693-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 4
+    },
+    "id": "CP-51-CR-0002693-2017",
+    "filingDate": "3/29/2017 8:20:00 AM",
+    "foundTimestamp": 1563895548090
+  },
+  "CP-61-CR-0000165-2017": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 4
+    },
+    "id": "CP-61-CR-0000165-2017",
+    "filingDate": "3/23/2017 1:08:00 PM",
+    "foundTimestamp": 1563895548108
+  },
+  "CP-02-CR-0014640-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 4
+    },
+    "id": "CP-02-CR-0014640-2016",
+    "filingDate": "12/15/2016 3:34:00 PM",
+    "foundTimestamp": 1563895548135
+  },
+  "CP-22-CR-0006558-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 4
+    },
+    "id": "CP-22-CR-0006558-2016",
+    "filingDate": "12/5/2016 10:45:00 AM",
+    "foundTimestamp": 1563895548156
+  },
+  "CP-43-CR-0001837-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 4
+    },
+    "id": "CP-43-CR-0001837-2016",
+    "filingDate": "11/7/2016 10:30:00 AM",
+    "foundTimestamp": 1563895548172
+  },
+  "CP-28-CR-0001755-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 4
+    },
+    "id": "CP-28-CR-0001755-2016",
+    "filingDate": "10/18/2016 11:11:00 AM",
+    "foundTimestamp": 1563895548190
+  },
+  "CP-02-CR-0009931-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 5
+    },
+    "id": "CP-02-CR-0009931-2016",
+    "filingDate": "8/22/2016 10:04:00 AM",
+    "foundTimestamp": 1563895556430
+  },
+  "CP-08-CR-0000368-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 5
+    },
+    "id": "CP-08-CR-0000368-2016",
+    "filingDate": "5/25/2016 9:22:00 AM",
+    "foundTimestamp": 1563895556448
+  },
+  "CP-15-CR-0000981-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 5
+    },
+    "id": "CP-15-CR-0000981-2016",
+    "filingDate": "3/21/2016 8:54:00 AM",
+    "foundTimestamp": 1563895556469
+  },
+  "CP-51-CR-0000642-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 5
+    },
+    "id": "CP-51-CR-0000642-2016",
+    "filingDate": "1/20/2016 8:58:00 AM",
+    "foundTimestamp": 1563895556489
+  },
+  "CP-51-CR-0000643-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 5
+    },
+    "id": "CP-51-CR-0000643-2016",
+    "filingDate": "1/20/2016 8:58:00 AM",
+    "foundTimestamp": 1563895556509
+  },
+  "CP-51-CR-0000657-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 5
+    },
+    "id": "CP-51-CR-0000657-2016",
+    "filingDate": "1/20/2016 8:58:00 AM",
+    "foundTimestamp": 1563895556527
+  },
+  "CP-51-CR-0000658-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 5
+    },
+    "id": "CP-51-CR-0000658-2016",
+    "filingDate": "1/20/2016 8:58:00 AM",
+    "foundTimestamp": 1563895556540
+  },
+  "CP-51-CR-0000661-2016": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 5
+    },
+    "id": "CP-51-CR-0000661-2016",
+    "filingDate": "1/20/2016 8:58:00 AM",
+    "foundTimestamp": 1563895556562
+  },
+  "CP-23-CR-0007459-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 5
+    },
+    "id": "CP-23-CR-0007459-2015",
+    "filingDate": "12/21/2015 3:19:00 PM",
+    "foundTimestamp": 1563895556583
+  },
+  "CP-15-CR-0003911-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 6
+    },
+    "id": "CP-15-CR-0003911-2015",
+    "filingDate": "11/2/2015 8:48:00 AM",
+    "foundTimestamp": 1563895567615
+  },
+  "CP-23-CR-0004915-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 6
+    },
+    "id": "CP-23-CR-0004915-2015",
+    "filingDate": "8/25/2015 2:37:00 PM",
+    "foundTimestamp": 1563895567630
+  },
+  "CP-09-CR-0005256-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 6
+    },
+    "id": "CP-09-CR-0005256-2015",
+    "filingDate": "8/18/2015 10:23:00 AM",
+    "foundTimestamp": 1563895567649
+  },
+  "CP-64-CR-0000270-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 6
+    },
+    "id": "CP-64-CR-0000270-2015",
+    "filingDate": "8/13/2015 10:59:00 AM",
+    "foundTimestamp": 1563895567665
+  },
+  "CP-15-CR-0002600-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 6
+    },
+    "id": "CP-15-CR-0002600-2015",
+    "filingDate": "7/28/2015 8:28:00 AM",
+    "foundTimestamp": 1563895567678
+  },
+  "CP-09-CR-0002739-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 7
+    },
+    "id": "CP-09-CR-0002739-2015",
+    "filingDate": "4/27/2015 10:21:00 AM",
+    "foundTimestamp": 1563895576831
+  },
+  "CP-23-CR-0002224-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 7
+    },
+    "id": "CP-23-CR-0002224-2015",
+    "filingDate": "4/14/2015 4:23:00 PM",
+    "foundTimestamp": 1563895576859
+  },
+  "CP-22-CR-0001902-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 7
+    },
+    "id": "CP-22-CR-0001902-2015",
+    "filingDate": "3/30/2015 3:05:00 PM",
+    "foundTimestamp": 1563895576892
+  },
+  "CP-23-CR-0001647-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 7
+    },
+    "id": "CP-23-CR-0001647-2015",
+    "filingDate": "3/20/2015 8:28:00 AM",
+    "foundTimestamp": 1563895576908
+  },
+  "CP-13-CR-0000023-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 7
+    },
+    "id": "CP-13-CR-0000023-2015",
+    "filingDate": "1/9/2015 1:28:00 PM",
+    "foundTimestamp": 1563895576919
+  },
+  "CP-06-CR-0000020-2015": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 7
+    },
+    "id": "CP-06-CR-0000020-2015",
+    "filingDate": "1/2/2015 4:24:00 PM",
+    "foundTimestamp": 1563895576932
+  },
+  "CP-02-CR-0017222-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 7
+    },
+    "id": "CP-02-CR-0017222-2014",
+    "filingDate": "12/30/2014 10:45:00 AM",
+    "foundTimestamp": 1563895576946
+  },
+  "CP-40-CR-0003651-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 7
+    },
+    "id": "CP-40-CR-0003651-2014",
+    "filingDate": "10/20/2014 11:46:00 AM",
+    "foundTimestamp": 1563895576969
+  },
+  "CP-02-CR-0013361-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 7
+    },
+    "id": "CP-02-CR-0013361-2014",
+    "filingDate": "10/6/2014 11:14:00 AM",
+    "foundTimestamp": 1563895576984
+  },
+  "CP-25-CR-0002072-2014": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 8
+    },
+    "id": "CP-25-CR-0002072-2014",
+    "filingDate": "8/4/2014 9:02:00 AM",
+    "foundTimestamp": 1563895585120
+  },
+  "CP-54-CR-0001897-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 8
+    },
+    "id": "CP-54-CR-0001897-2013",
+    "filingDate": "12/11/2013 9:16:00 AM",
+    "foundTimestamp": 1563895585142
+  },
+  "CP-40-CR-0004083-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 8
+    },
+    "id": "CP-40-CR-0004083-2013",
+    "filingDate": "12/4/2013 1:59:00 PM",
+    "foundTimestamp": 1563895585159
+  },
+  "CP-48-CR-0003735-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 8
+    },
+    "id": "CP-48-CR-0003735-2013",
+    "filingDate": "11/15/2013 10:54:00 AM",
+    "foundTimestamp": 1563895585173
+  },
+  "CP-43-CR-0001528-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 8
+    },
+    "id": "CP-43-CR-0001528-2013",
+    "filingDate": "10/24/2013 2:40:00 PM",
+    "foundTimestamp": 1563895585184
+  },
+  "CP-15-CR-0003037-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 8
+    },
+    "id": "CP-15-CR-0003037-2013",
+    "filingDate": "9/6/2013 8:55:00 AM",
+    "foundTimestamp": 1563895585202
+  },
+  "CP-51-CR-0008815-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 8
+    },
+    "id": "CP-51-CR-0008815-2013",
+    "filingDate": "7/9/2013 10:50:00 AM",
+    "foundTimestamp": 1563895585215
+  },
+  "CP-39-CR-0002512-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-39-CR-0002512-2013",
+    "filingDate": "6/7/2013 3:30:00 PM",
+    "foundTimestamp": 1563895593934
+  },
+  "CP-39-CR-0002125-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-39-CR-0002125-2013",
+    "filingDate": "5/16/2013 9:35:00 AM",
+    "foundTimestamp": 1563895593954
+  },
+  "CP-02-CR-0005772-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-02-CR-0005772-2013",
+    "filingDate": "4/29/2013 2:17:00 PM",
+    "foundTimestamp": 1563895593971
+  },
+  "CP-23-CR-0001949-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-23-CR-0001949-2013",
+    "filingDate": "3/26/2013 10:27:00 AM",
+    "foundTimestamp": 1563895593991
+  },
+  "CP-02-CR-0003748-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-02-CR-0003748-2013",
+    "filingDate": "3/18/2013 12:00:00 AM",
+    "foundTimestamp": 1563895594015
+  },
+  "CP-36-CR-0000714-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-36-CR-0000714-2013",
+    "filingDate": "2/12/2013 12:00:00 AM",
+    "foundTimestamp": 1563895594027
+  },
+  "CP-64-CR-0000034-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-64-CR-0000034-2013",
+    "filingDate": "1/16/2013 1:24:00 PM",
+    "foundTimestamp": 1563895594039
+  },
+  "CP-51-CR-0000344-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-51-CR-0000344-2013",
+    "filingDate": "1/9/2013 9:55:00 AM",
+    "foundTimestamp": 1563895594056
+  },
+  "CP-43-CR-0000005-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-43-CR-0000005-2013",
+    "filingDate": "1/4/2013 10:18:00 AM",
+    "foundTimestamp": 1563895594068
+  },
+  "CP-43-CR-0000010-2013": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 9
+    },
+    "id": "CP-43-CR-0000010-2013",
+    "filingDate": "1/4/2013 10:18:00 AM",
+    "foundTimestamp": 1563895594079
+  },
+  "CP-09-CR-0008480-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 10
+    },
+    "id": "CP-09-CR-0008480-2012",
+    "filingDate": "12/24/2012 12:00:00 AM",
+    "foundTimestamp": 1563895602256
+  },
+  "CP-26-CR-0001534-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 10
+    },
+    "id": "CP-26-CR-0001534-2012",
+    "filingDate": "8/24/2012 2:24:00 PM",
+    "foundTimestamp": 1563895602278
+  },
+  "CP-48-CR-0001955-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 10
+    },
+    "id": "CP-48-CR-0001955-2012",
+    "filingDate": "6/28/2012 12:00:00 AM",
+    "foundTimestamp": 1563895602292
+  },
+  "CP-37-CR-0000316-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 10
+    },
+    "id": "CP-37-CR-0000316-2012",
+    "filingDate": "3/27/2012 2:49:00 PM",
+    "foundTimestamp": 1563895602327
+  },
+  "CP-63-CR-0000354-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 10
+    },
+    "id": "CP-63-CR-0000354-2012",
+    "filingDate": "2/16/2012 12:50:00 PM",
+    "foundTimestamp": 1563895602356
+  },
+  "CP-22-CR-0000425-2012": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 11
+    },
+    "id": "CP-22-CR-0000425-2012",
+    "filingDate": "1/27/2012 12:00:00 AM",
+    "foundTimestamp": 1563895611374
+  },
+  "CP-02-CR-0015520-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 11
+    },
+    "id": "CP-02-CR-0015520-2011",
+    "filingDate": "12/16/2011 12:00:00 AM",
+    "foundTimestamp": 1563895611389
+  },
+  "CP-21-CR-0003126-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 11
+    },
+    "id": "CP-21-CR-0003126-2011",
+    "filingDate": "11/4/2011 11:31:00 AM",
+    "foundTimestamp": 1563895611409
+  },
+  "CP-33-CR-0000537-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 11
+    },
+    "id": "CP-33-CR-0000537-2011",
+    "filingDate": "10/31/2011 12:00:00 PM",
+    "foundTimestamp": 1563895611423
+  },
+  "CP-15-CR-0003371-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 11
+    },
+    "id": "CP-15-CR-0003371-2011",
+    "filingDate": "9/9/2011 8:20:00 AM",
+    "foundTimestamp": 1563895611435
+  },
+  "CP-51-CR-0008564-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 11
+    },
+    "id": "CP-51-CR-0008564-2011",
+    "filingDate": "7/28/2011 9:55:00 AM",
+    "foundTimestamp": 1563895611450
+  },
+  "CP-46-CR-0004591-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 11
+    },
+    "id": "CP-46-CR-0004591-2011",
+    "filingDate": "6/30/2011 10:59:00 AM",
+    "foundTimestamp": 1563895611463
+  },
+  "CP-09-CR-0002925-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 11
+    },
+    "id": "CP-09-CR-0002925-2011",
+    "filingDate": "5/16/2011 12:00:00 AM",
+    "foundTimestamp": 1563895611482
+  },
+  "CP-51-CR-0005198-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 12
+    },
+    "id": "CP-51-CR-0005198-2011",
+    "filingDate": "5/6/2011 9:17:00 AM",
+    "foundTimestamp": 1563895619418
+  },
+  "CP-36-CR-0001697-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 12
+    },
+    "id": "CP-36-CR-0001697-2011",
+    "filingDate": "4/15/2011 12:00:00 AM",
+    "foundTimestamp": 1563895619435
+  },
+  "CP-56-CR-0000169-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 12
+    },
+    "id": "CP-56-CR-0000169-2011",
+    "filingDate": "3/23/2011 1:54:00 PM",
+    "foundTimestamp": 1563895619454
+  },
+  "CP-02-CR-0002425-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 12
+    },
+    "id": "CP-02-CR-0002425-2011",
+    "filingDate": "2/25/2011 12:00:00 AM",
+    "foundTimestamp": 1563895619472
+  },
+  "CP-28-CR-0000215-2011": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 12
+    },
+    "id": "CP-28-CR-0000215-2011",
+    "filingDate": "2/8/2011 12:00:00 AM",
+    "foundTimestamp": 1563895619487
+  },
+  "CP-28-CR-0002232-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 12
+    },
+    "id": "CP-28-CR-0002232-2010",
+    "filingDate": "12/3/2010 12:00:00 AM",
+    "foundTimestamp": 1563895619504
+  },
+  "CP-10-CR-0002095-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 13
+    },
+    "id": "CP-10-CR-0002095-2010",
+    "filingDate": "11/9/2010 9:40:00 AM",
+    "foundTimestamp": 1563895627507
+  },
+  "CP-07-CR-0002063-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 13
+    },
+    "id": "CP-07-CR-0002063-2010",
+    "filingDate": "10/18/2010 3:00:00 PM",
+    "foundTimestamp": 1563895627520
+  },
+  "CP-39-CR-0004000-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 13
+    },
+    "id": "CP-39-CR-0004000-2010",
+    "filingDate": "9/21/2010 10:26:00 AM",
+    "foundTimestamp": 1563895627539
+  },
+  "CP-48-CR-0003064-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 13
+    },
+    "id": "CP-48-CR-0003064-2010",
+    "filingDate": "9/7/2010 12:00:00 AM",
+    "foundTimestamp": 1563895627557
+  },
+  "CP-48-CR-0002992-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 13
+    },
+    "id": "CP-48-CR-0002992-2010",
+    "filingDate": "8/31/2010 12:00:00 AM",
+    "foundTimestamp": 1563895627587
+  },
+  "CP-02-CR-0010582-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 13
+    },
+    "id": "CP-02-CR-0010582-2010",
+    "filingDate": "8/9/2010 12:00:00 AM",
+    "foundTimestamp": 1563895627609
+  },
+  "CP-09-CR-0004659-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 13
+    },
+    "id": "CP-09-CR-0004659-2010",
+    "filingDate": "7/27/2010 12:00:00 AM",
+    "foundTimestamp": 1563895627627
+  },
+  "CP-56-CR-0000299-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 13
+    },
+    "id": "CP-56-CR-0000299-2010",
+    "filingDate": "6/15/2010 9:21:00 AM",
+    "foundTimestamp": 1563895627643
+  },
+  "CP-62-CR-0000211-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 13
+    },
+    "id": "CP-62-CR-0000211-2010",
+    "filingDate": "5/21/2010 3:00:00 PM",
+    "foundTimestamp": 1563895627668
+  },
+  "CP-23-CR-0002791-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-23-CR-0002791-2010",
+    "filingDate": "4/30/2010 11:32:00 AM",
+    "foundTimestamp": 1563895636531
+  },
+  "CP-63-CR-0000683-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-63-CR-0000683-2010",
+    "filingDate": "4/6/2010 11:54:00 AM",
+    "foundTimestamp": 1563895636561
+  },
+  "CP-33-CR-0000122-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-33-CR-0000122-2010",
+    "filingDate": "3/12/2010 12:00:00 PM",
+    "foundTimestamp": 1563895636577
+  },
+  "CP-39-CR-0000784-2010": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-39-CR-0000784-2010",
+    "filingDate": "2/23/2010 2:13:00 PM",
+    "foundTimestamp": 1563895636595
+  },
+  "CP-28-CR-0002123-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-28-CR-0002123-2009",
+    "filingDate": "12/14/2009 12:00:00 AM",
+    "foundTimestamp": 1563895636612
+  },
+  "CP-43-CR-0001735-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-43-CR-0001735-2009",
+    "filingDate": "11/23/2009 3:58:00 PM",
+    "foundTimestamp": 1563895636626
+  },
+  "CP-63-CR-0002348-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-63-CR-0002348-2009",
+    "filingDate": "10/13/2009 12:00:00 AM",
+    "foundTimestamp": 1563895636640
+  },
+  "CP-63-CR-0002351-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-63-CR-0002351-2009",
+    "filingDate": "10/13/2009 12:00:00 AM",
+    "foundTimestamp": 1563895636679
+  },
+  "CP-30-CR-0000425-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-30-CR-0000425-2009",
+    "filingDate": "10/2/2009 10:28:00 AM",
+    "foundTimestamp": 1563895636699
+  },
+  "CP-22-CR-0004557-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 14
+    },
+    "id": "CP-22-CR-0004557-2009",
+    "filingDate": "10/1/2009 10:26:00 AM",
+    "foundTimestamp": 1563895636717
+  },
+  "CP-62-CR-0000414-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-62-CR-0000414-2009",
+    "filingDate": "9/28/2009 1:00:00 PM",
+    "foundTimestamp": 1563895646514
+  },
+  "CP-41-CR-0001465-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-41-CR-0001465-2009",
+    "filingDate": "9/17/2009 12:00:00 AM",
+    "foundTimestamp": 1563895646535
+  },
+  "CP-23-CR-0005452-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-23-CR-0005452-2009",
+    "filingDate": "9/14/2009 1:05:00 PM",
+    "foundTimestamp": 1563895646551
+  },
+  "CP-63-CR-0002090-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-63-CR-0002090-2009",
+    "filingDate": "9/8/2009 11:09:00 AM",
+    "foundTimestamp": 1563895646564
+  },
+  "CP-63-CR-0002087-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-63-CR-0002087-2009",
+    "filingDate": "9/8/2009 11:08:00 AM",
+    "foundTimestamp": 1563895646580
+  },
+  "CP-63-CR-0002085-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-63-CR-0002085-2009",
+    "filingDate": "9/8/2009 11:04:00 AM",
+    "foundTimestamp": 1563895646599
+  },
+  "CP-63-CR-0002086-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-63-CR-0002086-2009",
+    "filingDate": "9/8/2009 11:03:00 AM",
+    "foundTimestamp": 1563895646615
+  },
+  "CP-63-CR-0002088-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-63-CR-0002088-2009",
+    "filingDate": "9/8/2009 11:03:00 AM",
+    "foundTimestamp": 1563895646630
+  },
+  "CP-63-CR-0002089-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-63-CR-0002089-2009",
+    "filingDate": "9/8/2009 11:03:00 AM",
+    "foundTimestamp": 1563895646645
+  },
+  "CP-63-CR-0002091-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 15
+    },
+    "id": "CP-63-CR-0002091-2009",
+    "filingDate": "9/8/2009 11:03:00 AM",
+    "foundTimestamp": 1563895646661
+  },
+  "CP-30-CR-0000382-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 16
+    },
+    "id": "CP-30-CR-0000382-2009",
+    "filingDate": "9/4/2009 9:37:00 AM",
+    "foundTimestamp": 1563895656614
+  },
+  "CP-51-CR-0011362-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 16
+    },
+    "id": "CP-51-CR-0011362-2009",
+    "filingDate": "9/2/2009 9:47:00 AM",
+    "foundTimestamp": 1563895656631
+  },
+  "CP-09-CR-0005851-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 16
+    },
+    "id": "CP-09-CR-0005851-2009",
+    "filingDate": "9/2/2009 12:00:00 AM",
+    "foundTimestamp": 1563895656646
+  },
+  "CP-51-CR-0010296-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 16
+    },
+    "id": "CP-51-CR-0010296-2009",
+    "filingDate": "8/10/2009 9:45:00 AM",
+    "foundTimestamp": 1563895656661
+  },
+  "CP-41-CR-0001223-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 16
+    },
+    "id": "CP-41-CR-0001223-2009",
+    "filingDate": "7/31/2009 12:00:00 AM",
+    "foundTimestamp": 1563895656672
+  },
+  "CP-60-CR-0000160-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 16
+    },
+    "id": "CP-60-CR-0000160-2009",
+    "filingDate": "6/17/2009 11:03:00 AM",
+    "foundTimestamp": 1563895656684
+  },
+  "CP-51-CR-0006570-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 16
+    },
+    "id": "CP-51-CR-0006570-2009",
+    "filingDate": "5/15/2009 9:21:00 AM",
+    "foundTimestamp": 1563895656702
+  },
+  "CP-22-CR-0001461-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 17
+    },
+    "id": "CP-22-CR-0001461-2009",
+    "filingDate": "3/31/2009 12:36:00 PM",
+    "foundTimestamp": 1563895665022
+  },
+  "CP-48-CR-0000792-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 17
+    },
+    "id": "CP-48-CR-0000792-2009",
+    "filingDate": "3/12/2009 12:46:00 PM",
+    "foundTimestamp": 1563895665044
+  },
+  "CP-48-CR-0000580-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 17
+    },
+    "id": "CP-48-CR-0000580-2009",
+    "filingDate": "2/23/2009 12:25:00 PM",
+    "foundTimestamp": 1563895665058
+  },
+  "CP-48-CR-0000256-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 17
+    },
+    "id": "CP-48-CR-0000256-2009",
+    "filingDate": "1/26/2009 3:29:00 PM",
+    "foundTimestamp": 1563895665070
+  },
+  "CP-22-CR-0000270-2009": {
+    "assignmentID": "cp00k01k09check1",
+    "position": {
+      "index": 232,
+      "page": 17
+    },
+    "id": "CP-22-CR-0000270-2009",
+    "filingDate": "1/22/2009 12:54:00 PM",
+    "foundTimestamp": 1563895665091
   }
 }

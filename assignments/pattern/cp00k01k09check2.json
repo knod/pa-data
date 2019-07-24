@@ -9,8 +9,8 @@
   "startIndexRange": 0,
   "endIndexRange": 1000,
   "position": {
-    "index": 162,
-    "page": 2
+    "index": 168,
+    "page": 25
   },
   "completed": false,
   "namesPath": "./names/censusNamesSmallShuffled.json",
@@ -181,6 +181,12 @@
     "158": 1,
     "159": 0,
     "160": 1,
-    "161": 0
+    "161": 0,
+    "162": 2,
+    "163": 11,
+    "164": 0,
+    "165": 6,
+    "166": 0,
+    "167": 1
   }
 }
