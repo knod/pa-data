@@ -7,10 +7,10 @@
   "startDate": "01/01/2009",
   "endDate": "06/25/2019",
   "startIndexRange": 0,
-  "endIndexRange": 300,
+  "endIndexRange": 150,
   "position": {
-    "index": 0,
-    "page": 0
+    "index": 13,
+    "page": 3
   },
   "completed": false,
   "namesPath": "./names/censusNamesSmallShuffled.json",
@@ -19,5 +19,19 @@
   "wait": 300,
   "alerts": "no",
   "redo": false,
-  "done": {}
+  "done": {
+    "0": 12,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 1,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0
+  }
 }
