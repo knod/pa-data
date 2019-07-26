@@ -1,6 +1,6 @@
 {
-  "command": "node check-pattern-cp.js cp0h2h09check1",
-  "patternIDFileName": "check1",
+  "command": "node check-pattern-cp.js cp0h2h09check5",
+  "patternIDFileName": "check5",
   "initialDockets": "round1_cp00k01k09c.json",
   "type": "cp",
   "mode": "check",
