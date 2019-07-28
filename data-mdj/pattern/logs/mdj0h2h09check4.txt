@@ -1,0 +1,28 @@
+
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":0,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js mdj0h2h09check4",
+  "patternIDFileName": "check4",
+  "initialDockets": "round1_mdj00k01k09initial.json",
+  "type": "mdj",
+  "mode": "check",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 300,
+  "position": {
+    "index": 0,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-mdj/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "no",
+  "redo": false,
+  "done": {}
+}
+{"index":0,"page":0}
