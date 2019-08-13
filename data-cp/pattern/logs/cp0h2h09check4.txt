@@ -3981,3 +3981,33 @@ id: CP-22-CR-0001403-2016
 {"index":13,"page":12}
 filing date: 3/14/2016 1:21:00 PM
 {"index":13,"page":12}
+num found so far: 89
+{"index":13,"page":12}
+[33mbyNamesDuring catch clause @[39m [33m03:13[39m
+{"index":13,"page":12}
+Error: Protocol error (Runtime.callFunctionOn): Target closed.
+{"index":13,"page":12}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":13,"page":12}
+timesRepeated: 1
+{"index":13,"page":12}
+ undefined
+{"index":13,"page":12}
+[34m[47mwaiting 1 min[49m[39m @ 03:13
+{"index":13,"page":12}
+Creating browser
+{"index":13,"page":12}
+Opening page
+{"index":13,"page":12}
+[33mbyNamesDuring catch clause @[39m [33m03:14[39m
+{"index":13,"page":12}
+Error: net::ERR_NAME_RESOLUTION_FAILED at https://ujsportal.pacourts.us/DocketSheets/CP.aspx
+{"index":13,"page":12}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":13,"page":12}
+timesRepeated: 2
+{"index":13,"page":12}
+ undefined
+{"index":13,"page":12}
+[34m[47mwaiting 1 min[49m[39m @ 03:14
+{"index":13,"page":12}

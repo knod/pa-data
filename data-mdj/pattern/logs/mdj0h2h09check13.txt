@@ -1,0 +1,6148 @@
+
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":0,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js mdj0h2h09check13",
+  "patternIDFileName": "check13",
+  "initialDockets": "round1_mdj00k01k09initial.json",
+  "type": "mdj",
+  "mode": "check",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 200,
+  "position": {
+    "index": 0,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-mdj/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "no",
+  "redo": false,
+  "done": {}
+}
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+[33mbyNamesDuring catch clause @[39m [33m12:59[39m
+{"index":0,"page":0}
+TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded
+{"index":0,"page":0}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":0}
+timesRepeated: 1
+{"index":0,"page":0}
+ undefined
+{"index":0,"page":0}
+[34m[47mwaiting 1 min[49m[39m @ 12:59
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:01
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:30
+{"index":0,"page":0}
+[43mnew page[49m
+{"index":0,"page":0}
+[34mGoal page: [39m 1
+{"index":0,"page":0}
+[33mPrevious page: [39m 
+{"index":0,"page":0}
+start looking for result: Sat Aug 03 2019 13:31:40 GMT+0000 (UTC)
+{"index":0,"page":0}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":0}
+results found? true
+{"index":0,"page":0}
+no results found? false
+{"index":0,"page":0}
+Time elapsed to find results: 67 (seconds: 0.067)
+{"index":0,"page":0}
+3
+{"index":0,"page":0}
+4
+{"index":0,"page":0}
+paginated: true
+{"index":0,"page":0}
+on new page: 1
+{"index":0,"page":0}
+waited for current page: 1
+{"index":0,"page":0}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":0}
+current actual page indicated in nav: 1
+{"index":0,"page":0}
+current is goal? 1 1 true
+{"index":0,"page":0}
+Reached goal page
+{"index":0,"page":0}
+navData: [object Object]
+{"index":0,"page":0}
+5
+{"index":0,"page":0}
+6
+{"index":0,"page":0}
+7
+{"index":0,"page":0}
+8
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-47101-CR-0000235-2019
+{"index":0,"page":0}
+filing date: 06/18/2019
+{"index":0,"page":0}
+num found so far: 1
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-32247-CR-0000085-2019
+{"index":0,"page":0}
+filing date: 03/08/2019
+{"index":0,"page":0}
+num found so far: 2
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-52305-CR-0000041-2019
+{"index":0,"page":0}
+filing date: 02/28/2019
+{"index":0,"page":0}
+num found so far: 3
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-02302-CR-0000093-2019
+{"index":0,"page":0}
+filing date: 02/19/2019
+{"index":0,"page":0}
+num found so far: 4
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-32133-CR-0000569-2018
+{"index":0,"page":0}
+filing date: 11/28/2018
+{"index":0,"page":0}
+num found so far: 5
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-43301-CR-0000173-2018
+{"index":0,"page":0}
+filing date: 07/24/2018
+{"index":0,"page":0}
+num found so far: 6
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-31201-CR-0000184-2018
+{"index":0,"page":0}
+filing date: 04/13/2018
+{"index":0,"page":0}
+num found so far: 7
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-03204-CR-0000074-2018
+{"index":0,"page":0}
+filing date: 04/06/2018
+{"index":0,"page":0}
+num found so far: 8
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-43401-CR-0000085-2018
+{"index":0,"page":0}
+filing date: 02/15/2018
+{"index":0,"page":0}
+num found so far: 9
+{"index":0,"page":0}
+position: {"index":0,"page":0}
+{"index":0,"page":0}
+id: MJ-12205-CR-0000052-2018
+{"index":0,"page":0}
+filing date: 01/30/2018
+{"index":0,"page":0}
+num found so far: 10
+{"index":0,"page":0}
+9
+{"index":0,"page":0}
+10
+{"index":0,"page":0}
+11
+{"index":0,"page":0}
+12
+{"index":0,"page":0}
+[43mdisabledText:[49m First,Previous
+{"index":0,"page":0}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":0}
+13
+{"index":0,"page":2}
+14
+{"index":0,"page":2}
+15
+{"index":0,"page":2}
+16 false
+{"index":0,"page":2}
+Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+{"index":0,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:31
+{"index":0,"page":2}
+[43mnew page[49m
+{"index":0,"page":2}
+[34mGoal page: [39m 2
+{"index":0,"page":2}
+[33mPrevious page: [39m 
+{"index":0,"page":2}
+start looking for result: Sat Aug 03 2019 13:31:41 GMT+0000 (UTC)
+{"index":0,"page":2}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":2}
+results found? true
+{"index":0,"page":2}
+no results found? false
+{"index":0,"page":2}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":0,"page":2}
+3
+{"index":0,"page":2}
+4
+{"index":0,"page":2}
+paginated: true
+{"index":0,"page":2}
+on new page: 1
+{"index":0,"page":2}
+waited for current page: 1
+{"index":0,"page":2}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":2}
+current actual page indicated in nav: 1
+{"index":0,"page":2}
+current is goal? 1 2 false
+{"index":0,"page":2}
+CSS index of link to goal: 4
+{"index":0,"page":2}
+navData: [object Object]
+{"index":0,"page":2}
+clicking to a new page
+{"index":0,"page":2}
+Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+{"index":0,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:31
+{"index":0,"page":2}
+[43mnew page[49m
+{"index":0,"page":2}
+[34mGoal page: [39m 2
+{"index":0,"page":2}
+[33mPrevious page: [39m 1
+{"index":0,"page":2}
+start looking for result: Sat Aug 03 2019 13:31:41 GMT+0000 (UTC)
+{"index":0,"page":2}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":2}
+results found? true
+{"index":0,"page":2}
+no results found? false
+{"index":0,"page":2}
+Time elapsed to find results: 9 (seconds: 0.009)
+{"index":0,"page":2}
+3
+{"index":0,"page":2}
+4
+{"index":0,"page":2}
+paginated: true
+{"index":0,"page":2}
+[33mbyNamesDuring catch clause @[39m [33m13:46[39m
+{"index":0,"page":2}
+TimeoutError: waiting for function failed: timeout 900000ms exceeded
+{"index":0,"page":2}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":2}
+timesRepeated: 1
+{"index":0,"page":2}
+ undefined
+{"index":0,"page":2}
+[34m[47mwaiting 1 min[49m[39m @ 13:46
+{"index":0,"page":2}
+Creating browser
+{"index":0,"page":2}
+Opening page
+{"index":0,"page":2}
+Status: 200
+{"index":0,"page":2}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":2}
+[object Object]
+{"index":0,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:48
+{"index":0,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:48
+{"index":0,"page":2}
+[43mnew page[49m
+{"index":0,"page":2}
+[34mGoal page: [39m 2
+{"index":0,"page":2}
+[33mPrevious page: [39m 
+{"index":0,"page":2}
+start looking for result: Sat Aug 03 2019 13:48:43 GMT+0000 (UTC)
+{"index":0,"page":2}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":2}
+results found? true
+{"index":0,"page":2}
+no results found? false
+{"index":0,"page":2}
+Time elapsed to find results: 5616 (seconds: 5.616)
+{"index":0,"page":2}
+3
+{"index":0,"page":2}
+4
+{"index":0,"page":2}
+paginated: true
+{"index":0,"page":2}
+on new page: 1
+{"index":0,"page":2}
+waited for current page: 1
+{"index":0,"page":2}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":2}
+current actual page indicated in nav: 1
+{"index":0,"page":2}
+current is goal? 1 2 false
+{"index":0,"page":2}
+CSS index of link to goal: 4
+{"index":0,"page":2}
+navData: [object Object]
+{"index":0,"page":2}
+clicking to a new page
+{"index":0,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:48
+{"index":0,"page":2}
+[43mnew page[49m
+{"index":0,"page":2}
+[34mGoal page: [39m 2
+{"index":0,"page":2}
+[33mPrevious page: [39m 1
+{"index":0,"page":2}
+start looking for result: Sat Aug 03 2019 13:48:55 GMT+0000 (UTC)
+{"index":0,"page":2}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":2}
+results found? true
+{"index":0,"page":2}
+no results found? false
+{"index":0,"page":2}
+Time elapsed to find results: 130 (seconds: 0.13)
+{"index":0,"page":2}
+3
+{"index":0,"page":2}
+4
+{"index":0,"page":2}
+paginated: true
+{"index":0,"page":2}
+on new page: 2
+{"index":0,"page":2}
+waited for current page: 2
+{"index":0,"page":2}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":2}
+current actual page indicated in nav: 2
+{"index":0,"page":2}
+current is goal? 2 2 true
+{"index":0,"page":2}
+Reached goal page
+{"index":0,"page":2}
+navData: [object Object]
+{"index":0,"page":2}
+5
+{"index":0,"page":2}
+6
+{"index":0,"page":2}
+7
+{"index":0,"page":2}
+8
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-12204-CR-0000036-2018
+{"index":0,"page":2}
+filing date: 01/23/2018
+{"index":0,"page":2}
+num found so far: 11
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-02000-CR-0001373-2017
+{"index":0,"page":2}
+filing date: 11/17/2017
+{"index":0,"page":2}
+num found so far: 12
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-02102-CR-0000629-2017
+{"index":0,"page":2}
+filing date: 11/17/2017
+{"index":0,"page":2}
+num found so far: 13
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-12201-CR-0001182-2017
+{"index":0,"page":2}
+filing date: 11/08/2017
+{"index":0,"page":2}
+num found so far: 14
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-19306-CR-0000252-2017
+{"index":0,"page":2}
+filing date: 10/23/2017
+{"index":0,"page":2}
+num found so far: 15
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-23201-CR-0000414-2017
+{"index":0,"page":2}
+filing date: 10/19/2017
+{"index":0,"page":2}
+num found so far: 16
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-19104-CR-0000422-2017
+{"index":0,"page":2}
+filing date: 10/12/2017
+{"index":0,"page":2}
+num found so far: 17
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-15307-CR-0000163-2017
+{"index":0,"page":2}
+filing date: 08/08/2017
+{"index":0,"page":2}
+num found so far: 18
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-19203-CR-0000193-2017
+{"index":0,"page":2}
+filing date: 05/16/2017
+{"index":0,"page":2}
+num found so far: 19
+{"index":0,"page":2}
+position: {"index":0,"page":2}
+{"index":0,"page":2}
+id: MJ-19306-CR-0000120-2017
+{"index":0,"page":2}
+filing date: 05/16/2017
+{"index":0,"page":2}
+num found so far: 20
+{"index":0,"page":2}
+9
+{"index":0,"page":2}
+10
+{"index":0,"page":2}
+11
+{"index":0,"page":2}
+12
+{"index":0,"page":2}
+[43mdisabledText:[49m 
+{"index":0,"page":2}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":2}
+13
+{"index":0,"page":3}
+14
+{"index":0,"page":3}
+15
+{"index":0,"page":3}
+16 false
+{"index":0,"page":3}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:49
+{"index":0,"page":3}
+[43mnew page[49m
+{"index":0,"page":3}
+[34mGoal page: [39m 3
+{"index":0,"page":3}
+[33mPrevious page: [39m 1
+{"index":0,"page":3}
+start looking for result: Sat Aug 03 2019 13:49:07 GMT+0000 (UTC)
+{"index":0,"page":3}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":3}
+results found? true
+{"index":0,"page":3}
+no results found? false
+{"index":0,"page":3}
+Time elapsed to find results: 16 (seconds: 0.016)
+{"index":0,"page":3}
+3
+{"index":0,"page":3}
+4
+{"index":0,"page":3}
+paginated: true
+{"index":0,"page":3}
+on new page: 2
+{"index":0,"page":3}
+waited for current page: 2
+{"index":0,"page":3}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":3}
+current actual page indicated in nav: 2
+{"index":0,"page":3}
+current is goal? 2 3 false
+{"index":0,"page":3}
+CSS index of link to goal: 5
+{"index":0,"page":3}
+navData: [object Object]
+{"index":0,"page":3}
+clicking to a new page
+{"index":0,"page":3}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:49
+{"index":0,"page":3}
+[43mnew page[49m
+{"index":0,"page":3}
+[34mGoal page: [39m 3
+{"index":0,"page":3}
+[33mPrevious page: [39m 2
+{"index":0,"page":3}
+start looking for result: Sat Aug 03 2019 13:49:10 GMT+0000 (UTC)
+{"index":0,"page":3}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":3}
+results found? true
+{"index":0,"page":3}
+no results found? false
+{"index":0,"page":3}
+Time elapsed to find results: 23 (seconds: 0.023)
+{"index":0,"page":3}
+3
+{"index":0,"page":3}
+4
+{"index":0,"page":3}
+paginated: true
+{"index":0,"page":3}
+on new page: 3
+{"index":0,"page":3}
+waited for current page: 3
+{"index":0,"page":3}
+nav: First Previous 2 3 4 5 6  Next Last
+{"index":0,"page":3}
+current actual page indicated in nav: 3
+{"index":0,"page":3}
+current is goal? 3 3 true
+{"index":0,"page":3}
+Reached goal page
+{"index":0,"page":3}
+navData: [object Object]
+{"index":0,"page":3}
+5
+{"index":0,"page":3}
+6
+{"index":0,"page":3}
+7
+{"index":0,"page":3}
+8
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-19203-CR-0000194-2017
+{"index":0,"page":3}
+filing date: 05/16/2017
+{"index":0,"page":3}
+num found so far: 21
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-19307-CR-0000141-2017
+{"index":0,"page":3}
+filing date: 05/16/2017
+{"index":0,"page":3}
+num found so far: 22
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-23309-CR-0000098-2017
+{"index":0,"page":3}
+filing date: 05/04/2017
+{"index":0,"page":3}
+num found so far: 23
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-06102-CR-0000125-2017
+{"index":0,"page":3}
+filing date: 04/09/2017
+{"index":0,"page":3}
+num found so far: 24
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-02101-CR-0000199-2017
+{"index":0,"page":3}
+filing date: 04/06/2017
+{"index":0,"page":3}
+num found so far: 25
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-06103-CR-0000121-2017
+{"index":0,"page":3}
+filing date: 03/24/2017
+{"index":0,"page":3}
+num found so far: 26
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-19205-CR-0000046-2017
+{"index":0,"page":3}
+filing date: 02/05/2017
+{"index":0,"page":3}
+num found so far: 27
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-06102-CR-0000428-2016
+{"index":0,"page":3}
+filing date: 12/18/2016
+{"index":0,"page":3}
+num found so far: 28
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-23106-CR-0000482-2016
+{"index":0,"page":3}
+filing date: 10/25/2016
+{"index":0,"page":3}
+num found so far: 29
+{"index":0,"page":3}
+position: {"index":0,"page":3}
+{"index":0,"page":3}
+id: MJ-26303-CR-0000111-2016
+{"index":0,"page":3}
+filing date: 09/22/2016
+{"index":0,"page":3}
+num found so far: 30
+{"index":0,"page":3}
+9
+{"index":0,"page":3}
+10
+{"index":0,"page":3}
+11
+{"index":0,"page":3}
+12
+{"index":0,"page":3}
+[43mdisabledText:[49m 
+{"index":0,"page":3}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":3}
+13
+{"index":0,"page":4}
+14
+{"index":0,"page":4}
+15
+{"index":0,"page":4}
+16 false
+{"index":0,"page":4}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:49
+{"index":0,"page":4}
+[43mnew page[49m
+{"index":0,"page":4}
+[34mGoal page: [39m 4
+{"index":0,"page":4}
+[33mPrevious page: [39m 2
+{"index":0,"page":4}
+start looking for result: Sat Aug 03 2019 13:49:28 GMT+0000 (UTC)
+{"index":0,"page":4}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":4}
+results found? true
+{"index":0,"page":4}
+no results found? false
+{"index":0,"page":4}
+Time elapsed to find results: 12 (seconds: 0.012)
+{"index":0,"page":4}
+3
+{"index":0,"page":4}
+4
+{"index":0,"page":4}
+paginated: true
+{"index":0,"page":4}
+on new page: 3
+{"index":0,"page":4}
+waited for current page: 3
+{"index":0,"page":4}
+nav: First Previous 2 3 4 5 6  Next Last
+{"index":0,"page":4}
+current actual page indicated in nav: 3
+{"index":0,"page":4}
+current is goal? 3 4 false
+{"index":0,"page":4}
+CSS index of link to goal: 5
+{"index":0,"page":4}
+navData: [object Object]
+{"index":0,"page":4}
+clicking to a new page
+{"index":0,"page":4}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:49
+{"index":0,"page":4}
+[43mnew page[49m
+{"index":0,"page":4}
+[34mGoal page: [39m 4
+{"index":0,"page":4}
+[33mPrevious page: [39m 3
+{"index":0,"page":4}
+start looking for result: Sat Aug 03 2019 13:49:29 GMT+0000 (UTC)
+{"index":0,"page":4}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":4}
+results found? true
+{"index":0,"page":4}
+no results found? false
+{"index":0,"page":4}
+Time elapsed to find results: 157 (seconds: 0.157)
+{"index":0,"page":4}
+3
+{"index":0,"page":4}
+4
+{"index":0,"page":4}
+paginated: true
+{"index":0,"page":4}
+on new page: 4
+{"index":0,"page":4}
+waited for current page: 4
+{"index":0,"page":4}
+nav: First Previous 3 4 5 6 7  Next Last
+{"index":0,"page":4}
+current actual page indicated in nav: 4
+{"index":0,"page":4}
+current is goal? 4 4 true
+{"index":0,"page":4}
+Reached goal page
+{"index":0,"page":4}
+navData: [object Object]
+{"index":0,"page":4}
+5
+{"index":0,"page":4}
+6
+{"index":0,"page":4}
+7
+{"index":0,"page":4}
+8
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-19104-CR-0000252-2016
+{"index":0,"page":4}
+filing date: 05/30/2016
+{"index":0,"page":4}
+num found so far: 31
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-37401-CR-0000040-2016
+{"index":0,"page":4}
+filing date: 05/18/2016
+{"index":0,"page":4}
+num found so far: 32
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-15404-CR-0000161-2016
+{"index":0,"page":4}
+filing date: 05/06/2016
+{"index":0,"page":4}
+num found so far: 33
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-02306-CR-0000091-2016
+{"index":0,"page":4}
+filing date: 04/15/2016
+{"index":0,"page":4}
+num found so far: 34
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-31101-CR-0000063-2016
+{"index":0,"page":4}
+filing date: 02/01/2016
+{"index":0,"page":4}
+num found so far: 35
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-07112-CR-0001063-2015
+{"index":0,"page":4}
+filing date: 09/27/2015
+{"index":0,"page":4}
+num found so far: 36
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-19204-CR-0000371-2015
+{"index":0,"page":4}
+filing date: 08/13/2015
+{"index":0,"page":4}
+num found so far: 37
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-31201-CR-0000287-2015
+{"index":0,"page":4}
+filing date: 05/14/2015
+{"index":0,"page":4}
+num found so far: 38
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-41302-CR-0000038-2015
+{"index":0,"page":4}
+filing date: 04/16/2015
+{"index":0,"page":4}
+num found so far: 39
+{"index":0,"page":4}
+position: {"index":0,"page":4}
+{"index":0,"page":4}
+id: MJ-31105-CR-0000764-2014
+{"index":0,"page":4}
+filing date: 12/17/2014
+{"index":0,"page":4}
+num found so far: 40
+{"index":0,"page":4}
+9
+{"index":0,"page":4}
+10
+{"index":0,"page":4}
+11
+{"index":0,"page":4}
+12
+{"index":0,"page":4}
+[43mdisabledText:[49m 
+{"index":0,"page":4}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":4}
+13
+{"index":0,"page":5}
+14
+{"index":0,"page":5}
+15
+{"index":0,"page":5}
+16 false
+{"index":0,"page":5}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:49
+{"index":0,"page":5}
+[43mnew page[49m
+{"index":0,"page":5}
+[34mGoal page: [39m 5
+{"index":0,"page":5}
+[33mPrevious page: [39m 3
+{"index":0,"page":5}
+start looking for result: Sat Aug 03 2019 13:49:43 GMT+0000 (UTC)
+{"index":0,"page":5}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":5}
+results found? true
+{"index":0,"page":5}
+no results found? false
+{"index":0,"page":5}
+Time elapsed to find results: 19 (seconds: 0.019)
+{"index":0,"page":5}
+3
+{"index":0,"page":5}
+4
+{"index":0,"page":5}
+paginated: true
+{"index":0,"page":5}
+on new page: 4
+{"index":0,"page":5}
+waited for current page: 4
+{"index":0,"page":5}
+nav: First Previous 3 4 5 6 7  Next Last
+{"index":0,"page":5}
+current actual page indicated in nav: 4
+{"index":0,"page":5}
+current is goal? 4 5 false
+{"index":0,"page":5}
+CSS index of link to goal: 5
+{"index":0,"page":5}
+navData: [object Object]
+{"index":0,"page":5}
+clicking to a new page
+{"index":0,"page":5}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:49
+{"index":0,"page":5}
+[43mnew page[49m
+{"index":0,"page":5}
+[34mGoal page: [39m 5
+{"index":0,"page":5}
+[33mPrevious page: [39m 4
+{"index":0,"page":5}
+start looking for result: Sat Aug 03 2019 13:49:46 GMT+0000 (UTC)
+{"index":0,"page":5}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":5}
+results found? true
+{"index":0,"page":5}
+no results found? false
+{"index":0,"page":5}
+Time elapsed to find results: 10 (seconds: 0.01)
+{"index":0,"page":5}
+3
+{"index":0,"page":5}
+4
+{"index":0,"page":5}
+paginated: true
+{"index":0,"page":5}
+on new page: 5
+{"index":0,"page":5}
+waited for current page: 5
+{"index":0,"page":5}
+nav: First Previous 4 5 6 7 8  Next Last
+{"index":0,"page":5}
+current actual page indicated in nav: 5
+{"index":0,"page":5}
+current is goal? 5 5 true
+{"index":0,"page":5}
+Reached goal page
+{"index":0,"page":5}
+navData: [object Object]
+{"index":0,"page":5}
+5
+{"index":0,"page":5}
+6
+{"index":0,"page":5}
+7
+{"index":0,"page":5}
+8
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-08201-CR-0000367-2014
+{"index":0,"page":5}
+filing date: 10/14/2014
+{"index":0,"page":5}
+num found so far: 41
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-43401-CR-0000173-2014
+{"index":0,"page":5}
+filing date: 07/28/2014
+{"index":0,"page":5}
+num found so far: 42
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-12104-CR-0000450-2014
+{"index":0,"page":5}
+filing date: 06/26/2014
+{"index":0,"page":5}
+num found so far: 43
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-12205-CR-0000353-2014
+{"index":0,"page":5}
+filing date: 06/26/2014
+{"index":0,"page":5}
+num found so far: 44
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-52101-CR-0000197-2014
+{"index":0,"page":5}
+filing date: 06/05/2014
+{"index":0,"page":5}
+num found so far: 45
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-02101-CR-0000217-2014
+{"index":0,"page":5}
+filing date: 05/22/2014
+{"index":0,"page":5}
+num found so far: 46
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-02201-CR-0000106-2014
+{"index":0,"page":5}
+filing date: 05/10/2014
+{"index":0,"page":5}
+num found so far: 47
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-31202-CR-0000166-2014
+{"index":0,"page":5}
+filing date: 05/05/2014
+{"index":0,"page":5}
+num found so far: 48
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-47306-CR-0000149-2014
+{"index":0,"page":5}
+filing date: 04/22/2014
+{"index":0,"page":5}
+num found so far: 49
+{"index":0,"page":5}
+position: {"index":0,"page":5}
+{"index":0,"page":5}
+id: MJ-38108-CR-0000129-2013
+{"index":0,"page":5}
+filing date: 12/03/2013
+{"index":0,"page":5}
+num found so far: 50
+{"index":0,"page":5}
+9
+{"index":0,"page":5}
+10
+{"index":0,"page":5}
+11
+{"index":0,"page":5}
+12
+{"index":0,"page":5}
+[43mdisabledText:[49m 
+{"index":0,"page":5}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":5}
+13
+{"index":0,"page":6}
+14
+{"index":0,"page":6}
+15
+{"index":0,"page":6}
+16 false
+{"index":0,"page":6}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:50
+{"index":0,"page":6}
+[43mnew page[49m
+{"index":0,"page":6}
+[34mGoal page: [39m 6
+{"index":0,"page":6}
+[33mPrevious page: [39m 4
+{"index":0,"page":6}
+start looking for result: Sat Aug 03 2019 13:50:02 GMT+0000 (UTC)
+{"index":0,"page":6}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":6}
+results found? true
+{"index":0,"page":6}
+no results found? false
+{"index":0,"page":6}
+Time elapsed to find results: 183 (seconds: 0.183)
+{"index":0,"page":6}
+3
+{"index":0,"page":6}
+4
+{"index":0,"page":6}
+paginated: true
+{"index":0,"page":6}
+on new page: 5
+{"index":0,"page":6}
+waited for current page: 5
+{"index":0,"page":6}
+nav: First Previous 4 5 6 7 8  Next Last
+{"index":0,"page":6}
+current actual page indicated in nav: 5
+{"index":0,"page":6}
+current is goal? 5 6 false
+{"index":0,"page":6}
+CSS index of link to goal: 5
+{"index":0,"page":6}
+navData: [object Object]
+{"index":0,"page":6}
+clicking to a new page
+{"index":0,"page":6}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:50
+{"index":0,"page":6}
+[43mnew page[49m
+{"index":0,"page":6}
+[34mGoal page: [39m 6
+{"index":0,"page":6}
+[33mPrevious page: [39m 5
+{"index":0,"page":6}
+start looking for result: Sat Aug 03 2019 13:50:03 GMT+0000 (UTC)
+{"index":0,"page":6}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":6}
+results found? true
+{"index":0,"page":6}
+no results found? false
+{"index":0,"page":6}
+Time elapsed to find results: 18 (seconds: 0.018)
+{"index":0,"page":6}
+3
+{"index":0,"page":6}
+4
+{"index":0,"page":6}
+paginated: true
+{"index":0,"page":6}
+on new page: 6
+{"index":0,"page":6}
+waited for current page: 6
+{"index":0,"page":6}
+nav: First Previous 5 6 7 8 9  Next Last
+{"index":0,"page":6}
+current actual page indicated in nav: 6
+{"index":0,"page":6}
+current is goal? 6 6 true
+{"index":0,"page":6}
+Reached goal page
+{"index":0,"page":6}
+navData: [object Object]
+{"index":0,"page":6}
+5
+{"index":0,"page":6}
+6
+{"index":0,"page":6}
+7
+{"index":0,"page":6}
+8
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-06104-CR-0000437-2013
+{"index":0,"page":6}
+filing date: 09/23/2013
+{"index":0,"page":6}
+num found so far: 51
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-19103-CR-0000196-2013
+{"index":0,"page":6}
+filing date: 05/16/2013
+{"index":0,"page":6}
+num found so far: 52
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-02201-CR-0000153-2013
+{"index":0,"page":6}
+filing date: 05/13/2013
+{"index":0,"page":6}
+num found so far: 53
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-39201-CR-0000222-2013
+{"index":0,"page":6}
+filing date: 04/29/2013
+{"index":0,"page":6}
+num found so far: 54
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-31201-CR-0000202-2013
+{"index":0,"page":6}
+filing date: 03/18/2013
+{"index":0,"page":6}
+num found so far: 55
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-19306-CR-0000067-2013
+{"index":0,"page":6}
+filing date: 03/12/2013
+{"index":0,"page":6}
+num found so far: 56
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-12304-CR-0000117-2013
+{"index":0,"page":6}
+filing date: 03/08/2013
+{"index":0,"page":6}
+num found so far: 57
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-52305-CR-0000408-2012
+{"index":0,"page":6}
+filing date: 12/03/2012
+{"index":0,"page":6}
+num found so far: 58
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-23103-CR-0000507-2012
+{"index":0,"page":6}
+filing date: 11/24/2012
+{"index":0,"page":6}
+num found so far: 59
+{"index":0,"page":6}
+position: {"index":0,"page":6}
+{"index":0,"page":6}
+id: MJ-19103-CR-0000440-2012
+{"index":0,"page":6}
+filing date: 10/16/2012
+{"index":0,"page":6}
+num found so far: 60
+{"index":0,"page":6}
+9
+{"index":0,"page":6}
+10
+{"index":0,"page":6}
+11
+{"index":0,"page":6}
+12
+{"index":0,"page":6}
+[43mdisabledText:[49m 
+{"index":0,"page":6}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":6}
+13
+{"index":0,"page":7}
+14
+{"index":0,"page":7}
+15
+{"index":0,"page":7}
+16 false
+{"index":0,"page":7}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:50
+{"index":0,"page":7}
+[43mnew page[49m
+{"index":0,"page":7}
+[34mGoal page: [39m 7
+{"index":0,"page":7}
+[33mPrevious page: [39m 5
+{"index":0,"page":7}
+start looking for result: Sat Aug 03 2019 13:50:39 GMT+0000 (UTC)
+{"index":0,"page":7}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":7}
+results found? true
+{"index":0,"page":7}
+no results found? false
+{"index":0,"page":7}
+Time elapsed to find results: 59 (seconds: 0.059)
+{"index":0,"page":7}
+3
+{"index":0,"page":7}
+4
+{"index":0,"page":7}
+paginated: true
+{"index":0,"page":7}
+on new page: 6
+{"index":0,"page":7}
+waited for current page: 6
+{"index":0,"page":7}
+nav: First Previous 5 6 7 8 9  Next Last
+{"index":0,"page":7}
+current actual page indicated in nav: 6
+{"index":0,"page":7}
+current is goal? 6 7 false
+{"index":0,"page":7}
+CSS index of link to goal: 5
+{"index":0,"page":7}
+navData: [object Object]
+{"index":0,"page":7}
+clicking to a new page
+{"index":0,"page":7}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:50
+{"index":0,"page":7}
+[43mnew page[49m
+{"index":0,"page":7}
+[34mGoal page: [39m 7
+{"index":0,"page":7}
+[33mPrevious page: [39m 6
+{"index":0,"page":7}
+start looking for result: Sat Aug 03 2019 13:51:21 GMT+0000 (UTC)
+{"index":0,"page":7}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":7}
+results found? true
+{"index":0,"page":7}
+no results found? false
+{"index":0,"page":7}
+Time elapsed to find results: 2535 (seconds: 2.535)
+{"index":0,"page":7}
+3
+{"index":0,"page":7}
+4
+{"index":0,"page":7}
+paginated: true
+{"index":0,"page":7}
+on new page: 7
+{"index":0,"page":7}
+waited for current page: 7
+{"index":0,"page":7}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":0,"page":7}
+current actual page indicated in nav: 7
+{"index":0,"page":7}
+current is goal? 7 7 true
+{"index":0,"page":7}
+Reached goal page
+{"index":0,"page":7}
+navData: [object Object]
+{"index":0,"page":7}
+5
+{"index":0,"page":7}
+6
+{"index":0,"page":7}
+7
+{"index":0,"page":7}
+8
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-32247-CR-0000335-2012
+{"index":0,"page":7}
+filing date: 10/09/2012
+{"index":0,"page":7}
+num found so far: 61
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-10208-CR-0000257-2012
+{"index":0,"page":7}
+filing date: 08/27/2012
+{"index":0,"page":7}
+num found so far: 62
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-38128-CR-0000336-2012
+{"index":0,"page":7}
+filing date: 07/20/2012
+{"index":0,"page":7}
+num found so far: 63
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-52305-CR-0000213-2012
+{"index":0,"page":7}
+filing date: 06/15/2012
+{"index":0,"page":7}
+num found so far: 64
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-19305-CR-0000205-2012
+{"index":0,"page":7}
+filing date: 06/12/2012
+{"index":0,"page":7}
+num found so far: 65
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-19305-CR-0000168-2012
+{"index":0,"page":7}
+filing date: 05/08/2012
+{"index":0,"page":7}
+num found so far: 66
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-10208-CR-0000137-2012
+{"index":0,"page":7}
+filing date: 05/05/2012
+{"index":0,"page":7}
+num found so far: 67
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-38115-CR-0000196-2012
+{"index":0,"page":7}
+filing date: 04/11/2012
+{"index":0,"page":7}
+num found so far: 68
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-03104-CR-0000050-2012
+{"index":0,"page":7}
+filing date: 03/05/2012
+{"index":0,"page":7}
+num found so far: 69
+{"index":0,"page":7}
+position: {"index":0,"page":7}
+{"index":0,"page":7}
+id: MJ-53101-CR-0000116-2012
+{"index":0,"page":7}
+filing date: 02/28/2012
+{"index":0,"page":7}
+num found so far: 70
+{"index":0,"page":7}
+9
+{"index":0,"page":7}
+10
+{"index":0,"page":7}
+11
+{"index":0,"page":7}
+12
+{"index":0,"page":7}
+[43mdisabledText:[49m 
+{"index":0,"page":7}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":7}
+13
+{"index":0,"page":8}
+14
+{"index":0,"page":8}
+15
+{"index":0,"page":8}
+16 false
+{"index":0,"page":8}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 13:51
+{"index":0,"page":8}
+[43mnew page[49m
+{"index":0,"page":8}
+[34mGoal page: [39m 8
+{"index":0,"page":8}
+[33mPrevious page: [39m 6
+{"index":0,"page":8}
+start looking for result: Sat Aug 03 2019 13:51:37 GMT+0000 (UTC)
+{"index":0,"page":8}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":8}
+results found? true
+{"index":0,"page":8}
+no results found? false
+{"index":0,"page":8}
+Time elapsed to find results: 17890 (seconds: 17.89)
+{"index":0,"page":8}
+3
+{"index":0,"page":8}
+[33mbyNamesDuring catch clause @[39m [33m13:52[39m
+{"index":0,"page":8}
+TimeoutError: waiting for selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer" failed: timeout 30000ms exceeded
+{"index":0,"page":8}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":8}
+timesRepeated: 1
+{"index":0,"page":8}
+ undefined
+{"index":0,"page":8}
+[34m[47mwaiting 1 min[49m[39m @ 13:52
+{"index":0,"page":8}
+Creating browser
+{"index":0,"page":8}
+Opening page
+{"index":0,"page":8}
+[33mbyNamesDuring catch clause @[39m [33m13:54[39m
+{"index":0,"page":8}
+TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded
+{"index":0,"page":8}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":8}
+timesRepeated: 2
+{"index":0,"page":8}
+ undefined
+{"index":0,"page":8}
+[34m[47mwaiting 1 min[49m[39m @ 13:54
+{"index":0,"page":8}
+Creating browser
+{"index":0,"page":8}
+Opening page
+{"index":0,"page":8}
+[33mbyNamesDuring catch clause @[39m [33m13:56[39m
+{"index":0,"page":8}
+TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded
+{"index":0,"page":8}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":8}
+timesRepeated: 3
+{"index":0,"page":8}
+ undefined
+{"index":0,"page":8}
+[34m[47mwaiting an hour[49m[39m @ 13:56
+{"index":0,"page":8}
+Creating browser
+{"index":0,"page":8}
+Opening page
+{"index":0,"page":8}
+[33mbyNamesDuring catch clause @[39m [33m14:57[39m
+{"index":0,"page":8}
+TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded
+{"index":0,"page":8}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":8}
+timesRepeated: 4
+{"index":0,"page":8}
+ undefined
+{"index":0,"page":8}
+[34m[47mwaiting an hour[49m[39m @ 14:57
+{"index":0,"page":8}
+Creating browser
+{"index":0,"page":8}
+Opening page
+{"index":0,"page":8}
+[33mbyNamesDuring catch clause @[39m [33m16:00[39m
+{"index":0,"page":8}
+TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded
+{"index":0,"page":8}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":8}
+timesRepeated: 5
+{"index":0,"page":8}
+ undefined
+{"index":0,"page":8}
+[34m[47mwaiting an hour[49m[39m @ 16:00
+{"index":0,"page":8}
+Creating browser
+{"index":0,"page":8}
+Opening page
+{"index":0,"page":8}
+Status: 200
+{"index":0,"page":8}
+[33mbyNamesDuring catch clause @[39m [33m17:01[39m
+{"index":0,"page":8}
+TimeoutError: waiting for selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName" failed: timeout 30000ms exceeded
+{"index":0,"page":8}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":8}
+timesRepeated: 1
+{"index":0,"page":8}
+ undefined
+{"index":0,"page":8}
+[34m[47mwaiting 1 min[49m[39m @ 17:01
+{"index":0,"page":8}
+Creating browser
+{"index":0,"page":8}
+Opening page
+{"index":0,"page":8}
+Status: 200
+{"index":0,"page":8}
+[33mbyNamesDuring catch clause @[39m [33m17:02[39m
+{"index":0,"page":8}
+TimeoutError: waiting for selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName" failed: timeout 30000ms exceeded
+{"index":0,"page":8}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":8}
+timesRepeated: 1
+{"index":0,"page":8}
+ undefined
+{"index":0,"page":8}
+[34m[47mwaiting 1 min[49m[39m @ 17:02
+{"index":0,"page":8}
+Creating browser
+{"index":0,"page":8}
+Opening page
+{"index":0,"page":8}
+Status: 200
+{"index":0,"page":8}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":8}
+[object Object]
+{"index":0,"page":8}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:04
+{"index":0,"page":8}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:04
+{"index":0,"page":8}
+[43mnew page[49m
+{"index":0,"page":8}
+[34mGoal page: [39m 8
+{"index":0,"page":8}
+[33mPrevious page: [39m 
+{"index":0,"page":8}
+start looking for result: Sat Aug 03 2019 17:05:19 GMT+0000 (UTC)
+{"index":0,"page":8}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":8}
+results found? true
+{"index":0,"page":8}
+no results found? false
+{"index":0,"page":8}
+Time elapsed to find results: 46 (seconds: 0.046)
+{"index":0,"page":8}
+3
+{"index":0,"page":8}
+4
+{"index":0,"page":8}
+paginated: true
+{"index":0,"page":8}
+on new page: 1
+{"index":0,"page":8}
+waited for current page: 1
+{"index":0,"page":8}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":8}
+current actual page indicated in nav: 1
+{"index":0,"page":8}
+current is goal? 1 8 false
+{"index":0,"page":8}
+Index to click on: 7
+{"index":0,"page":8}
+navData: [object Object]
+{"index":0,"page":8}
+clicking to a new page
+{"index":0,"page":8}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:05
+{"index":0,"page":8}
+[43mnew page[49m
+{"index":0,"page":8}
+[34mGoal page: [39m 8
+{"index":0,"page":8}
+[33mPrevious page: [39m 1
+{"index":0,"page":8}
+start looking for result: Sat Aug 03 2019 17:05:20 GMT+0000 (UTC)
+{"index":0,"page":8}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":8}
+results found? true
+{"index":0,"page":8}
+no results found? false
+{"index":0,"page":8}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":8}
+3
+{"index":0,"page":8}
+4
+{"index":0,"page":8}
+paginated: true
+{"index":0,"page":8}
+on new page: 5
+{"index":0,"page":8}
+waited for current page: 5
+{"index":0,"page":8}
+nav: First Previous 4 5 6 7 8  Next Last
+{"index":0,"page":8}
+current actual page indicated in nav: 5
+{"index":0,"page":8}
+current is goal? 5 8 false
+{"index":0,"page":8}
+CSS index of link to goal: 7
+{"index":0,"page":8}
+navData: [object Object]
+{"index":0,"page":8}
+clicking to a new page
+{"index":0,"page":8}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:05
+{"index":0,"page":8}
+[43mnew page[49m
+{"index":0,"page":8}
+[34mGoal page: [39m 8
+{"index":0,"page":8}
+[33mPrevious page: [39m 5
+{"index":0,"page":8}
+start looking for result: Sat Aug 03 2019 17:05:27 GMT+0000 (UTC)
+{"index":0,"page":8}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":8}
+results found? true
+{"index":0,"page":8}
+no results found? false
+{"index":0,"page":8}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":0,"page":8}
+3
+{"index":0,"page":8}
+4
+{"index":0,"page":8}
+paginated: true
+{"index":0,"page":8}
+on new page: 8
+{"index":0,"page":8}
+waited for current page: 8
+{"index":0,"page":8}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":0,"page":8}
+current actual page indicated in nav: 8
+{"index":0,"page":8}
+current is goal? 8 8 true
+{"index":0,"page":8}
+Reached goal page
+{"index":0,"page":8}
+navData: [object Object]
+{"index":0,"page":8}
+5
+{"index":0,"page":8}
+6
+{"index":0,"page":8}
+7
+{"index":0,"page":8}
+8
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-53302-CR-0000074-2012
+{"index":0,"page":8}
+filing date: 02/28/2012
+{"index":0,"page":8}
+num found so far: 71
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-31101-CR-0000040-2012
+{"index":0,"page":8}
+filing date: 01/20/2012
+{"index":0,"page":8}
+num found so far: 72
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-38116-CR-0000807-2011
+{"index":0,"page":8}
+filing date: 12/15/2011
+{"index":0,"page":8}
+num found so far: 73
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-43301-CR-0000477-2011
+{"index":0,"page":8}
+filing date: 11/22/2011
+{"index":0,"page":8}
+num found so far: 74
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-02302-CR-0000404-2011
+{"index":0,"page":8}
+filing date: 10/03/2011
+{"index":0,"page":8}
+num found so far: 75
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-03302-CR-0000057-2011
+{"index":0,"page":8}
+filing date: 04/06/2011
+{"index":0,"page":8}
+num found so far: 76
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-47103-CR-0000123-2011
+{"index":0,"page":8}
+filing date: 03/24/2011
+{"index":0,"page":8}
+num found so far: 77
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-15402-CR-0000422-2011
+{"index":0,"page":8}
+filing date: 02/17/2011
+{"index":0,"page":8}
+num found so far: 78
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-15404-CR-0000011-2011
+{"index":0,"page":8}
+filing date: 01/11/2011
+{"index":0,"page":8}
+num found so far: 79
+{"index":0,"page":8}
+position: {"index":0,"page":8}
+{"index":0,"page":8}
+id: MJ-19104-CR-0000274-2010
+{"index":0,"page":8}
+filing date: 09/03/2010
+{"index":0,"page":8}
+num found so far: 80
+{"index":0,"page":8}
+9
+{"index":0,"page":8}
+10
+{"index":0,"page":8}
+11
+{"index":0,"page":8}
+12
+{"index":0,"page":8}
+[43mdisabledText:[49m 
+{"index":0,"page":8}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":8}
+13
+{"index":0,"page":9}
+14
+{"index":0,"page":9}
+15
+{"index":0,"page":9}
+16 false
+{"index":0,"page":9}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:05
+{"index":0,"page":9}
+[43mnew page[49m
+{"index":0,"page":9}
+[34mGoal page: [39m 9
+{"index":0,"page":9}
+[33mPrevious page: [39m 5
+{"index":0,"page":9}
+start looking for result: Sat Aug 03 2019 17:05:35 GMT+0000 (UTC)
+{"index":0,"page":9}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":9}
+results found? true
+{"index":0,"page":9}
+no results found? false
+{"index":0,"page":9}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":9}
+3
+{"index":0,"page":9}
+4
+{"index":0,"page":9}
+paginated: true
+{"index":0,"page":9}
+on new page: 8
+{"index":0,"page":9}
+waited for current page: 8
+{"index":0,"page":9}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":0,"page":9}
+current actual page indicated in nav: 8
+{"index":0,"page":9}
+current is goal? 8 9 false
+{"index":0,"page":9}
+CSS index of link to goal: 6
+{"index":0,"page":9}
+navData: [object Object]
+{"index":0,"page":9}
+clicking to a new page
+{"index":0,"page":9}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:05
+{"index":0,"page":9}
+[43mnew page[49m
+{"index":0,"page":9}
+[34mGoal page: [39m 9
+{"index":0,"page":9}
+[33mPrevious page: [39m 8
+{"index":0,"page":9}
+start looking for result: Sat Aug 03 2019 17:05:36 GMT+0000 (UTC)
+{"index":0,"page":9}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":9}
+results found? true
+{"index":0,"page":9}
+no results found? false
+{"index":0,"page":9}
+Time elapsed to find results: 7 (seconds: 0.007)
+{"index":0,"page":9}
+3
+{"index":0,"page":9}
+4
+{"index":0,"page":9}
+paginated: true
+{"index":0,"page":9}
+on new page: 9
+{"index":0,"page":9}
+waited for current page: 9
+{"index":0,"page":9}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":0,"page":9}
+current actual page indicated in nav: 9
+{"index":0,"page":9}
+current is goal? 9 9 true
+{"index":0,"page":9}
+Reached goal page
+{"index":0,"page":9}
+navData: [object Object]
+{"index":0,"page":9}
+5
+{"index":0,"page":9}
+6
+{"index":0,"page":9}
+7
+{"index":0,"page":9}
+8
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-31108-CR-0000164-2010
+{"index":0,"page":9}
+filing date: 08/24/2010
+{"index":0,"page":9}
+num found so far: 81
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-38113-CR-0000249-2010
+{"index":0,"page":9}
+filing date: 06/17/2010
+{"index":0,"page":9}
+num found so far: 82
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-38106-CR-0000174-2010
+{"index":0,"page":9}
+filing date: 06/10/2010
+{"index":0,"page":9}
+num found so far: 83
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-24304-CR-0000100-2010
+{"index":0,"page":9}
+filing date: 04/06/2010
+{"index":0,"page":9}
+num found so far: 84
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-05003-CR-0001680-2010
+{"index":0,"page":9}
+filing date: 02/17/2010
+{"index":0,"page":9}
+num found so far: 85
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-23103-CR-0000053-2010
+{"index":0,"page":9}
+filing date: 02/16/2010
+{"index":0,"page":9}
+num found so far: 86
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-39306-CR-0000013-2010
+{"index":0,"page":9}
+filing date: 01/15/2010
+{"index":0,"page":9}
+num found so far: 87
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-38116-CR-0000679-2009
+{"index":0,"page":9}
+filing date: 10/16/2009
+{"index":0,"page":9}
+num found so far: 88
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-32122-CR-0000328-2009
+{"index":0,"page":9}
+filing date: 06/24/2009
+{"index":0,"page":9}
+num found so far: 89
+{"index":0,"page":9}
+position: {"index":0,"page":9}
+{"index":0,"page":9}
+id: MJ-02207-CR-0000165-2009
+{"index":0,"page":9}
+filing date: 06/20/2009
+{"index":0,"page":9}
+num found so far: 90
+{"index":0,"page":9}
+9
+{"index":0,"page":9}
+10
+{"index":0,"page":9}
+11
+{"index":0,"page":9}
+12
+{"index":0,"page":9}
+[43mdisabledText:[49m 
+{"index":0,"page":9}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":9}
+13
+{"index":0,"page":10}
+14
+{"index":0,"page":10}
+15
+{"index":0,"page":10}
+16 false
+{"index":0,"page":10}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:05
+{"index":0,"page":10}
+[43mnew page[49m
+{"index":0,"page":10}
+[34mGoal page: [39m 10
+{"index":0,"page":10}
+[33mPrevious page: [39m 8
+{"index":0,"page":10}
+start looking for result: Sat Aug 03 2019 17:05:50 GMT+0000 (UTC)
+{"index":0,"page":10}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":10}
+results found? true
+{"index":0,"page":10}
+no results found? false
+{"index":0,"page":10}
+Time elapsed to find results: 39 (seconds: 0.039)
+{"index":0,"page":10}
+3
+{"index":0,"page":10}
+4
+{"index":0,"page":10}
+paginated: true
+{"index":0,"page":10}
+on new page: 9
+{"index":0,"page":10}
+waited for current page: 9
+{"index":0,"page":10}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":0,"page":10}
+current actual page indicated in nav: 9
+{"index":0,"page":10}
+current is goal? 9 10 false
+{"index":0,"page":10}
+CSS index of link to goal: 7
+{"index":0,"page":10}
+navData: [object Object]
+{"index":0,"page":10}
+clicking to a new page
+{"index":0,"page":10}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:05
+{"index":0,"page":10}
+[43mnew page[49m
+{"index":0,"page":10}
+[34mGoal page: [39m 10
+{"index":0,"page":10}
+[33mPrevious page: [39m 9
+{"index":0,"page":10}
+start looking for result: Sat Aug 03 2019 17:05:53 GMT+0000 (UTC)
+{"index":0,"page":10}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":10}
+results found? true
+{"index":0,"page":10}
+no results found? false
+{"index":0,"page":10}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":0,"page":10}
+3
+{"index":0,"page":10}
+4
+{"index":0,"page":10}
+paginated: true
+{"index":0,"page":10}
+on new page: 10
+{"index":0,"page":10}
+waited for current page: 10
+{"index":0,"page":10}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":0,"page":10}
+current actual page indicated in nav: 10
+{"index":0,"page":10}
+current is goal? 10 10 true
+{"index":0,"page":10}
+Reached goal page
+{"index":0,"page":10}
+navData: [object Object]
+{"index":0,"page":10}
+5
+{"index":0,"page":10}
+6
+{"index":0,"page":10}
+7
+{"index":0,"page":10}
+8
+{"index":0,"page":10}
+position: {"index":0,"page":10}
+{"index":0,"page":10}
+id: MJ-12205-CR-0000075-2009
+{"index":0,"page":10}
+filing date: 06/02/2009
+{"index":0,"page":10}
+num found so far: 91
+{"index":0,"page":10}
+position: {"index":0,"page":10}
+{"index":0,"page":10}
+id: MJ-19104-CR-0000142-2009
+{"index":0,"page":10}
+filing date: 04/30/2009
+{"index":0,"page":10}
+num found so far: 92
+{"index":0,"page":10}
+position: {"index":0,"page":10}
+{"index":0,"page":10}
+id: MJ-15404-CR-0000136-2009
+{"index":0,"page":10}
+filing date: 04/09/2009
+{"index":0,"page":10}
+num found so far: 93
+{"index":0,"page":10}
+position: {"index":0,"page":10}
+{"index":0,"page":10}
+id: MJ-05204-CR-0000120-2009
+{"index":0,"page":10}
+filing date: 04/01/2009
+{"index":0,"page":10}
+num found so far: 94
+{"index":0,"page":10}
+position: {"index":0,"page":10}
+{"index":0,"page":10}
+id: MJ-12000-CR-0000215-2009
+{"index":0,"page":10}
+filing date: 02/04/2009
+{"index":0,"page":10}
+num found so far: 95
+{"index":0,"page":10}
+position: {"index":0,"page":10}
+{"index":0,"page":10}
+id: MJ-47102-CR-0000364-2009
+{"index":0,"page":10}
+filing date: 01/16/2009
+{"index":0,"page":10}
+num found so far: 96
+{"index":0,"page":10}
+9
+{"index":0,"page":10}
+10
+{"index":0,"page":10}
+11
+{"index":0,"page":10}
+12
+{"index":0,"page":10}
+[43mdisabledText:[49m Next,Last
+{"index":0,"page":10}
+On the last page
+{"index":0,"page":10}
+15
+{"index":0,"page":10}
+16 true
+{"index":0,"page":10}
+18
+{"index":0,"page":10}
+onto the next index
+{"index":0,"page":10}
+been done: 0
+{"index":0,"page":10}
+resetting page to 1
+{"index":0,"page":10}
+~
+~
+~
+~
+~
+Name index: 1
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:06
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:07
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:07:56 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 328 (seconds: 0.328)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 1
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 2
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:07
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:08
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:08:53 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 667 (seconds: 0.667)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 2
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 3
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:09
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:09
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:10:11 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 1184 (seconds: 1.184)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 3
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 4
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:10
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:10
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:11:23 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 1825 (seconds: 1.825)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 4
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 5
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:11
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:12
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:12:22 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 867 (seconds: 0.867)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 5
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 6
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:12
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:12
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:13:24 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 218 (seconds: 0.218)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 6
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 7
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:13
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:13
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:14:24 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 2892 (seconds: 2.892)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 7
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 8
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:14
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:15
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:15:48 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":1}
+results found? true
+{"index":0,"page":1}
+no results found? false
+{"index":0,"page":1}
+Time elapsed to find results: 4050 (seconds: 4.05)
+{"index":0,"page":1}
+3
+{"index":0,"page":1}
+4
+{"index":0,"page":1}
+One-pager
+{"index":0,"page":1}
+5
+{"index":0,"page":1}
+6
+{"index":0,"page":1}
+7
+{"index":0,"page":1}
+8
+{"index":0,"page":1}
+position: {"index":8,"page":0}
+{"index":0,"page":1}
+id: MJ-31102-CR-0000498-2018
+{"index":0,"page":1}
+filing date: 12/17/2018
+{"index":0,"page":1}
+num found so far: 97
+{"index":0,"page":1}
+position: {"index":8,"page":0}
+{"index":0,"page":1}
+id: MJ-10206-CR-0000365-2018
+{"index":0,"page":1}
+filing date: 11/16/2018
+{"index":0,"page":1}
+num found so far: 98
+{"index":0,"page":1}
+position: {"index":8,"page":0}
+{"index":0,"page":1}
+id: MJ-26303-CR-0000093-2014
+{"index":0,"page":1}
+filing date: 07/20/2014
+{"index":0,"page":1}
+num found so far: 99
+{"index":0,"page":1}
+9
+{"index":0,"page":1}
+16 true
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 8
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 9
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:16
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:16
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:16:45 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 2592 (seconds: 2.592)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 9
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 10
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:16
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:17
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:18:14 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 4626 (seconds: 4.626)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 10
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 11
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:18
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:19
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:19:45 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 667 (seconds: 0.667)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 11
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 12
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:19
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:20
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:20:34 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: table#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_gvDocket.gridView
+{"index":0,"page":1}
+results found? false
+{"index":0,"page":1}
+no results found? true
+{"index":0,"page":1}
+Time elapsed to find results: 3362 (seconds: 3.362)
+{"index":0,"page":1}
+18
+{"index":0,"page":1}
+onto the next index
+{"index":0,"page":1}
+been done: 12
+{"index":0,"page":1}
+resetting page to 1
+{"index":0,"page":1}
+~
+~
+~
+~
+~
+Name index: 13
+~
+~
+~
+~
+~
+
+{"index":0,"page":1}
+[object Object]
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:20
+{"index":0,"page":1}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:23
+{"index":0,"page":1}
+[43mnew page[49m
+{"index":0,"page":1}
+[34mGoal page: [39m 1
+{"index":0,"page":1}
+[33mPrevious page: [39m 
+{"index":0,"page":1}
+start looking for result: Sat Aug 03 2019 17:23:06 GMT+0000 (UTC)
+{"index":0,"page":1}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":1}
+results found? true
+{"index":0,"page":1}
+no results found? false
+{"index":0,"page":1}
+Time elapsed to find results: 412 (seconds: 0.412)
+{"index":0,"page":1}
+3
+{"index":0,"page":1}
+4
+{"index":0,"page":1}
+paginated: true
+{"index":0,"page":1}
+on new page: 1
+{"index":0,"page":1}
+waited for current page: 1
+{"index":0,"page":1}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":1}
+current actual page indicated in nav: 1
+{"index":0,"page":1}
+current is goal? 1 1 true
+{"index":0,"page":1}
+Reached goal page
+{"index":0,"page":1}
+navData: [object Object]
+{"index":0,"page":1}
+5
+{"index":0,"page":1}
+6
+{"index":0,"page":1}
+7
+{"index":0,"page":1}
+8
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-02101-CR-0000362-2019
+{"index":0,"page":1}
+filing date: 06/17/2019
+{"index":0,"page":1}
+num found so far: 100
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-07104-CR-0000149-2019
+{"index":0,"page":1}
+filing date: 06/14/2019
+{"index":0,"page":1}
+num found so far: 101
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-43201-CR-0000130-2019
+{"index":0,"page":1}
+filing date: 05/12/2019
+{"index":0,"page":1}
+num found so far: 102
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-43302-CR-0000124-2019
+{"index":0,"page":1}
+filing date: 05/05/2019
+{"index":0,"page":1}
+num found so far: 103
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-05003-CR-0003057-2019
+{"index":0,"page":1}
+filing date: 04/25/2019
+{"index":0,"page":1}
+num found so far: 104
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-44302-CR-0000055-2019
+{"index":0,"page":1}
+filing date: 04/25/2019
+{"index":0,"page":1}
+num found so far: 105
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-05003-CR-0003048-2019
+{"index":0,"page":1}
+filing date: 04/25/2019
+{"index":0,"page":1}
+num found so far: 106
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-43201-CR-0000092-2019
+{"index":0,"page":1}
+filing date: 04/09/2019
+{"index":0,"page":1}
+num found so far: 107
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-19104-CR-0000108-2019
+{"index":0,"page":1}
+filing date: 04/05/2019
+{"index":0,"page":1}
+num found so far: 108
+{"index":0,"page":1}
+position: {"index":13,"page":0}
+{"index":0,"page":1}
+id: MJ-23105-CR-0000132-2019
+{"index":0,"page":1}
+filing date: 03/30/2019
+{"index":0,"page":1}
+num found so far: 109
+{"index":0,"page":1}
+9
+{"index":0,"page":1}
+10
+{"index":0,"page":1}
+11
+{"index":0,"page":1}
+12
+{"index":0,"page":1}
+[43mdisabledText:[49m First,Previous
+{"index":0,"page":1}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":1}
+13
+{"index":0,"page":2}
+14
+{"index":0,"page":2}
+15
+{"index":0,"page":2}
+16 false
+{"index":0,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:23
+{"index":0,"page":2}
+[43mnew page[49m
+{"index":0,"page":2}
+[34mGoal page: [39m 2
+{"index":0,"page":2}
+[33mPrevious page: [39m 
+{"index":0,"page":2}
+start looking for result: Sat Aug 03 2019 17:23:08 GMT+0000 (UTC)
+{"index":0,"page":2}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":2}
+results found? true
+{"index":0,"page":2}
+no results found? false
+{"index":0,"page":2}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":2}
+3
+{"index":0,"page":2}
+4
+{"index":0,"page":2}
+paginated: true
+{"index":0,"page":2}
+on new page: 1
+{"index":0,"page":2}
+waited for current page: 1
+{"index":0,"page":2}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":2}
+current actual page indicated in nav: 1
+{"index":0,"page":2}
+current is goal? 1 2 false
+{"index":0,"page":2}
+CSS index of link to goal: 4
+{"index":0,"page":2}
+navData: [object Object]
+{"index":0,"page":2}
+clicking to a new page
+{"index":0,"page":2}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:23
+{"index":0,"page":2}
+[43mnew page[49m
+{"index":0,"page":2}
+[34mGoal page: [39m 2
+{"index":0,"page":2}
+[33mPrevious page: [39m 1
+{"index":0,"page":2}
+start looking for result: Sat Aug 03 2019 17:23:08 GMT+0000 (UTC)
+{"index":0,"page":2}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":2}
+results found? true
+{"index":0,"page":2}
+no results found? false
+{"index":0,"page":2}
+Time elapsed to find results: 16 (seconds: 0.016)
+{"index":0,"page":2}
+3
+{"index":0,"page":2}
+4
+{"index":0,"page":2}
+paginated: true
+{"index":0,"page":2}
+on new page: 2
+{"index":0,"page":2}
+waited for current page: 2
+{"index":0,"page":2}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":2}
+current actual page indicated in nav: 2
+{"index":0,"page":2}
+current is goal? 2 2 true
+{"index":0,"page":2}
+Reached goal page
+{"index":0,"page":2}
+navData: [object Object]
+{"index":0,"page":2}
+5
+{"index":0,"page":2}
+6
+{"index":0,"page":2}
+7
+{"index":0,"page":2}
+8
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-38128-CR-0000112-2019
+{"index":0,"page":2}
+filing date: 03/29/2019
+{"index":0,"page":2}
+num found so far: 110
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-19105-CR-0000101-2019
+{"index":0,"page":2}
+filing date: 03/15/2019
+{"index":0,"page":2}
+num found so far: 111
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-43404-CR-0000117-2019
+{"index":0,"page":2}
+filing date: 03/15/2019
+{"index":0,"page":2}
+num found so far: 112
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-28304-CR-0000059-2019
+{"index":0,"page":2}
+filing date: 03/09/2019
+{"index":0,"page":2}
+num found so far: 113
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-38118-CR-0000088-2019
+{"index":0,"page":2}
+filing date: 03/06/2019
+{"index":0,"page":2}
+num found so far: 114
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-21307-CR-0000062-2019
+{"index":0,"page":2}
+filing date: 02/25/2019
+{"index":0,"page":2}
+num found so far: 115
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-12203-CR-0000082-2019
+{"index":0,"page":2}
+filing date: 02/22/2019
+{"index":0,"page":2}
+num found so far: 116
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-19205-CR-0000061-2019
+{"index":0,"page":2}
+filing date: 02/22/2019
+{"index":0,"page":2}
+num found so far: 117
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-07101-CR-0000072-2019
+{"index":0,"page":2}
+filing date: 02/06/2019
+{"index":0,"page":2}
+num found so far: 118
+{"index":0,"page":2}
+position: {"index":13,"page":2}
+{"index":0,"page":2}
+id: MJ-19105-CR-0000021-2019
+{"index":0,"page":2}
+filing date: 01/24/2019
+{"index":0,"page":2}
+num found so far: 119
+{"index":0,"page":2}
+9
+{"index":0,"page":2}
+10
+{"index":0,"page":2}
+11
+{"index":0,"page":2}
+12
+{"index":0,"page":2}
+[43mdisabledText:[49m 
+{"index":0,"page":2}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":2}
+13
+{"index":0,"page":3}
+14
+{"index":0,"page":3}
+15
+{"index":0,"page":3}
+16 false
+{"index":0,"page":3}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:23
+{"index":0,"page":3}
+[43mnew page[49m
+{"index":0,"page":3}
+[34mGoal page: [39m 3
+{"index":0,"page":3}
+[33mPrevious page: [39m 1
+{"index":0,"page":3}
+start looking for result: Sat Aug 03 2019 17:23:36 GMT+0000 (UTC)
+{"index":0,"page":3}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":3}
+results found? true
+{"index":0,"page":3}
+no results found? false
+{"index":0,"page":3}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":3}
+3
+{"index":0,"page":3}
+4
+{"index":0,"page":3}
+paginated: true
+{"index":0,"page":3}
+on new page: 2
+{"index":0,"page":3}
+waited for current page: 2
+{"index":0,"page":3}
+nav: First Previous 1 2 3 4 5  Next Last
+{"index":0,"page":3}
+current actual page indicated in nav: 2
+{"index":0,"page":3}
+current is goal? 2 3 false
+{"index":0,"page":3}
+CSS index of link to goal: 5
+{"index":0,"page":3}
+navData: [object Object]
+{"index":0,"page":3}
+clicking to a new page
+{"index":0,"page":3}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:23
+{"index":0,"page":3}
+[43mnew page[49m
+{"index":0,"page":3}
+[34mGoal page: [39m 3
+{"index":0,"page":3}
+[33mPrevious page: [39m 2
+{"index":0,"page":3}
+start looking for result: Sat Aug 03 2019 17:23:36 GMT+0000 (UTC)
+{"index":0,"page":3}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":3}
+results found? true
+{"index":0,"page":3}
+no results found? false
+{"index":0,"page":3}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":3}
+3
+{"index":0,"page":3}
+4
+{"index":0,"page":3}
+paginated: true
+{"index":0,"page":3}
+on new page: 3
+{"index":0,"page":3}
+waited for current page: 3
+{"index":0,"page":3}
+nav: First Previous 2 3 4 5 6  Next Last
+{"index":0,"page":3}
+current actual page indicated in nav: 3
+{"index":0,"page":3}
+current is goal? 3 3 true
+{"index":0,"page":3}
+Reached goal page
+{"index":0,"page":3}
+navData: [object Object]
+{"index":0,"page":3}
+5
+{"index":0,"page":3}
+6
+{"index":0,"page":3}
+7
+{"index":0,"page":3}
+8
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-05218-CR-0000050-2019
+{"index":0,"page":3}
+filing date: 01/24/2019
+{"index":0,"page":3}
+num found so far: 120
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-32128-CR-0000013-2019
+{"index":0,"page":3}
+filing date: 01/20/2019
+{"index":0,"page":3}
+num found so far: 121
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-32128-CR-0000012-2019
+{"index":0,"page":3}
+filing date: 01/20/2019
+{"index":0,"page":3}
+num found so far: 122
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-19203-CR-0000028-2019
+{"index":0,"page":3}
+filing date: 01/17/2019
+{"index":0,"page":3}
+num found so far: 123
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-05218-CR-0000033-2019
+{"index":0,"page":3}
+filing date: 01/16/2019
+{"index":0,"page":3}
+num found so far: 124
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-19204-CR-0000020-2019
+{"index":0,"page":3}
+filing date: 01/14/2019
+{"index":0,"page":3}
+num found so far: 125
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-26201-CR-0000008-2019
+{"index":0,"page":3}
+filing date: 01/10/2019
+{"index":0,"page":3}
+num found so far: 126
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-26302-CR-0000027-2019
+{"index":0,"page":3}
+filing date: 01/10/2019
+{"index":0,"page":3}
+num found so far: 127
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-05247-CR-0000892-2018
+{"index":0,"page":3}
+filing date: 12/31/2018
+{"index":0,"page":3}
+num found so far: 128
+{"index":0,"page":3}
+position: {"index":13,"page":3}
+{"index":0,"page":3}
+id: MJ-32122-CR-0000440-2018
+{"index":0,"page":3}
+filing date: 12/22/2018
+{"index":0,"page":3}
+num found so far: 129
+{"index":0,"page":3}
+9
+{"index":0,"page":3}
+10
+{"index":0,"page":3}
+11
+{"index":0,"page":3}
+12
+{"index":0,"page":3}
+[43mdisabledText:[49m 
+{"index":0,"page":3}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":3}
+13
+{"index":0,"page":4}
+14
+{"index":0,"page":4}
+15
+{"index":0,"page":4}
+16 false
+{"index":0,"page":4}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:24
+{"index":0,"page":4}
+[43mnew page[49m
+{"index":0,"page":4}
+[34mGoal page: [39m 4
+{"index":0,"page":4}
+[33mPrevious page: [39m 2
+{"index":0,"page":4}
+start looking for result: Sat Aug 03 2019 17:24:04 GMT+0000 (UTC)
+{"index":0,"page":4}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":4}
+results found? true
+{"index":0,"page":4}
+no results found? false
+{"index":0,"page":4}
+Time elapsed to find results: 7 (seconds: 0.007)
+{"index":0,"page":4}
+3
+{"index":0,"page":4}
+4
+{"index":0,"page":4}
+paginated: true
+{"index":0,"page":4}
+on new page: 3
+{"index":0,"page":4}
+waited for current page: 3
+{"index":0,"page":4}
+nav: First Previous 2 3 4 5 6  Next Last
+{"index":0,"page":4}
+current actual page indicated in nav: 3
+{"index":0,"page":4}
+current is goal? 3 4 false
+{"index":0,"page":4}
+CSS index of link to goal: 5
+{"index":0,"page":4}
+navData: [object Object]
+{"index":0,"page":4}
+clicking to a new page
+{"index":0,"page":4}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:24
+{"index":0,"page":4}
+[43mnew page[49m
+{"index":0,"page":4}
+[34mGoal page: [39m 4
+{"index":0,"page":4}
+[33mPrevious page: [39m 3
+{"index":0,"page":4}
+start looking for result: Sat Aug 03 2019 17:24:05 GMT+0000 (UTC)
+{"index":0,"page":4}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":4}
+results found? true
+{"index":0,"page":4}
+no results found? false
+{"index":0,"page":4}
+Time elapsed to find results: 17 (seconds: 0.017)
+{"index":0,"page":4}
+3
+{"index":0,"page":4}
+4
+{"index":0,"page":4}
+paginated: true
+{"index":0,"page":4}
+on new page: 4
+{"index":0,"page":4}
+waited for current page: 4
+{"index":0,"page":4}
+nav: First Previous 3 4 5 6 7  Next Last
+{"index":0,"page":4}
+current actual page indicated in nav: 4
+{"index":0,"page":4}
+current is goal? 4 4 true
+{"index":0,"page":4}
+Reached goal page
+{"index":0,"page":4}
+navData: [object Object]
+{"index":0,"page":4}
+5
+{"index":0,"page":4}
+6
+{"index":0,"page":4}
+7
+{"index":0,"page":4}
+8
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-32249-CR-0000397-2018
+{"index":0,"page":4}
+filing date: 12/18/2018
+{"index":0,"page":4}
+num found so far: 130
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-31302-CR-0000743-2018
+{"index":0,"page":4}
+filing date: 12/13/2018
+{"index":0,"page":4}
+num found so far: 131
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-19203-CR-0000441-2018
+{"index":0,"page":4}
+filing date: 12/10/2018
+{"index":0,"page":4}
+num found so far: 132
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-06103-CR-0000493-2018
+{"index":0,"page":4}
+filing date: 12/10/2018
+{"index":0,"page":4}
+num found so far: 133
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-19201-CR-0000933-2018
+{"index":0,"page":4}
+filing date: 12/10/2018
+{"index":0,"page":4}
+num found so far: 134
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-10101-CR-0000445-2018
+{"index":0,"page":4}
+filing date: 11/26/2018
+{"index":0,"page":4}
+num found so far: 135
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-02203-CR-0000414-2018
+{"index":0,"page":4}
+filing date: 09/18/2018
+{"index":0,"page":4}
+num found so far: 136
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-42302-CR-0000281-2018
+{"index":0,"page":4}
+filing date: 09/18/2018
+{"index":0,"page":4}
+num found so far: 137
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-10203-CR-0000213-2018
+{"index":0,"page":4}
+filing date: 09/14/2018
+{"index":0,"page":4}
+num found so far: 138
+{"index":0,"page":4}
+position: {"index":13,"page":4}
+{"index":0,"page":4}
+id: MJ-39201-CR-0000469-2018
+{"index":0,"page":4}
+filing date: 09/14/2018
+{"index":0,"page":4}
+num found so far: 139
+{"index":0,"page":4}
+9
+{"index":0,"page":4}
+10
+{"index":0,"page":4}
+11
+{"index":0,"page":4}
+12
+{"index":0,"page":4}
+[43mdisabledText:[49m 
+{"index":0,"page":4}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":4}
+13
+{"index":0,"page":5}
+14
+{"index":0,"page":5}
+15
+{"index":0,"page":5}
+16 false
+{"index":0,"page":5}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:24
+{"index":0,"page":5}
+[43mnew page[49m
+{"index":0,"page":5}
+[34mGoal page: [39m 5
+{"index":0,"page":5}
+[33mPrevious page: [39m 3
+{"index":0,"page":5}
+start looking for result: Sat Aug 03 2019 17:24:33 GMT+0000 (UTC)
+{"index":0,"page":5}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":5}
+results found? true
+{"index":0,"page":5}
+no results found? false
+{"index":0,"page":5}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":5}
+3
+{"index":0,"page":5}
+4
+{"index":0,"page":5}
+paginated: true
+{"index":0,"page":5}
+on new page: 4
+{"index":0,"page":5}
+waited for current page: 4
+{"index":0,"page":5}
+nav: First Previous 3 4 5 6 7  Next Last
+{"index":0,"page":5}
+current actual page indicated in nav: 4
+{"index":0,"page":5}
+current is goal? 4 5 false
+{"index":0,"page":5}
+CSS index of link to goal: 5
+{"index":0,"page":5}
+navData: [object Object]
+{"index":0,"page":5}
+clicking to a new page
+{"index":0,"page":5}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:24
+{"index":0,"page":5}
+[43mnew page[49m
+{"index":0,"page":5}
+[34mGoal page: [39m 5
+{"index":0,"page":5}
+[33mPrevious page: [39m 4
+{"index":0,"page":5}
+start looking for result: Sat Aug 03 2019 17:24:33 GMT+0000 (UTC)
+{"index":0,"page":5}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":5}
+results found? true
+{"index":0,"page":5}
+no results found? false
+{"index":0,"page":5}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":0,"page":5}
+3
+{"index":0,"page":5}
+4
+{"index":0,"page":5}
+paginated: true
+{"index":0,"page":5}
+on new page: 5
+{"index":0,"page":5}
+waited for current page: 5
+{"index":0,"page":5}
+nav: First Previous 4 5 6 7 8  Next Last
+{"index":0,"page":5}
+current actual page indicated in nav: 5
+{"index":0,"page":5}
+current is goal? 5 5 true
+{"index":0,"page":5}
+Reached goal page
+{"index":0,"page":5}
+navData: [object Object]
+{"index":0,"page":5}
+5
+{"index":0,"page":5}
+6
+{"index":0,"page":5}
+7
+{"index":0,"page":5}
+8
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-12102-CR-0000411-2018
+{"index":0,"page":5}
+filing date: 09/10/2018
+{"index":0,"page":5}
+num found so far: 140
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-19203-CR-0000305-2018
+{"index":0,"page":5}
+filing date: 09/06/2018
+{"index":0,"page":5}
+num found so far: 141
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-19205-CR-0000332-2018
+{"index":0,"page":5}
+filing date: 09/01/2018
+{"index":0,"page":5}
+num found so far: 142
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-11306-CR-0000137-2018
+{"index":0,"page":5}
+filing date: 08/30/2018
+{"index":0,"page":5}
+num found so far: 143
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-05003-CR-0007314-2018
+{"index":0,"page":5}
+filing date: 08/29/2018
+{"index":0,"page":5}
+num found so far: 144
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-50306-CR-0000224-2018
+{"index":0,"page":5}
+filing date: 08/27/2018
+{"index":0,"page":5}
+num found so far: 145
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-60303-CR-0000065-2018
+{"index":0,"page":5}
+filing date: 07/30/2018
+{"index":0,"page":5}
+num found so far: 146
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-31101-CR-0000432-2018
+{"index":0,"page":5}
+filing date: 07/20/2018
+{"index":0,"page":5}
+num found so far: 147
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-21307-CR-0000340-2018
+{"index":0,"page":5}
+filing date: 07/09/2018
+{"index":0,"page":5}
+num found so far: 148
+{"index":0,"page":5}
+position: {"index":13,"page":5}
+{"index":0,"page":5}
+id: MJ-02103-CR-0000146-2018
+{"index":0,"page":5}
+filing date: 05/16/2018
+{"index":0,"page":5}
+num found so far: 149
+{"index":0,"page":5}
+9
+{"index":0,"page":5}
+10
+{"index":0,"page":5}
+11
+{"index":0,"page":5}
+12
+{"index":0,"page":5}
+[43mdisabledText:[49m 
+{"index":0,"page":5}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":5}
+13
+{"index":0,"page":6}
+14
+{"index":0,"page":6}
+15
+{"index":0,"page":6}
+16 false
+{"index":0,"page":6}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:25
+{"index":0,"page":6}
+[43mnew page[49m
+{"index":0,"page":6}
+[34mGoal page: [39m 6
+{"index":0,"page":6}
+[33mPrevious page: [39m 4
+{"index":0,"page":6}
+start looking for result: Sat Aug 03 2019 17:25:04 GMT+0000 (UTC)
+{"index":0,"page":6}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":6}
+results found? true
+{"index":0,"page":6}
+no results found? false
+{"index":0,"page":6}
+Time elapsed to find results: 6 (seconds: 0.006)
+{"index":0,"page":6}
+3
+{"index":0,"page":6}
+4
+{"index":0,"page":6}
+paginated: true
+{"index":0,"page":6}
+on new page: 5
+{"index":0,"page":6}
+waited for current page: 5
+{"index":0,"page":6}
+nav: First Previous 4 5 6 7 8  Next Last
+{"index":0,"page":6}
+current actual page indicated in nav: 5
+{"index":0,"page":6}
+current is goal? 5 6 false
+{"index":0,"page":6}
+CSS index of link to goal: 5
+{"index":0,"page":6}
+navData: [object Object]
+{"index":0,"page":6}
+clicking to a new page
+{"index":0,"page":6}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:25
+{"index":0,"page":6}
+[43mnew page[49m
+{"index":0,"page":6}
+[34mGoal page: [39m 6
+{"index":0,"page":6}
+[33mPrevious page: [39m 5
+{"index":0,"page":6}
+start looking for result: Sat Aug 03 2019 17:25:04 GMT+0000 (UTC)
+{"index":0,"page":6}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":6}
+results found? true
+{"index":0,"page":6}
+no results found? false
+{"index":0,"page":6}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":0,"page":6}
+3
+{"index":0,"page":6}
+4
+{"index":0,"page":6}
+paginated: true
+{"index":0,"page":6}
+on new page: 6
+{"index":0,"page":6}
+waited for current page: 6
+{"index":0,"page":6}
+nav: First Previous 5 6 7 8 9  Next Last
+{"index":0,"page":6}
+current actual page indicated in nav: 6
+{"index":0,"page":6}
+current is goal? 6 6 true
+{"index":0,"page":6}
+Reached goal page
+{"index":0,"page":6}
+navData: [object Object]
+{"index":0,"page":6}
+5
+{"index":0,"page":6}
+6
+{"index":0,"page":6}
+7
+{"index":0,"page":6}
+8
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-05206-CR-0000255-2018
+{"index":0,"page":6}
+filing date: 05/07/2018
+{"index":0,"page":6}
+num found so far: 150
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-12106-CR-0000191-2018
+{"index":0,"page":6}
+filing date: 05/01/2018
+{"index":0,"page":6}
+num found so far: 151
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-26302-CR-0000134-2018
+{"index":0,"page":6}
+filing date: 04/04/2018
+{"index":0,"page":6}
+num found so far: 152
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-07104-CR-0000110-2018
+{"index":0,"page":6}
+filing date: 03/28/2018
+{"index":0,"page":6}
+num found so far: 153
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-10203-CR-0000050-2018
+{"index":0,"page":6}
+filing date: 03/07/2018
+{"index":0,"page":6}
+num found so far: 154
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-44301-CR-0000046-2018
+{"index":0,"page":6}
+filing date: 03/06/2018
+{"index":0,"page":6}
+num found so far: 155
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-03204-CR-0000028-2018
+{"index":0,"page":6}
+filing date: 02/15/2018
+{"index":0,"page":6}
+num found so far: 156
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-21304-CR-0000062-2018
+{"index":0,"page":6}
+filing date: 02/14/2018
+{"index":0,"page":6}
+num found so far: 157
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-21307-CR-0000063-2018
+{"index":0,"page":6}
+filing date: 02/12/2018
+{"index":0,"page":6}
+num found so far: 158
+{"index":0,"page":6}
+position: {"index":13,"page":6}
+{"index":0,"page":6}
+id: MJ-05225-CR-0000094-2018
+{"index":0,"page":6}
+filing date: 02/08/2018
+{"index":0,"page":6}
+num found so far: 159
+{"index":0,"page":6}
+9
+{"index":0,"page":6}
+10
+{"index":0,"page":6}
+11
+{"index":0,"page":6}
+12
+{"index":0,"page":6}
+[43mdisabledText:[49m 
+{"index":0,"page":6}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":6}
+13
+{"index":0,"page":7}
+14
+{"index":0,"page":7}
+15
+{"index":0,"page":7}
+16 false
+{"index":0,"page":7}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:25
+{"index":0,"page":7}
+[43mnew page[49m
+{"index":0,"page":7}
+[34mGoal page: [39m 7
+{"index":0,"page":7}
+[33mPrevious page: [39m 5
+{"index":0,"page":7}
+start looking for result: Sat Aug 03 2019 17:25:34 GMT+0000 (UTC)
+{"index":0,"page":7}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":7}
+results found? true
+{"index":0,"page":7}
+no results found? false
+{"index":0,"page":7}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":7}
+3
+{"index":0,"page":7}
+4
+{"index":0,"page":7}
+paginated: true
+{"index":0,"page":7}
+on new page: 6
+{"index":0,"page":7}
+waited for current page: 6
+{"index":0,"page":7}
+nav: First Previous 5 6 7 8 9  Next Last
+{"index":0,"page":7}
+current actual page indicated in nav: 6
+{"index":0,"page":7}
+current is goal? 6 7 false
+{"index":0,"page":7}
+CSS index of link to goal: 5
+{"index":0,"page":7}
+navData: [object Object]
+{"index":0,"page":7}
+clicking to a new page
+{"index":0,"page":7}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:25
+{"index":0,"page":7}
+[43mnew page[49m
+{"index":0,"page":7}
+[34mGoal page: [39m 7
+{"index":0,"page":7}
+[33mPrevious page: [39m 6
+{"index":0,"page":7}
+start looking for result: Sat Aug 03 2019 17:25:35 GMT+0000 (UTC)
+{"index":0,"page":7}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":7}
+results found? true
+{"index":0,"page":7}
+no results found? false
+{"index":0,"page":7}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":0,"page":7}
+3
+{"index":0,"page":7}
+4
+{"index":0,"page":7}
+paginated: true
+{"index":0,"page":7}
+on new page: 7
+{"index":0,"page":7}
+waited for current page: 7
+{"index":0,"page":7}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":0,"page":7}
+current actual page indicated in nav: 7
+{"index":0,"page":7}
+current is goal? 7 7 true
+{"index":0,"page":7}
+Reached goal page
+{"index":0,"page":7}
+navData: [object Object]
+{"index":0,"page":7}
+5
+{"index":0,"page":7}
+6
+{"index":0,"page":7}
+7
+{"index":0,"page":7}
+8
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-26302-CR-0000051-2018
+{"index":0,"page":7}
+filing date: 02/05/2018
+{"index":0,"page":7}
+num found so far: 160
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-38113-CR-0000016-2018
+{"index":0,"page":7}
+filing date: 01/16/2018
+{"index":0,"page":7}
+num found so far: 161
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-27303-CR-0000005-2018
+{"index":0,"page":7}
+filing date: 01/08/2018
+{"index":0,"page":7}
+num found so far: 162
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-02203-CR-0000534-2017
+{"index":0,"page":7}
+filing date: 12/25/2017
+{"index":0,"page":7}
+num found so far: 163
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-05225-CR-0000789-2017
+{"index":0,"page":7}
+filing date: 12/12/2017
+{"index":0,"page":7}
+num found so far: 164
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-38101-CR-0000368-2017
+{"index":0,"page":7}
+filing date: 11/21/2017
+{"index":0,"page":7}
+num found so far: 165
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-06303-CR-0000360-2017
+{"index":0,"page":7}
+filing date: 10/23/2017
+{"index":0,"page":7}
+num found so far: 166
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-38120-CR-0000442-2017
+{"index":0,"page":7}
+filing date: 10/21/2017
+{"index":0,"page":7}
+num found so far: 167
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-37201-CR-0000175-2017
+{"index":0,"page":7}
+filing date: 10/20/2017
+{"index":0,"page":7}
+num found so far: 168
+{"index":0,"page":7}
+position: {"index":13,"page":7}
+{"index":0,"page":7}
+id: MJ-10311-CR-0000206-2017
+{"index":0,"page":7}
+filing date: 10/03/2017
+{"index":0,"page":7}
+num found so far: 169
+{"index":0,"page":7}
+9
+{"index":0,"page":7}
+10
+{"index":0,"page":7}
+11
+{"index":0,"page":7}
+12
+{"index":0,"page":7}
+[43mdisabledText:[49m 
+{"index":0,"page":7}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":7}
+13
+{"index":0,"page":8}
+14
+{"index":0,"page":8}
+15
+{"index":0,"page":8}
+16 false
+{"index":0,"page":8}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:26
+{"index":0,"page":8}
+[43mnew page[49m
+{"index":0,"page":8}
+[34mGoal page: [39m 8
+{"index":0,"page":8}
+[33mPrevious page: [39m 6
+{"index":0,"page":8}
+start looking for result: Sat Aug 03 2019 17:26:05 GMT+0000 (UTC)
+{"index":0,"page":8}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":8}
+results found? true
+{"index":0,"page":8}
+no results found? false
+{"index":0,"page":8}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":0,"page":8}
+3
+{"index":0,"page":8}
+4
+{"index":0,"page":8}
+paginated: true
+{"index":0,"page":8}
+on new page: 7
+{"index":0,"page":8}
+waited for current page: 7
+{"index":0,"page":8}
+nav: First Previous 6 7 8 9 10  Next Last
+{"index":0,"page":8}
+current actual page indicated in nav: 7
+{"index":0,"page":8}
+current is goal? 7 8 false
+{"index":0,"page":8}
+CSS index of link to goal: 5
+{"index":0,"page":8}
+navData: [object Object]
+{"index":0,"page":8}
+clicking to a new page
+{"index":0,"page":8}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:26
+{"index":0,"page":8}
+[43mnew page[49m
+{"index":0,"page":8}
+[34mGoal page: [39m 8
+{"index":0,"page":8}
+[33mPrevious page: [39m 7
+{"index":0,"page":8}
+start looking for result: Sat Aug 03 2019 17:26:05 GMT+0000 (UTC)
+{"index":0,"page":8}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":8}
+results found? true
+{"index":0,"page":8}
+no results found? false
+{"index":0,"page":8}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":0,"page":8}
+3
+{"index":0,"page":8}
+4
+{"index":0,"page":8}
+paginated: true
+{"index":0,"page":8}
+on new page: 8
+{"index":0,"page":8}
+waited for current page: 8
+{"index":0,"page":8}
+nav: First Previous 7 8 9 10 11  Next Last
+{"index":0,"page":8}
+current actual page indicated in nav: 8
+{"index":0,"page":8}
+current is goal? 8 8 true
+{"index":0,"page":8}
+Reached goal page
+{"index":0,"page":8}
+navData: [object Object]
+{"index":0,"page":8}
+5
+{"index":0,"page":8}
+6
+{"index":0,"page":8}
+7
+{"index":0,"page":8}
+8
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-19310-CR-0000185-2017
+{"index":0,"page":8}
+filing date: 08/29/2017
+{"index":0,"page":8}
+num found so far: 170
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-43401-CR-0000293-2017
+{"index":0,"page":8}
+filing date: 08/23/2017
+{"index":0,"page":8}
+num found so far: 171
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-32133-CR-0000382-2017
+{"index":0,"page":8}
+filing date: 08/22/2017
+{"index":0,"page":8}
+num found so far: 172
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-43302-CR-0000222-2017
+{"index":0,"page":8}
+filing date: 08/07/2017
+{"index":0,"page":8}
+num found so far: 173
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-05247-CR-0000509-2017
+{"index":0,"page":8}
+filing date: 07/26/2017
+{"index":0,"page":8}
+num found so far: 174
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-10305-CR-0000167-2017
+{"index":0,"page":8}
+filing date: 07/24/2017
+{"index":0,"page":8}
+num found so far: 175
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-02000-CR-0000864-2017
+{"index":0,"page":8}
+filing date: 07/18/2017
+{"index":0,"page":8}
+num found so far: 176
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-02303-CR-0000142-2017
+{"index":0,"page":8}
+filing date: 07/18/2017
+{"index":0,"page":8}
+num found so far: 177
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-02203-CR-0000283-2017
+{"index":0,"page":8}
+filing date: 07/10/2017
+{"index":0,"page":8}
+num found so far: 178
+{"index":0,"page":8}
+position: {"index":13,"page":8}
+{"index":0,"page":8}
+id: MJ-20304-CR-0000093-2017
+{"index":0,"page":8}
+filing date: 06/06/2017
+{"index":0,"page":8}
+num found so far: 179
+{"index":0,"page":8}
+9
+{"index":0,"page":8}
+10
+{"index":0,"page":8}
+11
+{"index":0,"page":8}
+12
+{"index":0,"page":8}
+[43mdisabledText:[49m 
+{"index":0,"page":8}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":8}
+13
+{"index":0,"page":9}
+14
+{"index":0,"page":9}
+15
+{"index":0,"page":9}
+16 false
+{"index":0,"page":9}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:26
+{"index":0,"page":9}
+[43mnew page[49m
+{"index":0,"page":9}
+[34mGoal page: [39m 9
+{"index":0,"page":9}
+[33mPrevious page: [39m 7
+{"index":0,"page":9}
+start looking for result: Sat Aug 03 2019 17:26:37 GMT+0000 (UTC)
+{"index":0,"page":9}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":9}
+results found? true
+{"index":0,"page":9}
+no results found? false
+{"index":0,"page":9}
+Time elapsed to find results: 14 (seconds: 0.014)
+{"index":0,"page":9}
+3
+{"index":0,"page":9}
+4
+{"index":0,"page":9}
+paginated: true
+{"index":0,"page":9}
+on new page: 8
+{"index":0,"page":9}
+waited for current page: 8
+{"index":0,"page":9}
+nav: First Previous 7 8 9 10 11  Next Last
+{"index":0,"page":9}
+current actual page indicated in nav: 8
+{"index":0,"page":9}
+current is goal? 8 9 false
+{"index":0,"page":9}
+CSS index of link to goal: 5
+{"index":0,"page":9}
+navData: [object Object]
+{"index":0,"page":9}
+clicking to a new page
+{"index":0,"page":9}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:26
+{"index":0,"page":9}
+[43mnew page[49m
+{"index":0,"page":9}
+[34mGoal page: [39m 9
+{"index":0,"page":9}
+[33mPrevious page: [39m 8
+{"index":0,"page":9}
+start looking for result: Sat Aug 03 2019 17:26:37 GMT+0000 (UTC)
+{"index":0,"page":9}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":9}
+results found? true
+{"index":0,"page":9}
+no results found? false
+{"index":0,"page":9}
+Time elapsed to find results: 4 (seconds: 0.004)
+{"index":0,"page":9}
+3
+{"index":0,"page":9}
+4
+{"index":0,"page":9}
+paginated: true
+{"index":0,"page":9}
+on new page: 9
+{"index":0,"page":9}
+waited for current page: 9
+{"index":0,"page":9}
+nav: First Previous 8 9 10 11 12  Next Last
+{"index":0,"page":9}
+current actual page indicated in nav: 9
+{"index":0,"page":9}
+current is goal? 9 9 true
+{"index":0,"page":9}
+Reached goal page
+{"index":0,"page":9}
+navData: [object Object]
+{"index":0,"page":9}
+5
+{"index":0,"page":9}
+6
+{"index":0,"page":9}
+7
+{"index":0,"page":9}
+8
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-05003-CR-0004176-2017
+{"index":0,"page":9}
+filing date: 05/10/2017
+{"index":0,"page":9}
+num found so far: 180
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-02000-CR-0000436-2017
+{"index":0,"page":9}
+filing date: 04/17/2017
+{"index":0,"page":9}
+num found so far: 181
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-02102-CR-0000177-2017
+{"index":0,"page":9}
+filing date: 04/17/2017
+{"index":0,"page":9}
+num found so far: 182
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-22301-CR-0000042-2017
+{"index":0,"page":9}
+filing date: 04/13/2017
+{"index":0,"page":9}
+num found so far: 183
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-47306-CR-0000054-2017
+{"index":0,"page":9}
+filing date: 04/12/2017
+{"index":0,"page":9}
+num found so far: 184
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-19205-CR-0000128-2017
+{"index":0,"page":9}
+filing date: 03/27/2017
+{"index":0,"page":9}
+num found so far: 185
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-31105-CR-0000104-2017
+{"index":0,"page":9}
+filing date: 03/06/2017
+{"index":0,"page":9}
+num found so far: 186
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-29101-CR-0000093-2017
+{"index":0,"page":9}
+filing date: 03/05/2017
+{"index":0,"page":9}
+num found so far: 187
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-30201-CR-0000024-2017
+{"index":0,"page":9}
+filing date: 01/22/2017
+{"index":0,"page":9}
+num found so far: 188
+{"index":0,"page":9}
+position: {"index":13,"page":9}
+{"index":0,"page":9}
+id: MJ-14201-CR-0000026-2017
+{"index":0,"page":9}
+filing date: 01/18/2017
+{"index":0,"page":9}
+num found so far: 189
+{"index":0,"page":9}
+9
+{"index":0,"page":9}
+10
+{"index":0,"page":9}
+11
+{"index":0,"page":9}
+12
+{"index":0,"page":9}
+[43mdisabledText:[49m 
+{"index":0,"page":9}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":9}
+13
+{"index":0,"page":10}
+14
+{"index":0,"page":10}
+15
+{"index":0,"page":10}
+16 false
+{"index":0,"page":10}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:27
+{"index":0,"page":10}
+[43mnew page[49m
+{"index":0,"page":10}
+[34mGoal page: [39m 10
+{"index":0,"page":10}
+[33mPrevious page: [39m 8
+{"index":0,"page":10}
+start looking for result: Sat Aug 03 2019 17:27:11 GMT+0000 (UTC)
+{"index":0,"page":10}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":10}
+results found? true
+{"index":0,"page":10}
+no results found? false
+{"index":0,"page":10}
+Time elapsed to find results: 8 (seconds: 0.008)
+{"index":0,"page":10}
+3
+{"index":0,"page":10}
+4
+{"index":0,"page":10}
+paginated: true
+{"index":0,"page":10}
+on new page: 9
+{"index":0,"page":10}
+waited for current page: 9
+{"index":0,"page":10}
+nav: First Previous 8 9 10 11 12  Next Last
+{"index":0,"page":10}
+current actual page indicated in nav: 9
+{"index":0,"page":10}
+current is goal? 9 10 false
+{"index":0,"page":10}
+CSS index of link to goal: 5
+{"index":0,"page":10}
+navData: [object Object]
+{"index":0,"page":10}
+clicking to a new page
+{"index":0,"page":10}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:27
+{"index":0,"page":10}
+[43mnew page[49m
+{"index":0,"page":10}
+[34mGoal page: [39m 10
+{"index":0,"page":10}
+[33mPrevious page: [39m 9
+{"index":0,"page":10}
+start looking for result: Sat Aug 03 2019 17:27:11 GMT+0000 (UTC)
+{"index":0,"page":10}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":10}
+results found? true
+{"index":0,"page":10}
+no results found? false
+{"index":0,"page":10}
+Time elapsed to find results: 5 (seconds: 0.005)
+{"index":0,"page":10}
+3
+{"index":0,"page":10}
+4
+{"index":0,"page":10}
+paginated: true
+{"index":0,"page":10}
+on new page: 10
+{"index":0,"page":10}
+waited for current page: 10
+{"index":0,"page":10}
+nav: First Previous 9 10 11 12 13  Next Last
+{"index":0,"page":10}
+current actual page indicated in nav: 10
+{"index":0,"page":10}
+current is goal? 10 10 true
+{"index":0,"page":10}
+Reached goal page
+{"index":0,"page":10}
+navData: [object Object]
+{"index":0,"page":10}
+5
+{"index":0,"page":10}
+6
+{"index":0,"page":10}
+7
+{"index":0,"page":10}
+8
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-32133-CR-0000017-2017
+{"index":0,"page":10}
+filing date: 01/18/2017
+{"index":0,"page":10}
+num found so far: 190
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-06301-CR-0000018-2017
+{"index":0,"page":10}
+filing date: 01/12/2017
+{"index":0,"page":10}
+num found so far: 191
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-15301-CR-0000009-2017
+{"index":0,"page":10}
+filing date: 01/10/2017
+{"index":0,"page":10}
+num found so far: 192
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-56302-CR-0000001-2017
+{"index":0,"page":10}
+filing date: 01/05/2017
+{"index":0,"page":10}
+num found so far: 193
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-24303-CR-0000487-2016
+{"index":0,"page":10}
+filing date: 12/21/2016
+{"index":0,"page":10}
+num found so far: 194
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-05211-CR-0000708-2016
+{"index":0,"page":10}
+filing date: 12/20/2016
+{"index":0,"page":10}
+num found so far: 195
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-07112-CR-0001602-2016
+{"index":0,"page":10}
+filing date: 12/07/2016
+{"index":0,"page":10}
+num found so far: 196
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-05309-CR-0000600-2016
+{"index":0,"page":10}
+filing date: 12/03/2016
+{"index":0,"page":10}
+num found so far: 197
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-05202-CR-0000725-2016
+{"index":0,"page":10}
+filing date: 11/29/2016
+{"index":0,"page":10}
+num found so far: 198
+{"index":0,"page":10}
+position: {"index":13,"page":10}
+{"index":0,"page":10}
+id: MJ-07102-CR-0000179-2016
+{"index":0,"page":10}
+filing date: 11/07/2016
+{"index":0,"page":10}
+num found so far: 199
+{"index":0,"page":10}
+9
+{"index":0,"page":10}
+10
+{"index":0,"page":10}
+11
+{"index":0,"page":10}
+12
+{"index":0,"page":10}
+[43mdisabledText:[49m 
+{"index":0,"page":10}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":10}
+13
+{"index":0,"page":11}
+14
+{"index":0,"page":11}
+15
+{"index":0,"page":11}
+16 false
+{"index":0,"page":11}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:27
+{"index":0,"page":11}
+[43mnew page[49m
+{"index":0,"page":11}
+[34mGoal page: [39m 11
+{"index":0,"page":11}
+[33mPrevious page: [39m 9
+{"index":0,"page":11}
+start looking for result: Sat Aug 03 2019 17:27:44 GMT+0000 (UTC)
+{"index":0,"page":11}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":11}
+results found? true
+{"index":0,"page":11}
+no results found? false
+{"index":0,"page":11}
+Time elapsed to find results: 13 (seconds: 0.013)
+{"index":0,"page":11}
+3
+{"index":0,"page":11}
+4
+{"index":0,"page":11}
+paginated: true
+{"index":0,"page":11}
+on new page: 10
+{"index":0,"page":11}
+waited for current page: 10
+{"index":0,"page":11}
+nav: First Previous 9 10 11 12 13  Next Last
+{"index":0,"page":11}
+current actual page indicated in nav: 10
+{"index":0,"page":11}
+current is goal? 10 11 false
+{"index":0,"page":11}
+CSS index of link to goal: 5
+{"index":0,"page":11}
+navData: [object Object]
+{"index":0,"page":11}
+clicking to a new page
+{"index":0,"page":11}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:27
+{"index":0,"page":11}
+[43mnew page[49m
+{"index":0,"page":11}
+[34mGoal page: [39m 11
+{"index":0,"page":11}
+[33mPrevious page: [39m 10
+{"index":0,"page":11}
+start looking for result: Sat Aug 03 2019 17:27:45 GMT+0000 (UTC)
+{"index":0,"page":11}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":11}
+results found? true
+{"index":0,"page":11}
+no results found? false
+{"index":0,"page":11}
+Time elapsed to find results: 10 (seconds: 0.01)
+{"index":0,"page":11}
+3
+{"index":0,"page":11}
+4
+{"index":0,"page":11}
+paginated: true
+{"index":0,"page":11}
+on new page: 11
+{"index":0,"page":11}
+waited for current page: 11
+{"index":0,"page":11}
+nav: First Previous 10 11 12 13 14  Next Last
+{"index":0,"page":11}
+current actual page indicated in nav: 11
+{"index":0,"page":11}
+current is goal? 11 11 true
+{"index":0,"page":11}
+Reached goal page
+{"index":0,"page":11}
+navData: [object Object]
+{"index":0,"page":11}
+5
+{"index":0,"page":11}
+6
+{"index":0,"page":11}
+7
+{"index":0,"page":11}
+8
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-43302-CR-0000528-2016
+{"index":0,"page":11}
+filing date: 10/11/2016
+{"index":0,"page":11}
+num found so far: 200
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-14302-CR-0000320-2016
+{"index":0,"page":11}
+filing date: 10/05/2016
+{"index":0,"page":11}
+num found so far: 201
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-32133-CR-0000408-2016
+{"index":0,"page":11}
+filing date: 09/28/2016
+{"index":0,"page":11}
+num found so far: 202
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-39201-CR-0000496-2016
+{"index":0,"page":11}
+filing date: 09/18/2016
+{"index":0,"page":11}
+num found so far: 203
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-11302-CR-0000323-2016
+{"index":0,"page":11}
+filing date: 09/15/2016
+{"index":0,"page":11}
+num found so far: 204
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-20302-CR-0000262-2016
+{"index":0,"page":11}
+filing date: 09/15/2016
+{"index":0,"page":11}
+num found so far: 205
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-19311-CR-0000381-2016
+{"index":0,"page":11}
+filing date: 08/08/2016
+{"index":0,"page":11}
+num found so far: 206
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-31105-CR-0000390-2016
+{"index":0,"page":11}
+filing date: 08/03/2016
+{"index":0,"page":11}
+num found so far: 207
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-05221-CR-0000247-2016
+{"index":0,"page":11}
+filing date: 08/02/2016
+{"index":0,"page":11}
+num found so far: 208
+{"index":0,"page":11}
+position: {"index":13,"page":11}
+{"index":0,"page":11}
+id: MJ-02203-CR-0000275-2016
+{"index":0,"page":11}
+filing date: 07/22/2016
+{"index":0,"page":11}
+num found so far: 209
+{"index":0,"page":11}
+9
+{"index":0,"page":11}
+10
+{"index":0,"page":11}
+11
+{"index":0,"page":11}
+12
+{"index":0,"page":11}
+[43mdisabledText:[49m 
+{"index":0,"page":11}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":11}
+13
+{"index":0,"page":12}
+14
+{"index":0,"page":12}
+15
+{"index":0,"page":12}
+16 false
+{"index":0,"page":12}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:28
+{"index":0,"page":12}
+[43mnew page[49m
+{"index":0,"page":12}
+[34mGoal page: [39m 12
+{"index":0,"page":12}
+[33mPrevious page: [39m 10
+{"index":0,"page":12}
+start looking for result: Sat Aug 03 2019 17:28:16 GMT+0000 (UTC)
+{"index":0,"page":12}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":12}
+results found? true
+{"index":0,"page":12}
+no results found? false
+{"index":0,"page":12}
+Time elapsed to find results: 17 (seconds: 0.017)
+{"index":0,"page":12}
+3
+{"index":0,"page":12}
+4
+{"index":0,"page":12}
+paginated: true
+{"index":0,"page":12}
+on new page: 11
+{"index":0,"page":12}
+waited for current page: 11
+{"index":0,"page":12}
+nav: First Previous 10 11 12 13 14  Next Last
+{"index":0,"page":12}
+current actual page indicated in nav: 11
+{"index":0,"page":12}
+current is goal? 11 12 false
+{"index":0,"page":12}
+CSS index of link to goal: 5
+{"index":0,"page":12}
+navData: [object Object]
+{"index":0,"page":12}
+clicking to a new page
+{"index":0,"page":12}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:28
+{"index":0,"page":12}
+[43mnew page[49m
+{"index":0,"page":12}
+[34mGoal page: [39m 12
+{"index":0,"page":12}
+[33mPrevious page: [39m 11
+{"index":0,"page":12}
+start looking for result: Sat Aug 03 2019 17:28:17 GMT+0000 (UTC)
+{"index":0,"page":12}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":12}
+results found? true
+{"index":0,"page":12}
+no results found? false
+{"index":0,"page":12}
+Time elapsed to find results: 10 (seconds: 0.01)
+{"index":0,"page":12}
+3
+{"index":0,"page":12}
+4
+{"index":0,"page":12}
+paginated: true
+{"index":0,"page":12}
+on new page: 12
+{"index":0,"page":12}
+waited for current page: 12
+{"index":0,"page":12}
+nav: First Previous 11 12 13 14 15  Next Last
+{"index":0,"page":12}
+current actual page indicated in nav: 12
+{"index":0,"page":12}
+current is goal? 12 12 true
+{"index":0,"page":12}
+Reached goal page
+{"index":0,"page":12}
+navData: [object Object]
+{"index":0,"page":12}
+5
+{"index":0,"page":12}
+6
+{"index":0,"page":12}
+7
+{"index":0,"page":12}
+8
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-03209-CR-0000181-2016
+{"index":0,"page":12}
+filing date: 06/20/2016
+{"index":0,"page":12}
+num found so far: 210
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-48304-CR-0000036-2016
+{"index":0,"page":12}
+filing date: 06/17/2016
+{"index":0,"page":12}
+num found so far: 211
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-31101-CR-0000318-2016
+{"index":0,"page":12}
+filing date: 05/14/2016
+{"index":0,"page":12}
+num found so far: 212
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-05003-CR-0003156-2016
+{"index":0,"page":12}
+filing date: 04/20/2016
+{"index":0,"page":12}
+num found so far: 213
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-19305-CR-0000133-2016
+{"index":0,"page":12}
+filing date: 04/18/2016
+{"index":0,"page":12}
+num found so far: 214
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-31102-CR-0000168-2016
+{"index":0,"page":12}
+filing date: 04/13/2016
+{"index":0,"page":12}
+num found so far: 215
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-43201-CR-0000094-2016
+{"index":0,"page":12}
+filing date: 04/08/2016
+{"index":0,"page":12}
+num found so far: 216
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-48302-CR-0000044-2016
+{"index":0,"page":12}
+filing date: 04/04/2016
+{"index":0,"page":12}
+num found so far: 217
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-32239-CR-0000145-2016
+{"index":0,"page":12}
+filing date: 03/24/2016
+{"index":0,"page":12}
+num found so far: 218
+{"index":0,"page":12}
+position: {"index":13,"page":12}
+{"index":0,"page":12}
+id: MJ-32239-CR-0000094-2016
+{"index":0,"page":12}
+filing date: 03/11/2016
+{"index":0,"page":12}
+num found so far: 219
+{"index":0,"page":12}
+9
+{"index":0,"page":12}
+10
+{"index":0,"page":12}
+11
+{"index":0,"page":12}
+12
+{"index":0,"page":12}
+[43mdisabledText:[49m 
+{"index":0,"page":12}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":12}
+13
+{"index":0,"page":13}
+14
+{"index":0,"page":13}
+15
+{"index":0,"page":13}
+16 false
+{"index":0,"page":13}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:28
+{"index":0,"page":13}
+[43mnew page[49m
+{"index":0,"page":13}
+[34mGoal page: [39m 13
+{"index":0,"page":13}
+[33mPrevious page: [39m 11
+{"index":0,"page":13}
+start looking for result: Sat Aug 03 2019 17:28:51 GMT+0000 (UTC)
+{"index":0,"page":13}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":13}
+results found? true
+{"index":0,"page":13}
+no results found? false
+{"index":0,"page":13}
+Time elapsed to find results: 90 (seconds: 0.09)
+{"index":0,"page":13}
+3
+{"index":0,"page":13}
+4
+{"index":0,"page":13}
+paginated: true
+{"index":0,"page":13}
+on new page: 12
+{"index":0,"page":13}
+waited for current page: 12
+{"index":0,"page":13}
+nav: First Previous 11 12 13 14 15  Next Last
+{"index":0,"page":13}
+current actual page indicated in nav: 12
+{"index":0,"page":13}
+current is goal? 12 13 false
+{"index":0,"page":13}
+CSS index of link to goal: 5
+{"index":0,"page":13}
+navData: [object Object]
+{"index":0,"page":13}
+clicking to a new page
+{"index":0,"page":13}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:28
+{"index":0,"page":13}
+[43mnew page[49m
+{"index":0,"page":13}
+[34mGoal page: [39m 13
+{"index":0,"page":13}
+[33mPrevious page: [39m 12
+{"index":0,"page":13}
+start looking for result: Sat Aug 03 2019 17:28:53 GMT+0000 (UTC)
+{"index":0,"page":13}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":13}
+results found? true
+{"index":0,"page":13}
+no results found? false
+{"index":0,"page":13}
+Time elapsed to find results: 22 (seconds: 0.022)
+{"index":0,"page":13}
+3
+{"index":0,"page":13}
+4
+{"index":0,"page":13}
+paginated: true
+{"index":0,"page":13}
+on new page: 13
+{"index":0,"page":13}
+waited for current page: 13
+{"index":0,"page":13}
+nav: First Previous 12 13 14 15 16  Next Last
+{"index":0,"page":13}
+current actual page indicated in nav: 13
+{"index":0,"page":13}
+current is goal? 13 13 true
+{"index":0,"page":13}
+Reached goal page
+{"index":0,"page":13}
+navData: [object Object]
+{"index":0,"page":13}
+5
+{"index":0,"page":13}
+6
+{"index":0,"page":13}
+7
+{"index":0,"page":13}
+8
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-56302-CR-0000074-2016
+{"index":0,"page":13}
+filing date: 02/27/2016
+{"index":0,"page":13}
+num found so far: 220
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-05207-CR-0000139-2016
+{"index":0,"page":13}
+filing date: 02/09/2016
+{"index":0,"page":13}
+num found so far: 221
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-05215-CR-0000035-2016
+{"index":0,"page":13}
+filing date: 01/15/2016
+{"index":0,"page":13}
+num found so far: 222
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-05215-CR-0000028-2016
+{"index":0,"page":13}
+filing date: 01/13/2016
+{"index":0,"page":13}
+num found so far: 223
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-05214-CR-0000980-2016
+{"index":0,"page":13}
+filing date: 01/13/2016
+{"index":0,"page":13}
+num found so far: 224
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-12304-CR-0000011-2016
+{"index":0,"page":13}
+filing date: 01/06/2016
+{"index":0,"page":13}
+num found so far: 225
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-31102-CR-0000571-2015
+{"index":0,"page":13}
+filing date: 12/14/2015
+{"index":0,"page":13}
+num found so far: 226
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-10208-CR-0000491-2015
+{"index":0,"page":13}
+filing date: 12/14/2015
+{"index":0,"page":13}
+num found so far: 227
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-19304-CR-0000452-2015
+{"index":0,"page":13}
+filing date: 12/08/2015
+{"index":0,"page":13}
+num found so far: 228
+{"index":0,"page":13}
+position: {"index":13,"page":13}
+{"index":0,"page":13}
+id: MJ-21307-CR-0000556-2015
+{"index":0,"page":13}
+filing date: 11/30/2015
+{"index":0,"page":13}
+num found so far: 229
+{"index":0,"page":13}
+9
+{"index":0,"page":13}
+10
+{"index":0,"page":13}
+11
+{"index":0,"page":13}
+12
+{"index":0,"page":13}
+[43mdisabledText:[49m 
+{"index":0,"page":13}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":13}
+13
+{"index":0,"page":14}
+14
+{"index":0,"page":14}
+15
+{"index":0,"page":14}
+16 false
+{"index":0,"page":14}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:29
+{"index":0,"page":14}
+[43mnew page[49m
+{"index":0,"page":14}
+[34mGoal page: [39m 14
+{"index":0,"page":14}
+[33mPrevious page: [39m 12
+{"index":0,"page":14}
+start looking for result: Sat Aug 03 2019 17:29:25 GMT+0000 (UTC)
+{"index":0,"page":14}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":14}
+results found? true
+{"index":0,"page":14}
+no results found? false
+{"index":0,"page":14}
+Time elapsed to find results: 36 (seconds: 0.036)
+{"index":0,"page":14}
+3
+{"index":0,"page":14}
+4
+{"index":0,"page":14}
+paginated: true
+{"index":0,"page":14}
+on new page: 13
+{"index":0,"page":14}
+waited for current page: 13
+{"index":0,"page":14}
+nav: First Previous 12 13 14 15 16  Next Last
+{"index":0,"page":14}
+current actual page indicated in nav: 13
+{"index":0,"page":14}
+current is goal? 13 14 false
+{"index":0,"page":14}
+CSS index of link to goal: 5
+{"index":0,"page":14}
+navData: [object Object]
+{"index":0,"page":14}
+clicking to a new page
+{"index":0,"page":14}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:29
+{"index":0,"page":14}
+[43mnew page[49m
+{"index":0,"page":14}
+[34mGoal page: [39m 14
+{"index":0,"page":14}
+[33mPrevious page: [39m 13
+{"index":0,"page":14}
+start looking for result: Sat Aug 03 2019 17:29:27 GMT+0000 (UTC)
+{"index":0,"page":14}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":14}
+results found? true
+{"index":0,"page":14}
+no results found? false
+{"index":0,"page":14}
+Time elapsed to find results: 30 (seconds: 0.03)
+{"index":0,"page":14}
+3
+{"index":0,"page":14}
+4
+{"index":0,"page":14}
+paginated: true
+{"index":0,"page":14}
+on new page: 14
+{"index":0,"page":14}
+waited for current page: 14
+{"index":0,"page":14}
+nav: First Previous 13 14 15 16 17  Next Last
+{"index":0,"page":14}
+current actual page indicated in nav: 14
+{"index":0,"page":14}
+current is goal? 14 14 true
+{"index":0,"page":14}
+Reached goal page
+{"index":0,"page":14}
+navData: [object Object]
+{"index":0,"page":14}
+5
+{"index":0,"page":14}
+6
+{"index":0,"page":14}
+7
+{"index":0,"page":14}
+8
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-45102-CR-0000460-2015
+{"index":0,"page":14}
+filing date: 11/25/2015
+{"index":0,"page":14}
+num found so far: 230
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-06105-CR-0000324-2015
+{"index":0,"page":14}
+filing date: 11/23/2015
+{"index":0,"page":14}
+num found so far: 231
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-31201-CR-0000611-2015
+{"index":0,"page":14}
+filing date: 11/18/2015
+{"index":0,"page":14}
+num found so far: 232
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-31201-CR-0000609-2015
+{"index":0,"page":14}
+filing date: 11/16/2015
+{"index":0,"page":14}
+num found so far: 233
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-38208-CR-0000382-2015
+{"index":0,"page":14}
+filing date: 11/05/2015
+{"index":0,"page":14}
+num found so far: 234
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-05213-CR-0000747-2015
+{"index":0,"page":14}
+filing date: 10/26/2015
+{"index":0,"page":14}
+num found so far: 235
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-39403-CR-0000079-2015
+{"index":0,"page":14}
+filing date: 10/21/2015
+{"index":0,"page":14}
+num found so far: 236
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-14202-CR-0000420-2015
+{"index":0,"page":14}
+filing date: 10/20/2015
+{"index":0,"page":14}
+num found so far: 237
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-32133-CR-0000434-2015
+{"index":0,"page":14}
+filing date: 10/14/2015
+{"index":0,"page":14}
+num found so far: 238
+{"index":0,"page":14}
+position: {"index":13,"page":14}
+{"index":0,"page":14}
+id: MJ-32246-CR-0000447-2015
+{"index":0,"page":14}
+filing date: 10/14/2015
+{"index":0,"page":14}
+num found so far: 239
+{"index":0,"page":14}
+9
+{"index":0,"page":14}
+10
+{"index":0,"page":14}
+11
+{"index":0,"page":14}
+12
+{"index":0,"page":14}
+[43mdisabledText:[49m 
+{"index":0,"page":14}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":14}
+13
+{"index":0,"page":15}
+14
+{"index":0,"page":15}
+15
+{"index":0,"page":15}
+16 false
+{"index":0,"page":15}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:29
+{"index":0,"page":15}
+[43mnew page[49m
+{"index":0,"page":15}
+[34mGoal page: [39m 15
+{"index":0,"page":15}
+[33mPrevious page: [39m 13
+{"index":0,"page":15}
+start looking for result: Sat Aug 03 2019 17:29:59 GMT+0000 (UTC)
+{"index":0,"page":15}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":15}
+results found? true
+{"index":0,"page":15}
+no results found? false
+{"index":0,"page":15}
+Time elapsed to find results: 102 (seconds: 0.102)
+{"index":0,"page":15}
+3
+{"index":0,"page":15}
+4
+{"index":0,"page":15}
+paginated: true
+{"index":0,"page":15}
+on new page: 14
+{"index":0,"page":15}
+waited for current page: 14
+{"index":0,"page":15}
+nav: First Previous 13 14 15 16 17  Next Last
+{"index":0,"page":15}
+current actual page indicated in nav: 14
+{"index":0,"page":15}
+current is goal? 14 15 false
+{"index":0,"page":15}
+CSS index of link to goal: 5
+{"index":0,"page":15}
+navData: [object Object]
+{"index":0,"page":15}
+clicking to a new page
+{"index":0,"page":15}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:30
+{"index":0,"page":15}
+[43mnew page[49m
+{"index":0,"page":15}
+[34mGoal page: [39m 15
+{"index":0,"page":15}
+[33mPrevious page: [39m 14
+{"index":0,"page":15}
+start looking for result: Sat Aug 03 2019 17:30:02 GMT+0000 (UTC)
+{"index":0,"page":15}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":15}
+results found? true
+{"index":0,"page":15}
+no results found? false
+{"index":0,"page":15}
+Time elapsed to find results: 46 (seconds: 0.046)
+{"index":0,"page":15}
+3
+{"index":0,"page":15}
+4
+{"index":0,"page":15}
+paginated: true
+{"index":0,"page":15}
+on new page: 15
+{"index":0,"page":15}
+waited for current page: 15
+{"index":0,"page":15}
+nav: First Previous 14 15 16 17 18  Next Last
+{"index":0,"page":15}
+current actual page indicated in nav: 15
+{"index":0,"page":15}
+current is goal? 15 15 true
+{"index":0,"page":15}
+Reached goal page
+{"index":0,"page":15}
+navData: [object Object]
+{"index":0,"page":15}
+5
+{"index":0,"page":15}
+6
+{"index":0,"page":15}
+7
+{"index":0,"page":15}
+8
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-38204-CR-0000280-2015
+{"index":0,"page":15}
+filing date: 10/11/2015
+{"index":0,"page":15}
+num found so far: 240
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-03208-CR-0000149-2015
+{"index":0,"page":15}
+filing date: 10/06/2015
+{"index":0,"page":15}
+num found so far: 241
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-49303-CR-0000191-2015
+{"index":0,"page":15}
+filing date: 09/29/2015
+{"index":0,"page":15}
+num found so far: 242
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-39304-CR-0000223-2015
+{"index":0,"page":15}
+filing date: 09/27/2015
+{"index":0,"page":15}
+num found so far: 243
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-06105-CR-0000251-2015
+{"index":0,"page":15}
+filing date: 09/21/2015
+{"index":0,"page":15}
+num found so far: 244
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-32136-CR-0000476-2015
+{"index":0,"page":15}
+filing date: 09/16/2015
+{"index":0,"page":15}
+num found so far: 245
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-29303-CR-0000225-2015
+{"index":0,"page":15}
+filing date: 08/21/2015
+{"index":0,"page":15}
+num found so far: 246
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-39403-CR-0000065-2015
+{"index":0,"page":15}
+filing date: 08/21/2015
+{"index":0,"page":15}
+num found so far: 247
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-39403-CR-0000062-2015
+{"index":0,"page":15}
+filing date: 08/15/2015
+{"index":0,"page":15}
+num found so far: 248
+{"index":0,"page":15}
+position: {"index":13,"page":15}
+{"index":0,"page":15}
+id: MJ-10101-CR-0000228-2015
+{"index":0,"page":15}
+filing date: 08/14/2015
+{"index":0,"page":15}
+num found so far: 249
+{"index":0,"page":15}
+9
+{"index":0,"page":15}
+10
+{"index":0,"page":15}
+11
+{"index":0,"page":15}
+12
+{"index":0,"page":15}
+[43mdisabledText:[49m 
+{"index":0,"page":15}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":15}
+13
+{"index":0,"page":16}
+14
+{"index":0,"page":16}
+15
+{"index":0,"page":16}
+16 false
+{"index":0,"page":16}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:30
+{"index":0,"page":16}
+[43mnew page[49m
+{"index":0,"page":16}
+[34mGoal page: [39m 16
+{"index":0,"page":16}
+[33mPrevious page: [39m 14
+{"index":0,"page":16}
+start looking for result: Sat Aug 03 2019 17:30:37 GMT+0000 (UTC)
+{"index":0,"page":16}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":16}
+results found? true
+{"index":0,"page":16}
+no results found? false
+{"index":0,"page":16}
+Time elapsed to find results: 100 (seconds: 0.1)
+{"index":0,"page":16}
+3
+{"index":0,"page":16}
+4
+{"index":0,"page":16}
+paginated: true
+{"index":0,"page":16}
+on new page: 15
+{"index":0,"page":16}
+waited for current page: 15
+{"index":0,"page":16}
+nav: First Previous 14 15 16 17 18  Next Last
+{"index":0,"page":16}
+current actual page indicated in nav: 15
+{"index":0,"page":16}
+current is goal? 15 16 false
+{"index":0,"page":16}
+CSS index of link to goal: 5
+{"index":0,"page":16}
+navData: [object Object]
+{"index":0,"page":16}
+clicking to a new page
+{"index":0,"page":16}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:30
+{"index":0,"page":16}
+[43mnew page[49m
+{"index":0,"page":16}
+[34mGoal page: [39m 16
+{"index":0,"page":16}
+[33mPrevious page: [39m 15
+{"index":0,"page":16}
+start looking for result: Sat Aug 03 2019 17:30:45 GMT+0000 (UTC)
+{"index":0,"page":16}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":16}
+results found? true
+{"index":0,"page":16}
+no results found? false
+{"index":0,"page":16}
+Time elapsed to find results: 850 (seconds: 0.85)
+{"index":0,"page":16}
+3
+{"index":0,"page":16}
+4
+{"index":0,"page":16}
+paginated: true
+{"index":0,"page":16}
+on new page: 16
+{"index":0,"page":16}
+waited for current page: 16
+{"index":0,"page":16}
+nav: First Previous 15 16 17 18 19  Next Last
+{"index":0,"page":16}
+current actual page indicated in nav: 16
+{"index":0,"page":16}
+current is goal? 16 16 true
+{"index":0,"page":16}
+Reached goal page
+{"index":0,"page":16}
+navData: [object Object]
+{"index":0,"page":16}
+5
+{"index":0,"page":16}
+6
+{"index":0,"page":16}
+7
+{"index":0,"page":16}
+8
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-05003-CR-0006631-2015
+{"index":0,"page":16}
+filing date: 08/01/2015
+{"index":0,"page":16}
+num found so far: 250
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-06104-CR-0000363-2015
+{"index":0,"page":16}
+filing date: 07/24/2015
+{"index":0,"page":16}
+num found so far: 251
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-06305-CR-0000270-2015
+{"index":0,"page":16}
+filing date: 07/23/2015
+{"index":0,"page":16}
+num found so far: 252
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-02201-CR-0000220-2015
+{"index":0,"page":16}
+filing date: 07/20/2015
+{"index":0,"page":16}
+num found so far: 253
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-02203-CR-0000326-2015
+{"index":0,"page":16}
+filing date: 07/20/2015
+{"index":0,"page":16}
+num found so far: 254
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-05213-CR-0000496-2015
+{"index":0,"page":16}
+filing date: 07/16/2015
+{"index":0,"page":16}
+num found so far: 255
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-49101-CR-0000201-2015
+{"index":0,"page":16}
+filing date: 07/16/2015
+{"index":0,"page":16}
+num found so far: 256
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-30306-CR-0000147-2015
+{"index":0,"page":16}
+filing date: 07/15/2015
+{"index":0,"page":16}
+num found so far: 257
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-05201-CR-0000208-2015
+{"index":0,"page":16}
+filing date: 06/14/2015
+{"index":0,"page":16}
+num found so far: 258
+{"index":0,"page":16}
+position: {"index":13,"page":16}
+{"index":0,"page":16}
+id: MJ-10301-CR-0000213-2015
+{"index":0,"page":16}
+filing date: 06/10/2015
+{"index":0,"page":16}
+num found so far: 259
+{"index":0,"page":16}
+9
+{"index":0,"page":16}
+10
+{"index":0,"page":16}
+11
+{"index":0,"page":16}
+12
+{"index":0,"page":16}
+[43mdisabledText:[49m 
+{"index":0,"page":16}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":16}
+13
+{"index":0,"page":17}
+14
+{"index":0,"page":17}
+15
+{"index":0,"page":17}
+16 false
+{"index":0,"page":17}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:31
+{"index":0,"page":17}
+[43mnew page[49m
+{"index":0,"page":17}
+[34mGoal page: [39m 17
+{"index":0,"page":17}
+[33mPrevious page: [39m 15
+{"index":0,"page":17}
+start looking for result: Sat Aug 03 2019 17:31:50 GMT+0000 (UTC)
+{"index":0,"page":17}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":17}
+results found? true
+{"index":0,"page":17}
+no results found? false
+{"index":0,"page":17}
+Time elapsed to find results: 2317 (seconds: 2.317)
+{"index":0,"page":17}
+3
+{"index":0,"page":17}
+4
+{"index":0,"page":17}
+paginated: true
+{"index":0,"page":17}
+on new page: 16
+{"index":0,"page":17}
+waited for current page: 16
+{"index":0,"page":17}
+nav: First Previous 15 16 17 18 19  Next Last
+{"index":0,"page":17}
+current actual page indicated in nav: 16
+{"index":0,"page":17}
+current is goal? 16 17 false
+{"index":0,"page":17}
+CSS index of link to goal: 5
+{"index":0,"page":17}
+navData: [object Object]
+{"index":0,"page":17}
+clicking to a new page
+{"index":0,"page":17}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:31
+{"index":0,"page":17}
+[43mnew page[49m
+{"index":0,"page":17}
+[34mGoal page: [39m 17
+{"index":0,"page":17}
+[33mPrevious page: [39m 16
+{"index":0,"page":17}
+start looking for result: Sat Aug 03 2019 17:31:56 GMT+0000 (UTC)
+{"index":0,"page":17}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":17}
+results found? true
+{"index":0,"page":17}
+no results found? false
+{"index":0,"page":17}
+Time elapsed to find results: 74 (seconds: 0.074)
+{"index":0,"page":17}
+3
+{"index":0,"page":17}
+4
+{"index":0,"page":17}
+paginated: true
+{"index":0,"page":17}
+on new page: 17
+{"index":0,"page":17}
+waited for current page: 17
+{"index":0,"page":17}
+nav: First Previous 16 17 18 19 20  Next Last
+{"index":0,"page":17}
+current actual page indicated in nav: 17
+{"index":0,"page":17}
+current is goal? 17 17 true
+{"index":0,"page":17}
+Reached goal page
+{"index":0,"page":17}
+navData: [object Object]
+{"index":0,"page":17}
+5
+{"index":0,"page":17}
+6
+{"index":0,"page":17}
+7
+{"index":0,"page":17}
+8
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-40201-CR-0000269-2015
+{"index":0,"page":17}
+filing date: 06/09/2015
+{"index":0,"page":17}
+num found so far: 260
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-23202-CR-0000273-2015
+{"index":0,"page":17}
+filing date: 06/01/2015
+{"index":0,"page":17}
+num found so far: 261
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-05003-CR-0004086-2015
+{"index":0,"page":17}
+filing date: 05/13/2015
+{"index":0,"page":17}
+num found so far: 262
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-10208-CR-0000180-2015
+{"index":0,"page":17}
+filing date: 05/06/2015
+{"index":0,"page":17}
+num found so far: 263
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-02302-CR-0000188-2015
+{"index":0,"page":17}
+filing date: 05/01/2015
+{"index":0,"page":17}
+num found so far: 264
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-31104-CR-0000141-2015
+{"index":0,"page":17}
+filing date: 04/30/2015
+{"index":0,"page":17}
+num found so far: 265
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-38111-CR-0000268-2015
+{"index":0,"page":17}
+filing date: 04/29/2015
+{"index":0,"page":17}
+num found so far: 266
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-26302-CR-0000088-2015
+{"index":0,"page":17}
+filing date: 04/13/2015
+{"index":0,"page":17}
+num found so far: 267
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-28301-CR-0000046-2015
+{"index":0,"page":17}
+filing date: 04/02/2015
+{"index":0,"page":17}
+num found so far: 268
+{"index":0,"page":17}
+position: {"index":13,"page":17}
+{"index":0,"page":17}
+id: MJ-32247-CR-0000251-2015
+{"index":0,"page":17}
+filing date: 03/26/2015
+{"index":0,"page":17}
+num found so far: 269
+{"index":0,"page":17}
+9
+{"index":0,"page":17}
+10
+{"index":0,"page":17}
+11
+{"index":0,"page":17}
+12
+{"index":0,"page":17}
+[43mdisabledText:[49m 
+{"index":0,"page":17}
+[33mStill more pages to go! Clicking the next button[39m
+{"index":0,"page":17}
+13
+{"index":0,"page":18}
+14
+{"index":0,"page":18}
+15
+{"index":0,"page":18}
+16 false
+{"index":0,"page":18}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:33
+{"index":0,"page":18}
+[43mnew page[49m
+{"index":0,"page":18}
+[34mGoal page: [39m 18
+{"index":0,"page":18}
+[33mPrevious page: [39m 16
+{"index":0,"page":18}
+start looking for result: Sat Aug 03 2019 17:33:48 GMT+0000 (UTC)
+{"index":0,"page":18}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":18}
+results found? true
+{"index":0,"page":18}
+no results found? false
+{"index":0,"page":18}
+Time elapsed to find results: 4083 (seconds: 4.083)
+{"index":0,"page":18}
+3
+{"index":0,"page":18}
+4
+{"index":0,"page":18}
+paginated: true
+{"index":0,"page":18}
+on new page: 17
+{"index":0,"page":18}
+waited for current page: 17
+{"index":0,"page":18}
+nav: First Previous 16 17 18 19 20  Next Last
+{"index":0,"page":18}
+current actual page indicated in nav: 17
+{"index":0,"page":18}
+current is goal? 17 18 false
+{"index":0,"page":18}
+CSS index of link to goal: 5
+{"index":0,"page":18}
+navData: [object Object]
+{"index":0,"page":18}
+clicking to a new page
+{"index":0,"page":18}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 17:33
+{"index":0,"page":18}
+[43mnew page[49m
+{"index":0,"page":18}
+[34mGoal page: [39m 18
+{"index":0,"page":18}
+[33mPrevious page: [39m 17
+{"index":0,"page":18}
+start looking for result: Sat Aug 03 2019 17:33:56 GMT+0000 (UTC)
+{"index":0,"page":18}
+race value: span#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphResults_lblPreviewInstructions.previewInstructions
+{"index":0,"page":18}
+results found? true
+{"index":0,"page":18}
+no results found? false
+{"index":0,"page":18}
+Time elapsed to find results: 50 (seconds: 0.05)
+{"index":0,"page":18}
+3
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m17:34[39m
+{"index":0,"page":18}
+TimeoutError: waiting for selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_SearchResultsPanel .PageNavigationContainer" failed: timeout 30000ms exceeded
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 1
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting 1 min[49m[39m @ 17:34
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m17:36[39m
+{"index":0,"page":18}
+TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 2
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting 1 min[49m[39m @ 17:36
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+Status: 200
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m17:37[39m
+{"index":0,"page":18}
+TimeoutError: waiting for selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName" failed: timeout 30000ms exceeded
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 1
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting 1 min[49m[39m @ 17:37
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+Status: 200
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m17:39[39m
+{"index":0,"page":18}
+TimeoutError: waiting for selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName" failed: timeout 30000ms exceeded
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 1
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting 1 min[49m[39m @ 17:39
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+Status: 200
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m17:41[39m
+{"index":0,"page":18}
+TimeoutError: waiting for selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName" failed: timeout 30000ms exceeded
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 1
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting 1 min[49m[39m @ 17:41
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+Status: 200
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m17:43[39m
+{"index":0,"page":18}
+TimeoutError: waiting for selector "#ctl00_ctl00_ctl00_cphMain_cphDynamicContent_cphSearchControls_udsParticipantName_txtLastName" failed: timeout 30000ms exceeded
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 1
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting 1 min[49m[39m @ 17:43
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Failed to load resource: net::ERR_NAME_RESOLUTION_FAILED
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m17:44[39m
+{"index":0,"page":18}
+Error: net::ERR_NAME_RESOLUTION_FAILED at https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 2
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting 1 min[49m[39m @ 17:44
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m17:45[39m
+{"index":0,"page":18}
+Error: net::ERR_NAME_RESOLUTION_FAILED at https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 3
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting an hour[49m[39m @ 17:45
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m18:45[39m
+{"index":0,"page":18}
+Error: net::ERR_NAME_RESOLUTION_FAILED at https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 4
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting an hour[49m[39m @ 18:45
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m19:45[39m
+{"index":0,"page":18}
+Error: net::ERR_NAME_RESOLUTION_FAILED at https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 5
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47mwaiting an hour[49m[39m @ 19:45
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m20:45[39m
+{"index":0,"page":18}
+Error: net::ERR_NAME_RESOLUTION_FAILED at https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 6
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+[34m[47m3 hours should have passed. Waiting 15 min[49m[39m @ 20:45
+{"index":0,"page":18}
+Creating browser
+{"index":0,"page":18}
+Opening page
+{"index":0,"page":18}
+[33mbyNamesDuring catch clause @[39m [33m21:00[39m
+{"index":0,"page":18}
+Error: net::ERR_NAME_RESOLUTION_FAILED at https://ujsportal.pacourts.us/DocketSheets/MDJ.aspx
+{"index":0,"page":18}
+[1m[4m[34m[47mHang tight, the code will work on taking care of this[49m[39m[24m[22m
+{"index":0,"page":18}
+timesRepeated: 7
+{"index":0,"page":18}
+ undefined
+{"index":0,"page":18}
+giving up
+{"index":0,"page":18}
