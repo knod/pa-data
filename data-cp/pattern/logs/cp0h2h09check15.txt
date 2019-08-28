@@ -1,0 +1,51 @@
+
+Warning: [33mBe aware only new name indexes will be used. Nothing will be redone. That's good as long as it's what you want. You can change that with the "redo" custom property.[39m
+{"index":0,"page":0}
+runData:
+ {
+  "command": "node check-pattern-cp.js cp0h2h09check15",
+  "patternIDFileName": "check15",
+  "initialDockets": "round1_cp00k01k09c.json",
+  "type": "cp",
+  "mode": "check",
+  "startDate": "01/01/2009",
+  "endDate": "06/25/2019",
+  "startIndexRange": 0,
+  "endIndexRange": 200,
+  "position": {
+    "index": 0,
+    "page": 0
+  },
+  "completed": false,
+  "namesPath": "./names/censusNamesSmallShuffled.json",
+  "dataDirectory": "./data-cp/pattern/",
+  "usedDocketsFileName": "",
+  "wait": 300,
+  "alerts": "no",
+  "redo": false,
+  "done": {}
+}
+{"index":0,"page":0}
+Creating browser
+{"index":0,"page":0}
+Opening page
+{"index":0,"page":0}
+Status: 200
+{"index":0,"page":0}
+~
+~
+~
+~
+~
+Name index: 0
+~
+~
+~
+~
+~
+
+{"index":0,"page":0}
+[object Object]
+{"index":0,"page":0}
+[34m[47mWaiting up to 15 min for large results to load[49m[39m @ 11:23
+{"index":0,"page":0}
